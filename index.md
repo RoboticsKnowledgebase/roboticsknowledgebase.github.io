@@ -1,4 +1,21 @@
-## Welcome to GitHub Pages
+## Welcome to the Robotics Wiki
+
+### Why a wiki for robotics?
+**The Robotics Wiki** exists to advance knowledge in the robotics discipline.  
+
+As practitioners, we believe that we are pioneering a new field.
+Robots are inherently complex and require knowledge across numerous disciplines. This know-how takes time to develop.
+
+Resources that exist are specialized and academic in focus. These frequently lack implementation details or instructions on applying the information provided.  These create a high-barrier of entry into the field.
+
+To accelerate the development of both projects and individual skills, we created a knowledge base to share our knowledge, best practices, and lessons learned so that others may succeed.
+
+**The Robotics Wiki** is that knowledge base. Here, you will find guidance on the full spectrum of our field.
+
+### Where should I start?
+
+### How can I contribute?
+
 
 You can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -27,6 +44,62 @@ Syntax highlighted code block
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
+## Table of Contents
+Overview	of	Intelligent,	Electrical-Mechanical	Systems
+- The	CMU	definition	of	robotics
+Common	Platforms
+- Hardware
+  - Drones
+  - Ground	Vehicles
+  - Underwater
+- Software
+  - ROS
+  - Orocos	RTT
+  - Multi-threaded	C++
+System	Design and Development
+- System	Engineering
+  - Requirements	writing
+  - Test	Design
+- Mechanical
+  - Mechanical Design
+  - Mechanical Computer Aided Design
+  - Fabrication Techniques
+- Electrical
+  - Electrical Design
+  - Electrical Computer Aided Design
+  - Printed Circuit Boards
+- Software	Engineering
+  - Programming Embedded Systems
+  - Data Structures
+- System Integration
+Subsystems
+- Mechatronics
+  - Sensors
+  - Actuators
+  - Controls
+- Mobility
+- Manipulation
+- Machine	Learning
+  - Classification
+  - Regression
+  - Feature	Generation
+  - Training	and	Testing
+- Computer	Vision
+- State Estimation
+  - Localization and	Mapping
+- Robot	Planning
+  - Motion
+  - Path
+Math
+- Linear Algebra
+- Probability
+Project	Management
+- Methods
+- Tools
+- Team	Communication
+- Budgeting
+- Ordering
 
 ### Jekyll Themes
 
