@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+
+plugis:
+    - jekyll-sitemap
