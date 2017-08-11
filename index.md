@@ -1,3 +1,8 @@
+---
+layout: index
+title: Welcome to the Robotics Wiki
+---
+
 ## Welcome to the Robotics Wiki
 
 ### Why a wiki for robotics?
