@@ -27,6 +27,17 @@ docs:
     url: /project-management/
     children:
       - title: Complex Systems
-        url: /project-management/complex-systems/
+        url: /project-management/product-development-complex-systems/
       - title: Risk Management
         url: /project-management/risk-management/
+    - title: Common Platforms
+      url: /common-platforms/
+      children:
+        - title: DJI SDK
+          url: /common-platforms/dji-sdk/
+        - title: Pixhawk
+          url: /common-platforms/pixhawk/
+        - title: ROS Introduction
+          url: /common-platforms/ros-intro/
+        - title: ROS Distributed Systems
+          url: /common-platforms/ros-distributed/

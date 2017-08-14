@@ -1,4 +1,6 @@
-# Pixhawk UAV Platform
+---
+title: Pixhawk UAV Platform
+---
 This guide is meant for people using UAVs with the Pixhawk hardware and looking to control the UAV through a computer/microprocessor.
 
 ## Set Up
