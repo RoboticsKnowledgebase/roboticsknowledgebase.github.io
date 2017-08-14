@@ -3,4 +3,4 @@ main:
   - title: Overview
     children:
       - title: "Home"
-        url: /index.html
+        url: /

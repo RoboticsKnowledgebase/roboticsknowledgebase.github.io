@@ -5,7 +5,7 @@ Meeting Agenda:
 - Allowing Commenting in Threads?
 
 TODO:
-- Template
+- Google Sitemap
 - Navigation
 - Custom Domain
 - Search Function
@@ -17,4 +17,4 @@ TODO:
 - Landing page
 
 DONE:
-- Google Sitemap
+- Template
