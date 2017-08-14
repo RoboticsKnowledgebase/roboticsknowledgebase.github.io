@@ -1,4 +1,6 @@
-# Getting Started with MS Kinect and PCL
+---
+title: Getting Started with Microsoft Kinect and PCL
+---
 
 ## Microsoft Kinect Overview
 Kinect for Xbox 360 is a low-cost vision device equipped with one IR camera, one color camera and one IR projector to produce RGB images as well as voxel (depth-pixel) images. The RGB video stream gives a 8-bit VGA resolution (640 x 480 pixels) with a Bayer color filter, while th monochrome depth-sensing video stream is in VGA resolution. The sensor has an angular field of view of 57 degrees horizontally and 43 degrees vertically. Kinect has been reverse engineered to a great extent by the open source community which has revealed many facts on how depth is measured. Kinect uses a structured light approach form which we can extract time of return. They use a standard off-the shellf CMOS sensor for the same.

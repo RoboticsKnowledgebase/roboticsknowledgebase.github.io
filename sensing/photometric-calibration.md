@@ -1,4 +1,6 @@
-# CMOS Sensor Characterization in Cameras: Absolute Lumen Calibration
+---
+title: CMOS Sensor Characterization in Cameras: Absolute Lumen Calibration
+---
 
 ## Background
 Digital cameras of today have CMOS based sensors to convert the light incident (irradiance) on them into digital values. These sensors have a characteristic Inverse Camera Response Function (ICRF) which maps the irradiance to the pixel value generated (typically between 0-255). In the cameras we use, the ICRF curve is adjusted so that the color reproduced in the digital pixels resemble what our human eye can see. This is particularly useful for consumer products but when one is using cameras for scientific applications ranging from vision systems in autonomous cars to 3D reconstruction, it is imperative to have the true pixel value to be calibrated to the true irradiance values on the CMOS sensor.

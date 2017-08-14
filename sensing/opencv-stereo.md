@@ -1,4 +1,6 @@
-# OpenCV Stereo Vision Processing
+---
+title: OpenCV Stereo Vision Processing
+---
 For a stereo vision camera, there are multiple operations that can be done like tracking, detection, position estimation, etc. OpenCV has lot of libraries which are much faster than MATLAB's computer vision toolbox.
 
 ## Resources

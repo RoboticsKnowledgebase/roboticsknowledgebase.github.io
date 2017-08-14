@@ -41,3 +41,24 @@ docs:
         url: /common-platforms/ros-intro/
       - title: ROS over Multiple Machines
         url: /common-platforms/ros-distributed/
+  - title: sensing
+    url: /sensing/
+    children:
+      - title: Adafruit GPS
+        url: /sensing/adafruit-gps/
+      - title: AprilTags
+        url: /sensing/apriltags/
+      - title: Camera Calibration
+        url: /sensing/camera-calibration/
+      - title: Computer Vision Consideration
+        url: /sensing/computer-vision-considerations/
+      - title: Delphi ESR Radar
+        url: /sensing/delphi-esr-radar/
+      - title: Microsoft Kinect and Point Cloud Library
+        url: /sensing/kinect-pcl/
+      - title: Photometric Calibration
+        url: /sensing/photometric-calibration/
+      - title: Speech Recognition
+        url: /sensing/speech-recognition/
+      - title: Stereo Vision in OpenCV
+        url: /sensing/opencv-stereo/

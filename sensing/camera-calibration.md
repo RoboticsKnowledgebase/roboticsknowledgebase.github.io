@@ -1,4 +1,6 @@
-Camera Calibration
+---
+title: Camera Calibration
+---
 
 It is quite common for projects to involve vision systems, but despite this most teams working with cameras ignore the basic advantages of calibrating a camera properly. Not only does a good calibration lead to better quality of data in form of images captured but also reduces overall errors in the vision the system, a properly calibrated camera helps avoid unnecessary delays due to radiometric and geometric errors.
 

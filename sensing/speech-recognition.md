@@ -1,4 +1,6 @@
-# Speech Recognition
+---
+title: Speech Recognition
+---
 Speech Recognition can be a very efficient and powerful way to interface with a robot. It has its downsides since it requires a parser to do something intelligent and be intuitive to use. Also, it is not the most reliable mode of communication since it is plagued with background noise in a regular environment and is prone to false matches.
 
 ## Resources

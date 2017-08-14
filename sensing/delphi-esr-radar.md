@@ -1,4 +1,6 @@
-# Delphi ESR Radar
+---
+title: Delphi ESR Radar
+---
 
 ![Delphi ESR Radar](assets/DelphiESRRadar-8394b.png)
 

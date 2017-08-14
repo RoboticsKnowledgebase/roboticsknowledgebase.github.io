@@ -1,4 +1,6 @@
-# Adafruit GPS
+---
+title: Adafruit GPS
+---
 ![Adafruit GPS Components](assets/AdafruitGPS-c715f.png) ![Adafruit GPS Assembled](assets/AdafruitGPS-69ceb.png)
 
 The Adafruit Ultimate GPS module is designed for convenient use with Arduino, Raspberry Pi, or other commonly used micro-controllers. The breakout is built around the MTK3339 chipset, a no-nonsense, high-quality GPS module that can track up to 22 satellites on 66 channels, has an excellent high-sensitivity receiver (-165 dB tracking), and a built-in antenna!
