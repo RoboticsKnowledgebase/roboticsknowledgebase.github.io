@@ -1,7 +1,6 @@
 ---
 layout: single
 title: Cable Management
-permalink: /:categories/:title/
 ---
 # Effective Cable Management
 Effective cable management is essential for servicing, debugging and creating reliable robotic systems. Cabling is often regarded as one of the less glamorous parts of electrical engineering, but it is an essential and an extremely important part of creating a complete system.
