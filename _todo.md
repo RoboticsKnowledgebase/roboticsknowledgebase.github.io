@@ -5,7 +5,7 @@ Meeting Agenda:
 - Allowing Commenting in Threads?
 
 TODO:
-- Navigation
+- Static Navigation
 - Add Front Matter to All Pages
 - Custom Domain
 - Search Function
@@ -15,6 +15,7 @@ TODO:
 - Tracking traffic
 - Writing & style standards
 - Landing page
+- Dynamic Navigation Generation
 
 TEST:
 - Google Sitemap
