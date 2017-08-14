@@ -1,5 +1,6 @@
-# System-Subsystem-Interface Modeling
-
+---
+title: System-Subsystem-Interface Modeling
+---
 A useful tool in system engineering is the system model, which can drive development, requirements generation, design, and just about anything else to do with your project. While the WBS, schedule, and other tools are good for their particular area, the system model has the potential to be useful in replacing all your other planning methods, becoming the one-stop source for information about your project.
 
 The system model language SysML was first developed by No Magic - though the framework is somewhat older - for project management and was quickly adapted for use in the Department of Defense, NASA, and other government bodies. The full framework is quite extensive, covering every possible level of system engineering from the highest goal oriented concept to the most basic layers like what data types are used and what interfaces carry them. The system model is a key part of the functionality of Rational Rhapsody, which uses the system model as built to generate code for programs the system runs. The a good set of resources can be found [here](https://www.nomagic.com/support/quick-reference-guides.html). A quick glance makes it obvious that most roboticists doe not need most of the views and charts, but some are useful and we will go over them in the following sections.
