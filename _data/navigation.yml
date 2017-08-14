@@ -14,3 +14,5 @@ docs:
     children:
       - title: System Engineering
         url: /SystemDesignDevelopment/SystemEngineering/
+      - title: Mechanical Design
+        url: /SystemDesignDevelopment/MechanicalDesign/
