@@ -41,7 +41,7 @@ docs:
         url: /common-platforms/ros-intro/
       - title: ROS over Multiple Machines
         url: /common-platforms/ros-distributed/
-  - title: sensing
+  - title: Sensing
     url: /sensing/
     children:
       - title: Adafruit GPS
@@ -62,3 +62,14 @@ docs:
         url: /sensing/speech-recognition/
       - title: Stereo Vision in OpenCV
         url: /sensing/opencv-stereo/
+  - title: Actuation
+    url: /actuation/
+    children:
+      - title: Motor Controller Feedback
+        url: /actuation/motor-controller-feedback/
+      - title: PID Control on Arduino
+        url: /actuation/pid-control-arduino/
+      - title: ULN2003A Motor Controller
+        url: /actuation/uln2003a-motor-controller/
+      - title: Vedder Electronic Speed Controller
+        url: /actuation/vedder-electronic-speed-controller/
