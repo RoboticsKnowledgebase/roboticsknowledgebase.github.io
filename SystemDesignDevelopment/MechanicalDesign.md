@@ -1,3 +1,6 @@
+---
+title: Mechanical Design
+---
 This section will provide you some of the design criteria’s and consideration you should keep in mind when developing a mechanical system:
 - If possible, develop a mathematical model before ordering parts and prototyping. This will help you determine whether the values you have in mind are suitable enough or not.
 - Develop a detailed CAD model of your product early. A visual representation helps in determining shortcomings of the model and allows optimization.
