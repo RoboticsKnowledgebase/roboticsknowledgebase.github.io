@@ -5,7 +5,7 @@
 layout: single
 title: Welcome to the Robotics Knowledgebase
 sidebar:
-  nav: "main"
+  nav: "docs"
 ---
 
 ## Welcome to the Robotics Knowledgebase Wiki

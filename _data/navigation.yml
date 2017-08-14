@@ -1,6 +1,11 @@
 # main links
 main:
   - title: Overview
+  - url: /
+
+
+docs:
+  - title: Overview
     children:
       - title: "Home"
         url: /
