@@ -1,4 +1,6 @@
-# Risk Management
+---
+title: Risk Management
+---
 Risk management is an important process, but can easily turn into an exercise in making a list of items that people think about once and never look at again. There can be little accountability and - if only listed by name with a nebulous category - no real grasp of the risks' impact or what should be done about them.
 
 A lot of this comes down to a lack of decent tools and of using those tools consistently. In standard risk management, risks can be split up into probability and severity. Also helpful to track are the dates on which risks are first identified, what part of a project they impact, their actual impact(an expansion on severity from a letter code to what actually could happen), what mitigation has been taken, and what the risk is after mitigation.

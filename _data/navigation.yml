@@ -11,6 +11,7 @@ docs:
       - title: "Home"
         url: /
   - title: System Design & Development
+    url: /system-design-development/
     children:
       - title: System Engineering
         url: /system-design-development/system-engineering/
@@ -22,3 +23,11 @@ docs:
         url: /system-design-development/cable-management/
       - title: Subsystem Interface Modeling
         url: /system-design-development/subsystem-interface-modeling/
+  - title: Project Management
+    url: /project-management/
+    children:
+      - title: Complex Systems
+        url: /project-management/complex-systems/
+      - title: Risk Management
+        url: /project-management/risk-management/
+      

@@ -1,5 +1,6 @@
-# Product Development in Complex System Design
-
+---
+title: Product Development in Complex System Design
+---
 ## History (Waterfall Model)
 Before iterative design became an industry standard in product development the waterfall model was largely popular. The waterfall model originated in industries that are highly structured physical environments such as manufacturing and construction where changes to the design after building are incredibly expensive if not physically impossible to do. The waterfall method is made up of a conceptualizing, initializing, analysing, designing, constructing, testing and implanting/producing and maintaining phase[1].
 
