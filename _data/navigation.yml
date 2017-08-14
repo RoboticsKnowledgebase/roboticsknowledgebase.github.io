@@ -1,16 +1,16 @@
 # main links
 main:
   - title: Home
-  - url: /
+    url: /
   - title: About
-  - url: /about.html
+    url: /about.html
 
 docs:
   - title: Overview
     children:
       - title: "Home"
-      - url: /
+        url: /
   - title: System Design & Development
     children:
       - title: System Engineering
-      - url: /SystemDesignDevelopment/SystemEngineering.html
+        url: /SystemDesignDevelopment/SystemEngineering.html
