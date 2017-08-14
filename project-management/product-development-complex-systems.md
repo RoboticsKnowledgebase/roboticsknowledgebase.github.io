@@ -38,11 +38,11 @@ In conclusion, while this process was created for industries where usability and
 
 ## References:
 1. https://en.wikipedia.org/wiki/Waterfall_model
-- https://en.wikipedia.org/wiki/Iterative_design
-- Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
-- Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
-- Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
-- 25 Useful Brainstorming Techniques. http://personalexcellence.co/blog/brainstorming-techniques/
-- Nielson, Jakob. 03/03/1992. The Engineering Usability Lifecycle. Morgan Kaufman. CA, USA
+2. https://en.wikipedia.org/wiki/Iterative_design
+3. Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
+4. Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
+5. Cagan, Johnathan and Vogel, Craig M.. 10/22/2001. Creating Breakthrough Products. Pearson Education. New Jersey, USA
+6. 25 Useful Brainstorming Techniques. [http://personalexcellence.co/blog/brainstorming-techniques/](http://personalexcellence.co/blog/brainstorming-techniques/)
+7. Nielson, Jakob. 03/03/1992. The Engineering Usability Lifecycle. Morgan Kaufman. CA, USA
 
 I would recommend site 6 as a resource because I have found many of the exercises mentioned on this list useful for unlocking more creative thinking. The best solutions are not usually those thought of first or that come easily, they are those that have outcompeted a plethora of other good ideas and won. The deeper that you dive into the ideation or creative process the better the quality of your final idea.
