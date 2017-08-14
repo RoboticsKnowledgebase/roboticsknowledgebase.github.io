@@ -1,4 +1,6 @@
-# PCB Design Notes
+---
+title: PCB Design Notes
+---
 ## Software Tools
 - [Eagle CAD](http://www.cadsoftusa.com/download-eagle/freeware/?language=en) - Freemium CAD software package
   - Free version limited to 4" X 3.2" board sizes w/ two layers
