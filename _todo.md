@@ -8,6 +8,7 @@ TODO:
 - Template
 - Navigation
 - Custom Domain
+- Search Function
 - Link to Github
 - Introduction
 - Wiki workflow tutorial
