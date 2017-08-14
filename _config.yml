@@ -252,3 +252,5 @@ defaults:
       type: pages
     values:
       layout: single
+      sidebar:
+        - nav: "docs"

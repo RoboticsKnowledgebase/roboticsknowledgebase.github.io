@@ -2,14 +2,10 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: single
 title: Welcome to the Robotics Knowledgebase
 sidebar:
   nav: "docs"
 ---
-
-## Welcome to the Robotics Knowledgebase Wiki
-
 ### Why a wiki for robotics?
 **The Robotics Knowledgebase** exists to advance knowledge in the robotics discipline.  
 
