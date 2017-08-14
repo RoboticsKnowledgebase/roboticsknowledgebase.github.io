@@ -1,4 +1,6 @@
-# Running ROS over Multiple Machines
+---
+title: Running ROS over Multiple Machines
+---
 Multi­robot systems require intercommunication between processors running on different
 computers. Depending on the data to be exchanged between machines, various means of
 communication can be used.
