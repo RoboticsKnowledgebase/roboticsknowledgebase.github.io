@@ -1,4 +1,7 @@
-# Vedder Open-Source Electronic Speed Controller
+---
+title: Vedder Open-Source Electronic Speed Controller
+---
+
 This page provides resources for the open-source electronic speed controller designed by Benjamin Vedder.
 
 ## Advantages

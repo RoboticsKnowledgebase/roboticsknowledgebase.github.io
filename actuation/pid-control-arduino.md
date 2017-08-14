@@ -1,5 +1,6 @@
-# PID Control on Arduino
-
+---
+title: PID Control on Arduino
+---
 The main idea behind PID control is fairly simple, but actually implementing it on an Arduino can be tricky. Luckily, the Arduino IDE comes with [a standard library for PID](http://playground.arduino.cc/Code/PIDLibrary).
 
 On top of that library you can also install [a package that auto-tunes your PID gains](http://playground.arduino.cc/Code/PIDAutotuneLibrary). Because it's not a standard library, you have to download the code and place in your Arduino/libraries folder. The Arduino is usually in your documents folder or wherever you installed the Arduino program.
