@@ -13,7 +13,7 @@ docs:
   - title: System Design & Development
     children:
       - title: System Engineering
-        url: /SystemDesignDevelopment/SystemEngineering/
+        url: /SystemDesignDevelopment/
       - title: Mechanical Design
         url: /SystemDesignDevelopment/MechanicalDesign/
       - title: Printed Circuit Board Design
