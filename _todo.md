@@ -1,9 +1,3 @@
-Meeting Agenda:
-- Review Work Completed
-  - Review Categorization
-- Custom Domain?
-- Allowing Commenting in Threads?
-
 TODO:
 - Static Navigation
 - Add Front Matter to All Pages
