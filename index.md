@@ -3,29 +3,28 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: single
-#layout: index
-title: Welcome to the Robotics Wiki
+title: Welcome to the Robotics Knowledgebase
+sidebar:
+  nav: "main"
 ---
 
-## Welcome to the Robotics Wiki
+## Welcome to the Robotics Knowledgebase Wiki
 
 ### Why a wiki for robotics?
-**The Robotics Wiki** exists to advance knowledge in the robotics discipline.  
+**The Robotics Knowledgebase** exists to advance knowledge in the robotics discipline.  
 
 As practitioners, we believe that we are pioneering a new field.
 Robots are inherently complex and require knowledge across numerous disciplines. This know-how takes time to develop.
 
 Resources that exist are specialized and academic in focus. These frequently lack implementation details or instructions on applying the information provided.  These create a high-barrier of entry into the field.
 
-To accelerate the development of both projects and individual skills, we created a knowledge base to share our knowledge, best practices, and lessons learned so that others may succeed.
+To accelerate the development of both projects and individual skills, we need an applications-focused knowledgebase. A platform to share our knowledge, best practices, and lessons learned so that others may succeed.
 
-**The Robotics Wiki** is that knowledge base. Here, you will find guidance on the full spectrum of our field.
+*This* is that knowledge base. Here, you will find guidance on the full spectrum of our field.
 
 ### Where should I start?
 
 ### How can I contribute?
-
-
 You can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
