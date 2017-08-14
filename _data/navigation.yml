@@ -1,12 +1,14 @@
 # main links
 main:
-  - title: "Home"
-    url: /index.html
-  - title: "About"
-     url: /about.html
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: Overview
+  children:
+    - title: "Home"
+      url: /index.html
+    - title: "About"
+       url: /about.html
+    # - title: "Sample Posts"
+    #   url: /year-archive/
+    # - title: "Sample Collections"
+    #   url: /collection-archive/
+    # - title: "Sitemap"
+#   url: /sitemap/
