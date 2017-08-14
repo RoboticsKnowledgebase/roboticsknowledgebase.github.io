@@ -35,7 +35,6 @@ command: `sudo ntpdate <IP address of ROS server>`
 6. To solve this problem, look at Network Time Protocol Link: http://www.ntp.org/.
   - Install ‘chrony’ on one machine and other machine as the server: `sudo apt­get install chrony`
   - Also put this line in the file `/etc/chrony/chrony.conf`:
-
   ```
   server c1 minpoll 0 maxpoll 5 maxdelay .0005
   ```
