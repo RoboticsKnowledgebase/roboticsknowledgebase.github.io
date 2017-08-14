@@ -1,9 +1,8 @@
 # main links
 main:
-  - title: Overview
+  - title: Home
+  - url: /index.html
   children:
-    - title: "Home"
-      url: /index.html
     - title: "About"
        url: /about.html
     # - title: "Sample Posts"
