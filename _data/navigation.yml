@@ -44,8 +44,10 @@ docs:
   - title: Sensing
     url: /sensing/
     children:
-      - title: Adafruit GPS
-        url: /sensing/adafruit-gps/
+      - title: Sensors
+        children:
+        - title: Adafruit GPS
+          url: /sensing/sensors/adafruit-gps/
       - title: AprilTags
         url: /sensing/apriltags/
       - title: Camera Calibration
