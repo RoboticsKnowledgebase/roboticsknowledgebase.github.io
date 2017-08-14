@@ -39,5 +39,5 @@ docs:
         url: /common-platforms/pixhawk/
       - title: ROS Introduction
         url: /common-platforms/ros-intro/
-      - title: ROS Distributed Systems
+      - title: ROS over Multiple Machines
         url: /common-platforms/ros-distributed/
