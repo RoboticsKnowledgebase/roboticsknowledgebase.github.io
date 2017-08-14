@@ -253,4 +253,4 @@ defaults:
     values:
       layout: single
       sidebar:
-        - nav: "docs"
+        nav: "docs"
