@@ -13,12 +13,12 @@ docs:
   - title: System Design & Development
     children:
       - title: System Engineering
-        url: /SystemDesignDevelopment/SystemEngineering/
+        url: /system-design-development/system-engineering/
       - title: Mechanical Design
-        url: /SystemDesignDevelopment/MechanicalDesign/
+        url: /system-design-development/mechanical-design/
       - title: Printed Circuit Board Design
-        url: /SystemDesignDevelopment/PCBDesign/
+        url: /system-design-development/pcb-design/
       - title: Cable Management
-        url: /SystemDesignDevelopment/CableManagement/
+        url: /system-design-development/cable-management/
       - title: Subsystem Interface Modeling
-        url: /SystemDesignDevelopment/SubsystemInterfaceModeling/
+        url: /system-design-development/subsystem-interface-modeling/
