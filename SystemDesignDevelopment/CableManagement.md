@@ -1,8 +1,6 @@
 ---
-layout: single
 title: Cable Management
 ---
-# Effective Cable Management
 Effective cable management is essential for servicing, debugging and creating reliable robotic systems. Cabling is often regarded as one of the less glamorous parts of electrical engineering, but it is an essential and an extremely important part of creating a complete system.
 
 This page highlights the important steps for cable management including **Planning, Cable Creation and Installation.** If you decide to only read one part of this page, read the **Planning** section. This is the most important part of cable management that is often skipped. It's hard to skip the other two steps.
@@ -106,6 +104,6 @@ The final step is installing the cables into your system. This step is extremely
 If you have a lot of cables in your system, and even if you did a good job at grouping the wires in each cable you may still find yourself with messy cabling. Zip-ties are your friend here. Once you have routed all of the cables in your system, zip-tie the ones that are routed along the same path together.
 
 ### References
-(https://s-media-cache-ak0.pinimg.com/564x/b2/db/43/b2db4385f4faa3fdb542d2d277a3278a.jpg)
-(https://www.usb3.com/images/567861.jpg)
-(http://inlowsound.weebly.com/uploads/1/9/8/5/1985965/5192126_orig.jpgE)
+1. https://s-media-cache-ak0.pinimg.com/564x/b2/db/43/b2db4385f4faa3fdb542d2d277a3278a.jpg
+2. https://www.usb3.com/images/567861.jpg
+3. http://inlowsound.weebly.com/uploads/1/9/8/5/1985965/5192126_orig.jpgE
