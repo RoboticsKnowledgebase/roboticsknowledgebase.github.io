@@ -1,12 +1,6 @@
 # main links
 main:
-  - title: Getting Started
+  - title: Overview
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
+      - title: "Home"
+        url: /index.html
