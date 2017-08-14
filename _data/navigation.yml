@@ -16,3 +16,9 @@ docs:
         url: /SystemDesignDevelopment/SystemEngineering/
       - title: Mechanical Design
         url: /SystemDesignDevelopment/MechanicalDesign/
+      - title: Printed Circuit Board Design
+        url: /SystemDesignDevelopment/PCBDesign/
+      - title: Cable Management
+        url: /SystemDesignDevelopment/CableManagement/
+      - title: Subsystem Interface Modeling
+        url: /SystemDesignDevelopment/SubsystemInterfaceModeling/
