@@ -1,4 +1,6 @@
-# Setting up the ROS navigation stack for your custom robot- Part 1: Coordinate transforms
+---
+title: Setting up the ROS Navigation Stack for Custom Robots
+---
 
 ## Dealing With Transforms
 Setting up the ROS navigation stack on a robot that is not officially supported by ROS/3rd party is little bit tricky and can be time consuming. The [robot setup guide](http://wiki.ros.org/navigation/Tutorials/RobotSetup) is informative and helpful but can be confusing to many simply because it goes over a variety of steps. After a while, people may end up just following the lines without actually understanding the underlying reasons. This post tries to complement the information available on the ROS wiki and elsewhere to provide a better understanding of the components of navigation stack for a custom built robot.

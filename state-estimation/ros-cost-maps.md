@@ -1,5 +1,6 @@
-# Cost Maps in ROS
-
+---
+title: Cost Maps in ROS
+---
 ## Package to Use
 - ROS Package: http://wiki.ros.org/costmap_2d
 - Git Code: https://github.com/ros-planning/navigation/tree/jade-devel/costmap_2d

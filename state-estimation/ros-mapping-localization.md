@@ -1,5 +1,6 @@
-# ROS Mapping and Localization
-
+---
+title: ROS Mapping and Localization
+---
 ## Mapping
 To map the environment, there are many ROS packages which can be used:
 1. #### [Gmapping](http://wiki.ros.org/gmapping)

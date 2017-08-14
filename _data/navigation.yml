@@ -73,3 +73,18 @@ docs:
         url: /actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
         url: /actuation/vedder-electronic-speed-controller/
+  - title: State Estimation
+    url: /state-estimation/
+    children:
+      - title: Adaptive Monte Carlo Localization
+        url: /state-estimation/adaptive-monte-carlo-localization/
+      - title: ROCON Multi-Master Framework
+        url: /state-estimation/rocon-multi-master/
+      - title: ROS Cost Maps
+        url: /state-estimation/ros-cost-maps/
+      - title: ROS Mapping and Localization
+        url: /state-estimation/ros-mapping-localization/
+      - title: ROS Navigation
+        url: /state-estimation/ros-navigation/
+      - title: SBPL Lattic Planner
+        url: /state-estimation/sbpl-lattice-planner/

@@ -1,5 +1,6 @@
-# SBPL Lattice Planner
-
+---
+title: SBPL Lattice Planner
+---
 This tutorial covers implementing the Search Based Planning Lab's Lattice Planner in ROS indigo
 
 ## What is the problem to install SBPL_lattice_planner?

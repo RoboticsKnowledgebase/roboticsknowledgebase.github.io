@@ -1,5 +1,6 @@
-#  Adaptive Monte Carlo Localization
-
+---
+title:  Adaptive Monte Carlo Localization
+---
 ## What is a particle filter?
 Particle filter are initialized by a very high number of particles spanning the entire state space. As you get additional measurements, you predict and update your measurements which makes your robot have a multi-modal posterior distribution. This is a big difference from a Kalman Filter which approximates your posterior distribution to be a Gaussian. Over multiple iterations, the particles converge to a unique value in state space.
 
@@ -87,4 +88,4 @@ Here is a sample launch file. Generally you can leave many parameters at their d
 </launch>
 ```
 
-Best way to tune these parameters is to record a ROS bag file, with odometry and laser scan data, and play it back while tuning AMCL and visualizing it on RViz. This helps in tracking the performance based on the changes being made on a fixed data-set. 
+Best way to tune these parameters is to record a ROS bag file, with odometry and laser scan data, and play it back while tuning AMCL and visualizing it on RViz. This helps in tracking the performance based on the changes being made on a fixed data-set.
