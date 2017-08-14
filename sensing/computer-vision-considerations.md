@@ -3,7 +3,7 @@ title: Computer Vision for Robotics- Practical Considerations
 ---
 Things to take care of when working with vision in robotics:
 
-8 out of the 10 teams in MRSD Project '14-'15 used computer vision extensively. Its easy to get enchanted by the promises of the camera. However, computer vision can kill you if you don't heed to some important things. (It can kill you even after that though!). Below are some pitfalls one can avoid.
+Its easy to get enchanted by the promises of the camera. However, computer vision can kill you if you don't heed to some important things. (It can kill you even after that though!). Below are some pitfalls one can avoid:
 
 ## Lighting
 - Your vision algorithms effectiveness is directly dependent on the surrounding lighting, after all camera is just a device to capture light.
