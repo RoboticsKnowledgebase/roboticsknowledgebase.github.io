@@ -17,12 +17,14 @@ computers.
 ROS using the ROS master of one of the versions may cause problems in running few
 packages due to version/ message type/ dependency incompatibilities)
 3. Edit your bashrc file and add the following two lines at the end
+
 ```
-export ROS_MASTER_URI=http://
-<IP address of the computer running the ROS master (server)>:11311
+export ROS_MASTER_URI=http://<IP address of the computer running the ROS master (server)>:11311
 export ROS_IP= <IP address of the current computer>
 ```
-Link: http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+
+  - Link: http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+
 4. The computers are now connected and this can be tested by running roscore on the server
 laptop and trying to run packages such as ‘rviz’ (rosrun rviz rviz) on other laptops.
 5. Though the process may seem complete now, there are certain issues that need to be fixed.
