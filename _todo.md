@@ -5,8 +5,8 @@ Meeting Agenda:
 - Allowing Commenting in Threads?
 
 TODO:
-- Google Sitemap
 - Navigation
+- Add Front Matter to All Pages
 - Custom Domain
 - Search Function
 - Link to Github
@@ -16,5 +16,8 @@ TODO:
 - Writing & style standards
 - Landing page
 
+TEST:
+- Google Sitemap
+-
 DONE:
 - Template

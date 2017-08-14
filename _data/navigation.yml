@@ -3,7 +3,7 @@ main:
   - title: Home
     url: /
   - title: About
-    url: /about.html
+    url: /about/
 
 docs:
   - title: Overview
@@ -13,4 +13,4 @@ docs:
   - title: System Design & Development
     children:
       - title: System Engineering
-        url: /SystemDesignDevelopment/SystemEngineering.html
+        url: /SystemDesignDevelopment/SystemEngineering/
