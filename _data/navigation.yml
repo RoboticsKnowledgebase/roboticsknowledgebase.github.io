@@ -1,13 +1,12 @@
 # main links
 main:
-  - title: Home
-  - url: /index.html
-  children:
-    - title: "About"
-    - url: /about.html
-    # - title: "Sample Posts"
-    #   url: /year-archive/
-    # - title: "Sample Collections"
-    #   url: /collection-archive/
-    # - title: "Sitemap"
-#   url: /sitemap/
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Structure"
+        url: /docs/structure/
+      - title: "Installation"
+        url: /docs/installation/
+      - title: "Upgrading"
+        url: /docs/upgrading/
