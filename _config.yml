@@ -251,6 +251,7 @@ defaults:
       path: ""
       type: pages
     values:
+      related: true
       layout: single
       sidebar:
         nav: "docs"

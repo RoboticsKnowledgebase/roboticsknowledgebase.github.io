@@ -1,6 +1,4 @@
 TODO:
-- Static Navigation
-- Add Front Matter to All Pages
 - Custom Domain
 - Search Function
 - Link to Github
@@ -16,3 +14,5 @@ TEST:
 
 DONE:
 - Template
+- Static Navigation
+- Add Front Matter to All Pages
