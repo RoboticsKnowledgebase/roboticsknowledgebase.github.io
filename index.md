@@ -3,11 +3,18 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 title: Welcome to the Robotics Knowledgebase
-sidebar:
-  nav: "docs"
+layout: splash
+header:
+  caption: Photo by Ricardo Gomez Angel on [Unsplash](unsplash.com)
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/ricardo-gomez-angel-162935.jpg
+  cta_label: "Start Learning"
+  cta_url: "http://roboticsknowledgebase.com/wiki/"
+excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
 ---
-### Why a wiki for robotics?
-**The Robotics Knowledgebase** exists to advance knowledge in the robotics discipline.  
+### Why a Wiki for Robotics?
+
 
 As practitioners, we believe that we are pioneering a new field.
 Robots are inherently complex and require knowledge across numerous disciplines. This know-how takes time to develop.
