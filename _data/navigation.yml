@@ -88,3 +88,84 @@ docs:
         url: /state-estimation/ros-navigation/
       - title: SBPL Lattic Planner
         url: /state-estimation/sbpl-lattice-planner/
+  - title: Programming
+    url:  /programming/
+    children:
+      - title: Boost Library
+        url: /programming/boost-library/
+      - title: Boost Maps and Vectors
+        url: /programming/boost-maps-vectors/
+      - title: Cmake
+        url: /programming/cmake/
+      - title: Eigen Library
+        url: /programming/eigen-library/
+      - title: Git
+        url: /programming/git/
+      - title: Programming Interviews
+        url: /programming/google-programming-interviews/
+      - title: Multithreaded Programming
+        url: /programming/multithreaded-programming/
+      - title: Programming Tutorials and Resources
+        url: /programming/tutorials-resources/
+      - title: Python Construct
+        url: /programming/python-construct/
+  - title: Networking
+    url: /networking/
+    children:
+      - title: Bluetooth Sockets
+        url: /networking/bluetooth-sockets/
+      - title: Xbee Pro DigiMesh 900
+        url: /networking/xbee-pro-digimesh-900/
+  - title: Interfacing
+    url: /interfacing/
+    children:
+      - title: Myo
+        url: /interfacing/myo/
+      - title: Blink(1) LED
+        url: /interfacing/blink-1-led/
+  - title: Computing
+    url: /computing/
+    children:
+      - title: Adruino
+        url: /computing/arduino/
+      - title: Single Board Computers
+        url: /computing/single-board-computers/
+      - title: Upgrading Ubuntu Kernels
+        url: /computing/upgrading-ubuntu-kenel/
+      - title: Ubuntu 14.04 on Chromebook
+        url: /computing/ubuntu-chromebook/
+  - title: Fabrication
+    url: /fabrication/
+    children:
+      - title: Machining & Prototyping
+        url: /fabrication/machining-prototyping/
+      - title: Rapid Prototyping
+        url: /fabrication/rapid-prototyping/
+      - title: Turning Process
+        url: /fabrication/turning-process/
+      - title: Milling Process
+        url: /fabrication/milling-process/
+      - title: Soldering
+        url: /fabrication/soldering/
+      - title: 3D Printers
+        url: /fabrication/3d-printers/
+      - title: MakerBot Replicator 2x
+        url: /fabrication/makerbot-replicator-2x/
+      - title: CubePro
+        url: /fabrication/cube-pro/
+  - title: Math
+  - title: Tools
+    url: /tools/
+    children:
+      - title: Vim
+        url: /tools/vim/
+      - title: Altium Circuitmaker
+        url: /tools/altium-circuitmaker/
+      - title: SolidWorks
+        url: /tools/solidworks/
+      - title: TMUX
+        url: /tools/tmux/
+      - title: udev Rules
+        url: /tools/udev-rules/
+      - title: Rosbags in Matlab
+        url: /tools/rosbags-matlab/
