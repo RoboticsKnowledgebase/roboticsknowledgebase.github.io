@@ -39,8 +39,6 @@ docs:
         url: /common-platforms/pixhawk/
       - title: ROS Introduction
         url: /common-platforms/ros-intro/
-      - title: ROS over Multiple Machines
-        url: /common-platforms/ros-distributed/
   - title: Sensing
     url: /sensing/
     children:
@@ -78,8 +76,6 @@ docs:
     children:
       - title: Adaptive Monte Carlo Localization
         url: /state-estimation/adaptive-monte-carlo-localization/
-      - title: ROCON Multi-Master Framework
-        url: /state-estimation/rocon-multi-master/
       - title: ROS Cost Maps
         url: /state-estimation/ros-cost-maps/
       - title: ROS Mapping and Localization
@@ -116,6 +112,10 @@ docs:
         url: /networking/bluetooth-sockets/
       - title: Xbee Pro DigiMesh 900
         url: /networking/xbee-pro-digimesh-900/
+      - title: ROCON Multi-Master Framework
+        url: /networking/rocon-multi-master/
+      - title: ROS over Multiple Machines
+        url: /networking/ros-distributed/
   - title: Interfacing
     url: /interfacing/
     children:
