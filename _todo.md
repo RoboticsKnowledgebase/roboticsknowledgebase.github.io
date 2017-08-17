@@ -1,5 +1,4 @@
 TODO:
-- Custom Domain
 - Search Function
 - Link to Github
 - Introduction
@@ -16,3 +15,4 @@ DONE:
 - Template
 - Static Navigation
 - Add Front Matter to All Pages
+- Custom Domain
