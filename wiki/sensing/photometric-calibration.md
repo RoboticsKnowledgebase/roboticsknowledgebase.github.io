@@ -1,5 +1,5 @@
 ---
-title: CMOS Sensor Characterization in Cameras: Absolute Lumen Calibration
+title: Photometric Calibration
 ---
 
 ## Background
