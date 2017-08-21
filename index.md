@@ -9,9 +9,11 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/ricardo-gomez-angel-162935.jpg
-  cta_label: "Start Learning"
-  cta_url: "http://roboticsknowledgebase.com/wiki/"
+  cta_label: {{include search.html}}
+  # cta_label: "Start Learning"
+  # cta_url: "http://roboticsknowledgebase.com/wiki/"
 excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
+excerpt:
 ---
 ### Why a Wiki for Robotics?
 
