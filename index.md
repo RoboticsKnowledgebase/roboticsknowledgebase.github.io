@@ -14,4 +14,4 @@ header:
 excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
 ---
 
-## Search the wiki: {% include google-search.html %}
+**Search the Wiki** {% include google-search.html %}
