@@ -13,5 +13,4 @@ header:
   cta_url: "http://roboticsknowledgebase.com/wiki/"
 excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
 ---
-
-**Search the Wiki** {% include google-search.html %}
+{% include google-search.html %}
