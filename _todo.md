@@ -1,12 +1,14 @@
 TODO:
+- Remove wiki structure
 - Link to Github
 - Introduction
 - Wiki workflow tutorial
 - Tracking traffic
 - Writing & style standards
-- Landing page
-- Dynamic Navigation Generation
 
+- Separate repositories for content and technical files
+- Dynamic Navigation Generation
+-
 TEST:
 - Google Sitemap
 
@@ -16,3 +18,4 @@ DONE:
 - Add Front Matter to All Pages
 - Custom Domain
 - Search Function
+- Landing page
