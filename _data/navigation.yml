@@ -7,7 +7,7 @@ main:
   - title: Wiki
     url: /wiki/
 
-docs:
+wiki:
   - title: Overview
     children:
       - title: Home
@@ -16,6 +16,8 @@ docs:
         url: /about/
       - title: Wiki Index
         url: /wiki/
+      - title: Contribute
+        url: /docs/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
@@ -175,3 +177,19 @@ docs:
         url: /wiki/tools/udev-rules/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
+
+docs:
+  - title: Overview
+    children:
+      - title: Home
+        url: /
+      - title: About
+        url: /about/
+      - title: Wiki Index
+        url: /wiki/
+      - title: Contribute
+        url: /docs/
+  - title: Contribute
+    children:
+      - title: Introduction
+        url: /docs/

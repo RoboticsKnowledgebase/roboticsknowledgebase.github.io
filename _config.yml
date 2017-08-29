@@ -112,6 +112,7 @@ author:
 include:
   - .htaccess
   - _pages
+  - /docs
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -136,8 +137,7 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
+  - /test # ignore page /test
 keep_files:
   - .git
   - .svn
@@ -254,4 +254,4 @@ defaults:
       related: true
       layout: single
       sidebar:
-        nav: "docs"
+        nav: "wiki"
