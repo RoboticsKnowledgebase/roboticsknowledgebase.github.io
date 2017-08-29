@@ -1,11 +1,9 @@
 TODO:
-- Remove wiki structure
+- Tracking traffic
+- Wiki workflow tutorial
+- Writing & style standards
 - Link to Github
 - Introduction
-- Wiki workflow tutorial
-- Tracking traffic
-- Writing & style standards
-
 - Separate repositories for content and technical files
 - Dynamic Navigation Generation
 -
