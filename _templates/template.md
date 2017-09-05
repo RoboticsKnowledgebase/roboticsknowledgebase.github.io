@@ -1,3 +1,6 @@
+---
+title: Title goes here
+---
 # Subject
 
 Contents

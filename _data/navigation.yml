@@ -1,12 +1,4 @@
-# main links
-main:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Wiki
-    url: /wiki/
-
+# Wiki links. These show up in the sidebar in the order they appear here.
 wiki:
   - title: Overview
     children:
@@ -178,6 +170,7 @@ wiki:
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
 
+# Navigation for supporting documentation.
 docs:
   - title: Overview
     children:
@@ -193,3 +186,12 @@ docs:
     children:
       - title: Introduction
         url: /docs/
+
+# Main links appear in the header. 
+main:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Wiki
+    url: /wiki/

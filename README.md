@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+The *Robotics Knowledgebase* is the Wiki for Robot Builders. We document and share application details left out of textbooks and academic papers. 
 
-You can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Contributing to the Robotics Wiki
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+To submit an original article follow these steps:
+1. [Fork](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io#fork-destination-box) this repository.
+2. Locate the appropriate directory for your submission in `/wiki`
+3. Copy `_templates/template.md` into the directory.
+4. Write your article. We recommend the following options:
+  - Connect [Prose.io](http://prose.io/) to your Github account and write from your browser.
+  - Clone the respository to your device and use the [Atom editor](https://atom.io/). We recommend the [Markdown-Writer](https://atom.io/packages/markdown-writer) and [Markdown-Image-Helper](https://atom.io/packages/markdown-image-helper) packages.
+5. Rename `template.md` to the subject of your article. The new name should be lowercase, have hyphens for spaces, and end with `.md` (`this-is-an-example.md`)
+6. Add a link to your article to `_data/navigation.yml` under the `wiki` heading.
+  - Do not modify the `main` or `docs` lists.
+7. Submit a pull request to the Robotics Knowledgebase.
+  - If your working from your device, don't forget to add, commit, and push your changes first.
+8. View your page after the editors accept your submission.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/smbryan/smbryan.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+If you spot a mistake (or think that you have an improvement to an article), [create an issue](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/issues) to discuss your recommended changes.
