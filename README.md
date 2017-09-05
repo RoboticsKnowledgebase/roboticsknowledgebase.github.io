@@ -1,14 +1,17 @@
-The *Robotics Knowledgebase* is the Wiki for Robot Builders. We document and share application details left out of textbooks and academic papers. 
+## Overview
+The **Robotics Knowledgebase** is the Wiki for Robot Builders. It exists to advance knowledge in the robotics discipline. We document and share application details left out of textbooks and academic papers.
 
-## Contributing to the Robotics Wiki
 
+This Knowledgebase holds knowledge essential to building working robots. We believe robots should be built to solve specific problems. We take a systems-based approach to building them. We include Project Management practices to ensure project completion.
+
+## Contribution Quickstart Guide
 To submit an original article follow these steps:
-1. [Fork](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io#fork-destination-box) this repository.
+1. Fork this repository.
 2. Locate the appropriate directory for your submission in `/wiki`
 3. Copy `_templates/template.md` into the directory.
 4. Write your article. We recommend the following options:
   - Connect [Prose.io](http://prose.io/) to your Github account and write from your browser.
-  - Clone the respository to your device and use the [Atom editor](https://atom.io/). We recommend the [Markdown-Writer](https://atom.io/packages/markdown-writer) and [Markdown-Image-Helper](https://atom.io/packages/markdown-image-helper) packages.
+  - Clone the respository to your device. We recommend using the [Atom editor](https://atom.io/) with the  [Markdown-Writer](https://atom.io/packages/markdown-writer) and [Markdown-Image-Helper](https://atom.io/packages/markdown-image-helper) packages.
 5. Rename `template.md` to the subject of your article. The new name should be lowercase, have hyphens for spaces, and end with `.md` (`this-is-an-example.md`)
 6. Add a link to your article to `_data/navigation.yml` under the `wiki` heading.
   - Do not modify the `main` or `docs` lists.
@@ -17,3 +20,64 @@ To submit an original article follow these steps:
 8. View your page after the editors accept your submission.
 
 If you spot a mistake (or think that you have an improvement to an article), [create an issue](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/issues) to discuss your recommended changes.
+
+## Site Structure
+### Supporting technology
+The Robotics Knowledgebase makes use of the following:
+- [Github Pages](https://help.github.com/categories/20/articles)
+- [Jekyll](https://jekyllrb.com/)
+- [Minimal Mistakes Theme](https://mmistakes.github.io/minimal-mistakes/) by [Michael Rose](https://mademistakes.com/)
+
+### Directories
+The wiki itself is contained in the `/wiki` folder. The `/docs` folder exists to contain future documentation on contributing and supporting the wiki. The wiki contains the following following categories:
+- **Actuation**
+  - Topics related to the moving components including motors and controls.
+- **Common Platforms**
+  - Covers common hardware and software frameworks used in robotics. ROS should be included here.
+- **Computing**
+  - Topics related to hardware brains for robotics including on-board computers and cluster computing.
+- **Fabrication**
+  - Topics related to techniques and tools for fabricating a robot.
+- **Interfacing**
+  - Covers means of interfacing with a robot outside of networking.
+- **Networking**
+  - Topics related to communications infrastructure for robotics including programming and wireless technologies.
+- **Programming**
+  - General programming topics including languages and practices.
+- **Project Management**
+  - Topics related to project management practices.
+- **Sensing**
+  - Covers topics related to sensors including computer vision and cameras.
+- **State Estimation**
+  - Topics related to the position and orientation of a robot including navigation, localization, and mapping.
+- **System Design and Development**
+  - Covers topics related to Systems Engineering.
+- **Tools**
+  - Useful hardware and software for robotics not used directly in the robot itself.
+
+## Directory Structure
+Individual subfolders should contain both an `/assets` folder (for supporting files including images) and an `index.md` file. 
+## Future Work
+This Knowledgebase is an evolving project. There are numerous areas for improvement in both content and site features.
+
+### Needed topics
+- Introduction to planning your robotics project
+- Updated overview of single-board computers (`/wiki/computing/single-board-computers.md`)
+- Mobility Overview (put in `/actuation`)
+- Manipulation Overview (put in `/actuation`)
+- State Estimation Overview
+- System Engineering Overview
+- Using GPUs for Computer Vision
+- Using GPUs for Machine Learning
+- V-model
+-
+
+### Todo
+- Logo for Robotics Knowledgebase
+- Writing & style standards
+- Default template
+- Link to Github
+- Collapsed Navigation for sidebar
+- Separate repositories for content and technical files
+- Dynamic Navigation Generation
+- Implement Math Support
