@@ -69,7 +69,7 @@ def recover_msg(msg):
 ```
 This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on. You can also embed GitHub Gists:
 
-`<script src="https://gist.github.com/jamesmcm/47403d77258bd8f8310c"></src>`
+<script src="https://gist.github.com/jamesmcm/47403d77258bd8f8310c"></src>
 
 #### Images and Video
 Images and embedded video are supported.
