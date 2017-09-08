@@ -170,6 +170,17 @@ wiki:
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
 
+# Main links appear in the header.
+main:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Wiki
+    url: /wiki/
+  - title: Contribute
+    url: /docs/
+
 # Navigation for supporting documentation.
 docs:
   - title: Overview
@@ -186,12 +197,3 @@ docs:
     children:
       - title: Introduction
         url: /docs/
-
-# Main links appear in the header. 
-main:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
-  - title: Wiki
-    url: /wiki/
