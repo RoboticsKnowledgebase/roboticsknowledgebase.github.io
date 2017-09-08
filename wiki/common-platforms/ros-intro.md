@@ -6,7 +6,7 @@ From ROS's homepage:
 
 > ROS (Robot Operating System) provides libraries and tools to help software developers create robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. ROS is licensed under an open source, BSD license.
 
-At its core, ROS provides the functionality for programs to communicate with each other either on the same computer or over a network. ROS's power comes through combining many programs together to allow a robot to function. Built in to ROS are many functions, such as 2D planning and navigation, robot manipulator planning and navigation, mapping, visualization and more.
+At its core, ROS provides the functionality for programs to communicate with each other either on the same computer or over a network. ROS's power comes through combining many programs together to allow a robot to function. In ROS community, many functions are shared and easily accessible, such as fundamental algorithms in mapping, navigation, motion planning, visualization and more. Common platforms such as the robot manipulator or the ground mobile vehicle.
 
 ## Further Reading
 1. ### [Base Tutorials](http://wiki.ros.org/ROS/Tutorials)
