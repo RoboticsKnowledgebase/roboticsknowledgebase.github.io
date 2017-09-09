@@ -30,6 +30,8 @@ wiki:
         url: /wiki/project-management/product-development-complex-systems/
       - title: Risk Management
         url: /wiki/project-management/risk-management/
+      - title: This is an Example
+        url: /wiki/project-management/this-is-an-example/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
