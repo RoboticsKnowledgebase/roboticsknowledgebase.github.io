@@ -37,6 +37,14 @@ Syncing a fork is accomplished through git on your local device. You should alre
 6. This brings your fork's master branch into sync with the upstream repository, **without losing your local changes**:
   - `git merge upstream/master`
 
+### Clear Changes and Update your Fork
+This method is used specifically to erase all changes to your fork and replace it with the most updated copy of the Wiki.
+1. Follow steps 1-5 from **Keeping your Fork Updated** above.
+2. Reset your local repository:
+  - `git reset --hard upstream/master `
+3. Force the new repository to overwrite your remote fork:
+  - `git push origin master --force`
+
 ## Site Structure
 ### Supporting technology
 The Robotics Knowledgebase makes use of the following:
