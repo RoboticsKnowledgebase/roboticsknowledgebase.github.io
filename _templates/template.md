@@ -30,8 +30,8 @@ Here are some hints on writing (in no particular order):
   - Write tutorials to achieve a specific outcome.
   - Relay theory in an intuitive way (especially if you initially struggled).
     - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-- Document. Don't Create.
-  - Record as you go along. You do not need to be an expert to produce useful content. In fact, it may be better to be a novice.
+  - You do not need to be an expert to produce useful content.
+  - Document procedures as you learn them. You or others may refine them later. 
 - Use a professional tone.
   - Be non-partisan.
     - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
