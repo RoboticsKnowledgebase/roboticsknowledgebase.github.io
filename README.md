@@ -26,23 +26,11 @@ If you spot a mistake (or think that you have an improvement to an article), [cr
 ### Keeping your Fork Updated
 Syncing a fork is accomplished through git on your local device. You should already have Git installed and cloned your fork to your computer.
 1. Navigate to the working directory of your local project.
-2. Configure a remote that points to the upstream repository. On your Linux device, use:
-
-`git remote add upstream https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io`
-
-This only needs to be done once.
+2. Configure a remote that points to the upstream repository. On your Linux device, use: `git remote add upstream https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io`. This only needs to be done once.
 3. Use `git remote -v` to verify that the upstream repository is listed.
-4. Fetch the latest commits from the upstream repository. These will be stored in a local branch `upstream/master`:
-
-`git fetch upstream`
-
-5. Check out your fork's local `master` branch:
-
-`git checkout master`
-
-6. This brings your fork's master branch into sync with the upstream repository, **without losing your local changes**.
-
-`git merge upstream/master`
+4. Fetch the latest commits from the upstream repository. These will be stored in a local branch `upstream/master`: `git fetch upstream`
+5. Check out your fork's local `master` branch: `git checkout master`
+6. This brings your fork's master branch into sync with the upstream repository, **without losing your local changes**: `git merge upstream/master`
 
 ## Site Structure
 ### Supporting technology
