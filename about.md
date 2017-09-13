@@ -1,5 +1,6 @@
 ---
 title: About
+exclude: true
 ---
 ### Why a Wiki for Robotics?
 As practitioners, we believe that we are pioneering a new field.

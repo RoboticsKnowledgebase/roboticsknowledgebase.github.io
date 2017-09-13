@@ -3,6 +3,7 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 title: The Wiki for Robot Builders
+exclude: true
 layout: splash
 header:
   caption: Photo by Ricardo Gomez Angel on [Unsplash](https://unsplash.com)
