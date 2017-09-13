@@ -31,7 +31,7 @@ Here are some hints on writing (in no particular order):
   - Relay theory in an intuitive way (especially if you initially struggled).
     - It is likely that others are confused in the same way you were. They will benefit from your perspective.
   - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later. 
+  - Document procedures as you learn them. You or others may refine them later.
 - Use a professional tone.
   - Be non-partisan.
     - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
@@ -94,4 +94,4 @@ Use this space to reinforce key points and to suggest next steps for your reader
 ## References
 - Links to References go here.
 - References should be in alphabetical order.
-- References should follow X format.
+- References should follow IEEE format.
