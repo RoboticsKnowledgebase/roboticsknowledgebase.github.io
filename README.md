@@ -51,6 +51,7 @@ The Robotics Knowledgebase makes use of the following:
 - [Github Pages](https://help.github.com/categories/20/articles)
 - [Jekyll](https://jekyllrb.com/)
 - [Minimal Mistakes Theme](https://mmistakes.github.io/minimal-mistakes/) by [Michael Rose](https://mademistakes.com/)
+- [MathJax](http://docs.mathjax.org/en/latest/)
 
 ### Directories
 The wiki itself is contained in the `/wiki` folder. The `/docs` folder exists to contain future documentation on contributing and supporting the wiki. The wiki contains the following categories:
@@ -98,9 +99,9 @@ This Knowledgebase is an evolving project. There are numerous areas for improvem
 ### Todo
 - Logo for Robotics Knowledgebase
 - Writing & style standards
-- Default template
+- ~~Default template~~
 - Link to Github
 - Collapsed Navigation for sidebar
 - Separate repositories for content and technical files
 - Dynamic Navigation Generation
-- Implement Math Support
+- ~~Implement Math Support~~
