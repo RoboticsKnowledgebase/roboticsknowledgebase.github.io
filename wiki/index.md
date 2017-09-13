@@ -1,6 +1,6 @@
 ---
 title: Wiki Index
-{% if page.xsl %}
+exclude: true
 ---
 {% include google-search.html %}
 
