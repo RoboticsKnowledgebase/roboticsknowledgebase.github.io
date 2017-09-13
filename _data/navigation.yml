@@ -172,12 +172,10 @@ wiki:
 
 # Main links appear in the header.
 main:
-  - title: Home
-    url: /
-  - title: About
-    url: /about/
   - title: Wiki
     url: /wiki/
+  - title: About
+    url: /about/
   - title: Contribute
     url: /docs/
 
