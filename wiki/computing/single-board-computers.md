@@ -2,7 +2,8 @@
 title: Single-Board Computers
 ---
 
-> This article is out of date and should not be used in selecting components for your system.
+This article is out of date and should not be used in selecting components for your system. You can help us improve it by [editing it](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
+{: .notice--warning}
 
 To eliminate the use of bulky laptops on mobile robots and prevent tethering otherwise, single board computers may seem like a wise option. There are various affordable single board computers available in the market such as:
 1. Hardkernel ODroid X2 – ARM 1.7Ghz quad core, 2gb RAM
