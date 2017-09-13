@@ -69,6 +69,10 @@ def recover_msg(msg):
 ```
 This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
+#### LaTex Math Support
+Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
+\\[ \frac{1}{n^{2}} \\]
+
 #### Images and Video
 Images and embedded video are supported.
 

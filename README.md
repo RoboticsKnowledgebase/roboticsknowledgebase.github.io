@@ -98,9 +98,9 @@ This Knowledgebase is an evolving project. There are numerous areas for improvem
 ### Todo
 - Logo for Robotics Knowledgebase
 - Writing & style standards
-- Default template
+- ~~Default template~~
 - Link to Github
 - Collapsed Navigation for sidebar
 - Separate repositories for content and technical files
 - Dynamic Navigation Generation
-- Implement Math Support
+- ~~Implement Math Support~~
