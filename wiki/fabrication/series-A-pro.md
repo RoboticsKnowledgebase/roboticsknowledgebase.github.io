@@ -5,7 +5,7 @@ The Series A Pro uses a custom version of Cura slicer software,[Cura Type A](htt
 
 
 ## Getting Started
-The Series A Pro uses a web platform to manage and monitor your prints. Once Cura is installed and you have your .STL prepared, turn on the Series A Pro and wait for about 3 minutes. A WiFi network named "Series1-10610" should appear. Connect to this network. In a bowser window, go to <http://series1-10610.local:5000>. This should load the Octoprint Series A web interface. 
+The Series A Pro uses a web platform to manage and monitor your prints. Once Cura is installed and you have your .STL prepared, turn on the Series A Pro and wait for about 3 minutes. A WiFi network named "Series1-10610" should appear. Connect to this network. 
 
 > You will not have internet access for the remainder of the setup to until you begin your print! Make sure everything you need to print is pre-downloaded.
 
