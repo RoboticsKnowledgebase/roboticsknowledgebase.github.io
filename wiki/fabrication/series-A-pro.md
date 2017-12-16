@@ -1,7 +1,7 @@
 The Series A Pro 3-D printer is a reliable platform that offers a large build volume, flexible controls (including the option to add custom G-code), print monitoring, a large range of print materials. Compared to more beginner-friendly but restrictive options, like the MakerBot, the Series A allows more control and flexibility to the quality, speed, and strength of your print. It also allows the use of more print material options including PLA, PETT, PETG, Nylon, and NijaFlex. 
 
 ## Software
-The Series A Pro uses a custom version of Cura slicer software,[Cura Type A](https://www.typeamachines.com/downloads#Software), to prepare .STL files for printing. Install, but do not setup Cura until you are ready to setup the Series A Pro on your machine. 
+The Series A Pro uses a custom version of Cura slicer software,[Cura Type A].(https://www.typeamachines.com/downloads#Software), to prepare .STL files for printing. Install, but do not setup Cura until you are ready to setup the Series A Pro on your machine. 
 
 
 ## Getting Started
@@ -14,7 +14,7 @@ In a bowser window, go to <http://series1-10610.local:5000>. This should load th
 Once you are connected, open Cura Type A. When prompted, type in our printer's serial number and API key:
 - Serial number: 10610
 - API Key: Click on the wrench icon in the upper right hand corner of the Series A webpage and go to the API tab. Copy and paste the API key. 
-![Find your API Key here](assets/images/SeriesA_APIKey.jpg)
+![Find your API Key here](assets/SeriesA_APIKey.jpg)
 
 Click the "Configure" button to prepare your printer. Cura Type A should open. 
 
@@ -28,7 +28,7 @@ The Series A Pro printer generally uses PLA (as opposed to ABS). PLA requires ve
 ### Print Profiles
 The standard profile is a good compromise between speed and print quality for PLA on the Series A Pro. 
 [Download SeriesA_Standard_Profile.zip](assets/SeriesA_Standard_Profile.zip)
-![Print Quality of Standard Profile](assets/images/SeriesA_PLA_SP.jpg)
+![Print Quality of Standard Profile](assets/SeriesA_PLA_SP.jpg)
 
 ## Tips
 #### Changing Fillament
