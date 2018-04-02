@@ -17,7 +17,7 @@ To submit an original article follow these steps:
 6. Add a link to your article to `_data/navigation.yml` under the `wiki` heading.
   - Do not modify the `main` or `docs` lists.
 7. Submit a pull request to the Robotics Knowledgebase.
-  - If your working from your device, don't forget to add, commit, and push your changes first.
+  - If you're working from your device, don't forget to add, commit, and push your changes first.
 8. Editors may request changes before they accept your pull request. Use their feedback to improve your entry and resubmit.
 
 ### Improving Articles
@@ -99,9 +99,9 @@ This Knowledgebase is an evolving project. There are numerous areas for improvem
 ### Todo
 - Logo for Robotics Knowledgebase
 - Writing & style standards
-- ~~Default template~~
 - Link to Github
 - Collapsed Navigation for sidebar
 - Separate repositories for content and technical files
 - Dynamic Navigation Generation
+- ~~Default template~~
 - ~~Implement Math Support~~
