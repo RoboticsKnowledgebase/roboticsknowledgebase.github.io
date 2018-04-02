@@ -15,6 +15,8 @@ To accelerate the development of both projects and individual skills, we need an
 ### Where should I start?
 
 ### How can I contribute?
+If you would like to contribute an entry to the Robotics Knowledgebase's Wiki, or would like to improve an existing entry, please see the README on our [Github Repository](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
+
 You can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
