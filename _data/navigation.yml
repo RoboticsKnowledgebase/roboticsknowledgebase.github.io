@@ -8,6 +8,8 @@ wiki:
         url: /about/
       - title: Wiki Index
         url: /wiki/
+      - title: Contribute
+        url: /docs/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
@@ -124,7 +126,7 @@ wiki:
   - title: Computing
     url: /wiki/computing/
     children:
-      - title: Arduino
+      - title: Adruino
         url: /wiki/computing/arduino/
       - title: Single Board Computers
         url: /wiki/computing/single-board-computers/
@@ -176,6 +178,8 @@ main:
     url: /wiki/
   - title: About
     url: /about/
+  - title: Contribute
+    url: /docs/
 
 # Navigation for supporting documentation.
 docs:
@@ -187,3 +191,9 @@ docs:
         url: /about/
       - title: Wiki Index
         url: /wiki/
+      - title: Contribute
+        url: /docs/
+  - title: Contribute
+    children:
+      - title: Introduction
+        url: /docs/
