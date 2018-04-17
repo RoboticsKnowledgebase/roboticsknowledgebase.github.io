@@ -82,7 +82,7 @@ wiki:
         url: /wiki/state-estimation/ros-mapping-localization/
       - title: ROS Navigation
         url: /wiki/state-estimation/ros-navigation/
-      - title: SBPL Lattic Planner
+      - title: SBPL Lattice Planner
         url: /wiki/state-estimation/sbpl-lattice-planner/
   - title: Programming
     url:  /wiki/programming/
