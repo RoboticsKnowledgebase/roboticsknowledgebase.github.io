@@ -2,6 +2,7 @@
 title: About
 exclude: true
 ---
+
 ### Why a Wiki for Robotics?
 As practitioners, we believe that we are pioneering a new field.
 Robots are inherently complex and require knowledge across numerous disciplines. This know-how takes time to develop.
@@ -15,30 +16,10 @@ To accelerate the development of both projects and individual skills, we need an
 ### Where should I start?
 
 ### How can I contribute?
-You can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+
+For simple edits, you can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+
+Please see the [Contribute page](http://roboticsknowledgebase.com/docs) for more details.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
