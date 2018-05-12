@@ -62,74 +62,65 @@ There are two types of ballscrews available at different price points, rolled ba
 
 The engineering cost is that another major difference is that leadscrews are relatively non-backdrivable depending on the lead angle which is the angle of the thread helix. This is desireable in some applications such as heavy Z-Axis on CNC machines. If power is disengaged from a leadscrew based actuator, friction will keep a heavy load from falling, wheras with a much lower friction system in the ballscrew, the axis will fall straight down if there is not a electronic or mechanical brake installed which stops it from turning while motor power is off.
 
+As a screw system, if not preloaded, ballscrew and leadscrew will both have backlash, causing lost motion. This can be combated for ballscrews in the same way as linear bearings, but leadscrews, unlike bushings, and also reduce backlash by using what is called an Anti-Backlash nut. This consists of two lead nuts connected by a spring that is slightly compressed when the lead nut is screwed onto the lead screw. One lead nut will be pressed against the top of the threads while the other will be pressed against the bottom, preventing backlash. This does increase friction and thus heat generation.
+
 Ballscrews and leadscrews also act as gearing based on the lead. A lower lead will provide more linear force for the same torque. They also are extremely rigid systems and commonly show up in high force, high precision applications such as manufacturing. 
 
 ## Rack and Pinion Systems
+A Rack and Pinion is essentially a gear with a circumference of your desired travel that has been unrolled.
+As with traditional gears, rack and pinions can have straight cut or helical gear teeth and can deliver high forces for long travel ranges at a reasonable cost. Like a belt, a Rack and Pinion canmaintain relatively high speeds, but unlike a belt, a rack and pinion can drive heavy loads without needing tensioning. 
+
+The actuation force is higher for lower pinion diameters, but your achivable speeds will go down as the circumference decreases. Circumference will also determine the resolution with indexed motors with a higher resolution for smaller circumferences.
+
+The major disadvantage to rack and pinion systems is that, as with gear systems, backlash will cause lost motion when switching travel directions. Unlike a leadscrew, removing backlash on a rack and pinion is not cheap. Solutions incluse having two identical pinions slightly next to each other slightly offset in angle. A torsion spring is then used to have one gear press against one side of the rack teeth while the other is pressed against the opposite side. There are also electronic solutions which do much the same thing. This can push the price of a ballscrew system lower than that of a rack and pinion very quickly depending on tolerances.
 
 ## Linear Motors
+Linear Motors are brushless rotational motors unrolled  into long flat stages. Linear motors are made up of two sections, the forcer and the platen. The forcer contains the energized coils that create magnetic fields to move the "rotor" (note, nothing actually rotates, the rotor in this case is just the moving part, the stator is the stationary part) while the platen is either a flat aluminum plate for an induction motor or a piece with magnets end to end in a SNNSSN type configuration, where the repelling ends are forced together for what are called synchronous motors. 
+
+DC "brushed" Linear Motors do exist, but they are not usually used for linear motion due to current requirements and high friction at common linear motor actuation speeds. They are most commonly used in railgun type applications. 
+
+Induction motors use Lenz's Law to create opposing magnetic fields in the metal plate below them with coils of wirea around a magnetic core. They are commonly 3 phase AC motors and are sometimes used in high performance applications. They also produce a levitating effect which makes them well suited to maglev type applications. 
+
+Synchronous motors use permanent magnets and multiple phases instead of induction. This makes them more expensive for long travel than Induction motors. The magnetic field of the permanent magnets provides much increased force and accelerations. There are a couple of common constructions of synchronous motors including U-channel, linear shaft motors, and a special case, linear stepper motors. 
+
+U-channel motors have a set of coils held between the permanent magnets on both sides of a piece of precision machined u-channel. Linear shaft motors have the magnets constrained inside a precision ground shaft like a linear bushing with the coils in the carriage going around the shaft. Linear stepper motors are simply 2 phase (90 degree phase offset) brushless linear motors and can be controlled with standard stepper motor drivers for high holding torque in open loop configurations.
+
+The major advantage to offset the extremely large cost of linear motors is their ability to generate incredible accelerations and speeds compared to even belts and ballscrews. Maximum acclerations of more than 10Gs are possible with small loads. Another factor is that linear motors can be completely non-contact unlike all other linear motion systems with their linear guides if air or hydrostatic guides are used. This provides for extremely smooth motion for sensitive applications like metrology where the slightest imperfection in a guiderail would otherwise cause inaccuracy.
+
+The last, uncommon type of linear motor is the piezoelectric motor. These motors use the piezoelectric effect to essentially walk along a shaft in extremely small increments. These motors can produce extremely precise and accurate movement with the highest of resolutions, but are as slow as a snail. If you need a piezoelectric motor, you'll probably know you need a piezoelectric motor. 
+
 ## Stage Indexing
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+In order to perform precise position control for linear actuators, some sort of index is needed so that a reference point can be established. This can come in several forms.
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+One extremely frugal way to perform this is with a hard stop, if you are using a stepping type motor in open loop mode for any linear actuator, if you drive the axis into a hard stop, you know your position. This was what was done with old floppy drives in order to get a zero position with no sensor. 
 
+Many different types of sensor can be used to index an axis. These include physical switches, optical interrupters, capacitive and lasor distance measurement sensors, and one very important class of sensors known as encoders. 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+Encoders are used to determine how far an axis has moved, and potentially where the axis is on its travel. They operate via either optical or magnetic disks(rotary motion) or strips(linear motion) which, when run past a sensor will produce a specific series of digital outputs corrosponding to movement. These can come in absolute varieties where the digital outputs will tell you the exact position on the encoder disk or strip you are reading, or incremental varieties where the number of pulses counted will correspond to how far the rotary or linear axis has moved.  A incremental encoder can also come with a index channel witch can provide a point of reference on where to start in your travel. 
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+Both varieties of encoders can be used to implement closed loop position, velocity, and torque/force control with any variety of motor be it linear or rotary.
 
+For non stepper type synchronous linear motors, there is one more type of relevant sensor. A synchronous linear motor must have feedback in order to time its phases to move in the correct order/direction. This can be accomplished with an linear encoder strip or Hall Effect Sensors. The Hall Effect Sensors will read the Magnetic field intensity and the peaks for north and south can be used to index where the coils are in relation to the magnets. This can also be used for coarse position feedback for control algorithms. 
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
+## Sourcing Parts
 
-#### Images and Video
-Images and embedded video are supported.
+Here are some common and reputable vendors for linear motion equipment.
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
+ - Linear Guides and Rails: Misumi, McMaster Carr, Micromo (miniature rails/guides), Hiwin, THK, Nippon Bearing
+ - Belt Drive Systems: McMaster Carr, Misumi, SPD-SI, Micromo (miniature), Parker
+ - Screw Based Systems: McMaster Carr, Misumi, THK, Hiwin, Nippon Bearing, Lin Engineering(Leadscrews with integrated steppers), Parker
+ - Rack and Pinion: McMaster Carr, Parker
+ - Linear Motors: Parker, Faulhaber, Nippon Pulse, H2W Technologies(Linear Steppers/Motors), Northern Magnetics(Defunct, widely available on ebay, compatible with some H2W Technologies parts)
+ - Indexing: Omron, McMaster Carr, Digikey, US Digital(Reasonably Priced Linear Strip Encoders)
+ - Linear Stages(Actuator+guide integrated): THK, Hiwin, Parker, Nippon Bearing, H2W Technologies
 
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+This has been a very wide overview of common linear actuation technologies. It is important to choose the right actuator type for your needs and budget. 
 
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+ - [Hiwin Linear Guide Video](https://www.youtube.com/watch?v=2I44OT7c_MY)
+ - [Hiwin Ballscrew Video](https://www.youtube.com/watch?v=K3i-Ecb698g)
+ - [Hiwin Linear Motor Video](https://www.youtube.com/watch?v=mvkcupVxMEI)
+ - [Linear Shaft Motor Video](https://www.youtube.com/watch?v=Bxs2PFg0luw&t=329s)
