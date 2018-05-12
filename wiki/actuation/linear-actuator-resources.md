@@ -1,19 +1,48 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. You should set the article's title:
 title: Linear Actuator Resources and Quick Reference
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+published: true
 ---
 Linear movement is necessary for many types of robotics and automation, from simple 3D Printers with belts and threaded rod to complex high precision stages for Industrial Automation equipment, there always is a need to move something in a straight line.
 
-This article will cover basic types, terms, and resources for Electric linear actuation. We will cover Linear Rail/Guides, Belt Drives, Screw Based Systems, Rack and Pinions, Linear Motors (Synchronous, Induction, and a short mention of Piezoelectric), Encoder Feedback, and Endstops. 
+This article will be a high level overview of linear actuator stage components and will cover basic types, terms, and resources for Electric linear actuation. We will cover Linear Rail/Guides, Belt Drives, Screw Based Systems, Rack and Pinions, Linear Motors (Synchronous, Induction, and a short mention of Piezoelectric), and indexing a linear stage. 
 
 We will also have a section with common vendors of linear motion equipment and other useful articles for producing linear motion systems.
 
 ## Linear Rails and Guideways
-When you want to produce linear motion, you first must constrain the movement to only one degree of freedom along the direction of you wish to go. 
+When you want to produce linear motion, you first must constrain the movement to only one degree of freedom along the direction of you wish to go. This is usually accomplished using linear guides or linear bearings/bushings if you cannot otherwise constrain the actuator.
 
+Linear bearing/bushing systems commonly consist of a bearing/bushing and a cylindrical rod of some sort with the bearing and rod having matched inner and outer diameters respectively within a certain tolerance. If it is a bearing system, there will be recirculating ball or cylindrical bearings rolling against the direction of motion of the bearing. If it is a bushing, it will usually be made of a material with good tribological (wear resistance) properties, such as oil infused bronze or tribologically optimized plastics. 
+
+A useful resource if you need a bushing that has good wear resistance, but you cannot find the right form factor, is Igus. They provide tribologically optimized Materials Extrusion printer filament for printing custom bushings (See Further Reading.)
+
+The downside to Linear Rails of the bearing/bushing type is that they are usually unconstrained in rotation so you must constrain rotation in another way (eg. a leadscrew.)
+
+Linear Guideways on the other hand, constrain motion in rotation also. These also usually use recirculating bearings to guide motion but the profile of the rod is non-circular. The different types of bearing configurations such as roller bearing, two point contact, or gothic arch affect the load rating in different directions. 
+
+One useful tip while designing linear guideway platforms with multiple parallel guideways (ex. a XY gantry system) is to machine extremely small alignment shelves for the linear guideways to be referenced against. This will insure that as long as the machining is done parallel to the machines axis and in one operation that the shelves and thus the guideways will be as parallel as the machine that produced the shelves.
+
+Linear guideways can provide extremely precise linear motion but are usually prices higher in comparison to circular bearings/bushings. Many relatively cheap chinese knockoffs of brands such as Hiwin are available on Ebay. Common problems with these models can include large amounts of slop in the carridge fit and grooves created in your rails over time as cheap rails may be softer than the hardened steel ball bearings. 
+
+One thing to consider while designing a system using either rails or guides with bearings is the preload applied by the manufacturer. When a bearing  is preloaded, there is an extremely small interference fit between the ball bearings and the gap between the bearing surfaces in the carridge and on the guide/rail. this ensures there is no slop between the rail and the carridge but increases both price and rolling resistance.
+
+Other solutions that exist include roller bearing carridges that ride on roller bearing wheels sometimes in v-slot extrusion and air bearings/hydrostatic bearings which ride on a small layer of air/oil respectively for a extremely smooth, low friction ride. There are also linear motion elements called ball splines which constrain linear motion, but can also be used to transmit rotational motion to the carridge.
+
+## Belt Drive systems
+A belt drive is, at its heart, a conveyor belt with the carridge attached to the conveyor. In the simplest setup, a Timing Belt is driven by rotary motor with the belt looping around an idler at the other end of travel. The load is then attached to fixed point on the belt. As long as the belt is straight going in the direction of travel, the load will move the diameter of the drive wheel without the teeth. 
+
+Important considerations for belt drive systems include belt material, tooth profile, and proper belt tensioning. 
+
+The material of a belt determines how much stretch a belt will have which is directly related to the hysterisis in a belt system, where a belt acts like a spring until the drive motor has moved enough to overcome the stretch in the belt. This also affects how often the belt will have to be tensioned. Belts commonly come with kevlar, carbon fiber, or steel cores to prevent stretching.
+
+It is extremely important to get matching tooth profiles for your drive wheel and your belt. The different profile types are designed for differnt types of load and have different pitches (teeth/unit length) and profile designs. If you get a belt with the same pitch but a different profile, they may not fit together correctly, causing the belt to slip or move a small amount more or less than desired while under the design loads. Common timing belt profiles include GT2 and MXL.
+
+Correct tension is critical to belt drive operation. Remember to include some method to adjust belt tension if your design. As belts wear, they stretch and thus loose tension. If there is not enough tension, the belt can slip on the teeth producing "lost motion." Extremely over tensioned belts are harmful also, they will unnecessarially load your belt , drive wheel, and motor shaft, causing premature wear and faliure.
+
+Other belt configurations for XY Gantries exist other than a simple cartisan configuration. Other systems include H-Bot and [CoreXY](http://corexy.com/) which trade mechanical advantage for longer belt runs and thus more stretch and hysterisis. See Further Reading for more.
+## Screw Based Systems
+## Rack and Pinion Systems
+## Linear Motors
+## Stage Indexing
 ### Basic syntax
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
@@ -47,23 +76,6 @@ Entries in the Wiki should follow this format:
 5. Further Reading (relevant articles on other sites).
 6. References.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
 #### LaTex Math Support
 Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
