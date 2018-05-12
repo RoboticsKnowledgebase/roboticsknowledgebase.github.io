@@ -67,6 +67,8 @@ wiki:
         url: /wiki/actuation/motor-controller-feedback/
       - title: PID Control on Arduino
         url: /wiki/actuation/pid-control-arduino/
+      - title: Linear Actuator Types
+        url: /wiki/actuation/linear-actuator-resources/
       - title: ULN2003A Motor Controller
         url: /wiki/actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
