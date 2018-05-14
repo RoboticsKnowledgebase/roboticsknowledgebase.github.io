@@ -39,6 +39,7 @@ It is extremely important to get matching tooth profiles for your drive wheel an
 Correct tension is critical to belt drive operation. Remember to include some method to adjust belt tension if your design. As belts wear, they stretch and thus loose tension. If there is not enough tension, the belt can slip on the teeth producing "lost motion." Extremely over tensioned belts are harmful also, they will unnecessarily load your belt , drive wheel, and motor shaft, causing premature wear and failure.
 
 > Other belt configurations for XY Gantries exist other than a simple cartisan configuration. Other systems include H-Bot and [CoreXY](http://corexy.com/) which trade mechanical advantage for longer belt runs and thus more stretch and hysteresis. See Further Reading for more.
+
 ## Screw Based Systems
 Screw based systems act upon the principle of a simple machine screw. Some sort of nut and screw are used with one being constrained to not rotate while the other rotates to drive the linear motion. Conventionally it is the screw that rotated, but in systems where multiple systems need to more on the same axis and may interfere with each other, you can rotate the nut and hold the screw to fit multiple actuators on the same screw.
 
