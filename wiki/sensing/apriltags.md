@@ -5,11 +5,11 @@ AprilTags is a visual fiducial system, useful for a wide variety of tasks includ
 
 ![AprilTags placed on multiple mobile robots platforms](assets/apriltags-6719c.png)
 
-The AprilTags project originates from a team at the University of Michigan, that has a [detailed website dedicated to the reserach](http://april.eecs.umich.edu/wiki/index.php/AprilTags), which is a good starting off point for learning how to use all of the software. The team has provided implementations in both Java and C to read april tags from a camera and there are additional implementations available online for tag reaading. In addition to the software available on their website, a student at MIT has released a [C++ implementation](http://people.csail.mit.edu/kaess/apriltags). This website also has printable april tags for several tag families available in PDF format.
+The AprilTags project originates from a team at the University of Michigan, that has a [detailed website dedicated to the research](https://april.eecs.umich.edu/apriltag/), which is a good starting off point for learning how to use all of the software. The team has provided implementations in both Java and C to read AprilTags from a camera and there are additional implementations available online for tag reading. In addition to the software available on their website, a student at MIT has released a [C++ implementation](http://people.csail.mit.edu/kaess/apriltags). This website also has printable AprilTags for several tag families available in PDF format.
 
 ## ROS implementation
 
-In ROS Groovy and Hydro, there is no built in AprilTag recognition software. Our team is working on wrapping the code from the MIT C++ implementation into a working ROS package, which outputs AprilTags that are seen in a camera image as tf transforms and messages.
+In ROS Groovy and Hydro, there is no built-in AprilTag recognition software. Our team is working on wrapping the code from the MIT C++ implementation into a working ROS package, which outputs AprilTags that are seen in a camera image as tf transforms and messages.
 
 ## Experimental Results
 
@@ -35,7 +35,7 @@ An alternative to AprilTags for localization/pose estimation of an object is the
 
 
 ## Transforming the frame
-One of the problems with running the April Tag node is that your frame output is dependent on the orientation of the body moving. Changes in your bodies orientation changes the frame and makes it hard to have a consistent coordinate system. Team E 2014 wrote code in order to transform the april tag information to a consistent frame. The source code is [april tag frame transform](https://github.com/ColumnRobotics/column/blob/master/src/rectified_april_tag.cpp). The team found this code to be a bit noisy, so we wrote a RANSAC filter, available [here](https://github.com/ColumnRobotics/column/blob/master/src/BodyPoseFilter.cpp). A way to fix these errors would be to rely on the IMU orientation for the transformation and not the orientation from the April Tag.
+One of the problems with running the April Tag node is that your frame output is dependent on the orientation of the body moving. Changes in your body's orientation changes the frame and makes it hard to have a consistent coordinate system. Team E 2014 wrote code in order to transform the AprilTag information to a consistent frame. The source code is [april tag frame transform](https://github.com/ColumnRobotics/column/blob/master/src/rectified_april_tag.cpp). The team found this code to be a bit noisy, so we wrote a RANSAC filter, available [here](https://github.com/ColumnRobotics/column/blob/master/src/BodyPoseFilter.cpp). A way to fix these errors would be to rely on the IMU orientation for the transformation and not the orientation from the April Tag.
 
 ## References
 1. AprilTag homepage: http://april.eecs.umich.edu/wiki/index.php/AprilTags
