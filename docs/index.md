@@ -3,6 +3,7 @@ title: Contribute
 ---
 
 ## Contribution Quickstart Guide
+The Robotics Knowledgebase is hosted on Github. You are welcome to edit and improve this project. You can find a link to the repository [here](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/).
 
 ### New Entries
 
