@@ -136,6 +136,8 @@ wiki:
         url: /wiki/computing/upgrading-ubuntu-kenel/
       - title: Ubuntu 14.04 on Chromebook
         url: /wiki/computing/ubuntu-chromebook/
+      - title: Setup your GPU System for Computer Vision
+        url: /wiki/computing/setup-gpus-for-computer-vision/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
