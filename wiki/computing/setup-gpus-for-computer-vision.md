@@ -22,5 +22,4 @@ This tutorial will help you setup your Ubuntu (16/17/18) system with a NVIDIA GP
 ## Notes
 The setup has been tested on Ubuntu x86 platform and should also hold good for other Debian based (x86/ARM64) platforms.
 
-[Issues Page](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/issues)
-[Contributions (Pull Requests)](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/pulls)
+[Issues Page](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/issues) | [Contributions Page (Pull Requests)](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/pulls)
