@@ -39,6 +39,8 @@ wiki:
         url: /wiki/common-platforms/pixhawk/
       - title: ROS Introduction
         url: /wiki/common-platforms/ros-intro/
+      - title: Asctec Pelican UAV Setup Guide
+        url: /wiki/common-platforms/asctec-uav-setup-guide/
   - title: Sensing
     url: /wiki/sensing/
     children:
