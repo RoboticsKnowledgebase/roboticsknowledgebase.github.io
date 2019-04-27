@@ -44,7 +44,7 @@ You may stil see version 7 detected. We have to set higher priority for *gcc-5* 
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 60
     
-Now, to fix the CXX and CC environment variable systemwide, you need to put the lines in your .bashrc file:
+Now, to fix the CXX and CC environment variable system-wide, you need to put the lines in your .bashrc file:
 
     echo 'export CXX=/usr/bin/g++-5.4' >> ~/.bashrc
     echo 'export CC=/usr/bin/gcc-5.4' >> ~/.bashrc
@@ -54,8 +54,16 @@ Now, to fix the CXX and CC environment variable systemwide, you need to put the 
 ## 2. Install NVIDIA Driver for your GPU
 Before installing the NVIDIA driver, make sure **Secure Boot** is **Disabled** in BIOS and **Legacy Boot** is selected and **UEFI Boot** is disabled. 
 
-**NOTE (FOR UEFI BOOT ONLY)**: If you still intend to install the driver along with UEFI boot enabled, follow only the first 3 steps from [this gist here](https://gist.github.com/Rambou/c6769caee19b0b9915d8342b86c3ef72) to enroll the MOK keys and then proceed with the tutorial here. If these steps are not followed, it is likely that you might face the login loop issue.
+**NOTE (FOR UEFI BOOT ONLY)**: If you still intend to install the driver along with UEFI boot enabled, follow the steps below to enroll the MOK keys and only then proceed with the next driver installation section. If these steps are not followed, it is likely that you might face the login loop issue.
 
+```
+sudo openssl req -new -x509 -newkey rsa:2048 -keyout UEFI.key -outform DER -out UEFI.der -nodes -days 36500 -subj "/CN=rambou_nvidia/"
+sudo mokutil --import UEFI.der
+```
+
+At this step after reboot you will be prompted to select your certificate to import in in key database. If you have inserted a password at certificate creation you'll be prompted to insert it. If you are not prompted, you may have to enter the BIOS by using function keys at boot time.
+
+### Driver Installation
 The NVIDIA drivers will be automatically detected by Ubuntu in *Software and Updates* under *Additional drivers*. Select the driver for your GPU and click apply changes and reboot your system. *You may also select and apply Intel Microcode drivers in this window.* If they are not displayed, run the following commands from your terminal and refresh the window.
 
 ```
@@ -63,7 +71,7 @@ sudo add-apt-repository -y ppa:graphics-drivers
 sudo apt-get update
 ```
 
-*At the time of writing this document, the latest stable driver version is 410*.
+*At the time of writing this document, the latest stable driver version is 418*.
 
 Run the following command to check whether the driver has installed successfully by running NVIDIA’s System Management Interface (*nvidia-smi*). It is a tool used for monitoring the state of the GPU.
 
@@ -75,17 +83,17 @@ In case the above mentioned steps fail or you run into any other issues and have
 sudo apt-get purge -y nvidia*
 sudo add-apt-repository -y ppa:graphics-drivers
 sudo apt-get update
-sudo apt-get install -y nvidia-410
+sudo apt-get install -y nvidia-418
 ```
 
 ## 3. Install CUDA
 CUDA (Compute Unified Device Architecture) is a parallel computing platform and API developed by NVIDIA which utilizes the parallel computing capabilities of the GPUs. In order to use the graphics card, we need to have CUDA libraries installed on our system.
 
-Download the CUDA driver from the [official nvidia website here](https://developer.nvidia.com/cuda-downloads?target_os=Linux). We recommend you download the *deb (local)* version from installer type as shown in the screenshot below.
+Download the CUDA driver from the [official nvidia website here](https://developer.nvidia.com/cuda-downloads?target_os=Linux). We recommend you download the *deb (local)* version from installer type as shown in the screen-shot below.
 
 *At the time of writing this document, the latest stable version is CUDA 10.0*.
 
-![](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/blob/master/images/img1.png) 
+![](http://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cuda.png)
 
 After downloading the file, go to the folder where you have downloaded the file and run the following commands from the terminal to install the CUDA drivers. Please make sure that the filename used in the command below is the same as the downloaded file and replace the `<version>` number.
 
@@ -114,27 +122,37 @@ Go to official cuDNN website [official cuDNN website](https://developer.nvidia.c
 
 **Make sure you download the correct cuDNN version which matches with you CUDA version.**
 
-![](https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup/blob/master/images/img2.png)
+![](http://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cudnn.png)
 
-### Installing from Debian Package (Recommended Method)
-Install the downloaded packages (Runtime Library, Developer Library and Code Samples) as follows.
-
-    sudo dpkg -i libcudnn7_7.4.2.24-1+cuda10.0_amd64.deb
-    sudo dpkg -i libcudnn7-dev_7.4.2.24-1+cuda10.0_amd64.deb
-    sudo dpkg -i libcudnn7-doc_7.4.2.24-1+cuda10.0_amd64.deb
-
-### Installing from TAR file
+### Installing from TAR file (Recommended Method)
 For cuDNN downloaded using _cuDNN Library for Linux_ method, go to the folder where you have downloaded the “.tgz” file and from the command line execute the following (update the filename).
 
     tar -xzvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
     sudo cp cuda/include/cudnn.h /usr/local/cuda/include
     sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
     sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-    
+
+### Installing from Debian Package
+Install the downloaded packages (Runtime Library, Developer Library and Code Samples) as follows.
+
+    sudo dpkg -i libcudnn7_7.4.2.24-1+cuda10.0_amd64.deb
+    sudo dpkg -i libcudnn7-dev_7.4.2.24-1+cuda10.0_amd64.deb
+    sudo dpkg -i libcudnn7-doc_7.4.2.24-1+cuda10.0_amd64.deb
+
 To check installation of cuDNN, run this in your terminal:
     
     dpkg -l | grep cudnn
-    
+
+### Fixing Broken Symbolic Links
+If you have issues with broken symbolic links when you run `sudo ldconfig`, follow the steps below to fix them. **Note the minor version number, which may differ on your system (shown for 7.4.2 here)**
+
+    cd /usr/local/cuda/lib64
+    sudo rm libcudnn.so
+    sudo rm libcudnn.so.7
+    sudo ln libcudnn.so.7.4.2 libcudnn.so.7
+    sudo ln libcudnn.so.7 libcudnn.so
+    sudo ldconfig
+
 ## 5. Install TensorRT
 The core of NVIDIA TensorRT facilitates high performance inference on NVIDIA graphics processing units (GPUs). TensorRT takes a trained network, which consists of a network definition and a set of trained parameters, and produces a highly optimized runtime engine which performs inference for that network.
 
@@ -285,7 +303,7 @@ You can run the commands for installing pip packages `torch` and `torchvision` f
 
 #### Quick Install (Not Recommended)
 
-A quick way to install TensorFlow using pip without building is as follows. However this is not recomended as we have several specific versions of GPU libraries to improve performance, which may not be available with the pip builds.
+A quick way to install TensorFlow using pip without building is as follows. However this is not recommended as we have several specific versions of GPU libraries to improve performance, which may not be available with the pip builds.
 
     sudo pip3 install tensorflow-gpu
      
@@ -331,7 +349,7 @@ The root of the *tensorflow* folder contains a bash script named configure. This
 >
 >For cuDNN, enter 7.4
 >
-> Select yes for TensorRT suuport
+> Select yes for TensorRT support
 >
 >Enter your GPU Compute Capability (Eg: 3.0 or 6.1). Find yout GPU Compute Capability from [here](https://en.wikipedia.org/wiki/CUDA#GPUs_supported).
 >
@@ -392,7 +410,7 @@ First clone the Darknet git repository.
 
     git clone https://github.com/pjreddie/darknet.git
 
-Now, to compile Darknet with CUDA, CuDNN and OpenCV support, open the `Makefile` from the `darknet` folder and make the changes as following in the beginning of this file.
+Now, to compile Darknet with CUDA, CuDNN and OpenCV support, open the `Makefile` from the `darknet` folder and make the changes as following in the beginning of this file. Also make sure to select the right architecture based on your GPU's compute capibility. For Pascal architecture you may want to use [this version of Darknet by AlexeyAB](https://github.com/AlexeyAB/darknet) and compile with the `CUDNN_HALF=1` flag for 3x speed improvement.
 
     GPU=1
     CUDNN=1
