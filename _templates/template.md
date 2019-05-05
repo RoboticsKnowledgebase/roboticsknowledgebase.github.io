@@ -20,11 +20,13 @@ Going through this [paper's](https://furgalep.github.io/bib/furgale_iros13.pdf) 
 3. ROS drivers for the IMU and camera. Pixhawk, Ardupilot is typically used for UAVs and UM6/7 is popular for ground robots like Husky. ZED, Asus Xtion Pro, Intel Realsense D435 are few popular stereo cameras.
 
 ## Installation
-1. Download and extract the CDE package.
+<ol>
+<li>1. Download and extract the CDE package.</li>
 ```
   tar xfvz kalibr.tar.gz
 ```
-⋅⋅⋅Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using:
+
+   Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using:
 ```
   export PATH="/cde/package/path:$PATH"
 ```
@@ -80,6 +82,7 @@ Arguments:<br/>
 For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>
 
 6. After running kalibr_calibrate_imu_camera script, the camera calibration yaml will be extended by the imu-camera calibrator with imu-camera transformations.
+</ol>
 
 ## Few notes and important tips
 1. During testing, ensure that the robot is moved slowly so that a sufficient amount of data is collected in a single position and try to excite all the IMU axes. 
