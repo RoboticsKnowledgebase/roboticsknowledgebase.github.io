@@ -8,8 +8,8 @@ Above two transformations (<sup>I</sup>H<sub>W</sub> & <sup>C</sup>H<sub>W</sub>
 
 This library needs an initial guess of <sup>C</sup>H<sub>W</sub>, the homogeneous transformation which is first computed for each April tag using the PnP algorithm. Then the error between the predicted positions of the landmark based on the IMU reading and the observed position of the landmark using a camera is minimized using Levenberg Marquardt optimizer. So, this library generates the following output: <br/>
 (i) the transformation between the camera and the IMU <br/>
-(ii) the offset between camera time and IMU time, d <br/>
-(iii) the pose of the IMU w.r.t to world frame, I <br/>
+(ii) the offset between camera time and IMU time (synchronization time) <br/>
+(iii) the pose of the IMU w.r.t to world frame <br/>
 (iv) Intrinsic camera calibration matrix, K for the camera <br/>
 
 Going through this [paper's](https://furgalep.github.io/bib/furgale_iros13.pdf) section III B and IV will give deeper insights into the implementation.
@@ -24,11 +24,11 @@ Going through this [paper's](https://furgalep.github.io/bib/furgale_iros13.pdf) 
 ```
   tar xfvz kalibr.tar.gz
 ```
-Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using:
+⋅⋅⋅Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using:
 ```
   export PATH="/cde/package/path:$PATH"
 ```
-2. Printed AprilTag size is changed into the YAML file and this yaml file is copied inside the downloaded CDE package. <br/> Now make sure that both IMU & Camera publishes raw data and images respectively to ROS. Below command will list all the ROS topics published by the sensor.
+2. Change the AprilTag size in the YAML file and copy the same yaml file inside the extracted kalibr folder. <br/> Now make sure that both IMU & Camera publishes raw data and images respectively to ROS. Below command will list all the ROS topics published by the sensor.
 ```
 rostopic list
 ```
@@ -40,7 +40,7 @@ Check the publishing rate of a topic. It is recommended that the camera should r
 ```
 rostopic hz /topic_name
 ```
-3. Further, move the robot along all its degree of freedom. For instance, the axes of the UAVs are translated in x,y & z direction & rotated in all the three directions for the proper calibration. Collect the IMU sensor’s raw measurement and camera frame for around 60 seconds. Before recoding camera data, ensure that the RGB images from the camera is converted into the grayscale format. 
+3. Further, move the robot along all its degree of freedom. For instance, the axes of the UAVs are translated in x,y & z direction & rotated in all the three directions (roll,pitch & yaw) for the proper calibration. Collect the IMU sensor’s raw measurement and camera frame for around 60 seconds. Before recoding camera data, ensure that the RGB images from the camera is converted into the grayscale format. 
 
 In this sample example, Pixhawk sensor data is subscribed from the MAVROS raw_sensor message & camera frames are subscribed from the ZED sensor camera node. For other IMUs/Cameras only the ROS message name will change.
 
@@ -64,20 +64,20 @@ rosbag play <your bagfile>
 ```
 ./kalibr_calibrate_cameras --models pinhole-equi pinhole-equi --topics /zed/left/image_raw /zed/right/image_raw --bag camera-imu-data.bag --target aprilgrid_6x6.yaml
 ```
-Arguments:
--models: Most typically used stereo cameras are of pinhole camera model. For more detail on the supported models, refer to this [link](https://github.com/ethz-asl/kalibr/wiki/supported-models).
--topics: Name of the recodered camera topics  
--bag: ROS bag containing the image and IMU data
--target: yaml configuration file for the used target.
+Arguments:<br/>
+-models: Most typically used stereo cameras are of pinhole camera model. For more detail on the supported models, refer to this [link](https://github.com/ethz-asl/kalibr/wiki/supported-models).<br/>
+-topics: Name of the recodered camera topics  <br/>
+-bag: ROS bag containing the image and IMU data <br/>
+-target: yaml configuration file for the used target <br/>
 
 This command will generate a new yaml file with camera intrinsic calibration parameters. Above command can be skipped if the camera calibration yaml is already available. Now run below imu-camera calibration script.
 ```
 ./kalibr_calibrate_imu_camera --cam cam_calc.yaml --target aprilgrid_6x6.yaml --imu imu0.yaml --bag camera-imu-data.bag
 ```
-Arguments:
--cam: Generated camera calibration yaml configuration file
--imu: yaml configuration file for the IMU
-For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats).
+Arguments:<br/>
+-cam: Generated camera calibration yaml configuration file<br/>
+-imu: yaml configuration file for the IMU<br/>
+For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>
 
 6. After running kalibr_calibrate_imu_camera script, the camera calibration yaml will be extended by the imu-camera calibrator with imu-camera transformations.
 
