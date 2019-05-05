@@ -1,39 +1,59 @@
 # ORB SLAM Setup Guidance 
-This tutorial will help you in understanding and setting up the ORB SLAM on a Single Board Computer. Since the available ORB SLAM github repository doesn't publish pose output, we have added a separate section on how to add the ROS publisher support for the stereo mode.
+This tutorial will help you in setting up the ORB SLAM2 on a Single Board Computer. We discussed the installation procedure for the stereo mode and explained the changes required in the stereo camera's yaml configuration file. Since the ORB SLAM2 code doesn't publish pose output, we have added a separate section on how to add the ROS publisher support for the stereo mode. 
 
 # Table of Contents
 1. [Introduction](#Introduction)
-2. [Installation](#Installation)
+2. [Installation for stereo mode](#Installation-for-stereo-mode)
 3. [Setting up yaml configuration file](#Setting-up-yaml-configuration-file)
 4. [Adding ROS publisher support for the stereo mode](#Adding-ROS-publisher-support-for-the-stereo-mode)
 5. [References](#References)
 
 ## Introduction
-This [link](https://medium.com/@j.zijlmans/lsd-slam-vs-orb-slam2-a-literature-based-comparison-20732df431d) explains the ORB SLAM2 technique in detail. Also, at the end it briefly discusses the different part of ORB SLAM2 code and how changing the different parameters will affect the performance of ORB SLAM.
+ORB-SLAM2 is a SLAM library for Monocular and Stereo cameras that computes the camera trajectory and a sparse 3D reconstruction. It is a feature-based SLAM method which has three major components: tracking, local mapping and loop closing. This [link](https://medium.com/@j.zijlmans/lsd-slam-vs-orb-slam2-a-literature-based-comparison-20732df431d) nicely explains all the components of ORB SLAM2 technique in detail. Also, it briefly discusses the different part of ORB SLAM2 code and explains how changing the different parameters in different modules like local mapping, loop-closure, ORBextractor, etc. will affect the performance of ORB SLAM2.
 
-## Installation (for stereo mode)
+## Installation for stereo mode
 ORB-SLAM2 has multiple dependencies on other ROS libraries which includes Pangolin, OpenCV, Eigen3, DBoW2, and g2o. **[Pangolin](https://github.com/stevenlovegrove/Pangolin)** library is used for the visualization and user interface.**[OpenCV](https://docs.opencv.org/3.4.3/d7/d9f/tutorial_linux_install.html)** is used for image manipulation and feature extraction. **[Eigen3](http://eigen.tuxfamily.org)** library for performing mathematical operations on the Matrices. Finally, **[DBoW2](https://github.com/dorian3d/DBoW2)** is an improved version of the DBow library, for indexing and converting images into a bag-of-word representation. It implements a hierarchical tree for approximating nearest neighbors in the image feature space and creating a visual vocabulary. It also implements an image database with inverted and direct files to index images and enabling quick queries and feature comparisons. **[G2o](https://github.com/RainerKuemmerle/g2o)** is C++ library for optimizing graph-based nonlinear error functions. This helps in solving the global BA problem in ORB-SLAM2.<br/>
-
 
 Clone the repository:
 ```
 git clone https://github.com/raulmur/ORB_SLAM2.git ORB_SLAM2
 ```
-Then execute following set of commands:
+Then execute following set of commands to build the library:
 ```
 cd ORB_SLAM2
 chmod +x build.sh
 ./build.sh
 ```
-Add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned ORB_SLAM2 and execute build_ros script. 
+Even after installing above dependencies, if you face compilation error related to boost system, you need to install boost libraries and set the path to where you installed it in the makefile. This path should have the include/ and lib/ folders with header files and compiled .so binaries.
+
+```
+${PROJECT_SOURCE_DIR}/../../../Thirdparty/DBoW2/lib/libDBoW2.so
+${PROJECT_SOURCE_DIR}/../../../Thirdparty/g2o/lib/libg2o.so
+${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
+-lboost_system
+)
+```
+To build the stereo node, add the path including Examples/ROS/ORB_SLAM2 to the ROS_PACKAGE_PATH environment variable. Replace PATH by the folder where you cloned ORB_SLAM2 and then execute the build_ros script. 
 ```
 export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/ORB_SLAM2/Examples/ROS
 chmod +x build_ros.sh
 ./build_ros.sh
 ```
-For a stereo input from topic /camera/left/image_raw and /camera/right/image_raw run node ORB_SLAM2/Stereo. You will need to provide the vocabulary file and a settings file. If you provide rectification matrices (see Examples/Stereo/EuRoC.yaml example), the node will recitify the images online, otherwise images must be pre-rectified.
+For a stereo input from topic /camera/left/image_raw and /camera/right/image_raw, we need to remap the left and right camera frame output to the ORB-SLAM2 input ROS topic. A sample roslaunch doing the ROS topic remapping is shown below. 
+```
+<?xml version="1.0"?>
+<launch>
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Stereo" output="screen" args="/home/administrator/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/administrator/ORB_SLAM2/Examples/Stereo/zed.yaml true">
+    <remap from="/camera/left/image_raw" to="/left/image_raw_color"/>
+    <remap from="/camera/right/image_raw" to="/right/image_raw_color"/>
+    </node>
+</launch>
+```
+Above launch file also runs the ORB_SLAM2/Stereo node. You will need to provide the vocabulary file and a yaml settings file to run the Stereo node. Just use the same Vocabulary file because it's taken from a huge set of data and works pretty good.  All the popular stereo cameras like ZED, Intel Realsense, Asus Xtion Pro provides the pre-rectified images. So, if you are using one of those cameras, you don't need to provide rectification matrices else you need to specify provide rectification matrices in the yaml configuration file (discussed more in the next section).
 
 ## Setting up yaml configuration file
+A new yaml file with the stereo sensor calibration parameters for different possible resolutions. We have used ZED camera for running ORB SLAM2 and below is the sample yaml configuration file for our calibrated ZED camera.
+
 ```
 # Camera calibration and distortion parameters (OpenCV) 
 Camera.fx: 435.2046959714599
