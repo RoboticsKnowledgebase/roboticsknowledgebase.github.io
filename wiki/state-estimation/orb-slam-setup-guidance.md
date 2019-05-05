@@ -9,7 +9,7 @@ This tutorial will help you in understanding and setting up the ORB SLAM on a Si
 5. [References](#References)
 
 ## Introduction
-
+This [link](https://medium.com/@j.zijlmans/lsd-slam-vs-orb-slam2-a-literature-based-comparison-20732df431d) explains the ORB SLAM2 technique in detail. Also, at the end it briefly discusses the different part of ORB SLAM2 code and how changing the different parameters will affect the performance of ORB SLAM.
 
 ## Installation (for stereo mode)
 ORB-SLAM2 has multiple dependencies on other ROS libraries which includes Pangolin, OpenCV, Eigen3, DBoW2, and g2o. **[Pangolin](https://github.com/stevenlovegrove/Pangolin)** library is used for the visualization and user interface.**[OpenCV](https://docs.opencv.org/3.4.3/d7/d9f/tutorial_linux_install.html)** is used for image manipulation and feature extraction. **[Eigen3](http://eigen.tuxfamily.org)** library for performing mathematical operations on the Matrices. Finally, **[DBoW2](https://github.com/dorian3d/DBoW2)** is an improved version of the DBow library, for indexing and converting images into a bag-of-word representation. It implements a hierarchical tree for approximating nearest neighbors in the image feature space and creating a visual vocabulary. It also implements an image database with inverted and direct files to index images and enabling quick queries and feature comparisons. **[G2o](https://github.com/RainerKuemmerle/g2o)** is C++ library for optimizing graph-based nonlinear error functions. This helps in solving the global BA problem in ORB-SLAM2.<br/>
