@@ -1,9 +1,16 @@
----
-title: IMU-Camera Calibration using Kalibr
----
+# IMU-Camera Calibration using Kalibr
+This tutorial will help you in setting up the Kaliber library developed at ETH Zurich for combined IMU-Camera calibration. 
+For better understanding, we have also included an example of Pixhawk (IMU) and ZED camera (stereo camera) calibration procedure. 
+
+# Table of Contents
+1. [Introduction](#Introduction)
+2. [Requirement](#Requirement)
+3. [Calibration Procedure](#Calibration-Procedure)
+4. [Few notes and important tips](#Few-notes-and-important-tips)
+5. [References](#References)
 
 ## Introduction
-This tutorial will help you in setting up the Kaliber library developed at ETH Zurich for combined IMU-Camera calibration. This library simultaneously computes the homogeneous transformation (denoted as **<sup>I</sup>H<sub>W</sub>**) between the camera and the world frame, and the homogeneous transformation (denoted as **<sup>C</sup>H<sub>W</sub>**) between IMU and the world frame. A 6x6 AprilTag grid map is used as the landmarks for the calibration.
+Kalibr library simultaneously computes the homogeneous transformation (denoted as **<sup>I</sup>H<sub>W</sub>**) between the camera and the world frame, and the homogeneous transformation (denoted as **<sup>C</sup>H<sub>W</sub>**) between IMU and the world frame. A 6x6 AprilTag grid map is used as the landmarks for the calibration procedure.
 Above two transformations (<sup>I</sup>H<sub>W</sub> & <sup>C</sup>H<sub>W</sub>) can be used to compute the transformation between Camera and IMU i.e. <sup>C</sup>H<sub>W</sub> <sup>W</sup>H<sub>I</sub>. In this method the IMU is parameterized as 6x1 spline using the three degrees of freedom for translation & three degrees of freedom for orientation. Based on the raw acceleration & angular velocity readings from the on board IMU, the acceleration and the angular velocity is computed in terms of <sup>C</sup>H<sub>W</sub>.
 
 This library needs an initial guess of <sup>C</sup>H<sub>W</sub>, the homogeneous transformation which is first computed for each April tag using the PnP algorithm. Then the error between the predicted positions of the landmark based on the IMU reading and the observed position of the landmark using a camera is minimized using Levenberg Marquardt optimizer. So, this library generates the following output: <br/>
