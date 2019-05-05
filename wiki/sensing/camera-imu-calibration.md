@@ -79,7 +79,7 @@ Arguments:<br/>
 -cam: Generated camera calibration yaml configuration file<br/>
 -imu: yaml configuration file for the IMU<br/>
 
-For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>.
+For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>
 
 After running kalibr_calibrate_imu_camera script, the camera calibration yaml will be extended by the imu-camera calibrator with imu-camera transformations.
 
