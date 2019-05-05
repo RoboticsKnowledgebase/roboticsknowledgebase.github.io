@@ -20,17 +20,16 @@ Going through this [paper's](https://furgalep.github.io/bib/furgale_iros13.pdf) 
 3. ROS drivers for the IMU and camera. Pixhawk, Ardupilot is typically used for UAVs and UM6/7 is popular for ground robots like Husky. ZED, Asus Xtion Pro, Intel Realsense D435 are few popular stereo cameras.
 
 ## Installation
-<ol>
-<li>1. Download and extract the CDE package.</li>
+Download and extract the CDE package.
 ```
   tar xfvz kalibr.tar.gz
 ```
 
-   Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using:
+Either you can run the tools directly from the cde-package folder or/and add the package folder to the system path using: 
 ```
   export PATH="/cde/package/path:$PATH"
 ```
-2. Change the AprilTag size in the YAML file and copy the same yaml file inside the extracted kalibr folder. <br/> Now make sure that both IMU & Camera publishes raw data and images respectively to ROS. Below command will list all the ROS topics published by the sensor.
+Change the AprilTag size in the YAML file and copy the same yaml file inside the extracted kalibr folder. <br/> Now make sure that both IMU & Camera publishes raw data and images respectively to ROS. Below command will list all the ROS topics published by the sensor.
 ```
 rostopic list
 ```
@@ -42,7 +41,7 @@ Check the publishing rate of a topic. It is recommended that the camera should r
 ```
 rostopic hz /topic_name
 ```
-3. Further, move the robot along all its degree of freedom. For instance, the axes of the UAVs are translated in x,y & z direction & rotated in all the three directions (roll,pitch & yaw) for the proper calibration. Collect the IMU sensor’s raw measurement and camera frame for around 60 seconds. Before recoding camera data, ensure that the RGB images from the camera is converted into the grayscale format. 
+Further, move the robot along all its degree of freedom. For instance, the axes of the UAVs are translated in x,y & z direction & rotated in all the three directions (roll,pitch & yaw) for the proper calibration. Collect the IMU sensor’s raw measurement and camera frame for around 60 seconds. Before recoding camera data, ensure that the RGB images from the camera is converted into the grayscale format. 
 
 In this sample example, Pixhawk sensor data is subscribed from the MAVROS raw_sensor message & camera frames are subscribed from the ZED sensor camera node. For other IMUs/Cameras only the ROS message name will change.
 
@@ -58,11 +57,11 @@ Below command will start the recording.
 ```
 rosbag record -O camera-imu-data.bag /imu/data_raw /zed/left/image_raw /zed/right/image_raw
 ```
-4. Check the recorded data by using the following command.
+Check the recorded data by using the following command.
 ```
 rosbag play <your bagfile>
 ```
-5. If all the required data is recorded properly, run following camera calibration command.
+If all the required data is recorded properly, run following camera calibration command.
 ```
 ./kalibr_calibrate_cameras --models pinhole-equi pinhole-equi --topics /zed/left/image_raw /zed/right/image_raw --bag camera-imu-data.bag --target aprilgrid_6x6.yaml
 ```
@@ -81,8 +80,7 @@ Arguments:<br/>
 -imu: yaml configuration file for the IMU<br/>
 For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>
 
-6. After running kalibr_calibrate_imu_camera script, the camera calibration yaml will be extended by the imu-camera calibrator with imu-camera transformations.
-</ol>
+After running kalibr_calibrate_imu_camera script, the camera calibration yaml will be extended by the imu-camera calibrator with imu-camera transformations.
 
 ## Few notes and important tips
 1. During testing, ensure that the robot is moved slowly so that a sufficient amount of data is collected in a single position and try to excite all the IMU axes. 
