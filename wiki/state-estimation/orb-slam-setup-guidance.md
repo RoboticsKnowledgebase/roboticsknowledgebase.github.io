@@ -1,4 +1,4 @@
-# ORB SLAM Setup Guidance 
+# ORB SLAM2 Setup Guidance 
 This tutorial will help you in setting up the ORB SLAM2 on a Single Board Computer. We discussed the installation procedure for the stereo mode and explained the changes required in the stereo camera's yaml configuration file. Since the ORB SLAM2 code doesn't publish pose output, we have added a separate section on how to add the ROS publisher support for the stereo mode. 
 
 # Table of Contents
@@ -52,8 +52,8 @@ For a stereo input from topic /camera/left/image_raw and /camera/right/image_raw
 Above launch file also runs the ORB_SLAM2/Stereo node. You will need to provide the vocabulary file and a yaml settings file to run the Stereo node. Just use the same Vocabulary file because it's taken from a huge set of data and works pretty good.  All the popular stereo cameras like ZED, Intel Realsense, Asus Xtion Pro provides the pre-rectified images. So, if you are using one of those cameras, you don't need to provide rectification matrices else you need to specify provide rectification matrices in the yaml configuration file (discussed more in the next section).
 
 ## Setting up yaml configuration file
-A new yaml file with the stereo sensor calibration parameters for different possible resolutions. We have used ZED camera for running ORB SLAM2 and below is the sample yaml configuration file for our calibrated ZED camera.
-
+As mentioned in the previous section that the Stereo node command takes a yaml configuration file as input. This yaml configuration file includes the stereo camera calibration parameters, ORB parameters, rectification matrices if the images are not pre-rectified. <br/>
+Below is a sample yaml file settings for our calibrated stereo camera (ZED). Camera calibration and distortion parameters can be found from the intrinsic calibration matrix. Other parameters like width, height, fps depend on the resolution of your camera.
 ```
 # Camera calibration and distortion parameters (OpenCV) 
 Camera.fx: 435.2046959714599
@@ -66,7 +66,7 @@ Camera.k2: 0.0
 Camera.p1: 0.0
 Camera.p2: 0.0
 
-Camera.width: 752
+Camera.width: 640
 Camera.height: 480
 
 # Camera frames per second 
@@ -81,7 +81,7 @@ Camera.RGB: 1
 # Close/Far threshold. Baseline times.
 ThDepth: 35
 ```
-
+When number of features in the environment is less, the keyframes will not get initialized and system will not go in SLAM/Localization mode. So, tweak below parameters to improve the performance of the ORB SLAM2. 
 ```
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
@@ -102,20 +102,59 @@ ORBextractor.nLevels: 8
 # You can lower these values if your images have low contrast			
 ORBextractor.iniThFAST: 20
 ORBextractor.minThFAST: 7
+```
+Below is the sample of rectification matrices.
+```
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+# LEFT.height: 720
+# LEFT.width: 1280
+# LEFT.D: !!opencv-matrix
+#    rows: 1
+#    cols: 5
+#    dt: d
+#    data:[-0.28340811, 0.07395907, 0.00019359, 1.76187114e-05, 0.0]
+# LEFT.K: !!opencv-matrix
+#    rows: 3
+#    cols: 3
+#    dt: d
+#    data: [458.654, 0.0, 367.215, 0.0, 457.296, 248.375, 0.0, 0.0, 1.0]
+# LEFT.R:  !!opencv-matrix
+#    rows: 3
+#    cols: 3
+#    dt: d
+#    data: [0.999966347530033, -0.001422739138722922, 0.008079580483432283, 0.001365741834644127, 0.9999741760894847, 0.007055629199258132, -0.008089410156878961, -0.007044357138835809, 0.9999424675829176]
+# LEFT.P:  !!opencv-matrix
+#    rows: 3
+#    cols: 4
+#    dt: d
+#    data: [435.2046959714599, 0, 367.4517211914062, 0,  0, 435.2046959714599, 252.2008514404297, 0,  0, 0, 1, 0]
 
-#--------------------------------------------------------------------------------------------
-# Viewer Parameters
-#--------------------------------------------------------------------------------------------
-Viewer.KeyFrameSize: 0.05
-Viewer.KeyFrameLineWidth: 1
-Viewer.GraphLineWidth: 0.9
-Viewer.PointSize:2
-Viewer.CameraSize: 0.08
-Viewer.CameraLineWidth: 3
-Viewer.ViewpointX: 0
-Viewer.ViewpointY: -0.7
-Viewer.ViewpointZ: -1.8
-Viewer.ViewpointF: 500
+# RIGHT.height: 720
+# RIGHT.width: 1280
+# RIGHT.D: !!opencv-matrix
+#    rows: 1
+#    cols: 5
+#    dt: d
+#    data:[-0.28368365, 0.07451284, -0.00010473, -3.555907e-05, 0.0]
+# RIGHT.K: !!opencv-matrix
+#    rows: 3
+#    cols: 3
+#    dt: d
+#    data: [457.587, 0.0, 379.999, 0.0, 456.134, 255.238, 0.0, 0.0, 1]
+# RIGHT.R:  !!opencv-matrix
+#    rows: 3
+#    cols: 3
+#    dt: d
+#    data: [0.9999633526194376, -0.003625811871560086, 0.007755443660172947, 0.003680398547259526, 0.9999684752771629, -0.007035845251224894, -0.007729688520722713, 0.007064130529506649, 0.999945173484644]
+# RIGHT.P:  !!opencv-matrix
+#    rows: 3
+#    cols: 4
+#    dt: d
+#    data: [435.2046959714599, 0, 367.4517211914062, -47.90639384423901, 0, 435.2046959714599, 252.2008514404297, 0, 0, 0, 1, 0]
+
 ```
 
 ## Adding ROS publisher support for the stereo mode
