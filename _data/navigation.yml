@@ -88,6 +88,8 @@ wiki:
         url: /wiki/state-estimation/ros-navigation/
       - title: SBPL Lattice Planner
         url: /wiki/state-estimation/sbpl-lattice-planner/
+      - title: ORB SLAM2 Setup Guidance
+        url: /wiki/state-estimation/orb-slam2-setup/
   - title: Programming
     url:  /wiki/programming/
     children:
