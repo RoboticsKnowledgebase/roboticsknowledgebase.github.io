@@ -49,7 +49,10 @@ For a stereo input from topic /camera/left/image_raw and /camera/right/image_raw
     </node>
 </launch>
 ```
-Above launch file also runs the ORB_SLAM2/Stereo node. You will need to provide the vocabulary file and a yaml settings file to run the Stereo node. Just use the same Vocabulary file because it's taken from a huge set of data and works pretty good.  All the popular stereo cameras like ZED, Intel Realsense, Asus Xtion Pro provides the pre-rectified images. So, if you are using one of those cameras, you don't need to provide rectification matrices else you need to specify provide rectification matrices in the yaml configuration file (discussed more in the next section).
+```
+roslaunch ORB_SLAM2 <launch_file>
+```
+Above launch file also runs the ORB_SLAM2/Stereo node. You will need to provide the vocabulary file and a yaml settings file to run the Stereo node. Just use the same Vocabulary file because it's taken from a huge set of data and works pretty good.  All the popular stereo cameras like ZED, Intel Realsense, Asus Xtion Pro provides the pre-rectified images. So, if you are using one of those cameras, you don't need to provide rectification matrices else you need to add rectification matrices in the yaml configuration file (sample matrices are shown in next section).
 
 ## Setting up yaml configuration file
 As mentioned in the previous section that the Stereo node command takes a yaml configuration file as input. This yaml configuration file includes the stereo camera calibration parameters, ORB parameters, rectification matrices if the images are not pre-rectified. <br/>
@@ -158,9 +161,39 @@ Below is the sample of rectification matrices.
 ```
 
 ## Adding ROS publisher support for the stereo mode
+ROS interface for the ORB SLAM2 is present in the below folder. So, all the changes discussed here will be done in the ros_stereo.cc file.
+```
+ORB_SLAM2/Examples/ROS/ORB_SLAM2/src/ros_stereo.cc
+```
+Firstly, we need to add below header files for using geometric ROS messages (PoseStamped, Point) and the TransformBroadcaster. Two boolean variables are added in the ImageGrabber class for publishing pose and broadcasting transform.  
+```
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Point.h>
+#include <geometry_msgs/Quaternion.h>
+#include <tf/transform_broadcaster.h>
+#include <vector>
+
+class ImageGrabber
+{
+    public:
+        ImageGrabber(ORB_SLAM2::System* pSLAM):mpSLAM(pSLAM){}
+
+
+        ORB_SLAM2::System* mpSLAM;
+        bool do_rectify, pub_tf, pub_pose;
+        cv::Mat M1l,M2l,M1r,M2r;
+        ros::Publisher* orb_pub;
+
+        void GrabStereo(const sensor_msgs::ImageConstPtr& msgLeft,const sensor_msgs::ImageConstPtr& msgRight);
+        void SetPub(ros::Publisher* pub);
+
+};
 
 ```
-
+Below advertise() function returns a ros::Publisher object, which contains a publish() method that lets you publish geometric messages onto the "orb_pose" ROS topic and the function below initializes the ORB publisher.  
+```
+ros::Publisher pose_pub = nh.advertise<geometry_msgs::PoseStamped>("orb_pose", 100);
+igb.SetPub(&pose_pub);
 ```
 
 ```
@@ -169,13 +202,7 @@ void ImageGrabber::SetPub(ros::Publisher* pub)
     orb_pub = pub;
 }
 ```
-
-Define a 
-```
-ros::Publisher pose_pub = nh.advertise<geometry_msgs::PoseStamped>("orb_pose", 100);
-igb.SetPub(&pose_pub);
-```
-Initiliaze two matrices for storing the pose of the ORB SLAM
+Now, Rotation and Translation matrices (R_,t_) are initialized for storing the output pose. T_ stores the output pose from the ORB SLAM2.
 ```
 cv::Mat T_,R_,t_;
 T_ = mpSLAM->TrackStereo(cv_ptrLeft->image,cv_ptrRight->image,cv_ptrLeft->header.stamp.toSec());
@@ -183,7 +210,7 @@ T_ = mpSLAM->TrackStereo(cv_ptrLeft->image,cv_ptrRight->image,cv_ptrLeft->header
 if (T_.empty())
 return;
 ```
-
+Now you can use ROS tf library to get the quaternion and position information from the transformation matrix. Then, these position elements and the rotation elements are set in the tf (transform).
 ```
 if (pub_tf || pub_pose)
 {    
@@ -197,7 +224,8 @@ if (pub_tf || pub_pose)
     transform.setRotation(tf_quaternion);
 }
 ```
-
+Below piece of code sends the transform with a TransformBroadcaster. In the first argument, we pass in the transform itself.
+In second argument, we need to give the transform being published a timestamp, we will just use the timestamp when the camera image is published. Then, we need to pass the name of the parent frame of the link we're creating, in this case "world". Finally, we need to pass the name of the child frame of the link we're creating, in this case we have defined it as "ORB_SLAM2_STEREO".
 ```
 if (pub_tf)
 {
@@ -205,6 +233,7 @@ if (pub_tf)
    br_.sendTransform(tf::StampedTransform(transform, ros::Time(cv_ptrLeft->header.stamp.toSec()), "world", "ORB_SLAM2_STEREO"));
 }
 ```
+Below piece of code publishes the pose output. Here also we will use the timestamp when the camera image is published. We will define this frame as "ORB_SLAM2_STEREO". Finally, we need to convert the pose transform to ROS pose message before publishing.
 ```
 if (pub_pose)
 {
