@@ -73,18 +73,18 @@ If all the required data is recorded properly, run following camera calibration 
 ./kalibr_calibrate_cameras --models pinhole-equi pinhole-equi --topics /zed/left/image_raw /zed/right/image_raw --bag camera-imu-data.bag --target aprilgrid_6x6.yaml
 ```
 Arguments:<br/>
--models: Most typically used stereo cameras are of pinhole camera model. For more detail on the supported models, refer to this [link](https://github.com/ethz-asl/kalibr/wiki/supported-models).<br/>
--topics: Name of the recodered camera topics  <br/>
--bag: ROS bag containing the image and IMU data <br/>
--target: yaml configuration file for the used target <br/>
+- models: Most typically used stereo cameras are of pinhole camera model. For more detail on the supported models, refer to this [link](https://github.com/ethz-asl/kalibr/wiki/supported-models).<br/>
+- topics: Name of the recodered camera topics  <br/>
+- bag: ROS bag containing the image and IMU data <br/>
+- target: yaml configuration file for the used target <br/>
 
 This command will generate a new yaml file with camera intrinsic calibration parameters. Above command can be skipped if the camera calibration yaml is already available. Now run below imu-camera calibration script.
 ```
 ./kalibr_calibrate_imu_camera --cam cam_calc.yaml --target aprilgrid_6x6.yaml --imu imu0.yaml --bag camera-imu-data.bag
 ```
 Arguments:<br/>
--cam: Generated camera calibration yaml configuration file<br/>
--imu: yaml configuration file for the IMU<br/>
+- cam: Generated camera calibration yaml configuration file<br/>
+- imu: yaml configuration file for the IMU<br/>
 
 For more detail on the different yaml format, please check this [link](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)<br/>
 
