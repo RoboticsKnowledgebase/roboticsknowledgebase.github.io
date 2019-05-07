@@ -1,4 +1,6 @@
-# IMU-Camera Calibration using Kalibr
+---
+title: IMU-Camera Calibration using Kalibr
+---
 This tutorial will help you in setting up the Kaliber library developed at ETH Zurich for combined IMU-Camera calibration. 
 For better understanding, we have also included an example of Pixhawk (IMU) and ZED camera (stereo camera) calibration procedure. 
 
