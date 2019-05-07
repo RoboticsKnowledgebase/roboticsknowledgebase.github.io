@@ -161,6 +161,8 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: PCB Design
+        url: /wiki/fabrication/pcb-design/
   - title: Math
   - title: Tools
     url: /wiki/tools/
