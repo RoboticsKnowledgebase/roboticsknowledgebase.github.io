@@ -147,6 +147,8 @@ wiki:
   - title: Fabrication
     url: /wiki/fabrication/
     children:
+      - title: 3D Printing Fabrication Consideration
+        url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
       - title: Machining & Prototyping
         url: /wiki/fabrication/machining-prototyping/
       - title: Rapid Prototyping
