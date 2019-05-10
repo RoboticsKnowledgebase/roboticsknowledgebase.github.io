@@ -41,6 +41,8 @@ wiki:
         url: /wiki/common-platforms/ros-intro/
       - title: Asctec Pelican UAV Setup Guide
         url: /wiki/common-platforms/asctec-uav-setup-guide/
+      - title: Husky Interfacing Procedure
+        url: /wiki/common-platforms/husky_interfacing_and_communication/
   - title: Sensing
     url: /wiki/sensing/
     children:
