@@ -131,6 +131,8 @@ wiki:
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
         url: /wiki/interfacing/blink-1-led/
+      - title: Husky Interfacing and Communication Setup
+        url: /wiki/interfacing/Husky_interfacing_and_communication/
   - title: Computing
     url: /wiki/computing/
     children:
