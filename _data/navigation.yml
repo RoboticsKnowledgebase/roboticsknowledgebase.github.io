@@ -66,6 +66,10 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: Lane Detection 
+        url: /wiki/sensing/Lane-detection/
+      - title: Action Recognition 
+        url: /wiki/sensing/action-recognition/
   - title: Actuation
     url: /wiki/actuation/
     children:
