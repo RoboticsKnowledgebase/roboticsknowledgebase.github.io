@@ -43,6 +43,8 @@ wiki:
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: ROS Motion Server Framework
+        url: /wiki/common-platforms/ros-motion-server-framework/
   - title: Sensing
     url: /wiki/sensing/
     children:
