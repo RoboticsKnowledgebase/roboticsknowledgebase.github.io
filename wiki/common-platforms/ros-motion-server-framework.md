@@ -35,7 +35,7 @@ To setup ROS motion server framework, clone below two repository:
 git clone https://github.com/shubhamgarg1994/robot_motions_server_ros 
 git clone https://github.com/shubhamgarg1994/example_motion_task_config
 ```
-All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added to this framework. Here, we are adding a new task for the PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this [tutorial]**(https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
+All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added to this framework. Here, we are adding a new task for the PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this** [tutorial](https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
 
 A high-level state machine is written inside the `test_action_client file.py`. Here, we will be running a high-level command “uavTakeOff” by calling SimpleActionClient Server. Below code snippet will request a new task named `uavTakeOff`. <br />
 ```
