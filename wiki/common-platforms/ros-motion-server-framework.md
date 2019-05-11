@@ -30,10 +30,11 @@ Now we will discuss task config where user defines the task. User needs to defin
 Task config will get more clear when we will look an example in the last section. Additional implementation details can be found from [here](https://github.com/shubhamgarg1994/robot_motions_server_ros).
 
 ## Example
-To setup ROS motion server framework, clone below two repository:
+To setup ROS motion server framework, clone below two repository in your catkin workspace and build the workspace:
 ```
 git clone https://github.com/shubhamgarg1994/robot_motions_server_ros 
 git clone https://github.com/shubhamgarg1994/example_motion_task_config
+catkin_make
 ```
 All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added to this framework. Here, we are adding a new task for the PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this** [tutorial](https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
 
