@@ -35,7 +35,8 @@ To setup ROS motion server framework, clone below two repository:
 git clone https://github.com/shubhamgarg1994/robot_motions_server_ros 
 git clone https://github.com/shubhamgarg1994/example_motion_task_config
 ```
-All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added in this framework.<br /> Here, we are adding a new task “takeoff” command for PX4 flight controller.<br />
+All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added in this framework. Here, we are adding a new task “takeoff” command for PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this [tutorial]**(https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
+
 High level state machine is written inside the `test_action_client file.py`. Here, we will running a high level command “uavTakeOff” by calling SimpleActionClient Server. Below code snippet will request a new task named `uavTakeOff`. <br />
 ```
 def run(server_name):
@@ -48,4 +49,102 @@ def run(server_name):
    request = TaskRequestGoal(action_type='uavTakeOff')
 
 ```
+Add a new file `highlevelcommands.py` inside the src where the we write the abstract class for the “uavTakeOff” task. This class needs three methods `init`, `get_desired_command` & `cancel`. For simplicity `cancel` method is not implemented here.
+In future if you want to add new task, just add a new class of that task with these three methods.
+```
+import rospy
+
+from task_states import TaskRunning, TaskDone
+from task_commands import *
+
+from motions_server.abstract_task import AbstractTask
+
+class uavTakeOff(AbstractTask):
+    def __init__(self, request):
+        rospy.loginfo('Take off task being constructed')
+        self.status = 0
+        self.altitude = request.pose.pose.position.z
+
+    def get_desired_command(self):
+        if(self.status == 0):
+            self.status = 1
+            return TaskRunning(), FlightMode(mode='OFFBOARD',arm=1,altitude=self.altitude)
+        else:
+            return TaskDone(), StringCommand(data='Task done')
+            
+    def cancel(self):
+        return True
+```
+For above class we need an additional command `FlightMode` class which creates a object with the required parameters. This class needs to be defined in file `task_commands.py`
+```
+class FlightMode(object):
+    def __init__(self, mode='', arm=0, altitude=0):
+        self.mode = mode
+        self.arm = arm
+        self.altitude = altitude
+        self.sp = PositionTarget()
+        self.sp.type_mask = int('010111111000', 2)
+        # LOCAL_NED
+        self.sp.coordinate_frame = 1
+```
+Task manager is defined in the `task_config.py`. Here we will define the task handler and the required methods discussed in  the section above. In the `init` method we will create all the required objects. Role of `check_request`, `wait_until_ready`, `handle_task_running` is already explained in the previous section.
+```
+class CommandHandler(AbstractCommandHandler):
+    def __init__(self):
+
+        #initailizing the services and publishers/subscribers
+        rospy.wait_for_service('mavros/cmd/arming')
+        rospy.wait_for_service('mavros/cmd/takeoff')
+        rospy.wait_for_service('mavros/set_mode')
+
+        try:
+            self._armService = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
+            self._flightModeService = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
+        except rospy.ServiceException, e:
+            rospy.logerr("Service call failed: %s"%e)
+
+        self._sp_pub = rospy.Publisher('mavros/setpoint_raw/local', PositionTarget, queue_size=1)
+   
+   def check_request(self, request):
+        if request.action_type == 'uavTakeOff':
+            self._taskname = request.action_type
+            return uavTakeOff(request)
+   
+   def wait_until_ready(self, timeout):
+        return
+   
+   def _handle_task_running(self, command):
+        rospy.loginfo("Handle task running: ")
+        if(self._taskname == "uavTakeOff"):
+            if(command.arm>0 and command.altitude>0):
+                
+                #Arming the vehicle
+                try:
+                    self._armService(bool(command.arm))
+                except rospy.ServiceException, e:
+                    rospy.logerr("Service arming call failed: %s"%e)
+                
+                #Put the vehicle in offboard mode
+                # We need to send few setpoint messages, then activate OFFBOARD mode, to take effect
+
+                k=0
+                while k<10:
+                    self._sp_pub.publish(command.sp)
+                    self._rate.sleep()
+                    k = k + 1
+
+                try:
+                    self._flightModeService(custom_mode=command.mode)
+                except rospy.ServiceException, e:
+                    rospy.logger("service set_mode call failed: %s. Offboard Mode could not be set."%e)
+
+                command.sp.position.z = command.altitude
+
+                while(abs(self._local_pos.pose.pose.position.z - command.altitude) > 0.2):
+                    self._sp_pub.publish(command.sp)
+                    self._rate.sleep()
+     
+```
+If we want to query the current state of the task, you can add that part of code in `task_states.py`. 
+You can find above code [here]().
 
