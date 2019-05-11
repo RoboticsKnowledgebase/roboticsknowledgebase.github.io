@@ -18,14 +18,14 @@ Now coming to the ROS actions. They are used when you send a request to a node t
  
 For example - your task is to send a robot to an x,y position. You send a target waypoint, then move on to other running tasks while the robot is reaching towards the waypoint. Till your robot reaches the target, you will periodically receive the ROS messages (like current x,y position of the robot, the time elapsed, etc). Based on this information, you can check the status of that task and if it is not getting executed properly you can terminate it in between or if something more important comes up (like stop/brake command as some obstacle is detected), you can cancel this task and preempt the new task.<br />
 
-ROS actions architecture is explained in more detail [here](http://wiki.ros.org/actionlib). Going through few [ROS tutorials on action server](http://wiki.ros.org/actionlib_tutorials/Tutorials/Writing%20a%20Simple%20Action%20Server%20using%20the%20Execute%20Callback%20%28Python%29) will help you in understanding upcoming section better.
+ROS actions architecture is explained in more detail [here](http://wiki.ros.org/actionlib). Going through a few [ROS tutorials on action server](http://wiki.ros.org/actionlib_tutorials/Tutorials/Writing%20a%20Simple%20Action%20Server%20using%20the%20Execute%20Callback%20%28Python%29) will help you in understanding upcoming section better.
  
 ## ROS Motion Server Framework
-ROS motion server framework makes writing new task simpler and easy. In this framework, client sends request via ROS Simple Action Client where `action_type` defines which task to run. There is a task manager which manages lifecycle of the task by interfacing with the user defined task config library to check and construct tasks.  It also manages cancelation, abortion, failure, etc. and reports task ending state back to the Action Client.<br />
+ROS motion server framework makes writing new task simpler and easy. In this framework, the client sends a request via ROS Simple Action Client where `action_type` defines which task to run. There is a task manager which manages the lifecycle of the task by interfacing with the user-defined task config library to check and construct tasks.  It also manages cancelation, abortion, failure, etc. and reports task ending state back to the Action Client.<br />
 Now we will discuss task config in detail. User needs to define a task handler with three key methods:
-- wait_until_ready : blocks for a specified timeout until all dependencies are ready, or throws an exception if dependencies fail within timeout.<br />
-- check_request : checks that the incoming request is valid; if so, returns an instance of the requested task. <br />
-- handle : handles the provided (by task) state and command. <br />
+- wait_until_ready: blocks for a specified timeout until all dependencies are ready, or throws an exception if dependencies fail within timeout.<br />
+- check_request: checks that the incoming request is valid; if so, return an instance of the requested task. <br />
+- handle: handle the provided (by task) state and command. <br />
 
 Additional implementation details can be found from [here](https://github.com/asaba96/robot_motions_server_ros).
 
@@ -35,9 +35,9 @@ To setup ROS motion server framework, clone below two repository:
 git clone https://github.com/shubhamgarg1994/robot_motions_server_ros 
 git clone https://github.com/shubhamgarg1994/example_motion_task_config
 ```
-All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added in this framework. Here, we are adding a new task “takeoff” command for PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this [tutorial]**(https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
+All the required changes to add a new task will be done inside example motion task config folder. Now, we will explain how a new task can be added to this framework. Here, we are adding a new task for the PX4 flight controller. **If you are not familiar with MAVROS, PX4 offboard mode, please look at this [tutorial]**(https://akshayk07.weebly.com/offboard-control-of-pixhawk.html). <br />
 
-High level state machine is written inside the `test_action_client file.py`. Here, we will running a high level command “uavTakeOff” by calling SimpleActionClient Server. Below code snippet will request a new task named `uavTakeOff`. <br />
+A high-level state machine is written inside the `test_action_client file.py`. Here, we will be running a high-level command “uavTakeOff” by calling SimpleActionClient Server. Below code snippet will request a new task named `uavTakeOff`. <br />
 ```
 def run(server_name):
    client = actionlib.SimpleActionClient(server_name, TaskRequestAction)
@@ -49,8 +49,8 @@ def run(server_name):
    request = TaskRequestGoal(action_type='uavTakeOff')
 
 ```
-Add a new file `highlevelcommands.py` inside the src where the we write the abstract class for the “uavTakeOff” task. This class needs three methods `init`, `get_desired_command` & `cancel`. For simplicity `cancel` method is not implemented here.
-In future if you want to add new task, just add a new class of that task with these three methods.
+Add a new file `highlevelcommands.py` inside the src where we will write the abstract class for the “uavTakeOff” task. This class needs three methods `init`, `get_desired_command` & `cancel`. For simplicity `cancel` method is not implemented here.
+In the future, if you want to add a new task, just add a new class of that task with these three methods.
 ```
 import rospy
 
@@ -75,7 +75,7 @@ class uavTakeOff(AbstractTask):
     def cancel(self):
         return True
 ```
-For above class we need an additional command `FlightMode` class which creates a object with the required parameters. This class needs to be defined in file `task_commands.py`
+In the above class, we introduced an additional command of `FlightMode`. All the parameters defined in this class is self explanatory if you are aware of the PX4 offboard mode. This class needs to be defined in the file `task_commands.py`.
 ```
 class FlightMode(object):
     def __init__(self, mode='', arm=0, altitude=0):
@@ -146,5 +146,5 @@ class CommandHandler(AbstractCommandHandler):
      
 ```
 If we want to query the current state of the task, you can add that part of code in `task_states.py`. 
-You can find above code [here]().
+You can find above code [here](https://github.com/shubhamgarg1994/ros-motion-server-example) also.
 
