@@ -1,102 +1,37 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+title: Mechanical Design Tips
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
-
-This section covers the basic syntax and some rules of thumb for writing.
-
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
-
-
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
-
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Mechanisms for Conversion of Rotary Motion - Link 1
 
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+This paper dives into the many mechanisms that exist to translate rotary motion from a motor to alternate forms of motions. Oftentimes, electromechanical systems require motion that cannot be directly provided with just a rotary motor. A variety of mechanisms exist to translate the torque and motion from a rotary motor to an alternate motion, such as linear motion, interrupted rotation, and rotary oscillation. This link serves as an extensive list for such mechanisms, and it serves useful to give users an idea of different ways they can utilize their actuators to perform specific motion. Not only does the paper give a description of how the mechanism works, but it also provides videos to enhance understanding.
+
+Working with Large Assemblies in CAD - Link 2
+
+A common part of designing any mechatronic system is developing a computer aided design model to represent the system in a virtual 3D space. Often, even the most complicated robots have a CAD assembly with a model for every single part, down to the nuts and bolts. This is extremely useful for engineers to visualize their design in a 3D space, but many parts in an assembly can lead to complications, such as slow runtime, propagation of error among components, and over-definition due to poor or conflicting mates. This tutorial gives useful tips for how to put together an assembly with robustness in mind, eliminating potential errors that could cause the engineer heartache once they get far into their CAD assembly.
+
+Design for Manufacture and Assembly - Link 3
+
+This slideshow gives a great broad overview to DFMA, providing definitions, examples, and tips for successful designing for manufacturing and assembly. Designing for manufacturing and assembly becomes critical when a system makes it transition from prototype to mass-manufacturable design. Even in a single prototype, designing for manufacturing and assembly greatly simplifies the prototyping and assembly of the device, allowing the engineer to get the design right the first time they manufacture it. By walking through this presentation, a reader can gain an understanding of the thinking behind DFMA and how to apply it to their projects.
+
+Material and Process Selection - Link 4
+
+This page provides a comprehensive set of charts, equations, and guidelines for selecting materials for a given application. Material selection is critical in mechanical design, as the properties of a material greatly affect its performance in whatever application it is in. This page can be useful for engineers who understand what sort of properties they desire for their part, such as high Young’s modulus or low coefficient of friction. It plots data points for a variety of materials on a graph comparing useful parameters, such as tensile strength against relative cost, to give the user quantifiable data for selecting a material. In addition to this, the page provides useful charts for selecting a manufacturing process, such as the process tolerance chart or the process material matrix. These charts give an idea of what processes pair best with things like part material, section thickness, mass, tolerance, and surface roughness. These are all important considerations when selecting a manufacturing process, and thus this section is useful for the engineer looking to choose a manufacturing process for their application. 
+
+Fits and Tolerances - Link 5
+
+Designing a proper connection between parts is critical in electromechanical systems, particularly complicated ones in which an issue in one connection can translate to other issues in the system. A common type of connection between components is through pinning or bolting. These methods require designing parts with specific hole sizes in order to produce a desired fit. Slight variations in hole size can cause a loose fit to become a press fit or vice versa, vastly changing the functionality of a connection. This page walks through the different types of fits and applications for them, and then provides tables of actual values to design around when making different types of fits.
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+http://myweb.fcu.edu.tw/~mhsung/Research/TeamProject/2.pdf
 
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+https://www.design-point.com/blog/cad/10-7-14-10-easy-ways-to-improve-large-assembly-performance/
+
+http://me.gatech.edu/files/capstone/L071ME4182DFA
+
+https://downloadfiles.grantadesign.com/pdf/teaching_resource_books/2-Materials-Charts-2010.pdf
+
+http://www.mmto.org/dclark/Reports/Encoder%20Upgrade/fittolerences%20%5BRead-Only%5D.pdf
+
+
