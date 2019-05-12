@@ -25,6 +25,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: Mechanical Design Tips
         url: /wiki/system-design-development/mechanical-design-tips/
+      - title: Mechanical Design Tips
+        url: /wiki/system-design-development/electronic-and-actuator-selection/
   - title: Project Management
     url: /wiki/project-management/
     children:
