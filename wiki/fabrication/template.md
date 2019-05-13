@@ -1,102 +1,29 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+Manufacturing Technique Selection Guide
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
-
-This section covers the basic syntax and some rules of thumb for writing.
-
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
-
-
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
-
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+## Laser Cutting Guide
+This link is to both an introductory and advanced topic laser cutting guide that seeks to answers all your laser cutting questions. The guide starts off by giving a brief history of lasers to the common laser cutting machines of today. Multiple diagrams explaining how a typical laser cutter works are provided that really help the reader understand what is physically going on when their design is cut. The guide also provides an in-depth set of guidelines for creating both laser cutter specific parts, like living hinges, as well as general rules for cutting basic mechanical devices like intermeshing gears. 
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+- https://www.sculpteo.com/media/ebook/Sculpteo_ultimate_guide_laser_cutting.pdf
 
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+## Stereolithography Guide
+This page provides an in-depth guide to rapid prototyping with Stereolithography (SLA) 3d printing. This guide begins with a brief history of this additive manufacturing process, that quickly transitions into current SLA technologies on the market today. The guide also explains the difference between right side up SLA devices and inverted SLA devices, providing the benefits and costs of each when it comes to print quality and resolution. This site also provides a comparison of different resins and their material properties, as well as how different orientations impact the prints mechanical properties.  This helpful for it can aid design choices for 3d printed parts that may be included in high stress or high cycle environments, because tolerances and mechanical properties matter here.  
 
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+## See Also:
+- https://formlabs.com/blog/ultimate-guide-to-stereolithography-sla-3d-printing/
+
+## CNC Machining Guide
+This guide provides a list of best design practices when creating a part to be custom machined in a CNC mill. One of the practices it lists is understanding and managing tolerances. While every designer would like to have their part be exactly as they designed it, this guide explains the cost of adding thigh tolerances to a part that might not be completely necessary. This guide is a great tool for any designer or engineer, because it makes its recommendations based on one of the most important things in industry, costs. Information regarding best CNC design practices, as they relate to lead time and cost, is very useful, as it can prepare an individual best for making design decisions that will allow their product to flourish on the market.
+
+## See Also:
+- https://www.machinedesign.com/materials/cnc-guide-part-1-best-design-practices-custom-machined-parts
+
+## Selecting a Rapid Prototyping Process
+This guide contains a great set of information on choosing the best rapid prototyping process for your design based on their individual specifications. One of the most helpful pieces of information this page as to offer is a huge chart containing prototyping processes from Stereolithography and Selective laser sintering to Injection Molding and CNCing. While it does a great job comparing the different methods based on strength, finish and possible use material, it does a better job going in-depth on each process to create a detailed guide to inform any new designer or engineer about the different rapid prototyping processes out there to help them create systems and components more informed and well-tailored to an application. 
+
+## See Also:
+- https://www.protolabs.com/resources/white-papers/rapid-prototyping-processes/
+
+
