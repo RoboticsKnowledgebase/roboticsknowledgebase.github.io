@@ -23,6 +23,8 @@ wiki:
         url: /wiki/system-design-development/cable-management/
       - title: Subsystem Interface Modeling
         url: /wiki/system-design-development/subsystem-interface-modeling/
+      - title: Component Selection
+        url: /wiki/system-design-development/component-selection
   - title: Project Management
     url: /wiki/project-management/
     children:
