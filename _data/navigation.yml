@@ -72,6 +72,8 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: SBC Basics, Sensing, and Computer Vision
+        url: /wiki/sensing/sbc-basics-localization-and-computer-vision/
   - title: Actuation
     url: /wiki/actuation/
     children:
