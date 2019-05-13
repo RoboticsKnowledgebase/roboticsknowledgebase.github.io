@@ -24,7 +24,9 @@ wiki:
       - title: Subsystem Interface Modeling
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: Component Selection
-        url: /wiki/system-design-development/component-selection
+        url: /wiki/system-design-development/component-selection/
+      - title: Manufacturing Process Selection Guide
+        url: /wiki/system-design-development/manufacturing-technique-selection-guide/
   - title: Project Management
     url: /wiki/project-management/
     children:
