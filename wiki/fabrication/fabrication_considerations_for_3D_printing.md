@@ -115,10 +115,7 @@ ABS properties:
 - Shrinkage/ warping: Considerable
 - Soluble: In esters, ketones, and acetone.
 
-   [create_docker_image]: <https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>
-   [install_nvidia_driver]: <https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>
-
-#### Furthur Reading:
+#### Further Reading:
 1. [Design considerations for 3D printing](
 https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
 
