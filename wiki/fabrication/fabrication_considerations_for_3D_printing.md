@@ -8,7 +8,7 @@ Following are some of the main consideration one must keep a note of while desig
 
 The wall thickness defines the number of times the extruder will lay filament around the perimeter of your model before switching to your infill factor. (Infill is defined separately as a percentage. Typically, 10% or 20% works well for infill.)
 
-Your wall thickness should be defined as a multiple of your nozzle diameter, so a .4mm nozzle with a .8mm wall thickness would result in the printer laying a perimeter two thicknesses wide for each layer. This is the case with the Makerbot Replicator available at the MRSD lab.
+Your wall thickness should be defined as a multiple of your nozzle diameter, so a .4mm nozzle with a .8mm wall thickness would result in the printer laying a perimeter two thicknesses wide for each layer. This is the case with the Makerbot Replicator 2.
 
 It is most important to keep this in mind when you are drawing very thin walls. When parts of your model are thin, the perimeter walls are so close together that it doesn’t leave much room for infill in between them. Sometimes, it may not properly fuse the walls to each other, leaving a hollow gap between the walls on the inside of the model.
 
