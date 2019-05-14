@@ -16,7 +16,7 @@ It is most important to keep this in mind when you are drawing very thin walls. 
 
 
 ## 2. Part Orientation
-![N|Solid](http://www.ap242.org/image/image_gallery?uuid=a7eb3359-8620-457d-9923-9d4cbec5ba5e&groupId=52520&t=1503324782232)
+![N|Solid](assets/images/part_orientation.jpeg)
 
 Part Orientation plays a vital role in determining the final finish of the 3D printed part. In the image above, 4 possible configurations are shown in which the object can be 3D printed. The part orientation while printing affects the following:
 
