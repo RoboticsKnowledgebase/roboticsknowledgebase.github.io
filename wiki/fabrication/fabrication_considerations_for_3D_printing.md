@@ -1,4 +1,6 @@
-# Fabrication Considerations for 3D printing
+---
+title: Fabrication Considerations for 3D printing
+---
 
 There is more to 3D printing than designing components and parts and replicating those 3D solid models into useful assemblies.  When beginning a design, one must take into account the 3D filament to use, the 3D printing equipment, the model’s final resolution and the limitations of each 3D CAD software to fabricate quality parts.  By keeping these key elements in mind, along with repetition, the 3D printing practitioner and designer will maximize his/her efforts, resulting in high quality finished products.
 
