@@ -1,4 +1,4 @@
-Lane Detection in the Simulated Environment
+# Lane Detection in the Simulated Environment
 
 This post will walk you through different lane detection techniques with the code and results in the the simulated environment. 
 Simulator used: Carla
