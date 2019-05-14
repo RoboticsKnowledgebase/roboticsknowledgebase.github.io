@@ -7,7 +7,7 @@ Nvidia Titan V GPU, 32 GB RAM and intel i7 processor - 3.5 GHz
 
 First method I’ll be talking about is an OpenCV approach.This approach has been mostly been derived from Udacity nanodegree course on autonomous vehicles. 
 
-Algorithm:
+## Algorithm:
 
 First step will be to convert the RGB image to Gray-scale image. This means that a 3 channel image is converted into a single channel image. 
 This is done, as canny edge detector takes in input from only a gray-scale image. Code used for this is: 
@@ -26,7 +26,7 @@ Now we will be using Hough transform to which will convert a line in the cartesi
 
 
 
-Algorithm for Hough transform is as follows:
+## Algorithm for Hough transform is as follows:
 
 1. Edge detection, e.g. using the Canny edge detector. 
 2. Mapping of edge points to the Hough space and storage in an accumulator. 
@@ -60,7 +60,7 @@ Another big plus point is that it doesn’t just detects the lanes, but it does 
 
 Below is the image showing its architecture:
 
-Working of LaneNet:
+## Working of LaneNet:
 combines the benefits of binary lane segmentation with a clustering loss function designed for one-shot instance segmentation. In the output of LaneNet, each lane pixel is assigned the id of their corresponding lane.
 
 We still have to fit a curve through these pixels to get the lane parametrization. Typically, the lane pixels are first projected into a ”bird’s-eye view” representation, using a fixed transformation matrix. However, due to the fact that the transformation parameters are fixed for all images, this raises issues when non-flat ground-planes are encountered, e.g. in slopes. To alleviate this problem, we train a network, referred to as H-Net, that estimates the parameters of an ”ideal” perspective transformation, conditioned on the input image. This transformation is not necessarily the typical ”bird’s eye view”. Instead, it is the transformation in which the lane can be optimally fitted with a low-order polynomial.
