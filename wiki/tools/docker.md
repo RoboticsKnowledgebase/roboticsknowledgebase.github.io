@@ -17,7 +17,7 @@ Containerization is increasingly popular because containers are:
 
 ## Install Docker on Ubuntu 16.04:
 
-Now let us download Docker into a Ubuntu Xenial (16.04). Firstly, let's get started with updating previous repos 
+Now let us download Docker into a Ubuntu Xenial (16.04). Firstly, let's get started with updating previous repositories
 
 ```sh
 $ sudo apt-get update
@@ -28,7 +28,7 @@ In order to ensure the downloads are valid, add the GPG key for the official Doc
 ```sh
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
 ```
-If the GPG key is added propertly, the terminal should output 'ok' message.
+If the GPG key is added properly, the terminal should output 'ok' message.
 
 Add the Docker repository to APT sources:
 
@@ -77,23 +77,23 @@ If the Docker is properly installed, the above command will output something sim
 
 ## Setup Nvidia Docker:
 
-For Projects having different versions of software packages like tensorflow, Docker helps to keep a uniform version across various machines so incompactability issues wouldn't arise. This section will highlight how to use Nvidia docker for your project.
+For Projects having different versions of software packages like tensorflow, Docker helps to keep a uniform version across various machines so incompatibility issues wouldn't arise. This section will highlight how to use Nvidia docker for your project.
 
-Ensure that your system is able to access GPU using the following command:
+Ensure that your system is able to access the GPU using the following command:
 
 ```sh
 $ nvidia-smi
 ```
 
-The above command should display the system's GPU information. If the above doesn't display the system's GPU information, run the following command to detect the precence of GPU: 
+The above command should display the system's GPU information. If the above doesn't display the system's GPU information, run the following command to detect the presence of GPU: 
 
 ```sh
 $ lspci | grep -i nvidia
 ```
 
-Failure of the any of the above command indicates that the NVIDIA GPU is not installed into the system. You may want to follow this tutorial to install NVIDIA drivers [install_nvidia_driver](<https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>).
+Failure of any of the above command indicates that the NVIDIA GPU is not installed into the system. You may want to follow this tutorial to install NVIDIA drivers [install_nvidia_driver](<https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>).
 
-Now, we need to install package repositiories.
+Now, we need to install package repositories.
 
 ```
 $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \ sudo apt-key add -distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -143,16 +143,16 @@ To generate this message, Docker took the following steps:
     to your terminal.
 ```
 
-To Create docker files for your project, you can follow the tuturial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
+To Create docker files for your project, you can follow the tutorial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
-### Furthur Reading:
+### Further Reading:
 1. [Create your very own Docker image](https://www.scalyr.com/blog/create-docker-image)
 
-2. [Create Docker containers, services,  swarms, stacks for your application](<https://docs.docker.com/get-started>)
+2. [Create Docker containers, services,  swarms, stacks for your application](https://docs.docker.com/get-started)
 
-3. [Deploy Docker containers in AWS](<https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers>)
+3. [Deploy Docker containers in AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers)
 
-4. [Docker Images inventory](<https://hub.docker.com/search/?type=image>)
+4. [Docker Images inventory](https://hub.docker.com/search/?type=image)
 
 #### References:
 1. About Docker:
