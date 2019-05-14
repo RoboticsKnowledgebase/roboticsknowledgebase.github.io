@@ -1,3 +1,7 @@
+---
+title: Docker 
+---
+
 # Docker Setup
 
 Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. The use of Linux containers to deploy applications is called containerization. Containers are not new, but their use for easily deploying applications is.
@@ -11,7 +15,7 @@ Containerization is increasingly popular because containers are:
   - Scalable: You can increase and automatically distribute container replicas.
   - Stackable: You can stack services vertically and on-the-fly
 
-# Install Docker on Ubuntu 16.04:
+## Install Docker on Ubuntu 16.04:
 
 Now let us download Docker into a Ubuntu Xenial (16.04). Firstly, let's get started with updating previous repos 
 
@@ -87,7 +91,7 @@ The above command should display the system's GPU information. If the above does
 $ lspci | grep -i nvidia
 ```
 
-Failure of the any of the above command indicates that the NVIDIA GPU is not installed into the system. You may want to follow this tutorial to install NVIDIA drivers [here][install_nvidia_driver].
+Failure of the any of the above command indicates that the NVIDIA GPU is not installed into the system. You may want to follow this tutorial to install NVIDIA drivers [install_nvidia_driver](<https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>).
 
 Now, we need to install package repositiories.
 
@@ -139,24 +143,16 @@ To generate this message, Docker took the following steps:
     to your terminal.
 ```
 
-To Create docker files for your project, you can follow the tuturial [here][create_docker_image]
+To Create docker files for your project, you can follow the tuturial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
-   [create_docker_image]: <https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>
-   [install_nvidia_driver]: <https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>
+### Furthur Reading:
+1. [Create your very own Docker image](https://www.scalyr.com/blog/create-docker-image)
 
+2. [Create Docker containers, services,  swarms, stacks for your application](<https://docs.docker.com/get-started>)
 
-#### Furthur Reading:
-1. Create your very own Docker image:
-https://www.scalyr.com/blog/create-docker-image/
+3. [Deploy Docker containers in AWS](<https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers>)
 
-2. Create Docker containers, services,  swarms, stacks for your application:
-<https://docs.docker.com/get-started/>
-
-3. Deploy Docker containers in AWS:
-<https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers>
-
-4. Docker Images inventory:
-<https://hub.docker.com/search/?type=image>
+4. [Docker Images inventory](<https://hub.docker.com/search/?type=image>)
 
 #### References:
 1. About Docker:
