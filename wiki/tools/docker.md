@@ -155,14 +155,10 @@ To Create docker files for your project, you can follow the tutorial [here](<htt
 4. [Docker Images inventory](https://hub.docker.com/search/?type=image)
 
 #### References:
-1. About Docker:
-<https://docs.docker.com>
+1. About Docker: https://docs.docker.com
 
-2. NVIDIA Docker:
-<https://github.com/NVIDIA/nvidia-docker>
+2. NVIDIA Docker:https://github.com/NVIDIA/nvidia-docker
 
-3. Creating your own Dockerfile:
-<https://www.youtube.com/watch?v=hnxI-K10auY>
+3. Creating your own Dockerfile: https://www.youtube.com/watch?v=hnxI-K10auY
 
-4. Docker file reference:
-<https://docs.docker.com/engine/reference/builder>
+4. Docker file reference:https://docs.docker.com/engine/reference/builder
