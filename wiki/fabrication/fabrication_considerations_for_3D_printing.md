@@ -119,23 +119,18 @@ ABS properties:
    [install_nvidia_driver]: <https://github.com/heethesh/Computer-Vision-and-Deep-Learning-Setup>
 
 #### Furthur Reading:
-1. Design considerations for 3D printing.
-<https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing>
+1. [Design considerations for 3D printing](
+<https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing>)
 
-1. calibrate your 3D printer
-<https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained>
+1. [Calibrate your 3D printer](<https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained>)
 
-2. calibrate extruder
-<https://all3dp.com/2/extruder-calibration-6-easy-steps-2>
+2. [Calibrate extruder](<https://all3dp.com/2/extruder-calibration-6-easy-steps-2>)
 
-3. Dimensionality test
-<https://www.youmagine.com/designs/make-2016-3d-printer-shootout-models>
+3. [Dimensionality test](<https://www.youmagine.com/designs/make-2016-3d-printer-shootout-models>)
 
-4. How to fix warping: Tutorial bu Ultimaker.
-<https://ultimaker.com/en/resources/19537-how-to-fix-warping>
+4. [How to fix warping: Tutorial bu Ultimaker](<https://ultimaker.com/en/resources/19537-how-to-fix-warping>)
 
-5. Accuracy of 3D printing materials.
-<https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts>
+5. [Accuracy of 3D printing materials](<https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts>)
 
 #### References:
 1. Printing using ABS material:
