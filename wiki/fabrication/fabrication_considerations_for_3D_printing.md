@@ -116,8 +116,7 @@ ABS properties:
 - Soluble: In esters, ketones, and acetone.
 
 #### Further Reading:
-1. [Design considerations for 3D printing](
-https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
+1. [Design considerations for 3D printing](https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
 
 2. [Calibrate your 3D printer](https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained)
 
@@ -130,23 +129,16 @@ https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
 6. [Accuracy of 3D printing materials](https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts)
 
 #### References:
-1. Printing using ABS material:
-<https://all3dp.com/abs-3d-printer-filament-explained>
+1. Printing using ABS material: https://all3dp.com/abs-3d-printer-filament-explained
 
-2. 3D Printing material available:
-<https://all3dp.com/1/3d-printer-filament-types-3d-printing-3d-filament>
+2. 3D Printing material available: https://all3dp.com/1/3d-printer-filament-types-3d-printing-3d-filament
 
-3. Printing using PLA material:
-https://all3dp.com/1/3d-printing-materials-guide-3d-printer-material/#pla
+3. Printing using PLA material: https://all3dp.com/1/3d-printing-materials-guide-3d-printer-material/#pla
 
-4. Testing Tolerance of 3D printer:
-<https://all3dp.com/2/3d-printer-tolerance-test-and-improve-your-3d-printer-s-tolerances>
+4. Testing Tolerance of 3D printer: https://all3dp.com/2/3d-printer-tolerance-test-and-improve-your-3d-printer-s-tolerances
 
-5. Ultimaker manual of 3D printing materials:
-<https://ultimaker.com/en/resources/manuals/materials>
+5. Ultimaker manual of 3D printing materials: https://ultimaker.com/en/resources/manuals/materials
 
-6. Overhanging structures in 3D printing over 45 degrees:
-<https://all3dp.com/2/3d-printing-overhang-how-to-master-overhangs-exceeding-45>
+6. Overhanging structures in 3D printing over 45 degrees: https://all3dp.com/2/3d-printing-overhang-how-to-master-overhangs-exceeding-45
 
-7. How to deal with material overhangs in 3D printing:
-<https://medium.com/bravovictornovember/3d-print-overhangs-and-how-to-deal-with-them-9eed6a7bcb5d>
+7. How to deal with material overhangs in 3D printing: https://medium.com/bravovictornovember/3d-print-overhangs-and-how-to-deal-with-them-9eed6a7bcb5d
