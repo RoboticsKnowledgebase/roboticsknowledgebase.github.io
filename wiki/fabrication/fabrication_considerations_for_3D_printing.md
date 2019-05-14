@@ -2,7 +2,7 @@
 title: Fabrication Considerations for 3D printing
 ---
 
-There is more to 3D printing than designing components and parts and replicating those 3D solid models into useful assemblies.  When beginning a design, one must take into account the 3D filament to use, the 3D printing equipment, the model’s final resolution and the limitations of each 3D CAD software to fabricate quality parts.  By keeping these key elements in mind, along with repetition, the 3D printing practitioner and designer will maximize his/her efforts, resulting in high quality finished products.
+There is more to 3D printing than designing components and parts and replicating those 3D solid models into useful assemblies.  When beginning a design, one must take into account the 3D filament to use, the 3D printing equipment, the model’s final resolution and the limitations of each 3D CAD software to fabricate quality parts.  By keeping these key elements in mind, along with repetition, the 3D printing practitioner and designer will maximize his/her efforts, resulting in high-quality finished products.
 
 Following are some of the main consideration one must keep a note of while designing and fabricating parts using 3D printing:
 
@@ -10,7 +10,7 @@ Following are some of the main consideration one must keep a note of while desig
 
 The wall thickness defines the number of times the extruder will lay filament around the perimeter of your model before switching to your infill factor. (Infill is defined separately as a percentage. Typically, 10% or 20% works well for infill.)
 
-Your wall thickness should be defined as a multiple of your nozzle diameter, so a .4mm nozzle with a .8mm wall thickness would result in the printer laying a perimeter two thicknesses wide for each layer. This is the case with the Makerbot Replicator 2.
+Your wall thickness should be defined as a multiple of your nozzle diameter so a .4mm nozzle with a .8mm wall thickness would result in the printer laying a perimeter two thicknesses wide for each layer. This is the case with the MakerBot Replicator 2.
 
 It is most important to keep this in mind when you are drawing very thin walls. When parts of your model are thin, the perimeter walls are so close together that it doesn’t leave much room for infill in between them. Sometimes, it may not properly fuse the walls to each other, leaving a hollow gap between the walls on the inside of the model.
 
@@ -22,10 +22,10 @@ Part Orientation plays a vital role in determining the final finish of the 3D pr
 
 - Time of printing
 - Surface Quality
-- Mechanical properties (Tenile and Shearing)
+- Mechanical properties (Tensile and Shearing)
 - Supports and Overhanging structure
 
-In the above case, it is best to print the part in the configuration shown in lower left i.e. laying along the surface having maximum surface area. 
+In the above case, it is best to print the part in the configuration shown in lower left i.e. laying along the surface having the maximum surface area. 
 
 ## 3. Overhangs and supports
 ![N|Solid](https://cdn-images-1.medium.com/max/1500/1*vRzutfX5qpPH9NHZh-fHBQ.png)
@@ -39,7 +39,7 @@ However, anything past 45 degrees approaches the horizontal and becomes difficul
 How to deal with Overhangs?
 - Enable support structures.
 ![N|Solid](https://cdn-images-1.medium.com/max/1000/1*aFNYLE7vSIA6r-gRyZOGpg.png)
-- Orient the object  to minimize the need for support structures.
+- Orient the object to minimize the need for support structures.
 - Slicing i.e. divide the part into subcomponents and glue them together at the end.
 
 ## 4. Warping & Shrinkage
@@ -48,7 +48,7 @@ How to deal with Overhangs?
 Warping occurs due to material shrinkage while 3D printing, which causes the corners of the print to lift and detach from the build plate. When plastics are printed, they firstly expand slightly but contract as they cool down. If material contracts too much, this causes the print to bend up from the build plate. Some materials shrink more than others (e.g. PC has a higher shrinkage than PLA), which means there’s a larger chance of warping when using it.
 
 How to deal with warping?
-- Use Raft: A raft or brim is basically an underground for your product. You print a number of very light layers under your product. This ensures less shrinkage differences and tensions at the bottom of your product. If there is warping, then this mainly affects the raft instead of your product. It is therefore important that the raft is wider than your product, so that it does not cause problems when the corners curl up.
+- Use Raft: A raft or brim is basically underground for your product. You print a number of very light layers under your product. This ensures fewer shrinkage differences and tensions at the bottom of your product. If there is warping, then this mainly affects the raft instead of your product. It is therefore important that the raft is wider than your product so that it does not cause problems when the corners curl up.
 - Temperature Control: Choose a printer where the cooling of the product is as gradual as possible. For this purpose, a closed and conditioned box is essential, among other things. This way you have control over the temperature in the cabinet to minimize differences in shrinkage.
 - Ensure the build plate is leveled correctly.
 - Apply an adhesive:  When using a heated build plate, it’s recommended that you apply an adhesive to the glass plate.  Please refer to the type of material and compliant adhesive.
@@ -63,7 +63,7 @@ The tolerance can be improved by:
 - Place the component at the center of the printing base
 
 ## 6. Material
-The choice of material can be crucial for designing 3D printed materials. Here we discuss about the two most widely used materials for 3D printing.
+The choice of material can be crucial for designing 3D printed materials. Here we discuss the two most widely used materials for 3D printing.
 
 ### PLA
 PLA (Polylactic Acid) is one of the two most commonly used desktop 3D printing filaments. It is the "default" recommended material for many desktop 3D printers, and with good reason - PLA is useful in a broad range of printing applications, has the virtue of being both odorless and low-warp, and does not require a heated bed. 
@@ -72,7 +72,7 @@ Printing Filament Properties:
 - PLA filament is a stiff but brittle 3D printing material.
 - Well suited for prototyping
 - Best for low-stress applications. Should not be the major load bearing of a mechanical structure.
-- Best 3D printer material for beginners due to ease of printing and minimal warp.
+- Best 3D printer material for beginners due to the ease of printing and minimal warp.
 
 Technologies: FDM, SLA, SLS
 
@@ -87,7 +87,7 @@ PLA material properties for printing:
 
 
 ### ABS
-Acrylonitrile Butadiene Styrene or ABS for short, is created from Acrylonitrile, Butadiene and Styrene polymers. It is a material commonly used in personal or household 3D printing, which is done using primarily FDM. If you are used to printing with PLA, you’ll probably find ABS a little trickier to print with.
+Acrylonitrile Butadiene Styrene or ABS for short is created from Acrylonitrile, Butadiene and Styrene polymers. It is a material commonly used in personal or household 3D printing, which is done using primarily FDM. If you are used to printing with PLA, you’ll probably find ABS a little trickier to print with.
 
 ABS Filament: What are the Proper Settings?
 It can be quite some task for a newcomer to find the right settings. No spool is alike, and the specifications may vary. Make sure you cover these bases:
@@ -103,7 +103,7 @@ ABS 3D Printing Filament Properties:
 
 - ABS filament is strong, ductile material with wear resistance and heat tolerance.
 - Common 3D prints with ABS are Interlocking parts like gears, parts exposed to UV and heat like a car cup holder, or prototyping.
-- Wide selection of methods for excellent post-processing.
+- A wide selection of methods for excellent post-processing.
 
 Technologies: FDM, Binder Jetting, SLA, PolyJetting
 
