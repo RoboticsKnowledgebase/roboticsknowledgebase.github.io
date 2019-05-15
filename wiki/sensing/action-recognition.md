@@ -1,11 +1,13 @@
 # Traffic Policeman Gesture Recognition With Spatial Temporal Graph Convolution Network
 
-Introduction. With the rise of the popularity of self-driving cars, there would be more scenarios where the autonomous cars would be used in environments which are not properly designed for them. Building an automatic gesture recognition system is essential for self-driving cars, especially in the developing countries where the traffic signal infrastructure could be not present or working. In this project, we focus on the video understanding of the automatic gesture recognition system to classify the gesture of traffic policemen who stands at traffic intersections and give commands to the oncoming traffic. We use skeleton data for pose recognition because -
-• Skeleton recognition systems like OpenPose work
+## Introduction
+
+With the rise of the popularity of self-driving cars, there would be more scenarios where the autonomous cars would be used in environments which are not properly designed for them. Building an automatic gesture recognition system is essential for self-driving cars, especially in the developing countries where the traffic signal infrastructure could be not present or working. In this project, we focus on the video understanding of the automatic gesture recognition system to classify the gesture of traffic policemen who stands at traffic intersections and give commands to the oncoming traffic. We use skeleton data for pose recognition because -
+1) Skeleton recognition systems like OpenPose work
 well, acting as an excellent noise removal utility.
-• All the information about gesture is present in the
+20 All the information about gesture is present in the
 skeleton.
-• Low dimensional skeleton representation allows the fine tuning of feature extraction networks with very little data.
+3) Low dimensional skeleton representation allows the fine tuning of feature extraction networks with very little data.
 
 ## The Dataset
 
