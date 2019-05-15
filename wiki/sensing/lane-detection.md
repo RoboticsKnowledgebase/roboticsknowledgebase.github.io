@@ -11,9 +11,9 @@ Firstly, I’ll be talking about the OpenCV based method (classical computer vis
 ## OpenCV Based Lane Detection:
 
 First step will be to convert the RGB image to Gray-scale image. This means that a 3 channel image is converted into a single channel image. This is done, as canny edge detector (whch is used afterwards) takes in an input only from a gray-scale image. Code used for this is: 
-'''
+```
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-'''
+```
 canny() function parses the pixel values according to their gradient. What’s left over are the edges — or where there is a steep derivative in at least one direction. We will need to supply thresholds for canny() as it computes the gradient. Recommended values of low to high threshold ratio of 1:2 or 1:3.
 
 Code for doing this is:
