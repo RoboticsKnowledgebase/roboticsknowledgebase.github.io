@@ -1,17 +1,19 @@
 # Lane Detection in the Simulated Environment
 
-This post will walk you through different lane detection techniques with the code and results in the the simulated environment. 
+This post will walk you through the different lane detection techniques with the code and results in the a simulated environment (For example Carla, NVIDIA drive simulators). 
 Simulator used: Carla
 System specifications: 
 Nvidia Titan V GPU, 32 GB RAM and intel i7 processor - 3.5 GHz 
 
-First method I’ll be talking about is an OpenCV approach.This approach has been mostly been derived from Udacity nanodegree course on autonomous vehicles. 
+Firstly, I’ll be talking about the OpenCV based method (classical computer vision).This approach has mostly been derived from Udacity nanodegree course on autonomous vehicles - https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013
 
-## Algorithm:
 
-First step will be to convert the RGB image to Gray-scale image. This means that a 3 channel image is converted into a single channel image. 
-This is done, as canny edge detector takes in input from only a gray-scale image. Code used for this is: 
+## OpenCV Based Lane Detection:
+
+First step will be to convert the RGB image to Gray-scale image. This means that a 3 channel image is converted into a single channel image. This is done, as canny edge detector (whch is used afterwards) takes in an input only from a gray-scale image. Code used for this is: 
+'''
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+'''
 canny() function parses the pixel values according to their gradient. What’s left over are the edges — or where there is a steep derivative in at least one direction. We will need to supply thresholds for canny() as it computes the gradient. Recommended values of low to high threshold ratio of 1:2 or 1:3.
 
 Code for doing this is:
