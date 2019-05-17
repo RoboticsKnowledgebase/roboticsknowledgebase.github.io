@@ -116,17 +116,17 @@ ABS properties:
 - Soluble: In esters, ketones, and acetone.
 
 ## Further Reading:
-1. [Design considerations for 3D printing](https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
+1. Design considerations for 3D printing: https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing
 
-2. [Calibrate your 3D printer](https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained)
+2. Calibrate your 3D printer: https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained
 
-3. [Calibrate extruder](https://all3dp.com/2/extruder-calibration-6-easy-steps-2)
+3. Calibrate extruder: https://all3dp.com/2/extruder-calibration-6-easy-steps-2
 
-4. [Dimensionality test](https://www.youmagine.com/designs/make-2016-3d-printer-shootout-models)
+4. Dimensionality test: https://www.youmagine.com/designs/make-2016-3d-printer-shootout-models
 
-5. [How to fix warping: Tutorial bu Ultimaker](https://ultimaker.com/en/resources/19537-how-to-fix-warping)
+5. How to fix warping: Tutorial bu Ultimaker: https://ultimaker.com/en/resources/19537-how-to-fix-warping
 
-6. [Accuracy of 3D printing materials](https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts)
+6. Accuracy of 3D printing materials: https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts
 
 ## References:
 1. Printing using ABS material: https://all3dp.com/abs-3d-printer-filament-explained
