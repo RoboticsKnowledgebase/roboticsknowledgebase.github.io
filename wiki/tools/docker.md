@@ -146,13 +146,13 @@ To generate this message, Docker took the following steps:
 To Create docker files for your project, you can follow the tutorial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
 ## Further Reading:
-1. [Create your very own Docker image](https://www.scalyr.com/blog/create-docker-image)
+1. Create your very own Docker image :https://www.scalyr.com/blog/create-docker-image
 
-2. [Create Docker containers, services,  swarms, stacks for your application](https://docs.docker.com/get-started)
+2. Create Docker containers, services,  swarms, stacks for your application: https://docs.docker.com/get-started
 
-3. [Deploy Docker containers in AWS](https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers)
+3. Deploy Docker containers in AWS: https://aws.amazon.com/getting-started/tutorials/deploy-docker-containers
 
-4. [Docker Images inventory](https://hub.docker.com/search/?type=image)
+4. Docker Images inventory: https://hub.docker.com/search/?type=image
 
 ## References:
 1. About Docker: https://docs.docker.com
