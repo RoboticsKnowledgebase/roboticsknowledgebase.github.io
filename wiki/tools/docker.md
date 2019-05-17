@@ -146,7 +146,7 @@ To generate this message, Docker took the following steps:
 To Create docker files for your project, you can follow the tutorial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
 ## Further Reading:
-1. Create your very own Docker image :https://www.scalyr.com/blog/create-docker-image
+1. Create your very own Docker image: https://www.scalyr.com/blog/create-docker-image
 
 2. Create Docker containers, services,  swarms, stacks for your application: https://docs.docker.com/get-started
 
@@ -157,8 +157,8 @@ To Create docker files for your project, you can follow the tutorial [here](<htt
 ## References:
 1. About Docker: https://docs.docker.com
 
-2. NVIDIA Docker:https://github.com/NVIDIA/nvidia-docker
+2. NVIDIA Docker: https://github.com/NVIDIA/nvidia-docker
 
 3. Creating your own Dockerfile: https://www.youtube.com/watch?v=hnxI-K10auY
 
-4. Docker file reference:https://docs.docker.com/engine/reference/builder
+4. Docker file reference: https://docs.docker.com/engine/reference/builder
