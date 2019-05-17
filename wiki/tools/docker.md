@@ -115,7 +115,7 @@ Test Installation with CUDA Docker image:
 $ docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 ```
 
-### Working With Docker:
+## Working With Docker:
 
 Now, let's dive into using Docker for your project
 
@@ -145,7 +145,7 @@ To generate this message, Docker took the following steps:
 
 To Create docker files for your project, you can follow the tutorial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
-### Further Reading:
+## Further Reading:
 1. [Create your very own Docker image](https://www.scalyr.com/blog/create-docker-image)
 
 2. [Create Docker containers, services,  swarms, stacks for your application](https://docs.docker.com/get-started)
@@ -154,7 +154,7 @@ To Create docker files for your project, you can follow the tutorial [here](<htt
 
 4. [Docker Images inventory](https://hub.docker.com/search/?type=image)
 
-#### References:
+## References:
 1. About Docker: https://docs.docker.com
 
 2. NVIDIA Docker:https://github.com/NVIDIA/nvidia-docker
