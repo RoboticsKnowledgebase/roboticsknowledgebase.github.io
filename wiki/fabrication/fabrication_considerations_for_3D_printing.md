@@ -16,7 +16,7 @@ It is most important to keep this in mind when you are drawing very thin walls. 
 
 
 ## 2. Part Orientation
-![N|Solid](http://www.ap242.org/image/image_gallery?uuid=a7eb3359-8620-457d-9923-9d4cbec5ba5e&groupId=52520&t=1503324782232)
+![part_orientation](http://www.ap242.org/image/image_gallery?uuid=a7eb3359-8620-457d-9923-9d4cbec5ba5e&groupId=52520&t=1503324782232)
 
 Part Orientation plays a vital role in determining the final finish of the 3D printed part. In the image above, 4 possible configurations are shown in which the object can be 3D printed. The part orientation while printing affects the following:
 
@@ -28,7 +28,7 @@ Part Orientation plays a vital role in determining the final finish of the 3D pr
 In the above case, it is best to print the part in the configuration shown in lower left i.e. laying along the surface having the maximum surface area. 
 
 ## 3. Overhangs and supports
-![N|Solid](https://cdn-images-1.medium.com/max/1500/1*vRzutfX5qpPH9NHZh-fHBQ.png)
+[overhangs_and_supports](https://cdn-images-1.medium.com/max/1500/1*vRzutfX5qpPH9NHZh-fHBQ.png)
 
 A 3D printing overhang is any part of a print that extends outward, beyond the previous layer, without any direct support.
 
@@ -43,7 +43,7 @@ How to deal with Overhangs?
 - Slicing i.e. divide the part into subcomponents and glue them together at the end.
 
 ## 4. Warping & Shrinkage
-![N|Solid](https://static.wixstatic.com/media/e96ca7_9881d5b065274700a5ea433aec66f55f~mv2.jpg/v1/fill/w_410,h_273,al_c,q_80,usm_0.66_1.00_0.01/e96ca7_9881d5b065274700a5ea433aec66f55f~mv2.jpg)
+[warping_and_shrinkage](https://static.wixstatic.com/media/e96ca7_9881d5b065274700a5ea433aec66f55f~mv2.jpg/v1/fill/w_410,h_273,al_c,q_80,usm_0.66_1.00_0.01/e96ca7_9881d5b065274700a5ea433aec66f55f~mv2.jpg)
 
 Warping occurs due to material shrinkage while 3D printing, which causes the corners of the print to lift and detach from the build plate. When plastics are printed, they firstly expand slightly but contract as they cool down. If material contracts too much, this causes the print to bend up from the build plate. Some materials shrink more than others (e.g. PC has a higher shrinkage than PLA), which means there’s a larger chance of warping when using it.
 
@@ -115,7 +115,7 @@ ABS properties:
 - Shrinkage/ warping: Considerable
 - Soluble: In esters, ketones, and acetone.
 
-#### Further Reading:
+## Further Reading:
 1. [Design considerations for 3D printing](https://www.3dhubs.com/knowledge-base/key-design-considerations-3d-printing)
 
 2. [Calibrate your 3D printer](https://all3dp.com/2/how-to-calibrate-a-3d-printer-simply-explained)
@@ -128,7 +128,7 @@ ABS properties:
 
 6. [Accuracy of 3D printing materials](https://www.3dhubs.com/knowledge-base/dimensional-accuracy-3d-printed-parts)
 
-#### References:
+## References:
 1. Printing using ABS material: https://all3dp.com/abs-3d-printer-filament-explained
 
 2. 3D Printing material available: https://all3dp.com/1/3d-printer-filament-types-3d-printing-3d-filament
