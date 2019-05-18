@@ -151,6 +151,8 @@ wiki:
   - title: Fabrication
     url: /wiki/fabrication/
     children:
+      - title: Fabrication Considerations for 3D printing
+        url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
       - title: Machining & Prototyping
         url: /wiki/fabrication/machining-prototyping/
       - title: Rapid Prototyping
@@ -173,6 +175,8 @@ wiki:
   - title: Tools
     url: /wiki/tools/
     children:
+      - title: Docker
+        url: /wiki/tools/docker/
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
