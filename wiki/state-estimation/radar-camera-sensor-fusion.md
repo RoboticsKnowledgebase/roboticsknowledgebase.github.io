@@ -1,30 +1,34 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+title: 'Radar Camera Sensor Fusion '
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+Fusing data from multiple sensor is an integral part of the perception system of robots and especially Autonomous Vehicles. The fusion becomes specially useful when the data coming from the different sensors gives complementary information. In this tutorial we give an introduction to Radar Camera sensor fusion for tracking oncoming vehicles. A camera is helpful in detection of vehicles in the short range while radar performs really well for long range vehicle detection. 
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
 
 If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
 
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
-## First subheading
+## Camera
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
 This section covers the basic syntax and some rules of thumb for writing.
 
-### Basic syntax
+### Object Detection 
+A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+![This is an object detection image](assets/images/Hk47portrait-298x300.jpg)
+> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+
+### Object Tracking in images 
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
 > This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
 
+### Inverse Perspective Mapping 
+![This is IPM input and output](assets/images/Hk47portrait-298x300.jpg)
 
-#### Bullet points and numbered lists
+#### Camera Output
 Here are some hints on writing (in no particular order):
 - Focus on application knowledge.
   - Write tutorials to achieve a specific outcome.
@@ -51,7 +55,9 @@ Entries in the Wiki should follow this format:
 5. Further Reading (relevant articles on other sites).
 6. References.
 
-#### Code snippets
+## Radar
+
+#### Radar Output
 There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
 
 Larger chunks of code should use this format:
@@ -69,11 +75,14 @@ def recover_msg(msg):
 ```
 This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
-#### LaTex Math Support
+## Camera Radar Tracker
+Give idea about tracker is comprised of what all?
 Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
 \\[ \frac{1}{n^{2}} \\]
+### Tracker Basics
+Information about what all is needed for the tracker to work
 
-#### Images and Video
+### EKF
 Images and embedded video are supported.
 
 ![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
@@ -86,14 +95,19 @@ The video id can be found at the end of the URL. In this case, the URLs were
 `https://www.youtube.com/watch?v=8P9geWwi9e0`
 & `https://vimeo.com/148982525`.
 
+### Trajectory Smoothing
+
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+This wiki gave a brief idea about the working of a Radar Camera Sensor Fusion algorithm for autonomous vehicle applications. However the algorithm can be extended to different sensors and tracking of other kind of targets as well.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+- [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
 
 ## Further Reading
 - Links to articles of interest outside the Wiki (that are not references) go here.
+- Link to YOLO
+- Link to SORT
+- [Kalman Filter in Python](https://github.com/balzer82/Kalman)
 
 ## References
 - Links to References go here.
