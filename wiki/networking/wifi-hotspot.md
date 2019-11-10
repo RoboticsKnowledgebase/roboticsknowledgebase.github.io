@@ -15,7 +15,7 @@ If you are ok with the defaults and don't want to change anything, that's all yo
 
 ## Edit WiFi hotspot settings in Ubuntu 18.04
 There are two ways to edit hotspot settings (like the network SSID and password) which will be discussed in this section.
-## Option 1: Edit the hotspot configuration file. 
+#### Option 1: Edit the hotspot configuration file. 
 1. After creating a hotspot for the first time, a file called hotspot is created which holds some settings. So make sure to create a hotspot first or else this file does not exist. 
 2. In this file you can configure the network SSID it appears as ```ssid = ``` under ```[wifi]```), the Wi-Fi password is the value of ```psk=``` under ```[wifi-security]```), and other settings as required.
 ```
@@ -27,7 +27,7 @@ sudo nano /etc/NetworkManager/system-connections/Hotspot
 sudo systemctl restart NetworkManager
 ```
 
-## Option 2: NM Connection Editor.
+#### Option 2: NM Connection Editor.
 NM connection editor also allows you to modify the hotspot Wi-Fi mode, band etc. It can be started by pressing ```Alt + F2``` or using this command:
 ```
 nm-connection-editor
