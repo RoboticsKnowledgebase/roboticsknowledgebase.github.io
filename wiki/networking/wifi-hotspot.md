@@ -1,11 +1,11 @@
-# Setting up WiFi hotspot at the boot for Linux devices 
+# Setting up WiFi hotspot at the boot up for Linux devices 
 Most of the mobile robot platform uses Linux based Single board computer for onboard computation and these SBCs typically have WiFi or an external WiFi dongle can also be attached. While testing/debugging we need to continuously monitor the performance of the robot which makes it very important to have a remote connection with our robot. So, in this tutorial, we will help you in setting up the WiFi hotspot at the boot for Linux devices like Nvidia Jetson and Intel NUC. We will start with the procedure to set up the WiFi hotspot and then we will discuss how to change Wi-Fi hotspot settings in Ubuntu 18.04 to start it at bootup.
 
 # Table of Contents
 1. [Create a Wi-Fi hotspot in Ubuntu 18.04](#Create-a-WiFi-hotspot-in-Ubuntu-18.04)
 2. [Edit WiFi hotspot settings in Ubuntu 18.04](#Edit-WiFi-hotspot-settings-in-Ubuntu-18.04 )
 
-## Create-a-WiFi-hotspot-in-Ubuntu-18.04
+## Create a WiFi hotspot in Ubuntu 18.04
 This section will help you in setting up the WiFi hotspot at the boot for Linux devices. 
 1. To create a Wi-Fi hotspot, the first turn on the Wi-Fi and select Wi-Fi settings from the system Wi-Fi menu.
 2. In the Wi-Fi settings window, click on the menu icon from the window upper right-hand side corner, and select turn On Wi-Fi hotspot.
@@ -13,7 +13,7 @@ This section will help you in setting up the WiFi hotspot at the boot for Linux 
 
 If you are ok with the defaults and don't want to change anything, that's all you have to do to create a Wi-Fi hotspot in Ubuntu 18.04.
 
-## Edit-WiFi-hotspot-settings-in-Ubuntu-18.04
+## Edit WiFi hotspot settings in Ubuntu 18.04
 There are two ways to edit hotspot settings (like the network SSID and password) which will be discussed in this section.
 ## Option 1: Edit the hotspot configuration file. 
 1. After creating a hotspot for the first time, a file called hotspot is created which holds some settings. So make sure to create a hotspot first or else this file does not exist. 
