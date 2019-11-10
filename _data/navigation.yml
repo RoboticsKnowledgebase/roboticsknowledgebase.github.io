@@ -189,7 +189,7 @@ wiki:
         url: /wiki/tools/udev-rules/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
-      - title: C-Lion IDE
+      - title: CLion IDE
         url: /wiki/tools/clion/
 
 # Main links appear in the header.

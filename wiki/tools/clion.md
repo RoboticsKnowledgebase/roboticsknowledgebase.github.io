@@ -30,7 +30,9 @@ While CLion is not free software, students can get a free license to use the sam
 
 For Linux, run `./clion.sh` in the terminal inside the bin folder of the extracted package. For ease of use, you can add the path of the bin folder in the `.bashrc` to open CLion from any directory.
 
-> While you can also run the CLion using the GUI of the Linux Distribution, if you want to use CLion with any ROS C++ package, it's important that you launch CLion using the terminal. Also, make sure that  `source catkin_ws/devel/setup.bash` is added in the `~/.bashrc` so that CLion can link the required ROS packages
+> While you can also run the CLion using the GUI of the Linux Distribution, if you want to use CLion with any ROS C++ package, it's important that you launch CLion using the terminal. 
+> 
+> Also, make sure that  `source catkin_ws/devel/setup.bash` is added in the `~/.bashrc` so that CLion can link the required ROS packages
 
 ## Features
 
@@ -56,12 +58,16 @@ Refactoring is one of the most powerful tools in the CLion. Simplest re-factor o
 
 ![Refactor 1](assets/refactor1.png)
 
-While simple text-editor can do find and replace, it is not context-aware. CLion re-factor is context-aware meaning renaming of the variable will only happen inside the scope of that variable. To rename variable using refactor select the variable:`right-click -> Refactor -> Rename`
-A more useful refactoring tool is to extract the method or extract the function from the bigger function. Writing a method of a class is one of the most cumbersome parts of C++ programming. If want to create a new method of a class, we have to modify the header file as well and figure out what variable needs to be passed and what's their datatype. CLion can automate this entire process with a click of a button.
+While simple text-editor can do find and replace, it is not context-aware. CLion re-factor is context-aware meaning renaming of the variable will only happen inside the scope of that variable. To rename variable using refactor select the variable:
+
+`right-click -> Refactor -> Rename`
+
+
+A more useful refactoring tool is to extract the method or extract the function from the bigger function. Writing a method of a class is one of the most cumbersome parts of C++ programming. If want to create a new method of a class, we have to modify the header file as well and figure out what variable needs to be passed and what's their datatype. CLion can automate this entire process with a click of a button. Select the text that you want to extract the function from and then:
+
+`right-click -> Refactor -> Extract -> Method`
 
 ![Refactor 2](assets/refactor2.jpeg)
-
-Select the text that you want to extract the function from and then: `right-click -> Refactor -> Extract -> Method`
 
 Refactor will analyze the selected text and identify the variables that need to be passed to the new function. It will show those variables in the GUI form as shown in the above image. Will GUI interface, user can add, rename, delete variables that are being passed as well change the name of the function. After verifying the function signature, the user can press the `Extract` button. It will cut the code from the original place and will put it inside a new function along with all the necessary changes in the header file to add that function/method.
 
@@ -69,11 +75,11 @@ Refactor will analyze the selected text and identify the variables that need to 
 
 Entity linking is very useful in efficiently navigating code-base in CLion. The press the `Ctrl` button on the keyboard and then click on any entity in the code. CLion will figure out the origin of that entity and will take you to that entity. 
 
-- Variable: If the selected entity is a variable CLion will take you to the place where that variable was declared. 
+- Variable: CLion will take you to the place where that variable was declared. 
 
-- Function: If the selected entity is a function/method. CLion will take you to the  function definition.
+- Function: CLion will take you to the  function definition.
 
-- Class: If the selected entity is a class/struct. CLion will take you to the definition of that class.
+- Class: CLion will take you to the definition of that class/struct.
 
 Entity linking works to the imported library as well. If you have imported some C++ library and want to check the source code inside the library, just use entity linking. It will open the source code of the library if it's available. For example, in the below image, definition of `std::vector::push_back()` is opened using entity linking of CLion.
 
@@ -81,9 +87,9 @@ Entity linking works to the imported library as well. If you have imported some 
 
 #### Context-Aware Search
 
-Given a function or a variable, all its usage inside the code can also be searched by 
+Given a function or a variable, all its usage inside the code can also be searched by simply:
 
-simply `right-click -> Find Usages`
+ `right-click -> Find Usages`
 
 ![Refactor 4](assets/refactor4.png)
 
