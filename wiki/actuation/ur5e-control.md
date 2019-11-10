@@ -1,102 +1,158 @@
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. You should set the article's title:
-title: Title goes here
+title: Controlling UR5e arm using ROS
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+Industrial cobots such as UR5 arms have found an increasing interest in academia research nowadays. In order to perfrom complex actuation tasks using a computer, it becomes imperative to know how to control these arms using software. Since ROS is a widely used framework for robotics applications; in this tutorial we will go through the steps needed to be performed in order to control the arm using ROS.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+## Prerequisites
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+In order to begin this tutorial, please ensure:-
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+1. A computer with an ethernet port and ROS >= Hydro installed. To install ROS you can follow the instructions on this page: http://wiki.ros.org/ROS/Installation
 
-This section covers the basic syntax and some rules of thumb for writing.
+2. ROS-industrial universal\_package installed, which can be installed with the following command `sudo apt-get install ros-<hydro/kinetic/melodic>-universal-robots`
+   
+   Once we satisfy the above pre-requisites we are now ready to connect to the UR5e arm.
+   
+   > **_Please Note:_** The tutorial has been verified on a UR5e arm but it  still works for UR5 arm series. We will let you know the changes to be made if you are using a different arm as we move along.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+## Steps
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+The universal_robot metapackage communicates with hardware via Ethernet connection. Upon establishing a connection, ROS-Industrial will upload a program written in *URScript*, Universal Robots' own Python-like scripting language. This program is responsible for listening for messages sent via ROS-Industrial's simple_messages package and interpreting those messages into hardware commands.
+
+> ***Note:*** Please ensure that the UR arm is connected to your computer using a ethernet connection before proceeding ahead.
+
+#### Configure the arm:
+
+The UR arms come with a pendant which is used to set-up the arm for manual/auto control. In order to control the arm we need the IP address of this robot. To enable networking, use the UR’s teach-pendant to navigate to the Setup Robot -> Setup Network Menu which will show you the robots IP address. Please make a note of this IP address. It becomes increasingly annoying if the IP address of the robot changes after each boot-up; hence for robotics application it is recommended that you select the Static IP option on the screen and set the IP to whatever you desire and click Apply. This will commit the changes in the firmware and ensure that whenever the arm is connected to your computer, it will have the same IP address and hence you need-not change the IP address in your code/launch files. To check if your connection with the arm is successful please execute the following command `ping <IP of arm>`
+
+More information on debugging can be found here: http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial
+
+The below image shows a sample static IP setting which can be used.
+
+![Ur5 static IP page](/Users/akshitgandhi/Documents/roboticsknowledgebase.github.io/wiki/actuation/assets/UR5e_static_ip.JPG)
 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+#### Describing the Arm to ROS:
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
+`roslaunch ur_description ur5e_upload.launch`
 
-Larger chunks of code should use this format:
+This will send a xacro file to the parameter server so that a description of the arm can be read in by the driver at runtime. Please replace ur5e with your appropriate model such as ur5, etc
+
+
+
+#### Switching the UR arm on
+
+Press the Power off button at the bottom left and you will be shown a layout as shown in the below figure. Select the ON button to turn the robot arm on and then you will have to press the same button again when prompted to release the breaks and actually control the motors.
+
+![UR5e bootup page](/Users/akshitgandhi/Documents/roboticsknowledgebase.github.io/wiki/actuation/assets/UR5e_bootup.JPG)
+
+#### 
+
+#### Connecting to the arm
+
+The first step is to find out the firmware version being used on the UR arm. To check the version, go to settings menu on the pendant and select the Info menu. The next step is to put the robot into remote control mode which can be done as shown in the images below.
+
+1. Select the menu icon on rop right and then it should show you a menu layout as shown in the below picture.  ![UR5 about help page](/Users/akshitgandhi/Documents/roboticsknowledgebase.github.io/wiki/actuation/assets/UR5e_about_button.jpg)
+
+2. Once you click the About option from the menu, you can see the software version as shown in the below picture. ![UR5e Firmware page](/Users/akshitgandhi/Documents/roboticsknowledgebase.github.io/wiki/actuation/assets/UR5e_about_page.jpg)
+
+
+
+If you have a UR arm with firmware version below 3.0 then in order to connect to the arm execute the following command. `roslaunch ur_bringup ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>` To use any other arm, please replace the prefix ur5e with the appropriate model. If you are using a firmware > 3.0 then run this command `roslaunch ur_modern_driver ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>`. If you are getting an error such as `ur5e_bringup.launch not found` then you need an active repo of the ur\_modern\_driver which can be found at this link. https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/tree/master/ur_robot_driver . Please clone this repo and build this package.
+
+If you don't get any error messages then you are good to go to the next step. If you get any errors then some troubleshooting like:- pinging the robot to ensure that the IP is correct, checking if the parameters uploaded to the server using `rosparam list` are proper.
+
+
+
+#### Command joint angles to the arm
+
+Probably the simplest automation we can do is to control the joint angles of the arm, this can be done using the script below where we have a node which subscribes to the target angles and sends the appropriate command to the UR arm.
+
+> Before we start: please ensure that the workspace of the arm is clear and always keep the emergency stop button of the arm handy enough to prevent any damage to anyone or the arm itself.
+
 ```
-def recover_msg(msg):
+#!/usr/bin/env python
+import roslib; roslib.load_manifest('ur_driver')
+import rospy
+import actionlib
+from control_msgs.msg import *
+from trajectory_msgs.msg import *
+from std_msgs.msg import String
 
-        // Good coders comment their code for others.
+JOINT_NAMES = ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint',
+			   'wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
+client = None
 
-        pw = ProtocolWrapper()
+def process(msg):
+	global curr_angle, count;
+	g = FollowJointTrajectoryGoal()
+	g.trajectory = JointTrajectory()
+	g.trajectory.joint_names = JOINT_NAMES
+	joint_angles = msg.data[1:-1].split(",")
+	joint_angles = [float(i) for i in joint_angles]
+	
+	g.trajectory.points = [
+		JointTrajectoryPoint(positions=joint_angles, velocities=[0]*6, time_from_start=rospy.Duration(1.0))]
+	client.send_goal(g)
+	try:
+		client.wait_for_result()
+	except KeyboardInterrupt:
+		client.cancel_goal()
+		raise
 
-        // Explanation.
+def main():
+	global client
+	try:
+		rospy.init_node("test_move", anonymous=True, disable_signals=True)
+		client = actionlib.SimpleActionClient('follow_joint_trajectory', FollowJointTrajectoryAction)
+		print "Waiting for server..."
+		client.wait_for_server()
+		print "Connected to server"
 
-        if rec_crc != calc_crc:
-            return None
+		subscriber =rospy.Subscriber("target_angles",String, process,queue_size=1)
+		rate = rospy.Rate(0.5)
+	
+		while not rospy.is_shutdown():
+			rate.sleep()
+	except KeyboardInterrupt:
+		rospy.signal_shutdown("KeyboardInterrupt")
+		raise
+
+if __name__ == '__main__': main()
+
 ```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
+And in a terminal window you can just type:
 
-#### Images and Video
-Images and embedded video are supported.
+```
+rostopic pub target_angles std_msgs/String "[1.57, -2.26893, 2.26893, -1.57, -1.57, -1.57]"
+```
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
+The above code and script will move the UR5e arm into the goal position.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
 
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+So now you have a new way to control your arm using ROS. To run the arm autonomously ensure that you follow the below order of steps.
 
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+1. Turn on the arm (with breaks released) and put it in remote control mode
+
+2. Connect to the arm using the ur\_driver or ur\_modern\_driver (based on the firmware version)
+
+3. Run your code and have fun!
+   
+   Always ensure that the workspace is **clear** and have **e-stop handy!** **  **Safety first!**
+
+## ## Further Reading
+
+- You can also perform more complicated operations on the UR5 arm, refer to MoveIt package for more exiciting use-cases https://moveit.ros.org
+- Also you can use URScript to control the arm, Universal Robots has detailed documentation on using URScript which can be found here https://s3-eu-west-1.amazonaws.com/ur-support-site/18679/scriptmanual_en.pdf
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+
+- http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial
