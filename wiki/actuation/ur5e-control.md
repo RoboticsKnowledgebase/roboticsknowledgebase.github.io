@@ -26,7 +26,7 @@ The universal_robot metapackage communicates with hardware via Ethernet connecti
 
 The UR arms come with a pendant which is used to set-up the arm for manual/auto control. In order to control the arm we need the IP address of this robot. To enable networking, use the UR’s teach-pendant to navigate to the Setup Robot -> Setup Network Menu which will show you the robots IP address. Please make a note of this IP address. It becomes increasingly annoying if the IP address of the robot changes after each boot-up; hence for robotics application it is recommended that you select the Static IP option on the screen and set the IP to whatever you desire and click Apply. This will commit the changes in the firmware and ensure that whenever the arm is connected to your computer, it will have the same IP address and hence you need-not change the IP address in your code/launch files. To check if your connection with the arm is successful please execute the following command `ping <IP of arm>`
 
-More information on debugging can be found (here)[http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial]
+More information on debugging can be found [here](http://wiki.ros.org/universal_robot/Tutorials/Getting%20Started%20with%20a%20Universal%20Robot%20and%20ROS-Industrial)
 
 The below image shows a sample static IP setting which can be used.
 
@@ -54,9 +54,9 @@ The first step is to find out the firmware version being used on the UR arm. To 
 
 2. Once you click the About option from the menu, you can see the software version as shown in the below picture. ![UR5e Firmware page](assets/UR5e_about_page.jpg)
 
-If you have a UR arm with firmware version below 3.0 then in order to connect to the arm execute the following command. `roslaunch ur_bringup ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>` To use any other arm, please replace the prefix ur5e with the appropriate model. If you are using a firmware > 3.0 then run this command `roslaunch ur_modern_driver ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>`. If you are getting an error such as `ur5e_bringup.launch not found` then you need an active repo of the ur\_modern\_driver which can be found at (this link)[https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/tree/master/ur_robot_driver]. Please clone this repo and build this package.
+If you have a UR arm with firmware version below 3.0 then in order to connect to the arm execute the following command. `roslaunch ur_bringup ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>` To use any other arm, please replace the prefix ur5e with the appropriate model. If you are using a firmware > 3.0 then run this command `roslaunch ur_modern_driver ur5e_bringup.launch robot_ip:=<IP_OF_THE_ROBOT>`. If you are getting an error such as `ur5e_bringup.launch not found` then you need an active repo of the ur\_modern\_driver which can be found at [this link](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/tree/master/ur_robot_driver). Please clone this repo and build this package.
 
-If you don't get any error messages then you are good to go to the next step. If you get any errors then some troubleshooting like:- pinging the robot to ensure that the IP is correct, checking if the parameters uploaded to the server using `rosparam list` are proper.
+If you don't get any error messages then you are good to go to the next step. If you get any errors then some troubleshooting like:- pinging the robot to ensure that the IP is correct, checking if the parameters uploaded to the server using `rosparam list` are proper. To check if your connection is successful you would be able to see a output on the console like: ```Trajectory server started```
 
 #### Command joint angles to the arm
 
@@ -133,12 +133,12 @@ So now you have a new way to control your arm using ROS. To run the arm autonomo
 
 3. Run your code and have fun!
    
-   Always ensure that the workspace is **clear** and have **e-stop handy!** **  **Safety first!**
+   Always ensure that the workspace is **clear** and have **e-stop handy!**  **Safety first!**
 
 ## Further Reading
 
 - You can also perform more complicated operations on the UR5 arm, refer to MoveIt package for more exiciting use-cases https://moveit.ros.org
-- Also you can use URScript to control the arm, Universal Robots has detailed documentation on using URScript which can be found here https://s3-eu-west-1.amazonaws.com/ur-support-site/18679/scriptmanual_en.pdf
+- Also you can use URScript to control the arm, Universal Robots has detailed documentation on using URScript which can be found [here](https://s3-eu-west-1.amazonaws.com/ur-support-site/18679/scriptmanual_en.pdf)
 
 ## References
 
