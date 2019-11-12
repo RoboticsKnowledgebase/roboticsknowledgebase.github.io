@@ -5,7 +5,25 @@ published: true
 Image segmentation can be useful in a lot of cases, for example, suppressing pedestrains, cars for your SLAM system so the extracted features belong to static scene only. This tutorial covers the procedure to create annotations for semantic segmentation task. This is useful when you want to outsource the labeling tasks to external companies because guidelines and examples are usually required in such scenario. Specifically, GIMP (GNU Image Manipulation Program version 2.8.22) on Ubuntu (16.04 for this tutorial) will be used to do the annotating task.
 
 ## Example of segmented images
-Below is an example of annotated image and it's original RGB image. Three classes: fungus (annotated red), holes (annotated green) and background (annotated black) are presented here. Although it's common to use gray image with pixel value corresponding to 0 - 255, using a color annotation makes it much easier to visualize the annoation. The conversion from color to class labels can be easily done when the actual training is performed e.g. a mapping from rgb tuple to integers.
+Below is an example of annotated image and it's original RGB image. Three classes: fungus (annotated red), holes (annotated green) and background (annotated black) are presented here. Although it's common to use gray image with pixel value corresponding to 0 - 255, using a color annotation makes it much easier to visualize the annoation. The conversion from color to class labels can be easily done when the actual training is performed e.g. a mapping from RGB tuple to integers.
+
+### Example code for converting RGB tuple to integer
+```
+color_of_interest = [
+            (0, 0, 0),
+            (255, 0, 0),
+            (0, 255, 0)
+        ]
+class_map = dict(zip(self.color_of_interest, range(3)))
+
+def encode_segmap(self, mask):
+	for color in self.color_of_interest:
+    	mask[ (mask[:,:,0] == color[0]) &\
+        	(mask[:,:,1] == color[1]) &\
+        	(mask[:,:,2] == color[2])   ] = class_map[color]
+    return mask[:, :, 0] # target should be h x w, no depth
+```
+
 ![mask annotation](assets/mask_annotation.png)
 
 ## Installing gimp
