@@ -189,6 +189,8 @@ wiki:
         url: /wiki/tools/udev-rules/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
+      - title: Making Field Testing Easier through Visualization and Simulation
+        url: /wiki/tools/visualization-simulation/
 
 # Main links appear in the header.
 main:
