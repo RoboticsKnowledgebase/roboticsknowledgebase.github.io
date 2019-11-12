@@ -86,46 +86,12 @@ Entries in the Wiki should follow this format:
 5. Further Reading (relevant articles on other sites).
 6. References.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
 
 ## Summary
 Use this space to reinforce key points and to suggest next steps for your readers.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+- Semantic segmented images are sufficient for many architectures e.g. Unet, but if you'd like to work with Mask-RCNN, a .json file is required for training. Here's a [decent tutorail](http://www.immersivelimit.com/tutorials/create-coco-annotations-from-scratch)
 
 ## Further Reading
 - Links to articles of interest outside the Wiki (that are not references) go here.
