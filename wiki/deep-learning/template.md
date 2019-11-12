@@ -15,6 +15,13 @@ sudo apt-get update
 sudo apt-get install gimp
 ```
 
+## Procedure to annotate an image
+### Step 1 Load image
+navigate to  file->open botton on the top left to open a rgb image that you'd like to annotate
+
+### Step 2 Create mask
+navigate to layer->new layer to create a mask over your image.
+
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
 > This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
