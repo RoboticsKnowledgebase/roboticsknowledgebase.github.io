@@ -22,8 +22,11 @@ Navigate to  file->open botton on the top left to open a rgb image that you'd li
 ### Step 2 Create mask
 Navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
 
+![mask annotation](assets/new_layer.png)
+
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
+![mask annotation](assets/manage_layers.png)
 
 ### Step 3 Creating annotations
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
