@@ -9,7 +9,9 @@ Below is an example of annotated image and it's original RGB image. Three classe
 ![mask annotation](assets/mask_annotation.png)
 
 ### Installing gimp
-
+copy and paste the following command in your terminal to install gimp
+	sudo apt-get update
+	sudo apt-get install gimp
 
 
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
