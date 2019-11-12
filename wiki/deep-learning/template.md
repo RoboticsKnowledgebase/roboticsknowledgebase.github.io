@@ -8,7 +8,7 @@ Image segmentation can be useful in a lot of cases, for example, suppressing ped
 Below is an example of annotated image and it's original RGB image. Three classes: fungus (annotated red), holes (annotated green) and background (annotated black) are presented here. Although it's common to use gray image with pixel value corresponding to 0 - 255, using a color annotation makes it much easier to visualize the annoation. The conversion from color to class labels can be easily done when the actual training is performed e.g. a mapping from rgb tuple to integers.
 ![mask annotation](assets/mask_annotation.png)
 
-### Installing gimp
+## Installing gimp
 copy and paste the following command in your terminal to install gimp  
 ```
 sudo apt-get update
