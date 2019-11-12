@@ -26,13 +26,13 @@ Navigate to layer->new layer to create a mask over your image. Choose Foreground
 
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
-![mask annotation](assets/manage_layers.png)
+![manage layers](assets/manage_layers.png)
 
 ### Step 3 Creating annotations
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
 
-![mask annotation](assets/select_tool.png)
-![mask annotation](assets/bucket_fill.png)
+![free select tool](assets/select_tool.png)
+![create annotation](assets/bucket_fill.png)
 
 ### Step 4 Saving files
 Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.
