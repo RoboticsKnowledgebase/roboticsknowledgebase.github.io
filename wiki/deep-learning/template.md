@@ -2,9 +2,14 @@
 title: Custom data-set for segmentation
 published: true
 ---
-Image segmentation can be useful in a lot of context, for example, suppressing pedestrains, cars for your SLAM system so the extracted features belong to static scene only. This tutorial covers
+Image segmentation can be useful in a lot of cases, for example, suppressing pedestrains, cars for your SLAM system so the extracted features belong to static scene only. This tutorial covers the procedure to create annotations for semantic segmentation task. This is useful when you want to outsource the labeling tasks to external companies because guidelines and examples are usually required in such scenario. Specifically, GIMP (GNU Image Manipulation Program version 2.8.22) on Ubuntu (16.04 for this tutorial) will be used to do the annotating task.
 
-## First subheading
+## Example of segmented images
+Below is an example of annotated image and it's original RGB image. The fungus (annotated red) and holes (annotated green) are presented here.
+![mask_annotation]({{site.baseurl}}/wiki/deep-learning/mask_annotation.png)
+
+
+
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
 This section covers the basic syntax and some rules of thumb for writing.
