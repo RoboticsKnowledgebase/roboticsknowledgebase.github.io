@@ -6,7 +6,7 @@ Image segmentation can be useful in a lot of cases, for example, suppressing ped
 
 ## Example of segmented images
 Below is an example of annotated image and it's original RGB image. The fungus (annotated red) and holes (annotated green) are presented here.
-![mask annotation]({{site.baseurl}}/https://github.com/Dung-Han-Lee/roboticsknowledgebase.github.io/blob/master/wiki/deep-learning/assets/mask_annotation.png)
+![mask annotation](assets/mask_annotation.png)
 
 
 
