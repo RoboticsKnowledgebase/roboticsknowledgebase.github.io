@@ -76,29 +76,45 @@ def recover_msg(msg):
 This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
 ## Camera Radar Tracker
-Give idea about tracker is comprised of what all?
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
-### Tracker Basics
-Information about what all is needed for the tracker to work
 
-### EKF
-Images and embedded video are supported.
+Camera RADAR tracker can be summed up with following sub parts: 
+- Data association of camera and radar detections
+- Motion compensation of Ego vehicle
+- State predicion and update using Extended Kalman Filter
+- Data association of predictions and detections
+- Handling occlusions and miss detections
+- Validation of tracker using MOTP and MOTA metrics
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
+### Data fusion - Camera and RADAR detections
+You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion og a sensor with each detections from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
-{% include video id="8P9geWwi9e0" provider="youtube" %}
+### Motion compensation of Ego-vehicles
+Since later we are supposed to associate these detetions with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
 
-{% include video id="148982525" provider="vimeo" %}
+### Gaussian state prediction - Extended Kalman Filter
+ -- Karmesh
+ 
+### Data association - prediction and detection 
+Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values.
 
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
+### Occlusion and miss-detections handling
+This is the most important section for tuning the tracker. Here you need to handle for how long you will be contnuing the tracks (continue predicting the state of the track) if that detection is not observed from the sensors in the continuous set of frames. Also another tuning parameter is that for how long you want to continuously detect the object through sensors to confirm with a definite solution that the oncoming vehicle is there.You need to use 3 sets of sensor detections as input: 
+- Camera only detections
+- RADAR only detections
+- Above detections that are able to fuse
+Here you need to define the misses (age of non-detections) for each detections. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detecions from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
+
+### Validation of tracker using MOTP and MOTA metrics
+
+-- Apoorv
 
 ### Trajectory Smoothing
 
+-- Heethesh
+
 ## Summary
-This wiki gave a brief idea about the working of a Radar Camera Sensor Fusion algorithm for autonomous vehicle applications. However the algorithm can be extended to different sensors and tracking of other kind of targets as well.
+
+-- Apoorv
 
 ## See Also:
 - [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
