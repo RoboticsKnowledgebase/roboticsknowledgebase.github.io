@@ -10,7 +10,7 @@ Below is an example of annotated image and it's original RGB image. Three classe
 ### Example code for converting RGB tuple to integer
 ```
 color_of_interest = [
-	(0, 0, 0),
+    (0, 0, 0),
     (255, 0, 0),
     (0, 255, 0)]
 class_map = dict(zip(self.color_of_interest, range(3)))
