@@ -17,16 +17,19 @@ sudo apt-get install gimp
 
 ## Procedure to annotate an image
 ### Step 1 Load image
-navigate to  file->open botton on the top left to open a rgb image that you'd like to annotate
+Navigate to  file->open botton on the top left to open a rgb image that you'd like to annotate
 
 ### Step 2 Create mask
-navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
+Navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
 
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
 
 ### Step 3 Creating annotations
-select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
+Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
+
+### Step 4 Saving files
+Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.
 
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
