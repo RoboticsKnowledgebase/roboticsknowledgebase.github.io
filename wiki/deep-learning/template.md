@@ -32,6 +32,7 @@ After creating new layer, you will see your newly created layer on the right pan
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
 
 ![mask annotation](assets/select_tool.png)
+![mask annotation](assets/bucket_fill.png)
 
 ### Step 4 Saving files
 Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.
