@@ -6,74 +6,32 @@ Fusing data from multiple sensor is an integral part of the perception system of
 
 We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+Recovering the 3D velocity of the vehicles solely based on vision is very challenging and inaccurate, especially for long-range detection. RADAR is excellent for determining the speed of oncoming vehicles and operation in adverse weather and lighting conditions, whereas the camera provides rich visual features required for object classification. The position and velocity estimates are improved through the sensor fusion of RADAR and camera. Although sensor fusion is currently not complete, some of the sub-tasks such as Inverse Perspective Mapping and RADAR integration have been completed this semester. The idea behind this is to create a birds-eye-view of the environment around the vehicle by using a perspective transformation. Using this birds-eye-view representation and some known priors such as camera parameters and extrinsic with respect to a calibration checkerboard, all the vehicles can be mapped to their positions in the real-world. Fusion of this data along with RADAR targets can provide us reliable states of all vehicles in the scene. Finally, an occupancy grid will be generated which can be used for prediction and planning.
 
 ## Camera
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
-This section covers the basic syntax and some rules of thumb for writing.
 
 ### Object Detection 
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-![This is an object detection image](assets/images/Hk47portrait-298x300.jpg)
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
 
-### Object Tracking in images 
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+### Object Tracking in Images 
+TODO:Refine
+SORT is an approach to multiple object tracking where the focus is to associate objects efficiently for online and real-time applications. It follows a tracking-by-detection framework for the problem of multiple object tracking (MOT) where objects are detected in each frame and represented as bounding boxes. SORT makes use of Kalman filter to predict the state of the bounding box in the next frame. This helps keep track of the vehicles even if the bounding box detections are missed over few frames. Additionally, I incorporated appearance basis into the existing SORT tracker and increased the memory window from one frame to around 100 frames. This helped maintain the same tracker ID for the vehicles over the frames, even if the bounding boxes go unmissed for few seconds. This is important to associate the same trajectory for a vehicle over a period, or else we might end up with multiple short trajectories for the same vehicle.
 
-### Inverse Perspective Mapping 
-![This is IPM input and output](assets/images/Hk47portrait-298x300.jpg)
+### Inverse Perspective Mapping
+TODO:Refine
+Inverse Perspective Mapping is basically a perspective transformation that requires a homography matrix. Since we want to project the camera view on to the ground plane perspective instead, we perform an inverse transformation using this matrix. One way to do this is to directly pick a set of four points corresponding to a rectangular region on the ground plane and then estimate the homography matrix.
+
+TODO:Refine
+Since we had made progress in creating our own maps and importing it in CARLA, we were able to place calibration checkerboards on the road in our map as shown in Figure 1. The camera homography was manually calibrated for a given frame with some fixed extrinsic parameters that do not change over the entire simulation sequence. Earlier, I had an issue with setting the output size of the mapped result and finding the mapping between the image frame and real-world cartesian coordinates of the vehicles. By using the checkerboard as reference (8x8 grid, 40cm square cells), placed at some known coordinates in the world frame and using the odometry of the ego vehicle, I was able to find the perspective mapping and the scale factors that map the birds-eye-view image coordinates to world frame coordinates (in meters). Another checkerboard was placed at 10m apart from the first one to validate the mapping and compute the projection error. Errors were less than 10cm for objects mapped within 20-30m from the ego vehicle. However, the projection errors for objects beyond 50m are significant (5m+) and the perspective mapping module needs to be recalibrated more precisely to bring down these errors.
 
 #### Camera Output
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
 
 ## Radar
 
 #### Radar Output
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
 
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
 ## Camera Radar Tracker
 
@@ -86,15 +44,22 @@ Camera RADAR tracker can be summed up with following sub parts:
 - Validation of tracker using MOTP and MOTA metrics
 
 ### Data fusion - Camera and RADAR detections
+TODO:Fix grammar
 You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion og a sensor with each detections from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
 ### Motion compensation of Ego-vehicles
+TODO:Refine
+This block basically transforms all the track predictions one timestep by the ego vehicle motion. This is an important block because the prediction (based on a vehicle motion model) is computed in the ego vehicle frame at the previous timestep. If the ego vehicle was static, the new sensor measurements could easily be associated with the predictions, but this would fail if the ego vehicle moved from its previous position. This is the reason why we need to compensate all the predictions by ego motion first, before moving on to data association with the new measurements. The equations for ego motion compensation are shown below.
+
+[■(X_(t+1)@Y_(t+1)@1)]=[■(cos⁡(ωdt)&sin⁡(ωdt)&-v_x dt@-sin⁡(ωdt)&cos⁡(ωdt)&-v_y dt@0&0&1)][■(X_t@Y_t@1)]  
+
 Since later we are supposed to associate these detetions with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
 
 ### Gaussian state prediction - Extended Kalman Filter
  -- Karmesh
  
-### Data association - prediction and detection 
+### Data association - prediction and detection
+TODO:More content
 Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values.
 
 ### Occlusion and miss-detections handling
@@ -105,16 +70,13 @@ This is the most important section for tuning the tracker. Here you need to hand
 Here you need to define the misses (age of non-detections) for each detections. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detecions from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
 
 ### Validation of tracker using MOTP and MOTA metrics
-
--- Apoorv
+The most widely used metrics for validation are MOTA (Multi-object tracking accuracy) and MOTP (Multi-object tracking precision). MOTP is the total error in estimated position for matched object-hypothesis pairs over all frames, averaged by the total number of matches made. It shows the ability of the tracker to estimate precise object positions, independent of its skill at recognizing object configurations, keeping consistent trajectories, and so forth. The MOTA accounts for all object configuration errors made by the tracker, false positives, misses, mismatches, over all frames.
 
 ### Trajectory Smoothing
 
--- Heethesh
 
 ## Summary
 
--- Apoorv
 
 ## See Also:
 - [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
