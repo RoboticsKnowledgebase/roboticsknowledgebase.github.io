@@ -48,7 +48,6 @@ Camera RADAR tracker can be summed up with following sub parts:
 - Validation of tracker using MOTP and MOTA metrics
 
 ### Data fusion - Camera and RADAR detections
-TODO:Fix grammar
 You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion from a sensor with each detection from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
 ### Motion compensation of Ego-vehicles
@@ -63,7 +62,6 @@ Since later we are supposed to associate these detetions with the predictions fr
  -- Karmesh
  
 ### Data association - prediction and detection
-TODO:More content
 Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values. To give some intuitions, here you are matching the predicted state in the last time for every track with the sensor reading of the current time step. 
 
 ### Occlusion and miss-detections handling
@@ -77,7 +75,7 @@ Here you need to define the misses (age of non-detections) for each detections. 
 The most widely used metrics for validation are MOTA (Multi-object tracking accuracy) and MOTP (Multi-object tracking precision). MOTP is the total error in estimated position for matched object-hypothesis pairs over all frames, averaged by the total number of matches made. It shows the ability of the tracker to estimate precise object positions, independent of its skill at recognizing object configurations, keeping consistent trajectories, and so forth. The MOTA accounts for all object configuration errors made by the tracker, false positives, misses, mismatches, over all frames.
 
 ### Trajectory Smoothing
-
+ TODO: Heethesh
 
 ## Summary
 
