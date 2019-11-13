@@ -31,7 +31,11 @@ Since we had made progress in creating our own maps and importing it in CARLA, w
 ## Radar
 
 #### Radar Output
-
+RADAR returns four states for every detections, moreover depending on the use case there could be multiple detections. Accoridng to our current RADAR configuration, state (Ego vehicle frame) of the detecions are given as: 
+- Position in x direction 
+- Position in y direction 
+- Velocity in x direction 
+- Velocity in y direction
 
 ## Camera Radar Tracker
 
