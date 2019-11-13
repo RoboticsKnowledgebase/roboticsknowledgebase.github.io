@@ -49,7 +49,7 @@ Camera RADAR tracker can be summed up with following sub parts:
 
 ### Data fusion - Camera and RADAR detections
 TODO:Fix grammar
-You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion og a sensor with each detections from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
+You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion from a sensor with each detection from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
 ### Motion compensation of Ego-vehicles
 TODO:Refine
@@ -64,7 +64,7 @@ Since later we are supposed to associate these detetions with the predictions fr
  
 ### Data association - prediction and detection
 TODO:More content
-Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values.
+Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values. To give some intuitions, here you are matching the predicted state in the last time for every track with the sensor reading of the current time step. 
 
 ### Occlusion and miss-detections handling
 This is the most important section for tuning the tracker. Here you need to handle for how long you will be contnuing the tracks (continue predicting the state of the track) if that detection is not observed from the sensors in the continuous set of frames. Also another tuning parameter is that for how long you want to continuously detect the object through sensors to confirm with a definite solution that the oncoming vehicle is there.You need to use 3 sets of sensor detections as input: 
@@ -86,9 +86,8 @@ The most widely used metrics for validation are MOTA (Multi-object tracking accu
 - [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-- Link to YOLO
-- Link to SORT
+- [Link to YOLO](https://github.com/pjreddie/darknet)
+- [SORT tracker](https://github.com/abewley/sort)
 - [Kalman Filter in Python](https://github.com/balzer82/Kalman)
 
 ## References
