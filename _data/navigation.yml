@@ -81,6 +81,11 @@ wiki:
         url: /wiki/actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
+  - title: Deep Learning
+    url: /wiki/deep-learning/custom-semantic-data
+    children:
+      - title: Custom data-set for segmentation
+        url: /wiki/actuation/motor-controller-feedback/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
