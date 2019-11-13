@@ -81,6 +81,8 @@ wiki:
         url: /wiki/actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
+      - title: BLDC motor control in ROS using RoboteQ controller
+        url: /wiki/actuation/BLDC-ROS-SBL2360/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
