@@ -26,7 +26,10 @@ TODO:Refine
 Since we had made progress in creating our own maps and importing it in CARLA, we were able to place calibration checkerboards on the road in our map as shown in Figure 1. The camera homography was manually calibrated for a given frame with some fixed extrinsic parameters that do not change over the entire simulation sequence. Earlier, I had an issue with setting the output size of the mapped result and finding the mapping between the image frame and real-world cartesian coordinates of the vehicles. By using the checkerboard as reference (8x8 grid, 40cm square cells), placed at some known coordinates in the world frame and using the odometry of the ego vehicle, I was able to find the perspective mapping and the scale factors that map the birds-eye-view image coordinates to world frame coordinates (in meters). Another checkerboard was placed at 10m apart from the first one to validate the mapping and compute the projection error. Errors were less than 10cm for objects mapped within 20-30m from the ego vehicle. However, the projection errors for objects beyond 50m are significant (5m+) and the perspective mapping module needs to be recalibrated more precisely to bring down these errors.
 
 #### Camera Output
-
+Camera returns two states for every detections. Accoridng to our current camera configuration, state (Ego vehicle frame) of the detecions are given as: 
+- Position in x direction 
+- Position in y direction 
+To make things clear, we consider these x and y directions in birds eye view of the ego vehicle frame, where x represents how far the detection is in longitudnal direction and y represents the offset of the detecion in lateral direction. 
 
 ## Radar
 
