@@ -103,7 +103,7 @@ The framework has the following major components:
 ### Data Association - Sensor Measurements
 You must be getting an array of detections from camera and Radar for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detection from a sensor with each detection from another sensor. Scipy library performs good resources for computing such functions in Python. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
-### Gaussian state prediction - Kalman Filter
+### Sensor Fusion - Extended Kalman Filter
 Kalman Filter is an optimal filtering and estimation technique which uses a series of measurements (with noise) over time to estimate the unknown variables which tend to be more accurate than the individual estimates. It is widely used concept ina variety of fields ranging from state estimation to optimal controls and motion planning. The algorithm works as a two step process which are as follows:
 - Prediction Step
 - Measurement Step
@@ -143,7 +143,7 @@ Here you need to define the misses (age of non-matched detections) for each meas
 ### Motion Compensation of Tracks
 This block basically transforms all the track predictions one timestep by the ego vehicle motion. This is an important block because the prediction (based on a vehicle motion model) is computed in the ego vehicle frame at the previous timestep. If the ego vehicle was static, the new sensor measurements could easily be associated with the predictions, but this would fail if the ego vehicle moved from its previous position. This is the reason why we need to compensate all the predictions by ego motion first, before moving on to data association with the new measurements. The equations for ego motion compensation are shown below.
 
-\\[\left[ \begin{array} { c } { X _ { t + 1 } } \\ { Y _ { t + 1 } } \\ { 1 } \end{array} \right] = \left[ \begin{array} { c c c } { \cos ( \omega d t ) } & { \sin ( \omega d t ) } & { - v _ { x } d t } \\ { - \sin ( \omega d t ) } & { \cos ( \omega d t ) } & { - v _ { y } d t } \\ { 0 } & { 0 } & { 1 } \end{array} \right] \left[ \begin{array} { c } { X _ { t } } \\ { Y _ { t } } \\ { 1 } \end{array} \right]\\]
+\\[\left[ \begin{array} { c } { X _ { t + 1 } } \\\ { Y _ { t + 1 } } \\\ { 1 } \end{array} \right] = \left[ \begin{array} { c c c } { \cos ( \omega d t ) } & { \sin ( \omega d t ) } & { - v _ { x } d t } \\\ { - \sin ( \omega d t ) } & { \cos ( \omega d t ) } & { - v _ { y } d t } \\\ { 0 } & { 0 } & { 1 } \end{array} \right] \left[ \begin{array} { c } { X _ { t } } \\\ { Y _ { t } } \\\ { 1 } \end{array} \right]\\]
  
 ### Track Association
 Once you have the motion compensated tracks, you need to follow the same algorithm to associate new tracks with existing tracks. To give some intuition, here you are matching the predicted state in the last time for every track with the measurements of the current timestep. 
