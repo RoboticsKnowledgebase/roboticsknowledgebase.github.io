@@ -2,11 +2,13 @@
 title: 'Radar Camera Sensor Fusion '
 published: true
 ---
-Fusing data from multiple sensor is an integral part of the perception system of robots and especially Autonomous Vehicles. The fusion becomes specially useful when the data coming from the different sensors gives complementary information. In this tutorial we give an introduction to Radar Camera sensor fusion for tracking oncoming vehicles. A camera is helpful in detection of vehicles in the short range while radar performs really well for long range vehicle detection. 
+Fusing data from multiple sensor is an integral part of the perception system of robots and especially Autonomous Vehicles. The fusion becomes specially useful when the data coming from the different sensors gives complementary information. In this tutorial we give an introduction to Radar Camera sensor fusion for tracking oncoming vehicles. A camera is helpful in detection of vehicles in the short range, however recovering the 3D velocity of the vehicles solely based on vision is very challenging and inaccurate, especially for long-range detection. This is where the RADAR comes into play. RADAR is excellent for determining the speed of oncoming vehicles and operation in adverse weather and lighting conditions, whereas the camera provides rich visual features required for object classification. 
 
-We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
+The position and velocity estimates are improved through the sensor fusion of RADAR and camera. We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
 
-Recovering the 3D velocity of the vehicles solely based on vision is very challenging and inaccurate, especially for long-range detection. RADAR is excellent for determining the speed of oncoming vehicles and operation in adverse weather and lighting conditions, whereas the camera provides rich visual features required for object classification. The position and velocity estimates are improved through the sensor fusion of RADAR and camera. Although sensor fusion is currently not complete, some of the sub-tasks such as Inverse Perspective Mapping and RADAR integration have been completed this semester. The idea behind this is to create a birds-eye-view of the environment around the vehicle by using a perspective transformation. Using this birds-eye-view representation and some known priors such as camera parameters and extrinsic with respect to a calibration checkerboard, all the vehicles can be mapped to their positions in the real-world. Fusion of this data along with RADAR targets can provide us reliable states of all vehicles in the scene. Finally, an occupancy grid will be generated which can be used for prediction and planning.
+TODO: shift this to ipm
+Although sensor fusion is currently not complete, some of the sub-tasks such as Inverse Perspective Mapping and RADAR integration have been completed this semester. The idea behind this is to create a birds-eye-view of the environment around the vehicle by using a perspective transformation. Using this birds-eye-view representation and some known priors such as camera parameters and extrinsic with respect to a calibration checkerboard, all the vehicles can be mapped to their positions in the real-world. Fusion of this data along with RADAR targets can provide us reliable states of all vehicles in the scene. Finally, an occupancy grid will be generated which can be used for prediction and planning.
+
 
 ## Camera
 
@@ -29,6 +31,7 @@ Since we had made progress in creating our own maps and importing it in CARLA, w
 
 
 ## Radar
+Radar is becoming an important automotive technology. Automotive radar systems are the primary sensor used in adaptive cruise control and are a critical sensor system in autonomous driving assistance systems (ADAS). In this tutorial it is assumed that the radar internally filters the raw sensor data and gives the final positions and velocities of the vehicles within the field of view. This is a reasonable assumption since most of the automotive grade radars already do such filtering and tracking and return the tracked vehicle estimate in the cartesian coordinates.
 
 #### Radar Output
 
@@ -38,7 +41,7 @@ Since we had made progress in creating our own maps and importing it in CARLA, w
 Camera RADAR tracker can be summed up with following sub parts: 
 - Data association of camera and radar detections
 - Motion compensation of Ego vehicle
-- State predicion and update using Extended Kalman Filter
+- State predicion and update using Kalman Filter
 - Data association of predictions and detections
 - Handling occlusions and miss detections
 - Validation of tracker using MOTP and MOTA metrics
@@ -53,10 +56,41 @@ This block basically transforms all the track predictions one timestep by the eg
 
 [■(X_(t+1)@Y_(t+1)@1)]=[■(cos⁡(ωdt)&sin⁡(ωdt)&-v_x dt@-sin⁡(ωdt)&cos⁡(ωdt)&-v_y dt@0&0&1)][■(X_t@Y_t@1)]  
 
-Since later we are supposed to associate these detetions with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
+Since later we are supposed to associate these detetions with the predictions from KF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
 
-### Gaussian state prediction - Extended Kalman Filter
- -- Karmesh
+### Gaussian state prediction - Kalman Filter
+Kalman Filter is an optimal filtering and estimation technique which uses a series of measurements (with noise) over time to estimate the unknown variables which tend to be more accurate than the individual estimates. It is widely used concept ina variety of fields ranging from state estimation to optimal controls and motion planning. The algorithm works as a two step process which are as follows:
+- Prediction Step
+- Measurement Step
+
+In our case we use Kalman Filter to estimate states of the vehicles in the environment using data from Radar and Camera. The states consist of the position and velocity of the vehicle, which are provided by the tracker in the form of measurement.
+
+#### Prediction Step
+Prediction step is the step where we will estimate the state of the vehicle in the next timestep using data we have currently and a motion model. We chose to use a constant velocity (CV) motion model for prediction. This model considers the vehicle as a point object which can move at a constant velocity in the x and y direction. This is not the best model to represent the dynamics of a vehicle but since we dont have information about the steering or throttle data of the vehicle, we will have to be satisfied with this. When we predict the future state, we also need to estimate the noise that might have propped up in the system due to a variety of reasons. This noise is called the process noise and we assume that it is dependant on the motion model and the timestep. This [link](https://github.com/balzer82/Kalman/blob/master/Kalman-Filter-CV.ipynb?create=1) gives a good idea about the CV motion model and the process noise associated with it.
+
+The sudo code for the prediction step is
+```
+def predict():
+    predicted_state = transition_matrix * old_state
+    predicted_covariance = transition_matrix' * old_covariance * transition_matrix + process_noise
+
+```
+
+#### Measurement Step
+Our measurement step is actually divided into two parts, one for the camera measurement and the other for the radar measurement. While updating the states of the filter we need to be sure that the timestep of the measurement and the predictions match. The update step is much more complicated and 
+
+The sudo code for the prediction step is
+```
+def update():
+    residual = sensor_measurement - measurement_function * predicted_state
+    projected_covariance = measurement_function * predicted_covariance * measurement_function + sensor_noise
+    kalman_gain = measurement_function' * projected_covariance * 
+    new_state = predicted_state + kalman_gain * residual
+    new_covariance = (identity - kalman_gain * measurement_function) * projected_covariance
+
+```
+
+
  
 ### Data association - prediction and detection
 TODO:More content
