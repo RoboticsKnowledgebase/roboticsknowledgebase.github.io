@@ -2,9 +2,9 @@
 title: 'Radar Camera Sensor Fusion'
 published: true
 ---
-Fusing data from multiple sensor is an integral part of the perception system of robots and especially Autonomous Vehicles. The fusion becomes specially useful when the data coming from the different sensors gives complementary information. In this tutorial we give an introduction to Radar Camera sensor fusion for tracking oncoming vehicles. A camera is helpful in detection of vehicles in the short range, however recovering the 3D velocity of the vehicles solely based on vision is very challenging and inaccurate, especially for long-range detection. This is where the RADAR comes into play. RADAR is excellent for determining the speed of oncoming vehicles and operation in adverse weather and lighting conditions, whereas the camera provides rich visual features required for object classification. 
+Fusing data from multiple sensor is an integral part of the perception system of robots and especially Autonomous Vehicles. The fusion becomes specially useful when the data coming from the different sensors gives complementary information. In this tutorial we give an introduction to Radar-Camera sensor fusion for tracking oncoming vehicles. A camera is helpful in detection of vehicles in the short range, however recovering the 3D velocity of the vehicles solely based on vision is very challenging and inaccurate, especially for long-range detection. This is where the RADAR comes into play. RADAR is excellent for determining the speed of oncoming vehicles and operation in adverse weather and lighting conditions, whereas the camera provides rich visual features required for object classification. 
 
-The position and velocity estimates are improved through the sensor fusion of RADAR and camera. We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
+The position and velocity estimates are improved through the fusion of RADAR and camera data. We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through sensor fusion and tracking algorithm details. 
 
 ## Camera
 This section will explain how you use the information from a camera to estimate the rough position of a object in the world. The method described below makes an assumption that ego vehicle or a robot with the camera mounted and the other objects that we would like to track are all on the same plane in the world.
@@ -29,7 +29,7 @@ The repository also provides a Python API (`darknet_video.py`) to load the YOLOv
 [class_label confidence x y h w]
 ```
 
-You can use any other technique for object detection and get a similar list of detections.
+You could also use any other technique for object detection and get a similar list of detections.
 
 ### Object Tracking in Images 
 Although the goal of camera based perception is to only estimate a position of the object, you can also track the bounding boxes in the image as well to better associate the detection later in sensor fusion and the main tracker. This step is optional and can be skipped.
@@ -57,7 +57,7 @@ track_bbs_ids = mot_tracker.update(detections)
 ### Inverse Perspective Mapping
 Inverse Perspective Mapping is basically a perspective transformation or a homography between two planes in the world. The idea here is to project the camera view (image plane) on to the ground plane in the world to obtain a birds-eye-view of the scene. One way to do this is to directly pick a set of points (minimum 4) in the image corresponding to a rectangular region on the ground plane and then estimate the homography matrix.
 
-In order to estimate the homography, you need a set correspondences. You need a reference object lying flat on the world ground plane (any rectangular shaped board would do). Measure the location of the corner points of the board in the world frame and log the projection of these point on the image plane as well. You can use OpenCV's `cv2.getPerspectiveTransform` to feed in the corresponding points and obtain the homography.
+In order to estimate the homography, you need a set of correspondences. You need a reference object lying flat on the world ground plane (any rectangular shaped board would do). Measure the location of the corner points of the board in the world frame and log the projection of these point on the image plane as well. You can use OpenCV's `cv2.getPerspectiveTransform` to feed in the corresponding points and obtain the homography.
 
 Once the homography is known, pick the bottom center of all the bounding boxes, as this point most closely represents the point on the ground plane, and apply the homography to this image point to obtain an estimate of location in the world frame.
 
@@ -93,18 +93,18 @@ RADAR returns four states for every detections, moreover depending on the use ca
 ## Tracker Framework
 The framework has the following major components:
 - Data Association - Sensor Measurements
-- Sensor Fusion - Extended Kalman Filter
+- Sensor Fusion - Kalman Filter
 - Track Updates
 - Motion Compensation of Tracks
 - Track Association
 - Tracker Evaluation and Metrics
 
 ### Data Association - Sensor Measurements
-You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detection from a sensor with each detection from another sensor. Scipy library performs good resources for computing such functions in Python. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
+The tracker recieves an array of detections from camera and RADAR for every frame. First of all ythe tracker needs to link the corresponding detections in both the sensors. This is done by computing a distance cost volume for each detection from a sensor with each detection from another sensor. The Scipy library in Python provides good resources for computing such functions. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
-Since later we are supposed to associate these detections with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
+Since later we are supposed to associate these detections with the predictions from KF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
 
-### Gaussian state prediction - Kalman Filter
+### Tracker - Kalman Filter
 Kalman Filter is an optimal filtering and estimation technique which uses a series of measurements (with noise) over time to estimate the unknown variables which tend to be more accurate than the individual estimates. It is widely used concept ina variety of fields ranging from state estimation to optimal controls and motion planning. The algorithm works as a two step process which are as follows:
 - Prediction Step
 - Measurement Step
