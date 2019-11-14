@@ -54,6 +54,8 @@ track_bbs_ids = mot_tracker.update(detections)
 ...
 ```
 
+![SORT Tracker](assets/sort-tracker.jpg)
+
 ### Inverse Perspective Mapping
 Inverse Perspective Mapping is basically a perspective transformation or a homography between two planes in the world. The idea here is to project the camera view (image plane) on to the ground plane in the world to obtain a birds-eye-view of the scene. One way to do this is to directly pick a set of points (minimum 4) in the image corresponding to a rectangular region on the ground plane and then estimate the homography matrix.
 
@@ -61,23 +63,19 @@ In order to estimate the homography, you need a set correspondences. You need a 
 
 Once the homography is known, pick the bottom center of all the bounding boxes, as this point most closely represents the point on the ground plane, and apply the homography to this image point to obtain an estimate of location in the world frame.
 
-TODO: Add image for calibration
+![IPM Calibration](assets/ipm_two.png)
 
 There are many pitfalls and assumptions in this technique. As mentioned earlier, the objects to detect must lie on the same ground plane and the relative distance of the camera sensor and orientation with respect to the ground plane must remain constant. If the bounding box detection is inaccurate, a small deviation in the image point might lead to a significant error in the estimated position in the world frame.
 
 You can also model the uncertainty in the position estimate to generate an occupancy grid with the mean and covariance of the position of the object. We will later see how to fuse these estimates with another sensor modality such as a Radar to refine our estimate and track these detections as well.
 
-TODO: Occupancy grid with Gaussian
+![Occupancy Grid Gaussian](assets/occupancy-grid.png)
 
 #### Camera Output
 Camera returns two states for every detections. According to our current camera configuration, state (Ego vehicle frame) of the detections are given as: 
 - Position in x direction 
 - Position in y direction 
 To make things clear, we consider these x and y directions in birds eye view of the ego vehicle frame, where x represents how far the detection is in longitudinal direction and y represents the offset of the detection in lateral direction. 
-
-Following is the result of camera detection and estimated position in the 3D world. The detection was performed on image stream from Carla simulator and the results are visualized in Rviz.
-
-TODO: Add image for final output (with occupancy grid)
 
 ## Radar
 Radar is becoming an important automotive technology. Automotive radar systems are the primary sensor used in adaptive cruise control and are a critical sensor system in autonomous driving assistance systems (ADAS). In this tutorial it is assumed that the radar internally filters the raw sensor data and gives the final positions and velocities of the vehicles within the field of view. This is a reasonable assumption since most of the automotive grade radars already do such filtering and tracking and return the tracked vehicle estimate in the Cartesian coordinates.
@@ -89,6 +87,9 @@ Radar provides four states for every detections, moreover depending on the use c
 - Velocity in x direction 
 - Velocity in y direction
 
+Following is the result of camera detection and estimated position in the 3D world. The detection was performed on image stream from Carla simulator and the results are visualized in Rviz. The blue cubes represent estimates from camera and red cubes are the Radar detections.
+
+![Occupancy Grid](assets/camera-radar-targets.png)
 
 ## Tracker Framework
 The framework has the following major components:
@@ -146,6 +147,11 @@ This block basically transforms all the track predictions one timestep by the eg
  
 ### Track Association
 Once you have the motion compensated tracks, you need to follow the same algorithm to associate new tracks with existing tracks. To give some intuition, here you are matching the predicted state in the last time for every track with the measurements of the current timestep. 
+
+
+#### Final Results of Tracking and Sensor Fusion
+![Tracker Results](assets/Tracker-01.PNG) ![Tracker Results](assets/Tracker-02.PNG)
+
 
 ### Tracker Evaluation and Metrics
 The most widely used metrics for validation are MOTA (Multi-object tracking accuracy) and MOTP (Multi-object tracking precision). MOTP is the total error in estimated position for matched object-hypothesis pairs over all frames, averaged by the total number of matches made. It shows the ability of the tracker to estimate precise object positions, independent of its skill at recognizing object configurations, keeping consistent trajectories, and so forth. The MOTA accounts for all object configuration errors made by the tracker, false positives, misses, mismatches, over all frames.
