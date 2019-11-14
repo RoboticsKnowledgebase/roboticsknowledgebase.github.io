@@ -9,7 +9,6 @@ The position and velocity estimates are improved through the fusion of RADAR and
 ## Camera
 This section will explain how you use the information from a camera to estimate the rough position of a object in the world. The method described below makes an assumption that ego vehicle or a robot with the camera mounted and the other objects that we would like to track are all on the same plane in the world.
 
-
 ### Object Detection
 The first step is to detect 2D bounding boxes of the object you want to track. State-of-the-art techniques for object detection that run in real-time are deep learning based single shot detector models such as SSD or YOLOv3. You can read more about single shot detectors [here](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors.html). This tutorial uses the YOLOv3 model for object detection. [This](https://github.com/AlexeyAB/darknet) fork of the original implementation is recommended as it has additional optimizations for real-time inference. 
 
@@ -65,7 +64,7 @@ TODO: Add image for calibration
 
 There are many pitfalls and assumptions in this technique. As mentioned earlier, the objects to detect must lie on the same ground plane and the relative distance of the camera sensor and orientation with respect to the ground plane must remain constant. If the bounding box detection is inaccurate, a small deviation in the image point might lead to a significant error in the estimated position in the world frame.
 
-You can also model the uncertainty in the position estimate to generate an occupancy grid with the mean and covariance of the position of the object. We will later see how to fuse these estimates with another sensor modality such as a RADAR to refine our estimate and track these detections as well.
+You can also model the uncertainty in the position estimate to generate an occupancy grid with the mean and covariance of the position of the object. We will later see how to fuse these estimates with another sensor modality such as a Radar to refine our estimate and track these detections as well.
 
 TODO: Occupancy grid with Gaussian
 
@@ -80,10 +79,10 @@ Following is the result of camera detection and estimated position in the 3D wor
 TODO: Add image for final output (with occupancy grid)
 
 ## Radar
-Radar is becoming an important automotive technology. Automotive radar systems are the primary sensor used in adaptive cruise control and are a critical sensor system in autonomous driving assistance systems (ADAS). In this tutorial it is assumed that the radar internally filters the raw sensor data and gives the final positions and velocities of the vehicles within the field of view. This is a reasonable assumption since most of the automotive grade radars already do such filtering and tracking and return the tracked vehicle estimate in the cartesian coordinates.
+Radar is becoming an important automotive technology. Automotive radar systems are the primary sensor used in adaptive cruise control and are a critical sensor system in autonomous driving assistance systems (ADAS). In this tutorial it is assumed that the radar internally filters the raw sensor data and gives the final positions and velocities of the vehicles within the field of view. This is a reasonable assumption since most of the automotive grade radars already do such filtering and tracking and return the tracked vehicle estimate in the Cartesian coordinates.
 
 #### Radar Output
-RADAR returns four states for every detections, moreover depending on the use case there could be multiple detections. According to our current RADAR configuration, state (Ego vehicle frame) of the detections are given as: 
+Radar provides four states for every detections, moreover depending on the use case there could be multiple detections. According to our current Radar configuration, state (Ego vehicle frame) of the detections are given as: 
 - Position in x direction 
 - Position in y direction 
 - Velocity in x direction 
@@ -100,12 +99,10 @@ The framework has the following major components:
 - Tracker Evaluation and Metrics
 
 ### Data Association - Sensor Measurements
-The tracker recieves an array of detections from camera and RADAR for every frame. First of all ythe tracker needs to link the corresponding detections in both the sensors. This is done by computing a distance cost volume for each detection from a sensor with each detection from another sensor. The Scipy library in Python provides good resources for computing such functions. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
-
-Since later we are supposed to associate these detections with the predictions from KF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
+Tracker gets an array of detections from camera and Radar for every frame. First of all the data needs to be linked to the corresponding detections in both (all) the sensors. This is  done by computing a distance cost volume for each detection from one sensor with each detection from another sensor. Scipy library provides good resources for computing such functions in Python. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that, Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
 ### Tracker - Kalman Filter
-Kalman Filter is an optimal filtering and estimation technique which uses a series of measurements (with noise) over time to estimate the unknown variables which tend to be more accurate than the individual estimates. It is widely used concept ina variety of fields ranging from state estimation to optimal controls and motion planning. The algorithm works as a two step process which are as follows:
+Kalman Filter is an optimal filtering and estimation technique which uses a series of measurements (with noise) over time to estimate the unknown variables which tend to be more accurate than the individual estimates. It is widely used concept in a variety of fields ranging from state estimation to optimal controls and motion planning. The algorithm works as a two step process which are as follows:
 - Prediction Step
 - Measurement Step
 
@@ -114,7 +111,7 @@ In our case we use Kalman Filter to estimate states of the vehicles in the envir
 #### Prediction Step
 Prediction step is the step where we will estimate the state of the vehicle in the next timestep using data we have currently and a motion model. We chose to use a constant velocity (CV) motion model for prediction. This model considers the vehicle as a point object which can move at a constant velocity in the x and y direction. This is not the best model to represent the dynamics of a vehicle but since we dont have information about the steering or throttle data of the vehicle, we will have to be satisfied with this. When we predict the future state, we also need to estimate the noise that might have propped up in the system due to a variety of reasons. This noise is called the process noise and we assume that it is dependant on the motion model and the timestep. This [link](https://github.com/balzer82/Kalman/blob/master/Kalman-Filter-CV.ipynb?create=1) gives a good idea about the CV motion model and the process noise associated with it.
 
-The sudo code for the prediction step is
+The pseudo-code for the prediction step is
 ```
 def predict():
     predicted_state = transition_matrix * old_state
@@ -125,7 +122,7 @@ def predict():
 #### Measurement Step
 Our measurement step is actually divided into two parts, one for the camera measurement and the other for the radar measurement. While updating the states of the filter we need to be sure that the timestep of the measurement and the predictions match. The update step is much more complicated and 
 
-The sudo code for the prediction step is
+The pseudo-code for the prediction step is
 ```
 def update():
     residual = sensor_measurement - measurement_function * predicted_state
@@ -137,19 +134,17 @@ def update():
 ```
  
 ### Track Updates
-This is the most important section for tuning the tracker. Here you need to handle for how long you will be continuing the tracks (continue predicting the state of the track) if that detection is not observed from the sensors in the continuous set of frames. Also another tuning parameter is that for how long you want to continuously detect the object through sensors to confirm with a definite solution that the oncoming vehicle is there.You need to use 3 sets of sensor detections as input: 
-- Camera only detections
-- RADAR only detections
-- Above detections that are able to fuse
-Here you need to define the misses (age of non-detections) for each detections. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detecions from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
+This is the most important step in the framework. Here you need to specify the time steps length for which the tracklets will be continued to be predicted (continue predicting the state of the track) even though the vehicle was not detected in a continuous set of frames. Another tuning parameter is how long you want to continuously detect the object through sensors to confirm that the object is a valid track.
+
+Here you need to define the misses (age of non-matched detections) for each measurement. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detections from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
 
 ### Motion Compensation of Tracks
-This block basically transforms all the track predictions one timestep by the ego vehicle motion. This is an important block because the prediction (based on a vehicle motion model) is computed in the ego vehicle frame at the previous timestep. If the ego vehicle was static, the new sensor measurements could easily be associated with the predictions, but this would fail if the ego vehicle moved from its previous position. This is the reason why we need to compensate all the predictions by ego motion first, before moving on to data association with the new measurements. The equations for ego motion compensation are shown below.
+This block basically transforms all the track predictions at a timestep by the ego vehicle motion. This is an important block because the prediction (based on a vehicle motion model) is computed in the ego vehicle frame at the previous timestep. If the ego vehicle was static, the new sensor measurements could easily be associated with the predictions, but this would fail if the ego vehicle moved from its previous position. This is the reason why we need to compensate all the predictions by ego motion first, before moving on to data association with the new measurements. The equations for ego motion compensation are shown below.
 
 \\[\left[ \begin{array} { c } { X _ { t + 1 } } \\ { Y _ { t + 1 } } \\ { 1 } \end{array} \right] = \left[ \begin{array} { c c c } { \cos ( \omega d t ) } & { \sin ( \omega d t ) } & { - v _ { x } d t } \\ { - \sin ( \omega d t ) } & { \cos ( \omega d t ) } & { - v _ { y } d t } \\ { 0 } & { 0 } & { 1 } \end{array} \right] \left[ \begin{array} { c } { X _ { t } } \\ { Y _ { t } } \\ { 1 } \end{array} \right]\\]
  
 ### Track Association
-Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values. To give some intuitions, here you are matching the predicted state in the last time for every track with the sensor reading of the current time step. 
+Once you have the motion compensated tracks, you need to follow the same algorithm to associate new tracks with existing tracks. To give some intuition, here you are matching the predicted state in the last time for every track with the measurements of the current timestep. 
 
 ### Tracker Evaluation and Metrics
 The most widely used metrics for validation are MOTA (Multi-object tracking accuracy) and MOTP (Multi-object tracking precision). MOTP is the total error in estimated position for matched object-hypothesis pairs over all frames, averaged by the total number of matches made. It shows the ability of the tracker to estimate precise object positions, independent of its skill at recognizing object configurations, keeping consistent trajectories, and so forth. The MOTA accounts for all object configuration errors made by the tracker, false positives, misses, mismatches, over all frames.
@@ -173,10 +168,7 @@ seq2 75.0% 75.0% 75.0% 75.0% 75.0%  2  1  1  0  1  1   0   0 50.0% 0.167
 - [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
 
 ## Further Reading
-- [Link to YOLO](https://github.com/pjreddie/darknet)
-- [SORT tracker](https://github.com/abewley/sort)
+- [Single Shot Object Detectors](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/single-shot-detectors.html)
+- [YOLOv3 Implementation](https://github.com/pjreddie/darknet)
+- [SORT Tracker Repository](https://github.com/abewley/sort)
 - [Kalman Filter in Python](https://github.com/balzer82/Kalman)
-
-## References
-- Links to References go here. References should be in alphabetical order. References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
