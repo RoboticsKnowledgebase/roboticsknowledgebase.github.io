@@ -6,10 +6,6 @@ Fusing data from multiple sensor is an integral part of the perception system of
 
 The position and velocity estimates are improved through the sensor fusion of RADAR and camera. We will first go through the details regarding the data obtained and the processing required for the individual sensors and then go through the sensor fusion and tracking the part. 
 
-TODO: shift this to ipm
-Although sensor fusion is currently not complete, some of the sub-tasks such as Inverse Perspective Mapping and RADAR integration have been completed this semester. The idea behind this is to create a birds-eye-view of the environment around the vehicle by using a perspective transformation. Using this birds-eye-view representation and some known priors such as camera parameters and extrinsic with respect to a calibration checkerboard, all the vehicles can be mapped to their positions in the real-world. Fusion of this data along with RADAR targets can provide us reliable states of all vehicles in the scene. Finally, an occupancy grid will be generated which can be used for prediction and planning.
-
-
 ## Camera
 This section will explain how you use the information from a camera to estimate the rough position of a object in the world. The method described below makes an assumption that ego vehicle or a robot with the camera mounted and the other objects that we would like to track are all on the same plane in the world.
 
