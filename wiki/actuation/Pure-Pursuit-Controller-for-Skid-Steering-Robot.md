@@ -21,7 +21,7 @@ The following image explains the concept of lookahead distance and the arc to fo
 
 In the image above, we see that given a point at a particular location from the robot say at location (x,y) in the robot's frame (the frame fixed on the robot). The point is at a distance l from the current location of the robot. Using a geometrical derivation, we can derive the radius of curvature of this arc as -
 
-\gamma = \frac{2*x}{l^2}
+\gamma = \frac{2*x}{l^2}\
 
 This is the radius of the path we want the system to follow in order to converge to the trajectory. We can see from the image that the arc is tangential to the current trajectory of the robot. Thus the kinematic constraints of the robot are not violated.
 
@@ -35,7 +35,7 @@ In case of a trajectory, the location along the path at any point of time is kno
 Given a V from the along-track error controller, since along the arc the linear and angular velocity are related by:
 
 V= wr
-V = \omega * r
+V = \\omega * r
 where
 V = 
 \omega = 
@@ -52,8 +52,8 @@ This maps the cross-track error to the desired angular velocity of the robot. On
 
 ### 1. Determine current location of the robot
 The current location of the robot (x,y,\theta)in the world frame needs to be determined, this could come from the odometry sensor if the world frame is at the start of the path. In case one is using an absolute positioning method like a GPS, the world frame could be the "UTM" frame or any other world fixed frame. 
-#### Note:
-One should ensure that the robot and the world frame are provided in the same format i.e. ENU or NED format.
+
+**Note:** One should ensure that the robot and the world frame are provided in the same format i.e. ENU or NED format.
 
 ### 2. Find the point closest to the vehicle
 The point on the trajectory closest to the robot needs to be determined. This step will depend on how the trajectory is provided, if the waypoints on the trajectory are sparsely provided, one can connect the closest two waypoints through a straight line and project the current location of the robot on it to determine the point on the trajectory closest to the robot.
@@ -67,8 +67,12 @@ Since the goal point is in world frame, it needs to be transformed to the robot'
 
 ### 5. Calculate controller output
 The linear velocity is determined using the controller to minimize alongtrack error.
-
-For reducing cross-tarck error the equation INSERT_EQUATION_NUMBER_HERE should be used.
+The angular velocity is computed using 
+w \omega = 	V/r (\frac{V}{r}
+	= 	V*gamma (V * \gamma
+    =	2*V*x/l^2 (frac{2 * V * x}{l^2}
+    
+These desired linear and angular velocity is followed by a low level controller.
 
 
 
