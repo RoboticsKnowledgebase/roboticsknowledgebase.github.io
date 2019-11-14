@@ -72,6 +72,10 @@ You can also model the uncertainty in the position estimate to generate an occup
 TODO: Occupancy grid with Gaussian
 
 #### Camera Output
+Camera returns two states for every detections. According to our current camera configuration, state (Ego vehicle frame) of the detections are given as: 
+- Position in x direction 
+- Position in y direction 
+To make things clear, we consider these x and y directions in birds eye view of the ego vehicle frame, where x represents how far the detection is in longitudinal direction and y represents the offset of the detection in lateral direction. 
 
 Following is the result of camera detection and estimated position in the 3D world. The detection was performed on image stream from Carla simulator and the results are visualized in Rviz.
 
@@ -80,45 +84,45 @@ TODO: Add image for final output (with occupancy grid)
 ## Radar
 
 #### Radar Output
+RADAR returns four states for every detections, moreover depending on the use case there could be multiple detections. According to our current RADAR configuration, state (Ego vehicle frame) of the detections are given as: 
+- Position in x direction 
+- Position in y direction 
+- Velocity in x direction 
+- Velocity in y direction
 
+## Tracker Framework
+The framework has the following major components:
+- Data Association - Sensor Measurements
+- Sensor Fusion - Extended Kalman Filter
+- Track Updates
+- Motion Compensation of Tracks
+- Track Association
+- Tracker Evaluation and Metrics
 
-## Camera Radar Tracker
+### Data Association - Sensor Measurements
+You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detection from a sensor with each detection from another sensor. Scipy library performs good resources for computing such functions in Python. Then you need to use a minimization optimization function to associate detections such that overall cost (Euclidean distance) summed up over the entire detections is minimized. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
 
-Camera RADAR tracker can be summed up with following sub parts: 
-- Data association of camera and radar detections
-- Motion compensation of Ego vehicle
-- State predicion and update using Extended Kalman Filter
-- Data association of predictions and detections
-- Handling occlusions and miss detections
-- Validation of tracker using MOTP and MOTA metrics
+Since later we are supposed to associate these detections with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
 
-### Data fusion - Camera and RADAR detections
-TODO:Fix grammar
-You must be getting an array of detections from camera and RADAR for every frame. First of all you need to link the corresponding detections in both (all) the sensors. This is  done using computing a distance cost volume for each detecion og a sensor with each detections from another sensor. scipy library performs good resources for computing such functions in Python. Then you ned to use a minimisation optimization function to associate detections such that overall cost (Euclidian distance) summed up over the entire detections is minimised. For doing that Hungarian data association rule is used. It matches the minimum weight in a bipartite graph. Scipy library provides good functionality for this as well. 
+### Sensor Fusion - Extended Kalman Filter
+ -- Karmesh
+ 
+### Track Updates
+This is the most important section for tuning the tracker. Here you need to handle for how long you will be continuing the tracks (continue predicting the state of the track) if that detection is not observed from the sensors in the continuous set of frames. Also another tuning parameter is that for how long you want to continuously detect the object through sensors to confirm with a definite solution that the oncoming vehicle is there.You need to use 3 sets of sensor detections as input: 
+- Camera only detections
+- RADAR only detections
+- Above detections that are able to fuse
+Here you need to define the misses (age of non-detections) for each detections. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detecions from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
 
 ### Motion Compensation of Tracks
 This block basically transforms all the track predictions one timestep by the ego vehicle motion. This is an important block because the prediction (based on a vehicle motion model) is computed in the ego vehicle frame at the previous timestep. If the ego vehicle was static, the new sensor measurements could easily be associated with the predictions, but this would fail if the ego vehicle moved from its previous position. This is the reason why we need to compensate all the predictions by ego motion first, before moving on to data association with the new measurements. The equations for ego motion compensation are shown below.
 
 \\[\left[ \begin{array} { c } { X _ { t + 1 } } \\ { Y _ { t + 1 } } \\ { 1 } \end{array} \right] = \left[ \begin{array} { c c c } { \cos ( \omega d t ) } & { \sin ( \omega d t ) } & { - v _ { x } d t } \\ { - \sin ( \omega d t ) } & { \cos ( \omega d t ) } & { - v _ { y } d t } \\ { 0 } & { 0 } & { 1 } \end{array} \right] \left[ \begin{array} { c } { X _ { t } } \\ { Y _ { t } } \\ { 1 } \end{array} \right]\\]
  
+### Track Association
+Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values. To give some intuitions, here you are matching the predicted state in the last time for every track with the sensor reading of the current time step. 
 
-Since later we are supposed to associate these detetions with the predictions from EKF (explained in the later section), we need to compensate their state values according to the ego vehicle motion. This is done to compare (associate) the detections from sensors and prediction algorithm on a common ground. You must already be having ego vehicle state information from odometry sensors. Using these two states - Ego vehicles state and oncoming state - oncoming vehicle state is to be output as if the ego vehicle motion was not there. 
-
-### Gaussian state prediction - Extended Kalman Filter
- -- Karmesh
- 
-### Data association - prediction and detection
-TODO:More content
-Next once you have the ego-vehicle motion compensated oncoming vehicle state, then you need to follow same algorithm to associate these two sets of state values.
-
-### Occlusion and miss-detections handling
-This is the most important section for tuning the tracker. Here you need to handle for how long you will be contnuing the tracks (continue predicting the state of the track) if that detection is not observed from the sensors in the continuous set of frames. Also another tuning parameter is that for how long you want to continuously detect the object through sensors to confirm with a definite solution that the oncoming vehicle is there.You need to use 3 sets of sensor detections as input: 
-- Camera only detections
-- RADAR only detections
-- Above detections that are able to fuse
-Here you need to define the misses (age of non-detections) for each detections. The point of this parameter is that you will increment this age if that corresponding state (to that track) is not observed through sensors. Once any of the state from detecions from sensors is able to associate with the prediction produced by the tracks then we again set back that track parameter to 0.
-
-### Validation of tracker using MOTP and MOTA metrics
+### Tracker Evaluation and Metrics
 The most widely used metrics for validation are MOTA (Multi-object tracking accuracy) and MOTP (Multi-object tracking precision). MOTP is the total error in estimated position for matched object-hypothesis pairs over all frames, averaged by the total number of matches made. It shows the ability of the tracker to estimate precise object positions, independent of its skill at recognizing object configurations, keeping consistent trajectories, and so forth. The MOTA accounts for all object configuration errors made by the tracker, false positives, misses, mismatches, over all frames.
 
 To evaluate your tracker, you can use the [`motmetrics`](https://github.com/cheind/py-motmetrics) Python library.
@@ -136,19 +140,12 @@ seq2 75.0% 75.0% 75.0% 75.0% 75.0%  2  1  1  0  1  1   0   0 50.0% 0.167
 
 ```
 
-### Trajectory Smoothing
-
-
-## Summary
-
-
 ## See Also:
 - [Delphi ESR Radar](https://github.com/deltaautonomy/roboticsknowledgebase.github.io/blob/master/wiki/sensing/delphi-esr-radar.md)
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-- Link to YOLO
-- Link to SORT
+- [Link to YOLO](https://github.com/pjreddie/darknet)
+- [SORT tracker](https://github.com/abewley/sort)
 - [Kalman Filter in Python](https://github.com/balzer82/Kalman)
 
 ## References
