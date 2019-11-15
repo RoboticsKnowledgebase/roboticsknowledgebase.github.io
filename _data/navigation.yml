@@ -130,6 +130,8 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
+      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+        url: /wiki/networking/wifi-hotspot/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
