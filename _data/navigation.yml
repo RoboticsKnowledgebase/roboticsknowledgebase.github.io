@@ -81,6 +81,8 @@ wiki:
         url: /wiki/actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
+      - title: Controlling UR5 arm with ROS
+        url: /wiki/actuation/ur5e-control/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -128,6 +130,8 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
+      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+        url: /wiki/networking/wifi-hotspot/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -191,6 +195,8 @@ wiki:
         url: /wiki/tools/rosbags-matlab/
       - title: Making Field Testing Easier through Visualization and Simulation
         url: /wiki/tools/visualization-simulation/
+      - title: CLion IDE
+        url: /wiki/tools/clion/
 
 # Main links appear in the header.
 main:
