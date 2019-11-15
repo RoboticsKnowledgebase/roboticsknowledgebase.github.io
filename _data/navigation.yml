@@ -88,6 +88,8 @@ wiki:
     children:
       - title: Adaptive Monte Carlo Localization
         url: /wiki/state-estimation/adaptive-monte-carlo-localization/
+      - title: Sensor Fusion and Tracking
+        url: /wiki/state-estimation/radar-camera-sensor-fusion/
       - title: ROS Cost Maps
         url: /wiki/state-estimation/ros-cost-maps/
       - title: ROS Mapping and Localization
