@@ -58,8 +58,8 @@ wiki:
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
-      - title: Microsoft Kinect and Point Cloud Library
-        url: /wiki/sensing/kinect-pcl/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
       - title: Photometric Calibration
         url: /wiki/sensing/photometric-calibration/
       - title: Speech Recognition
