@@ -98,6 +98,8 @@ wiki:
         url: /wiki/state-estimation/sbpl-lattice-planner/
       - title: ORB SLAM2 Setup Guidance
         url: /wiki/state-estimation/orb-slam2-setup/
+      - title: Visual Servoing
+        url: /wiki/state-estimation/visual-servoing/
   - title: Programming
     url:  /wiki/programming/
     children:
