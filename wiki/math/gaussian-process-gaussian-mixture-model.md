@@ -23,7 +23,7 @@ You will be able to have a basic understanding on Gaussian Process (what is it a
 A Gaussian Process(GP) is a probability distribution over functions \\( p(\textbf{f}) \\) , where the functions are defined by a set of random function variables \\(\textbf{f} = \{f_1, f_2, . . . , f_N\}\\). For a GP, any finite linear combination of those function variables has a joint (zero mean) Gaussian distribution. It can be used for nonlinear regression, classification, ranking, preference learning, ordinal regression. In robotics, it can be applied to state estimation, motion planning and in our case environment modeling.
 
 GPs are closely related to other models and can be derived using bayesian kernel machines, linear regression with basis functions, infinite multi-layer perceptron neural networks (it becomes a GP if there are infinitely many hidden units and Gaussian priors on the weights), spline models. A simple connections between different methods can be found in the following figure.
-<span style="display:block;text-align:center">![](https://i.imgur.com/HBIqhsR.png)</span>
+![](assets/gpConnection.png)
 
 
 
@@ -34,7 +34,7 @@ GPs are closely related to other models and can be derived using bayesian kernel
 Before all the equations, lets have a look at why do we want to use GP?
 ### Why do we want to use GP?
 The major reasons why GP is popular includes:
-1. It can handle uncertainty in unknown function by averaging, not minimizing as GP is rooted in probability and bayesian inference.![](https://i.imgur.com/F1Ogj1w.png)
+1. It can handle uncertainty in unknown function by averaging, not minimizing as GP is rooted in probability and bayesian inference.![](assets/uncertainty.png)
 Classifier comparison(https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html) This property is not commonly shared by other methods. For example, in the above classification method comparison. Neural nets and random forests are confident about the points that are far from the training data.
 2. We can incorporate prior knowledge by choosing different kernels
 3. GP can learn the kernel and regularization parameters automatically during the learning process. (GP is a non-parametric model, but all data are needed to generate the model. In other words, it need finite but unbounded number of parameters that grows with data.)
@@ -91,7 +91,7 @@ While \\( \mu \\) is the average value of the data (Expectations), \\( \Sigma \\
 The Gaussian mixture model can be regarded as a model composed of K single Gaussian models, which are hidden variables of the hybrid model. In general, a mixed model can use any probability distribution. The Gaussian mixture model is used here because the Gaussian distribution has good mathematical properties and good computational performance.
 
 For example, we now have a bunch of samples of dogs. Different types of dogs have different body types, colors, and looks, but they all belong to the dog category. At this time, the single Gaussian model may not describe the distribution very well since the sample data distribution is not a single ellipse. However, a mixed Gaussian distribution can better describe the problem, as shown in the following figure:
-![](https://i.imgur.com/WUjbCnv.jpg)
+![](assets/mixedGaussian.jpg)
 
 Define:
 *  \\( x_j \\) is the number \\( j \\) of the observed data, \\( j = 1, 2, ..., N \\)
