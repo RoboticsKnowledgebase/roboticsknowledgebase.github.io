@@ -86,7 +86,7 @@ catkin_make
 
 The image streams published from the camera publisher plug-in is in raw format, or in other words, these are bitmap images streams, which consume more memory. This section covers how to compress these image streams to reduce memory usage and make streaming more efficient. This is an optional step and usually this maybe beneficial only if you have multiple camera publishers from Rviz.
 
-If you want to integrate these image stream with `roslibjs`, the ROS socket bridge expects images in compressed format and this step would be mandatory (refer [See Also] section(http://roboticsknowledgebase.com/wiki/tools/stream-rviz/see-also)).
+If you want to integrate these image stream with `roslibjs`, the ROS socket bridge expects images in compressed format and this step would be mandatory (refer [See Also](http://roboticsknowledgebase.com/wiki/tools/stream-rviz/see-also)).
 
 To compress images, just add the following block into your launch file.
 
