@@ -180,6 +180,8 @@ wiki:
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
   - title: Math
+    url: /wiki/math/
+    children:
       - title: Gaussian Process and Gaussian Mixture Model
         url: /wiki/math/gaussian-process-gaussian-mixture-model/
   - title: Tools
@@ -203,6 +205,10 @@ wiki:
         url: /wiki/tools/visualization-simulation/
       - title: CLion IDE
         url: /wiki/tools/clion/
+      - title: Stream Rviz Visualizations as Images
+        url: /wiki/tools/stream-rviz/
+      - title: Web-Based Visualization using ROS JavaScript Library
+        url: /wiki/tools/roslibjs/
 
 # Main links appear in the header.
 main:
