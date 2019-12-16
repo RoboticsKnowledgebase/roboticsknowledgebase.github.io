@@ -180,6 +180,8 @@ wiki:
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
   - title: Math
+    url: /wiki/math/
+    children:
       - title: Gaussian Process and Gaussian Mixture Model
         url: /wiki/math/gaussian-process-gaussian-mixture-model/
   - title: Tools
