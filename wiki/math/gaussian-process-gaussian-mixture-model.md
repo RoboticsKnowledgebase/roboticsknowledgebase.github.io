@@ -53,22 +53,22 @@ For a given training examples \\( x_1, x_2, ..., x_n \\) and the corresponding o
 
 Suppose we have a dataset containing \\( n \\) training examples \\( (x_i, y_i) \\), and we want to predict the value \\( y^* \\) given \\( x^* \\). After adding the unknown value, we get a variable of \\( (n+1) \\) dimension.
 
-\\[ \left[\begin{array}{c}{y_{1}} \\ {\vdots} \\ {y_{n}} \\ {f\left(x^{*}\right)}\end{array}\right] \sim \mathcal{N}\left(\left[\begin{array}{l}{\mathbf{0}} \\ {\mathbf{0}}\end{array}\right],\left[\begin{array}{cc}{K_{x x}+\sigma_{n}^{2} I} & {K_{x x^{*}}^{T}} \\ {K_{x x^{*}}} & {k\left(x^{*}, x^{*}\right)}\end{array}\right]\right) \\]
+$$ \begin{bmatrix}{y_{1}} \\ {\vdots} \\ {y_{n}} \\ {f(x^{* })}\end{bmatrix} \sim \mathcal{N}\left(\left[\begin{array}{c}{0} \\ {0}\end{array}\right],\left[\begin{array}{cc}{K_{x x}+\sigma_{n}^{2} I} & {K_{x x}^{T}} \\ {K_{x x}^{2}} & {k\left(x^{* }, x^{* \right)}\end{array}\right]\right) $$
 
 where,
 
-\\[K_{x x^{*}}=\left[k\left(x_{1}, x^{*}\right) \ldots k\left(x_{n}, x^{*}\right)\right ] \\]
+\\[K_{x x^{* }}=\left[k\left(x_{1}, x^{* }\right) \ldots k\left(x_{n}, x^{* }\right)\right ] \\]
 
-Hence, the problem can be convert into a conditional probability problem, i.e. solving \\( f(x^*)|\mathbf{y}(\mathbf{x}) \\).
+Hence, the problem can be convert into a conditional probability problem, i.e. solving \\( f(x^* )|\mathbf{y}(\mathbf{x}) \\).
 
-\\[ f\left(x^{*}\right) | \mathbf{y}(\mathbf{x}) \sim \mathcal{N}\left(K_{x x^{*}} M^{-1} \mathbf{y}(\mathbf{x}), k\left(x^{*}, x^{*}\right)-K_{x x^{*}} M^{-1} K_{x^{*} x}^{T}\right)\\]
+\\[ f\left(x^{* }\right) | \mathbf{y}(\mathbf{x}) \sim \mathcal{N}\left(K_{x x^{* }} M^{-1} \mathbf{y}(\mathbf{x}), k\left(x^{* }, x^{* }\right)-K_{x x^{* }} M^{-1} K_{x^{* } x}^{T}\right)\\]
 
 where \\( M=K_{x x}+\sigma_{n}^{2} I \\), hence the expectation of \\( y^* \\) is
 
-\\[ E\left(y^{*}\right)=K_{x x^{*}} M^{-1} \mathbf{y}(\mathbf{x})\\]
+\\[ E\left(y^{* }\right)=K_{x x^{* }} M^{-1} \mathbf{y}(\mathbf{x})\\]
 
 The variance is
-\\[ \operatorname{Var}\left(y^{*}\right)=k\left(x^{*}, x^{*}\right)-K_{x x^{*}} M^{-1} K_{x^{*} x}^{T}\\]
+\\[ \operatorname{Var}\left(y^{* }\right)=k\left(x^{* }, x^{* }\right)-K_{x x^{* }} M^{-1} K_{x^{* } x}^{T}\\]
 
 
 
