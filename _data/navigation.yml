@@ -172,11 +172,6 @@ wiki:
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
   - title: Math
-  - title: Simulation
-    url: /wiki/simulation
-    children:
-      - title: Webots
-        url: /wiki/simulation/webots
   - title: Tools
     url: /wiki/tools/
     children:
@@ -194,6 +189,8 @@ wiki:
         url: /wiki/tools/udev-rules/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
+      - title: Webots
+        url: /wiki/tools/webots/
 
 # Main links appear in the header.
 main:
