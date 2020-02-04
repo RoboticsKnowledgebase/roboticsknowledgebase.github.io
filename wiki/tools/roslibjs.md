@@ -4,7 +4,7 @@ title: Web-Based Visualization using ROS JavaScript Library
 
 This tutorial will give you an introduction to the ROS JavaScript Library (`roslibjs`) and how you can use it in your own projects to interface with web-based platforms or GUIs.
 
-There exists a suite of ROS JavaScript libraries developed by [http://robotwebtools.org/](http://robotwebtools.org/) such as `roslibjs`, `ros2djs`, and `ros3djs`. The `roslibjs` library is the core JavaScript library for interacting with ROS from the browser. It uses web sockets to connect with `rosbridge` and provides publishing, subscribing, service calls, `actionlib`, TF, URDF parsing, and other essential ROS functionality. The `ros2djs` and `ros3djs` are libraries built upon these to support more advanced HTML3 based plug ins to visualize occupancy grids, URDF models, all of the standard ROS visualization markers, point clouds, and many more types of messages.
+There exists a suite of ROS JavaScript libraries developed by [https://robotwebtools.org/](https://robotwebtools.org/) such as `roslibjs`, `ros2djs`, and `ros3djs`. The `roslibjs` library is the core JavaScript library for interacting with ROS from the browser. It uses web sockets to connect with `rosbridge` and provides publishing, subscribing, service calls, `actionlib`, TF, URDF parsing, and other essential ROS functionality. The `ros2djs` and `ros3djs` are libraries built upon these to support more advanced HTML3 based plug ins to visualize occupancy grids, URDF models, all of the standard ROS visualization markers, point clouds, and many more types of messages.
 
 The scope of this tutorial is only to introduce you to the `roslibjs` library as the procedure and general work-flow remains the same for the other libraries as well.
 
@@ -139,7 +139,7 @@ You can view the message data on your web console. You can access all your ROS m
 
 ## Some More ROS JavaScript Interface for Developing GUIs
 
-You can do more advanced stuff such as subscribing to images, Rviz visualizations (see [this tutorial for more information](http://roboticsknowledgebase.com/wiki/tools/stream-rviz)), and monitor diagnostics from your nodes.
+You can do more advanced stuff such as subscribing to images, Rviz visualizations (see [this tutorial for more information](https://roboticsknowledgebase.com/wiki/tools/stream-rviz)), and monitor diagnostics from your nodes.
 
 To visualize and update an image stream live within your web app, first you need a placeholder in HTML for your image. Define it as follows within the `body` tag with an unique ID to update it later via JavaScript.
 
@@ -147,7 +147,7 @@ To visualize and update an image stream live within your web app, first you need
 <img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="assets/img/placeholder.png">
 ```
 
-Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](http://roboticsknowledgebase.com/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
+Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
 
 ```
 var image_topic = new ROSLIB.Topic({
@@ -167,10 +167,10 @@ image_topic.subscribe(function(message) {
 
 Here is an example of a dashboard (DeltaViz) for Delta Autonomy developed by [me](mailto:heethesh@gmail.com). The GUI makes use of ROS diagnostic message to monitor FPS of different nodes in the pipeline, subscribes to images and virtual camera stream from Rviz, and also has sound alerts and flashes to notify the users (developed for their specific use-case). The source code is available on our repository [here](https://github.com/deltaautonomy/delta_viz/blob/master/delta_viz_app/index.html).
 
-![](http://roboticsknowledgebase.com/wiki/tools/assets/deltaviz.jpg)
+![](https://roboticsknowledgebase.com/wiki/tools/assets/deltaviz.jpg)
 
 ## See Also
-- A [tutorial](http://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.
+- A [tutorial](https://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.
 
 ## Further Reading
 - There is a lot more you can do with `roslibjs`. Check out the official wiki [here](http://wiki.ros.org/roslibjs/Tutorials/BasicRosFunctionality) for more advanced tutorials.

@@ -17,7 +17,7 @@ The steps followed in a Particle Filter are:
 
 Each iteration of these three steps generates a sample drawn from the posterior belief. After n iterations, the importance weights of the samples are normalized so that they sum up to 1.
 
-For further details on this topic, [Sebastian Thrun's paper on Particle Filter in Robotics](http://robots.stanford.edu/papers/thrun.pf-in-robotics-uai02.pdf) is a good source for a mathematical understanding of particle filters, their applications and drawbacks.
+For further details on this topic, [Sebastian Thrun's paper on Particle Filter in Robotics](https://robots.stanford.edu/papers/thrun.pf-in-robotics-uai02.pdf) is a good source for a mathematical understanding of particle filters, their applications and drawbacks.
 
 ## What is an adaptive particle filter?
 A key problem with particle filter is maintaining the random distribution of particles throughout the state space, which goes out of hand if the problem is high dimensional. Due to these reasons it is much better to use an adaptive particle filter which converges much faster and is computationally much more efficient than a basic particle filter.
