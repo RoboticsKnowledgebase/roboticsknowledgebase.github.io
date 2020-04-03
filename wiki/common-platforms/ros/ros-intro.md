@@ -6,7 +6,11 @@ From ROS's homepage:
 
 > ROS (Robot Operating System) provides libraries and tools to help software developers create robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more. ROS is licensed under an open source, BSD license.
 
-At its core, ROS provides the functionality for programs to communicate with each other either on the same computer or over a network. ROS's power comes through combining many programs together to allow a robot to function. Built in to ROS are many functions, such as 2D planning and navigation, robot manipulator planning and navigation, mapping, visualization and more.
+Actually, ROS is not an operating system but a meta operating system, which means it assumes there is an underlying operating system to help carry out its tasks. At its core, ROS provides the functionality for programs to communicate with each other either on the same computer or over a network. Built in to ROS are many functions, such as 2D planning and navigation, robot manipulator planning and navigation, mapping, visualization and more.
+
+**Rviz** is a 3D visualization tool for ROS. With a topic as input, it visualizes that based on the message type being published, which allows us to see the environment from the perspective of the robot.
+
+**Gazebo** is the most popular simulator to work with ROS with good community support. The ability of a robot could be evaluated and tested in a customized 3D scenario without any harm to the real robot.
 
 ## Further Reading
 1. ### [Base Tutorials](http://wiki.ros.org/ROS/Tutorials)
