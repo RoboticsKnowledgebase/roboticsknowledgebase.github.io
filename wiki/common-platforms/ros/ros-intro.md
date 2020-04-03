@@ -15,12 +15,16 @@ Actually, ROS is not an operating system but a meta operating system, which mean
 **MoveIt** is state of the art software for manipulation, incorporating the latest advances in motion planning, manipulation, 3D perception, kinematics, control and navigation. It provides an easy-to-use platform for developing advanced robotics applications, evaluating new robot designs and building integrated robotics products for industrial, commercial, R&D and other domains.
 
 ## Further Reading
+
 - ### [Installation](http://wiki.ros.org/ROS/Installation)
+
   There are several versions to use on the website. You could choose any version that supports your own project. The priorized priority would stability, since you do not want to spend your time debugging potentially non-stable packages.
+
 - ### [Base Tutorials](http://wiki.ros.org/ROS/Tutorials)
+
   ROS is useless without knowing how it works. Merely reading through the tutorials are not enough; this cannot be stressed enough. Learning ROS takes time and effort, so when going through the tutorials, try to understand what you are seeing, and make sure you follow along by Typing the example code, and run each tutorial to learn what is happening.
   
-  One of the most important package in ROS is navigation stack. Here are several topics of it covered in this directory for reference.
+  One of the most important package in ROS is [navigation stack](ros-navigation). Here are several topics of it covered in this directory for reference.
   1. [Global Planner](ros-global-planner)
   2. [Local Planner](ros-local-planner)
   3. [Costmap](ros-cost-maps)
