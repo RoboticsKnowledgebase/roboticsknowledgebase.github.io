@@ -1,5 +1,5 @@
 ---
-title: ROS Mapping and Localization
+title: Mapping and Localization in ROS
 ---
 ## Mapping
 To map the environment, there are many ROS packages which can be used:
