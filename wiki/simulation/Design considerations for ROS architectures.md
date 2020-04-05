@@ -32,6 +32,12 @@ Another useful trick is to switch on TCP_NODELAY transport hint for your publish
 
 # Synchronous vs Asynchronous Communication
 
+In ROS we can implement a synchronous mode of communication using services and asynchronous mode of communication with the publisher/subscriber system. It is very important to think about which communication in your system needs to be synchronous and which does not. Making this decision will save a lot of design effort in the future when you are implementing the logics of these nodes.
 
+Asynchronous communication is more pratical and useful in real-time systems. Sysnchronous communication is useful if you want to enforce a step-by-step execution of some protocol in your system. 
+
+# Seperation of tasks
+
+In general, we are all taught to seperate code as much as we can, to keep our development process clean. This does not directly apply to ROS nodes. If nodes, which can be merged are split, for the sake of keeping code modular and clean, we are simultaneously paying a price for communication delays. It is better to merge the nodes and keep them modular by maintaining classes and importing them into one node. Seperate the tasks only if you feel those tasks can be performed faster and concurrently if it was given another core of the CPU.
 
 
