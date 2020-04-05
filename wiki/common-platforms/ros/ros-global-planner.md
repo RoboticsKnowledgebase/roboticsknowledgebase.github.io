@@ -1,5 +1,5 @@
 ---
-title: Global Planner in ROS
+title: ROS Global Planner
 ---
 There are 3 global planners that adhere to `nav_core::BaseGlobalPlanner` interface: `global_planner`, `navfn` and `carrot_planner`. The `nav_core::BaseGlobalPlanner` provides an interface for global used in navigation.
 

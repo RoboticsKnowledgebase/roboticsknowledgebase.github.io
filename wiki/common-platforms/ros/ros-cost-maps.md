@@ -1,5 +1,5 @@
 ---
-title: Cost Maps in ROS
+title: ROS Cost Maps
 ---
 ## Package to Use
 

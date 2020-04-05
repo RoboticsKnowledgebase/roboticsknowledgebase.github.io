@@ -1,5 +1,5 @@
 ---
-title: Setting up the ROS Navigation Stack for Custom Robots
+title: ROS Navigation
 ---
 
 ## Dealing With Transforms

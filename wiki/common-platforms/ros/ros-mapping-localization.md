@@ -1,5 +1,5 @@
 ---
-title: Mapping and Localization in ROS
+title: ROS Mapping and Localization
 ---
 ## Mapping
 
