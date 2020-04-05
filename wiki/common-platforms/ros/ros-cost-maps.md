@@ -185,7 +185,7 @@ The link to our paramaters file can be found [here](https://github.com/ColumnRob
 
 The following part of the code describes to the costmap the footprint of the robot. It will be centered on the base_footprint frame and will extend to the footprint that you specify below in meters. The padding will specify if you want to create a little bit of a cushion between your footprint and the obstacles. The footprint should be calculated yourself and is very important. It will tell the planner of collisions. The inflation radius determines how much the obstacle is inflated. This is discussed in the inflation section above.
 
-```
+```<shell>
 footprint:[[ 0.3, 0.3], [-0.3, 0.3], [-0.3, -0.3], [ 0.3, -0.3]]
 footprint_padding: 0.03
 inflation_radius: 0.55
@@ -193,7 +193,7 @@ inflation_radius: 0.55
 
 The next part is the most important as it will cause the costmap to fail if not specified correctly. We must tell the navigation stack which topic to listen to for the point cloud information. We must also specify the type of the source so that it knows how to handle it.
 
-```
+```<html>
 observation_sources:point_cloud_sensor
 
 point_cloud_sensor:{sensor_frame: camera_rgb_frame, data_type: PointCloud2, topic: /camera/depth_registered/points, marking: true, clearing: true}
