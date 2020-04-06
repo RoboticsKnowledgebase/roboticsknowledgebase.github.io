@@ -1,5 +1,6 @@
 ## Introduction
 This is a tutorial for Gazebo. What’s Gazebo anyway?
+
 From Gazebo’s tutorials homepage:
 >Gazebo is a 3D dynamic simulator with the ability to accurately and efficiently simulate populations of robots in complex indoor and outdoor environments. While similar to game engines, Gazebo offers physics simulation at a much higher degree of fidelity, a suite of sensors, and interfaces for both users and programs.
 Typical uses of Gazebo include:
@@ -78,7 +79,7 @@ After, including the sensor, we need to define a static link between the sensor 
 ```
 To check the point cloud being published, run your robot_description.launch ([sample](https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/velodyne_description/launch/example.launch)) with this updated URDF/Xacro file and run RViZ. Add the point cloud widget on the left pane, and subscribe to /velodyne_points topic to visualize the point cloud. Ensure that the fixed frame is one of the frames that is being published by tf (eg: base_link, Velodyne, velodyne_base_link). 
 ![Image Of pcl](http://www.contrib.andrew.cmu.edu/~szuyum/mrsd/et.png)
-Fig: Simulated PointCloud of VLP-16
+*Fig. 1: Simulated PointCloud of VLP-16*
 
 *Setup: Realsense d435*
 _Ref: Pal Robotics_ <https://github.com/pal-robotics/realsense_gazebo_plugin>
@@ -114,7 +115,7 @@ Having built the package, we set up the robot’s URDF as below to mount and pub
 
 To update the parameters such as topic to publish, rate, and depth limits, you can modify the end of [this](https://github.com/pal-robotics-forks/realsense/blob/upstream/realsense2_description/urdf/_d435.gazebo.xacro) file in the realsense_description package.
 ![Image of rviz plugin](http://www.contrib.andrew.cmu.edu/~szuyum/mrsd/rviz_realsense_gazebo.png)
-Fig: Camera image and point cloud published by the plug-in.
+*Fig. 2: Camera image and point cloud published by the plug-in.*
 
 ## Summary
 We have covered several aspects in Gazebo, including importing and customizing a model into a Gazebo world, and to implement plugins for the sensors as well as define the URDF files so that messages would be published accordingly. These two components are crucial when we want to start a ROS simulation using Gazebo.
