@@ -2,23 +2,63 @@
 title: Team D's Guide to CARLA.
 published: true
 ---
-This is a short tutorial on creating an environment suitable for reinforcement learning in CARLA. 
+This is a short tutorial on using agents and traffic tools in CARLA. 
 This wiki contains details about:
 1. Spawning Vehicles in CARLA
-2. Controlling theses spawned Vehicles in CARLA.
+2. Controlling these spawned Vehicles in CARLA.
 3. Generating traffic behaviour using CARLA traffic manager.
-4. Basic Path Planning
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+## Pre-requisites
+We assume that you have installed CARLA according to instructions on the website. 
+This tutorial used CARLA 0.9.8.
 
-This section covers the basic syntax and some rules of thumb for writing.
+Let's begin!
+First, start the CARLA server:
+```
+./CarlaUE4.sh
+```
+This should open up the CARLA server and you will be greeted with a camera feed:
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+![Hello CARLA](../../assets/images/carla_opning.png)
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+## Spawning a vehicle in CARLA
+Now that we have the CARLA server running, we need to connect a client to it. 
+Create a python file, and add the following lines to it:
 
+```
+import carla
+client = carla.Client('localhost', 2000)
+client.set_timeout(2.0)
+```
+
+We now have a client connected to CARLA!
+
+Try exploring the city using the mouse and arrow keys. Try moving to a bird's eye view of the city and add the following lines to your code:
+```
+def draw_waypoints(waypoints, road_id=None, life_time=50.0):
+
+  for waypoint in waypoints:
+
+    if(waypoint.road_id == road_id):
+      self.world.debug.draw_string(waypoint.transform.location, 'O', draw_shadow=False,
+                                   color=carla.Color(r=0, g=255, b=0), life_time=life_time,
+                                   persistent_lines=True)
+                                   
+waypoints = client.get_world().get_map().generate_waypoints(distance=1.0)
+draw_waypoints(waypoints, road_id=10, life_time=20)
+```
+All roads in CARLA have an associated road_id. The code above will query the CARLA server for all the waypoints in the map, and the light up the waypoints that are present on road with road_id 10. You should see something like this:
+
+![CARLA Navigation](../../assets/images/carla2.png)
+
+This visualization helps us in finding out a good spawn location for a vehicle.
+Let's spawn a 
+
+
+Now, to spawn a vehicle in CARLA:
+```
+
+```
 
 #### Bullet points and numbered lists
 Here are some hints on writing (in no particular order):
