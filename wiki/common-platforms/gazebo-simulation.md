@@ -7,6 +7,7 @@ Typical uses of Gazebo include:
 >* testing robotics algorithms,
 >* designing robots,
 >* performing regression testing with realistic scenarios
+>
 >A few key features of Gazebo include:
 >* multiple physics engines,
 >* a rich library of robot models and environments,
