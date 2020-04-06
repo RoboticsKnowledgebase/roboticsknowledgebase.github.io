@@ -4,7 +4,7 @@ published: true
 ---
 DJI is one of the best selling drone companies in the world. Considering also the fact that a DJI Matrice M100 costs  $3500 and a M210 costs $12000, compared to a couple hundred dollars for most other manufacturers, it is obvious that they have some of the best drones in the market. DJI’s hardware is one of the best if not the best at the writing of this article (2020). 
 
-It’s a good choice for many projects, where one would prefer not to build their own drone from scratch, however, it comes with important caveats especially for professional and research projects.
+It’s a good choice for many projects where one would prefer not to build their own drone from scratch; however, it comes with important caveats especially for professional and research projects. Below we will look at its main drawback, and then give an introduction to its flight modes as well as general tips for drone projects.
 
 
 ## Controller Drawbacks
@@ -12,10 +12,10 @@ DJI drones have one of the best commercially available PID controllers along wit
 
 To be more specific, below we will look at the components involved in controlling a DJI drone.
 
-![DJI Control Scheme](assets/images/DJI.png)
+![DJI Control Scheme](../../assets/images/DJI.png)
 
 The keypoint is:
-> **DJI drones *need to read from its own GPS* to satisfy its EKF needs in order to produce proper state estimations for Position and Velocity Controls.**
+> DJI drones *need to read from its own GPS* to satisfy its EKF needs in order to produce proper state estimations for Position and Velocity Controls.
 
 DJI drones in general rely heavily on the GPS for controls, and mostly doesn’t work if GPS isn’t connected or enabled. The EKF (Extended Kalman Filter) running inside the DJI drone needs the GPS to be connected and working in order to produce the necessary state estimation which in turn is responsible for producing the ultimate RC commands (Attitude commands).
 
@@ -28,7 +28,7 @@ This is a growing trend in the research community, with robust and plentiful com
 
 
 ## DJI flight modes
-Below are the flight controller modes for DJI drones.
+Below are the flight controller modes for DJI drones. You can also read more [here](https://www.heliguy.com/blog/2017/11/08/dji-intelligent-flight-modes/).
 
 ### Positioning Mode (P-Mode)
 P-Mode is the standard flight mode for the majority of pilots. In this mode, all the sensors on the aircraft are active, GPS and any available vision or infrared sensors. This results in precise hovering and automatic breaking of the aircraft when no signals are given by the remote controller.
@@ -47,71 +47,42 @@ This mode is used for running custom software stack to control the drone. It ope
 
 
 ## Drone project Tips
--Have a designated pilot for your team.
--Carry more than just one battery.
--Always have more than 2 batteries charged.
--If you can buy an extra drone, do it. Otherwise, buy 3 sets of essential parts.
--Always carry a battery warmer during winter (Can’t stress this enough)
--Add simulation to augment your project and increase productivity.
--Obtain a drone license. 
-Register your drone.
-Before purchasing a drone, consider the Payload as well if you’re going to place sensors and processors on top of it.
-Calculate the battery capacity based on the other items placed on the drone.
-Charge the battery only using the original charger.
-Consider the wind factor before attempting to fly. 
-Drones won’t operate if the battery temperature is less than a particular temperature (For DJI it’s 15 degree Celsius)
-Don’t operate it when there’s an animal nearby. Things can go bad in a very short period.
-Fly in an area where you’re licensed to fly.
-Calibrate the drone compass every time you fly
-If in P mode, make sure the GPS is fully functional. Else the drone will drift out of control.
-Make sure you place the drone in the desired orientation to make sure pitching forward actually pitches forward from the pilot’s POV.
-If you’re adding weight to the drone, make sure it’s balanced properly.
-Make sure it’s waterproof before trying out in rain or areas close to the water body.
-Make sure the right propellers are attached to the appropriate ones (CW and CCW)
-Make sure to use the offset Function (Trim) if you find the controller is not perfect.
-Change from P to ATTI mode when taking manual control during emergencies.
+- Have a designated pilot for your team.
+- Carry more than just one battery.
+- Always have more than 2 batteries charged.
+- If you can buy an extra drone, do it. Otherwise, buy 3 sets of essential parts.
+- Always carry a battery warmer during winter (Can’t stress this enough)
+- Add simulation to augment your project and increase productivity.
+- Obtain a drone license. 
+- Register your drone.
+- Before purchasing a drone, consider the Payload as well if you’re going to place sensors and processors on top of it.
+- Calculate the battery capacity based on the other items placed on the drone.
+- Charge the battery only using the original charger.
+- Consider the wind factor before attempting to fly. 
+- Drones won’t operate if the battery temperature is less than a particular temperature (For DJI it’s 15 degree Celsius)
+- Don’t operate it when there’s an animal nearby. Things can go bad in a very short period.
+- Fly in an area where you’re licensed to fly.
+- Calibrate the drone compass every time you fly
+- If in P mode, make sure the GPS is fully functional. Else the drone will drift out of control.
+- Make sure you place the drone in the desired orientation to make sure pitching forward actually pitches forward from the pilot’s POV.
+- If you’re adding weight to the drone, make sure it’s balanced properly.
+- Make sure it’s waterproof before trying out in rain or areas close to the water body.
+- Make sure the right propellers are attached to the appropriate ones (CW and CCW)
+- Make sure to use the offset Function (Trim) if you find the controller is not perfect.
+- Change from P to ATTI mode when taking manual control during emergencies.
 
+## Safety Tips
+Quadcopters are basically flying lawnmowers.They can be dangerous if not operated carefully.
+Here are some quadcopter safety precautions to keep in mind:
 
-
-
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+- If you’re about to crash into something, turn the throttle down to zero, so you don’t potentially destroy your quadcopter, injure somebody, or injure yourself.
+- Keep your fingers away from the propellers when they’re moving.
+- Unplug/take out the battery of the quad before doing any work on it. If it turns on accidentally and the propellers start spinning, you might have a tough time doing future flights with missing fingers.
+- If you’re a beginner learning to fly indoors, tie the quadcopter down or surround it by a cage.
 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+If you are thinking of using DJI drones for your project, either be sure to stick with their GPS, implement your own EKF and Controller, or augment their drone with a PX4 controller to take advantage of the DJI hardware. Be sure to know the three flight control modes well, and follow general and safety tips for a successful project.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- [DJI SDK Introduction](https://roboticsknowledgebase.com/wiki/common-platforms/dji-sdk/)
