@@ -45,6 +45,8 @@ wiki:
         url: /wiki/common-platforms/husky_interfacing_and_communication/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros-motion-server-framework/
+      - title: Gazebo Simulation
+      	url: /wiki/common-platforms/gazebo-simulation/
   - title: Sensing
     url: /wiki/sensing/
     children:
