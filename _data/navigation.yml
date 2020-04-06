@@ -209,6 +209,11 @@ wiki:
         url: /wiki/tools/stream-rviz/
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
+  - title: Datasets
+    url: /wiki/datasets/
+    children:
+      - title: Traffic Modelling Datasets
+      - url: /wiki/datasets/traffic-modelling-datasets/
 
 # Main links appear in the header.
 main:
