@@ -3,7 +3,8 @@ This is a tutorial for Gazebo. What’s Gazebo anyway?
 
 From Gazebo’s tutorials homepage:
 >Gazebo is a 3D dynamic simulator with the ability to accurately and efficiently simulate populations of robots in complex indoor and outdoor environments. While similar to game engines, Gazebo offers physics simulation at a much higher degree of fidelity, a suite of sensors, and interfaces for both users and programs.
-Typical uses of Gazebo include:
+
+>Typical uses of Gazebo include:
 >* testing robotics algorithms,
 >* designing robots,
 >* performing regression testing with realistic scenarios
