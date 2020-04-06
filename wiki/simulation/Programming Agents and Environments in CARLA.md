@@ -5,7 +5,7 @@ published: true
 This is a short tutorial on using agents and traffic tools in CARLA. 
 This wiki contains details about:
 1. Spawning Vehicles in CARLA
-2. Controlling these spawned Vehicles in CARLA's PID controllers.
+2. Controlling these spawned Vehicles using CARLA's PID controllers.
 
 ## Pre-requisites
 We assume that you have installed CARLA according to instructions on the website. 
@@ -97,6 +97,9 @@ client.get_world().debug.draw_string(target_waypoint.transform.location, 'O', dr
 ```
 The tracked waypoint should now be red in color.
 
+![Visualizing the tracked waypoint](../../assets/images/carla4.png)
+
+
 Now, track!
 ```
 ticks_to_track = 20
@@ -104,22 +107,16 @@ for i in range(ticks_to_track):
 	control_signal = custom_controller.run_step(1, target_waypoint)
 	vehicle.apply_control(control_signal)
 ```
-
-
+You should see something like the GIF below:
+![Tracking](../../assets/images/carlaTrack.gif)
 
 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+That's it! You can now spawn and control vehicles in CARLA.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+- Follow our work at https://mrsdprojects.ri.cmu.edu/2020teamd/ for more CARLA related demos.
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+https://carla.readthedocs.io/en/latest/
