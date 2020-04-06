@@ -1,5 +1,5 @@
 ---
-title: Team D's Guide to CARLA.
+title: Spawning and Controlling Vehicles in CARLA
 published: true
 ---
 This is a short tutorial on using agents and traffic tools in CARLA. 
