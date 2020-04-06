@@ -5,8 +5,7 @@ published: true
 This is a short tutorial on using agents and traffic tools in CARLA. 
 This wiki contains details about:
 1. Spawning Vehicles in CARLA
-2. Controlling these spawned Vehicles in CARLA.
-3. Generating traffic behaviour using CARLA traffic manager.
+2. Controlling these spawned Vehicles in CARLA's PID controllers.
 
 ## Pre-requisites
 We assume that you have installed CARLA according to instructions on the website. 
@@ -52,75 +51,63 @@ All roads in CARLA have an associated road_id. The code above will query the CAR
 ![CARLA Navigation](../../assets/images/carla2.png)
 
 This visualization helps us in finding out a good spawn location for a vehicle.
-Let's spawn a 
+Let's spawn a car somewhere on road 10 now.
 
+We first need to query for the car's blueprint.
+```
+vehicle_blueprint = client.get_world().get_blueprint_library().filter('model3')[0]
+```
+This blueprint will be used by CARLA to spawn a Tesla Model 3.
 
-Now, to spawn a vehicle in CARLA:
+We now need to obtain a spawn location.
+```
+filtered_waypoints = []
+for waypoint in waypoints:
+    if(waypoint.road_id == 10):
+      filtered_waypoints.append(waypoint)
+```
+This gives us a list of all waypoints on road 10. Let's choose a random waypoint from this list as the spawn point. This information, together with the blueprint, can be used to spawn vehicles.
+
+```
+spawn_point = filtered_waypoints[42].transform
+spawn_point.location.z += 2
+vehicle = client.get_world().spawn_actor(vehicle_blueprint, spawn_point)
+```
+The reason for increasing the 'z' coordinate of the spawn point it to avoid any collisions with the road. CARLA does not internally handle these collisions during spawn and not having a 'z' offset can lead to issues.
+
+We should now have a car on road 10.
+![Spawn Completed](../../assets/images/carla3.png)
+
+## Controlling the spawned car
+We will be using CARLA's built-in PID controllers for controlling our spawned model 3.
+
+Let's initialize the controller:
+```
+from agents.navigation.controller import VehiclePIDController
+custom_controller = VehiclePIDController(vehicle, args_lateral = {'K_P': 1, 'K_D': 0.0, 'K_I': 0}, args_longitudinal = {'K_P': 1, 'K_D': 0.0, 'K_I': 0.0})
+```
+This creates a controller that used PID for both lateral and longitudinal control. Lateral control is used to generate steering signals while latitudinal control tracks desired speed. You are free to play around with the Kp, Kd and Ki gains and see how the motion of the car is affected!
+
+Let's choose a waypoint to track. This is a waypoint on the same lane as the spawned car.
+```
+target_waypoint = filtered_waypoints[50]
+client.get_world().debug.draw_string(target_waypoint.transform.location, 'O', draw_shadow=False,
+                           color=carla.Color(r=255, g=0, b=0), life_time=20,
+                           persistent_lines=True)
+```
+The tracked waypoint should now be red in color.
+
+Now, track!
+```
+ticks_to_track = 20
+for i in range(ticks_to_track):
+	control_signal = custom_controller.run_step(1, target_waypoint)
+	vehicle.apply_control(control_signal)
 ```
 
-```
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
 
 ## Summary
 Use this space to reinforce key points and to suggest next steps for your readers.
