@@ -33,8 +33,6 @@ wiki:
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
-      - title: Drone Flight Simulator and Controller Basics
-        url: /wiki/common-platforms/drone-flight-simulator/
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
