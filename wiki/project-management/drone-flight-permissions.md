@@ -14,12 +14,12 @@ If you're writing a tutorial, use this section to specify what the reader will b
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
 
-This article discusses the laws and regulations of flying small drones for the MRSD project.
+This article discusses the laws and regulations of flying small drones for the MRSD project. It details the process to fully certify your drone and obtaining flight permissions from the Federal Aviation Administration (FAA) and Carnegie Mellon University (CMU)
 
 
 ## Background
 
-The Federal Aviation Administration (FAA) regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones.
+The FAA regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones.
 
 There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: https://www.faa.gov/uas/educational_users
 
