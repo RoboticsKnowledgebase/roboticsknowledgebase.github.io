@@ -31,7 +31,6 @@ When flying under this category, abide by the following rules:
 
 These rules are all subject to change and should be reviewed at the beginning of every Fall semester. A major change likely coming in the near future will include an online test to certify all operators. Additional rules are included in the Part 107 categorization and likely also apply to recreational fliers despite not being explicitly stated.
 
-https://www.faa.gov/uas/recreational_fliers
 
 ### Fly Under Part 107
 
