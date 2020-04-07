@@ -183,10 +183,6 @@ This section covers the basic syntax and some rules of thumb for writing.
 
 
 
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
 ## References
 - Links to References go here.
 - References should be in alphabetical order.
