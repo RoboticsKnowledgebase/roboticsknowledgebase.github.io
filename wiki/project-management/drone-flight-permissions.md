@@ -114,7 +114,6 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 
 4. Complete FAA Form 8710-13 for a remote pilot certificate (FAA Airman Certificate and/or Rating Application) using the electronic FAA Integrated Airman Certificate and/or Rating Application system (IACRA)*
 
-
   1. Register using the FAA IACRA system
   1. Login with username and password
   1. Click on "Start New Application" and 
