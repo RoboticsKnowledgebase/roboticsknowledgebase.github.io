@@ -1,5 +1,5 @@
 ---
-title: Title goes here
+title: Drone Flight Permissions
 published: true
 ---
 
@@ -57,8 +57,10 @@ Fly multiple drones simultaneously.
 Fly in controlled airspace.
 
 https://www.faa.gov/uas/commercial_operators/part_107_waivers/
-Procedures
-Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
+
+## Procedures
+
+### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
 Register the drone at https://faadronezone.faa.gov/#/
 Select: “I Fly Under the Exception for Recreational Fliers”
 The registration fee is $5, and you will need the drone’s serial number
@@ -73,11 +75,10 @@ Discuss/Meet with the departments that control the space where you want to fly.
 
 Our team decided to fly over the football and/or soccer fields because they are open spaces. As such, we were directed to meet with the Associate Director of Athletics (Sara Gauntner). During our meeting, she recommended flying in the mornings or on weekends to avoid high pedestrian traffic. She asked us to check 25-Live to ensure the fields are not scheduled during our testing time and email her to reserve the fields. If any pedestrian does not respect our testing space, we can contact Sara, who will remove them from the field.
 
-Fly Under Part 107
-
+### Fly Under Part 107
 In addition to the Recreational Fliers registrations, Part 107 operators must become an FAA-Certified Drone Pilot. This process should take place before registering the drone because your pilot number is required for Part 107 drone registration.
 
-Pilot Certification Process:
+#### Pilot Certification Process:
 Step1: Obtain an FAA Tracking Number (FTN) by creating an Integrated Airman Certification and Rating Application (IACRA) profile prior to registering for a knowledge test.
 Step 2: Schedule an appointment with a Knowledge Testing Center which administers initial and recurrent FAA knowledge exams. Be sure to bring a government-issued photo ID to your test.
 Step 3: Pass the initial aeronautical knowledge test. Knowledge test topic areas include:
