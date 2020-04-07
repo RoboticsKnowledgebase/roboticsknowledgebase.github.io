@@ -115,16 +115,17 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 4. Complete FAA Form 8710-13 for a remote pilot certificate (FAA Airman Certificate and/or Rating Application) using the electronic FAA Integrated Airman Certificate and/or Rating Application system (IACRA)*
 
 
-Register using the FAA IACRA system
-Login with username and password
-Click on "Start New Application" and 
- Application Type "Pilot"
-Certifications "Remote Pilot"
-Other Path Information
-Start Application
-Follow application prompts
-When prompted, enter the 17-digit Knowledge Test Exam ID (NOTE: it may take up to 48 hours from the test date for the knowledge test to appear in IACRA)
-Sign the application electronically and submit for processing.
+  1. Register using the FAA IACRA system
+  1. Login with username and password
+  1. Click on "Start New Application" and 
+  1.  Application Type "Pilot"
+  1. Certifications "Remote Pilot"
+  1. Other Path Information
+  1. Start Application
+  1. Follow application prompts
+  1. When prompted, enter the 17-digit Knowledge Test Exam ID (NOTE: it may take up to 48 hours from the test date for the knowledge test to appear in IACRA)
+  1. Sign the application electronically and submit for processing.
+
 
 5. A confirmation email will be sent when an applicant has completed the TSA security background check. This email will provide instructions for printing a copy of the temporary remote pilot certificate from IACRA.
 6. A permanent remote pilot certificate will be sent via mail once all other FAA-internal processing is complete.
