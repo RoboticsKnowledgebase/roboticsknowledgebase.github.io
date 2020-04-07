@@ -76,7 +76,7 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
   a. Email drones@andrew.cmu.edu and fill out the form they send you.
 
     - Emphasize the project only receives funding to provide materials.
-    - Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
+    - Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the Cut, and the Mall.
 
 
 3. Discuss/Meet with the departments that control the space where you want to fly.
