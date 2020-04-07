@@ -139,7 +139,7 @@ Use this space to reinforce key points and to suggest next steps for your reader
 
 ## Further Reading
 
-Part 107 Exam Material
+### Part 107 Exam Material
 
 [https://www.faa.gov/uas/resources/policy_library/#107](https://www.faa.gov/uas/resources/policy_library/#107)
  
@@ -150,6 +150,9 @@ Part 107 Exam Material
   [https://www.kingschools.com/free-faa-exam/drone-pilot](https://www.kingschools.com/free-faa-exam/drone-pilot)
   
   [https://jrupprechtlaw.com/part-107-test-study-guide/#first](https://jrupprechtlaw.com/part-107-test-study-guide/#first)
+
+### FAA Information
+
 
 
 
