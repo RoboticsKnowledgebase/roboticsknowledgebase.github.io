@@ -44,9 +44,6 @@ In addition to the recreational fliers rules, Part 107 includes several other ru
 3. Maintain an airspeed below 100 mph.
 4. You can only carry an external load if it does not adversely affect the flight characteristics or controllability of the aircraft. Only transport property for compensation within state boundaries, and ensure the entire weight of the aircraft and payload is below 55 pounds.
 
-https://www.faa.gov/uas/media/Part_107_Summary.pdf
-https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615
-
 Any teams needing to fly outside of these rules should consider applying for a Part 107 waiver from the FAA. In order to receive permission, operators must demonstrate they can safely deviate from the operational parameters and maintain flight safety using alternative methods. Waiver options include the following:
 
 - Fly over a person or people.
@@ -57,8 +54,6 @@ Any teams needing to fly outside of these rules should consider applying for a P
 - Fly multiple drones simultaneously.
 - Fly in controlled airspace.
 
-
-https://www.faa.gov/uas/commercial_operators/part_107_waivers
 
 ## Procedures
 
@@ -128,10 +123,6 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 
 7. Have your Remote Pilot Certificate available whenever you fly your UAS
 
-https://www.faa.gov/uas/commercial_operators/
-
-https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/
-
 
 ## Summary
 Use this space to reinforce key points and to suggest next steps for your readers.
@@ -153,7 +144,15 @@ Use this space to reinforce key points and to suggest next steps for your reader
 
 ### FAA Information
 
+https://www.faa.gov/uas/media/Part_107_Summary.pdf
 
+https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615
+
+https://www.faa.gov/uas/commercial_operators/part_107_waivers
+
+https://www.faa.gov/uas/commercial_operators/
+
+https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/
 
 
 
