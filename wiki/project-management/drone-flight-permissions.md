@@ -111,7 +111,8 @@ https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/remote
 https://faa.psiexams.com/faa/login
 https://www.kingschools.com/free-faa-exam/drone-pilot
 https://jrupprechtlaw.com/part-107-test-study-guide/#first
-Step 4: Complete FAA Form 8710-13 for a remote pilot certificate (FAA Airman Certificate and/or Rating Application) using the electronic FAA Integrated Airman Certificate and/or Rating Application system (IACRA)*
+
+4. Complete FAA Form 8710-13 for a remote pilot certificate (FAA Airman Certificate and/or Rating Application) using the electronic FAA Integrated Airman Certificate and/or Rating Application system (IACRA)*
 
 
 Register using the FAA IACRA system
