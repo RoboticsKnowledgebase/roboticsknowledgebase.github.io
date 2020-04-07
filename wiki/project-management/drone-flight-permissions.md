@@ -3,17 +3,6 @@ title: Drone Flight Permissions
 published: true
 ---
 
-
-
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-
-
 This article discusses the laws and regulations of flying small drones for the MRSD project. It details the process to fully certify your drone and obtaining flight permissions from the Federal Aviation Administration (FAA) and Carnegie Mellon University (CMU). Furthermore, the article disucsses the rules for two registration categories. For most projects, students should consider the Recreational Fliers ruleset that does not require pilot licensure. Projects that need special flight permissions, or are pursuing further funding, should consider the Part 107 ruleset. 
 
 
