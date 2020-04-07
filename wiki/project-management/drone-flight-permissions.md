@@ -105,12 +105,8 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
   -   Maintenance and preflight inspection procedures
 
 
-  For test preparation materials, consider the following sources: 
-  https://www.faa.gov/uas/resources/policy_library/#107
-  https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/remote_pilot_study_guide.pdf
-  https://faa.psiexams.com/faa/login
-  https://www.kingschools.com/free-faa-exam/drone-pilot
-  https://jrupprechtlaw.com/part-107-test-study-guide/#first
+  For test preparation materials, see the Further Readings
+
 
 4. Complete FAA Form 8710-13 for a remote pilot certificate (FAA Airman Certificate and/or Rating Application) using the electronic FAA Integrated Airman Certificate and/or Rating Application system (IACRA)*
 
@@ -141,7 +137,11 @@ https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/
 ## Further Reading
 - Links to articles of interest outside the Wiki (that are not references) go here.
 
-
+  https://www.faa.gov/uas/resources/policy_library/#107
+  https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/remote_pilot_study_guide.pdf
+  https://faa.psiexams.com/faa/login
+  https://www.kingschools.com/free-faa-exam/drone-pilot
+  https://jrupprechtlaw.com/part-107-test-study-guide/#first
 
 
 
