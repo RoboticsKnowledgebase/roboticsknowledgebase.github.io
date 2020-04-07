@@ -64,14 +64,17 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
 
 ### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
 1. Register the drone at https://faadronezone.faa.gov/#
+
   a. Select: “I Fly Under the Exception for Recreational Fliers”
+  
   b. The registration fee is $5, and you will need the drone’s serial number
+  
   c. Mark the drone with the registration number
 
-Request permission from CMU’s legal department
-Email drones@andrew.cmu.edu and fill out the form they send you.
-Emphasize the project only receives funding to provide materials.
-Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
+2. Request permission from CMU’s legal department
+  a. Email drones@andrew.cmu.edu and fill out the form they send you.
+    i. Emphasize the project only receives funding to provide materials.
+    ii. Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
 
 Discuss/Meet with the departments that control the space where you want to fly.
 
