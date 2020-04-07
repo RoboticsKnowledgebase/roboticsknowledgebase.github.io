@@ -15,18 +15,19 @@ There are two major categories under which students should consider when flying 
 Flying as a recreation flier is the rule set that most MRSD students should consider for the project. Under this ruleset, students can fly drones under the guidance of Carnegie Mellon University without obtaining any sort of pilot’s license. The key caveat is students can only fly under this categorization if they “fly only for recreational purposes.” The MRSD project can satisfy this requirement because it is not directly related to a professor’s sponsored research, and all funding relating to the project is not for financial gain. As such, the project can largely be described as recreational. Students looking to commercialize their MRSD project, or wanting to otherwise fly outside of these rules, should consider flying under Part 107. 
 
 When flying under this category, abide by the following rules:
-Fly only for recreational purposes
-Fly at or below an altitude of 400 feet.
-Fly only over CMU property, or property that you own.*
-Maintain a direct line-of-sight with the drone, or within line-of-sight of a visual observer, who can see the drone.
-Fly only during the day, or at twilight if installed lights on the drone clearly distinguish its pose.
-Never fly over any person or vehicle.
-Give right of way to all manned aircraft.
-Do not interfere with emergency response activities.
-Never fly under the influence of drugs or alcohol.
-Do not operate the drone in a careless or reckless manner.
+1. Fly only for recreational purposes
+2. Fly at or below an altitude of 400 feet.
+3. Fly only over CMU property, or property that you own.**
+4. Maintain a direct line-of-sight with the drone, or within line-of-sight of a visual observer, who can see the drone.
+5. Fly only during the day, or at twilight if installed lights on the drone clearly distinguish its pose.
+6. Never fly over any person or vehicle.
+7. Give right of way to all manned aircraft.
+8. Do not interfere with emergency response activities.
+9. Never fly under the influence of drugs or alcohol.
+10. Do not operate the drone in a careless or reckless manner.
 
-* If you want to fly over any other land, including parks, contact the property owner and discuss flight operations before use.
+
+** If you want to fly over any other land, including parks, contact the property owner and discuss flight operations before use.
 
 These rules are all subject to change and should be reviewed at the beginning of every Fall semester. A major change likely coming in the near future will include an online test to certify all operators. Additional rules are included in the Part 107 categorization and likely also apply to recreational fliers despite not being explicitly stated.
 
