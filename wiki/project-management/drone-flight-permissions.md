@@ -58,7 +58,7 @@ Any teams needing to fly outside of these rules should consider applying for a P
 - Fly in controlled airspace.
 
 
-https://www.faa.gov/uas/commercial_operators/part_107_waivers/
+https://www.faa.gov/uas/commercial_operators/part_107_waivers
 
 ## Procedures
 
