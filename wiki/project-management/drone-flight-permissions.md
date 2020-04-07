@@ -85,18 +85,18 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 2. Schedule an appointment with a Knowledge Testing Center which administers initial and recurrent FAA knowledge exams. Be sure to bring a government-issued photo ID to your test.
 3. Pass the initial aeronautical knowledge test. Knowledge test topic areas include:
 
-- Applicable regulations relating to small unmanned aircraft system rating privileges, limitations, and flight operation
--   Airspace classification and operating requirements, and flight restrictions affecting small unmanned aircraft operation
--   Aviation weather sources and effects of weather on small unmanned aircraft performance
--   Small unmanned aircraft loading and performance
--   Emergency procedures
--   Crew resource management
--   Radio communication procedures
--   Determining the performance of small unmanned aircraft
--   Physiological effects of drugs and alcohol
--   Aeronautical decision-making and judgment
--   Airport operations
--   Maintenance and preflight inspection procedures
+  - Applicable regulations relating to small unmanned aircraft system rating privileges, limitations, and flight operation
+  -   Airspace classification and operating requirements, and flight restrictions affecting small unmanned aircraft operation
+  -   Aviation weather sources and effects of weather on small unmanned aircraft performance
+  -   Small unmanned aircraft loading and performance
+  -   Emergency procedures
+  -   Crew resource management
+  -   Radio communication procedures
+  -   Determining the performance of small unmanned aircraft
+  -   Physiological effects of drugs and alcohol
+  -   Aeronautical decision-making and judgment
+  -   Airport operations
+  -   Maintenance and preflight inspection procedures
 
 
  > For test preparation materials, see the Further Readings
