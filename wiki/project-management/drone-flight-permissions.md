@@ -123,7 +123,9 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 
 
 5. A confirmation email will be sent when an applicant has completed the TSA security background check. This email will provide instructions for printing a copy of the temporary remote pilot certificate from IACRA.
+
 6. A permanent remote pilot certificate will be sent via mail once all other FAA-internal processing is complete.
+
 7. Have your Remote Pilot Certificate available whenever you fly your UAS
 
 https://www.faa.gov/uas/commercial_operators/
