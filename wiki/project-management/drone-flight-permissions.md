@@ -8,7 +8,7 @@ published: true
 
 The Federal Aviation Administration (FAA) regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones.
 
-There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: https://www.faa.gov/uas/educational_users
+There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: 
 
 ### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
 
@@ -30,8 +30,6 @@ When flying under this category, abide by the following rules:
 ** If you want to fly over any other land, including parks, contact the property owner and discuss flight operations before use.
 
 These rules are all subject to change and should be reviewed at the beginning of every Fall semester. A major change likely coming in the near future will include an online test to certify all operators. Additional rules are included in the Part 107 categorization and likely also apply to recreational fliers despite not being explicitly stated.
-
-https://www.faa.gov/uas/recreational_fliers
 
 ### Fly Under Part 107
 
@@ -143,6 +141,8 @@ Use this space to reinforce key points and to suggest next steps for your reader
   [https://jrupprechtlaw.com/part-107-test-study-guide/#first](https://jrupprechtlaw.com/part-107-test-study-guide/#first)
 
 ### FAA Information
+
+https://www.faa.gov/uas/recreational_fliers
 
 https://www.faa.gov/uas/media/Part_107_Summary.pdf
 
