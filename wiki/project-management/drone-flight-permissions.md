@@ -32,6 +32,7 @@ When flying under this category, abide by the following rules:
 These rules are all subject to change and should be reviewed at the beginning of every Fall semester. A major change likely coming in the near future will include an online test to certify all operators. Additional rules are included in the Part 107 categorization and likely also apply to recreational fliers despite not being explicitly stated.
 
 
+
 ### Fly Under Part 107
 
 Part 107 is the main law for all small drone operations. It allows operators to fly anywhere allowable by local laws. Part 107 flying MRSD students should also consider this option if they’re planning on commercializing their project.
@@ -142,6 +143,8 @@ Use this space to reinforce key points and to suggest next steps for your reader
   [https://jrupprechtlaw.com/part-107-test-study-guide/#first](https://jrupprechtlaw.com/part-107-test-study-guide/#first)
 
 ### FAA Information
+
+https://www.faa.gov/uas/recreational_fliers
 
 https://www.faa.gov/uas/media/Part_107_Summary.pdf
 
