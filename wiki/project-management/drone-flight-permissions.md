@@ -6,9 +6,9 @@ published: true
 
 ## Background
 
-The Federal Aviation Administration (FAA) regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones/.
+The Federal Aviation Administration (FAA) regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones.
 
-There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: https://www.faa.gov/uas/educational_users/
+There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: https://www.faa.gov/uas/educational_users
 
 ### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
 
@@ -31,7 +31,7 @@ When flying under this category, abide by the following rules:
 
 These rules are all subject to change and should be reviewed at the beginning of every Fall semester. A major change likely coming in the near future will include an online test to certify all operators. Additional rules are included in the Part 107 categorization and likely also apply to recreational fliers despite not being explicitly stated.
 
-https://www.faa.gov/uas/recreational_fliers/
+https://www.faa.gov/uas/recreational_fliers
 
 ### Fly Under Part 107
 
@@ -39,23 +39,24 @@ Part 107 is the main law for all small drone operations. It allows operators to 
 
 In addition to the recreational fliers rules, Part 107 includes several other rules that most likely apply, but are not explicitly stated under the “Recreational Fliers” page.
 
-Operate only a single aircraft at a time.
-Do not fly under a covered structure, or inside of a covered stationary vehicle.
-Maintain an airspeed below 100 mph.
-You can only carry an external load if it does not adversely affect the flight characteristics or controllability of the aircraft. Only transport property for compensation within state boundaries, and ensure the entire weight of the aircraft and payload is below 55 pounds.
+1. Operate only a single aircraft at a time.
+2. Do not fly under a covered structure, or inside of a covered stationary vehicle.
+3. Maintain an airspeed below 100 mph.
+4. You can only carry an external load if it does not adversely affect the flight characteristics or controllability of the aircraft. Only transport property for compensation within state boundaries, and ensure the entire weight of the aircraft and payload is below 55 pounds.
 
 https://www.faa.gov/uas/media/Part_107_Summary.pdf
 https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615
 
 Any teams needing to fly outside of these rules should consider applying for a Part 107 waiver from the FAA. In order to receive permission, operators must demonstrate they can safely deviate from the operational parameters and maintain flight safety using alternative methods. Waiver options include the following:
 
-Fly over a person or people.
-Fly from a moving aircraft or vehicle in populated areas.
-Fly at night.
-Fly beyond visual line of sight.
-Fly without a visual observer.
-Fly multiple drones simultaneously.
-Fly in controlled airspace.
+- Fly over a person or people.
+- Fly from a moving aircraft or vehicle in populated areas.
+- Fly at night.
+- Fly beyond visual line of sight.
+- Fly without a visual observer.
+- Fly multiple drones simultaneously.
+- Fly in controlled airspace.
+
 
 https://www.faa.gov/uas/commercial_operators/part_107_waivers/
 
