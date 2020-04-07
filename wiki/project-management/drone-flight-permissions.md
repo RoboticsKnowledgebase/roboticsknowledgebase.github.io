@@ -63,10 +63,10 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
 ## Procedures
 
 ### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
-Register the drone at https://faadronezone.faa.gov/#/
-Select: “I Fly Under the Exception for Recreational Fliers”
-The registration fee is $5, and you will need the drone’s serial number
-Mark the drone with the registration number
+1. Register the drone at https://faadronezone.faa.gov/#
+  a. Select: “I Fly Under the Exception for Recreational Fliers”
+  b. The registration fee is $5, and you will need the drone’s serial number
+  c. Mark the drone with the registration number
 
 Request permission from CMU’s legal department
 Email drones@andrew.cmu.edu and fill out the form they send you.
