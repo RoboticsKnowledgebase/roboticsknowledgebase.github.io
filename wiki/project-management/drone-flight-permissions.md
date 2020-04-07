@@ -76,7 +76,7 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
     i. Emphasize the project only receives funding to provide materials.
     ii. Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
 
-Discuss/Meet with the departments that control the space where you want to fly.
+3. Discuss/Meet with the departments that control the space where you want to fly.
 
 Our team decided to fly over the football and/or soccer fields because they are open spaces. As such, we were directed to meet with the Associate Director of Athletics (Sara Gauntner). During our meeting, she recommended flying in the mornings or on weekends to avoid high pedestrian traffic. She asked us to check 25-Live to ensure the fields are not scheduled during our testing time and email her to reserve the fields. If any pedestrian does not respect our testing space, we can contact Sara, who will remove them from the field.
 
