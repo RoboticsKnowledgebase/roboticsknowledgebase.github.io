@@ -125,9 +125,10 @@ Start Application
 Follow application prompts
 When prompted, enter the 17-digit Knowledge Test Exam ID (NOTE: it may take up to 48 hours from the test date for the knowledge test to appear in IACRA)
 Sign the application electronically and submit for processing.
-Step 5: A confirmation email will be sent when an applicant has completed the TSA security background check. This email will provide instructions for printing a copy of the temporary remote pilot certificate from IACRA.
-Step 6: A permanent remote pilot certificate will be sent via mail once all other FAA-internal processing is complete.
-Step 7: Have your Remote Pilot Certificate available whenever you fly your UAS
+
+5. A confirmation email will be sent when an applicant has completed the TSA security background check. This email will provide instructions for printing a copy of the temporary remote pilot certificate from IACRA.
+6. A permanent remote pilot certificate will be sent via mail once all other FAA-internal processing is complete.
+7. Have your Remote Pilot Certificate available whenever you fly your UAS
 
 https://www.faa.gov/uas/commercial_operators/
 
