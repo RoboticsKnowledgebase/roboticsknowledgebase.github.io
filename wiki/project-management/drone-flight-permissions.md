@@ -8,9 +8,9 @@ This article discusses the laws and regulations of flying small drones for the M
 
 ## Background
 
-The FAA regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: https://www.cmu.edu/ogc/Guidance/drones.
+The FAA regulates the operation of all drones due to the recent surge in Unmanned Aircraft Systems (UAS). Due to the rapidly evolving environment around drone use, this entry is only guaranteed to be accurate as of April 6, 2020. Any reader passed this date should use this entry only as a guide and reference before confirming current regulations. CMU maintains a drone information page which should be referenced for a summary of up-to-date information: [https://www.cmu.edu/ogc/Guidance/drones](https://www.cmu.edu/ogc/Guidance/drones).
 
-There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: https://www.faa.gov/uas/educational_users
+There are two major categories under which students should consider when flying during the MRSD project. The first is flying under the FAA's Small UAS Rule (Part 107). This flight category allows the most freedom in flying, but also requires more thorough registration and licensing. The second is flying as a Recreational Fliers or as part of a Modeler Community-Based Organization. This categorization offers few flight permissions but is easily obtainable and suitable for many MRSD applications. A summary from the FAA rules applicable to education users can be found here: [https://www.faa.gov/uas/educational_users](https://www.faa.gov/uas/educational_users)
 
 ### Fly as a Recreational Fliers or as part of a Modeler Community-Based Organization
 
@@ -124,7 +124,7 @@ In addition to the Recreational Fliers registrations, Part 107 operators must be
 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Obtaining all flight permissions and registrations under the Recreational Fliers ruleset is a straightforward procedure sufficient for most MRSD projects. If you have any questions about which ruleset you should follow, contact drones@andrew.cmu.edu for guidance. For up to date information, check the CMU drone's page at [https://www.cmu.edu/ogc/Guidance/drones](https://www.cmu.edu/ogc/Guidance/drones) and review the FAA Information under Further Reading.
 
 
 ## Further Reading
