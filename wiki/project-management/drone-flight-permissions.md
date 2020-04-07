@@ -141,17 +141,17 @@ Use this space to reinforce key points and to suggest next steps for your reader
 
 ### FAA Information
 
-https://www.faa.gov/uas/recreational_fliers
+[https://www.faa.gov/uas/recreational_fliers](https://www.faa.gov/uas/recreational_fliers)
 
-https://www.faa.gov/uas/media/Part_107_Summary.pdf
+[https://www.faa.gov/uas/media/Part_107_Summary.pdf](https://www.faa.gov/uas/media/Part_107_Summary.pdf)
 
-https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615
+[https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615](https://www.faa.gov/news/fact_sheets/news_story.cfm?newsId=22615)
 
-https://www.faa.gov/uas/commercial_operators/part_107_waivers
+[https://www.faa.gov/uas/commercial_operators/part_107_waivers](https://www.faa.gov/uas/commercial_operators/part_107_waivers)
 
-https://www.faa.gov/uas/commercial_operators/
+[https://www.faa.gov/uas/commercial_operators/](https://www.faa.gov/uas/commercial_operators/)
 
-https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/
+[https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/](https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot/)
 
 
 
