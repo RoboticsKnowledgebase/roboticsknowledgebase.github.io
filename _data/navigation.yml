@@ -13,6 +13,8 @@ wiki:
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
+      - title: Drone Flight Permissions
+        url: /wiki/system-design-development/drone-flight-permissions/
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
       - title: Mechanical Design
