@@ -72,11 +72,12 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
   c. Mark the drone with the registration number
 
 2. Request permission from CMU’s legal department
+
   a. Email drones@andrew.cmu.edu and fill out the form they send you.
 
-    i. Emphasize the project only receives funding to provide materials.
+    - Emphasize the project only receives funding to provide materials.
+    - Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
 
-    ii. Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
 
 3. Discuss/Meet with the departments that control the space where you want to fly.
 
