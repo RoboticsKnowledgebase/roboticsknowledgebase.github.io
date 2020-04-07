@@ -73,7 +73,9 @@ https://www.faa.gov/uas/commercial_operators/part_107_waivers
 
 2. Request permission from CMU’s legal department
   a. Email drones@andrew.cmu.edu and fill out the form they send you.
+
     i. Emphasize the project only receives funding to provide materials.
+
     ii. Be specific with the use case and flight parameters. Areas students typically want to fly include the athletic fields, the cut, and the mall.
 
 3. Discuss/Meet with the departments that control the space where you want to fly.
@@ -84,21 +86,23 @@ Our team decided to fly over the football and/or soccer fields because they are 
 In addition to the Recreational Fliers registrations, Part 107 operators must become an FAA-Certified Drone Pilot. This process should take place before registering the drone because your pilot number is required for Part 107 drone registration.
 
 #### Pilot Certification Process:
-Step1: Obtain an FAA Tracking Number (FTN) by creating an Integrated Airman Certification and Rating Application (IACRA) profile prior to registering for a knowledge test.
-Step 2: Schedule an appointment with a Knowledge Testing Center which administers initial and recurrent FAA knowledge exams. Be sure to bring a government-issued photo ID to your test.
-Step 3: Pass the initial aeronautical knowledge test. Knowledge test topic areas include:
-Applicable regulations relating to small unmanned aircraft system rating privileges, limitations, and flight operation
-Airspace classification and operating requirements, and flight restrictions affecting small unmanned aircraft operation
-Aviation weather sources and effects of weather on small unmanned aircraft performance
-Small unmanned aircraft loading and performance
-Emergency procedures
-Crew resource management
-Radio communication procedures
-Determining the performance of small unmanned aircraft
-Physiological effects of drugs and alcohol
-Aeronautical decision-making and judgment
-Airport operations
-Maintenance and preflight inspection procedures
+1. Obtain an FAA Tracking Number (FTN) by creating an Integrated Airman Certification and Rating Application (IACRA) profile prior to registering for a knowledge test.
+2. Schedule an appointment with a Knowledge Testing Center which administers initial and recurrent FAA knowledge exams. Be sure to bring a government-issued photo ID to your test.
+3. Pass the initial aeronautical knowledge test. Knowledge test topic areas include:
+
+  - Applicable regulations relating to small unmanned aircraft system rating privileges, limitations, and flight operation
+  -   Airspace classification and operating requirements, and flight restrictions affecting small unmanned aircraft operation
+  -   Aviation weather sources and effects of weather on small unmanned aircraft performance
+  -   Small unmanned aircraft loading and performance
+  -   Emergency procedures
+  -   Crew resource management
+  -   Radio communication procedures
+  -   Determining the performance of small unmanned aircraft
+  -   Physiological effects of drugs and alcohol
+  -   Aeronautical decision-making and judgment
+  -   Airport operations
+  -   Maintenance and preflight inspection procedures
+
 
 For test preparation materials, consider the following sources: 
 https://www.faa.gov/uas/resources/policy_library/#107
