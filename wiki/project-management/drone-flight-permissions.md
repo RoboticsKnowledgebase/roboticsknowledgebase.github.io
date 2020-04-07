@@ -14,7 +14,7 @@ If you're writing a tutorial, use this section to specify what the reader will b
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
 
-This article discusses the laws and regulations of flying small drones for the MRSD project. It details the process to fully certify your drone and obtaining flight permissions from the Federal Aviation Administration (FAA) and Carnegie Mellon University (CMU)
+This article discusses the laws and regulations of flying small drones for the MRSD project. It details the process to fully certify your drone and obtaining flight permissions from the Federal Aviation Administration (FAA) and Carnegie Mellon University (CMU). For most projects, students should consider the Recreational Fliers ruleset that does not require pilot licensure.
 
 
 ## Background
