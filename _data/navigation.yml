@@ -209,7 +209,11 @@ wiki:
         url: /wiki/tools/stream-rviz/
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
-
+  - title: Planning
+    url: /wiki/planning/
+    children:
+      - title: Planning Overview
+        url: /wiki/planning/planning-overview/
 # Main links appear in the header.
 main:
   - title: Wiki
