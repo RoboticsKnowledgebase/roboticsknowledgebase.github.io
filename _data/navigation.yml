@@ -138,6 +138,15 @@ wiki:
         url: /wiki/networking/ros-distributed/
       - title: Setting up WiFi hotspot at the boot up for Linux devices 
         url: /wiki/networking/wifi-hotspot/
+  - title: Simulation
+    url: /wiki/simulation/
+    children:
+      - title: Building a Light Weight Custom Simulator
+        url: /wiki/simulation/Building-a-Light-Weight-Custom-Simulator/
+      - title: Design considerations for ROS architectures
+        url: /wiki/simulation/Design-considerations-for-ROS-architectures
+      - title: Spawning and Controlling Vehicles in CARLA
+        url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA      
   - title: Interfacing
     url: /wiki/interfacing/
     children:
