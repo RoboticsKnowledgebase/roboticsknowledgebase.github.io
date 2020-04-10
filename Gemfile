@@ -9,3 +9,7 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jemoji"
 end
+
+
+gem "nokogiri", ">= 1.10.8"
+
