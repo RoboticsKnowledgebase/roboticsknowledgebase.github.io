@@ -46,8 +46,6 @@ task :preview do
   listener = Listen.to(
     base.join("_data"),
     base.join("_includes"),
-    base.join("_layouts"),
-    base.join("_sass"),
     base.join("assets"),
     options["source"],
     :ignore => listen_ignore_paths(base, options),
