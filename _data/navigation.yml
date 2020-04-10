@@ -95,6 +95,8 @@ wiki:
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Controlling UR5 arm with ROS
         url: /wiki/actuation/ur5e-control/
+      - title: Pure Pursuit Controller for Skid Steering
+        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
   - title: Machine Learning
     url: /wiki/deep-learning/custom-semantic-data
     children:
