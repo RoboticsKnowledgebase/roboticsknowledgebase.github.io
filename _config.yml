@@ -9,7 +9,7 @@
 locale                   : "en"
 title                    : "Robotics Knowledgebase"
 title_separator          : "-"
-theme: minimal-mistakes-jekyll
+remote_theme             : "mmistakes/minimal-mistakes@4.19.1"
 name                     : #"Your Name"
 description              : "The Wiki for Robot Builders."
 url                      : https://roboticsknowledgebase.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -186,6 +186,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:
