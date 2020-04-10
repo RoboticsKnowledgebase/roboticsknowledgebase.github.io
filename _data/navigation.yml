@@ -13,6 +13,8 @@ wiki:
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
+      - title: Drone Flight Permissions
+        url: /wiki/system-design-development/drone-flight-permissions/
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
       - title: Mechanical Design
@@ -33,18 +35,28 @@ wiki:
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
+      - title: DJI Breakdown for Technical Projects
+        url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: ROS Introduction
-        url: /wiki/common-platforms/ros-intro/
+        url: /wiki/common-platforms/ros/ros-intro/
       - title: Asctec Pelican UAV Setup Guide
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
       - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros-motion-server-framework/
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
+      - title: ROS Cost Maps
+        url: /wiki/common-platforms/ros/ros-cost-maps/
+      - title: ROS Mapping and Localization
+        url: /wiki/common-platforms/ros/ros-mapping-localization/
+      - title: ROS Navigation
+        url: /wiki/common-platforms/ros/ros-navigation/
+      - title: ROS Global Planner
+        url: /wiki/common-platforms/ros/ros-global-planner/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -58,8 +70,8 @@ wiki:
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
-      - title: Microsoft Kinect and Point Cloud Library
-        url: /wiki/sensing/kinect-pcl/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
       - title: Photometric Calibration
         url: /wiki/sensing/photometric-calibration/
       - title: Speech Recognition
@@ -81,7 +93,9 @@ wiki:
         url: /wiki/actuation/uln2003a-motor-controller/
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
-  - title: Deep Learning
+        - title: Controlling UR5 arm with ROS
+        url: /wiki/actuation/ur5e-control/
+  - title: Machine Learning
     url: /wiki/deep-learning/custom-semantic-data
     children:
       - title: Custom data-set for segmentation
@@ -91,16 +105,14 @@ wiki:
     children:
       - title: Adaptive Monte Carlo Localization
         url: /wiki/state-estimation/adaptive-monte-carlo-localization/
-      - title: ROS Cost Maps
-        url: /wiki/state-estimation/ros-cost-maps/
-      - title: ROS Mapping and Localization
-        url: /wiki/state-estimation/ros-mapping-localization/
-      - title: ROS Navigation
-        url: /wiki/state-estimation/ros-navigation/
+      - title: Sensor Fusion and Tracking
+        url: /wiki/state-estimation/radar-camera-sensor-fusion/
       - title: SBPL Lattice Planner
         url: /wiki/state-estimation/sbpl-lattice-planner/
       - title: ORB SLAM2 Setup Guidance
         url: /wiki/state-estimation/orb-slam2-setup/
+      - title: Visual Servoing
+        url: /wiki/state-estimation/visual-servoing/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -133,6 +145,17 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
+      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+        url: /wiki/networking/wifi-hotspot/
+  - title: Simulation
+    url: /wiki/simulation/
+    children:
+      - title: Building a Light Weight Custom Simulator
+        url: /wiki/simulation/Building-a-Light-Weight-Custom-Simulator/
+      - title: Design considerations for ROS architectures
+        url: /wiki/simulation/Design-considerations-for-ROS-architectures
+      - title: Spawning and Controlling Vehicles in CARLA
+        url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA      
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -177,6 +200,10 @@ wiki:
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
   - title: Math
+    url: /wiki/math/
+    children:
+      - title: Gaussian Process and Gaussian Mixture Model
+        url: /wiki/math/gaussian-process-gaussian-mixture-model/
   - title: Tools
     url: /wiki/tools/
     children:
@@ -194,7 +221,19 @@ wiki:
         url: /wiki/tools/udev-rules/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
-
+      - title: Making Field Testing Easier through Visualization and Simulation
+        url: /wiki/tools/visualization-simulation/
+      - title: CLion IDE
+        url: /wiki/tools/clion/
+      - title: Stream Rviz Visualizations as Images
+        url: /wiki/tools/stream-rviz/
+      - title: Web-Based Visualization using ROS JavaScript Library
+        url: /wiki/tools/roslibjs/
+  - title: Planning
+    url: /wiki/planning/
+    children:
+      - title: Planning Overview
+        url: /wiki/planning/planning-overview/
 # Main links appear in the header.
 main:
   - title: Wiki

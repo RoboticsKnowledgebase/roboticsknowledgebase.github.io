@@ -11,7 +11,7 @@ header:
   overlay_filter: "0.5"
   overlay_image: /assets/images/ricardo-gomez-angel-162935.jpg
   cta_label: "Start Learning"
-  cta_url: "http://roboticsknowledgebase.com/wiki/"
+  cta_url: "https://roboticsknowledgebase.com/wiki/"
 excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
 ---
 {% include google-search.html %}

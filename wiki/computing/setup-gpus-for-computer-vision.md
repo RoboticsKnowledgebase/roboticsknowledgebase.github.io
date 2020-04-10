@@ -5,19 +5,19 @@ title: Setup your GPU Enabled System for Computer Vision and Deep Learning
 This tutorial will help you setup your Ubuntu (16/17/18) system with a NVIDIA GPU including installing the Drivers, CUDA, cuDNN, and TensorRT libraries. Tutorial also covers on how to build OpenCV from source and installing Deep Learning Frameworks such as TensorFlow (Source Build), PyTorch, Darknet for YOLO, Theano, and Keras. The setup has been tested on Ubuntu x86 platform and should also hold good for other Debian based (x86/ARM64) platforms.
 
 ## Contents
-1. [Install Prerequisites](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#1-install-prerequisites)
-2. [Setup NVIDIA Driver for your GPU](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#2-install-nvidia-driver-for-your-gpu)
-3. [Install CUDA](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#3-install-cuda)
-4. [Install cuDNN](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#4-install-cudnn)
-5. [Install TensorRT](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#5-install-tensorrt)
-6. [Python and Other Dependencies](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#6-python-and-other-dependencies)
-7. [OpenCV and Contrib Modules](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#7-install-opencv-and-contrib-modules)
-8. [Deep Learning Frameworks](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#8-install-deep-learning-frameworks)
-    - [PyTorch](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#pytorch)
-    - [TensorFlow](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#tensorflow)
-    - [Keras](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#keras)
-    - [Theano](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#theano)
-    - [Darknet for YOLO](http://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#darknet-for-yolo)
+1. [Install Prerequisites](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#1-install-prerequisites)
+2. [Setup NVIDIA Driver for your GPU](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#2-install-nvidia-driver-for-your-gpu)
+3. [Install CUDA](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#3-install-cuda)
+4. [Install cuDNN](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#4-install-cudnn)
+5. [Install TensorRT](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#5-install-tensorrt)
+6. [Python and Other Dependencies](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#6-python-and-other-dependencies)
+7. [OpenCV and Contrib Modules](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#7-install-opencv-and-contrib-modules)
+8. [Deep Learning Frameworks](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#8-install-deep-learning-frameworks)
+    - [PyTorch](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#pytorch)
+    - [TensorFlow](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#tensorflow)
+    - [Keras](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#keras)
+    - [Theano](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#theano)
+    - [Darknet for YOLO](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#darknet-for-yolo)
 
 ## 1. Install Prerequisites
 Before installing anything, let us first update the information about the packages stored on the computer and upgrade the already installed packages to their latest versions.
@@ -93,7 +93,7 @@ Download the CUDA driver from the [official nvidia website here](https://develop
 
 *At the time of writing this document, the latest stable version is CUDA 10.0*.
 
-![](http://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cuda.png)
+![](https://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cuda.png)
 
 After downloading the file, go to the folder where you have downloaded the file and run the following commands from the terminal to install the CUDA drivers. Please make sure that the filename used in the command below is the same as the downloaded file and replace the `<version>` number.
 
@@ -122,7 +122,7 @@ Go to official cuDNN website [official cuDNN website](https://developer.nvidia.c
 
 **Make sure you download the correct cuDNN version which matches with you CUDA version.**
 
-![](http://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cudnn.png)
+![](https://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cudnn.png)
 
 ### Installing from TAR file (Recommended Method)
 For cuDNN downloaded using _cuDNN Library for Linux_ method, go to the folder where you have downloaded the “.tgz” file and from the command line execute the following (update the filename).
