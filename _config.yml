@@ -9,6 +9,7 @@
 locale                   : "en"
 title                    : "Robotics Knowledgebase"
 title_separator          : "-"
+theme: minimal-mistakes-jekyll
 name                     : #"Your Name"
 description              : "The Wiki for Robot Builders."
 url                      : https://roboticsknowledgebase.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
