@@ -29,14 +29,14 @@ Traffic modelling is a hot topic in the field of autonomous cars currently. Here
     - bbox dimension, center (x,y), velocity (x,y and lat-long), acceleration (x,y and lat-long), heading in csv.
     - xx_background.png contains image of the road. No other images/ videos.
     - Lane markings, drive-able area part of HD maps (.osm file).
-    - Full data at signalized intersection.
+    - Entire data at signalized intersection.
 
 4. ### [High-D](https://www.highd-dataset.com/)
     - Python script to visualize data available.
     - bbox dimension, center (x,y), velocity (x,y and lat-long), acceleration (x,y and lat-long), heading in csv.
     - xx_background.png contains image of the road. No other images/ videos.
     - Lane markings, drive-able area part of HD maps (.osm file).
-    - Full data at highway.
+    - Entire data at highway.
 
 5. ### [NGSIM](https://data.transportation.gov/Automobiles/Next-Generation-Simulation-NGSIM-Vehicle-Trajector/8ect-6jqj)
     - Vehicle ID, local x,y and global x,y, vehicle width and length.
@@ -64,6 +64,12 @@ Traffic modelling is a hot topic in the field of autonomous cars currently. Here
         - frame_id, object_id, object type
     - Data not split into signalized and non-signalized intersections.
 
+9. ### [Round-D](https://www.round-dataset.com/)
+    - Python script to visualize data available.
+    - bbox dimension, center (x,y), velocity (x,y and lat-long), acceleration (x,y and lat-long), heading in csv.
+    - xx_background.png contains image of the road. No other images/ videos.
+    - Lane markings, drive-able area part of HD maps (.osm file).
+    - Full data on roundabouts.
 
 Below we mention several parameters crucial for learning behavior and interactions between vehicles in a recorded scenario against each dataset.
 
@@ -84,4 +90,6 @@ Below we mention several parameters crucial for learning behavior and interactio
 |     7 |   [NuScenes](https://www.nuscenes.org/)  | ✔️                           | ✔️                           | ✔️     | ✔️        | ❌  |
 |       |             |                               |                               |         |            |                                        |
 |     8 |    [Apollo](http://apolloscape.auto/trajectory.html)   | ❌                            | ❌                           | ✔️     | ✔️        | ❌                                     |
+|       |             |                               |                               |         |            |                                        |
+|     9 |    [Round-D](https://www.round-dataset.com/)   | ✔️                           | ✔️                           | ✔️     | ✔️        | ❌                                     |
 |       |             |                               |                               |         |            |                                        |
