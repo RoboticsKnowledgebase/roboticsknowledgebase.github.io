@@ -1,102 +1,52 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+title: Running Autoware based Mapping
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+## Normal Distribution Transform (NDT)
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+3D maps enable self driving cars to localize themselves in the environment. To localize using a map and Lidar data one needs to find a way to associate the point cloud from the sensor with the point cloud from the map. This is also known as scan matching in robotics. One of the common ways to do this is Iterative Closest Point, it uses 6 degrees of freedom to find the closest point to the geometric entity from a given 3D point cloud. There exist a lot of geometric variants of ICP such as point-to-plane etc. One of the downfalls of ICP is that it needs a good approximation and a good starting point as it works on non-linear optimization and has tendencies to get stuck in local minima. In real world scenarios our points will probably be a little off from the map. Measurement errors will cause points to be slightly mis-aligned, plus the world might change a little between when we record the map and when we make our new scan.
+NDT matching provides a solution for these minor errors. Instead of trying to match points from our current scan to point on the map, we try to match points from our current scan to a grid of probability functions created from the map.
+![Probability Density Function](assets/images/pdf.png)
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+Following are the two tasks performed
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+1. NDT mapping (Map generation) -  Transform the LiDAR point cloud into a piecewise continuous and differentiable probability density (NDT). The probability density contains a set of the normal distributions where each point in point cloud is assigned to a voxel. A voxel is a 3D lattice cube to which points are assigned depending upon their coordinate value. The Point cloud is divided into k ND voxels clouds and are combined together , and also the voxel grid filter is used to decrease the computation cost and to reduce the noise from the 3D map
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+2. NDT matching (Localization) - A search problem where we have to find a transform that maximizes NDT sum to match the different point clouds, a variety of minimization functions can be used for this. Newton nonlinear optimizer is used to find the best 6-DOF pose.
 
-This section covers the basic syntax and some rules of thumb for writing.
+## Hardware Requirements
+Velodyne VLP-16 and Computer running Autoware, some mobile platform with transforms known
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
-
-
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
-
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
+## Software
+First, setup the Velodyne sensor(s) appropriately. If you are using multiple sensors, you will need to publish their relative transforms by using tf_static_publisher after obtaining these TFs using Autoware. [see this blog post1](https://wowelec.wordpress.com/2019/06/18/setting-up-and-calibrating-multiple-lidar-sensors/). In case you just have one LIDAR, connect it to your laptop via wired Ethernet, and power it using a 8-20V DC power input (battery pack works), a VLP-16 consumes about 8W.
+Then you need to set up your laptop with a static IP configuration, meaning that the wired connection should be on the 192.168.1.* subnet, and your LIDAR default IP address will be 192.168.1.201. You can reconfigure this if you are using multiple LIDARs, as described in the above blog post.
+You need to initialize the LIDAR in the ROS framework by using the following ROS command (VLP-16), make sure you have the ros_velodyne_driver package installed for this to work successfully.
 ```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
+roslaunch velodyne_pointcloud VLP16_points.launch
 ```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
+You can check that the above node is publishing by doing a “rostopic echo” for the /velodyne_points topic.
+Troubleshooting if it isn’t working - check the IP address, see if the Ethernet is configured correctly on your laptop, see if you are able to ping the sensor (ping 192.168.1.201 or the IP address that you have set), see if it is powered on and spinning (hold your hand on top of the sensor and you should feel the motor spinning).
+Once the Velodyne LIDAR is publishing data, you can go ahead with the ROSbag collection as described below. If you want to incorporate additional sensor information like the IMU or GPS, just install the relevant ROS drivers for the sensors and ensure that they publish data onto the standard /imu_raw or /nmea (incomplete topic name) topics as required by Autoware.
+Launch Autoware using the runtime_manager as follows:
+```
+source autoware/install/setup.bash
+roslaunch runtime_manager runtime_manager.launch
+```
+You need to create a ROSBag of the space that you would like to map, so click on the ROSbag button on the bottom right of the main Autoware Runtime Manager console. Choose the topics that are relevant for your mapping (like /velodyne_points, /imu_raw, /nmea, etc.) and then start recording while moving the vehicle/robot very slowly through the space. If the space is really large (campus-sized or larger) then you might want to split the ROSbags to ensure that it does not fail to complete mapping at a later stage (large ROS messages cause ndt mapping to fail, and large ROSbags may be problematic to load/store/replay).
+Once you have created the ROSbag, you can visualize the output of your “random walk” by replaying the ROSbag and opening Rviz to view the pointcloud that was generated at each position:
+rosbag play the_rosbag_you_just_saved.bag
+```
+rosrun rviz rviz -f velodyne   # assuming you had a velodyne frame
+```
+Video reference for [rest of this post](https://www.youtube.com/watch?v=ss6Blrz23h8)
+To start creating the map, launch the NDT Mapping node in Autoware by clicking on it in the Computing tab (also specify any additional sensors you used like GPS or IMU, and for the rest, default parameters are fine). Then run the ROSbag but remap your velodyne_points to /points_raw since that is what Autoware uses for the ndt_mapping node. So something like below:
+```
+rosbag play the_rosbag_you_just_saved.bag /velodyne_points:=/points_raw
+```
+Then you will see the mapping running really quickly in one terminal and the number of point-cloud poses being considered (there will be 10 every second because that is the frequency of rotation of the LIDAR). Once the full ROSbag has played, wait for all the poses to be fused into the map, because sometimes when the map is really large, the mapping might not have caught up with the ROSbag running. Additionally, when you have a very large map, use approximate_ndt_mapping instead, [refer to blog post 2 here](https://wowelec.wordpress.com/2019/06/16/running-autoware-based-mapping-in-the-cloud/).
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering \\( 1/x^{2} \\), and here is a block rendering:
-\\[ \frac{1}{n^{2}} \\]
+Once you have finished creating the map, save it in your desired location with either a downsampling (to reduce the file size), or full/original quality output, by using the “app” tab in the NDT_Mapping node in the Computing tab. It will save as a .pcd file that can either be viewed using PCL_Viewer (a PCL tool) or RViz with Autoware.
+The image below shows a map we made of NSH B-level on 29th January, 2020. To view a map in RViz, load Autoware, initialize the point cloud in the Mapping tab, and click on the TF button for a default TF. Then you should be able to launch RViz and visualize the point_map as shown below. You can change the point colours and axis colours to “intensity” and the sizes/transparencies as well.
 
-#### Images and Video
-Images and embedded video are supported.
+![PCD of B-Level RI](assets/images/autpware_blevel.png)
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
