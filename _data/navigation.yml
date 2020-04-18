@@ -157,7 +157,10 @@ wiki:
       - title: Design considerations for ROS architectures
         url: /wiki/simulation/Design-considerations-for-ROS-architectures
       - title: Spawning and Controlling Vehicles in CARLA
-        url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA      
+        url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
+      - title: NDT Matching with Autoware
+        url: /wiki/simulation/NDT-Matching-with-Autoware
+       
   - title: Interfacing
     url: /wiki/interfacing/
     children:
