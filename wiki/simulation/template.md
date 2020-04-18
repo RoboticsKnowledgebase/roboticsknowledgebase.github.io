@@ -6,6 +6,7 @@ published: true
 
 3D maps enable self driving cars to localize themselves in the environment. To localize using a map and Lidar data one needs to find a way to associate the point cloud from the sensor with the point cloud from the map. This is also known as scan matching in robotics. One of the common ways to do this is Iterative Closest Point, it uses 6 degrees of freedom to find the closest point to the geometric entity from a given 3D point cloud. There exist a lot of geometric variants of ICP such as point-to-plane etc. One of the downfalls of ICP is that it needs a good approximation and a good starting point as it works on non-linear optimization and has tendencies to get stuck in local minima. In real world scenarios our points will probably be a little off from the map. Measurement errors will cause points to be slightly mis-aligned, plus the world might change a little between when we record the map and when we make our new scan.
 NDT matching provides a solution for these minor errors. Instead of trying to match points from our current scan to point on the map, we try to match points from our current scan to a grid of probability functions created from the map.
+
 ![Probability Density Function](assets/images/pdf.png)
 
 Following are the two tasks performed
