@@ -232,7 +232,7 @@ wiki:
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
       - title: Gazebo Simulation
-      	url: /wiki/common-platforms/gazebo-simulation/
+        url: /wiki/common-platforms/gazebo-simulation/
   - title: Datasets
     url: /wiki/datasets/
     children:
