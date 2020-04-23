@@ -233,6 +233,11 @@ wiki:
         url: /wiki/tools/roslibjs/
       - title: Gazebo Simulation
       	url: /wiki/common-platforms/gazebo-simulation/
+  - title: Datasets
+    url: /wiki/datasets/
+    children:
+      - title: Traffic Modelling Datasets
+      - url: /wiki/datasets/traffic-modelling-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
