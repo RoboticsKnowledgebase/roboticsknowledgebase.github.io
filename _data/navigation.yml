@@ -27,7 +27,7 @@ wiki:
     url: /wiki/project-management/
     children:
       - title: Drone Flight Permissions
-        url: /wiki/system-design-development/drone-flight-permissions/
+        url: /wiki/project-management/drone-flight-permissions/
       - title: Product Development in Complex Systems
         url: /wiki/project-management/product-development-complex-systems/
       - title: Risk Management
