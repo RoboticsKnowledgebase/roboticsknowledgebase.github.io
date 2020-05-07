@@ -100,9 +100,7 @@ Team A of the MRSD class of 2021, performed camera-robot registration using a sl
 
 ### Iterative Closest Point Algorithm
 
-Iterative Closest Point (ICP) is an algorithm to register two sets of point clouds iteratively. In each iteration, the algorithm selects the closest points as correspondences and calculates the transformation, i.e., rotation and translation (\\[ R \\] and \\[ t \\]. Although there are a number of techniques to calculate the transformation at each iteration, Horn's method remains a popular choice to do so. The figure below illustrates the registration of two different sets of point clouds(shown in pink and blue for distinction).
-
-TODO ADD IMAGE
+Iterative Closest Point (ICP) is an algorithm to register two sets of point clouds iteratively. In each iteration, the algorithm selects the closest points as correspondences and calculates the transformation, i.e., rotation and translation (\\[ R \\] and \\[ t \\]. Although there are a number of techniques to calculate the transformation at each iteration, Horn's method remains a popular choice to do so.
 
 The main steps of ICP [6] are listed below:
 1. For each point in the source point cloud, match the closest point in the reference point cloud
