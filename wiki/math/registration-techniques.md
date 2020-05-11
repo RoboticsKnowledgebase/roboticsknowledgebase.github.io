@@ -1,4 +1,6 @@
+---
 title: Registration Techniques in Robotics
+---
 Absolute orientation is a fundamental and important task in robotics. It seeks to determine the translational, rotational, and uniform scalar correspondence between two different Cartesian coordinate systems given a set of corresponding point pairs. Dr. Berthold K.P. Horn proposed a closed-form solution of absolute orientation which is often a least-squares problem. Horn validated that his solution holds good for two of the most common representations of rotation: unit quaternions and orthonormal matrices.
 
 In robotics, there are typically several sensors in a scene and it is necessary to register all of them with respect to each other and to the robot. It is quite common to then register these components to a chosen world frame, which can just be the frame of one of these components. Horn's method is frequently used to estimate the rotation (R), translation (t), and scale(s) that registers one frame to another.
