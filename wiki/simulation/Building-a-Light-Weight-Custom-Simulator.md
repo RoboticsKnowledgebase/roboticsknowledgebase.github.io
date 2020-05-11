@@ -1,5 +1,5 @@
 ---
-title: Building-a-Light-Weight-Custom-Simulator
+title: Building a Light Weight Custom Simulator
 published: true
 ---
 
