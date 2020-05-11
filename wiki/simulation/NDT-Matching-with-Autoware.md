@@ -1,5 +1,5 @@
 ---
-title: NDT-Matching-with-Autoware
+title: NDT Matching with Autoware
 published: true
 ---
 ## Normal Distribution Transform (NDT)
