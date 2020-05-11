@@ -42,8 +42,8 @@ TMUX​ is a ​terminal multiplexer​ for ​Unix-like​ ​operating systems
 *- Wikipedia*
 
 Here are a few important references in this regard
-1.  <https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>
-2.  <https://tmuxcheatsheet.com/>
+1.  [TMUX Quickstart](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
+2.  [TMUX-Cheatsheet](https://tmuxcheatsheet.com/)
 
 ## Stopping Instances
 To stop working with your instance for the night (or an extended period of time),
@@ -62,7 +62,7 @@ A Spot Instance is an unused EC2 instance that is available for less than the On
 Spot Instances are a cost-effective choice if you can be flexible about when your applications run and if your applications can be interrupted. For example, Spot Instances are well-suited for data analysis, batch jobs, background processing, and optional tasks. For more information, see Amazon EC2 Spot Instances - AWS Official
 
 More details at
-<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html#spot-get-started>
+[Using Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html#spot-get-started)
 
 ## A word on Visual Studio Code:
 VsCode comes with a plugin for remotely logging into your machine. This way you can develop and edit your code using VS Code-
@@ -70,4 +70,4 @@ The Visual Studio Code Remote - SSH extension allows you to open a remote folder
 No source code needs to be on your local machine to gain these benefits since the extension runs commands and other extensions directly on the remote machine.
 
 The following link provides details on the same.\
-<https://code.visualstudio.com/blogs/2019/07/25/remote-ssh>
+[Visual Studio - Remote SSH](https://code.visualstudio.com/blogs/2019/07/25/remote-ssh)
