@@ -61,7 +61,7 @@ A Spot Instance is an unused EC2 instance that is available for less than the On
 
 Spot Instances are a cost-effective choice if you can be flexible about when your applications run and if your applications can be interrupted. For example, Spot Instances are well-suited for data analysis, batch jobs, background processing, and optional tasks. For more information, see Amazon EC2 Spot Instances - AWS Official
 
-More details at
+Check how to use spot instances over here:
 [Using Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html#spot-get-started)
 
 ## A word on Visual Studio Code:
