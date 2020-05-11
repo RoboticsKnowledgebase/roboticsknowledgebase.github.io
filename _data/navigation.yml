@@ -211,6 +211,8 @@ wiki:
     children:
       - title: Gaussian Process and Gaussian Mixture Model
         url: /wiki/math/gaussian-process-gaussian-mixture-model/
+      - title: Registration Techniques in Robotics
+        url: /wiki/math/registration-techniques/
   - title: Tools
     url: /wiki/tools/
     children:
