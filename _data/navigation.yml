@@ -173,6 +173,8 @@ wiki:
   - title: Computing
     url: /wiki/computing/
     children:
+      - title: Amazon Web Services Quickstart
+        url: wiki/computing/aws-quickstart.md
       - title: Adruino
         url: /wiki/computing/arduino/
       - title: Single Board Computers
