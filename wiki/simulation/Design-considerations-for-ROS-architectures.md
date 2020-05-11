@@ -1,3 +1,6 @@
+---
+title: Design considerations for ROS Architectures
+---
 # Overview
 Over the past few months we have dicussed various ROS architectures, changed it at least two times in a major way and have come to appreciate the importance of designing a good architecture. We have also realized there are several important factors which need to be considered before finalizing a particular architecture. In this post we will detail the design decisions we had to make in the context of our project.
 
