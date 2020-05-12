@@ -1,5 +1,7 @@
 ---
 date: 2017-08-15
+title: Oculus Prime Navigation
+---
 
 There are multiple techniques to carry out way-point navigation on the Oculus Prime platform using the navigation stack.
 

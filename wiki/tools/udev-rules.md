@@ -1,5 +1,8 @@
 ---
 date: 2017-08-15
+title: udev Rules
+---
+
 [udev](https://en.wikipedia.org/wiki/Udev) is the system on Linux operating systems that manages USB devices. By default, when you plug in a USB device, it will be assigned a name like `ttyACM0`. If you are writing code and need to communicate with that device, you will need to know the name of the device. However, if you plug the devices into different ports or in a different order, the automatically assigned names might change. To solve this, you can create custom udev rules to always assign specific devices to a particular name.
 
 > Note that you can put more than one rule in a file -- just make sure that they are on separate lines.

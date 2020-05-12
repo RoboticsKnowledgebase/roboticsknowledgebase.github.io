@@ -1,6 +1,7 @@
 ---
 date: 2019-03-05
-# Asctec Pelican UAV Setup Guidance
+title: Asctec Pelican UAV Setup Guidance
+---
 
 This document acts as a tutorial on how to set up a [Asctec Pelican UAV](http://www.asctec.de/en/uav-uas-drones-rpas-roav/asctec-pelican/) for autonomous waypoint navigation using ros pakage [asctec_mav_framework](http://wiki.ros.org/asctec_mav_framework). We are setting up an Asctec Quadrotor Pelican running with Ubuntu 14.04 and pre-installed ROS-jade.
 <div style="text-align:center" markdown="1">
