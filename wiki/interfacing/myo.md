@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Getting Started with the Myo
 ---
 Here are some resources that are useful if you want to get started quickly with the [Myo Gesture Control Armband](https://www.myo.com/). The learning curve is not too steep if you want to make simple apps. It should take you just a couple of days (maybe even less) to get working. However, if you wish to work on more complex problems, the Lua environment used for Myo scripting will not be enough. If you have never worked with APIs before it will add more steepness to your learning curve. I have tried to find as many resources as possible and have structured them in the best way I could here. The lists here are by no means exhaustive but is meant to serve as a reference after you get acquainted with the basics.

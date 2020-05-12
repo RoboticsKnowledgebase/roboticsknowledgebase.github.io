@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: How to use Eigen Geometry library for c++
 ---
 

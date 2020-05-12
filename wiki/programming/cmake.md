@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: CMake and Other Build Systems
 ---
 Build systems are scripts that automate the compilation process. It will be most frequently encountered when compiling software in Linux

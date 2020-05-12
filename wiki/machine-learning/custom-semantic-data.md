@@ -1,4 +1,5 @@
 ---
+date: 2020-04-10
 title: Custom data-set for segmentation
 published: true
 ---

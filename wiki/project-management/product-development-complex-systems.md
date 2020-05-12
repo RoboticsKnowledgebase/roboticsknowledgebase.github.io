@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Product Development in Complex System Design
 ---
 ## History (Waterfall Model)

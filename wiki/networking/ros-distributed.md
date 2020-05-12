@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Running ROS over Multiple Machines
 ---
 Multi­robot systems require intercommunication between processors running on different

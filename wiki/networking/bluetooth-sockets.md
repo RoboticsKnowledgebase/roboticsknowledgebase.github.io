@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Bluetooth Socket Programming using Python PyBluez
 ---
 This tutorial is intended at providing a primer into Bluetooth programming in general and getting started with PyBluez, a Python Bluetooth module. Bluetooth socket programming is similar to socket programming used by network developers for TCP/IP connections and familiarity with that paradigm will certainly aid understanding although it is not required at all.

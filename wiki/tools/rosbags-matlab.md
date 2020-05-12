@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Rosbags In MATLAB
 ---
 Sometimes you would rather analyze a rosbag in MATLAB rather than within the ROS environment. This page describes how to set up the Matlab infrastructure and includes a script example.

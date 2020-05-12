@@ -1,4 +1,5 @@
 ---
+date: 2019-05-07
 title: IMU-Camera Calibration using Kalibr
 ---
 This tutorial will help you in setting up the Kaliber library developed at ETH Zurich for combined IMU-Camera calibration. 

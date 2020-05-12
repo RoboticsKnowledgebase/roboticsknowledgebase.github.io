@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: ROS Mapping and Localization
 ---
 ## Mapping

@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Mechanical Design
 ---
 This section will provide you some of the design criteria’s and consideration you should keep in mind when developing a mechanical system:

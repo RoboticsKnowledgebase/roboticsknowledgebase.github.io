@@ -1,4 +1,5 @@
 ---
+date: 2018-04-23
 title: General Tutorials and Programming Resources
 ---
 

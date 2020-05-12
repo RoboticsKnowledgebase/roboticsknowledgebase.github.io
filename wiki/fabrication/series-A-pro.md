@@ -1,4 +1,5 @@
-The Series A Pro 3-D printer is a reliable platform that offers a large build volume, flexible controls (including the option to add custom G-code), print monitoring, a large range of print materials. Compared to more beginner-friendly but restrictive options, like the MakerBot, the Series A allows more control and flexibility to the quality, speed, and strength of your print. It also allows the use of more print material options including PLA, PETT, PETG, Nylon, and NijaFlex. 
+---
+date: 2017-12-16
 
 ## Software
 The Series A Pro uses a custom version of Cura slicer software,[Cura Type A](https://www.typeamachines.com/downloads#Software), to prepare .STL files for printing. Install, but do not setup Cura until you are ready to setup the Series A Pro on your machine. 

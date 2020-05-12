@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: TMUX
 ---
 TMUX is a useful tool to open multiple tabs in the terminal especially while using SSH.

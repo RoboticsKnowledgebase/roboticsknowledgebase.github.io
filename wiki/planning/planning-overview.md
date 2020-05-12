@@ -1,4 +1,5 @@
 ---
+date: 2020-04-10
 title: Overview of Motion Planning
 ---
 The problem of motion planning can be stated as follows: to find an optimal path for the robot to move through gradually from start to goal while avoiding any obstacles in between, given -

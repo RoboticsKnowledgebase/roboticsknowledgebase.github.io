@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Cost Maps in ROS
 ---
 ## Package to Use

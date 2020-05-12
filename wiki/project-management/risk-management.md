@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Risk Management
 ---
 Risk management is an important process, but can easily turn into an exercise in making a list of items that people think about once and never look at again. There can be little accountability and - if only listed by name with a nebulous category - no real grasp of the risks' impact or what should be done about them.

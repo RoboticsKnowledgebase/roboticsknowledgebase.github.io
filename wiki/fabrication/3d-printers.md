@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: 3D Printers
 ---
 **This article is a technology overview of the fundamentals of 3D Printers, especially "Fused Filament Modeling" (FFM) & "Fused Deposition Modeling" (FDM). It explains the fundamentals of 3D Printer technology and applications. It should be useful for those considering working with, designing, or modifying a 3D printer. It is not intended to be a guide for using the lab's 3D printers.**

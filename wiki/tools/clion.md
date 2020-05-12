@@ -1,4 +1,5 @@
 ---
+date: 2020-02-03
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. You should set the article's title:
 title: CLion IDE

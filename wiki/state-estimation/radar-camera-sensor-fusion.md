@@ -1,4 +1,5 @@
 ---
+date: 2019-11-13
 title: 'Sensor Fusion and Tracking'
 published: true
 ---

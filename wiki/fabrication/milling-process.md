@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Milling Process
 ---
 Milling is one of the most important machining processes. Knowledge of milling would be very helpful in prototyping. Almost all mechatronic design projects would require milling at one time or the other.

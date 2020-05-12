@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Building Prototypes in CubePro
 ---
 [Cube Pro](https://www.3dsystems.com/shop/cubepro) is a 3D printing alternative to the popular MakerBot Replicator Series. This is a step-by-step tutorial to using CubePro for developing prototypes and parts. CubePro is available to Carnegie Mellon University Students in Mechanical Engineering cluster.

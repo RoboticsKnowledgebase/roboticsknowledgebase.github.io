@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Vim text editor
 ---
 Vim text editor greatly helps speed-up your programming workflow. It has a fairly big learning curve but the shortcuts and macro functions can easily double your productivity. Vim is also modular, enabling you to easily customize it.

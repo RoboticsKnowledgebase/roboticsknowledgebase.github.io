@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
  title: Outdoor UAV navigation (focus on DJI SDK)
 ---
 While DJI has been developing great hardware and software to make relatively safe UAV technology commercially available and has made available an amazing SDK to help research and development, sometimes it becomes difficult to get details on their implementation as their documentation is pretty limited. This article will help a beginner quickly understand what kind of flight information they can get using DJI SDK and how they can use it for their specific use case.

@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Setting up the ROS Navigation Stack for Custom Robots
 ---
 

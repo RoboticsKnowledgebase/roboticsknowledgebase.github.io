@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: SBPL Lattice Planner
 ---
 This tutorial covers implementing the Search Based Planning Lab's Lattice Planner in ROS indigo
