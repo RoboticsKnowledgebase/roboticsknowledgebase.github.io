@@ -1,4 +1,5 @@
 ---
+date: 2020-04-10
 title: Drone Flight Permissions
 published: true
 ---

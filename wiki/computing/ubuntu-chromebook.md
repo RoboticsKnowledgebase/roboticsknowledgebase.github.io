@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Installing stable version of Ubuntu 14.04 on Chromebook
 ---
 Installing Linux on Chromebook Acer C-720 (stable version)

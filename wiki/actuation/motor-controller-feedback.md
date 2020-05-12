@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Motor Controller with Feedback
 ---
 In most of the applications for a DC geared motor speed control or position control might be important. This is achieved by implementing feedback control.

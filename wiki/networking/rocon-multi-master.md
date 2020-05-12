@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: ROCON Multi-master Framework
 ---
 ROCON stands for *Robotics in Concert*. It is a multi-master framework provided by ROS. It provides easy solutions for multi-robot/device/tablet platforms.

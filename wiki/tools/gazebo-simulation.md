@@ -1,4 +1,5 @@
 ---
+date: 2020-04-24
 title: Gazebo Simulation
 ---
 This is a tutorial for Gazebo, including how to customize a model and use a sensor plug-in.

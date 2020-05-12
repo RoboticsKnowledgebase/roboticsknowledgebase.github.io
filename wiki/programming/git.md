@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Git
 ---
 Git is a distributed revision control and source code management system with an emphasis on speed. Every Git working directory is a full-fledged repository with complete history and full version tracking capabilities, and is not dependent on network access or a central server. Git is free software distributed under the terms of the GNU GPLv2.

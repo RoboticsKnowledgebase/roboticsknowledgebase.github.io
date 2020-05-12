@@ -1,4 +1,5 @@
 ---
+date: 2020-05-11
 title: Design considerations for ROS Architectures
 ---
 # Overview

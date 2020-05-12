@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Multithreaded Programming as an Alternative to ROS
 ---
 As a software framework for robotics, ROS is an an obvious choice. Having said that, sometimes ROS can be an overkill or can cause trouble due to the amount of abstraction it has. The option of using ROS should be carefully evaluated, especially when you have all your processing on one single embedded system/processor/computer and not distributed across multiple systems. For such a system, a logical alternative is implementing a C/C++ program from scratch and using libraries like pthreads, boost, or others for parallel/pseudo-parallel execution and other functionalities.

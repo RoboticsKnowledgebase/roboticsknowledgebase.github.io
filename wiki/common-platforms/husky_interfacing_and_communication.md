@@ -1,4 +1,9 @@
-   This excerpt covers the basic methodologies to set up communication channels with the Clearpath Husky and make sure the hardware is receiving commands that are input by the user. The article will cover the hardware used for Husky's onboard processing, additional hardware needed for better Localization and a brief description of Husky's ROS packages for Localization.
+---
+date: 2019-05-14
+title: Husky Interfacing and Communication
+---
+
+This excerpt covers the basic methodologies to set up communication channels with the Clearpath Husky and make sure the hardware is receiving commands that are input by the user. The article will cover the hardware used for Husky's onboard processing, additional hardware needed for better Localization and a brief description of Husky's ROS packages for Localization.
 
 ## Husky Onboard Controller:
    The main communication channel between the user and the Husky is through an onboard computer. Therefore, based on the project and the algorithms to be run on the Husky, a selection of onboard computer may be made. Nvidia Jetson and Zotac are the two popular onboard computers among Carnegie Mellon University (CMU) Masters in Robotic Systems Development (MRSD) students.  

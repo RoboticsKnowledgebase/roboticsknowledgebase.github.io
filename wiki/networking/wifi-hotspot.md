@@ -1,4 +1,8 @@
-# Setting up WiFi hotspot at the boot up for Linux devices 
+---
+date: 2019-11-11
+title: Setting up WiFi Hotspot at the Boot up for Linux Devices 
+---
+
 Most of the mobile robot platform uses Linux based Single board computer for onboard computation and these SBCs typically have WiFi or an external WiFi dongle can also be attached. While testing/debugging we need to continuously monitor the performance of the robot which makes it very important to have a remote connection with our robot. So, in this tutorial, we will help you in setting up the WiFi hotspot at the boot for Linux devices like Nvidia Jetson and Intel NUC. We will start with the procedure to set up the WiFi hotspot and then we will discuss how to change Wi-Fi hotspot settings in Ubuntu 18.04 to start it at bootup.
 
 # Table of Contents

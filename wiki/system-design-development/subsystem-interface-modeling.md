@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: System-Subsystem-Interface Modeling
 ---
 A useful tool in system engineering is the system model, which can drive development, requirements generation, design, and just about anything else to do with your project. While the WBS, schedule, and other tools are good for their particular area, the system model has the potential to be useful in replacing all your other planning methods, becoming the one-stop source for information about your project.

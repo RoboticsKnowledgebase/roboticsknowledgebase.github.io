@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Using ULN 2003A as a motor controller
 ---
 ![Using ULN 2003A as a stepper motor controller](assets/ULN2003AMotorController-8ee22.png)

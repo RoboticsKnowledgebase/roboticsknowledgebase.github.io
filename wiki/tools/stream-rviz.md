@@ -1,4 +1,5 @@
 ---
+date: 2020-02-03
 title: Stream Rviz Visualizations as Images
 ---
 

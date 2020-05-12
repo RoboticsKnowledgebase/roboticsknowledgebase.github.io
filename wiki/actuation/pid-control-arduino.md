@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: PID Control on Arduino
 ---
 The main idea behind PID control is fairly simple, but actually implementing it on an Arduino can be tricky. Luckily, the Arduino IDE comes with [a standard library for PID](http://playground.arduino.cc/Code/PIDLibrary).

@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Soldering
 ---
 A complete and comprehensive 'How to' guide on soldering. A complete set of tutorials has been provided to guide students on effective soldering techniques, the caveats, and other relevant information.

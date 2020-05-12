@@ -1,4 +1,5 @@
 ---
+date: 2020-04-06
 title: DJI Drone Breakdown for Technical Projects
 published: true
 ---

@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Iterations in maps and vectors using boost libraries
 ---
 Using Boost libraries for maps and vectors in C++ for ROS.

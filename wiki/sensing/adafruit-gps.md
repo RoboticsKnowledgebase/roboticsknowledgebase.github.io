@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Adafruit GPS
 ---
 ![Adafruit GPS Components](assets/AdafruitGPS-c715f.png) ![Adafruit GPS Assembled](assets/AdafruitGPS-69ceb.png)

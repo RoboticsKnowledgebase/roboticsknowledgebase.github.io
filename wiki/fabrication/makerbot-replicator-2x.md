@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Makerbot Replicator 2x Overview
 ---
 [Makerbot Replicator 2x](https://store.makerbot.com/printers/replicator2x/) is a popular 3D printer used by hobbyists. This page is for information on the Makerbot Replicator 2x.

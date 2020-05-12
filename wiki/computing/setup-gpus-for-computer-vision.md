@@ -1,4 +1,5 @@
 ---
+date: 2020-02-03
 title: Setup your GPU Enabled System for Computer Vision and Deep Learning
 ---
 

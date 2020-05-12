@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: XBee Pro DigiMesh 900
 ---
 XBee-PRO 900 DigiMesh is useful for setting up your own low bandwidth mesh network. These adapters are great for Mesh Networks and implementations of networks such as VANETs. This tutorial is intended to help you with configuring these adapters and writing a simple python script to initiate bi-directional communication on a serial device.

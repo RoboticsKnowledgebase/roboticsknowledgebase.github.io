@@ -1,4 +1,5 @@
 ---
+date: 2017-08-21
 title: Arduino
 ---
 This tutorial covers the basics of different Arduinos, and how to implement common functions with them.

@@ -1,4 +1,5 @@
 ---
+date: 2020-04-10
 title: ROS Motion Server Framework
 ---
 This tutorial will help you in setting up the ROS motion server framework developed at the University of Pittsburgh. This framework is built around the ROS Simple Action Server. For better understanding, we have also included an example of a high-level task running on Pixhawk with ROS motion server framework.

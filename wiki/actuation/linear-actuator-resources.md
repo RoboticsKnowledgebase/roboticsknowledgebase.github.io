@@ -1,4 +1,5 @@
 ---
+date: 2018-05-14
 title: Linear Actuator Resources and Quick Reference
 published: true
 ---

@@ -1,4 +1,5 @@
 ---
+date: 2017-08-15
 title: Computer Vision for Robotics- Practical Considerations
 ---
 Things to take care of when working with vision in robotics:

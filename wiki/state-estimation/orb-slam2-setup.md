@@ -1,4 +1,5 @@
 ---
+date: 2019-05-07
 title: ORB SLAM2 Setup Guidance 
 ---
 This tutorial will help you in setting up the ORB SLAM2 on SBC. We will start with the installation procedure for the stereo mode and then we will discuss the changes required in the stereo camera's yaml configuration file. Since the ORB SLAM2 code doesn't publish pose output, we have added a separate section which explains how to add the ROS publisher support for the stereo mode. 

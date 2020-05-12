@@ -1,4 +1,5 @@
 ---
+date: 2019-05-16
 title: Fabrication Considerations for 3D printing
 ---
 

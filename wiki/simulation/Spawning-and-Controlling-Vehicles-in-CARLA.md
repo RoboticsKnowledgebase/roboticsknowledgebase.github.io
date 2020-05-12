@@ -1,4 +1,5 @@
 ---
+date: 2020-04-10
 title: Spawning and Controlling Vehicles in CARLA
 published: true
 ---
