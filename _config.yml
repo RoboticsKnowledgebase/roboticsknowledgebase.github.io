@@ -167,6 +167,11 @@ kramdown:
   enable_coderay: false
 
 
+# Search
+search: true
+search_full_content: true
+
+
 # Sass/SCSS
 sass:
   sass_dir: _sass

@@ -3,8 +3,6 @@ date: 2017-09-13
 title: Wiki Index
 exclude: true
 ---
-{% include google-search.html %}
-
 <div class="row">
 {% for page in site.pages %}
 {% unless page.exclude %}
