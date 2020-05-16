@@ -29,6 +29,16 @@ var store = [
               replace:"</h4>", " " |
               replace:"</h5>", " " |
               replace:"</h6>", " "|
+              replace:"`", " "|
+              replace:"```", " "|
+              replace:"$", " "|
+              replace:"#", " "|
+              replace:"**", " "|
+              replace:"__", " "|
+              replace:"[", " "|
+              replace:"]", " "|
+              replace:".", " "|
+              replace:"/", " "|
             strip_html | strip_newlines | jsonify }},
           {%- else -%}
             {{ page.content | newline_to_br |
@@ -40,6 +50,16 @@ var store = [
               replace:"</h4>", " " |
               replace:"</h5>", " " |
               replace:"</h6>", " "|
+              replace:"`", " "|
+              replace:"```", " "|
+              replace:"$", " "|
+              replace:"#", " "|
+              replace:"**", " "|
+              replace:"__", " "|
+              replace:"[", " "|
+              replace:"]", " "|
+              replace:".", " "|
+              replace:"/", " "|
             strip_html | strip_newlines | truncatewords: 50 | jsonify }},
           {%- endif -%}
         "categories": {{ page.categories | jsonify }},
