@@ -11,5 +11,4 @@ header:
   cta_url: "https://roboticsknowledgebase.com/wiki/"
 excerpt: "The Robotics Knowledgebase exists to advance knowledge in the robotics discipline."
 ---
-{% include google-search.html %}
 {% include nav_list nav=page.sidebar.nav %}

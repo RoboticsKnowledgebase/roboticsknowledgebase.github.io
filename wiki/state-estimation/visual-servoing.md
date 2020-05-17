@@ -19,8 +19,8 @@ There are two main visual servoing strategies and they differ based on the formu
 Our implementation uses as IBVS approach since our position state estimate is noisy. We will be able to control the robot by directly tracking desired instantaneous velocities instead of a goal position. The DJI M210 drone allows us to control the robot by sending velocity commands and this makes the IBVS method ideal for our application.
 
 ## Visual Servoing Formulation
-The aim of visual servoing is to minimize the error \\[ e(t) \\]
-where \\[ \begin{equation} \mathbf{e}(t)=\mathbf{s}(\mathbf{m}(t), \mathbf{a})-\mathbf{s}^{*} \end{equation} \\]
+The aim of visual servoing is to minimize the error \\( e(t) \\)
+where \\( \begin{equation} \mathbf{e}(t)=\mathbf{s}(\mathbf{m}(t), \mathbf{a})-\mathbf{s}^{*} \end{equation} \\)
 
 The vector \\( m(t) \\) is a set of image measurements (e.g., the image coordinates of interest points or the image coordinates of the centroid of an object). The vector \\( s^* \\)  contains the desired values of the features.
 For a 3D point with coordinates \\( \mathbf{X} = (X,Y,Z) \\)  in the camera frame, which projects in the image as a 2D point with coordinates \\( \mathbf{x} = (x,y) \\)  we have

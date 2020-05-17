@@ -54,15 +54,26 @@ For a given training examples \\( x_1, x_2, ..., x_n \\) and the corresponding o
 
 Suppose we have a dataset containing \\( n \\) training examples \\( (x_i, y_i) \\), and we want to predict the value \\( y^* \\) given \\( x^* \\). After adding the unknown value, we get a variable of \\( (n+1) \\) dimension.
 
-$$ \begin{bmatrix}{y_{1}} \\ {\vdots} \\ {y_{n}} \\ {f(x^{* })}\end{bmatrix} \sim \mathcal{N}\left(\left[\begin{array}{c}{0} \\ {0}\end{array}\right],\left[\begin{array}{cc}{K_{x x}+\sigma_{n}^{2} I} & {K_{x x}^{T}} \\ {K_{x x}^{2}} & {k\left(x^{* }, x^{* \right)}\end{array}\right]\right) $$
+$$ \left[\begin{array}{c}
+y_{1} \\
+\vdots \\
+y_{n} \\
+f\left(x^{*}\right)
+\end{array}\right] \sim \mathcal{N}\left(\left[\begin{array}{c}
+0 \\
+0
+\end{array}\right],\left[\begin{array}{cc}
+K_{x x}+\sigma_{n}^{2} I & K_{x x}^{T} \\
+K_{x x}^{2} & k\left(x^{*}, x^{*}\right)
+\end{array}\right]\right) $$
 
 where,
 
 \\[K_{x x^{* }}=\left[k\left(x_{1}, x^{* }\right) \ldots k\left(x_{n}, x^{* }\right)\right ] \\]
 
-Hence, the problem can be convert into a conditional probability problem, i.e. solving \\( f(x^* )|\mathbf{y}(\mathbf{x}) \\).
+Hence, the problem can be convert into a conditional probability problem, i.e. solving \\( f(x^* )\|\mathbf{y}(\mathbf{x}) \\).
 
-\\[ f\left(x^{* }\right) | \mathbf{y}(\mathbf{x}) \sim \mathcal{N}\left(K_{x x^{* }} M^{-1} \mathbf{y}(\mathbf{x}), k\left(x^{* }, x^{* }\right)-K_{x x^{* }} M^{-1} K_{x^{* } x}^{T}\right)\\]
+\\[ f\left(x^{* }\right) \| \mathbf{y}(\mathbf{x}) \sim \mathcal{N}\left(K_{x x^{* }} M^{-1} \mathbf{y}(\mathbf{x}), k\left(x^{* }, x^{* }\right)-K_{x x^{* }} M^{-1} K_{x^{* } x}^{T}\right)\\]
 
 where \\( M=K_{x x}+\sigma_{n}^{2} I \\), hence the expectation of \\( y^* \\) is
 
@@ -79,7 +90,7 @@ The mixture model is a probabilistic model that can be used to represent K sub-d
 
 ### Gaussian Model
 When the sample data X is univariate, the Gaussian distribution follows the probability density function below.
-\\[ P(x|\theta)=\frac{1}{\sqrt{2\pi \sigma^2}}exp(-\frac{(x-\mu)^2}{2\sigma^2}) \\]
+\\[ P(x\|\theta)=\frac{1}{\sqrt{2\pi \sigma^2}}exp(-\frac{(x-\mu)^2}{2\sigma^2}) \\]
 
 While \\( \mu \\) is the average value of the data (Expectations), \\( \sigma \\) is the standard deriviation.
 
@@ -98,7 +109,7 @@ Define:
 *  \\( x_j \\) is the number \\( j \\) of the observed data, \\( j = 1, 2, ..., N \\)
 *  \\( k \\) is the number of Gaussians in the mixture model, \\( k = 1, 2, ..., K \\)
 *  \\( \alpha_k \\)is the probability that the observed data is from the \\( k \\)th gaussian, \\( \alpha_k > 0 \\), \\( \Sigma_{k=1}^{N}\alpha_k=1 \\)
-*  \\( \phi(x|\theta_k) \\) is the gaussian density function of the \\( k \\)th sub-model, \\( \theta_k = (\mu, \sigma^2_k) \\)
+*  \\( \phi(x\|\theta_k) \\) is the gaussian density function of the \\( k \\)th sub-model, \\( \theta_k = (\mu, \sigma^2_k) \\)
 *  \\( \gamma_{jk} \\) is the probability that the \\( j \\)th observed data is from the \\( k \\)th gaussian. 
 
 The probablity distribution of the gaussian mixture model:
@@ -114,12 +125,12 @@ We assume that each data point is independent and the likelihood function is giv
 \\[ L(\theta) = \Pi^N_{j=1}P(x_j|\theta) \\]
 
 Since the probability of occurrence of each point is very small, the product becomes extremely small, which is not conducive to calculation and observation. Therefore, we usually use Maximum Log-Likelihood to calculate (because the Log function is monotonous and does not change the position of the extreme value, At the same time, a small change of the input value can cause a relatively large change in the output value):
-\\[ logL(\theta) = \Sigma^N_{j=1}logP(x_j|\theta) \\]
+\\[ logL(\theta) = \Sigma^N_{j=1}logP(x_j\|\theta) \\]
 
 
 As for the Gaussian Mixture Model, the Log-likelihood function is:
-\\[ logL(\theta) = \Sigma^N_{j=1}logP(x_j|\theta) = 
-\Sigma^N_{j=1}log(\Sigma^K_{k=1})\alpha_k \phi(x|\theta_k) \\]
+\\[ logL(\theta) = \Sigma^N_{j=1}logP(x_j\|\theta) = 
+\Sigma^N_{j=1}log(\Sigma^K_{k=1})\alpha_k \phi(x\|\theta_k) \\]
 
 So how do you calculate the parameters of the Gaussian mixture model? We can't use the maximum likelihood method to find the parameter that maximizes the likelihood like the single Gaussian model, because we don't know which sub-distribution it belongs to in advance for each observed data point. There is also a summation in the log. The sum of the K Gaussian models is not a Gaussian model. For each submodel, there is an unknown \\( (\mu_k, \sigma_k, \alpha_k) \\), and the direct derivation cannot be calculated. It need to be solved by iterative method.
 
@@ -128,7 +139,7 @@ The EM algorithm is an iterative algorithm, summarized by Dempster et al. in 197
 
 Each iteration consists of two steps:
 
-* E-step: Finding the expected value \\( E(\gamma_{jk}|X,\theta) \\) for all \\( j = 1, 2, ..., N \\)
+* E-step: Finding the expected value \\( E(\gamma_{jk}\|X,\theta) \\) for all \\( j = 1, 2, ..., N \\)
 * M-step: Finding the maximum value and calculate the model parameters of the new iteration 
 
 The general EM algorithm is not specifically introduced here (the lower bound of the likelihood function is obtained by Jensen's inequality, and the maximum likelihood is maximized by the lower bound). We will only derive how to apply the model parameters in the Gaussian mixture model.
@@ -137,13 +148,13 @@ The method of updating Gaussian mixture model parameters by EM iteration (we hav
 
 * Initialize the parameters
 * E-step: Calculate the possibility that each data \\( j\\) comes from the submodel \\( k\\) based on the current parameters
-\\[ \gamma_{jk} = \frac{\alpha_k\phi(x_j|\theta_k)}{\Sigma_{k=1}^K\alpha_k\phi(x_j|\theta_k)}, j=1 , 2,...,N; k=1, 2, ..., K \\]
+\\[ \gamma_{jk} = \frac{\alpha_k\phi(x_j\|\theta_k)}{\Sigma_{k=1}^K\alpha_k\phi(x_j\|\theta_k)}, j=1 , 2,...,N; k=1, 2, ..., K \\]
 
 * M-step: Calculate model parameters for a new iteration
 \\[ \mu_k = \frac{\Sigma_j^N(\gamma_{jk}x_j)}{\Sigma_j^N\gamma_{jk}}, k=1,2,...,K \\]
 \\[ \Sigma_k = \frac{\Sigma_j^N\gamma_{jk}(x_j-\mu_k)(x_j-\mu_k)^T}{\Sigma_j^N\gamma_{jk}}, k=1,2,...,K \\]
 \\[ \alpha_k = \frac{\Sigma_j^N\gamma_{jk}}{N}, k=1,2,...,K \\]
-* Repeat the calculation of E-step and M-step until convergence (\\( ||\theta_{i+1}-\theta_i||<\epsilon \\), \\( \epsilon \\) is a small positive number, indicating that the parameter changes very small after one iteration)
+* Repeat the calculation of E-step and M-step until convergence (\\( \|\|\theta_{i+1}-\theta_i\|\|<\epsilon \\), \\( \epsilon \\) is a small positive number, indicating that the parameter changes very small after one iteration)
 
 At this point, we have found the parameters of the Gaussian mixture model. It should be noted that the EM algorithm has a convergence, but does not guarantee that the global maximum is found since it is possible to find the local maximum. The solution is to initialize several different parameters to iterate and take the best result.
 
@@ -162,12 +173,12 @@ Here are some papers on using GP/GMM in robotics:
 4. Adaptive Sampling and Online Learning in Multi-Robot Sensor Coverage with Mixture of Gaussian Processes: https://www.ri.cmu.edu/wp-content/uploads/2018/08/ICRA18_AdaSam_Coverage.pdf
 
 ## References
-[1] C. E. Rasmussen and C. K. I. Williams. *Gaussian Processes for Machine Learning*. MIT Press,2006.
-[2] An intuitive guide to Gaussian processes: http://asctecbasics.blogspot.com/2013/06/basic-wifi-communication-setup-part-1.html
-[3] Qi, Y., Minka, T.P., Picard, R.W., and Ghahramani, Z. *Predictive Automatic Relevance Determination by Expectation Propagation*. In Twenty-first International Conference on Machine Learning (ICML-04). Banff, Alberta, Canada, 2004.
-[4] O’Hagan, A. *Curve Fitting and Optimal Design for Prediction (with discussion)*. Journal of the Royal Statistical Society B, 40(1):1-42, 1978.
-[5] MacKay, David, J.C. (2003). Information Theory, Inference, and Learning Algorithms. Cambridge University Press. p. 540. ISBN 9780521642989.
-[6] Dudley, R. M. (1975). "The Gaussian process and how to approach it". Proceedings of the International Congress of Mathematicians.
-[7] Bishop, C.M. (2006). Pattern Recognition and Machine Learning. Springer. ISBN 978-0-387-31073-2.
-[8] Dempster, A.P.; Laird, N.M.; Rubin, D.B. (1977). "Maximum Likelihood from Incomplete Data via the EM Algorithm". Journal of the Royal Statistical Society, Series B. 39 (1): 1–38. JSTOR 2984875. MR 0501537.
-[9] "Maximum likelihood theory for incomplete data from an exponential family". Scandinavian Journal of Statistics. 1 (2): 49–58. JSTOR 4615553. MR 0381110.
+1. C. E. Rasmussen and C. K. I. Williams. *Gaussian Processes for Machine Learning*. MIT Press,2006.
+2. An intuitive guide to Gaussian processes: http://asctecbasics.blogspot.com/2013/06/basic-wifi-communication-setup-part-1.html
+3. Qi, Y., Minka, T.P., Picard, R.W., and Ghahramani, Z. *Predictive Automatic Relevance Determination by Expectation Propagation*. In Twenty-first International Conference on Machine Learning (ICML-04). Banff, Alberta, Canada, 2004.
+4. O’Hagan, A. *Curve Fitting and Optimal Design for Prediction (with discussion)*. Journal of the Royal Statistical Society B, 40(1):1-42, 1978.
+5. MacKay, David, J.C. (2003). Information Theory, Inference, and Learning Algorithms. Cambridge University Press. p. 540. ISBN 9780521642989.
+6. Dudley, R. M. (1975). "The Gaussian process and how to approach it". Proceedings of the International Congress of Mathematicians.
+7. Bishop, C.M. (2006). Pattern Recognition and Machine Learning. Springer. ISBN 978-0-387-31073-2.
+8. Dempster, A.P.; Laird, N.M.; Rubin, D.B. (1977). "Maximum Likelihood from Incomplete Data via the EM Algorithm". Journal of the Royal Statistical Society, Series B. 39 (1): 1–38. JSTOR 2984875. MR 0501537.
+9. "Maximum likelihood theory for incomplete data from an exponential family". Scandinavian Journal of Statistics. 1 (2): 49–58. JSTOR 4615553. MR 0381110.
