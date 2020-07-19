@@ -108,7 +108,7 @@ For example, we now have a bunch of samples of dogs. Different types of dogs hav
 Define:
 *  \\( x_j \\) is the number \\( j \\) of the observed data, \\( j = 1, 2, ..., N \\)
 *  \\( k \\) is the number of Gaussians in the mixture model, \\( k = 1, 2, ..., K \\)
-*  \\( \alpha_k \\)is the probability that the observed data is from the \\( k \\)th gaussian, \\( \alpha_k > 0 \\), \\( \Sigma_{k=1}^{N}\alpha_k=1 \\)
+*  \\( \alpha_k \\)is the probability that the observed data is from the \\( k \\)th gaussian, \\( \alpha_k > 0 \\), \\( \Sigma_{k=1}^{K}\alpha_k=1 \\)
 *  \\( \phi(x\|\theta_k) \\) is the gaussian density function of the \\( k \\)th sub-model, \\( \theta_k = (\mu, \sigma^2_k) \\)
 *  \\( \gamma_{jk} \\) is the probability that the \\( j \\)th observed data is from the \\( k \\)th gaussian. 
 
