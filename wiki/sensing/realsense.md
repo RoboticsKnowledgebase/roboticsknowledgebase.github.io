@@ -1,13 +1,7 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: {}
 title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+published: true
 ---
 This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
@@ -17,7 +11,7 @@ If you're writing a tutorial, use this section to specify what the reader will b
 
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
-## First subheading
+## Sensor Overview
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
 This section covers the basic syntax and some rules of thumb for writing.
