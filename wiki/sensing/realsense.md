@@ -10,8 +10,11 @@ This goes above the first subheading. The first 100 words are used as an excerpt
 If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
 
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-## blah blah 
 ## Sensor Overview
+## SDK 
+## ROS package
+## Calibration
+## Tunning and Sensor Characteristics 
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
 This section covers the basic syntax and some rules of thumb for writing.
