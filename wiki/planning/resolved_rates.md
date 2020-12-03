@@ -15,113 +15,60 @@ For several real-world applications, it may be necessary for the robot end-effec
 The forward kinematics of a serial-link manipulator provides
 a non-linear surjective mapping between the joint space
 and Cartesian task space[2]. For an $n$-degree of freedom (DoF) manipulator with $n$ joints, let $\boldsymbol{q}(t) \in \mathbb{R}^{n}$ be the joint coordinates of the robot and $r \in \mathbb{R}^{m}$ be the parameterization of the end-effector pose. The relationship between the robot's joint space and task space is given by:
-\begin{equation}
+$$\begin{equation}
     \boldsymbol{r}(t)=f(\boldsymbol{q}(t))
-\end{equation}
+\end{equation}$$
 In most real-world applications, the robot has a task space $\mathcal{T} \in \operatorname{SE}(3)$ and therefore $m = 6$. The Jacobian matrix provides the relation between joint velocities $\dot{q}$ and end-effector velocity $\dot{v}$ of a robotic manipulator. A redundant
 manipulator has a joint space dimension that exceeds the workspace dimension, i.e. $n > 6$. Taking the derivative of (1) with respect to time:
-\begin{equation}
+$$\begin{equation}
     \nu(t)=J(q(t)) \dot{q}(t)
-\end{equation}
+\end{equation}$$
 where $J(q(t))=\left.\frac{\partial f(q)}{\partial q}\right|_{q=q_{0}} \in \mathbb{R}^{6 \times n}$ is the manipulator
 Jacobian for the robot at configuration $q_0$. Resolved-rate
 motion control is an algorithm which maps a Cartesian end-effector
 velocity $\dot{v}$ to the robot’s joint velocity $\dot{q}$. By rearranging (2), the required joint velocities are:
-\begin{equation}
+$$\begin{equation}
     \dot{\boldsymbol{q}}=\boldsymbol{J}(\boldsymbol{q})^{-1} \nu
-\end{equation}
+\end{equation}$$
 It must be noted that (3) can be directly solved only is $J(q)$ is square and non-singular, which is when the robot has 6 DoF. Since most modern robots are several redundant DoFs, it is more common to use the
 Moore-Penrose pseudoinverse:
-\begin{equation}
+$$\begin{equation}
     \dot{\boldsymbol{q}}=\boldsymbol{J}(\boldsymbol{q})^{+}v
-\end{equation}
+\end{equation}$$
 where the $(\cdot)^{+}$ denotes the pseudoinverse operation.
 
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+## Algorithm
+Since control algorithms are generally run on digital computers, they are often modeled as discrete-time algorithms, i.e., they compute necessary values at discrete time intervals. Consider a time horizon with discrete time steps such that the interval between two consecutive steps is $\Delta_{t}$. The following sequence of steps are repeated for as long as the robot's end-effector is required to move at the specified Cartesian velocity $v$:
+1. At each time step $k$, compute the kinematic Jacobian matrix $\mathbf{J}\left(\boldsymbol{q}_{k}\right)$ using the current values of the joint angles $\mathbf{q_k}$.
+2. Calculate the joint velocity vector $\mathbf{\dot{q}}$ that must be achieved in the current time step using the equation $\dot{\boldsymbol{q}}=\mathbf{J}\left(\boldsymbol{q}_{k}\right)^{-1} \boldsymbol{v}$.
+3. The joint angle displacement is then calculated as $\mathbf{q_{dist}} = \Delta_{t}\mathbf{\dot{q}}$. This quantity signifies how much we want to move each of the joints in the given time step based on the value of joint velocity.
+4. The next joint configuration is calculated by $\mathbf{q_{k+1}}=\mathbf{q_{k}}+\mathbf{\Delta_{t} \dot{q}}$
+5. The robot hardware is commanded to move the next joint configuration $\mathbf{q_{k+1}}$.
 
-This section covers the basic syntax and some rules of thumb for writing.
-
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+The steps above are repeated for as long as necessary. It is seen that we do not have to compute the inverse kinematics of the robot at each time step; rather, the inverse of the Jacobian matrix alone is sufficient to have the end-effector continue to move at a Cartesian velocity $v$.
 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+## Resolved-rates for motion compensation
+The following is an example for how the resolved-rates motion compensation can be used. Specifically, this relates to Team A's Chopsticks Surgical system but is extendable to other systems. Since the Chopsticks Surgical system needs to 3D-scan and palpate a moving liver, the robot arm must incorporate a motion compensation scheme to ensure zero relative motion between the robot and the liver at all times. In order to compensate for the liver's motion, it is first necessary to predict where the liver or some region of interest on the liver will be at any given point in time. The robot arm will then move to this predicted location at the same time the liver does, thereby canceling out the effects of the liver's motion. The liver is represented as a point cloud $\mathbf{P}$ where each point $p_i$ has an associated normal vector. For both 3D-scanning and palpation, the robot arm must go to each point to maximize coverage of the liver's surface. The frequency and amplitude of motion of the liver are estimated within a very small margin of error to the ground truth. The resolved-rate motion controller is incorporated in the motion compensation by iterating over each point of the liver point cloud as follows:
+1. Let the current position of the robot's end-effector be $p_i$. The target location for the robot arm is the predicted position of the next point $p_{i+1}$ to visit on the liver's surface. We have a function that outputs the predicted position of the target point in the present time step.
+2. However it is generally not possible to get to the desired location in the same time step as the prediction because the robot may need more than one time step to get there and the liver (and hence the current point of interest on the liver) will have moved by then.
+3. Therefore, we ``close in" on the target point with each passing time step, i.e., in each time step, we predict where the target point is, and take a step in that direction.
+4. This is repeated for a couple of time steps until the robot arm eventually ``catches up" with the current point. When the robot arm gets to the desired location within a very narrow margin of error, we consider that point on the liver's surface to have been visited and move on to the next point.
+5. Steps 1 - 4 are repeated for every point on the liver's surface. Since the liver point cloud representation is quite dense, the robot arm can move between points very quickly.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+The biggest advantage of the resolved-rate motion controller is that it makes the robot arm move smoothly between waypoints and not exhibit jerky movements that arise from having to compute inverse kinematics at every time step. We simply need to update joint displacements that will eventually converge to the desired point. In the particular case of our surgical project, since it has the robot arm take unit steps along the vector between the current and desired positions at every time step, it ensures zero relative motion between the robot arm and the liver.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Resolved-rate motion control allows for direct control of the robot’s end-effector velocity, without expensive path planning. In surgical robots, it is often necessary for the robot arm to move in a straight line at a constant velocity as it lacerates tissue. This controller would be well-suited to the task. In fact, this controller is so versatile that it is known to have been used in space robotics and in general reactive control schemes such as visual servoing[2].
 
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+## Bibliography
 
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+D. E. Whitney, "Resolved Motion Rate Control of Manipulators and Human Prostheses," in IEEE Transactions on Man-Machine Systems, vol. 10, no. 2, pp. 47-53, June 1969, doi: 10.1109/TMMS.1969.299896.
 
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+Haviland, Jesse & Corke, Peter. (2020). \Maximising Manipulability During Resolved-Rate Motion Control.
+
+Zevallos, Nicolas & Rangaprasad, Arun Srivatsan & Salman, Hadi & Li, Lu & Saxena, Saumya & Xu, Mengyun \& Qian, Jianing & Patath, Kartik & Choset, Howie. (2018). A Real-time Augmented Reality Surgical System for Overlaying Stiffness Information. 10.13140/RG.2.2.17472.64005. 
+
+https://www.youtube.com/watch?v=rkHs7K0ad14&feature=emb_logo
