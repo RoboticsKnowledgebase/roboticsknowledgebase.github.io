@@ -15,9 +15,87 @@ In both cases, tell them what you're going to say, use the sections below to say
 ## ROS package
 ## Calibration
 ## Tunning and Sensor Characteristics 
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+### Optimal Resolution
+The depth image precision is affected by the output resolution. The optimal resolutions of the D430 series are as follow:
+- D415: 1280 x 720
+- D435: 848 x 480
 
-This section covers the basic syntax and some rules of thumb for writing.
+Note:  
+
+1. Lower resolutions can be used but will degrade the depth precision. Stereo depth sensors
+derive their depth ranging performance from the ability to match positions of objects in the
+left and right images. The higher the input resolution, the better the input image, the better
+the depth precision.  
+
+2. If lower resolution is needed for the application, it is better to publish high resolution image and depth map from the sensor and downsample immediately instead of publishing low resolution image and depth map.
+
+### Image Exposure
+
+1. Check whether auto-exposure works well, or switch to manual exposure to make sure you
+have good color or monochrome left and right images. Poor exposure is the number one
+reason for bad performance.  
+
+2. From personal experience, it is best to keep auto-exposure on to ensure best quality. Auto exposure could be set using the intel realsense SDK or be set in the realsense viewer GUI.  
+
+3. There are two other options to consider when using the autoexposure feature. When
+Autoexposure is turned on, it will average the intensity of all the pixels inside of a predefined
+Region-Of-Interest (ROI) and will try to maintain this value at a predefined Setpoint. Both
+the ROI and the Setpoint can be set in software. In the RealSense Viewer the setpoint can
+be found under the Advanced Controls/AE Control.  
+
+4. The ROI can also be set in the RealSense Viewer, but will only appear after streaming has
+been turn on. (Ensure upper right switch is on).
+
+
+### Range 
+
+1. D400 depth cameras give most precise depth ranging data for objects that are near. The
+depth error scales as the square of the distance away.  
+2. However, the depth camera can't be too close to the object that it is within the minz distance.
+The minZ for the D415 at 1280 x 720 is 43.8cm and the minz for the D435 at 848x480 is 16.8cm
+
+### Post Processing
+The realsense SDK offers a range of post processing filters that could drastically improve the quality. However, by default, those filters aren't enabled. You need to manually enable them. To enable the filters, you simply need to add them to your realsense camera launch file under the filters param <https://github.com/IntelRealSense/realsense-ros#launch-parameters/>. The intel recommended filters are the following:  
+
+1. **Sub-sampling**: Do intelligent sub-sampling. We usually recommend doing a non-
+zero mean for a pixel and its neighbors. All stereo algorithms do involve someconvolution operations, so reducing the (X, Y) resolution after capture is usually
+very beneficial for reducing the required compute for higher-level apps. A factor
+of 2 reduction in resolution will speed subsequent processing up by 4x, and a scale
+factor of 4 will decrease compute by 16x. Moreover, the subsampling can be used
+to do some rudimentary hole filling and smoothing of data using either a non-zero
+mean or non-zero median function. Finally, sub-sampling actually tends to help
+with the visualization of the point-cloud as well.  
+
+2. **Temporal filtering**: Whenever possible, use some amount of time averaging to
+improve the depth, making sure not to take “holes” (depth=0) into account. There
+is temporal noise in the depth data. We recommend using an IIR filter. In some
+cases it may also be beneficial to use “persistence”, where the last valid value is
+retained indefinitely or within a certain time frame.  
+
+3. **Edge-preserving filtering**: This will smooth the depth noise, retain edges while
+making surfaces flatter. However, again care should be taken to use parameters
+that do not over-aggressively remove features. We recommend doing this
+processing in the disparity domain (i.e. the depth scale is 1/distance), and
+experimenting by gradually increasing the step size threshold until it looks best for
+the intended usage. Another successful post-processing technique is to use a
+Domain-Transform filter guided by the RGB image or a bilinear filter. This can help
+sharpen up edges for example. 
+
+4. **Hole-filling**: Some applications are intolerant of holes in the depth. For example,
+for depth-enhanced photography it is important to have depth values for every
+pixel, even if it is a guess. For this, it becomes necessary to fill in the holes with
+best guesses based on neighboring values, or the RGB image.
+
+
+
+
+
+
+
+
+
+
+
 
 ### Basic syntax
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
@@ -96,6 +174,7 @@ Use this space to reinforce key points and to suggest next steps for your reader
 - Links to articles of interest outside the Wiki (that are not references) go here.
 
 ## References
+- https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/BKMs_Tuning_RealSense_D4xx_Cam.pdf
 - Links to References go here.
 - References should be in alphabetical order.
 - References should follow IEEE format.
