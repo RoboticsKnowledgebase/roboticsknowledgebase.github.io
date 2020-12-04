@@ -82,6 +82,8 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      -       - title: Camera-IMU Calibration using kalibr
+        url: /wiki/sensing/camera-imu-calibration/
   - title: Actuation
     url: /wiki/actuation/
     children:
