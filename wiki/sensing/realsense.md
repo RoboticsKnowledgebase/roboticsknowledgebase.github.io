@@ -55,24 +55,43 @@ Will start the camera node in ROS and stream all camera sensors.
 ### Published ROS Topics
 The published topics differ according to the device and parameters. After running the above command with D435i attached, the following list of topics will be available (This is a partial list. For full one type rostopic list):
 
-/camera/color/camera_info
-/camera/color/image_raw
-/camera/depth/camera_info
-/camera/depth/image_rect_raw
-/camera/extrinsics/depth_to_color
-/camera/extrinsics/depth_to_infra1
-/camera/extrinsics/depth_to_infra2
-/camera/infra1/camera_info
-/camera/infra1/image_rect_raw
-/camera/infra2/camera_info
-/camera/infra2/image_rect_raw
-/camera/gyro/imu_info
-/camera/gyro/sample
-/camera/accel/imu_info
-/camera/accel/sample
-/diagnostics
+/camera/color/camera_info  
+/camera/color/image_raw  
+/camera/depth/camera_info  
+/camera/depth/image_rect_raw  
+/camera/extrinsics/depth_to_color  
+/camera/extrinsics/depth_to_infra1  
+/camera/extrinsics/depth_to_infra2  
+/camera/infra1/camera_info  
+/camera/infra1/image_rect_raw  
+/camera/infra2/camera_info  
+/camera/infra2/image_rect_raw  
+/camera/gyro/imu_info  
+/camera/gyro/sample  
+/camera/accel/imu_info  
+/camera/accel/sample  
+/diagnostics  
 
 ## Calibration
+### Intrinsics
+The intrinsics of the camera module can be found in the /camera/color/camera_info topic when the realsense camera is launched through ROS. The K matrix in the published topic corresponds to the intrinsics matrix.  
+The intrinsic of the camera module can be calibrated with the matlab single camera calibration App. www.mathworks.com/help/vision/ug/single-camera-calibrator-app.html  
+The general steps are as follows:
+1. Prepare images, camera, and calibration pattern.
+
+2. Add images and select standard or fisheye camera model.
+
+3. Calibrate the camera.
+
+4. Evaluate calibration accuracy.
+
+5. Adjust parameters to improve accuracy (if necessary).
+
+6. Export the parameters object.
+
+Note: The calibration required can be generated on this site  [https://calib.io/pages/camera-calibration-pattern-generator](https://calib.io/pages/camera-calibration-pattern-generator). After printing out the checkerboard, make sure to measure the box sizes and verify the print accuracy.Printers can be very inaccurate sometimes. Remember to stick the checkerboard on a piece of flat cardboard. When taking pictures of the checkerboard, make sure to take the pictures at different angle and different distant.
+
+
 ## Tuning and Sensor Characteristics 
 ### Optimal Resolution
 The depth image precision is affected by the output resolution. The optimal resolutions of the D430 series are as follow:
@@ -114,7 +133,7 @@ depth error scales as the square of the distance away.
 The minZ for the D415 at 1280 x 720 is 43.8cm and the minz for the D435 at 848x480 is 16.8cm
 
 ### Post Processing
-The realsense SDK offers a range of post processing filters that could drastically improve the quality. However, by default, those filters aren't enabled. You need to manually enable them. To enable the filters, you simply need to add them to your realsense camera launch file under the filters param <https://github.com/IntelRealSense/realsense-ros#launch-parameters/>. The intel recommended filters are the following:  
+The realsense SDK offers a range of post processing filters that could drastically improve the quality. However, by default, those filters aren't enabled. You need to manually enable them. To enable the filters, you simply need to add them to your realsense camera launch file under the filters param [https://github.com/IntelRealSense/realsense-ros#launch-parameters](https://github.com/IntelRealSense/realsense-ros#launch-parameters). The intel recommended filters are the following:  
 
 1. **Sub-sampling**: Do intelligent sub-sampling. We usually recommend doing a non-
 zero mean for a pixel and its neighbors. All stereo algorithms do involve someconvolution operations, so reducing the (X, Y) resolution after capture is usually
@@ -234,6 +253,7 @@ Use this space to reinforce key points and to suggest next steps for your reader
 
 ## References
 - https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/BKMs_Tuning_RealSense_D4xx_Cam.pdf
+- https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf
 - Links to References go here.
 - References should be in alphabetical order.
 - References should follow IEEE format.
