@@ -83,7 +83,7 @@ wiki:
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
       - title: Intel Realsense
-        url: /wiki/sensing/intel-realsense/
+        url: /wiki/sensing/realsense/
   - title: Actuation
     url: /wiki/actuation/
     children:
