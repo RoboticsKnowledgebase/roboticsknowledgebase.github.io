@@ -1,6 +1,6 @@
 ---
 date: {}
-title: Title goes here
+title: Realsense RGB-D camera
 published: true
 ---
 This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
@@ -92,11 +92,11 @@ The general steps are as follows:
 Note: The checkerboard required can be generated on this site  [https://calib.io/pages/camera-calibration-pattern-generator](https://calib.io/pages/camera-calibration-pattern-generator). After printing out the checkerboard, make sure to measure the box sizes and verify the print accuracy.Printers can be very inaccurate sometimes. Remember to stick the checkerboard on a piece of flat cardboard. When taking pictures of the checkerboard, make sure to take the pictures at different angle and different distant.
 
 ### Extrinsic Calibration
-The realsense sensors are calibrated out of the box. However, if the sensor was dropped or there is a high amount of vibration in your application it might be worthy to recalirate the extrinc of the sensor for better depth map quality. The extrinsic here refers to the coordinate transformation between the depth modules and the camera on the sensor. For this task, intel has developed a dynamic calibration tool.  
+The realsense sensors are calibrated out of the box. However, if the sensor was dropped or there is a high amount of vibration in your application it might be worthy to recalirate the extrinc of the sensor for better depth map quality. The extrinsic here refers to the coordinate transformation between the depth modules and the camera on the sensor. For this task, intel has developed a dynamic calibration tool([https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf](https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf)).  
 Two types of dynamic calibrations are offered in this tool:
 
-1. Rectification calibration: aligning the epipolar line to enable the depth pipeline to work correctly
-and reduce the holes in the depth image
+1. Rectification calibration: aligning the epipolar line to enable the depth pipeline to work correctly and reduce the holes in the depth image
+
 2. Depth scale calibration: aligning the depth frame due to changes in position of the optical
 elements
 
