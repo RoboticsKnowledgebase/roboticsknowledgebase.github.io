@@ -10,11 +10,70 @@ This goes above the first subheading. The first 100 words are used as an excerpt
 If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
 
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+
 ## Sensor Overview
+Intel® RealSense™ D400 Series Depth Cameras are ready-to-use right out of the box and can be easily added into your project. Bring innovative vision awareness to your solution with our best-in-class depth resolution, quality RGB, and high frame rate. Both the Intel® RealSense™ Depth Camera D415 and the Intel® RealSense™ Depth Camera D435 provide highly accurate depth data in a wide variety of indoor and outdoor environments and can be used in unlimited multiple camera configurations.
+
 ## SDK 
+The RealSense camera package allows access to and provides ROS nodes for Intel 3D cameras and advanced modules. The SDK allows depth and color streaming, and also provides camera calibration information.
+The source code can be downloaded and built from this repository:
+https://github.com/IntelRealSense/librealsense/
+
 ## ROS package
+### Installation instructions
+Step 1: Install the latest Intel® RealSense™ SDK 2.0
+Install from Debian Package - In that case treat yourself as a developer. Make sure you follow the instructions to also install librealsense2-dev and librealsense-dkms packages.
+OR
+Build from sources by downloading the latest Intel® RealSense™ SDK 2.0 and follow the instructions under Linux Installation
+
+Step 2: Install the ROS distribution
+Install ROS Kinetic, on Ubuntu 16.04
+
+Step 3: Install Intel® RealSense™ ROS from Sources
+Create a catkin workspace
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src/
+Clone the latest Intel® RealSense™ ROS from here into 'catkin_ws/src/'
+git clone https://github.com/IntelRealSense/realsense-ros.git
+cd realsense-ros/
+git checkout `git tag | sort -V | grep -P "^\d+\.\d+\.\d+" | tail -1`
+cd ..
+Make sure all dependent packages are installed. You can check .travis.yml file for reference.
+Specifically, make sure that the ros package ddynamic_reconfigure is installed. If ddynamic_reconfigure cannot be installed using APT, you may clone it into your workspace 'catkin_ws/src/' from here (Version 0.2.0)
+catkin_init_workspace
+cd ..
+catkin_make clean
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make install
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+### Start Camera Node
+roslaunch realsense2_camera rs_camera.launch
+Will start the camera node in ROS and stream all camera sensors.
+
+### Published ROS Topics
+The published topics differ according to the device and parameters. After running the above command with D435i attached, the following list of topics will be available (This is a partial list. For full one type rostopic list):
+
+/camera/color/camera_info
+/camera/color/image_raw
+/camera/depth/camera_info
+/camera/depth/image_rect_raw
+/camera/extrinsics/depth_to_color
+/camera/extrinsics/depth_to_infra1
+/camera/extrinsics/depth_to_infra2
+/camera/infra1/camera_info
+/camera/infra1/image_rect_raw
+/camera/infra2/camera_info
+/camera/infra2/image_rect_raw
+/camera/gyro/imu_info
+/camera/gyro/sample
+/camera/accel/imu_info
+/camera/accel/sample
+/diagnostics
+
 ## Calibration
-## Tunning and Sensor Characteristics 
+## Tuning and Sensor Characteristics 
 ### Optimal Resolution
 The depth image precision is affected by the output resolution. The optimal resolutions of the D430 series are as follow:
 - D415: 1280 x 720
