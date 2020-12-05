@@ -4,10 +4,10 @@ title: Realsense RGB-D camera
 published: true
 ---
 
-This article serves as an introduction to the intel reansense D400 series. It details the SDK installation process, ROS intergration, sensor calibration and sensor tuning. Following the intructions in the SDK and the ROS Package section, readers should be able to launch the sensor through ROS and browse through the published topics. The calibration and tuning sections of the articles allow advanced users to ensure the best sensor reading quality.
+This article serves as an introduction to the Intel Reansense D400 series RGB-D cameras. It details the SDK installation process, ROS intergration, sensor calibration and sensor tuning. Following the intructions in the SDK and the ROS Package section, readers should be able to launch the sensor through ROS and browse through the published topics. The calibration and tuning sections of the articles allow advanced users to ensure the best sensor reading quality.
 
 ## Sensor Overview
-Intel® RealSense™ D400 Series Depth Cameras are ready-to-use right out of the box and can be easily added into your project. Bring innovative vision awareness to your solution with our best-in-class depth resolution, quality RGB, and high frame rate. Both the Intel® RealSense™ Depth Camera D415 and the Intel® RealSense™ Depth Camera D435 provide highly accurate depth data in a wide variety of indoor and outdoor environments and can be used in unlimited multiple camera configurations.
+Intel® RealSense™ D400 Series Depth Cameras are ready-to-use right out of the box and can be easily added into your project. They bring innovative vision awareness to your solution with great  depth resolution, quality RGB, and high frame rate. Both the Intel® RealSense™ Depth Camera D415 and the Intel® RealSense™ Depth Camera D435 provide highly accurate depth data in a wide variety of indoor and outdoor environments and can be used in unlimited multiple camera configurations.
 
 ## SDK 
 The RealSense camera package allows access to and provides ROS nodes for Intel 3D cameras and advanced modules. The SDK allows depth and color streaming, and also provides camera calibration information.
@@ -184,8 +184,6 @@ best guesses based on neighboring values, or the RGB image.
 
 
 
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
 
 
 ## References
