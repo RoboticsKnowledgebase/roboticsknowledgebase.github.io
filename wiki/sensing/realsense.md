@@ -34,8 +34,8 @@ Step 3: Install Intel® RealSense™ ROS from Sources
 
 Create a catkin workspace
 
-``` mkdir -p ~/catkin_ws/src
-
+``` 
+mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src/
 ```
 
@@ -49,6 +49,8 @@ cd ..
 ```
 Make sure all dependent packages are installed. You can check .travis.yml file for reference.
 Specifically, make sure that the ros package ddynamic_reconfigure is installed. If ddynamic_reconfigure cannot be installed using APT, you may clone it into your workspace 'catkin_ws/src/' from here (Version 0.2.0)
+
+```
 catkin_init_workspace
 cd ..
 catkin_make clean
@@ -56,6 +58,7 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+```
 
 ### Start Camera Node
 roslaunch realsense2_camera rs_camera.launch
