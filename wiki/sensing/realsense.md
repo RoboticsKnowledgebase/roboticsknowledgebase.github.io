@@ -23,20 +23,30 @@ https://github.com/IntelRealSense/librealsense/
 ### Installation instructions
 Step 1: Install the latest Intel® RealSense™ SDK 2.0
 Install from Debian Package - In that case treat yourself as a developer. Make sure you follow the instructions to also install librealsense2-dev and librealsense-dkms packages.
+
 OR
+
 Build from sources by downloading the latest Intel® RealSense™ SDK 2.0 and follow the instructions under Linux Installation
 
-Step 2: Install the ROS distribution
-Install ROS Kinetic, on Ubuntu 16.04
+Step 2: Install the ROS distribution (ROS Kinetic, on Ubuntu 16.04)
 
 Step 3: Install Intel® RealSense™ ROS from Sources
+
 Create a catkin workspace
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src/
+
+` mkdir -p ~/catkin_ws/src `
+
+`cd ~/catkin_ws/src/`
+
 Clone the latest Intel® RealSense™ ROS from here into 'catkin_ws/src/'
-git clone https://github.com/IntelRealSense/realsense-ros.git
+
+```git clone https://github.com/IntelRealSense/realsense-ros.git
+
 cd realsense-ros/
+
 git checkout `git tag | sort -V | grep -P "^\d+\.\d+\.\d+" | tail -1`
+```
+
 cd ..
 Make sure all dependent packages are installed. You can check .travis.yml file for reference.
 Specifically, make sure that the ros package ddynamic_reconfigure is installed. If ddynamic_reconfigure cannot be installed using APT, you may clone it into your workspace 'catkin_ws/src/' from here (Version 0.2.0)
@@ -55,22 +65,24 @@ Will start the camera node in ROS and stream all camera sensors.
 ### Published ROS Topics
 The published topics differ according to the device and parameters. After running the above command with D435i attached, the following list of topics will be available (This is a partial list. For full one type rostopic list):
 
-/camera/color/camera_info  
-/camera/color/image_raw  
-/camera/depth/camera_info  
-/camera/depth/image_rect_raw  
-/camera/extrinsics/depth_to_color  
-/camera/extrinsics/depth_to_infra1  
-/camera/extrinsics/depth_to_infra2  
-/camera/infra1/camera_info  
-/camera/infra1/image_rect_raw  
-/camera/infra2/camera_info  
-/camera/infra2/image_rect_raw  
-/camera/gyro/imu_info  
-/camera/gyro/sample  
-/camera/accel/imu_info  
-/camera/accel/sample  
-/diagnostics  
+
+- /camera/color/camera_info  
+- /camera/color/image_raw  
+- /camera/depth/camera_info  
+- /camera/depth/image_rect_raw  
+- /camera/extrinsics/depth_to_color  
+- /camera/extrinsics/depth_to_infra1  
+- /camera/extrinsics/depth_to_infra2  
+- /camera/infra1/camera_info  
+- /camera/infra1/image_rect_raw  
+- /camera/infra2/camera_info  
+- /camera/infra2/image_rect_raw  
+- /camera/gyro/imu_info  
+- /camera/gyro/sample  
+- /camera/accel/imu_info  
+- /camera/accel/sample  
+- /diagnostics
+- ......
 
 ## Calibration
 ### Intrinsic Calibration
