@@ -34,20 +34,19 @@ Step 3: Install Intel® RealSense™ ROS from Sources
 
 Create a catkin workspace
 
-` mkdir -p ~/catkin_ws/src `
+``` mkdir -p ~/catkin_ws/src
 
-`cd ~/catkin_ws/src/`
+cd ~/catkin_ws/src/
+```
 
 Clone the latest Intel® RealSense™ ROS from here into 'catkin_ws/src/'
 
-```git clone https://github.com/IntelRealSense/realsense-ros.git
-
-cd realsense-ros/
-
-git checkout `git tag | sort -V | grep -P "^\d+\.\d+\.\d+" | tail -1`
 ```
-
+git clone https://github.com/IntelRealSense/realsense-ros.git
+cd realsense-ros/
+git checkout `git tag | sort -V | grep -P "^\d+\.\d+\.\d+" | tail -1`
 cd ..
+```
 Make sure all dependent packages are installed. You can check .travis.yml file for reference.
 Specifically, make sure that the ros package ddynamic_reconfigure is installed. If ddynamic_reconfigure cannot be installed using APT, you may clone it into your workspace 'catkin_ws/src/' from here (Version 0.2.0)
 catkin_init_workspace
