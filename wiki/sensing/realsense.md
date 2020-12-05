@@ -277,6 +277,8 @@ Use this space to reinforce key points and to suggest next steps for your reader
 ## References
 - https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/BKMs_Tuning_RealSense_D4xx_Cam.pdf
 - https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf
+- https://github.com/IntelRealSense/librealsense/tree/86280d3643c448c73c45a5393df4e2a3ddbb0d39
+- https://github.com/IntelRealSense/realsense-ros
 - Links to References go here.
 - References should be in alphabetical order.
 - References should follow IEEE format.
