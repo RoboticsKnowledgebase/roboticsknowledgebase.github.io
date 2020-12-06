@@ -99,6 +99,7 @@ wiki:
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
   - title: Machine Learning
     url: /wiki/deep-learning/custom-semantic-data
+    url: /wiki/reinforcement-learning/intro-to-rl
     children:
       - title: Custom data-set for segmentation
         url: /wiki/actuation/motor-controller-feedback/
