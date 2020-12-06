@@ -3,7 +3,7 @@ date: 2020-04-06
 title: DJI Drone Breakdown for Technical Projects
 published: true
 ---
-DJI is one of the best selling drone companies in the world. Considering also the fact that a DJI Matrice M100 costs  $3500 and a M210 costs $12000, compared to a couple hundred dollars for most other manufacturers, it is obvious that they have some of the best drones in the market. DJI’s hardware is one of the best if not the best at the writing of this article (2020). 
+DJI is one of the best selling drone companies in the world. Considering also the fact that a DJI Matrice M100 costs \$3500 and a M210 costs \$12000, compared to a couple hundred dollars for most other manufacturers, it is obvious that they have some of the best drones in the market. DJI’s hardware is one of the best if not the best at the writing of this article (2020). 
 
 It’s a good choice for many projects where one would prefer not to build their own drone from scratch; however, it comes with important caveats especially for professional and research projects. Below we will look at its main drawback, and then give an introduction to its flight modes as well as general tips for drone projects.
 
