@@ -1,7 +1,7 @@
 ---
 date: {}
 title: Autoware-simulation.md
-published: false
+published: true
 ---
 ## Simulating and controlling an Ackermann drive chassis
 ### Requirements
