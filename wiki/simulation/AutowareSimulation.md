@@ -53,10 +53,10 @@ Autoware needs three sensors for efficient functioning
 - Camera
 
 However, more sensors can be added for custom use. Autoware provides drivers for all the mentioned sensors, more velodyne LiDAR drivers for gazebo can be found on [velodyne_driver](https://bitbucket.org/DataspeedInc/velodyne_simulator/src). All drivers that work on ROS and can be simulated using Gazebo can be added to Autoware with no extra effort, [Gazebo Sensor Tutorial](http://gazebosim.org/tutorials?tut=ros_gzplugins) can be referred for detailed tutorials. This includes but not limited to
--2D Lidar
--GPS
--Compass
--Contact/Force Sensors
+- 2D Lidar
+- GPS
+- Compass
+- Contact/Force Sensors
 
 Various noise models can be simulated for the sensors, most of them use a parametric noise model.
 Sensor Placement
@@ -96,6 +96,6 @@ catkin_package( CATKIN_DEPENDS autoware_msgs)
 A similar procedure can be followed to any specific autoware package that needs to be used with ROS.
 
 ## Further Reading
-Read the Autoware documentation from
-https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/
+Read the Autoware documentation from [Autoware Documentation]
+(https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/)
 
