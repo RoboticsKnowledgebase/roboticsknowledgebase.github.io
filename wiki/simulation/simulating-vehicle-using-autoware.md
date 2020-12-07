@@ -1,5 +1,5 @@
 ---
-date: {}
+date: {2020-12-07}
 title: Autoware-simulation.md
 published: true
 ---
