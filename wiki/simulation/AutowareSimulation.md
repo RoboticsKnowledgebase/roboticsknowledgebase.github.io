@@ -69,7 +69,8 @@ Additional sensors positions can also be defined in this yaml file and later ref
 ### Visualizing Sensor Data
 The Autoware GUI can be used to launch Rviz, this can be seen in the figure below
 
- ![](../../assets/images/team_j_wiki_autogui.png)*Figure 5. Autoware GUI*
+ ![](../../assets/images/team_j_wiki_autogui.png)
+ *Figure 5. Autoware GUI*
  
 Once Rviz is launched you can add sensors to visualize
 
