@@ -191,4 +191,3 @@ best guesses based on neighboring values, or the RGB image.
 - https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf
 - [https://github.com/IntelRealSense/librealsense/tree/86280d3643c448c73c45a5393df4e2a3ddbb0d39](https://github.com/IntelRealSense/librealsense/tree/86280d3643c448c73c45a5393df4e2a3ddbb0d39)
 - [https://github.com/IntelRealSense/realsense-ros](https://github.com/IntelRealSense/realsense-ros)
-
