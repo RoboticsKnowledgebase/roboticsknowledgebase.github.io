@@ -118,4 +118,4 @@ RLlib offers scalability. Note there is no silver bullet in RL, depending on you
 ## References
 - J. Achiam, “Spinning Up in Deep RL,” OpenAI, 02-Sep-2020. [Online]. Available: https://openai.com/blog/spinning-up-in-deep-rl/.
 - Hill-A, “hill-a/stable-baselines,” GitHub. [Online]. Available: https://github.com/hill-a/stable-baselines. 
-- Ray-Project, “ray-project/ray.” [Online]. Available: https://github.com/ray-project/ray. [Accessed: 07-Dec-2020]. 
+- Ray-Project, “ray-project/ray.” [Online]. Available: https://github.com/ray-project/ray.
