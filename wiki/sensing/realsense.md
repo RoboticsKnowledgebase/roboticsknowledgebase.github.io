@@ -3,18 +3,11 @@ date: {}
 title: Realsense RGB-D camera
 published: true
 ---
-This article is about the Intel RealSense camera series, which are multifunctional camera sensors. In the following sections we will cover topics including SDK and ROS package installation, node interfacing and ROS topics published, sensor characteristics, and also instructions for camera calibration. 
+This article serves as an introduction to the Intel Reansense D400 series RGB-D cameras. It details the SDK installation process, ROS intergration, sensor calibration and sensor tuning. Following the intructions in the SDK and the ROS Package section, readers should be able to launch the sensor through ROS and browse through the published topics. The calibration and tuning sections of the articles allow advanced users to ensure the best sensor reading quality.
 
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
 ## Sensor Overview
-Intel® RealSense™ D400 Series Depth Cameras are small, easy-interfaced multifunctional camera sensors, which provide various sensor functionalities, such as RGB camera view, depth camera view, fisheye camera view, infrared camera view, along with calibration information and inertial data.
+Intel® RealSense™ D400 Series Depth Cameras are small, easily-interfaced multifunctional camera sensors, which provide various sensor functionalities, such as RGB camera view, depth camera view, fisheye camera view, infrared camera view, along with calibration information and inertial data.
 
 ## SDK 
 The RealSense camera package allows access to and provides ROS nodes for Intel 3D cameras and advanced modules. The SDK allows depth and color streaming, and also provides camera calibration information.
