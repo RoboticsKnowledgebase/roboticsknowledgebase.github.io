@@ -18,7 +18,7 @@ Autoware offers a default xacro file which can be customized for use, this is al
 ### Available Worlds
 Gazebo uses an ‘empty world’  which lacks any structures, to simulate the environment we need a world file. Autoware provides three templates of world files which can be downloaded from [car_sim](http://gazebosim.org/blog/car_sim )
 
-![Gazebo worlds developed by autoware](assets/images/team_j_wiki_autoworlds.png)
+![Gazebo worlds developed by autoware](../../assets/images/team_j_wiki_autoworlds.png)
  
 All three worlds also have the Point Cloud Maps (PCD files) available for download which are needed for NDT based localization.
 One can always use other gazebo worlds but the PCD maps have to be manually generated and downsampled, the process can be found on [Autoware Documentation](https://readthedocs.org/projects/autoware/downloads/pdf/feature-documentation_rtd/)
@@ -37,7 +37,7 @@ Autoware provides a number of different types of path planning algorithms. These
 
 A sample image with waypoints is shown below.
 
- ![Sample waypoints](assets/images/team_j_wiki_autoplan.png)
+ ![Sample waypoints](../../assets/images/team_j_wiki_autoplan.png)
 This shows how the waypoints provide a velocity and orientation at every location, and how pure pursuit plans a path that interpolates them, as well as a lookahead target for the vehicle while driving.
 ## 2. Using OpenPlanner for dynamic path planning
 - Building a vector map with Tier IV or Assure Mapping Tools: this requires the use of proprietary softwares like Tier IV’s online Vector Map Builder tool, or the Assure Mapping Tools to build an HD vector map that provides lane, road sign/signal and other information for usage by OpenPlanner.
@@ -45,7 +45,7 @@ This shows how the waypoints provide a velocity and orientation at every locatio
 - The image below shows a set of lanes and wayareas drawn using Tier IV’s Vector Map Builder online tool. These need to be drawn very precisely and carefully to ensure that they work properly with Autoware. However, once this is done, it can do path planning for arbitrary start and goal locations on the map without requiring a prespecified set of waypoints.
 
 
-![Vector Map](assets/images/team_j_wiki_automap.png)
+![Vector Map](../../assets/images/team_j_wiki_automap.png)
 ## Simulating sensors and placing them in different locations on the vehicle
 Autoware needs three sensors for efficient functioning
 - Velodyne (VLP-16 or 32E)
@@ -66,16 +66,16 @@ Additional sensors positions can also be defined in this yaml file and later ref
 ### Visualizing Sensor Data
 The Autoware GUI can be used to launch Rviz, this can be seen in the figure below
 
- ![Autoware GUI](assets/images/team_j_wiki_autogui.png)
+ ![Autoware GUI](../../assets/images/team_j_wiki_autogui.png)
 Once Rviz is launched you can add sensors to visualize
 
-![Rviz GUI](assets/images/team_j_wiki_autorviz.png)
+![Rviz GUI](../../assets/images/team_j_wiki_autorviz.png)
 To view all the sensor data in common frames we need to either visualize the base_link frame given that all sensor configurations have been correctly added. To visualize them relative to the world we need to enable localization and publish the `transform map -> odom -> base_link`. This can also be done using `p3d_base_controller` plugin in Gazebo and manually publishing a TF based on the topic assigned to the plugin. 
  
 ## Integrating and interfacing existing ROS packages with Autoware
 Autoware contains different submodules entailing a [wide range of capabilities](https://github.com/Autoware-AI/autoware.ai/wiki/Overview) as shown below:
 
-![Packages offered in Autoware](assets/images/team_j_wiki_autopkgs.png)
+![Packages offered in Autoware](../../assets/images/team_j_wiki_autopkgs.png)
 Many at times we just need to use a simple functionality of Autoware integrated with the rest of the system built independently. To integrate a ROS package with an existing autoware package/tool, we would need to download, install the corresponding package and simply import it by incorporating it along with the CMakeLists.txt and Package.xml file of our ROS package. An example of this use case is shown below:
 Various autoware messages are available here. It can be installed with the command 
 ```
@@ -94,6 +94,9 @@ Modify CMakeLists.txt as follows:
 catkin_package( CATKIN_DEPENDS autoware_msgs)
 ```
 A similar procedure can be followed to any specific autoware package that needs to be used with ROS.
+
+## Summary
+Now you can spawn a custom vehicle with a customed sensor stack in simulation. You can make use of Autoware's planning algorithms and other supported packages
 
 ## Further Reading
 Read the Autoware documentation from [Autoware Documentation]
