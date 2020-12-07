@@ -102,6 +102,8 @@ wiki:
     children:
       - title: Custom data-set for segmentation
         url: /wiki/actuation/motor-controller-feedback/
+      - title: Python libraries for Reinforcement Learning
+        url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
