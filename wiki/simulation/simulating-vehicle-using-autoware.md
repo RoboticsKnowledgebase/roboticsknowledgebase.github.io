@@ -105,6 +105,5 @@ A similar procedure can be followed to any specific autoware package that needs 
 Now you can spawn a custom vehicle with a customed sensor stack in simulation. You can make use of Autoware's planning algorithms and other supported packages
 
 ## Further Reading
-Read the Autoware documentation from [Autoware Documentation]
-(https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/)
+Read the Autoware documentation from [Autoware Documentation](https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/)
 
