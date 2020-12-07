@@ -15,7 +15,6 @@ We use detectron 2 and SORT as preliminary vehicle detection and tracking algori
 2. ### Homography estimation to transform points image plane corresponding to a bird's eye view
 A ransac based homography is required to be precomputed between 2 image planes in camera and bird's eye view space. OpenCV's `cv::findhomography()` might be handy here.
 
-
 3. ### Bird's eye view and region of interest
 For getting a bird's eye view of an
 The bird's eye view can capture a fairly large space of the map depending on where the view is taken from. However the homography estimate is not good at the points far away from the camera origin. For this case we predefine a region of interest in the bird's eye view space and any vehicle out of this region is ignored.
