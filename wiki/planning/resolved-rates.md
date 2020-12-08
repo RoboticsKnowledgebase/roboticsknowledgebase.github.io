@@ -63,7 +63,7 @@ The biggest advantage of the resolved-rate motion controller is that it makes th
 ## Summary
 Resolved-rate motion control allows for direct control of the robot’s end-effector velocity, without expensive path planning. In surgical robots, it is often necessary for the robot arm to move in a straight line at a constant velocity as it lacerates tissue. This controller would be well-suited to the task. In fact, this controller is so versatile that it is known to have been used in space robotics and in general reactive control schemes such as visual servoing[2].
 
-## Bibliography
+## References
 
 D. E. Whitney, "Resolved Motion Rate Control of Manipulators and Human Prostheses," in IEEE Transactions on Man-Machine Systems, vol. 10, no. 2, pp. 47-53, June 1969, doi: 10.1109/TMMS.1969.299896.
 
