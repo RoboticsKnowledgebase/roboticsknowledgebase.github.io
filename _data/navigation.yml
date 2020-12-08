@@ -82,6 +82,8 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: Intel Realsense
+        url: /wiki/sensing/realsense/
   - title: Actuation
     url: /wiki/actuation/
     children:
