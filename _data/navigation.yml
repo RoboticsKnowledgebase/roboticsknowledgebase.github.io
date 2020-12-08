@@ -13,8 +13,6 @@ wiki:
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
-      - title: Drone Flight Permissions
-        url: /wiki/system-design-development/drone-flight-permissions/
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
       - title: Mechanical Design
@@ -43,12 +41,14 @@ wiki:
         url: /wiki/common-platforms/dji-sdk/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
       - title: Asctec Pelican UAV Setup Guide
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros-motion-server-framework/
       - title: ROS Cost Maps
