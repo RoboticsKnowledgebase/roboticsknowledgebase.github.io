@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2020-12-09
 title: Realsense RGB-D camera
 published: true
 ---
