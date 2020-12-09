@@ -252,6 +252,8 @@ wiki:
     children:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
+      - title: Resolved Rates
+        url: /wiki/planning/resolved-rates/
 # Main links appear in the header.
 main:
   - title: Wiki
