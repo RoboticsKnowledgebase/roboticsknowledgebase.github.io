@@ -83,7 +83,7 @@ wiki:
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
       - title: RTK GPS
-	url: /wiki/sensing/gps/
+        url: /wiki/sensing/gps/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -253,7 +253,7 @@ wiki:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
-	url: /wiki/planning/astar_planning_implementation_guide/
+        url: /wiki/planning/astar_planning_implementation_guide/
 # Main links appear in the header.
 main:
   - title: Wiki
