@@ -29,7 +29,7 @@ A* is a popular search algorithm that is guaranteed to return an optimal path, a
 
 A* works by computing optimal g-values for all states along the search at any point in time.
 
-![](/assets/astar_h_viz.png)
+![](assets/astar_h_viz.png)
 
 ## Planning Representation
 When designing a planner, you first need to decide a few things about how your problem will be represented. Key questions:
