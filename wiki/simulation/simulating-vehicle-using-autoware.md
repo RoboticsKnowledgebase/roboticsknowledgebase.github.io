@@ -43,7 +43,7 @@ A sample image with waypoints is shown below.
  
 This shows how the waypoints provide a velocity and orientation at every location, and how pure pursuit plans a path that interpolates them, as well as a lookahead target for the vehicle while driving.
 
-## 2. Using OpenPlanner for dynamic path planning
+### 2. Using OpenPlanner for dynamic path planning
 - Building a vector map with Tier IV or Assure Mapping Tools: this requires the use of proprietary softwares like Tier IV’s online Vector Map Builder tool, or the Assure Mapping Tools to build an HD vector map that provides lane, road sign/signal and other information for usage by OpenPlanner.
 - Setup Autoware for localization for OpenPlanner. Launch the following nodes: ray_ground_filter (filters LIDAR ground points), vel_pose_connect (sends data through the control interface), lidar_euclidean_cluster_detect (identifies clusters within LiDAR data), lidar_kf_contour (tracks LiDAR point clouds using Kalman Filters), costmap_generator (uses LiDAR data to generate costmaps for future trajectories), op_global_planner (OpenPlanner planning from start to goal location), astar_avoid (local obstacle avoidance), velocity_set (sets maximum velocity at intermediate locations), pure_pursuit (follows the lookahead target for updating location), op_local_planner (OpenPlanner local planning). The local and global planners will use data from the vector map.
 - The image below shows a set of lanes and wayareas drawn using Tier IV’s Vector Map Builder online tool. These need to be drawn very precisely and carefully to ensure that they work properly with Autoware. However, once this is done, it can do path planning for arbitrary start and goal locations on the map without requiring a prespecified set of waypoints.
