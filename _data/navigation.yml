@@ -82,6 +82,8 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
   - title: Actuation
@@ -252,6 +254,8 @@ wiki:
     children:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
+      - title: A* Planner Implementation Guide
+        url: /wiki/planning/astar_planning_implementation_guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
 # Main links appear in the header.
