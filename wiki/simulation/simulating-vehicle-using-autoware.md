@@ -12,14 +12,14 @@ published: true
 Autoware is based on ROS and uses Gazebo for simulation. The goal of this section is to the the Gazebo simulator with Autoware packages. Autoware can use all the functionalities of ROS, it can be seen as another software layer over ROS. To simulate an ackermann vehicle we need to define an URDF or Xacro model. In this file we can change vehicle models, add actuators and sensors.
 Autoware offers a default xacro file which can be customized for use, this is all available forin the `vehicle_sim package`. To customize this model we need not change the xacro file. The vehicle dynamics can be changed in the config file `vehicle_model/config/caibration.yaml`. To customize the visual appearance of the vehicle we can use a custom mesh file. Collate (`.dae`) formats can be added to mesh folder and referenced in the vehicle.xacro file. We have later discussed how sensors can be added and customized.
 
-![](../../assets/images/team_j_wiki_automodels.png)*Figure 1. Different vehicle models*
+![](assets/images/autoware_models.png)*Figure 1. Different vehicle models*
  
  The vehicle sim package can be downloaded from [vehicle_sim](https://github.com/yukkysaito/vehicle_sim).
 
 ### Available Worlds
 Gazebo uses an ‘empty world’  which lacks any structures, to simulate the environment we need a world file. Autoware provides three templates of world files which can be downloaded from [car_sim](http://gazebosim.org/blog/car_sim )
 
-![](../../assets/images/team_j_wiki_autoworlds.png)*Figure 2. Gazebo worlds developed by autoware*
+![](assets/images/autoware_worlds.png)*Figure 2. Gazebo worlds developed by autoware*
  
 All three worlds also have the Point Cloud Maps (PCD files) available for download which are needed for NDT based localization.
 One can always use other gazebo worlds but the PCD maps have to be manually generated and downsampled, the process can be found on [Autoware Documentation](https://readthedocs.org/projects/autoware/downloads/pdf/feature-documentation_rtd/)
@@ -39,7 +39,7 @@ Autoware provides a number of different types of path planning algorithms. These
 
 A sample image with waypoints is shown below.
 
- ![](../../assets/images/team_j_wiki_autoplan.png)*Figure 3. Sample waypoints*
+ ![](assets/images/autoware_plan.png)*Figure 3. Sample waypoints*
  
 This shows how the waypoints provide a velocity and orientation at every location, and how pure pursuit plans a path that interpolates them, as well as a lookahead target for the vehicle while driving.
 
@@ -49,7 +49,7 @@ This shows how the waypoints provide a velocity and orientation at every locatio
 - The image below shows a set of lanes and wayareas drawn using Tier IV’s Vector Map Builder online tool. These need to be drawn very precisely and carefully to ensure that they work properly with Autoware. However, once this is done, it can do path planning for arbitrary start and goal locations on the map without requiring a prespecified set of waypoints.
 
 
-![](../../assets/images/team_j_wiki_automap.png)*Figure 4. Vector Map*
+![](assets/images/autoware_map.png)*Figure 4. Vector Map*
 
 
 ## Simulating sensors and placing them in different locations on the vehicle
@@ -72,18 +72,18 @@ Additional sensors positions can also be defined in this yaml file and later ref
 ### Visualizing Sensor Data
 The Autoware GUI can be used to launch Rviz, this can be seen in the figure below
 
- ![](../../assets/images/team_j_wiki_autogui.png) *Figure 5. Autoware GUI*
+ ![](assets/images/autoware_gui.png) *Figure 5. Autoware GUI*
  
 Once Rviz is launched you can add sensors to visualize
 
-![](../../assets/images/team_j_wiki_autorviz.png)*Figure 6. Rviz GUI*
+![](assets/images/autoware_rviz.png)*Figure 6. Rviz GUI*
 
 To view all the sensor data in common frames we need to either visualize the base_link frame given that all sensor configurations have been correctly added. To visualize them relative to the world we need to enable localization and publish the `transform map -> odom -> base_link`. This can also be done using `p3d_base_controller` plugin in Gazebo and manually publishing a TF based on the topic assigned to the plugin. 
  
 ## Integrating and interfacing existing ROS packages with Autoware
 Autoware contains different submodules entailing a [wide range of capabilities](https://github.com/Autoware-AI/autoware.ai/wiki/Overview) as shown below:
 
-![](../../assets/images/team_j_wiki_autopkgs.png)*Figure 7. Packages offered in Autoware*
+![](assets/images/autoware_pkgs.png)*Figure 7. Packages offered in Autoware*
 
 Many at times we just need to use a simple functionality of Autoware integrated with the rest of the system built independently. To integrate a ROS package with an existing autoware package/tool, we would need to download, install the corresponding package and simply import it by incorporating it along with the CMakeLists.txt and Package.xml file of our ROS package. An example of this use case is shown below:
 Various autoware messages are available here. It can be installed with the command 
