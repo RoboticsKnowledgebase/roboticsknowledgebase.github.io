@@ -6,11 +6,11 @@ title: Tracking vehicles using a static traffic camera
 Tracking vehicles using static camera is a useful tool for various use cases pertaining to both macro/micro traffic flow. We present a system where we extract vehicle trajectories using a monocular camera mounted at an intersection.
 
 We utilize a HD map and precompute homographies between the image plane of the camera and a bird's eye view plane where we finally project our trajectories.
-![data_capture](../../assets/images/Data_capture.png)
+![data_capture](assets/Data_capture.png)
 
 1. ### 2D detection and tracking
 We use detectron 2 and SORT as preliminary vehicle detection and tracking algorithms in the camera frame. The algorithms give a bounding box on estimate.
-![detectron_sort_result](../../assets/images/detection_sort_output.png)
+![detectron_sort_result](assets/detection_sort_output.png)
 
 2. ### Homography estimation to transform points image plane corresponding to a bird's eye view
 A ransac based homography is required to be precomputed between 2 image planes in camera and bird's eye view space. OpenCV's `cv::findhomography()` might be handy here.
@@ -18,11 +18,11 @@ A ransac based homography is required to be precomputed between 2 image planes i
 3. ### Bird's eye view and region of interest
 For getting a bird's eye view of an
 The bird's eye view can capture a fairly large space of the map depending on where the view is taken from. However the homography estimate is not good at the points far away from the camera origin. For this case we predefine a region of interest in the bird's eye view space and any vehicle out of this region is ignored.
-![Bev_frame](../../assets/images/bev_fifthcraig.jpg)
+![Bev_frame](assets/bev_fifthcraig.jpg)
 
 4. ### HD Map
 A HD Map for the world is a prerequisite. Since the intersection we captured data from didn't have a prior map available, we ended up creating our own vanilla map. The major requirements for the map are the information containing the lanes, their directions and the corresponding lane center lines.  
-    ![HD_Map](../../assets/images/HD_map.png)
+    ![HD_Map](assets/HD_map.png)
 
 5. ### Tracking in the bird's eye view space
 For sake of avoiding confusion with the tracker in the camera space (SORT) , we will call this tracker as the BEV tracker throughout the rest of this post. This tracker tracks the position and velocity of the vehicles in the bird's eye view frame.
@@ -46,9 +46,9 @@ Tracked state of a vehicle - **[x, y, vx, vy]**
 
 * #### Data Association - 
     The ID association problem is modeled as a linear sum assignment. We use the Hungarian  algorithm to solve this. The cost is defined as the euclidean distance between states of any two vehicles.
-    ![Cost between two vehicles](../../assets/images/distance.png)
+    ![Cost between two vehicles](assets/distance.png)
     * This is then formed into a matrix where rows contain ids from bev tracker and columns contain ids from SORT.
-    ![Linear Sum assignment problem](../../assets/images/costmatrix_formation.png)
+    ![Linear Sum assignment problem](assets/costmatrix_formation.png)
     * Adding the priors from SORT- 
     The same IDs from tracker and SORT (say i and j), we assign the cost
     between those vehicles as 0 or C<sub>ij</sub> = 0.
@@ -73,7 +73,7 @@ Tracked state of a vehicle - **[x, y, vx, vy]**
         * Number of  consecutive frames they are seen for.
         * Number of  consecutive frames they have not been seen for.
 
-![Tracking Results](../../assets/images/tracking_results.png)
+![Tracking Results](assets/tracking_results.png)
 
 #### References:
 * [1] Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick.Detectron2. https://github.com/facebookresearch/detectron2, 2019.

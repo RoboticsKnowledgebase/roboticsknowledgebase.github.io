@@ -62,6 +62,8 @@ wiki:
   - title: Sensing
     url: /wiki/sensing/
     children:
+      - title: Tracking vehicles using a static traffic camera
+        url: /wiki/sensing/trajectory_extraction/
       - title: Adafruit GPS
         url: /wiki/sensing/adafruit-gps/
       - title: AprilTags
