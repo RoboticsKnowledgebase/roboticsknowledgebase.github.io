@@ -105,7 +105,7 @@ wiki:
     url: /wiki/machine-learning/
     children:
       - title: Custom data-set for segmentation
-        url: wiki/machine-learning/custom-semantic-data/
+        url: /wiki/machine-learning/custom-semantic-data/
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
   - title: State Estimation
