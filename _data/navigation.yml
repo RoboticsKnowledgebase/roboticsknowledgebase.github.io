@@ -13,8 +13,6 @@ wiki:
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
-      - title: Drone Flight Permissions
-        url: /wiki/system-design-development/drone-flight-permissions/
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
       - title: Mechanical Design
@@ -43,12 +41,14 @@ wiki:
         url: /wiki/common-platforms/dji-sdk/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
       - title: Asctec Pelican UAV Setup Guide
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros-motion-server-framework/
       - title: ROS Cost Maps
@@ -82,6 +82,10 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
+      - title: Intel Realsense
+        url: /wiki/sensing/realsense/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -252,6 +256,10 @@ wiki:
     children:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
+      - title: A* Planner Implementation Guide
+        url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Resolved Rates
+        url: /wiki/planning/resolved-rates/
 # Main links appear in the header.
 main:
   - title: Wiki
