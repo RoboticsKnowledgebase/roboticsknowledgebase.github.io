@@ -2,7 +2,7 @@
 date: 2020-12-07
 title: Python libraries for Reinforcement Learning
 ---
-[Reinforcement Learning (RL)](https://en.wikipedia.org/wiki/Reinforcement_learning)is a machine learning approach for teaching agents how to solve tasks by trial and error. More specifically, RL is mostly concerned with how software agents should take actions in an environment in order to maximize its cumulative reward. The application of RL, as it seeks a solution to balance exploration and exploitation, ranges from Resource Management, Traffic Light Control, Recommendation, and Advertising, to Robotics. A survey on RL with Robotics could be found [here](https://www.ias.informatik.tu-darmstadt.de/uploads/Publications/Kober_IJRR_2013.pdf). The successes of deep learning and reinforcement learning area in recent years have led many researchers to develop methods to control robots using RL with the motivation to automate the process of designing sensing, planning, and control algorithms by letting the robot learn them autonomously. This post gives a brief introduction to a few popular RL libraries in the Robotics context, from beginning to immediate, to advanced level users. At last, we will provide general tips for a more in-depth study on RL topics and link to a concrete example of using RL to formulate a self-driving agent.
+**Reinforcement Learning (RL)** is a machine learning approach for teaching agents how to solve tasks by trial and error. More specifically, RL is mostly concerned with how software agents should take actions in an environment in order to maximize its cumulative reward. The application of RL, as it seeks a solution to balance exploration and exploitation, ranges from Resource Management, Traffic Light Control, Recommendation, and Advertising, to Robotics. The successes of deep learning and reinforcement learning area in recent years have led many researchers to develop methods to control robots using RL with the motivation to automate the process of designing sensing, planning, and control algorithms by letting the robot learn them autonomously. This post gives a brief introduction to a few popular RL libraries in the Robotics context, from beginning to immediate, to advanced level users. At last, we will provide general tips for a more in-depth study on RL topics and link to a concrete example of using RL to formulate a self-driving agent.
 
 ## [Spinning up](https://spinningup.openai.com/en/latest/)
 
@@ -112,6 +112,7 @@ RLlib offers scalability. Note there is no silver bullet in RL, depending on you
 
 
 ## See Also:
+- A survey on RL with Robotics could be found [here](https://www.ias.informatik.tu-darmstadt.de/uploads/Publications/Kober_IJRR_2013.pdf).
 - Applying RL Algorithms for [real world problems](https://towardsdatascience.com/applications-of-reinforcement-learning-in-real-world-1a94955bcd12) and  [Robotics field](https://towardsdatascience.com/reinforcement-learning-for-real-world-robotics-148c81dbdcff).
 - A concrete [project](https://mrsdprojects.ri.cmu.edu/2020teamd/) of formulating an RL-driven self-driving agent in Simulation for safety.
 
