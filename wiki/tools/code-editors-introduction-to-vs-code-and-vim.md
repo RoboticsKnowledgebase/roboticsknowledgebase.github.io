@@ -51,16 +51,16 @@ A link for [downloading](https://code.visualstudio.com/download).
 2. Open VS Code (can use the Linux search/windows button). Source folders into the workspace.
 3. The top left tab gives you file explorer. Click it!
 
-![File Explorer](../../assets/images/vscode4.png)
+![File Explorer](assets/vscode4.png)
 
 #### Features
 1. **Keyword search**: Right-click inside the file explorer space. Check out “Find in Folder..” and try searching for a keyword and you’d see lightning fast multi-file search (or) click on the search button below the explorer and use the find and replace options.
 
-![Keyword Search](../../assets/images/vscode11.png)
+![Keyword Search](assets/vscode11.png)
 
 2. **Seek definition**: Open any file and right-click to peek at the definition of functions. Why is this useful? Reading code implies trying to figure out what each function is doing. Super useful in projects. Works for variables, classes, functions. You name it. VS-code can define it.
 
-![Seek Definition](../../assets/images/vscode5.png)
+![Seek Definition](assets/vscode5.png)
 
 3. **Open the file by name**: Ctrl+P, and type file name.
 4. **Shortcuts**: I use sublime shortcuts on VS Code. That’s the cool thing. You can configure it to work for your style. How to configure? You can install a sublime text key-bindings plugin. More on plugins later. But this specific one is called: ms-vscode.sublime-keybindings.
@@ -76,15 +76,15 @@ Add all custom shortcuts in preferences, keyboard shortcuts. Do ctrl+shift+P and
 
 5. **Integrated terminal**: Click on terminal and open a new terminal. 
 
-![Open terminal](../../assets/images/vscode2.png)
+![Open terminal](assets/vscode2.png)
 
 Now you can run programs without rotating between terminal and editor. Reduces a lot of strain on the eyes. You can also create multiple screens in the terminal.
 
 6. **Python debugger**: You can put breakpoints and run python programs and look into the state of the program for faster debugging. Click next to the line number and that should drop a BP. Now start debugging. Choose whichever option makes sense (for trials go for current file).
 
-![Python Breakpoint - 1](../../assets/images/vscode10.png)
-![Python Breakpoint - 2](../../assets/images/vscode8.png)
-![Python Breakpoint - 3](../../assets/images/vscode3.png)
+![Python Breakpoint - 1](assets/vscode10.png)
+![Python Breakpoint - 2](assets/vscode8.png)
+![Python Breakpoint - 3](assets/vscode3.png)
 
 You can step through the lines or move to the next BP or let the program run till the end.
 
@@ -92,7 +92,7 @@ Drawback: Image data cannot be displayed. Spyder offers that option. You cannot 
 
 7. **Language support**: What we MRSD people use? It supports all of it. Python, C++, Markdown, JSON, YAML, XML, CMake. How to change? Click on python/whatever there is.
 
-![Language Support](../../assets/images/vscode6.png)
+![Language Support](assets/vscode6.png)
 
 Random thoughts: Spaces to tabs, the right-hand small screen helps find easy chunks of code, terminal focus shortcuts, file explorer shows modified files, tracked/untracked files, squiggles show if invalid syntax, auto-complete, function argument list displays.
 
@@ -100,15 +100,15 @@ Random thoughts: Spaces to tabs, the right-hand small screen helps find easy chu
 1. **Git graph**:
 I think git support is auto existing on baseline VS Code but this just ups it. Why good?
 
-![tracking/modification status](../../assets/images/vscode9.png)
+![tracking/modification status](assets/vscode9.png)
 
 When you do a git rebase/merge, conflicts show up in nice blocks which you can just choose. No more million backspaces to remove code.
 
-![git rebase/merge](../../assets/images/vscode12.png)
+![git rebase/merge](assets/vscode12.png)
 
 If you use it with the integrated terminal, you can just choose a file from the terminal output, choose a block of code to stay, and continue rebasing.
 
-![The graph: click on the git graph button on the bottom toolbar and voila](../../assets/images/vscode13.png)
+![The graph: click on the git graph button on the bottom toolbar and voila](assets/vscode13.png)
 
 2. **Python**:
 This covers all the python debugging tools + module search functionality.
