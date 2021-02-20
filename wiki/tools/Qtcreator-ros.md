@@ -227,28 +227,50 @@ We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as a
 
 2. `ros::NodeHandle` will be created as a member of the `mainwindow` class, do not create new one elsewhere
 
-3. Create a class for for subscriber:
+3. Create a class for subscriber:
 
    1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, the address of the nodehandle object will be passed to this member variable in the constructor
+
    2. It will have a slot function that initialize the `ros::Subscriber` and a while loop that runs `emit` signals and `ros::spinOnce()`
 
-4. asdf
+      ```C++
+      // run ROS
+      ros::Rate loop_rate(20);
+      while (ros::ok()) {
+          emit signal_data_callback(msg.data);
+      
+          ros::spinOnce();
+          loop_rate.sleep();
+      }
+      ```
 
-5. safd
+4. Create a class for publisher
+
+   1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, the address of the nodehandle object will be passed to this member variable in the constructor
+   2. It will have a slot function to that runs `publish()` function
+
+5. Edit the `MainWindow` class, this is where most of the action happens
+
+   1.  Create a `ros:NodeHandle`, pointer handles to your subscriber/publisher class that you made, and `QThread` objects for each of your subscriber/publisher class
+
+   2. Create slots for your GUI elements by right clicking on them in the edit window --> `Go to slot...`
+
+   3. Create slots to receive messages from your subscriber class
+
+   4. Create signals to send messages to your publisher class
+
+   5. Use the `connect` function to connect slots and signals together
+
+   6. Move the subscriber and publisher class to the `QThread` that you made
+
+      ```C++
+      publisher_class_ptr->moveToThread(&publisher_class_thread);
+      publisher_class_thread.start();
+      ```
+
+   7. Call `emit` signals and write your logic in `slot` functions accordingly
 
    
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+Qt is a tool to create custom GUI that can integrate with ROS directly
