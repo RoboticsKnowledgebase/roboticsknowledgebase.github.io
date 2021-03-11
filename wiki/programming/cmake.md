@@ -68,9 +68,7 @@ Libraries can be linked to executables by using
 target_link_libraries(exec_name PUBLIC library_name)
 ```
 
-It is recommended to develop a familiarity with and understanding of the various functions provided by CMake, rather than merely copying code snippets found online. For a full description of the components of a CMakeLists.txt file, reference [this tutorial][f4ae969e] provided by the official CMake website.
-
-  [f4ae969e]: https://cmake.org/cmake/help/latest/guide/tutorial/index.html "CMake Tutorial"
+It is recommended to develop a familiarity with and understanding of the various functions provided by CMake, rather than merely copying code snippets found online. For a full description of the components of a CMakeLists.txt file, reference [this tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) by the official CMake website.
 
 CMake also provides a GUI that can be used to assemble scripts without writing them by hand. This GUI provides interfaces to designate modules as executables and libraries, and to link libraries to relevant files. The project can then be built from within the GUI, bypassing the need to interact with the terminal. This GUI option is popular for developers who work on Windows, where the command prompt is used less frequently.
 
