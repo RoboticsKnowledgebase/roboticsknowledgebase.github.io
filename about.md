@@ -17,7 +17,7 @@ To accelerate the development of both projects and individual skills, we need an
 
 ### How can I contribute?
 
-For simple edits, you can use the [editor on GitHub](https://github.com/smbryan/smbryan.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+For simple edits, you can use the [editor on GitHub](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/blob/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Please see the [Contribute page](https://roboticsknowledgebase.com/docs) for more details.
 
