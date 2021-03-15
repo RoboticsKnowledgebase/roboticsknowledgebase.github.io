@@ -2,18 +2,18 @@
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
 # You should set the date the article was last updated like this:
-date: 2021-02-16 # YYYY-MM-DD
+date: 2021-03-15 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
 title: Qtcreator User-Interface with ROS
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-[Qtcreator](https://doc.qt.io/qtcreator/index.html) is a popular user interface integrated development environment (IDE) that can interface easily with ROS. It supports for multiple platforms, such as x86 desktop, arm-based embedded devices, and mobile platforms such as Android and iOS. However, this tutorial will focus on using this tool to create a user interface with ROS integrated in it.
+[Qtcreator](https://doc.qt.io/qtcreator/index.html) is a popular user interface integrated development environment (IDE) that can interface easily with ROS. It supports multiple platforms, such as x86 desktop, arm-based embedded devices, and mobile platforms such as Android and iOS. However, this tutorial will focus on using this tool to create a user interface with ROS integrated in it.
 
  #### Why use Qtcreator and not [ROS Qt (rqt)](http://wiki.ros.org/rqt)
 
-rqt is great for 'quick and dirty' UI where-by you can fix together different plugins (or make your of plugin) in a dockable window. However, if you want to make highly customized UI with your own graphics asset, animation, and granular control, creating a Qt application is a better option.
+rqt is great for 'quick and dirty' UI where-by you can fix together different plugins (or make your own plugin) in a dockable window. However, if you want to make highly customized UI with your own graphics asset, animation, and granular control, creating a Qt application is a better option.
 
 # Installation
 
@@ -60,7 +60,7 @@ A program window should open similar to this:
    whereby a Qt .so file is not found, this means that either:
 
    - You used the wrong installer file (the default qtcreator instead of qtcreator-ros for example, or the wrong Ubuntu version)
-   - You accidentally removed Qt library files. These should have been installed automatically when you install ROS Melodic through the command `sudo apt install  ros-melodic-desktop-full`. One possibility is that you used the Qt MaintenanceTool and selected `Remove all components`
+   - You accidentally removed Qt library files. These should have been installed automatically when you installed ROS Melodic through the command `sudo apt install  ros-melodic-desktop-full`. One possibility is that you used the Qt MaintenanceTool and selected `Remove all components`
 
 ## Make your own Hello World example
 
@@ -76,11 +76,11 @@ This section will guide you to create your first simple Hello-World Qt program
 
    ![](assets/Qtcreator-ros-new-project-menu.png)
 
-4. If you install correctly, the Kit will be detected automatically, if not this [link](https://stackoverflow.com/questions/26499404/qtcreator-no-valid-kits-found) might be useful
+4. If you installed correctly, the Kit will be detected automatically, if not this [link](https://stackoverflow.com/questions/26499404/qtcreator-no-valid-kits-found) might be useful
 
    ![](assets/Qtcreator-ros-new-project-kit.png)
 
-5. Name your main class, although this is not the main function, it acts as the entry point of the application
+5. Name your main class. Although this is not the main function, it acts as the entry point of the application
 
    ![](assets/Qtcreator-ros-new-project-class-menu.png)
 
@@ -109,7 +109,7 @@ This section will guide you to create your first simple Hello-World Qt program
 
     ![](assets/Qtcreator-ros-new-project-edit-text.png)
 
-12. On the right menu you should see a summary of all the objects and widgets that you have created. Here we can see the 4 widgets we added. Important distinction here is that the left column is the name of the object (unique entity) and the right column is the class name (not unique). Hence, you can have multiple labels, but these are based on `QLabel` class
+12. On the right menu you should see a summary of all the objects and widgets that you have created. Here we can see the 4 widgets we added. An important distinction here is that the left column is the name of the object (unique entity) and the right column is the class name (not unique). Hence, you can have multiple labels, but these are based on `QLabel` class
 
     ![](assets/Qtcreator-ros-new-project-ui-obj.png)
 
@@ -196,14 +196,14 @@ message value: 1.0
 - signals are functions that send an argument that will be received by a slot
 - signals do not perform any other function beside passing the arguments
 - slot function is where you define events, akin to callbacks in ROS
-- In the constructor, you need to setup which signals connect to which slot with the `connect` function by specifying the source object address, signal function, destination object address, slot function
+- In the constructor, you need to setup which signals connect to which slot with the `connect` function by specifying the source object address, signal function, destination object address, and slot function
 - Use the `emit` command to send signals    
 
 You can read more about it [here](https://doc.qt.io/qt-5/signalsandslots.html)
 
 ## How to integrate ROS in Qt application
 
-Most GUI has some sort of a while loop to continuously process the GUI and Qt works in similar fashion. Therefore, you can't put `ros::spin()` inside the main function as you would normally do in a ROS node as the thread will be busy processing the GUI.
+Most GUIs have some sort of a while loop to continuously process the GUI and Qt works in a similar fashion. Therefore, you can't put `ros::spin()` inside the main function as you would normally do in a ROS node as the thread will be busy processing the GUI.
 
 The approach we will take is to create a ROS node to handle the publishing and subscription, instantiate them in the `mainwindow.cpp` class and send them to be processed concurrently on different threads.
 
@@ -229,9 +229,9 @@ We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as a
 
 3. Create a class for subscriber:
 
-   1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, the address of the nodehandle object will be passed to this member variable in the constructor
+   1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, and the address of the nodehandle object will be passed to this member variable in the constructor
 
-   2. It will have a slot function that initialize the `ros::Subscriber` and a while loop that runs `emit` signals and `ros::spinOnce()`
+   2. It will have a slot function that initializes the `ros::Subscriber` and a while loop that runs `emit` signals and `ros::spinOnce()`
 
       ```C++
       // run ROS
@@ -246,12 +246,12 @@ We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as a
 
 4. Create a class for publisher
 
-   1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, the address of the nodehandle object will be passed to this member variable in the constructor
-   2. It will have a slot function to that runs `publish()` function
+   1. It will have a pointer to a nodehandle (`ros::NodeHandle`) as a member, and the address of the nodehandle object will be passed to this member variable in the constructor
+   2. It will have a slot function that runs the `publish()` function
 
 5. Edit the `MainWindow` class, this is where most of the action happens
 
-   1.  Create a `ros:NodeHandle`, pointer handles to your subscriber/publisher class that you made, and `QThread` objects for each of your subscriber/publisher class
+   1. Create a `ros:NodeHandle`, a pointer that handles the subscriber/publisher class that you made, and `QThread` objects for each of your subscriber/publisher class
 
    2. Create slots for your GUI elements by right clicking on them in the edit window --> `Go to slot...`
 
