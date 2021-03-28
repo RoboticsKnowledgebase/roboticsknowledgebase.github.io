@@ -13,8 +13,6 @@ wiki:
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
-      - title: Drone Flight Permissions
-        url: /wiki/system-design-development/drone-flight-permissions/
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
       - title: Mechanical Design
@@ -43,12 +41,14 @@ wiki:
         url: /wiki/common-platforms/dji-sdk/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
       - title: Asctec Pelican UAV Setup Guide
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros-motion-server-framework/
       - title: ROS Cost Maps
@@ -62,6 +62,8 @@ wiki:
   - title: Sensing
     url: /wiki/sensing/
     children:
+      - title: Tracking vehicles using a static traffic camera
+        url: /wiki/sensing/trajectory_extraction/
       - title: Adafruit GPS
         url: /wiki/sensing/adafruit-gps/
       - title: AprilTags
@@ -82,6 +84,10 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
+      - title: Intel Realsense
+        url: /wiki/sensing/realsense/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -98,11 +104,13 @@ wiki:
       - title: Pure Pursuit Controller for Skid Steering
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
   - title: Machine Learning
-    url: /wiki/deep-learning/custom-semantic-data
-    url: /wiki/reinforcement-learning/intro-to-rl
+    url: /wiki/machine-learning/custom-semantic-data
+    url: /wiki/machine-learning/intro-to-rl
     children:
       - title: Custom data-set for segmentation
-        url: /wiki/actuation/motor-controller-feedback/
+        url: /wiki/machine-learning/custom-semantic-data/
+      - title: Python libraries for Reinforcement Learning
+        url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -240,7 +248,9 @@ wiki:
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
       - title: Gazebo Simulation
-        url: /wiki/common-platforms/gazebo-simulation/
+        url: /wiki/tools/gazebo-simulation/
+      - title: Code Editors - Introduction to VS Code and Vim
+        url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
   - title: Datasets
     url: /wiki/datasets/
     children:
@@ -251,6 +261,10 @@ wiki:
     children:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
+      - title: A* Planner Implementation Guide
+        url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Resolved Rates
+        url: /wiki/planning/resolved-rates/
 # Main links appear in the header.
 main:
   - title: Wiki
