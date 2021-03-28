@@ -107,6 +107,14 @@ $$
 
 Here are some simple methods used in Reinforcement Learning. There are a lot of fancy stuff, but due to limited pages, not included here. Feel free to update the wiki to keep track of the latest algorithms of RL.
 
+## See Also:
+
+<https://lilianweng.github.io/lil-log/2018/02/19/a-long-peek-into-reinforcement-learning.html>
+
 ## Further Reading
 
 - Introduction to Reinforcement Learning, MIT Press
+
+## References
+
+Kaelbling, Leslie Pack, Michael L. Littman, and Andrew W. Moore. "Reinforcement learning: A survey." Journal of artificial intelligence research 4 (1996): 237-285.
