@@ -105,16 +105,8 @@ $$
 
 ## Summary
 
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+Here are some simple methods used in Reinforcement Learning. There are a lot of fancy stuff, but due to limited pages, not included here. Feel free to update the wiki to keep track of the latest algorithms of RL.
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
 
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- Introduction to Reinforcement Learning, MIT Press
