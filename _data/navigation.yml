@@ -104,7 +104,8 @@ wiki:
       - title: Pure Pursuit Controller for Skid Steering
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
   - title: Machine Learning
-    url: /wiki/machine-learning/
+    url: /wiki/machine-learning/custom-semantic-data
+    url: /wiki/machine-learning/intro-to-rl
     children:
       - title: Custom data-set for segmentation
         url: /wiki/machine-learning/custom-semantic-data/
