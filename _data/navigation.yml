@@ -104,13 +104,14 @@ wiki:
       - title: Pure Pursuit Controller for Skid Steering
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
   - title: Machine Learning
-    url: /wiki/machine-learning/custom-semantic-data
-    url: /wiki/machine-learning/intro-to-rl
+    url: /wiki/machine-learning/
     children:
       - title: Custom data-set for segmentation
         url: /wiki/machine-learning/custom-semantic-data/
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
+        title: Reinforcement Learning
+        url: /wiki/machine-learning/intro-to-rl
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
