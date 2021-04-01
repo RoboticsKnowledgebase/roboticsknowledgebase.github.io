@@ -207,8 +207,6 @@ Most GUIs have some sort of a while loop to continuously process the GUI and Qt 
 
 The approach we will take is to create a ROS node to handle the publishing and subscription, instantiate them in the `mainwindow.cpp` class and send them to be processed concurrently on different threads.
 
-We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as an example
-
 ### Steps:
 
 1. Add ROS include in the .pro file
@@ -253,13 +251,43 @@ We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as a
 
    1. Create a `ros:NodeHandle`, a pointer that handles the subscriber/publisher class that you made, and `QThread` objects for each of your subscriber/publisher class
 
-   2. Create slots for your GUI elements by right clicking on them in the edit window --> `Go to slot...`
+      ```C++
+      private:
+        Ui::MainWindow *ui;
+        ros::NodeHandle nh_;
+        SubscriberNode *p_subscriber_node_;
+        PublisherNode *p_publisher_node_;
 
-   3. Create slots to receive messages from your subscriber class
+        QThread p_subcriber_node_thread_;
+        QThread p_publisher_node_thread_;
+      ```
 
-   4. Create signals to send messages to your publisher class
+   2. Create slots for your GUI elements by right clicking on them in the edit window --> `Go to slot...`, this will create a member function
 
-   5. Use the `connect` function to connect slots and signals together
+      ```C++
+      private slots:
+        void on_Button_clicked();
+      ```
+
+   3. Create slots to receive messages from your subscriber class as a member function, add the data type as the function parameter (e.g. float, int, bool)
+
+      ```C++
+      private slots:
+        void slot_msgFb(float);
+      ```
+
+   4. Create signals to send messages to your publisher class as a member function, add the data type as the function parameter (e.g. float, int, bool)
+
+      ```C++
+      signals:
+        void sigSignal(float);
+      ```
+
+   5. Use the `connect` function to connect slots and signals together in the class constructor
+
+      ```C++
+      connect(this, SIGNAL(sigSignal(float)), p_publisher_node_, SLOT(slotSignal(float)));
+      ```
 
    6. Move the subscriber and publisher class to the `QThread` that you made
 
@@ -270,7 +298,9 @@ We will use this [repo](https://github.com/howde-robotics/sensor_motor_lab) as a
 
    7. Call `emit` signals and write your logic in `slot` functions accordingly
 
-   
+      ```C++
+      emit sigSignal(5.0)
+      ```
 
 ## Summary
-Qt is a tool to create custom GUI that can integrate with ROS directly
+Qt is a tool to create custom GUI that can integrate with ROS directly. It is slightly complicated to learn and use, but it provides a very tight integration.
