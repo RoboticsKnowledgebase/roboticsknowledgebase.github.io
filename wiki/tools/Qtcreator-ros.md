@@ -2,16 +2,16 @@
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
 # You should set the date the article was last updated like this:
-date: 2021-03-15 # YYYY-MM-DD
+date: 2021-04-02 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
 title: Qtcreator User-Interface with ROS
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-[Qtcreator](https://doc.qt.io/qtcreator/index.html) is a popular user interface integrated development environment (IDE) that can interface easily with ROS. It supports multiple platforms, such as x86 desktop, arm-based embedded devices, and mobile platforms such as Android and iOS. However, this tutorial will focus on using this tool to create a user interface with ROS integrated in it.
+Qtcreator is a popular user interface integrated development environment (IDE) that can interface easily with ROS. It supports multiple platforms, such as x86 desktop, arm-based embedded devices, and mobile platforms such as Android and iOS. However, this tutorial will focus on using this tool to create a user interface with ROS integrated in it.
 
- #### Why use Qtcreator and not [ROS Qt (rqt)](http://wiki.ros.org/rqt)
+ #### Why use [Qtcreator](https://doc.qt.io/qtcreator/index.html) and not [ROS Qt (rqt)](http://wiki.ros.org/rqt)
 
 rqt is great for 'quick and dirty' UI where-by you can fix together different plugins (or make your own plugin) in a dockable window. However, if you want to make highly customized UI with your own graphics asset, animation, and granular control, creating a Qt application is a better option.
 
