@@ -88,6 +88,8 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: YOLO Integration with ROS and Running with CUDA GPU
+        url: /wiki/sensing/ros-yolo-gpu/
   - title: Actuation
     url: /wiki/actuation/
     children:
