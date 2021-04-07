@@ -1,5 +1,5 @@
 ---
-date: 2019-05-16
+date: 2021/04/07
 title: Docker 
 ---
 
@@ -145,14 +145,14 @@ To generate this message, Docker took the following steps:
 ```
 
 ## Basic Docker Usage:
-Docker has three main types of objects that you need to be familiar with - Dockerfiles, Images, and Containers.
+Docker has three main types of objects that you need to be familiar with - Dockerfiles, images, and containers.
 A Dockerfile is a file that describes how an image should be built. An image is a binary that can be used to create a container. A container is an isolated runtime environment with its own file system. Lets walk though a simple workflow.
 
 ### Make A Dockerfile
-First, you need to make a Dockerfile. It describes a series of commands that should be executed in order to build docker image. Ussually a Dockerfile will install software dependencies, install development tools, setup environment variables, etc. Whatever software you need for your project should be installed in your Dockerfile.
+First, you need to make a Dockerfile. It describes a series of commands that should be executed in order to build docker image. Ussually a Dockerfile will install software dependencies, install development tools, setup environment variables, etc. Whatever software you need for your project should be installed in your Dockerfile. See the Further Reading section below for more information on how to do this.
 
 ### Build A Docker Image
-After you have made a Dockerfile, it can be built into a docker image, which is simply a compiled version of the dockerfile. Execute the following command from the same folder that the Dockerfile is in.
+After you have made a Dockerfile, it can be built into a docker image, which is simply a compiled version of the Dockerfile. Execute the following command from the same folder that the Dockerfile is in.
 ```sh
 sudo docker build -t {IMAGE_NAME}:{IMAGE_TAG} .
 ```
@@ -214,12 +214,12 @@ sudo docker prune
 
 ## Common Docker Issues On Ubuntu and Their Fixes
 ### Build fails because software cannot properly use debconf
-Debconf is something that helps software configure itself while it is being installed. However, when a dockerfile is being built the software cannot interact with debconf. To fix this, add this line to your Dockerfile before you the line that causes the debconf error
+Debconf is something that helps software configure itself while it is being installed. However, when a Dockerfile is being built the software cannot interact with debconf. To fix this, add this line to your Dockerfile before you the line that causes the debconf error
 ```
 ARG DEBIAN_FRONTEND=noninteractive
 ```
 ### QT does not work for applications in docker
-Add this to your dockerfile
+Add this to your Dockerfile
 ```
 ARG QT_GRAPHICSSYSTEM="native"
 ```
@@ -227,12 +227,12 @@ Run command before you run the docker container to give UI permissions to docker
 ```sh
 xhost + local:docker
 ```
-Add the following arguments when you use docker run
+Add the following arguments when you use run
 ```
 -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --net=host --privileged
 ```
 ### The terminal prompt is not properly highlighted
-The terminal prompt, which is the PS1 environment variable, is set by the bashrc file. The default file may not properly enable or has logic built in which disables it. To get around it, add this to your dockerfile
+The terminal prompt, which is the PS1 environment variable, is set by the bashrc file. The default file may not properly enable or has logic built in which disables it. To get around it, add this to your Dockerfile
 ```
 RUN echo "PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
 ```
