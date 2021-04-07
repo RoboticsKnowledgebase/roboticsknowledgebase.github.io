@@ -262,6 +262,8 @@ wiki:
     children:
       - title: Traffic Modelling Datasets
       - url: /wiki/datasets/traffic-modelling-datasets/
+      - title: Open-Source Datasets
+      - url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
