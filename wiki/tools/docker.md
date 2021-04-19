@@ -1,5 +1,5 @@
 ---
-date: 2021/04/07
+date: 2021-04-07
 title: Docker 
 ---
 
@@ -172,9 +172,9 @@ exit
 ```
 
 ### Re-enter A Docker Container
-After you have exited a docker container, you may want to launch it again. However, if you use ```docker run``` you will get an error saying "The container name "{CONTAINER_NAME} is already in use by container...". This is because docker stops a container when all of its processes have exited, but it does not remove container. Each container must have a unique name. To re-enter the container, you have two options.
+After you have exited a docker container, you may want to launch it again. However, if you use `docker run` you will get an error saying "The container name "{CONTAINER_NAME} is already in use by container...". This is because docker stops a container when all of its processes have exited, but it does not remove container. Each container must have a unique name. To re-enter the container, you have two options.
 
-Option 1: You can re-enter the container by starting it and the ```attach``` command. 
+Option 1: You can re-enter the container by starting it and the `attach` command. 
 ```sh
 sudo docker start {CONTAINER_NAME}
 sudo docker attach {CONTAINER_NAME}
@@ -187,12 +187,12 @@ sudo docker run -it --name {CONTAINER_NAME} {IMAGE_NAME}:{IMAGE_TAG}
 
 ## Other Useful Docker Features
 ### Running Multiple Processes
-If you have a container that is running and you want to run another process in that container you can use ```docker exec```. Note that this must be done from the operating system and NOT from within the docker container. For example, to launch another shell you would use
+If you have a container that is running and you want to run another process in that container you can use `docker exec`. Note that this must be done from the operating system and NOT from within the docker container. For example, to launch another shell you would use
 ```sh
 sudo docker exec {CONTAINER_NAME} /bin/bash
 ```
 ### Persistent Storage Across Container Cycles
-Chances are you want to have persistent access to data in a docker container. One the easiest ways to do this using a docker volume. This will add a folder to your docker container that will persist after the container is deleted. To do this, add the ```-v``` argument to ```docker run```
+Chances are you want to have persistent access to data in a docker container. One the easiest ways to do this using a docker volume. This will add a folder to your docker container that will persist after the container is deleted. To do this, add the `-v` argument to `docker run`
 ```sh
 sudo docker run -it --name {CONTAINER_NAME} -v {LOCAL_DIR}:{CONTAINER_DIR} {IMAGE_NAME}:{IMAGE_TAG}
 ```
