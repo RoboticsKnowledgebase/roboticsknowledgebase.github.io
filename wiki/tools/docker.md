@@ -1,5 +1,5 @@
 ---
-date: 2019-05-16
+date: 2021-04-07
 title: Docker 
 ---
 
@@ -116,7 +116,7 @@ Test Installation with CUDA Docker image:
 $ docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 ```
 
-## Working With Docker:
+## Running Your First Docker Container:
 
 Now, let's dive into using Docker for your project
 
@@ -144,6 +144,100 @@ To generate this message, Docker took the following steps:
     to your terminal.
 ```
 
+## Basic Docker Usage:
+Docker has three main types of objects that you need to be familiar with - Dockerfiles, images, and containers.
+A Dockerfile is a file that describes how an image should be built. An image is a binary that can be used to create a container. A container is an isolated runtime environment with its own file system. Lets walk though a simple workflow.
+
+### Make A Dockerfile
+First, you need to make a Dockerfile. It describes a series of commands that should be executed in order to build docker image. Ussually a Dockerfile will install software dependencies, install development tools, setup environment variables, etc. Whatever software you need for your project should be installed in your Dockerfile. See the Further Reading section below for more information on how to do this.
+
+### Build A Docker Image
+After you have made a Dockerfile, it can be built into a docker image, which is simply a compiled version of the Dockerfile. Execute the following command from the same folder that the Dockerfile is in.
+```sh
+sudo docker build -t {IMAGE_NAME}:{IMAGE_TAG} .
+```
+Here {IMAGE_NAME} is the name of your image, and {IMAGE_TAG} specifies a version. If you are not interested in keeping track of version you can simply set {IMAGE_TAG} to be "latest". It is important that you remember the {IMAGE_NAME} and {IMAGE_TAG} you use because you will need it to run a container.
+
+### Run A Docker Container
+To make a container from you image, run
+```sh
+sudo docker run -it --name {CONTAINER_NAME} {IMAGE_NAME}:{IMAGE_TAG}
+```
+This will create a docker container named {CONTAINER_NAME} using the image and tag that was just created. You should now be in your new docker and be able to execute shell commands in it.
+
+### Exit A Docker Container
+To leave the container, terminate the shell process.
+```sh
+exit
+```
+
+### Re-enter A Docker Container
+After you have exited a docker container, you may want to launch it again. However, if you use `docker run` you will get an error saying "The container name "{CONTAINER_NAME} is already in use by container...". This is because docker stops a container when all of its processes have exited, but it does not remove container. Each container must have a unique name. To re-enter the container, you have two options.
+
+Option 1: You can re-enter the container by starting it and the `attach` command. 
+```sh
+sudo docker start {CONTAINER_NAME}
+sudo docker attach {CONTAINER_NAME}
+```
+Option 2: Remove the container and launch a new one.
+```sh
+sudo docker rm {CONTAINER_NAME}
+sudo docker run -it --name {CONTAINER_NAME} {IMAGE_NAME}:{IMAGE_TAG}
+```
+
+## Other Useful Docker Features
+### Running Multiple Processes
+If you have a container that is running and you want to run another process in that container you can use `docker exec`. Note that this must be done from the operating system and NOT from within the docker container. For example, to launch another shell you would use
+```sh
+sudo docker exec {CONTAINER_NAME} /bin/bash
+```
+### Persistent Storage Across Container Cycles
+Chances are you want to have persistent access to data in a docker container. One the easiest ways to do this using a docker volume. This will add a folder to your docker container that will persist after the container is deleted. To do this, add the `-v` argument to `docker run`
+```sh
+sudo docker run -it --name {CONTAINER_NAME} -v {LOCAL_DIR}:{CONTAINER_DIR} {IMAGE_NAME}:{IMAGE_TAG}
+```
+This will create a folder called {CONTAINER_DIR} inside the container that will also exist at {LOCAL_DIR} on your operating system. The data in this folder will persist after a container is deleted and can be used again when another container is started.
+### See All Running Docker Containers
+To see all running containers, use
+```sh
+sudo docker ps
+```
+### See All Images On Your Machine
+```sh
+sudo docker images
+```
+### Delete Unnecessary Containers and Images.
+When you are first creating your docker file you may end up with many unused images. You can get rid of them using the following command
+```sh
+sudo docker prune
+```
+
+## Common Docker Issues On Ubuntu and Their Fixes
+### Build fails because software cannot properly use debconf
+Debconf is something that helps software configure itself while it is being installed. However, when a Dockerfile is being built the software cannot interact with debconf. To fix this, add this line to your Dockerfile before you the line that causes the debconf error
+```
+ARG DEBIAN_FRONTEND=noninteractive
+```
+### QT does not work for applications in docker
+Add this to your Dockerfile
+```
+ARG QT_GRAPHICSSYSTEM="native"
+```
+Run command before you run the docker container to give UI permissions to docker
+```sh
+xhost + local:docker
+```
+Add the following arguments when you use run
+```
+-e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --net=host --privileged
+```
+### The terminal prompt is not properly highlighted
+The terminal prompt, which is the PS1 environment variable, is set by the bashrc file. The default file may not properly enable or has logic built in which disables it. To get around it, add this to your Dockerfile
+```
+RUN echo "PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+```
+
+
 To Create docker files for your project, you can follow the tutorial [here](<https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/>)
 
 ## Further Reading:
@@ -163,3 +257,7 @@ To Create docker files for your project, you can follow the tutorial [here](<htt
 3. Creating your own Dockerfile: https://www.youtube.com/watch?v=hnxI-K10auY
 
 4. Docker file reference: https://docs.docker.com/engine/reference/builder
+
+5. Docker CLI reference: https://docs.docker.com/engine/reference/commandline/cli/
+
+6. Docker Volumes: https://docs.docker.com/storage/volumes/
