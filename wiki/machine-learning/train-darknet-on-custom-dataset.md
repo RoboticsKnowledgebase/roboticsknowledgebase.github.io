@@ -1,17 +1,24 @@
+---
+# date the article was last updated like this:
+date: 2021-04-27 # YYYY-MM-DD
+# Article's title:
+title: Train Darknet on Custom Dataset
+---
+
 This serves as a tutorial for how to use YOLO and Darknet to train your system to detect classes of objects from a custom dataset. We go over installing darknet dependencies, accessing the darknet repository, configuring your dataset images and labels to work with darknet, editing config files to work with your dataset, training on darknet, and strategies to improve the mAP between training sessions.
 
 ## Install Darknet Dependencies
 ### Step 1:
 Install Ubuntu 18.04  
-Make sure you have GPU with CC >= 3.0: <https://en.wikipedia.org/wiki/CUDA#GPUs_supported>  
+Make sure you have [GPU with CC >= 3.0](https://en.wikipedia.org/wiki/CUDA#GPUs_supported)  
   
 
 ### Step 2:
-CMake >= 3.18: <https://cmake.org/download/>  
+[CMake >= 3.18](https://cmake.org/download/)  
 Download Unix/Linux Source   
 
 ### Step 3:
-CUDA 10.2: <https://developer.nvidia.com/cuda-10.2-download-archive>  
+[CUDA 10.2](https://developer.nvidia.com/cuda-10.2-download-archive)  
 
 *Option 1:* 
 Make a NVIDIA account  
@@ -56,11 +63,11 @@ $ git checkout 3.3.1
 ``` 
 
 ### Step 5:  
-**cuDNN v8.0.5 for CUDA 10.2:**
-https://developer.nvidia.com/rdp/cudnn-archive   
+**Download cuDNN v8.0.5 for CUDA 10.2:**
+[cuDNN v8.0.5 for CUDA 10.2](https://developer.nvidia.com/rdp/cudnn-archive)   
 
 **Download cuDNN Library for Linux (x86_64):**
-https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installlinux-tar
+[cuDNN Library for Linux (x86_64)](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#installlinux-tar)
 
 **Extract it**  
 ```
@@ -100,14 +107,14 @@ for example: `<x> = <absolute_x> / <image_width>` or `<height> = <absolute_heigh
 
 **If you have labels for the images, but they are not in the darknet format:**
 *Option 1:* Use Roboflow
-Roboflow is an online tool that can convert many standard label formats between one and another. The first 1,000 images are free, but it costs $0.004 per image above that. Visit Roboflow here: <https://roboflow.com/formats>
+Roboflow is an online tool that can convert many standard label formats between one and another. The first 1,000 images are free, but it costs $0.004 per image above that. Visit [Roboflow](https://roboflow.com/formats)
 
 *Option 2:* Write a script and convert the labels to the darknet format yourself.
 
 Put all of the newly converted labels for the images into a folder called “labels”.
 
 #### If you need to make labels for the images:
-Create labels for all of the images using Yolo_mark [2]. The repo and instructions for use can be found here: <https://github.com/AlexeyAB/Yolo_mark>. These labels will automatically be made in the darknet format. Put all of the labels for the images into a folder called “labels”.
+Create labels for all of the images using Yolo_mark [2]. The repo and instructions for use can be found [here](https://github.com/AlexeyAB/Yolo_mark). These labels will automatically be made in the darknet format. Put all of the labels for the images into a folder called “labels”.
 
 ### Step 3: Create the text files that differentiate the test, train, and validation datasets.
 
@@ -201,11 +208,11 @@ If you are training YOLOv4-tiny make these changes in ```custom_cfg/yolov4-tiny-
 
 
 ### Step 5: Download the weights files
-For Yolov4, download this file and put it in darknet/custom_cfg/
-<https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137>
+For Yolov4, download [this file](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137) and put it in darknet/custom_cfg/
 
-For Yolov4-tiny, download this file and put it in darknet/custom_cfg/
-<https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29>
+
+For Yolov4-tiny, download [this file](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29) and put it in darknet/custom_cfg/
+
 
 ### Step 6: Modify the config files for mAP improvement
   - Edits will be in yolov4-tiny-custom.cfg or yolov4-custom.cfg depending on if you are running YOLOv4-tiny or YOLOv4, respectively   
@@ -260,15 +267,15 @@ This will increase precision by training Yolo for different resolutions.
 [net] mixup=1 cutmix=1 mosaic=1 blur=1 in cfg  
 
 ### For Training with Small Objects
-  - Set layers = 23 instead of <https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L895>  
-  - set stride=4 instead of <https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L892>  
-  - set stride=4 instead of <https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L989>  
+  - Set layers = 23 instead of [this](https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L895)  
+  - set stride=4 instead of [this](https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L892)  
+  - set stride=4 instead of [this](https://github.com/AlexeyAB/darknet/blob/6f718c257815a984253346bba8fb7aa756c55090/cfg/yolov4.cfg#L989)  
 
 ### For Training with Both Large and Small Objects  
 Use modified models:  
-  - Full-model: 5 yolo layers: <https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3_5l.cfg>  
-  - Tiny-model: 3 yolo layers: <https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-tiny_3l.cfg>  
-  - YOLOv4: 3 yolo layers: <https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-custom.cfg>  
+  - Full-model: [5 yolo layers](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3_5l.cfg)  
+  - Tiny-model: [3 yolo layers](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-tiny_3l.cfg)  
+  - YOLOv4: [3 yolo layers](https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4-custom.cfg)  
 
 ### Calculate Anchors for Custom Data Set
   - ./darknet detector calc_anchors data/obj.data -num_of_clusters 9 -width 416 -height 416  
@@ -280,10 +287,10 @@ Use modified models:
 We reviewed the start to finish process of using YOLO and darknet to detect objects from a custom dataset. This included going over the darknet dependencies, dataset engineering for format compatibilities, setting up and running darknet, and improving mAP across training iterations.
 
 ## See Also:
-- Integrating darknet with ROS: <https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io.git/wiki/common-platforms/ros/ros-yolo-gpu.md>
+- [Integrating darknet with ROS](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io.git/wiki/common-platforms/ros/ros-yolo-gpu.md)
 
 ## Further Reading
-- Learn more about YOLO and the various versions of it here: <https://towardsdatascience.com/yolo-v4-or-yolo-v5-or-pp-yolo-dad8e40f7109>
+- Learn more about YOLO and the various versions of it [here](https://towardsdatascience.com/yolo-v4-or-yolo-v5-or-pp-yolo-dad8e40f7109)
 
 ## References
 [1] AlexeyAB (2021) darknet (Version e83d652). <https://github.com/AlexeyAB/darknet>.  
