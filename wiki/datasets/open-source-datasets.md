@@ -30,9 +30,9 @@ Create a free beta account [here](https://innotescus.io/demo/)
 
 [COIL100](http://www1.cs.columbia.edu/CAVE/software/softlib/coil-100.php)
 
-Image to Language: 
-[Visual Genome](http://visualgenome.org/)
-[Visual Qa](http://www.visualqa.org/)
+Image to Language:   
+[Visual Genome](http://visualgenome.org/)  
+[Visual Qa](http://www.visualqa.org/)  
 
 [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html)
 
@@ -63,14 +63,14 @@ Image to Language:
 
 [Fruit](https://public.roboflow.com/classification/fruits-dataset)
 
-Flowers:
-[Flower Classification 1](https://public.roboflow.com/classification/flowers_classification)
-[Flower Classification 2](https://public.roboflow.com/classification/flowers)
-[Flower Classification 3](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)
+Flowers:  
+[Flower Classification 1](https://public.roboflow.com/classification/flowers_classification)  
+[Flower Classification 2](https://public.roboflow.com/classification/flowers)  
+[Flower Classification 3](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html)  
 
-Plants: 
-[Plant Doc](https://public.roboflow.com/object-detection/plantdoc)
-[Plant Analysis](https://www.plant-image-analysis.org/dataset)
+Plants:   
+[Plant Doc](https://public.roboflow.com/object-detection/plantdoc)  
+[Plant Analysis](https://www.plant-image-analysis.org/dataset)  
 
 [Wildfire smoke](https://public.roboflow.com/object-detection/wildfire-smoke)
 
@@ -80,9 +80,9 @@ Plants:
 
 [Home Objects](http://www.vision.caltech.edu/pmoreels/Datasets/Home_Objects_06/)
 
-Indoor Room Scenes: 
-[Princeton lsun](http://lsun.cs.princeton.edu/2016/)
-[MIT toralba](http://web.mit.edu/torralba/www/indoor.html)
+Indoor Room Scenes:   
+[Princeton lsun](http://lsun.cs.princeton.edu/2016/)  
+[MIT toralba](http://web.mit.edu/torralba/www/indoor.html)  
 
 [Places](http://places.csail.mit.edu/index.html)
 
