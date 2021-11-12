@@ -130,6 +130,8 @@ wiki:
         url: /wiki/state-estimation/orb-slam2-setup/
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
+      - title: Cartographer SLAM ROS Integration 
+        url: /wiki/state-estimation/Cartographer-ROS-Integration/
   - title: Programming
     url:  /wiki/programming/
     children:
