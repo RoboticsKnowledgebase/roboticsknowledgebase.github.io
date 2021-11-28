@@ -5,7 +5,7 @@
 date: 2021-11-28 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: JIRA Agile Development
+title: Jira Agile Development
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
@@ -16,8 +16,6 @@ is a product management tool developed by Atlassian Inc. that can be used to tra
 A ticket is something that needs to be worked on. Often a ticket is assigned to an individual to work on it.
 
  Here is [a link](https://www.beargroup.com/ideas/tutorials/ticketing-web-development) goes through a detailed idea as to what should be included on the ticket
-
-
 
 
 >  Do what is best for the team. Jira is a powerful tool that has the ability to cause extra work and detract from the development process. Below are some suggestions on how to use Jira, but do what allows your team to succeed.
@@ -139,8 +137,12 @@ In summary, Jira is a powerful tool for agile development. There are numerous fe
 - Learn more about the basics of Jira [here](https://www.guru99.com/jira-tutorial-a-complete-guide-for-beginners.html). In addition,[this website](https://wiki.onap.org/pages/viewpage.action?pageId=6592023) provides practical usage suggestions.
 
 ## References
-- Atlassian, “Jira pricing - monthly and annual subscription cost per user,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/pricing. [Accessed: 28-Nov-2021].
-- Atlassian, “Jira Software Automation: Common use cases,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/guides/expand-jira/automation-use-cases. [Accessed: 28-Nov-2021].
-- E. Goodeve, “How writing effective jira tickets can streamline web development: Bear Group,” How to Write Effective Jira Tickets and Improve Your Web Development | Bear Ideas. [Online]. Available: https://www.beargroup.com/ideas/tutorials/ticketing-web-development. [Accessed: 28-Nov-2021].
-- G.  Lanilis, “Jira how to?,” Jira How to? - Developer Wiki - Confluence, 2017. [Online]. Available: https://wiki.onap.org/pages/viewpage.action?pageId=6592023. [Accessed: 28-Nov-2021].
-- “Integrate with github,” Atlassian Support, 19-Nov-2021. [Online]. Available: https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/. [Accessed: 28-Nov-2021].
+[1] Atlassian, “Jira pricing - monthly and annual subscription cost per user,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/pricing. [Accessed: 28-Nov-2021].
+
+[2] Atlassian, “Jira Software Automation: Common use cases,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/guides/expand-jira/automation-use-cases. [Accessed: 28-Nov-2021].
+
+[3] E. Goodeve, “How writing effective jira tickets can streamline web development: Bear Group,” How to Write Effective Jira Tickets and Improve Your Web Development | Bear Ideas. [Online]. Available: https://www.beargroup.com/ideas/tutorials/ticketing-web-development. [Accessed: 28-Nov-2021].
+
+[4] G.  Lanilis, “Jira how to?,” Jira How to? - Developer Wiki - Confluence, 2017. [Online]. Available: https://wiki.onap.org/pages/viewpage.action?pageId=6592023. [Accessed: 28-Nov-2021].
+
+[5] “Integrate with github,” Atlassian Support, 19-Nov-2021. [Online]. Available: https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/. [Accessed: 28-Nov-2021].
