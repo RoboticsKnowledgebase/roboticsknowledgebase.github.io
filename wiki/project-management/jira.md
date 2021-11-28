@@ -137,12 +137,12 @@ In summary, Jira is a powerful tool for agile development. There are numerous fe
 - Learn more about the basics of Jira [here](https://www.guru99.com/jira-tutorial-a-complete-guide-for-beginners.html). In addition,[this website](https://wiki.onap.org/pages/viewpage.action?pageId=6592023) provides practical usage suggestions.
 
 ## References
-[1] Atlassian, “Jira pricing - monthly and annual subscription cost per user,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/pricing. [Accessed: 28-Nov-2021].
+[1] Atlassian, “Jira pricing - monthly and annual subscription cost per user,” Atlassian. [Online]. Available: <https://www.atlassian.com/software/jira/pricing>. [Accessed: 28-Nov-2021].
 
-[2] Atlassian, “Jira Software Automation: Common use cases,” Atlassian. [Online]. Available: https://www.atlassian.com/software/jira/guides/expand-jira/automation-use-cases. [Accessed: 28-Nov-2021].
+[2] Atlassian, “Jira Software Automation: Common use cases,” Atlassian. [Online]. Available: <https://www.atlassian.com/software/jira/guides/expand-jira/automation-use-cases>. [Accessed: 28-Nov-2021].
 
-[3] E. Goodeve, “How writing effective jira tickets can streamline web development: Bear Group,” How to Write Effective Jira Tickets and Improve Your Web Development | Bear Ideas. [Online]. Available: https://www.beargroup.com/ideas/tutorials/ticketing-web-development. [Accessed: 28-Nov-2021].
+[3] E. Goodeve, “How writing effective jira tickets can streamline web development: Bear Group,” How to Write Effective Jira Tickets and Improve Your Web Development | Bear Ideas. [Online]. Available: <https://www.beargroup.com/ideas/tutorials/ticketing-web-development>. [Accessed: 28-Nov-2021].
 
-[4] G.  Lanilis, “Jira how to?,” Jira How to? - Developer Wiki - Confluence, 2017. [Online]. Available: https://wiki.onap.org/pages/viewpage.action?pageId=6592023. [Accessed: 28-Nov-2021].
+[4] G.  Lanilis, “Jira how to?,” Jira How to? - Developer Wiki - Confluence, 2017. [Online]. Available: <https://wiki.onap.org/pages/viewpage.action?pageId=6592023>. [Accessed: 28-Nov-2021].
 
-[5] “Integrate with github,” Atlassian Support, 19-Nov-2021. [Online]. Available: https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/. [Accessed: 28-Nov-2021].
+[5] “Integrate with github,” Atlassian Support, 19-Nov-2021. [Online]. Available: <https://support.atlassian.com/jira-cloud-administration/docs/integrate-with-github/>. [Accessed: 28-Nov-2021].
