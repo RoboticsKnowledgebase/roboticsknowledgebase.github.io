@@ -88,6 +88,8 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: YOLO Integration with ROS and Running with CUDA GPU
+        url: /wiki/sensing/ros-yolo-gpu/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -106,12 +108,15 @@ wiki:
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
+      - title: Training darknet on a custom dataset
+        url: /wiki/machine-learning/train-darknet-on-custom-dataset/
       - title: Custom data-set for segmentation
         url: /wiki/machine-learning/custom-semantic-data/
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
         title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
+  
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -259,6 +264,8 @@ wiki:
     children:
       - title: Traffic Modelling Datasets
       - url: /wiki/datasets/traffic-modelling-datasets/
+      - title: Open-Source Datasets
+      - url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
