@@ -3,8 +3,6 @@ date: 2021-11-28
 title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
 ---
 
-## Overview
-
 Object detection with deep neural networks has been a crucial part of robot perception. Among object detection models, single-stage detectors, like YOLO, are typically more lightweight and suitable for mobile computing platforms. In the meantime, NVIDIA has developed the Jetson computing platforms for edge AI applications, supporting CUDA GPU acceleration. Compared with desktop or laptop GPUs, Jetson’s GPUs have lower computation capacity; therefore, more care should be taken on the selection of neural network models and fine-tuning on both speed and performance. 
 
 This article uses YOLOv5 as the objector detector and a Jetson Xavier AGX as the computing platform. It will cover setting up the environment, training YOLOv5, and the deployment commands and code. Please note that unlike the deployment pipelines of previous YOLO versions, this tutorial’s deployment of YOLOv5  doesn’t rely on darknet_ros, and at runtime, the program only relies on C++, ROS, and TensorRT.
@@ -15,9 +13,9 @@ Setting up the Jetson Xavier AGX requires an Ubuntu host PC, on which you need t
 
 Note that some Jetson models including the Xavier NX and Nano require the use of an SD card image to set up, as opposed to a host PC.
 
-After setting up your Jetson, you can then install ROS. Since Jetson runs on Ubuntu 18.04, you’ll have to install ROS Melodic. Simply follow the instructions on rog.org: <http://wiki.ros.org/melodic/Installation/Ubuntu>
+After setting up your Jetson, you can then install ROS. Since Jetson runs on Ubuntu 18.04, you’ll have to install ROS Melodic. Simply follow the instructions on rog.org: http://wiki.ros.org/melodic/Installation/Ubuntu
 
-## Training YOLOv5
+## Training YOLOv5 or Other Object Detectors
 
 A deep neural net is only as good as the data it’s been trained on. While there are pretrained YOLO models available for common classes like humans, if you need your model to detect specific objects you will have to collect your own training data.
 
@@ -26,14 +24,15 @@ For good detection performance, you will need at least 1000 training images or m
 Once you have your raw data ready, it’s time to process them. This includes labeling the classes and bounding box locations as well as augmenting the images so that the model trained on these images are more robust. There are many tools for image processing, one of which is Roboflow which allows you to label and augment images for free (with limitations, obviously). The labeling process will be long and tedious, so put on some music or podcasts or have your friends or teammates join you and buy them lunch later. For augmentation, common tricks include randomized small rotations, crops, brightness/saturation adjustments, and cutouts. Be sure to resize the images to a canonical size like 416x416 (commonly used for YOLO). If you feel that your Jetson can handle a larger image size, try something like 640x640, or other numbers that are divisible by 32. Another potentially useful trick is to generate the dataset with the same augmentations twice; you will get two versions of the same dataset, but due to the randomized augmentations the images will be different. Like many deep learning applications, finding the right augmentations involves some trial-and-error, so don’t be afraid to experiment!
 
 Once you have the dataset ready, time to train! Roboflow has provided tutorials in the form of Jupyter Notebooks, which contains all the repos you need to clone, all the dependencies you need to install, and all the commands you need to run:
-- <https://github.com/roboflow-ai/yolov5-custom-training-tutorial/blob/main/yolov5-custom-training.ipynb>
-- <https://colab.research.google.com/drive/1gDZ2xcTOgR39tGGs-EZ6i3RTs16wmzZQ>
+- https://colab.research.google.com/drive/1gDZ2xcTOgR39tGGs-EZ6i3RTs16wmzZQ (The version that the authors tested on)
+- https://github.com/roboflow-ai/yolov5-custom-training-tutorial/blob/main/yolov5-custom-training.ipynb (A newer version published by Roboflow)
+
 
 After training is finished, the training script will save the model weights to a .pt file, which you can then transform to a TensorRT engine.
 
 ## Transforming a Pytorch Model to a TensorRT Engine
 
-YOLOv5 official repository provides an exporting script, and to simplify the post-processing steps, please checkout a newer commit, eg. “070af88108e5675358fd783aae9d91e927717322”. At the root folder of the repository, run `python export.py --weights WEIGHT_PATH/WEIGHT_FILE_NAME.pt --img IMAGE_LENGTH --batch-size 1 --device cpu --include onnx --simplify --opset 11`. There’ll be an onnx file generated next to the pt file, and [netron](https://netron.app/) provides a tool to easily visualize and verify the onnx file. For example, if the image size is 416x416, the model is YOLOv5s and the class number is 2, you should see the following input and output structures:
+YOLOv5's official repository provides an exporting script, and to simplify the post-processing steps, please checkout a newer commit, eg. “070af88108e5675358fd783aae9d91e927717322”. At the root folder of the repository, run `python export.py --weights WEIGHT_PATH/WEIGHT_FILE_NAME.pt --img IMAGE_LENGTH --batch-size 1 --device cpu --include onnx --simplify --opset 11`. There’ll be a .onnx file generated next to the .pt file, and [netron](https://netron.app/) provides a tool to easily visualize and verify the onnx file. For example, if the image size is 416x416, the model is YOLOv5s and the class number is 2, you should see the following input and output structures:
 
 <p align="center">
   <img width="501" height="571" src="../assets/yolov5_onnx_input.png" >
@@ -49,7 +48,7 @@ YOLOv5 official repository provides an exporting script, and to simplify the pos
   <em>Figure 2. YOLOv5 onnx visualization (the output part)</em>
 </p>
 
-After moving the onnx file to your Jetson, please run `trtexec --onnx=ONNX_FILE.onnx --workspace=4096 --saveEngine=ENGINE_NAME.engine --verbose` to have the final TensorRT engine file. The 4096 is the upper bound of the memory usage and should be adapted according to the platform. Besides, if there’s no trtexec command while TensorRT was installed, please add `export PATH=$PATH:/usr/src/tensorrt/bin` to your `~/.bashrc` or `~/.zshrc`, depending on your default shell.
+After moving the .onnx file to your Jetson, run `trtexec --onnx=ONNX_FILE.onnx --workspace=4096 --saveEngine=ENGINE_NAME.engine --verbose` to obtain the final TensorRT engine file. The 4096 is the upper bound of the memory usage and should be adapted according to the platform. Besides, if there’s no trtexec command while TensorRT was installed, add `export PATH=$PATH:/usr/src/tensorrt/bin` to your `~/.bashrc` or `~/.zshrc`, depending on your default shell.
 
 You don’t need to specify the size of the model here, because the input and output sizes have been embedded into the onnx file. For advanced usage, you may specify the dynamic axes on your onnx file, and at the trtexec step, you should add `--explicitBatch --minShapes=input:BATCH_SIZExCHANNELxHEIGHTxWIDTH --optShapes=input:BATCH_SIZExCHANNELxHEIGHTxWIDTH --maxShapes=input:BATCH_SIZExCHANNELxHEIGHTxWIDTH `. 
 
@@ -57,7 +56,7 @@ To achieve better inference speed, you can also add the `--fp16` flag. This coul
 
 ## Integrating TensorRT Engines into ROS
 
-Firstly, under a ROS package, add the following content to your CMakeLists.txt
+First, under a ROS package, add the following content to your CMakeLists.txt
 ```
 find_package(CUDA REQUIRED)
 message("-- CUDA version: ${CUDA_VERSION}")
@@ -94,7 +93,7 @@ std::shared_ptr<float[]> output_data
   = std::shared_ptr<float[]>(new float[OUTPUT_SIZE]);
 ```
 
-Before the actual running,  you need to initialize the “engine” variable, and here’s an exemplary function. This function will print the dimensions of all input and output layers if the engine is successfully loaded.
+Before actually running the engine, you need to initialize the “engine” variable, and here’s an example function. This function will print the dimensions of all input and output layers if the engine is successfully loaded.
 ```
 void prepareEngine() {
   const std::string engine_path = “YOUR_ENGINE_PATH/YOUR_ENGINE_FILE_NAME";
@@ -159,7 +158,7 @@ void prepareEngine() {
 }
 ```
 
-At runtime, you should first copy the image data into the input_data variable. The following code snippet shows a straightforward solution. Please note that OpenCV's cv::Mat has HWC (height - width - channel) layout, while TensorRT by default takes BCHW (Batch - channel - height - width)  layout data. Therefore, when trying out other advanced solutions, you should be careful about the layout difference.
+At runtime, you should first copy the image data into the input_data variable. The following code snippet shows a straightforward solution. Please note that OpenCV's cv::Mat has HWC (height - width - channel) layout, while TensorRT by default takes BCHW (Batch - channel - height - width) layout data. 
 ```
   int i = 0;
   for (int row = 0; row < image_size; ++row) {
@@ -173,7 +172,7 @@ At runtime, you should first copy the image data into the input_data variable. T
 	}
   }
 ```
-Then, you can use the following lines of code to run the engine through its context object. The first line copies the input image data into buffers[0]. The second last line copies buffers[4], the combined bounding box output layer, to our output_data variable. For example, in our onnx file example, this layer corresponds to 1 batch_size, 10647 bounding box entries, and 7 parameters describing each bounding box. The 7 parameters are respectively tx, ty, tw, th, object confidence value, and the two scores for the two classes, where tx, ty, tw and th means the center x, center y, width, and height of the bounding box.
+Then, you can use the following lines of code to run the engine through its context object. The first line copies the input image data into buffers[0]. The second last line copies buffers[4], the combined bounding box output layer, to our output_data variable. In our onnx file example, this layer corresponds to 1 batch_size, 10647 bounding box entries, and 7 parameters describing each bounding box. The 7 parameters are respectively tx, ty, tw, th, object confidence value, and the two scores for the two classes, where tx, ty, tw and th means the center x, center y, width, and height of the bounding box.
 ```
 
   CUDA_CHECK(cudaMemcpyAsync(buffers[0], input_data.get(),
@@ -186,10 +185,10 @@ Then, you can use the following lines of code to run the engine through its cont
   cudaStreamSynchronize(stream);
 ```
 
-The last step is the non-maximum suppression for those bounding boxes. Separately store bounding boxes according to their class id, if their object confidence values are higher than a predefined threshold, eg. 0.5. Sort the bounding boxes from higher confidence value to lower ones, and for each bounding box, remove others with lower confidence values and intersection over union (IOU) higher than another predefined threshold, eg. 40%. To understand better about this process, please refer to <https://www.youtube.com/watch?v=YDkjWEN8jNA>.
+The last step is the non-maximum suppression for those bounding boxes. Separately store bounding boxes according to their class id, and only keep boxes with object confidence values higher than a predefined threshold, eg. 0.5. Sort the bounding boxes from higher confidence value to lower ones, and for each bounding box, remove others with lower confidence values and intersection over union (IOU) higher than another predefined threshold, eg. 40%. To understand better about this process, please refer to https://www.youtube.com/watch?v=YDkjWEN8jNA.
 
-The code of the above deployment process is available on Github: <https://github.com/Cola-Robotics/cola-object-detection>. 
+The code of the above deployment process is available on Github: https://github.com/Cola-Robotics/cola-object-detection. 
 
 ## Further Reading
-- <https://learnopencv.com/how-to-run-inference-using-tensorrt-c-api/>
-- <https://github.com/wang-xinyu/tensorrtx/blob/master/yolov5>
+- https://learnopencv.com/how-to-run-inference-using-tensorrt-c-api/
+- https://github.com/wang-xinyu/tensorrtx/blob/master/yolov5

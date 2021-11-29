@@ -16,3 +16,5 @@ gem "kramdown", ">= 2.3.0"
 gem "minimal-mistakes-jekyll"
 
 
+
+gem "webrick", "~> 1.7"
