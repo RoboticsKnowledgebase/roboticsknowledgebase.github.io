@@ -90,6 +90,8 @@ wiki:
         url: /wiki/sensing/realsense/
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
+      - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
+        url: /wiki/sensing/yolov5-tensort/
   - title: Actuation
     url: /wiki/actuation/
     children:
