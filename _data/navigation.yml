@@ -32,6 +32,8 @@ wiki:
         url: /wiki/project-management/product-development-complex-systems/
       - title: Risk Management
         url: /wiki/project-management/risk-management/
+      - title: Jira
+        url: /wiki/project-management/jira/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
