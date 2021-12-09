@@ -9,7 +9,12 @@ title: Cartographer SLAM ROS Integration
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-[Cartographer](https://google-cartographer.readthedocs.io/en/latest/) is a LiDAR-based SLAM algorithm built by Google that is very efficient and accurate at building large maps. From testing Cartographer qualitatively performs better than other ROS SLAM algorithms such as [gmapping](http://wiki.ros.org/gmapping) and [rtab-map](http://wiki.ros.org/rtabmap_ros).
+Cartographer is a LiDAR-based SLAM algorithm built by Google that is very efficient and accurate at building large maps. From testing Cartographer qualitatively performs better than other ROS SLAM algorithms such as gmapping and rtab-map.
+
+Links:
+- [Cartographer](https://google-cartographer.readthedocs.io/en/latest/) 
+- [gmapping](http://wiki.ros.org/gmapping)
+- [rtab-map](http://wiki.ros.org/rtabmap_ros)
 
 The detailed explanation of the Cartographer's algorithm and tuning can be found at their [webpage](https://google-cartographer-ros.readthedocs.io/en/latest/) and will not be repeated here. The main purpose of this guide is to show how to integrate your sensors to work with Cartographer in a ROS environment. Cartographer has both 2D and 3D SLAM, but this guide will focus only on the 2D SLAM. 
 

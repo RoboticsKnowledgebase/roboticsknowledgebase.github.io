@@ -90,8 +90,6 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
-      - title: YOLO Integration with ROS and Running with CUDA GPU
-        url: /wiki/sensing/ros-yolo-gpu/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -116,9 +114,10 @@ wiki:
         url: /wiki/machine-learning/custom-semantic-data/
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
-        title: Reinforcement Learning
+      - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
-  
+      - title: YOLO Integration with ROS and Running with CUDA GPU
+        url: /wiki/sensing/ros-yolo-gpu/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:

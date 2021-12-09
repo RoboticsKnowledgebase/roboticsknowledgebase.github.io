@@ -10,8 +10,7 @@ title: Jira Agile Development
 # and used in other parts of the site.
 ---
 
-## JIRA
-is a product management tool developed by Atlassian Inc. that can be used to track work and manage an agile project. All of the work to be done is logged in a centralized location for other members of the team to see.
+JIRA is a product management tool developed by Atlassian Inc. that can be used to track work and manage an agile project. All of the work to be done is logged in a centralized location for other members of the team to see.
 
 A ticket is something that needs to be worked on. Often a ticket is assigned to an individual to work on it.
 
