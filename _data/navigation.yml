@@ -105,6 +105,8 @@ wiki:
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+      - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
+        url: /wiki/actuation/moveit-and-HEBI-integration.md
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
