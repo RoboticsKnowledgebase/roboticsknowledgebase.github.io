@@ -10,7 +10,6 @@ title: YOLO Integration with ROS and Running with CUDA GPU
 # and used in other parts of the site.
 ---
 
-## Overview
 Integrating You Only Look Once (YOLO), a real time object detection algorithm commonly used in the localization task, with ROS might pose a real integration challenge. There are many steps that are not well documented when installing the package in ROS. There is even more difficulty if one tries to switch from using the default CPU computation to using CUDA accelerated GPU computation as a ROS package.
 
 This article serves as a step-by-step tutorial of how to integrate YOLO in ROS and enabling GPU acceleration to ensure real-time performance. The tutorial will detail two main aspects of the installation: integration with ROS and setting up CUDA. The CUDA acceleration section is stand-alone, and if you have already installed YOLO and want GPU acceleration, you can simply skip the first part.

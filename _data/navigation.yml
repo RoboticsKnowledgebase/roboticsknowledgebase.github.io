@@ -32,6 +32,8 @@ wiki:
         url: /wiki/project-management/product-development-complex-systems/
       - title: Risk Management
         url: /wiki/project-management/risk-management/
+      - title: Jira
+        url: /wiki/project-management/jira/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
@@ -88,10 +90,6 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
-      - title: YOLO Integration with ROS and Running with CUDA GPU
-        url: /wiki/sensing/ros-yolo-gpu/
-      - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
-        url: /wiki/sensing/yolov5-tensorrt/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -107,6 +105,8 @@ wiki:
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+      - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
+        url: /wiki/actuation/moveit-and-HEBI-integration.md
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
@@ -116,9 +116,12 @@ wiki:
         url: /wiki/machine-learning/custom-semantic-data/
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
-        title: Reinforcement Learning
+      - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
-  
+      - title: YOLO Integration with ROS and Running with CUDA GPU
+        url: /wiki/sensing/ros-yolo-gpu/
+      - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
+        url: /wiki/sensing/yolov5-tensorrt/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -132,6 +135,8 @@ wiki:
         url: /wiki/state-estimation/orb-slam2-setup/
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
+      - title: Cartographer SLAM ROS Integration 
+        url: /wiki/state-estimation/Cartographer-ROS-Integration/
   - title: Programming
     url:  /wiki/programming/
     children:
