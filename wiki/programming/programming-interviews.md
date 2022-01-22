@@ -1,8 +1,8 @@
 ---
-date: 2018-04-26
+date: {}
 title: Programming Interviews
+published: true
 ---
-
 ## Google tips
 
 This is a list of Google's tips to use when preparing for a job interview for a coding position.
@@ -65,7 +65,13 @@ This is a list of Google's tips to use when preparing for a job interview for a 
     - [Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein](http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=11866)
 - Coding Book Recommendation:
   - [Programming Interviews Exposed; Secrets to landing your next job by John Monagan and Noah Suojanen](https://www.google.com/shopping/product/10904392385806396516?q=types+of+coding+questions+google+asks+programming+interviews+exposed&hl=en&biw=1745&bih=1005&site=webhp&sqi=2&pjf=1&bav=on.2,or.r_cp.&tch=1&ech=1&psi=539KVdiqEIvJsAWTkoBA.1430945767303.7&prds=paur:ClkAsKraXwLuomUnytrmklo3nqBglR3OsF49REA5hOKVeConNTghOhPlBuN07lUczldHXy82BXrpry53lNVyyMXa_ratGQnPKZRz5wGMWqi0YaxcUFWEj1j4WRIZAFPVH70DMoZJ2iytH9uRyKAQX_9d9ry0zw&ei=TYBKVcaOD8WzoQTbwIGQCQ&ved=0CF0QpiswAQ)
-  
+
+
+## Leetcode Tips
+
+Leetcode must be a familiar platform to you if you are trying to find any software roles. However, there are just too many Leetcode questions and say, given only a month before your first interview, it is difficult to know where to start, even though you might get yourself conceptually familiar with all of the topics above. Therefore, in limtied time, the key to coding practice is **inductive learning**. 
+
+
 ## Additional resources
 
 * Daily plan for programming interview practice: https://github.com/jwasham/coding-interview-university#the-daily-plan
