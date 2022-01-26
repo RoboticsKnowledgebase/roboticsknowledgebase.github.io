@@ -1,8 +1,11 @@
 ---
-date: {}
+date: 2022-1-26
 title: Programming Interviews
-published: false
+published: true
 ---
+
+This article is meant for people looking for software positions in the robotics industry. It introduces the data structure, algorithms, and other related topics you need to know in order to prepare for your technical interview. It also provides a detailed instruction on how to crack your coding sessions.
+
 ## Google tips
 
 This is a list of Google's tips to use when preparing for a job interview for a coding position.
