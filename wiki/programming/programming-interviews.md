@@ -1,7 +1,10 @@
 ---
-date: 2018-04-26
+date: 2022-1-26
 title: Programming Interviews
+published: true
 ---
+
+This article is meant for people looking for software positions in the robotics industry. It introduces the data structure, algorithms, and other related topics you need to know in order to prepare for your technical interview. It also provides a detailed instruction on how to crack your coding sessions.
 
 ## Google tips
 
@@ -65,7 +68,20 @@ This is a list of Google's tips to use when preparing for a job interview for a 
     - [Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein](http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=11866)
 - Coding Book Recommendation:
   - [Programming Interviews Exposed; Secrets to landing your next job by John Monagan and Noah Suojanen](https://www.google.com/shopping/product/10904392385806396516?q=types+of+coding+questions+google+asks+programming+interviews+exposed&hl=en&biw=1745&bih=1005&site=webhp&sqi=2&pjf=1&bav=on.2,or.r_cp.&tch=1&ech=1&psi=539KVdiqEIvJsAWTkoBA.1430945767303.7&prds=paur:ClkAsKraXwLuomUnytrmklo3nqBglR3OsF49REA5hOKVeConNTghOhPlBuN07lUczldHXy82BXrpry53lNVyyMXa_ratGQnPKZRz5wGMWqi0YaxcUFWEj1j4WRIZAFPVH70DMoZJ2iytH9uRyKAQX_9d9ry0zw&ei=TYBKVcaOD8WzoQTbwIGQCQ&ved=0CF0QpiswAQ)
-  
+
+
+## Leetcode Tips
+
+Leetcode must be a familiar platform to you if you are trying to find any software roles. However, there are just too many Leetcode questions and say, given only a month before your first interview, it is difficult to know where to start, even though you might get yourself conceptually familiar with all of the topics above. Therefore, in limtied time, the key to coding practice is **inductive learning**. Rather than spending a lot of time from the first question to question 200, you should do Leetcode questions topic by topic. The steps can be as follows:
+- If you do not have a Leetcode premium subscription, find a reference which maintains a full list of categorized Leetcode questions. A good reference can be found [here](https://github.com/wisdompeak/LeetCode). Otherwise, with the premium subscription, you can sort the questions of interest by using the "tag" feature. 
+- Choose a language: if you are mainly looking for roles in machine learning, or deep learning, stick with Python. Otherwise, for software positions in the robotics industry, C++ will be more popular. 
+- List out topics you want to practice with priority assigned. For software positions in the robotics industry, the most important data stucture would be Graph, Hash Map, Stack, Queue, and Tree, and the most important algorithm you should have a grip of is DFS, BFS, Topological Sort, and some classic Dynamic Programming approaches (listed below). You should be familiar with the runtime complexity of BFS/DFS implemented in either iteration or recursion, as well as the pros and cons of implementation of recursion or iteration. Plus, the idea of DFS is not only applied to graphs, but problems that involve strings are also solved by DFS (e.g. [Permutation](https://leetcode.com/problems/permutations/) and [Combination](https://leetcode.com/problems/combinations/)). 
+- Dynamic Programming (DP) is not very popular when compared to the other algorithms in technical interviews for robotics software engineers. Questions asked during interview when DP is the optimal solution are usually tailored for DP. For example, [Jump Game](https://leetcode.com/problems/jump-game/) (and its other variants too, e.g. [Jump Game II](https://leetcode.com/problems/jump-game-ii/)) and [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) are some classic (as well as popular) problems using 1-dimensional DP. [Unique Paths](https://leetcode.com/problems/unique-paths/) and [Dungeon Game](https://leetcode.com/problems/dungeon-game/solution/) are some classic problems using 2-dimensional DP that are encountered very frequently during interviews.
+- For each topic in the list: sort the questios by the tag first, then sort by its frequency. Complete top 10~50 frequent questions and move on to the next topic in your list. (Note: premium subscription is required to see a question's frequency, but you can easily "bypass" this by asking for a screenshot from any of your friends who has premium subscription) 
+- Create an excel sheet that records every question that you have completed, along with its related topic, runtime & space complexity, and, if possible, its difference compared to its other variants (e.g. Jump Game I to VII, Combination Sum I to IV). This is the cheat sheet you will cram for on the night before the interview. 
+- Do mock interviews with peers. This will be very helpful if you are the type of person whose mindset will be influenced by the stress, or tension during an interview. Also mock interviews will improve your communication abilities during coding, because an interviewer usually expects you to explain your approach while you are writing up your solution. 
+
+
 ## Additional resources
 
 * Daily plan for programming interview practice: https://github.com/jwasham/coding-interview-university#the-daily-plan
