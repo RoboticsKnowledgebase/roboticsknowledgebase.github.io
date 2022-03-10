@@ -18,6 +18,16 @@ Git is primarily a command-line tool but there are a few really good desktop app
   Another popular service, unlimited private repositories for up to 5 collaborators.
   - [Getting Started Guide](https://confluence.atlassian.com/display/BITBUCKET/Bitbucket+101)
 
+## Popular GUI Clients
+- [GitHub Desktop](https://desktop.github.com/)
+  High-quality, well-supported GUI for Windows & Mac.
+- [SourceTree](https://www.sourcetreeapp.com/)
+  A feature-rich GUI for Windows & Mac.
+- [GitKraken](https://www.gitkraken.com/)
+  A powerful git client for Linux, Windows & Mac.
+- [GitExtensions](https://gitextensions.github.io/)
+  Also supports Linux, Windows & Mac.
+
 ## Learning Resources
 
 ### Basics
