@@ -51,11 +51,13 @@ One of the best reading resources around git and version control. Contains a ver
 - [GitHub Actions Basics | GitHub Learning Lab](https://lab.github.com/githubtraining/github-actions:-hello-world)
 - [Cherry Picking Commits](https://www.atlassian.com/git/tutorials/cherry-pick)
 - [Rebasing Branches](https://docs.github.com/en/get-started/using-git/about-git-rebase)
+- [Git Blame](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
 
 ### Advanced
-- [Reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog)
-- [Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+- [Git Reflog](https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog)
+- [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 - [Hooks, Enforcing Commit-Message Formats & ACLs](https://git-scm.com/book/en/v2/Customizing-Git-An-Example-Git-Enforced-Policy)
+- [A Beginner's Guide to Git Bisect](https://www.metaltoad.com/blog/beginners-guide-git-bisect-process-elimination)
 - [GitHub Action: Continuous Integration | GitHub Learning Lab](https://lab.github.com/githubtraining/github-actions:-continuous-integration)
 
 ## References & Help
