@@ -120,6 +120,8 @@ wiki:
         url: /wiki/machine-learning/intro-to-rl
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
+      - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
+        url: /wiki/machine-learning/yolov5-tensorrt/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
