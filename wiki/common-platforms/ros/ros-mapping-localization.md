@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2022-04-27
 title: ROS Mapping and Localization
 published: true
 ---
