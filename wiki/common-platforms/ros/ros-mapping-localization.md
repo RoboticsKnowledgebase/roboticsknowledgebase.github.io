@@ -209,6 +209,7 @@ First, install it using ```sudo apt install ros-<ros-distro>-robot-localization`
 
 <details>
 	<summary>Click to expand ekf.yaml file</summary>
+    
 ```
 ### ekf config file ###
 ekf_filter_node:
