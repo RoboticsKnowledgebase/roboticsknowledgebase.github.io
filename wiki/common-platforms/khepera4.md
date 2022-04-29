@@ -5,15 +5,18 @@ published: true
 ---
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
 
-## Introduction
+The Khepera 4 is a robot platform designed for indoor applications, meant to operate on tables and floor of labs. They are meant to provide a way to test algorithms developed in simulations or on paper in the real world. They're  most often used to test navigation, swarm, and artificial intelligence applications, providing researchers an easy way to see how their code runs on an actual robot. 
 
 ## Overview
+The Khepera 4 is a circular, differential drive robot. It is 140.8 mm in in diameter and can carry up to 2 kg. It has a suite of sensors built-in:
+-test1
+-test2 
 
 ## Quick-start guide
-### ssh
-### scp
-### minicom
-#### test
+### Programming
+### ssh & scp
+
+## Example
 
 ## First subheading
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
