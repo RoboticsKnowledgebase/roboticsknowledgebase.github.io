@@ -23,7 +23,12 @@ The instructions for installing a cross-compiler can be found in the [user manua
 Once installation is complete, you can run the *make* command to use the cross-compiler, assuming the Makefile is set up properly. At the installed location, the *template* directory will provide example code and Makefile that you can play around with. Using this as an example for the rest of the article, when you run *make* it will use *prog-template.c* to generate *prog-template.o* and *template*; the latter is the binary that the Khepera 4 will actually use. Now, you have a binary you can execute on the Khepera 4!
 
 ### WiFi
-Before the Khepera 4 can execute your code, you have to get it on their first. The easiest way is SCP, but you need a WiFi connection to do that. 
+Before the Khepera 4 can execute your code, you have to get it on their first. The easiest way is SCP, but you need a WiFi connection to do that. Straight out of the box, you probably won't be able to access it through WiFi, so here's how you set that up.
+
+First, you need to connect to the Khepera 4 over WiFi:
+
+1. Connect to the Khepera 4 using a USB cable; connect it to the robot's USB mini port. On Ubuntu, the robot should show up as */dev/ttyACM0*
+2. 
 
 ### ssh & scp
 
