@@ -1,6 +1,6 @@
 ---
 date: {}
-title: Title goes here
+title: Khepera 4
 published: true
 ---
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
