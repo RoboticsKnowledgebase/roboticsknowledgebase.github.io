@@ -59,9 +59,18 @@ network={
     scan_ssid=1
 }
 ```
-Example above will configure the Khepera 4 to connect to WiFi named *TP-Link_ASDF* using password *pwd*, and it will have the IP address of *192.168.0.108* with subnet mask *255.255.255.0*.
+Example above will configure the Khepera 4 to connect to WiFi named *TP-Link_ASDF* using password *pwd*, and it will have the IP address of *192.168.0.108* with subnet mask *255.255.255.0*. Make sure the DNS is valid for your specific WiFi!
+
+Power cycling the robot after changing the WiFi settings is usually a good idea.
 
 ### ssh & scp
+Now that you have the Khepera 4 connected to the internet, you can SSH into it, allowing you to communicate without relying on a USB cable. Make sure your computer is connected to the same WiFi as the one you configured the Khepera 4 to connect to. Then, use the following command to SSH into the khepera:
+```
+ssh root@192.168.0.108
+```
+If you're asked if you trust this IP address, say yes. Now, you can navigate the Khepera 4's computer like you would a terminal: *ls*, *cp*, *mv*, etc.
+
+If y
 
 ## Example
 
