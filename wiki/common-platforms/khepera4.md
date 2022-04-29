@@ -5,7 +5,7 @@ published: true
 ---
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
 
-![Put a relevant caption here](assets/images/KHEPERA IV.png)
+![Put a relevant caption here](assets/images/KHEPERA_IV.png)
 
 The Khepera 4 is a robot platform designed for indoor applications, meant to operate on tables and floor of labs. They are meant to provide a way to test algorithms developed in simulations or on paper in the real world. They're  most often used to test navigation, swarm, and artificial intelligence applications, providing researchers an easy way to see how their code runs on an actual robot. 
 
