@@ -80,19 +80,12 @@ To run the template file, run it like any executable on your on computer. For in
 ```
 
 ## Example
+When installing the libraries and the cross-compiler, there's a very useful example provided by K-Team: *libkhepera-2.1/src/tests/kh4_example.c*. This will provide the user examples for reading sensor data and displaying them to terminal.
 
+Another source for examples is RoboSAR, Team F from MRSD 2023, who has Khepera code that could be useful; here's their repo: [link](https://github.com/MRSD-Team-RoboSAR/robosar_khepera_code). The *main* function simply reads and transmits sensor data (including LIDAR) to another computer on the same network using UDP, using protobuf to package the data. The code also executes some basic obstacle avoidance using infrared sensors, and uses LEDs to alert the user to the status of the robot.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+The Khepera 4 is a robot useful for testing algorithms outside of simulation. We've covered how to communicate with it, and how to program it. We've also covered some example code that can give insight into how to read and act upon sensor data. 
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- [Khepera 4 Evaluation](https://os.zhdk.cloud.switch.ch/tind-tmp-epfl/853d7c2e-9435-4de6-a330-551a73483cf5?response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27k4_paper.pdf&response-content-type=application%2Fpdf&AWSAccessKeyId=ded3589a13b4450889b2f728d54861a6&Expires=1651355948&Signature=hY72qIqgOyX6BTqPigNKq7T%2FRNs%3D)
