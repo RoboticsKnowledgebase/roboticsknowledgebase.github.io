@@ -49,16 +49,17 @@ ctrl_interface_group=0
 update_config=1
 
 network={
-    ssid="TP-Link_74ED"
+    ssid="TP-Link_ASDF"
     proto=WPA2
     key_mgmt=WPA-PSK
     pairwise=CCMP TKIP
     group=CCMP TKIP
-    psk="78940758"
+    psk="pwd"
     priority=10
     scan_ssid=1
 }
 ```
+Example above will configure the Khepera 4 to connect to WiFi named *TP-Link_ASDF* using password *pwd*, and it will have the IP address of *192.168.0.108* with subnet mask *255.255.255.0*.
 
 ### ssh & scp
 
