@@ -18,7 +18,9 @@ The quick-start guide will discuss how to program and compile for the Khepera 4,
 ### Programming
 To program for the Khepera 4, you will need a cross-compiler. A compiler turns high-level code into machine code that can be executed by a processor. A cross-compiler does the same thing, but for a processor other than the one compiling the code. While you will be developing and compiling the code on your computer, your computer won't run the code; the Khepera 4 will; therefore, you will need a cross-compiler.
 
-The instructions for installing a cross-compiler can be found in the [user manual ch 5](https://ftp.k-team.com/KheperaIV/software/Gumstix%20COM%20Y/UserManual/Khepera%20IV%20User%20Manual%204.x.pdf#page=36). 
+The instructions for installing a cross-compiler can be found in the [user manual ch 5](https://ftp.k-team.com/KheperaIV/software/Gumstix%20COM%20Y/UserManual/Khepera%20IV%20User%20Manual%204.x.pdf#page=36). The light toolchain will most likely be sufficient for your use, unless you want to modify the kernel running on the Khepera 4. Follow the instructions to get the cross-compiler; when you get to the [FTP](https://ftp.k-team.com/KheperaIV/software/), I picked the *Gumstix COM Y* folder. Continue on with the installation, per the instructions. 
+
+Once installation is complete, you can run the *make* command to use the cross-compiler, assuming the Makefile is set up properly. At the installed location, the *template* directory will provide example code and Makefile that you can play around with. Using this as an example for the rest of the article, when you run *make* it will use *prog-template.c* to generate *prog-template.o* and *template*; the latter is the binary that the Khepera 4 will actually use.
 
 ### WiFi
 
