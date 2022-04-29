@@ -3,6 +3,8 @@ date: {}
 title: Khepera 4
 published: true
 ---
+date: 2020-05-11
+
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
 
 ![Put a relevant caption here](assets/KHEPERA4.png)
