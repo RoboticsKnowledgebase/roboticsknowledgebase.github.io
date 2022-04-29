@@ -32,8 +32,6 @@ First, you need to connect to the Khepera 4 over WiFi:
 3. After running the command above, you can configure your settings; here's what you need to communicate properly: **TODO**
 
 Once you have serial communication with the Khepera 4, you can access its files. You'll need to modify two files: */etc/systemd/network/wifi.network* and */etc/wpa_supplicant/wpa_supplicant-wlan0.conf*. *wifi.network* configures what the robot's IP address should be (or if it should be assigned dynamically by the router). *wpa_supplicant-wlan0.conf* configures what network it should connect to, and what username or password it should use if that's the case. Here's an example for a TPLINK router:
-
-> Note: backslash below should actually be forward slashes
 ```
 wifi.network:
 [Match]
@@ -41,10 +39,10 @@ Name=wlan0
 
 [Network]
 DNS=192.168.0.1
-Address=192.168.0.108\24
+Address=192.168.0.108/24
 ```
 ```
-ctrl_interface=\var\run\wpa_supplicant
+ctrl_interface=/var/run/wpa_supplicant
 ctrl_interface_group=0
 update_config=1
 
@@ -71,8 +69,6 @@ ssh root@192.168.0.108
 If you're asked if you trust this IP address, say yes. Now, you can navigate the Khepera 4's computer like you would a terminal: *ls*, *cp*, *mv*, etc.
 
 If you're still in the *template* directory, and you have the binary that you cross-compiled called *template*, then you can transfer it over to the Khepera 4 using SCP:
-
-> Note: backslash below should actually be forward slashes
 ```
 cp template root@192.168.0.108:/home/root
 ```
