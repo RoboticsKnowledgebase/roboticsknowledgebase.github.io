@@ -28,7 +28,12 @@ Before the Khepera 4 can execute your code, you have to get it on their first. T
 First, you need to connect to the Khepera 4 over WiFi:
 
 1. Connect to the Khepera 4 using a USB cable; connect it to the robot's USB mini port. On Ubuntu, the robot should show up as */dev/ttyACM0*
-2. 
+2. Use a serial port software to communicate with it; I used minicom. To run minicom, run *minicom -s*
+3. After running the command above, you can configure your settings; here's what you need to communicate properly: **TODO**
+
+Once you have serial communication with the Khepera 4, you can access its files. You'll need to modify two files: */etc/systemd/network/wifi.network* and */etc/wpa_supplicant/wpa_supplicant-wlan0.conf*. *wifi.network* configures what the robot's IP address should be (or if it should be assigned dynamically by the router). *wpa_supplicant-wlan0.conf* configures what network it should connect to, and what username or password it should use if that's the case. Here's an example for a TPLINK router:
+
+
 
 ### ssh & scp
 
