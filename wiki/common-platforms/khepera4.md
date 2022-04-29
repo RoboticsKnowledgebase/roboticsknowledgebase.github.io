@@ -33,7 +33,32 @@ First, you need to connect to the Khepera 4 over WiFi:
 
 Once you have serial communication with the Khepera 4, you can access its files. You'll need to modify two files: */etc/systemd/network/wifi.network* and */etc/wpa_supplicant/wpa_supplicant-wlan0.conf*. *wifi.network* configures what the robot's IP address should be (or if it should be assigned dynamically by the router). *wpa_supplicant-wlan0.conf* configures what network it should connect to, and what username or password it should use if that's the case. Here's an example for a TPLINK router:
 
+> Note: backslash below should actually be forward slashes
+```
+wifi.network:
+[Match]
+Name=wlan0
 
+[Network]
+DNS=192.168.0.1
+Address=192.168.0.108\24
+```
+```
+ctrl_interface=\var\run\wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+    ssid="TP-Link_74ED"
+    proto=WPA2
+    key_mgmt=WPA-PSK
+    pairwise=CCMP TKIP
+    group=CCMP TKIP
+    psk="78940758"
+    priority=10
+    scan_ssid=1
+}
+```
 
 ### ssh & scp
 
