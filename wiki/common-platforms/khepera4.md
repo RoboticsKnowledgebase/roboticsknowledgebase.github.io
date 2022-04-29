@@ -3,8 +3,17 @@ date: {}
 title: Khepera 4
 published: true
 ---
-date: 2020-05-11
-
+---
+# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
+# overwritten except in special circumstances. 
+# You should set the date the article was last updated like this:
+date: 2020-05-11 # YYYY-MM-DD
+# This will be displayed at the bottom of the article
+# You should set the article's title:
+title: Title goes here
+# The 'title' is automatically displayed at the top of the page
+# and used in other parts of the site.
+---
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
 
 ![Put a relevant caption here](assets/KHEPERA4.png)
