@@ -70,7 +70,13 @@ ssh root@192.168.0.108
 ```
 If you're asked if you trust this IP address, say yes. Now, you can navigate the Khepera 4's computer like you would a terminal: *ls*, *cp*, *mv*, etc.
 
-If y
+If you're still in the *template* directory, and you have the binary that you cross-compiled called *template*, then you can transfer it over to the Khepera 4 using SCP:
+
+> Note: backslash below should actually be forward slashes
+```
+cp template root@192.168.0.108:/home/root
+```
+This will put the *template* binary file on the robot with IP address 192.168.0.108 at the location */home/root*.
 
 ## Example
 
