@@ -52,7 +52,7 @@ wiki:
       - title: ROS Arduino Interface
         url: /wiki/common-platforms/ros/ros-arduino-interface/
       - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros-motion-server-framework/
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
       - title: ROS Cost Maps
         url: /wiki/common-platforms/ros/ros-cost-maps/
       - title: ROS Mapping and Localization
