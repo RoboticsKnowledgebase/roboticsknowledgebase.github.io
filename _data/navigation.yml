@@ -23,6 +23,8 @@ wiki:
         url: /wiki/system-design-development/cable-management/
       - title: Subsystem Interface Modeling
         url: /wiki/system-design-development/subsystem-interface-modeling/
+      - title: In Loop Testing
+        url: /wiki/system-design-development/In-Loop-Testing/
   - title: Project Management
     url: /wiki/project-management/
     children:
@@ -52,7 +54,7 @@ wiki:
       - title: ROS Arduino Interface
         url: /wiki/common-platforms/ros/ros-arduino-interface/
       - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros-motion-server-framework/
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
       - title: ROS Cost Maps
         url: /wiki/common-platforms/ros/ros-cost-maps/
       - title: ROS Mapping and Localization
