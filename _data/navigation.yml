@@ -61,6 +61,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-navigation/
       - title: ROS Global Planner
         url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: Hello Robot Stretch RE1
+        url: /wiki/common-platforms/hello-robot
   - title: Sensing
     url: /wiki/sensing/
     children:
