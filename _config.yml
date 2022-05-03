@@ -241,7 +241,7 @@ compress_html:
 
 
 # Defaults
-defaults:
+defaults:      
   # _posts
   - scope:
       path: ""
@@ -263,3 +263,6 @@ defaults:
       layout: single
       sidebar:
         nav: "wiki"
+      toc: true
+      toc_icon: "bars"
+      toc_sticky: true
