@@ -1,106 +1,111 @@
----
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2022-05-03 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
-title: Hello Robot
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
----
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+The Stretch RE1 by Hello Robot, is a lightweight and capable mobile manipulator designed to work safely around people in home and office environments. It has 4 degrees of freedom - a telescoping arm which can reach 50cm horizontally, a prismatic lift which can reach 110cm vertically, a differential drive base with a compact footprint of 34x34cm.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+The design principle of Hello Robot is making the mobile manipulation robot as simple as possible. To do that, Hello Robot referred to the Roomba robot for its omnidirectional mobile base design, adopted linear joints for simple lift and telescopic arm movement, and obtained enough degrees of freedom by adding pitch, and roll joints to the wrist. All together, the robot becomes a 3-DOF wrist and a 7_DOF robot. The robot’s operational principle is to have two modes that are navigation and manipulation. In the navigation mode, the robot’s telescopic arm retracts, and uses a mobile base as a main actuator. The robot can lower the lift joint and retract the arm joint to lower the robot’s COM and increase stability. In its manipulation mode, the robot uses the mobile base to perform rotations in addition to pure translations of Cartesian motion of the end of the arm. It is also possible to perform curvilinear motion. The Stretch RE1 is mainly designed to perform like a human in an indoor human environment. The configuration of the robot therefore, matches with human dimensions.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+This tutorial covers additonal functionality that the documentation of the Hello Robot does not include such as-
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+(a) The HelloNode Class
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+(b) The Tool Share Class
 
-This section covers the basic syntax and some rules of thumb for writing.
+## The HelloNode Class
+The HelloNode class is defined in "hello_misc.py". This image below shows the location of the file as it would appear when cloning the stretch_ros package off of the github repository into your workspace.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+![Fig 1.](https://i.ibb.co/2SM17qS/location.png)
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+This module has several useful functions along with the class and its methods.  Following is a list of all the functions and methods that can be accessed from the HelloHelpers module:
 
+1. get_wrist_state()
+2. get_lift_state()
+3. get_left_finger_state()
+4. get_p1_to_p2_matrix
+5. move_to_pose() - HelloNode Class Method
+6. get_robot_floor_pose_xya() - HelloNode Class Method
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+Each of these functions and how best to use them are explained below in detail.  First we will look at the functions and then the class methods:
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+### get_wrist_state(joint_states)
+The get_wrist_state() function takes in a joint_states object.  The joint states object is essentially an array of joint positions for the arm extension.  The index of a particular joint in the array can be accessed using the key value of that particular joint.  For the wrist extension, these can be names from the list ['joint_arm_l0', 'joint_arm_l1', 'joint_arm_l2', 'joint_arm_l3'].  Calling joint_states.name.index(<joint_name>) where "joint_name" is a name from the list returns the index of the joint in that joint array.  The index can then be usedd to access the joint value using the call joint_states.<attribute>[<index>] where attribute can be "position", "velocity" or "effort".  The functions calculates the wrist position based on the individual extensions of each arm and then returns the wrist position values as [wrist_position, wrist_velocity, wrist_effort].
+  
+### get_lift_state(joint_states)
+The get_list_state functions also takes in a joint_states object.  This function then indexs for the "joint_lift" and then returns a list of [lift_position, lift_velocity, lift_effort].  The methods of extracting the values are the same as described earlier.
+  
+### get_left_finger_state(joint_states)
+The get_left_finger_state functions also takes in a joint_states object.  This function then indexs for the "joint_gripper_finger_left" and then returns a list of [left_finger_position, left_finger_velocity, left_finger_effort].  The methods of extracting the values are the same as described earlier.
+  
+### get_p1_to_p2_matrix(<p1_frame_id>, <p2_frame_id>, tf2_buffer, lookup_time=None, timeout_s=None)
+This function while it is a function from the module, requires the ROS node to be running and a tf_buffer object to be passed to it.  It returns a 4x4 affine transform that takes points in the p1 frame to points in the p2 frame.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
+### move_to_pose(pose)
+The move_to_pose is a HelloNode class method that takes in a pose dictionary.  The dictionary has key-value pairs where the keys are joint names and the values are the joint values that are to be commanded.  An example joint-value dictionary that can be sent to the move_to_pose function is "{'joint': 'translate_mobile_base', 'inc': self.square_side}".  One point to be noted is that the main stretch ROS driver has to be shifted into position mode to take the joint values for each joint.  The provided examples controls the base by referring to it's joint name "translate_mobile_base".  This type of control is not possible if the stretch_driver is in manipulation or navigation mode.
+  
+### get_robot_floor_pose_xya()
+The get_robot_floor_pose_xya() is another HelloNode class method that uses the function get_p1_to_p2_matrix to get the robot's base_link position and orientation and projects it onto the floor.  The function returns a list of the robot's x, y position and the orientation angle in radians.
+  
+**Note:  In order to get ROS running after initializing the class, the main method of the class has to also be called.  This will initialize the ROS node and the tf buffer.  This is essential before the functions that require ROS can be utilized**
 
-Larger chunks of code should use this format:
+## The ToolShare Class
+The Hello robot comes with a gripper or a dex wrist which can handle a variety of tasks. However, if users have a custom tool for a specific task, the platform provides the ability to swap the existing tool with the new one. The tutorial below explains how to twitch a custom tool to the robot in detail.
+
+- If the tool has no motors 
+The ToolNone interface should be loaded when no tool is attached to the Wrist Yaw joint. To switch to this interface, update the field in your stretch_re1_user_params.yaml  to:
+robot:
+tool: tool_none
+
+- If the tool has one or more motors:  It is a good idea if dynamixel motors are used for tool actuation. The hello robot already comes with a  dynamixel motor interface which makes controlling the motors easier. These motors can be daisy chained to the current robot structure, making it modular and easy to use. The motors can be daisy chained as shown below.
+  ![Fig 2.](https://i.ibb.co/m4qbjBL/ex-106-dual.png)
+  
+Now to use your tool : 
+  
+Tool usage with the end_of_arm method can be seen [here](https://docs.hello-robot.com/tool_change_tutorial/). To change the tool without this method - the following steps should be followed. Usually following the end_of_arm method gives you limited capability in terms of using the tool. However, it has advantages like better communication between the stretch driver and the tool. 
+  
+1. The tool in the user params file has to first be changed to tool_none as shown earlier. After this, the parameters of your tool need to be specified clearly in the user params files. This means specifying its baud rate, motion parameters, torque parameters, range etc. A format for the same can be found by looking at the factory parameters for the gripper or the wrist_yaw joint. These are parameters referring to the motor and  should be done for every motor used.
+  
+2. The name/ title of the tool refers to the python class made for the tool. For example, here : gripper is a class inheriting from the dynamixel motor class which defines functions like homing, move_to, move_by for the motor. Each motor should have a class like this for separate control. 
+  
+3. Functions  of the tool 
+  
+These are some of the functions that have to be included in the tool class. This class inherits from the (DynamixelHelloXL430) class already present on the robot.
+  
+- Homing:   When using any tool with motors, the tool needs to be homed separately. This allows the robot to calibrate the tool before using it. Homing for motors can be done in a one stop or multi stop process depending on the hardstops present on your tool. One stop homing of motors is easy and effective. Once the first hardstop is hit, it makes that position as the zero of the motor and then reaches its initial calculated position or any position you specify.
+- move_to : you can directly command the motor to reach a given position relative to its zero position. The move to command can be given in degrees or radians or ticks. However, this distance should be within the range of the motor ticks. The function looks somewhat like this: 
+- move_by. : you can command the mor to move by an incremental distance. This distance can be positive or negative and is given in degrees/ radians/ ticks. The function looks somewhat like: 
+- Other functions like startup, init, pose can be inherited from the motor class. These help in smooth functioning of the robot.
+  
+4. Adding to the URDF 
+If you have the design of your custom tool in solidworks or fusion, it is easy to add it to the existing URDF model. 
+  
+[For solidworks](http://wiki.ros.org/sw_urdf_exporter)
+  
+[For fusion](https://github.com/syuntoku14/fusion2urdf)
+
+These plugins convery your solidworks/ fusion model to the URDF format. Be careful while naming your joints, joint types and origin. The joints, especially, have to be imported carefully with their constraints and types to the urdf model. The plugins generate mesh files (in STL format), zacro files and a .urdf file. All of these files are needed for the further steps. These files need to be on the stretch robot. After receiving the mesh files, the mesh files need to be copied to the stretch_description folder in stretch_ros. The urdf part for the tool also needs to be added in the actual urdf of the robot.
+
+```  
+$ cd ~/<path to folder>
+$ cp <folder> ~/catkin_ws/src/stretch_ros/stretch_description/urdf/
+$ cp <folder>/meshes/*.STL ~/catkin_ws/src/stretch_ros/stretch_description/meshes/
 ```
-def recover_msg(msg):
-
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
+  
+Now the tool Xacro for Stretch needs to be edited. This is done by opening ~/catkin_ws/src/stretch_ros/stretch_description/urdf/stretch_description.xacro in an editor, and commenting out the current tool Xacro and including the Xacro for the new tool in the same format. After this, we have to reflect the .urdf and xacro changes in the model.
+ 
 ```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
+$ cd ~/catkin_ws/src/stretch_ros/stretch_description/urdf
+$ cp stretch.urdf stretch.urdf.bak
+$ rosrun stretch_calibration update_urdf_after_xacro_change.sh
+```
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
+Now, we can visualize the tool in RViz. In case the tool is not oriented properly, you can open the .urdf file and change the visual and collision orientations (x,y,z and r,p,y) to reflect the changes in your visualization. 
 
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
+Running the tool : You are now ready to run your custom tool with the Hello interface! Your python scripts can call either the tool as a separate class or as a part of the end_of_arm class. The script should include homing, startup, your tool operation and end of process. 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Using the above tutorials, one can get started easily with the HelloNode and ToolShare class.
 
 ## See Also:
 - Links to relevant material within the Robotics Knowledgebase go here.
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- [Hello Robot Documentation](http://docs.hello-robot.com/)
+- [Hello Node class](https://github.com/hello-robot/stretch_ros/blob/master/hello_helpers/src/hello_helpers/hello_misc.py)
+- [Tool Share examples](https://github.com/hello-robot/stretch_tool_share)
