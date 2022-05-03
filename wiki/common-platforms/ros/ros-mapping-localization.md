@@ -58,9 +58,6 @@ For an overview of all different plugins available in Gazebo, take a look at [Us
 
 Now we will set up our IMU sensor plugin according to the description above by adding the following lines before the ```</robot>``` line in our URDF:
 
-<details>
-  <summary>Click to expand URDF code</summary>
-  
 ```
 <link name="imu_link">
   <visual>
@@ -153,15 +150,11 @@ Now we will set up our IMU sensor plugin according to the description above by a
   </sensor>
 </gazebo>
 ```
-</details>
 
 Now, let us add the differential drive ModelPlugin. We will configure the plugin such that ```nav_msgs/Odometry``` messages are published on the ```/demo/odom``` topic. The joints of the left and right wheels will be set to the corresponding wheel joints of your robot. The wheel separation and wheel diameter are set according to the values of the defined values of ```wheel_ygap``` and ```wheel_radius``` respectively.
 
 To include this plugin in our URDF, add the following lines after the ```</gazebo>``` tag of the IMU plugin:
 
-<details>
-	<summary>Click to expand URDF code</summary>
-    
 ```
 <gazebo>
   <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
@@ -191,7 +184,6 @@ To include this plugin in our URDF, add the following lines after the ```</gazeb
   </plugin>
 </gazebo>
 ```
-</details>
 
 Then you can simply launch your robot in Gazebo as you normally do and verify the ```/demo/imu``` and ```/demo/odom``` topics are active in the system. Observe that the ```/demo/imu``` topic publishes ```sensor_msgs/Imu``` type messages while the ```/demo/odom``` topic publishes ```nav_msgs/Odometry``` type messages. The information being published on these topics come from the gazebo simulation of the IMU sensor and the differential drive respectively. Also note that both topics currently have no subscribers. In the next section, we will create a ```robot_localization``` node that will subscribe to these two topics. It will then use the messages published on both topics to provide a fused, locally accurate and smooth odometry information.
 
@@ -207,9 +199,6 @@ Let us now configure the ```robot_localization``` package to use an Extended Kal
 
 First, install it using ```sudo apt install ros-<ros-distro>-robot-localization```. Next, we specify the parameters of the ```ekf_node``` using a YAML file. Create a directory named ```config``` at the root of your project and create a file named ```ekf.yaml```. Copy the following lines of code into your ```ekf.yaml``` file.
 
-<details>
-	<summary>Click to expand ekf.yaml file</summary>
-    
 ```
 ### ekf config file ###
 ekf_filter_node:
@@ -259,7 +248,6 @@ ekf_filter_node:
                       false, false, false,
                       false, false, false]
 ```
-</details>
 
 In this configuration, we defined the parameter values of ```frequency```, ```two_d_mode```, ```publish_acceleration```, ```publish_tf```, ```map_frame```, ```odom_frame```, ```base_link_frame```, and ```world_frame```. For more information on the other parameters you can modify, see [Parameters of state estimation nodes](http://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html#parameters), and a sample ```ekf.yaml``` can be found [here](https://github.com/cra-ros-pkg/robot_localization/blob/foxy-devel/params/ekf.yaml).
 
