@@ -17,17 +17,60 @@ At a high-level, there are two sets of micro-ROS libraries involved in the overa
 
 ## Prerequisites
 
-It is assumed that you have ROS 2 installed on the host computer. It is also assumed that you have a supported microcontroller board on which the micro-ROS application will be built. TODO: Add links to supported boards, installing ROS 2
+It is also assumed that you have a [supported microcontroller board](https://micro.ros.org/docs/overview/hardware/) on which the micro-ROS application will be built.
+
+The steps will also use ROS2. At time of writing, there are a few possible options for installing micro-ROS with ROS2:
+
+1. Install ROS2 natively on the host computer (e.g. follow the [ROS2 installation guide](https://docs.ros.org/en/galactic/Installation.html) on the computer that will connect to the microcontroller).
+
+   - In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1:-installing-micro-ROS-natively)
+
+2. Use a ROS2 Docker container. There are two options here:
+   1. Most recommended: Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment
+
+  - In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#Option-2.1:-Using-micro-ROS-Docker-image)
+
+   2. Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment.
+
+   - In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#Option-2.2:-Using-micro-ROS-with-user-Dockerfile)
+
+TODO: supported OS?
 
 ## Setting Up micro-ROS with Arduino Due
 
-## Installing micro-ROS onto the Host Computer
+TODO: transfer instructions from /arduino package
 
-## Using micro-ROS with Docker
+## Installing micro-ROS on the Host Computer
+
+Now you will need to install micro-ROS on the host computer. As discussed, there are a couple ways to do this depending on how you want to have your ROS2 environment set up.
+
+### Option 1: Installing micro-ROS Natively
+
+TODO: refer and/or copy paste from website instructions
+
+### Option 2.1: Using micro-ROS Docker image
+
+TODO: refer and/or copy paste from website instructions
+
+### Option 2.2: Using micro-ROS with user Dockerfile
+
+TODO: transfer instructions from `arduino` package readme
 
 ## Testing the Installation
 
+TODO: transfer instructions from `arduino` package readme
+
 ## Writing an Example micro-ROS Sketch
+
+TODO: high level overview, link to docs
+
+### Quick Start: Publisher and Subscriber
+
+TODO: transfer `actuator_interface` example from `dev` branch code
+
+### Advanced: Heartbeat for Transient Connectivity
+
+TODO: transfer `auto_connect_actuator_interface` example from `dev` branch code
 
 ## First subheading
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
