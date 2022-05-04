@@ -72,6 +72,8 @@ wiki:
         url: /wiki/sensing/adafruit-gps/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
+      - title: Stag
+        url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
       - title: Computer Vision Consideration
