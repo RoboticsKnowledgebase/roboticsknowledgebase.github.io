@@ -1,106 +1,100 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+date: {}
+title: Thermal Cameras
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+## Types of Thermal Cameras
+Types of Thermal Cameras (classified on the basis of operation):
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+### 1. Cooled Cameras
+- #### Working
+  - They have an internal cryogenic cooler that only cools the sensor to temperatures as low as 77° Kelvin (-196°C or -321°F). This dramatically increases the sensitivity of the Cooled Thermal cameras allowing them to see day and night at longer ranges than uncooled cameras as their greater sensitivity.
+  - Most cooled thermal cameras are InSb and have to be cooled continuously
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+- #### Use cases
+  - When very good object detection is needed at very long range
+  - When you have a lot of money
+  - When weight and power constraints are forgiving
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+### 2. Uncooled Cameras
+- #### Working
+  - Uncooled cameras are based on VoX infrared sensor and are often uncooled 
+  - Due to continuous operation and increase in temperature of the focal plane array, there is a drift in the electrical properties of the sensor elements.
+  - This requires compensation/correction which can be done in two ways: one-point and two-point Non Uniformity Correction. This is covered in greater detail later in this wiki.
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+- #### Use cases
+  - For most projects with reasonable budgets
+  - For use with UAVs where weight and power budgets are tight
 
-This section covers the basic syntax and some rules of thumb for writing.
+- #### Our experiences
+  - IR crossover
+    - Difficulty in segmenting out hot objects due to a phenomenon called IR crossover.
+    - This is basically a situation outdoors during some times of the day where the sunlight scattered by the environment washes out the output of the camera.
+  - NUC failure
+    - Persistent ghosting effect seen in the camera output.
+    - This was due to mechanical damage to the camera NUC apparatus (see NUC section for more information)
+  - Intermittent NUC also intermittently drops the output frame rate which may not be acceptable depending on the use case.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+### 3. Radiometric Cameras
+- #### Working 
+  - A radiometric thermal camera measures the temperature of a surface by interpreting the intensity of an infrared signal reaching the camera. .
+  - Reports pixel-wise temperature values for entire image captured
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+- #### Use cases
+  - When absolute temperature of objects is needed
+  - To ease implementation of temperature based segmentation instead of using more complicated algorithms on uncooled camera images
+  - Especially useful when there is a high contrast between temperatures of objects.
+  - Not as useful to try and segment humans in an indoor environment where temperature difference can’t be used reliably for segmentation
+
+- #### Our experiences
+  - We found this type of camera very helpful in combatting the IR crossover phenomenon seen outdoors during daytime testing.
+  - Also helped us side-step any issues due to NUC
+  - We ended up using the Seek Thermal camera for this purpose (refer to resources section for relevant links to datasheet and SDK)
+
+## Uncooled Thermal Camera NUC
+
+### What is NUC?
+
+**Non-uniformity correction (NUC)** is a procedure in uncooled thermal cameras to compensate for detector drift that occurs as the scene and environment change. Basically, the camera's own heat can interfere with its temperature readings. To improve accuracy, the camera measures the IR radiation from its own optics and then adjusts the image based on those readings. NUC adjusts gain and offset for each pixel, producing a higher quality, more accurate image.
+
+There are two types of NUC calibration:
+- **Two-point NUC**
+
+  - A two point NUC is a means to capture the gain and drift of each of the pixel elements while looking at a simulated black-body. In this case, the entire image should have an output of zero intensity as it is looking at a black-body. Any deviation from this is stored as the offset for this pixel in a lookup table. This process is then performed over a range of operating temperatures and during operation, based on the ambient temperature, the offsets from the lookup tables are applied. This is usually a factory calibration routine performed by the vendor before sale.
+
+  - This still does not suffice at times, with washed out images seen some times during operation. The one-point NUC is a means to help alleviate this. 
 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+- **One-point NUC**
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+  - This procedure works by intermittently concealing the detector with a plane so that light does not fall on this. The plane is then assumed to be a black body and calibration is performed against this. This phenomenon is accompanied by a drop in frame rate as no images are captured during this time (In the case of the FLIR Boson, it also makes an audible “click” sound).
+  - In case of the FLIR Boson, there is a pre-set temperature delta, which determines the when the NUC occurs. Every time the detector temperature changes by this amount, the NUC is initiated. NUC is also frequently referred to as FFC in FLIR documentation
+  - The FLIR Boson app also allows control over the duration for which the NUC occurs, giving some control of the drop in frame rate.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
+## Debug tips and our experience with the FLIR Boson
+- Quite a few of the cameras we picked up from inventory gave images with a persistent ghosting effect.
+- This we later realized was due to mechanical damage due to impact/ the cameras being dropped previously.
+- This caused the NUC shutter to prevent from engaging whenever the NUC routine as getting called, leading to the current scene in view being used as the template to be used as the sample black-body output to be compensated against.
+- An update in the ghosting pattern coinciding with a click sound is a reliable symptom for this mode of failure.
+- This failure can sometimes be intermittent based on how tight the fasteners on the detector stack are and the orientation of the camera.
+- Some ways to lessen the extent of the problem is to use the FLIR Boson app and try adjusting the following settings:
+  - Increase the temperature threshold for performing FFC.
+    - This will just increase the temperature change interval between which the FFC is performed. In case you do not anticipate very great change in detector temperature (short term use, cool ambient temperatures etc) this might delay the FFC long enough to not occur during operation.
+  - Disable FFC altogether
+    - This will just never initiate the FFC process.
+  - However, the **FLIR Boson performs one FFC on bootup regardless**. So, you will have to power on the camera with a lens cap or looking at a uniform low temperature featureless scene in either case.
+- We also found the camera to be deficient in giving a very high contrast of fires/ hotspots in open areas in broad daylight due to the IR crossover phenomenon.
 
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
+**NOTE:** The efficacy of all these methods must be determined experimentally based on your use cases and operating conditions. Please use the suggestions above only as a list of possible options to try out and not a prescriptive solution.
 
-        // Good coders comment their code for others.
-
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+## Resources
+- [Seek Thermal Camera Driver](https://github.com/howde-robotics/seek_driver)
+- [Seek SDK](https://developer.thermal.com/support/home) (will require creating an account)
+- [Seek Thermal Camera Datasheet](https://www.digikey.com/en/products/detail/seek-thermal/S304SP/10492240)
+- [FLIR Boson App](https://www.flir.com/support/products/boson/#Downloads)
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- www.infinitioptics.com/glossary/cooled-thermal
+- www.flir.com/discover/suas/uas-radiometric-temperature-measurements
+- www.flir.com/discover/security/radiometric/the-benefits-and-challenges-of-radiometric-thermal-technology
+- www.flir.com/discover/professional-tools/what-is-a-non-uniformity-correction-nuc
