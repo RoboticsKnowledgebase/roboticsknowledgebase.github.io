@@ -30,13 +30,13 @@ The steps will also use ROS2. At time of writing, there are a few possible optio
 
 > At time of writing (May 2022), **micro-ROS requires Linux OS** for native installation.
 
-- In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1:-installing-micro-ROS-natively)
+- In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1-installing-micro-ros-natively)
 
 2. Use a ROS2 Docker container. There are two options here:
-  -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#Option-2.1:-Using-micro-ROS-Docker-image)
+  -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#option-21-using-micro-ros-docker-image)
   > The pre-built option is most recommended if using Docker!
 
-  -  Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment. In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#Option-2.2:-Using-micro-ROS-with-user-Dockerfile)
+  -  Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment. In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#option-22-using-micro-ros-with-user-dockerfile)
 
 ## Setting Up micro-ROS with Arduino Due
 
