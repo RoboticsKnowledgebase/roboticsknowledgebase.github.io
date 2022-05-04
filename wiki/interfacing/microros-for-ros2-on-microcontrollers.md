@@ -116,8 +116,25 @@ At this point, you should have micro-ROS installed on the host machine and can c
 
 ### Option 2.1: Using micro-ROS Docker image
 
-TODO: refer and/or copy paste from website instructions
+Micro-ROS maintains several Docker images that build on top of ROS2 distributions. The images have variable levels of pre-built functionality. The best one for getting started is the `micro-ros-agent` image that will allow you to run an agent directly! For more information about the images available, and how they are constructed, please see the [micro-ROS docker repository](https://github.com/micro-ROS/docker).
 
+1. First make sure you have Docker installed on your host machine. 
+> [Docker Desktop for Mac/Windows](https://docs.docker.com/desktop/) OR [Docker Engine for Linux](https://docs.docker.com/engine/install/#server)
+
+2. Then pull the `micro-ros-agent` image, replacing the branch name with the distro version as `microros/<image>:$ROS_DISTRO`. For example, you can pull the image built on ROS2 galactic by using the following command:
+```
+docker pull microros/micro-ros-agent:galactic
+```
+
+3. Use the `docker run` command to bring the container up
+```
+docker run -d --net=host microros/micro-ros-agent:galactic udp4 -p 9999
+```
+see print out
+
+```
+docker exec -it <print out> bash
+```
 ### Option 2.2: Using micro-ROS with user Dockerfile
 
 TODO: transfer instructions from `arduino` package readme
