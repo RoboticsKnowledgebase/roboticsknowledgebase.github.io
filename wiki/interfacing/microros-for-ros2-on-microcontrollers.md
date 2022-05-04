@@ -9,11 +9,16 @@ title: micro-ROS for ROS2 on Microcontrollers
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-[micro-ROS](https://micro.ros.org/) is a set of software libraries that enables development of robotic applications to be deployed onto microcontrollers that are typically limited in computational resources. The micro-ROS framework is designed for ROS 2, and can be leveraged for bidirectional communication between ROS 2 nodes running on a separate compute and the micro-ROS application running on a microcontroller. micro-ROS is open-source, and can be highly beneficial for any roboticists aiming to integrate low-level microcontrollers into a robotic system.
+[micro-ROS](https://micro.ros.org/) is a set of software libraries that enables development of robotic applications to be deployed onto microcontrollers that are typically limited in computational resources. The micro-ROS framework is designed for use with ROS 2, and can be leveraged for **bidirectional communication** between ROS 2 nodes running on a separate compute and the micro-ROS application running on a **microcontroller**, such as an Arduino. micro-ROS is open-source, and can be highly beneficial for any roboticists aiming to integrate low-level microcontrollers into a robotic system. This page is a tutorial guide for how to setup and use micro-ROS, with an Arduino Due as example hardware.
+
+## Conceptual Overview
+micro-ROS consists of a `node` running on the microcontroller and an `agent` running on the host computer. The `agent` handles the interface between the `node` and the rest of the ROS2 stack. This allows the ROS2 stack and microcontroller `node` to publish and subscribe to each other as if the `node` was like any other ROS2 node. Great! The hardware interface is most commonly a serial connection, such as USB. This tutorial will walk through how to prepare the microcontroller and host computer environments for the `node` and `agent` respectively, and then show some examples for how to test the connection and make a first `node` on the microcontroller. 
+
+![Simplified micro-ROS architecture](assets/images/micro-ros-architecture.png)
 
 ## Installation Overview
 
-At a high-level, there are two sets of micro-ROS libraries involved in the overall installation process. The first will be a set of micro-ROS client libraries specific to your hardware, which will be necessary to build micro-ROS applications that run on the microcontroller. In addition, in order for your micro-ROS application to communicate with the rest of the ROS 2 stack, you will need to install the core micro-ROS libraries onto the host computer. This will allow micro-ROS to be run on your host machine, which will facilitate communication with a connected microcontroller running a micro-ROS application. The following tutorials will walk through installation of all necessary micro-ROS libraries using example hardware.
+At a high-level, there are two sets of micro-ROS libraries involved in the overall installation process. The first will be a set of micro-ROS client libraries specific to your hardware/microcontroller libraires, which will be necessary to build micro-ROS applications that run on the microcontroller. In addition, in order for your micro-ROS application to communicate with the rest of the ROS 2 stack, you will need to install the core micro-ROS libraries onto the host computer. This will allow micro-ROS to be run on your host machine, which will facilitate communication with a connected microcontroller running a micro-ROS application. The following tutorial will walk through installation of all necessary micro-ROS libraries using example hardware.
 
 ## Prerequisites
 
@@ -21,20 +26,17 @@ It is also assumed that you have a [supported microcontroller board](https://mic
 
 The steps will also use ROS2. At time of writing, there are a few possible options for installing micro-ROS with ROS2:
 
-1. Install ROS2 natively on the host computer (e.g. follow the [ROS2 installation guide](https://docs.ros.org/en/galactic/Installation.html) on the computer that will connect to the microcontroller).
+1. Install ROS2 natively on the host computer on the computer that will connect to the microcontroller).
 
-   - In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1:-installing-micro-ROS-natively)
+> At time of writing (May 2022), **micro-ROS requires Linux OS** for native installation.
+
+- In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1:-installing-micro-ROS-natively)
 
 2. Use a ROS2 Docker container. There are two options here:
-   1. Most recommended: Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment
+  -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#Option-2.1:-Using-micro-ROS-Docker-image)
+  > The pre-built option is most recommended if using Docker!
 
-  - In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#Option-2.1:-Using-micro-ROS-Docker-image)
-
-   2. Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment.
-
-   - In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#Option-2.2:-Using-micro-ROS-with-user-Dockerfile)
-
-TODO: supported OS?
+  -  Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment. In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#Option-2.2:-Using-micro-ROS-with-user-Dockerfile)
 
 ## Setting Up micro-ROS with Arduino Due
 
@@ -46,7 +48,17 @@ Now you will need to install micro-ROS on the host computer. As discussed, there
 
 ### Option 1: Installing micro-ROS Natively
 
+To install micro-ROS natively on your host computer, you will first need to have ROS2 installed natively. 
+> Note that you need to be using a Linux OS. If you do not have a Linux OS, then you should try one of the Docker options.
+
+1. Please follow the [ROS2 installation guide](https://docs.ros.org/en/galactic/Installation.html) for official instructions.
+
+Now that you have ROS2 installed (on your Linux host machine), we can install the micro-ROS libraries.
+
+2. 
+
 TODO: refer and/or copy paste from website instructions
+
 
 ### Option 2.1: Using micro-ROS Docker image
 
