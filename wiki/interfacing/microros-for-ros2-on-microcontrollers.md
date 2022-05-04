@@ -11,6 +11,24 @@ title: micro-ROS for ROS2 on Microcontrollers
 ---
 [micro-ROS](https://micro.ros.org/) is a set of software libraries that enables development of robotic applications to be deployed onto microcontrollers that are typically limited in computational resources. The micro-ROS framework is designed for ROS 2, and can be leveraged for bidirectional communication between ROS 2 nodes running on a separate compute and the micro-ROS application running on a microcontroller. micro-ROS is open-source, and can be highly beneficial for any roboticists aiming to integrate low-level microcontrollers into a robotic system.
 
+## Installation Overview
+
+At a high-level, there are two sets of micro-ROS libraries involved in the overall installation process. The first will be a set of micro-ROS client libraries specific to your hardware, which will be necessary to build micro-ROS applications that run on the microcontroller. In addition, in order for your micro-ROS application to communicate with the rest of the ROS 2 stack, you will need to install the core micro-ROS libraries onto the host computer. This will allow micro-ROS to be run on your host machine, which will facilitate communication with a connected microcontroller running a micro-ROS application. The following tutorials will walk through installation of all necessary micro-ROS libraries using example hardware.
+
+## Prerequisites
+
+It is assumed that you have ROS 2 installed on the host computer. It is also assumed that you have a supported microcontroller board on which the micro-ROS application will be built. TODO: Add links to supported boards, installing ROS 2
+
+## Setting Up micro-ROS with Arduino Due
+
+## Installing micro-ROS onto the Host Computer
+
+## Using micro-ROS with Docker
+
+## Testing the Installation
+
+## Writing an Example micro-ROS Sketch
+
 ## First subheading
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
