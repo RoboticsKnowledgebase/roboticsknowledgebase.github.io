@@ -5,17 +5,11 @@
 date: 2022-05-04 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Microros for ROS2 on Microcontrollers
+title: micro-ROS for ROS2 on Microcontrollers
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+[micro-ROS](https://micro.ros.org/) is a set of software libraries that enables development of robotic applications to be deployed onto microcontrollers that are typically limited in computational resources. The micro-ROS framework is designed for ROS 2, and can be leveraged for bidirectional communication between ROS 2 nodes running on a separate compute and the micro-ROS application running on a microcontroller. micro-ROS is open-source, and can be highly beneficial for any roboticists aiming to integrate low-level microcontrollers into a robotic system.
 
 ## First subheading
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
