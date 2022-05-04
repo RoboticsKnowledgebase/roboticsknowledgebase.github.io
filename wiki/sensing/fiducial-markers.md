@@ -1,5 +1,3 @@
-
-
 ---
 date: 2022-04-26
 title: Comparison of Fiducial Markers
