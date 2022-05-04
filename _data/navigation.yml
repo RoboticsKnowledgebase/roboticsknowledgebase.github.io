@@ -88,6 +88,8 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: Fiducial Markers
+        url: /wiki/sensing/fiducial-markers/
       - title: RTK GPS
         url: /wiki/sensing/gps/
       - title: Intel Realsense
