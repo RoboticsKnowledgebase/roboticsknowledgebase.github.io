@@ -124,9 +124,11 @@ docker pull microros/micro-ros-agent:galactic
 ```
 
 3. Use the `docker run` command to bring the container up. Specify the interface connection type in the arguments, such as for a udp or serial connection. For example, with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command. 
-> This command should print out the docker container id. Copy the id, you will need it for the next step!
+> This command should print out the docker container id. Copy the id, you will need it for the next step! Note that you may need to play with container port access to allow the container to access the hardware interface. You can mount a device directly by using the --device flag. The should be straightforward on Linux but can be challenging on Mac and Windows. You can also mount many devices easily using [docker compose](https://www.balena.io/docs/learn/develop/hardware/).
+> 
+>   If you are still struggling, you can temporarily give the container privileged access; just be careful with privileged access because it could cause security concerns and/or allow you to accidentally damage devices if you are not careful. [Read more about the risks of privileged mode here](https://learn.snyk.io/lessons/container-runs-in-privileged-mode/kubernetes/) and see the official [Docker documentation on privileged mode](https://docs.docker.com/engine/reference/commandline/run/#/full-container-capabilities-privileged). To give the container privileged access to host hardware, add the `--privileged` flag.
 ```
-docker run -d --net=host microros/micro-ros-agent:galactic serial --dev /dev/tty0
+docker run -d --device=/dev/tty0 --net=host microros/micro-ros-agent:galactic serial --dev /dev/tty0
 ```
 
 4. Use the container id from the previous step to enter the container. If you didn't see a print out, you can run `docker container ls` and take the id from there.
