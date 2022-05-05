@@ -191,7 +191,7 @@ wiki:
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
         url: /wiki/interfacing/blink-1-led/
-      - title: Microros for ROS2 on Microcontrollers
+      - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
   - title: Computing
     url: /wiki/computing/
