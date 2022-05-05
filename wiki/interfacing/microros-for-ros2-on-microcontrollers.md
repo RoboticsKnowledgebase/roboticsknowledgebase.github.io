@@ -32,11 +32,9 @@ The steps will also use ROS2. At time of writing, there are a few possible optio
 
 - In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1-installing-micro-ros-natively)
 
-2. Use a ROS2 Docker container. There are two options here:
-  -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2.1: Using micro-ROS Docker image](#option-21-using-micro-ros-docker-image)
+1. Use a ROS2 Docker container.
+  -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2: Using micro-ROS Docker image](#option-2-using-micro-ros-docker-image)
   > The pre-built option is most recommended if using Docker!
-
-  -  Add micro-ROS build instructions to an existing dockerfile, to support a custom/user-defined ROS2 environment. In this case, follow the instructions for [Option 2.2: Using micro-ROS with user Dockerfile](#option-22-using-micro-ros-with-user-dockerfile)
 
 ## Setting Up micro-ROS with Arduino Due
 
@@ -114,7 +112,7 @@ source install/local_setup.bash
 
 At this point, you should have micro-ROS installed on the host machine and can continue to [Testing the Installation](#testing-the-installation).
 
-### Option 2.1: Using micro-ROS Docker image
+### Option 2: Using micro-ROS Docker image
 
 Micro-ROS maintains several Docker images that build on top of ROS2 distributions. The images have variable levels of pre-built functionality. The best one for getting started is the `micro-ros-agent` image that will allow you to run an agent directly! For more information about the images available, and how they are constructed, please see the [micro-ROS docker repository](https://github.com/micro-ROS/docker).
 
@@ -126,18 +124,67 @@ Micro-ROS maintains several Docker images that build on top of ROS2 distribution
 docker pull microros/micro-ros-agent:galactic
 ```
 
-3. Use the `docker run` command to bring the container up
+1. Use the `docker run` command to bring the container up. Specify the interface connection type in the arguments, such as for a udp or serial connection. For example, with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command. 
+> This command should print out the docker container id. Copy the id, you will need it for the next step!
 ```
-docker run -d --net=host microros/micro-ros-agent:galactic udp4 -p 9999
+docker run -d --net=host microros/micro-ros-agent:galactic serial --dev /dev/tty0
 ```
-see print out
 
+2. Use the container id from the previous step to enter the container. If you didn't see a print out, you can run `docker container ls` and take the id from there.
 ```
-docker exec -it <print out> bash
+docker exec -it <container id> bash
 ```
-### Option 2.2: Using micro-ROS with user Dockerfile
 
-TODO: transfer instructions from `arduino` package readme
+3. Now you should be in the micro-ROS Docker container! Your command line should be prepended with something like `root@docker-desktop:/uros_ws#`. To run the micro-ROS agent, simply run the ros2 node and pass in the arguments for the device you are connecting. with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command.
+```
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/tty0
+```
+Example output for a disconnected device:
+```
+[1651717733.416743] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
+[1651717734.417145] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
+[1651717735.425596] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
+```
+
+This container should be some variant of Linux OS with a ROS2 installation. You should be able to echo and/or publish ROS2 topics to interact with the `node` on the microcontroller! 
+
+4. When you are done testing, exit the container by typing exit at the command prompt. 
+```
+exit
+```
+
+![Example steps of running micro-ROS Docker image](assets/images/micro-ros-docker.png)
+
+
+5. Finally, don't forget to stop the container and remove any unnecessary build cache. You can do so by:
+     1. List the active containers with `docker container list --all`
+     2. Stop any active containers using `docker container stop <container id>` 
+     3. Remove any stopped containers using `docker container rm <container id>`
+     4. List any remaining images using `docker image list --all`
+     5. Remove any remaining images with `docker image rm <image id>`. 
+> If you want to clear *ALL docker-related files from your system*, use `docker system prune -a --volumes`. This will clear all existing docker files on your host computer, so any existing containers will need to be re-built/re-pulled.
+
+### Advanced Docker Usage
+
+You probably will want to use micro-ROS with your existing ROS2 workspace. To make this happen, simply use the `micro-ros-agent` as the base image in a Dockerfile to support a custom/user-defined ROS2 environment. In this case, you'll also have to source the `uros_ws` as well so that the micro-ROS packages are discovered in your ROS2 environment. 
+
+For example, the Dockerfile could look like:
+```
+# Set micro-ros-agent as base image
+FROM microros/micro-ros-agent:galactic as ros_base
+
+# Have shells source uros_ws packages and your own packages
+echo 'source /uros_ws/install/setup.bash' >> /root/.bashrc
+# Export MicroROS DDS settings, assumes ROS_LOCALHOST_ONLY != 1 (from micro-ros_entrypoint.sh)
+echo 'export FASTRTPS_DEFAULT_PROFILES_FILE=/tmp/disable_fastdds_shm.xml' >> /root/.bashrc
+
+# Source your own workspace packages
+echo 'source /path/to/your/ws/install/setup.bash' >> /root/.bashrc
+
+# Dockerfile entrypoint goes below here
+ENTRYPOINT ["/your_entrypoint.sh"]
+CMD ["bash"]
+```
 
 ## Testing the Installation
 
