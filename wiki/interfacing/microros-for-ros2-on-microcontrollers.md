@@ -216,17 +216,7 @@ TODO: transfer `actuator_interface` example from `dev` branch code
 
 TODO: transfer `auto_connect_actuator_interface` example from `dev` branch code
 
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- [Docker](https://roboticsknowledgebase.com/wiki/tools/docker/)
+- [ROS Arduino Interface](https://roboticsknowledgebase.com/wiki/common-platforms/ros/ros-arduino-interface/) (If using ROS1 as opposed to ROS2)
+- [udev Rules](https://roboticsknowledgebase.com/wiki/tools/udev-rules/)
