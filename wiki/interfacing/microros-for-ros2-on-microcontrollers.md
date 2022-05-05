@@ -32,7 +32,7 @@ The steps will also use ROS2. At time of writing, there are a few possible optio
 
 - In this case, follow the instructions for [Option 1: Installing micro-ROS Natively](#option-1-installing-micro-ros-natively)
 
-1. Use a ROS2 Docker container.
+2. Use a ROS2 Docker container.
   -  Use a pre-built docker image from micro-ROS that comes with micro-ROS installed in a ROS2 environment. In this case, follow the instructions for [Option 2: Using micro-ROS Docker image](#option-2-using-micro-ros-docker-image)
   > The pre-built option is most recommended if using Docker!
 
