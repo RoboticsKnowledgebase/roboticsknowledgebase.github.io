@@ -67,7 +67,7 @@ Now you will need to install micro-ROS on the host computer. As discussed, there
 ### Option 1: Installing micro-ROS Natively
 
 To install micro-ROS natively on your host computer, you will first need to have ROS2 installed natively. 
-> Note that you need to be using a Linux OS. If you do not have a Linux OS, then you should try one of the Docker options.
+> Note that you need to be using a Linux OS. If you do not have a Linux OS, then you should try the Docker option.
 
 1. Please follow the [ROS2 installation guide](https://docs.ros.org/en/galactic/Installation.html) for official instructions.
 
