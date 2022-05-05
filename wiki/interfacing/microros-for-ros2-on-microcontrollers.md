@@ -26,7 +26,7 @@ It is also assumed that you have a [supported microcontroller board](https://mic
 
 The steps will also use ROS2. At time of writing, there are a few possible options for installing micro-ROS with ROS2:
 
-1. Install ROS2 natively on the host computer on the computer that will connect to the microcontroller).
+1. Install ROS2 natively on the host computer on the computer that will connect to the microcontroller.
 
 > At time of writing (May 2022), **micro-ROS requires Linux OS** for native installation.
 
