@@ -123,18 +123,18 @@ Micro-ROS maintains several Docker images that build on top of ROS2 distribution
 docker pull microros/micro-ros-agent:galactic
 ```
 
-1. Use the `docker run` command to bring the container up. Specify the interface connection type in the arguments, such as for a udp or serial connection. For example, with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command. 
+3. Use the `docker run` command to bring the container up. Specify the interface connection type in the arguments, such as for a udp or serial connection. For example, with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command. 
 > This command should print out the docker container id. Copy the id, you will need it for the next step!
 ```
 docker run -d --net=host microros/micro-ros-agent:galactic serial --dev /dev/tty0
 ```
 
-2. Use the container id from the previous step to enter the container. If you didn't see a print out, you can run `docker container ls` and take the id from there.
+4. Use the container id from the previous step to enter the container. If you didn't see a print out, you can run `docker container ls` and take the id from there.
 ```
 docker exec -it <container id> bash
 ```
 
-3. Now you should be in the micro-ROS Docker container! Your command line should be prepended with something like `root@docker-desktop:/uros_ws#`. To run the micro-ROS agent, simply run the ros2 node and pass in the arguments for the device you are connecting. with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command.
+5. Now you should be in the micro-ROS Docker container! Your command line should be prepended with something like `root@docker-desktop:/uros_ws#`. To run the micro-ROS agent, simply run the ros2 node and pass in the arguments for the device you are connecting. with a serial connection where the serial device shows up on the host device as `/dev/tty0`, use the following command.
 ```
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/tty0
 ```
@@ -147,7 +147,7 @@ Example output for a disconnected device:
 
 This container should be some variant of Linux OS with a ROS2 installation. You should be able to echo and/or publish ROS2 topics to interact with the `node` on the microcontroller! 
 
-4. When you are done testing, exit the container by typing exit at the command prompt. 
+6. When you are done testing, exit the container by typing exit at the command prompt. 
 ```
 exit
 ```
@@ -155,7 +155,7 @@ exit
 ![Example steps of running micro-ROS Docker image](assets/images/micro-ros-docker.png)
 
 
-5. Finally, don't forget to stop the container and remove any unnecessary build cache. You can do so by:
+7. Finally, don't forget to stop the container and remove any unnecessary build cache. You can do so by:
      1. List the active containers with `docker container list --all`
      2. Stop any active containers using `docker container stop <container id>` 
      3. Remove any stopped containers using `docker container rm <container id>`
