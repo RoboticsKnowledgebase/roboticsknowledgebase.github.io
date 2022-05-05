@@ -193,7 +193,6 @@ First, we will test the installation of the precompiled micro-ROS libraries for 
 Next, we can initiate the micro-ROS agent to verify installation of the micro-ROS libraries onto the host computer. First check the device name by running `ls /dev`. It will typically be named something like `/dev/ttyACM0` (though if you are not sure, you can always run `ls /dev` before and after plugging in the Arduino to determine what device has changed). A more robust solution would be to utilize udev rules for consistent device naming, though this is outside the scope of this tutorial.
 
 Assuming a device name of `/dev/ttyACM0`, the micro-ROS agent can be initiated by running:
-
 ```
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0 -v6
 ```
@@ -204,17 +203,276 @@ Run `ros2 topic list`. You should be able to see the topic `/micro_ros_arduino_n
 
 NOTE: One caveat is that if the `micro_ros_agent` is killed and restarted, the host machine may stop receiving messages even if the micro-ROS application is still running on the microcontroller. If this occurs, you may need to reset/power cycle the microcontroller for those messages to begin being received again. Work-arounds for this are discussed in [Advanced: Heartbeat for Transient Connectivity](#advanced-heartbeat-for-transient-connectivity).
 
+
 ## Writing an Example micro-ROS Sketch
 
-TODO: high level overview, link to docs
+Publishers and subscribers are best created using the micro-ROS object types, and can also be customized for Quality of Service settings. The best source of documentation is the [micro-ROS docs about publishers and subscribers](https://micro.ros.org/docs/tutorials/programming_rcl_rclc/pub_sub/).
 
-### Quick Start: Publisher and Subscriber
+### Quick Start: Single Publisher
+This starter Arduino code makes a single publisher for an Int32 message. To try it out, flash the code to a compatible microcontroller, start the agent, and then try to echo the ROS2 topic. The example is modifed from a [micro-ROS publisher demo example](https://github.com/micro-ROS/micro_ros_arduino/blob/1df47435f08b9609effaec9cb0cc99241ff9dc30/examples/micro-ros_publisher/micro-ros_publisher.ino).
 
-TODO: transfer `actuator_interface` example from `dev` branch code
+
+```
+// Modified from https://github.com/micro-ROS/micro_ros_arduino/blob/1df47435f08b9609effaec9cb0cc99241ff9dc30/examples/micro-ros_publisher/micro-ros_publisher.ino
+#include <micro_ros_arduino.h>
+
+#include <stdio.h>
+#include <rcl/rcl.h>
+#include <rcl/error_handling.h>
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+#include <rmw_microros/rmw_microros.h>
+
+#include <std_msgs/msg/int32.h> // ROS message
+
+/* MicroROS declarations */
+// NUM_HANDLES must be updated to reflect total number of subscribers + publishers
+#define NUM_HANDLES 1
+#define RCCHECK(fn)              \
+  {                              \
+    rcl_ret_t temp_rc = fn;      \
+    if ((temp_rc != RCL_RET_OK)) \
+    {                            \
+      return false;              \
+    }                            \
+  }
+
+// Declare microros objects
+rclc_support_t support;
+rcl_node_t node;
+rcl_timer_t timer;
+rclc_executor_t executor;
+rcl_allocator_t allocator;
+rcl_publisher_t publisher;
+std_msgs__msg__Int32 msg;
+
+/* Callbacks */
+void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
+{
+  (void)last_call_time;
+  if (timer != NULL)
+  {
+    rcl_publish(&feedback_pub, &feedback_msg, NULL);
+  } // if (timer != NULL)
+} // timer_callback()
+
+
+/* MicroROS functions */
+// Functions create_entities and destroy_entities can take several seconds.
+// In order to reduce this rebuild the library with
+// - RMW_UXRCE_ENTITY_CREATION_DESTROY_TIMEOUT=0
+// - UCLIENT_MAX_SESSION_CONNECTION_ATTEMPTS=3
+
+bool create_entities()
+{
+  allocator = rcl_get_default_allocator();
+
+  // create init_options
+  RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
+
+  // create node
+  RCCHECK(rclc_node_init_default(&node, "arduino_interface_node", "", &support));
+
+  // create publisher
+  RCCHECK(rclc_publisher_init_default(
+      &publisher,
+      &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      "arduino_publisher"));
+
+  // create timer
+  const unsigned int timer_period_ms = 10;
+  RCCHECK(rclc_timer_init_default(
+      &timer,
+      &support,
+      RCL_MS_TO_NS(timer_period_ms),
+      timer_callback));
+
+  // create executor
+  executor = rclc_executor_get_zero_initialized_executor();
+  RCCHECK(rclc_executor_init(&executor, &support.context, NUM_HANDLES, &allocator));
+  RCCHECK(rclc_executor_add_timer(&executor, &timer));
+}
+
+void setup()
+{
+  // Initialize some micro-ROS stuff
+  set_microros_transports();
+
+  // Create the micro-ROS objects
+  create_entities();
+}
+
+void loop()
+{
+  // Keep publishing the message
+  rclc_executor_spin_some(&executor, RCL_MS_TO_NS(1));
+}
+```
 
 ### Advanced: Heartbeat for Transient Connectivity
 
-TODO: transfer `auto_connect_actuator_interface` example from `dev` branch code
+You may or may not have transient connections between the microcontroller and the host computer. For example, you may want to stop the `agent` on the host computer but still re-connect to the `node` on the microcontroller. 
+
+If the connection between the node and agent is broken, you will need to reset the node on the microcontroller *while* the `agent` is running. I.e. start the `agent`, then restart the `node`. Restarting the `node` can be done in hardware, such as through power cycling the microcontroller, or in software, such as through a "heartbeat" monitor. 
+
+Below is starter Arduino code built on a single publisher as modified from a [micro-ROS reconnection example](https://github.com/micro-ROS/micro_ros_arduino/blob/galactic/examples/micro-ros_reconnection_example/micro-ros_reconnection_example.ino). All of the heartbeat logic is handled in the `loop()` function by pinging for the `agent` and re-starting the `node` as needed (note the `destroy_entities()` function). Note that a few extra lines are included for red and green led output to indicate what mode the heartbeat is in: either it is searching for a connection (blinking red) or it has an active connection (green).
+
+```
+// Modified from https://github.com/micro-ROS/micro_ros_arduino/blob/galactic/examples/micro-ros_reconnection_example/micro-ros_reconnection_example.ino
+#include <micro_ros_arduino.h>
+
+#include <stdio.h>
+#include <rcl/rcl.h>
+#include <rcl/error_handling.h>
+#include <rclc/rclc.h>
+#include <rclc/executor.h>
+#include <rmw_microros/rmw_microros.h>
+
+#include <std_msgs/msg/int32.h> // ROS message
+
+/* MicroROS declarations */
+// NUM_HANDLES must be updated to reflect total number of subscribers + publishers
+#define NUM_HANDLES 1
+#define LED_PIN 13 // LED pin for debugging heartbeat connection, recommended color = red (significes no connection to agent)
+#define CONN_PIN 12 // LED pin for debugging heartbeat connection, recommended color = green (signifies active connection to agent)
+
+#define RCCHECK(fn)              \
+  {                              \
+    rcl_ret_t temp_rc = fn;      \
+    if ((temp_rc != RCL_RET_OK)) \
+    {                            \
+      return false;              \
+    }                            \
+  }
+
+// Declare microros objects
+rclc_support_t support;
+rcl_node_t node;
+rcl_timer_t timer;
+rclc_executor_t executor;
+rcl_allocator_t allocator;
+rcl_publisher_t publisher;
+std_msgs__msg__Int32 msg;
+
+bool micro_ros_init_successful; // For heartbeat
+
+/* Callbacks */
+void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
+{
+  (void)last_call_time;
+  if (timer != NULL)
+  {
+    rcl_publish(&feedback_pub, &feedback_msg, NULL);
+  } // if (timer != NULL)
+} // timer_callback()
+
+
+/* MicroROS functions */
+// Functions create_entities and destroy_entities can take several seconds.
+// In order to reduce this rebuild the library with
+// - RMW_UXRCE_ENTITY_CREATION_DESTROY_TIMEOUT=0
+// - UCLIENT_MAX_SESSION_CONNECTION_ATTEMPTS=3
+
+bool create_entities()
+{
+  allocator = rcl_get_default_allocator();
+
+  // create init_options
+  RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
+
+  // create node
+  RCCHECK(rclc_node_init_default(&node, "arduino_interface_node", "", &support));
+
+  // create publisher
+  RCCHECK(rclc_publisher_init_default(
+      &publisher,
+      &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      "arduino_publisher"));
+
+  // create timer
+  const unsigned int timer_period_ms = 10;
+  RCCHECK(rclc_timer_init_default(
+      &timer,
+      &support,
+      RCL_MS_TO_NS(timer_period_ms),
+      timer_callback));
+
+  // create executor
+  executor = rclc_executor_get_zero_initialized_executor();
+  RCCHECK(rclc_executor_init(&executor, &support.context, NUM_HANDLES, &allocator));
+  RCCHECK(rclc_executor_add_timer(&executor, &timer));
+
+  micro_ros_init_successful = true; // For heartbeat
+}
+
+void destroy_entities()
+{
+  rcl_publisher_fini(&feedback_pub, &node);
+  rcl_node_fini(&node);
+  rcl_timer_fini(&timer);
+  rclc_executor_fini(&executor);
+  rclc_support_fini(&support);
+
+  micro_ros_init_successful = false;
+}
+
+void setup()
+{
+  // Initialize some micro-ROS stuff
+  set_microros_transports();
+
+  // LED pins for debugging heartbeat connection
+  pinMode(LED_PIN, OUTPUT); // Use a resistor with the LED
+  digitalWrite(LED_PIN, HIGH);
+
+  pinMode(CONN_PIN, OUTPUT); // Use a resistor with the LED
+  digitalWrite(CONN_PIN, LOW);
+
+  // Create the micro-ROS objects
+  create_entities();
+
+  // For heartbeat
+  micro_ros_init_successful = false;
+}
+
+uint32_t delay_ms = 500; // short delay to blink the LED_PIN while trying to connect
+void loop()
+{
+  // Keep trying to connect by pinging the MicroROS agent
+  if (RMW_RET_OK == rmw_uros_ping_agent(50, 2))
+  {
+    // Use flag to see if entities need to be created
+    if (!micro_ros_init_successful)
+    {
+      create_entities();
+    }
+    else
+    {
+      // Main loop to run the MicroROS node
+      digitalWrite(CONN_PIN, HIGH); // Green LED on
+      digitalWrite(LED_PIN, LOW);   // Red LED off
+      rclc_executor_spin_some(&executor, RCL_MS_TO_NS(1)); // Publish the message
+    }
+  }
+  else
+  {
+    // Destroy entities if there is not connection to the agent
+    if (micro_ros_init_successful)
+    {
+      destroy_entities();
+      digitalWrite(CONN_PIN, LOW); // Green LED off
+    }
+    digitalWrite(LED_PIN, !digitalRead(LED_PIN)); // Blink red LED while trying to connect
+    delay(delay_ms);
+  }
+}
+```
+
+
+
+
 
 ## See Also:
 - [Docker](https://roboticsknowledgebase.com/wiki/tools/docker/)
