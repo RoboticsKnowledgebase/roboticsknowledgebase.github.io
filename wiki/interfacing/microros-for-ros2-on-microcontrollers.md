@@ -188,7 +188,21 @@ CMD ["bash"]
 
 ## Testing the Installation
 
-TODO: transfer instructions from `arduino` package readme
+First, we will test the installation of the precompiled micro-ROS libraries for the microcontroller. Open the Arduino IDE and navigate to `File -> Examples -> micro_ros_arduino -> micro-ros_publisher` to open up an example sketch. Connect your microcontroller to your computer and upload the sketch. If the installation was properly completed, this should compile and upload successfully.
+
+Next, we can initiate the micro-ROS agent to verify installation of the micro-ROS libraries onto the host computer. First check the device name by running `ls /dev`. It will typically be named something like `/dev/ttyACM0` (though if you are not sure, you can always run `ls /dev` before and after plugging in the Arduino to determine what device has changed). A more robust solution would be to utilize udev rules for consistent device naming, though this is outside the scope of this tutorial.
+
+Assuming a device name of `/dev/ttyACM0`, the micro-ROS agent can be initiated by running:
+
+```
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0 -v6
+```
+
+The `-v6` parameter is simply for observing debug output, but can be omitted if desired. The micro-ROS agent facilitates the serial communication between the host machine and the microcontroller running micro-ROS; if the agent is successful in communicating with the microcontroller, you should see several `send_message` and `recv_message` debug messages printed to the console. If you don't see this, try hitting the reset button on the Arduino.
+
+Run `ros2 topic list`. You should be able to see the topic `/micro_ros_arduino_node_publisher`. Echo the topic and verify that data is being received from the microcontroller. If you've gotten this far, that means the installation was successful. Congratulations!
+
+NOTE: One caveat is that if the `micro_ros_agent` is killed and restarted, the host machine may stop receiving messages even if the micro-ROS application is still running on the microcontroller. If this occurs, you may need to reset/power cycle the microcontroller for those messages to begin being received again. Work-arounds for this are discussed in [Advanced: Heartbeat for Transient Connectivity](#advanced-heartbeat-for-transient-connectivity).
 
 ## Writing an Example micro-ROS Sketch
 
