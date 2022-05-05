@@ -141,11 +141,10 @@ docker exec -it <container id> bash
 ```
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/tty0
 ```
-Example output for a disconnected device:
+Example output waiting for a connected device:
 ```
-[1651717733.416743] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
-[1651717734.417145] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
-[1651717735.425596] info     | TermiosAgentLinux.cpp | init                     | Serial port not found. | device: /dev/tty0, error 2, waiting for connection...
+[1651722045.613925] info     | TermiosAgentLinux.cpp | init                     | running...             | fd: 3
+[1651722045.614570] info     | Root.cpp           | set_verbose_level        | logger setup           | verbose_level: 4
 ```
 
 This container should be some variant of Linux OS with a ROS2 installation. You should be able to echo and/or publish ROS2 topics to interact with the `node` on the microcontroller! 
