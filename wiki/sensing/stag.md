@@ -53,12 +53,12 @@ In informal tests, the STag were able to achieve accuracy within +- 2 centimeter
    This is highly dependent on the image resolution and which flags were used during compilation (Debug/Release).
 
 
-    | Processor                                	| Flag    	| FPS   	|   	|   	|
-    |------------------------------------------	|---------	|-------	|---	|---	|
-    | AMD Ryzen™ 7 5800H Processor             	| Debug   	| 20-25 	|   	|   	|
-    | AMD Ryzen™ 7 5800H Processor             	| Release 	| 45-50 	|   	|   	|
-    | Raspberry Pi 4 Model B 2019<br>(4GB RAM) 	| Debug   	| 5-6   	|   	|   	|
-    | Raspberry Pi 4 Model B 2019<br>(4GB RAM) 	| Release 	| 10-15 	|   	|   	|
+    | Processor                                	| Flag    	| FPS   	|
+    |------------------------------------------	|---------	|-------	|
+    | AMD Ryzen™ 7 5800H Processor             	| Debug   	| 20-25 	|
+    | AMD Ryzen™ 7 5800H Processor             	| Release 	| 45-50 	|
+    | Raspberry Pi 4 Model B 2019<br>(4GB RAM) 	| Debug   	| 5-6   	|
+    | Raspberry Pi 4 Model B 2019<br>(4GB RAM) 	| Release 	| 10-15 	|
 
 3. Camera Parameters
     
