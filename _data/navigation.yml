@@ -128,6 +128,8 @@ wiki:
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
         url: /wiki/machine-learning/yolov5-tensorrt/
+      - title: Mediapipe - Live ML anywhere
+        url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
