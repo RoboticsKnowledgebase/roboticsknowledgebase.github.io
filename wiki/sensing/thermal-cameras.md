@@ -1,5 +1,5 @@
 ---
-date: {2022-05-04}
+date: 2022-05-04
 title: Thermal Cameras
 published: true
 ---
