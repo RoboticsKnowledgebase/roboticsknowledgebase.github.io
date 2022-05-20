@@ -17,7 +17,7 @@ Older testing methodology tended to wait for the controller design to be complet
 
 Hardware-in-the-loop testing provides a way of simulating sensors, actuators and mechanical components in a way that connects all the I/O of the ECU being tested, long before the final system is integrated. It does this by using representative real-time responses, electrical stimuli and functional use cases 
 
-The term �software-in-the-loop testing�, or SIL testing, is used to describe a test methodology where executable code such as algorithms (or even an entire controller strategy), usually written for a particular mechatronic system, is tested within a modelling environment that can help prove or test the so.
+The term "software-in-the-loop testing", or SIL testing, is used to describe a test methodology where executable code such as algorithms (or even an entire controller strategy), usually written for a particular mechatronic system, is tested within a modelling environment that can help prove or test the so.
 
 ## Need Hardware in Loop and Software in Loop Testing : ADAS usecase
 
