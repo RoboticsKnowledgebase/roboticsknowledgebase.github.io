@@ -94,6 +94,8 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: Thermal Cameras
+        url: /wiki/sensing/thermal-cameras/
   - title: Actuation
     url: /wiki/actuation/
     children:
