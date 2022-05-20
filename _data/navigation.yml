@@ -194,7 +194,6 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
-       
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -202,6 +201,8 @@ wiki:
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
         url: /wiki/interfacing/blink-1-led/
+      - title: micro-ROS for ROS2 on Microcontrollers
+        url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
   - title: Computing
     url: /wiki/computing/
     children:
