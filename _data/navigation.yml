@@ -74,6 +74,8 @@ wiki:
         url: /wiki/sensing/adafruit-gps/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
+      - title: Stag
+        url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
       - title: Computer Vision Consideration
@@ -90,10 +92,14 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: Fiducial Markers
+        url: /wiki/sensing/fiducial-markers/
       - title: RTK GPS
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: Thermal Cameras
+        url: /wiki/sensing/thermal-cameras/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -111,6 +117,8 @@ wiki:
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
         url: /wiki/actuation/moveit-and-HEBI-integration.md
+      - title: Model Predictive Control Introduction and Setup
+        url: /wiki/actuation/model-predictive-control/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
@@ -126,6 +134,8 @@ wiki:
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
         url: /wiki/machine-learning/yolov5-tensorrt/
+      - title: Mediapipe - Live ML anywhere
+        url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -186,7 +196,6 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
-       
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -194,6 +203,8 @@ wiki:
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
         url: /wiki/interfacing/blink-1-led/
+      - title: micro-ROS for ROS2 on Microcontrollers
+        url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
   - title: Computing
     url: /wiki/computing/
     children:
