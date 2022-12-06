@@ -49,7 +49,7 @@ This method has been tested on a TS16, but it would likely work on a TS15 or oth
 
 The other side of the total station is the reflector, which is used to get the high precision ranging. This is an important piece of hardware, especially in this use case. Since the prism will be moving, having high quality glass will reduce the imperfections that could cause the reflected beam to be off-center, resulting in a higher likelihood of losing tracking of the prism. A high quality prism from Leica will cost more than [$1k](https://www.allenprecision.com/360-reflector).
 
-![Leica GRZ122 360 Prism](assets/leica_360_prism.jpg)
+![Leica GRZ122 360 Prism](assets/leica_360_prism.jpeg)
 [Source](https://leica-geosystems.com/)
 
 In order to connect the total station to a compute platform, it's possble to use wired or wireless methods. This wiki only explores the usage of USB connections using Leica's custom (and [expensive](https://www.baselineequipment.com/leica-instrument-to-datacollector-laptop-usb-cable)) cable.
