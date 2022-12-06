@@ -53,11 +53,9 @@ In order to calibrate the total station, there are various ways to do it, all ou
 
 The simplest way to calibrate the total station in a repeatable fashion is to use the "Orientate to Line" method. The context for the following instructions is to create fixed locations (fixtures) that allow a repeatably placed reflector location at both sites. By default, the line created by these reflectors would now become the X-axis of the local coordinate frame (which can be transformed into any other desired frame at a later point).
 
-If using a "Mini Prism 360"
-
-1. Prepare Mini Prism 360 reflector
+1. Prepare reflector
 2. Attach reflector to fixture-1
-2. Change the Target settings of total station to “Leica Mini 360” (Settings -> TS Instrument -> Measure & Target)
+2. Change the Target settings of total station to `REFLECTOR_TYPE` (Settings -> TS Instrument -> Measure & Target)
 3. Go to Home -> Setup
 4. Choose the “Orientate to Line” method
 5. Measure two points that define an axis. 
@@ -65,10 +63,10 @@ If using a "Mini Prism 360"
 7. The first measured point becomes (0,0)
 8. The second line determines the vector of the axis
 9. Derive setup height from “Manually enter”. Leave 0.0 as the value
-10. Place the Mini prism in Location A (see Figure 1) via S-hook attachment
-11. Ensure the prism is being tracked via the top bar options (“Target tracking on”)
+10. Place the reflector in Location A (see Figure 1) via S-hook attachment
+11. Ensure the reflector is being tracked via the top bar options (“Target tracking on”)
 12. Press “Measure” to measure the first location
-13. Move Mini prism to fixture-2
+13. Move reflector to fixture-2
 14. Press “Measure” to measure the second location
 15. Press “set” to finish calibration
 
@@ -81,4 +79,3 @@ In order to setup the TS16 node into a ROS/ROS2 environment, follow the instruct
 [ROS](https://github.com/arpit6232/Leica_Total_Station_ROS)
 
 [ROS2](https://github.com/John-HarringtonNZ/ts16_ros2_node)
-
