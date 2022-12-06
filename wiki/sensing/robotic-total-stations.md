@@ -23,13 +23,17 @@ Total stations have an extended heritage in civil engineering, where they have b
 
 ### Best Use Cases & Expected Quality
 
-There are various companies that make robotic total stations including Leica and Trimble. While there is a wide variety of abilities between different models, there are certain key characteristics that matter when used as a real-time positioning system
+There are various companies that make robotic total stations including Leica and Trimble. While there is a wide variety of abilities between different models, there are certain key characteristics that matter when used as a real-time positioning system:
 
 - Range (How far does this need to work at?)
 - Angular tracking ability (Can the total station track objects moving closeby?)
 - Frequency (How often does it provide measurements?)
 
+Accuracy is the bottom line for robotic total stations. If the system is able to maintain line-of-sight with the total station, it is reasonable to expect <2cm accuracy in positioning, even over rather large distances (unknown exactly). This is especially valuable since it can provide an accurate positioning in XYZ, rather than just XY like many alternatives.
+
 ### Limitations
+
+The key limitation of the total station is that it requires constant line-of-sight with the reflector prism it is tracking. Unlike other methods such as UltrawideBand or Ultrasonic positioing, recovery is not trivial.
 
 While certain companies like Caterpillar have official partnerships with total station manufacturers to allow for seemless integration with their vehicles [source](https://www.constructionequipment.com/technology/construction-technology-software/news/10757055/caterpillar-and-trimble-announce-change-to-joint-venture-providing-greater-flexibility-and-customer-focus), this technology is not currently available in such a robust manner to all. For that reason, "hacking" a total station to provide real-time sensory information made result in a unknowable latency with difficult to characterize dropout at times. While this did not become a detriment while the author was working on it, it's important to note. 
 
@@ -44,6 +48,9 @@ In order to setup a total station tracking system, it's important to have all of
 This method has been tested on a TS16, but it would likely work on a TS15 or other Leica products. Most total stations use a [GEOCOM communication standard](https://www.naic.edu/~phil/hardware/theodolites/TPS1200_GeoCOM_Manual.pdf), which means that it's very likely that a similar serial interface could be adapted for most total station hardware. Leica hardware is particularly expensive, so a brand new total station with the best tracking specifications will run approximately [$30k](https://www.allenprecision.com/leica-viva-ts16p-series-robotic-packages).
 
 The other side of the total station is the reflector, which is used to get the high precision ranging. This is an important piece of hardware, especially in this use case. Since the prism will be moving, having high quality glass will reduce the imperfections that could cause the reflected beam to be off-center, resulting in a higher likelihood of losing tracking of the prism. A high quality prism from Leica will cost more than [$1k](https://www.allenprecision.com/360-reflector).
+
+![Leica GRZ122 360 Prism](assets/leica_360_prism.jpg)
+[Source](https://leica-geosystems.com/)
 
 In order to connect the total station to a compute platform, it's possble to use wired or wireless methods. This wiki only explores the usage of USB connections using Leica's custom (and [expensive](https://www.baselineequipment.com/leica-instrument-to-datacollector-laptop-usb-cable)) cable.
 
