@@ -255,6 +255,8 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
+      - title: Docker for PyTorch
+        url: /wiki/tools/docker-for-pytorch/
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
