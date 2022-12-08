@@ -295,6 +295,8 @@ wiki:
         url: /wiki/planning/astar_planning_implementation_guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
+      - title: Multi Robot Planning Design
+        url: /wiki/planning/multi-robot-planning/
 # Main links appear in the header.
 main:
   - title: Wiki
