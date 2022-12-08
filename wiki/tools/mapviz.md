@@ -1,4 +1,4 @@
-# MapViz for Map Based Visualization in ROS2 
+# Mapviz for Map Based Visualization in ROS2 
 
 Mapviz is a highly customizable ROS-based visualization tool focused on large-scale 2D data, with a plugin system for extreme extensibility. Mapviz is similar to Rviz, but is specifically designed for 2D, top-down viewing of outdoor robots, especially in overlaying data on an external map from OpenStreetMaps or Google maps.
 
