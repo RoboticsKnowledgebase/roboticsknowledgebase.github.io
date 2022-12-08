@@ -293,6 +293,8 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Coverage Planner Implementation Guide
+        url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
 # Main links appear in the header.
