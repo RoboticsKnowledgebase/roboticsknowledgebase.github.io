@@ -43,29 +43,20 @@ We can't actually have the computer sweep a vertical line across the region of i
 
 As we then loop through this sorted list, we will maintain a list of open cells, closed cells, and current edges. Thinking back to the analogy of a sweep line being pulled from left to right across the region of interest, the open cells correspond to trapezoidal cells we are forming which the sweep line is currently intersecting. Closed cells would be trapezoidal cells completely to the left of the sweep line. Closed cells have a known right boundary whereas the right boundary for open cells is unknown (the process of closing a cell corresponds to the determination of its right boundary). Finally, current edges represents all edges that the sweep line is intersecting.  
 
-Looping one by one from left to right through the sorted list of events, we individually process each event. The first step to processing an event is identifying the edge immediately above and below the current event. We call these edges the floor and ceiling edge for the event. To find the floor and ceiling edge for an event, we loop through the list of current edges (edges being intersected by the sweep line). 
+Looping one by one from left to right through the sorted list of events, we individually process each event. The first step to processing an event is identifying the edge immediately above and below the current event. We call these edges the floor and ceiling edge for the event. To find the floor and ceiling edge for an event, we loop through the list of current edges (edges being intersected by the sweep line). We find the vertical intersection point between the sweep line and each edge. The ceiling edge is chosen as the edge who's vertical intersection point is closest to the event while still being above the event. The floor is chosen similarly but must be below the event. 
 
+Now that we have the immediate ceiling and floor edges above and below the event, we can process the event. Each event type is handled differently. At “open” events, we create a new open trapezoid. At “close” events, we close a trapezoid (add the right edge) without opening any new trapezoids. At “floor” and “ceiling” events, we close one trapezoid and open a new one. At “in” events, we close one trapezoid and open two new ones. Finally, at “out” events, we close two trapezoids and open a new one. The floor and ceiling edges are used in the process of creating new trapezoids.
 
-Each type is handled differently as the sweep line processes each event in order from left to right. At “open” events, we create a new open trapezoid (An open trapezoid is one where the right edge is not yet defined). At “close” events, we close a trapezoid (add the right edge) without opening any new trapezoids. At “floor” and “ceiling” events, we close one trapezoid and open a new one. At “in” events, we close one trapezoid and open two new ones. Finally, at “out” events, we close two trapezoids and open a new one.
+The end result of this step is a set of closed trapezoidal cells.
 
 ![Put a relevant caption here](assets/coverage_planner_event_types.png)
-
-
 ## Step 2: Generating a Cell Traversal
+
+Once we have a set of trapezoidal cells, we need to determine a cell traversal. This is an order in which to visit each cell. For our purposes, we will just use a depth first search to generate the cell traversal, although more complicated TSP solvers could be used.
 
 ## Step 3: Synthesizing the Full Coverage Plan
 
+Once you have a cell traversal, we form the full coverage plan. Starting at the first cell in the cell traversal, alternate between generating a coverage plan for the given cell, and generating a path to the next cell. The path to the next cell is as simple as a straight line, assuming you do not care if the robot crosses over holes occasionally. To generate the cell coverage plan, we can simply generate a back-and-forth lawnmower pattern over the cell.
+
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+Overall, coverage planning is useful for tasks that require scanning of an area by a robot. We have seen how we can generate such paths over complicated areas by first splitting the region into simpler trapezoidal cells, planning a traversal across those cells, and then using a simple back-and-forth lawnmower pattern to cover each trapezoid.
