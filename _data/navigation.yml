@@ -117,6 +117,8 @@ wiki:
         url: /wiki/actuation/moveit-and-HEBI-integration.md
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
+      - title: Task Prioritization Control for Advanced Manipulator Control
+        url: /wiki/actuation/task-prioritization-control/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
