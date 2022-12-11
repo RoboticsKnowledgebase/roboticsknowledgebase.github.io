@@ -117,6 +117,8 @@ wiki:
         url: /wiki/actuation/moveit-and-HEBI-integration.md
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
+      - title: Drive-by-wire Conversion for Autonomous Vehicle
+        url: /wiki/actuation/drive-by-wire/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
