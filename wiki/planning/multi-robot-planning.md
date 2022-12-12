@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2022-12-09
 title: Multi Robot Navigation Stack Design
 published: true
 ---
