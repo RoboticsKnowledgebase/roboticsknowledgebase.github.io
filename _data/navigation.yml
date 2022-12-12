@@ -301,6 +301,8 @@ wiki:
         url: /wiki/planning/resolved-rates/
       - title: Multi Robot Planning Design
         url: /wiki/planning/multi-robot-planning/
+      - title: Motion Planning in frenet frame
+        url: /wiki/planning/frenet-frame-planning.md/
 # Main links appear in the header.
 main:
   - title: Wiki
