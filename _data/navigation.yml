@@ -49,6 +49,8 @@ wiki:
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: Universal Robots UR5e Collaborative Robotic Arm
+        url: /wiki/common-platforms/ur5e/
       - title: ROS Introduction
         url: /wiki/common-platforms/ros/ros-intro/
       - title: ROS Arduino Interface
