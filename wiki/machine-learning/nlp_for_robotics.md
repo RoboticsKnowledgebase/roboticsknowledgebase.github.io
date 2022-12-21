@@ -1,5 +1,5 @@
 ---
-date: {2022-02-05}
+date: 2022-02-05
 title: NLP for robotics
 published: true
 ---
