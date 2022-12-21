@@ -138,6 +138,8 @@ wiki:
         url: /wiki/machine-learning/yolov5-tensorrt/
       - title: Mediapipe - Live ML anywhere
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
+      - title: NLP for robotics
+        url: /wiki/machine-learning/nlp_for_robotics.md/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
