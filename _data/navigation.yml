@@ -49,6 +49,8 @@ wiki:
         url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: Husky Interfacing Procedure
         url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: Universal Robots UR5e Collaborative Robotic Arm
+        url: /wiki/common-platforms/ur5e/
       - title: ROS Introduction
         url: /wiki/common-platforms/ros/ros-intro/
       - title: ROS Arduino Interface
@@ -119,6 +121,8 @@ wiki:
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
         url: /wiki/actuation/task-prioritization-control/
+      - title: Drive-by-wire Conversion for Autonomous Vehicle
+        url: /wiki/actuation/drive-by-wire/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
@@ -136,6 +140,8 @@ wiki:
         url: /wiki/machine-learning/yolov5-tensorrt/
       - title: Mediapipe - Live ML anywhere
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
+      - title: NLP for robotics
+        url: /wiki/machine-learning/nlp_for_robotics.md/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -295,8 +301,14 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Coverage Planner Implementation Guide
+        url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
+      - title: Multi Robot Planning Design
+        url: /wiki/planning/multi-robot-planning/
+      - title: Motion Planning in frenet frame
+        url: /wiki/planning/frenet-frame-planning.md/
 # Main links appear in the header.
 main:
   - title: Wiki
