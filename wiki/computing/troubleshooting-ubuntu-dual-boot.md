@@ -1,106 +1,71 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+date: {}
+title: Ubuntu Dual Boot and Troubleshooting Guide
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu alongside Windows for the uninitiated. Several difficulties can be encountered during setup if not aware of the process in advance. Read the following sections as needed and be aware of the potential issues brought up.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+> It is recommended to begin the dual boot process as soon as possible in case things go wrong so that project time is not wasted trying to reinstall Ubuntu for the fourth time, or wasting $300 on memory sticks that do not function with the laptop used for the dual boot, as the writers of this wiki page did.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+## Create a bootable USB drive for Ubuntu
+First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for installation but the rest is needed for packages and coursework). 
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+Go to <https://releases.ubuntu.com/> and select an LTS Release. Check with someone to know which version is trusted as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+## Create partitions safely
+Creating the Ubuntu partition on the hard drive for the dual boot can be done while installing Ubuntu from the USB drive but it is better to do it while in Windows Go to the Disk Management page in Windows by right clicking the Start menu. From there, right click on a partition in the middle labeled “NTFS” and click “Shrink Volume”. Do not shrink the EFI System Partition or the Recovery Partition on either end of the large partition. Type in the amount of MB to free up - this should be at least 65536 for anticipated future work. This amount in GB should appear to the right of the Windows partition shrank with the label “Unallocated”.
 
-This section covers the basic syntax and some rules of thumb for writing.
+### Troubleshooting: Wrong partition shrunk / Wrong amount shrunk
+If the wrong volume was shrinked or more space needs to be shrinked, right click on the partition that was just reduced and click Extend Volume. Extend it by the amount reduced to recover the unallocated space.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+### Troubleshooting: Not allowed to shrink partition
+If the Disk Management page is saying there are 0 MB available to shrink the volume, then this likely is because there are permanent files at the end of the partition, like the hibernation file and the system volume information folder. Disable Hibernate mode by opening the command prompt by typing “cmd” into the Start search bar, right-clicking to run as administrator, then running the command “powercfg /hibernate off”. Disable the System Restore feature by opening the System Properties window and under the System Protection header find Restore Settings and click the “Disable system protection” button. Finally, click the Advanced tab of System Properties, then click Settings under “Performance”, then click the Advanced tab of the Performance Options window, then under “Virtual memory” click “Change”, then select “No paging file” and “Set”. After these steps, restart the computer and the partition should be able to get shrinked now.
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+## Enter BIOS Setup to launch Ubuntu from the inserted USB drive
+Restart the computer. While it is booting up, press the button for the computer that opens BIOS Setup. This is either F2, F8, F10, or F12, but check the computer’s manual pages. When the partition options show up, move down to the name of the USB drive inserted and select it. When booting the USB, pick the option that says “Ubuntu (safe graphics)” to prevent display issues caused by the graphics card.
 
+## Move/combine partitions to make use of inaccessible partitions
+Partitions of unallocated data can only be incorporated into another partition using Extend Volume if the unallocated partition is to the right of an existing partition with an OS. If there are multiple partitions of unallocated data or it is in a place where it is not able to get extended, use gparted in Ubuntu. This can be done before installing Ubuntu by selecting “Try Ubuntu” when loading Ubuntu from the bootable USB drive. Open a terminal by pressing at the same time Ctrl+Alt+T and run the command “gparted”. Once the window opens, select the partition of unallocated space and click the “Resize/Move” option to move the partition to where it can be used by Extend Volume on the partition, or click a partition used for an OS and move the sides of the partition to occupy the desired amount of unallocated memory. After each desired operation, click the Resize/Move button to queue the operation.
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+### Troubleshooting: gparted does not allow actions
+If gparted is not allowing a certain action or is preventing it from ocurring, undo all previous steps and make sure each step is done individually by clicking Resive/Move after the step to prevent operations from conflicting.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+## Ubuntu Installation
+When installing Ubuntu, follow the prompts after clicking “Install Ubuntu”. Pay closer attention to the following steps:
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
+1. Updates and other software
+	- Choose “Normal Installation” and check the boxes that say “Download updates” and “Install third-party software”.
+2. Installation Type
+	- Choose “Something Else” and select the newly created partition with the intended space for Ubuntu for installation.
 
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
+## Safely add additional memory 
+If additional RAM memory sticks or an SSD are needed to improve the computer’s performance, be sure to make sure the specs are correct so resources are not wasted. 
+- For RAM, check that the size of the RAM sticks already in the computer have the same memory size, support speed, and type of card as the ones purchased. 
+- For SSDs, the internal memory size does not have to match but the transfer speeds still do.
 
-        // Good coders comment their code for others.
+## Why the WiFi adapter may not work in some installations 
+After following all these steps, the WiFi option may not appear for some laptops after installation and a reboot. In Ubuntu, search for the Wi-Fi page in Settings and check if it says “No Wi-Fi Adapter Found”. If so, return to Windows and check what the WiFi card is under the Device Manager window. If it is a RealTek WiFi RTL8852, then the issue is that (as of 2022/2023) RealTek WiFi cards are not adapted to work with Linux distributions. To remedy the situation, choose one of the following options:
+1. Purchase an external WiFi adapter from Amazon or other retailers.
+	- Check that the product says it will work with Linux. 
+    - The adapter may require drivers to be installed for the adapter to work as well, which are available from a CD or online.
+2. Install a driver from a git repository. 
+	- The correct repo will depend on the exact type of WiFi card. 
+    	- For the 8852be there is this git repo [this git repo](/). Follow the instructions on [this page](/).
 
-        pw = ProtocolWrapper()
-
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
+In either case, however, usage will require essential packages like build-essential, which are normally installed during Ubuntu installation but can be missed due to the lack of WiFi card support during installation. As a result, the Catch-22 of connecting to WiFi to install the packages and drivers needed to permanently connect to WiFi needs to be resolved. If using an external driver, see if the drivers can be installed via CD or from the adapter itself instead of from online. Otherwise, find a smartphone that has the function to pass Internet connection via tethering and use this connection temporarily to run apt commands and install all necessary packages for the desired drivers. Once all instructions for the chosen method are finished, it may take a few minutes, but then the WiFi adapter will be functional. 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+There are a few ways Ubuntu installation can go wrong or be delayed but this page hopefully will help a few people avoid major mistakes that held the writers of this page back a few weeks. After this guide the computer should be ready for installing browsers (such as Firefox), IDEs (such as VSCode or PyCharm), and libraries (such as mujoco or realsense-ros) as desired.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+- <https://roboticsknowledgebase.com/wiki/computing/ubuntu-chromebook/>
+- <https://roboticsknowledgebase.com/wiki/computing/upgrading-ubuntu-kenel/>
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+- <https://github.com/lwfinger>
+- <https://askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11>
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- <https://www.youtube.com/watch?v=GXxTxBPKecQ>
+- <https://www.youtube.com/watch?v=CWQMYN12QD0>
+- <https://gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions>
