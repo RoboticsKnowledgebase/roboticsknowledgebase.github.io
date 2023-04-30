@@ -5,7 +5,7 @@ published: true
 ---
 This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu alongside Windows for the uninitiated. Several difficulties can be encountered during setup if not aware of the process in advance. Read the following sections as needed and be aware of the potential issues brought up.
 
-> It is recommended to begin the dual boot process as soon as possible in case things go wrong so that project time is not wasted trying to reinstall Ubuntu for the fourth time, or wasting $300 on memory sticks that do not function with the laptop used for the dual boot, as the writers of this wiki page did.
+> It is recommended to begin the dual boot process as soon as possible in case things go wrong so that project time is not wasted trying to reinstall Ubuntu for the fourth time, or wasting $300 on memory sticks that do not function with the laptop used for the dual boot, as the writers of this wiki page experienced.
 
 ## Create a bootable USB drive for Ubuntu
 First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for installation but the rest is needed for packages and coursework). 
