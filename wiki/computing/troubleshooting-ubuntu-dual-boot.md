@@ -10,7 +10,7 @@ This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu
 ## Create a bootable USB drive for Ubuntu
 First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for installation but the rest is needed for packages and coursework). 
 
-Go to <https://releases.ubuntu.com/> and select an LTS Release. Check with someone to know which version is trusted as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
+Go to www.releases.ubuntu.com and select an LTS Release. Check with someone to know which version is trusted as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
 
 ## Create partitions safely
 Creating the Ubuntu partition on the hard drive for the dual boot can be done while installing Ubuntu from the USB drive but it is better to do it while in Windows Go to the Disk Management page in Windows by right clicking the Start menu. From there, right click on a partition in the middle labeled “NTFS” and click “Shrink Volume”. Do not shrink the EFI System Partition or the Recovery Partition on either end of the large partition. Type in the amount of MB to free up - this should be at least 65536 for anticipated future work. This amount in GB should appear to the right of the Windows partition shrank with the label “Unallocated”.
@@ -50,7 +50,7 @@ After following all these steps, the WiFi option may not appear for some laptops
     - The adapter may require drivers to be installed for the adapter to work as well, which are available from a CD or online.
 2. Install a driver from a git repository. 
 	- The correct repo will depend on the exact type of WiFi card. 
-    	- For the 8852be there is this git repo [this git repo](/). Follow the instructions on [this page](/).
+    	- For the 8852be there is this git repo [this git repo](https://github.com/HRex39/rtl8852be/tree/main). Follow the instructions on [this page](https://askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11).
 
 In either case, however, usage will require essential packages like build-essential, which are normally installed during Ubuntu installation but can be missed due to the lack of WiFi card support during installation. As a result, the Catch-22 of connecting to WiFi to install the packages and drivers needed to permanently connect to WiFi needs to be resolved. If using an external driver, see if the drivers can be installed via CD or from the adapter itself instead of from online. Otherwise, find a smartphone that has the function to pass Internet connection via tethering and use this connection temporarily to run apt commands and install all necessary packages for the desired drivers. Once all instructions for the chosen method are finished, it may take a few minutes, but then the WiFi adapter will be functional. 
 
@@ -58,14 +58,14 @@ In either case, however, usage will require essential packages like build-essent
 There are a few ways Ubuntu installation can go wrong or be delayed but this page hopefully will help a few people avoid major mistakes that held the writers of this page back a few weeks. After this guide the computer should be ready for installing browsers (such as Firefox), IDEs (such as VSCode or PyCharm), and libraries (such as mujoco or realsense-ros) as desired.
 
 ## See Also:
-- <https://roboticsknowledgebase.com/wiki/computing/ubuntu-chromebook/>
-- <https://roboticsknowledgebase.com/wiki/computing/upgrading-ubuntu-kenel/>
+- [Ubuntu 14.04 on Chromebook](https://roboticsknowledgebase.com/wiki/computing/ubuntu-chromebook)
+- [Upgrading Ubuntu Kernels](https://roboticsknowledgebase.com/wiki/computing/upgrading-ubuntu-kenel)
 
 ## Further Reading
-- <https://github.com/lwfinger>
-- <https://askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11>
+- www.github.com/lwfinger
+- www.askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11
 
 ## References
-- <https://www.youtube.com/watch?v=GXxTxBPKecQ>
-- <https://www.youtube.com/watch?v=CWQMYN12QD0>
-- <https://gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions>
+- www.youtube.com/watch?v=GXxTxBPKecQ
+- www.youtube.com/watch?v=CWQMYN12QD0
+- www.gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions
