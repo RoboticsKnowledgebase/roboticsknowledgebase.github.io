@@ -65,6 +65,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-navigation/
       - title: ROS Global Planner
         url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
   - title: Sensing
     url: /wiki/sensing/
     children:
