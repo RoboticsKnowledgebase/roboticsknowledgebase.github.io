@@ -275,6 +275,8 @@ wiki:
         url: /wiki/tools/tmux/
       - title: udev Rules
         url: /wiki/tools/udev-rules/
+      - title: ROS GUI
+        url: /wiki/tools/ros-gui/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
       - title: Making Field Testing Easier through Visualization and Simulation
