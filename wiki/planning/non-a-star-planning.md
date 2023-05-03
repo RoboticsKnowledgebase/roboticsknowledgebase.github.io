@@ -1,31 +1,36 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: {}
 title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+published: true
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+## Introduction
+This wiki aims to build on the already excellent A* implementation guide by providing information about different planning approaches to counter the pitfalls of standard A* when applied to physical robots. In the scope of this article are two popular extensions - Theta Star and Safe Interval Path Planning (SIPP) that each have their strengths and weaknesses.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+Theta Star planning is a pathfinding algorithm that is an extension of the popular A* algorithm. The key difference between Theta Star and A* is that Theta Star uses a line-of-sight check to reduce the number of nodes that need to be explored during pathfinding. The line-of-sight check is a simple test to determine if a path between two points is blocked by any obstacles. If there is a clear line of sight, the path is considered free and the algorithm can move on to the next node. If there is an obstacle in the way, the algorithm needs to generate a new path around it. 
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+Safe interval path planning is a method of planning robot motion that ensures collision avoidance and safety. It involves dividing the robot's workspace into safe intervals or regions, where the robot can move without colliding with obstacles. The path planning algorithm then generates a safe path by connecting these intervals. This approach ensures that the robot's motion is safe and collision-free. Safe interval path planning is essential for applications where robots are required to work in close proximity to humans or other objects.
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+## Overview of Theta* Algorithm
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+Theta* algorithm is a pathfinding algorithm that is an extension of the A* algorithm. It is used to find the shortest path between two points in a 2D grid-based environment.
 
-This section covers the basic syntax and some rules of thumb for writing.
+#### Important Terms
+Here are the key steps and important terms involved in the Theta* algorithm:
+- **Grid Map**: A 2D grid-based environment that represents the space in which the robot moves. Each cell in the grid represents a possible position that the robot can occupy.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+- **Heuristics**: A function used to estimate the distance between two points in the grid map. The heuristic function used in Theta* is often the Euclidean distance or Manhattan distance. For even better results, it is recommended to use a pre-computed Dijkstra map since it accounts for static obstacles if the map is known
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+- **Open List**: A list of nodes that need to be explored during pathfinding. Each node in the list represents a position in the grid map and its associated cost.
+
+- **Closed List**: A list of nodes that have already been explored during pathfinding.
+
+- **Start and Goal Nodes**: The starting and ending points in the grid map between which the shortest path needs to be found.
+
+- **Line of Sight Check**: A test that determines if there is a clear path between two points. If a clear path exists, the algorithm can "shortcut" between two nodes, reducing the number of nodes that need to be explored. In practice, this can be implemented as using Bresenham's line drawing equation borrowed from Computer Graphics to approximate lines on 2D grids, with possible speed ups.
+
+Theta* should always give paths with lower cost than those from standard A*, since the line-of-sight check can only shorten paths. In practice, the paths tend to mimic visibility graphs around obstacles
+
+![Node Exploration Behaviour of Theta Star](assets/images/theta_star_explor.png)
 
 
 #### Bullet points and numbered lists
