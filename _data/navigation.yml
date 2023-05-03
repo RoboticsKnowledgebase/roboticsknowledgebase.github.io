@@ -65,6 +65,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-navigation/
       - title: ROS Global Planner
         url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: Running ROS on unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
   - title: Sensing
     url: /wiki/sensing/
     children:
