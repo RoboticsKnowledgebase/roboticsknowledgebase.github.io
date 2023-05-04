@@ -1,6 +1,6 @@
 ---
 date: {}
-title: Title goes here
+title: Extensions To A* for Dynamic Planning
 published: true
 ---
 ## Introduction
@@ -14,7 +14,7 @@ Safe interval path planning is a method of planning robot motion that ensures co
 
 Theta* algorithm is a pathfinding algorithm that is an extension of the A* algorithm. It is used to find the shortest path between two points in a 2D grid-based environment.
 
-#### Important Terms
+### Important Terms
 Here are the key steps and important terms involved in the Theta* algorithm:
 - **Grid Map**: A 2D grid-based environment that represents the space in which the robot moves. Each cell in the grid represents a possible position that the robot can occupy.
 
@@ -30,82 +30,86 @@ Here are the key steps and important terms involved in the Theta* algorithm:
 
 Theta* should always give paths with lower cost than those from standard A*, since the line-of-sight check can only shorten paths. In practice, the paths tend to mimic visibility graphs around obstacles
 
-![Node Exploration Behaviour of Theta Star](assets/images/theta_star_explor.png)
+Node Exploration Behaviour of Theta*           |  Path Comparison 
+:-------------------------:|:-------------------------:
+![Node Exploration Behaviour of Theta Star]({{site.baseurl}}/assets/images/theta_star_explor.png)  |  ![theta_vs_astar.png]({{site.baseurl}}/assets/images/theta_vs_astar.png)
 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
 
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
+### Algorithm: Key Steps
 
-        // Good coders comment their code for others.
+The underlying algorithm for Theta* only differs from A* in one key step - the line of sight check to shorten the underlying paths. A simple outline is as follows:
 
-        pw = ProtocolWrapper()
+- Initialize the start node and add it to the open list.
 
-        // Explanation.
+- While the open list is not empty, select the node with the lowest cost from the open list.
 
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
+- If the selected node is the goal node, terminate the algorithm and return the path.
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
+- Otherwise, expand the selected node by generating its neighboring nodes.
 
-#### Images and Video
-Images and embedded video are supported.
+- For each neighbor, check if a line of sight exists between the selected node and the neighbor. If it does, compute the cost of the path using the line-of-sight shortcut. Otherwise, compute the cost of the path without the shortcut.
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
+- Update the neighbor's cost and parent if a better path has been found.
 
-{% include video id="8P9geWwi9e0" provider="youtube" %}
+- Add the neighbor to the open list if it is not already on the list.
 
-{% include video id="148982525" provider="vimeo" %}
+- Move the selected node to the closed list.
 
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
+Once this process concludes, the path is traced back by recursively looking up the parents starting from the goal node back to the start node. This will carry all the neat theoretical guarantees of A* such as optimality and completeness assuming the hueristic is consistent and admissible.
+
+
+### Pros and Cons
+Pros            |  Cons
+:-------------------------:|:-------------------------:
+Lower cost of paths  |  Longer compute time due to line of sight check
+Paths are easy to navigate as a set of straight line segments | Moves away from neat grid discretization
+Easy to extend to higher dimensionalities | Still limited by underlying grid representation
+
+## Overview of Safe Interval Path Planning
+
+Unlike with Theta*, SIPP relies on abstracting the underlying 2D lattice and obstacles as a safety graph. This process requires some knowledge of static and dynamic obstacles, using which safe regions are created and connected by edges if a path exists between them. These 'regions' are actually time intervals over specific map regions, such that if the robot is within the given area inside the time interval, it is guranteed to be safe from collision.
+
+Using this new graph abstraction, we can then apply standard A* on this new graph to produce paths that do not collide, handle dynamic obstacles(given sufficient information from some high level obstacle detection stack) and performs much faster than space-time A* given that intervals are finite compared to discretized time searches.
+
+### Important Terms
+Here are the key steps involved in the Safe Interval Path Planning algorithm:
+- **Safe Interval Generation**: The first step of the SIPP algorithm is to divide the workspace into safe intervals, which are regions where the robot can move without colliding with obstacles. This is done by considering the robot's shape and size and generating safe intervals around each obstacle.
+
+- **Interval Graph Construction**: Once the safe intervals are generated, the next step is to construct an interval graph that represents the connectivity of the safe intervals. In the interval graph, each safe interval is represented by a node, and there is an edge between two nodes if the corresponding safe intervals are connected and the robot can move between them without colliding with obstacles.
+
+- **Shortest Path Computation**: The third step of the SIPP algorithm is to find the shortest path through the interval graph that connects the start and goal positions while avoiding obstacles. This is done using a path planning algorithm, such as A* or Dijkstra's algorithm, which searches for the path with the lowest cost in the interval graph.
+
+- **Trajectory Computation**: Once the shortest path is found, the next step is to compute the trajectory of the robot along the path. This involves computing the exact position of the robot at each time step along the path, taking into account the robot's size and shape, the safe intervals, and the obstacles in the workspace.
+
+- **Collision Checking**: During trajectory computation, it is important to check for collisions between the robot and obstacles in the workspace. If a collision is detected, the trajectory is adjusted to avoid the obstacle and stay within the safe intervals.
+
+- **Dynamic Obstacle Handling**: The SIPP algorithm also accounts for dynamic obstacles in the workspace, such as moving people or vehicles. To handle dynamic obstacles, the trajectory is continuously updated in real-time to avoid collisions and stay within the safe intervals.
+
+SIPP Schematic           
+---
+![sipp_timeline.png]({{site.baseurl}}/assets/images/sipp_timeline.png) 
+
+SIPP Behaviour     
+---
+![sipp_behaviour.png]({{site.baseurl}}/assets/images/sipp_behaviour.png)
+
+
+
+
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Theta* and SIPP (Safe Interval Path Planning) are two popular algorithms used in robotic motion planning. Theta* is an improvement over A* algorithm that reduces the number of nodes expanded in the search tree by using a technique called "line-of-sight checking". On the other hand, SIPP is a method that generates safe intervals, constructs an interval graph, finds the shortest path through the graph, computes the trajectory of the robot along the path, and handles dynamic obstacles in real-time. By taking into account the robot's shape and size, SIPP ensures safe and collision-free motion planning for robots in complex and dynamic environments.
 
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+Over the course of this article, we explored the key implementation details of each of these planners, their use cases and strengths and weaknesses. Both of them give significant improvements to Space-Time A* in terms of handling dynamic obstacles and path quality, but at the cost of increased computational complexity and time. 
 
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+Future work can include plugins for the same that are readily integrated into popular ROS-based packages like MoveIt!, allowing users to simply tune the parameters based on their usecase and use it on a variety of diverse systems
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- Daniel, K., Nash, A., Koenig, S., & Felner, A. (2010). Theta*: Any-angle path planning on grids. Journal of Artificial Intelligence Research, 39, 533-579.
+- Atzmon, D., Felner, A., Stern, R., Wagner, G., Barták, R., & Zhou, N. F. (2017). k-Robust multi-agent path finding. In Proceedings of the International Symposium on Combinatorial Search (Vol. 8, No. 1, pp. 157-158).
+- Phillips, M., & Likhachev, M. (2011, May). Sipp: Safe interval path planning for dynamic environments. In 2011 IEEE international conference on robotics and automation (pp. 5628-5635). IEEE
+- Lu, Z., Zhang, K., He, J., & Niu, Y. (2016). Applying k-means clustering and genetic algorithm for solving mtsp. In Bio-inspired Computing–Theories and Applications: 11th International Conference, BIC-TA 2016, Xi'an, China, October 28-30, 2016, Revised Selected Papers, Part II 11 (pp. 278-284). Springer Singapore.
+- Nash, A., Koenig, S., & Tovey, C. (2010, July). Lazy Theta*: Any-angle path planning and path length analysis in 3D. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 24, No. 1, pp. 147-154).
