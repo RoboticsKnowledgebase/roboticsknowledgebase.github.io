@@ -211,6 +211,8 @@ wiki:
         url: /wiki/interfacing/blink-1-led/
       - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
+      - title: ROS 1 - ROS 2 Bridge
+        url: /wiki/interfacing/ros1_ros2_bridge/
   - title: Computing
     url: /wiki/computing/
     children:
