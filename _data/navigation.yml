@@ -43,6 +43,8 @@ wiki:
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/     
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: Asctec Pelican UAV Setup Guide
