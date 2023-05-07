@@ -88,7 +88,7 @@ whoami # Success!!
 
 ## Mitigation of Privilege Escalation
 
-![images/privesc.png](images/privesc.png)
+![images/privesc.png](../../assets/images/privesc.png)
 
 ## Exposed Docker Socket
 
@@ -98,7 +98,7 @@ If docker.sock is mounted from the host into a container, we can use docker.sock
 
 The Docker socket is a type of UNIX socket used by the Docker CLI to execute Docker commands with root privileges. docker.sock is not originally present inside the container, but users inside the container may need to mount it to manage or create other containers. However, mounting docker.sock inside the container increases the attack surface and poses a security risk.
 
-![images/docker_socket.png](images/docker_socket.png)
+![images/docker_socket.png](../../assets/images/docker_socket.png)
 
 Next, we will go through the steps of the demo experiment:
 
