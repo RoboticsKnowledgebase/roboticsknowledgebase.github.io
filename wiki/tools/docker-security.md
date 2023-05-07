@@ -151,7 +151,6 @@ dockerd --userns-remap="evil:evil" # This limits the capabilities of evil user
 5. [https://operatingsystemsatntu.github.io/OS-21-Spring-at-NTU/mp0.html](https://operatingsystemsatntu.github.io/OS-21-Spring-at-NTU/mp0.html)
 6. [https://javascript.plainenglish.io/top-reasons-why-docker-is-popular-31cc6056e82a](https://javascript.plainenglish.io/top-reasons-why-docker-is-popular-31cc6056e82a)
 7. [https://www.datadoghq.com/container-report/](https://www.datadoghq.com/container-report/)
-8. 
 
 # Windows Backdoor
 
