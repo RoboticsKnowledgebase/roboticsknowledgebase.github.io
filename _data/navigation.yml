@@ -263,6 +263,8 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
+      - title: Docker Security
+        url: /wiki/tools/docker-security
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
