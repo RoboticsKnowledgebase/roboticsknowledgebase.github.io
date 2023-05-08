@@ -29,7 +29,7 @@ Installation instructions are provided in the [ROS 1 bridge](https://github.com/
         colcon build --symlink-install --packages-skip ros1_bridge
         ```
     - Source ROS 1 instal
-        ```
+        ```sh
         source /opt/ros/noetic/setup.bash
         ```
     - Source ROS 2 install
