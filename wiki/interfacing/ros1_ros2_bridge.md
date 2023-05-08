@@ -147,5 +147,5 @@ root
 
 
 ## References
-- https://github.com/ros2/ros1_bridge
+- [ROS1 Bridge documentation](https://github.com/ros2/ros1_bridge)
 
