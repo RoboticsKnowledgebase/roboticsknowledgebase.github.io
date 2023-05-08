@@ -85,7 +85,7 @@ This option bridges topics and services specified by a yaml file. An example yam
 
 ### Setting up the bridge in Docker
 Docker containers are powerful tools to use while developing software because they allow hardware agnostic development. The official ros docker image is available with the bridge already preconfigured. Here is an example docker file
-```
+```Dockerfile
 FROM ros:foxy-ros1-bridge-focal
 
 RUN apt update 
