@@ -37,7 +37,7 @@ Installation instructions are provided in the [ROS 1 bridge](https://github.com/
         source /opt/ros/foxy/setup.bash
         ```
     - Build the ROS 1 bridge
-        ``` 
+        ``` sh
         colcon build --symlink-install --packages-select ros1_bridge --cmake-force-configure
         ```
 
