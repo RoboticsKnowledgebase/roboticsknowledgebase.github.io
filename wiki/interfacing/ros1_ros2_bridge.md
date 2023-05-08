@@ -25,7 +25,7 @@ Installation instructions are provided in the [ROS 1 bridge](https://github.com/
 2. Build from source
 
     - Build everything except ROS 1 bridge:
-        ```
+        ```sh
         colcon build --symlink-install --packages-skip ros1_bridge
         ```
     - Source ROS 1 instal
