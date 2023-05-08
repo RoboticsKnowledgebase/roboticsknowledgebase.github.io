@@ -54,7 +54,7 @@ There are two types of bridges available:
 
 1.  **Dynamic Bridge**:
 This is a dynamic bridge option that straightaway bridges all topics between ROS 1 and ROS 2. This is the easiest way to get started with the bridge. This approach works well for small projects, but for larger projects, it is recommended to use the static bridge, as bridging all topics adds a lot of overhead to the system. This bridge can be launched directly with the following command:
-    ```
+    ```sh
     ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
     ```
 
