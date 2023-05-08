@@ -19,7 +19,7 @@ The [ROS 1 bridge](https://github.com/ros2/ros1_bridge) is a ros2 package that p
 ### Installation:
 Installation instructions are provided in the [ROS 1 bridge](https://github.com/ros2/common_interfaces) repository README. Note that you need to have both ROS 1 Noetic and ROS 2 Foxy installed in the system. There are 2 main ways to install the bridge:
 1. Install pre-built binaries
-    ```
+    ```sh
     sudo apt install ros-foxy-ros1-bridge
     ```
 2. Build from source
