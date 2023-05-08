@@ -78,7 +78,7 @@ This option bridges topics and services specified by a yaml file. An example yam
         type: example_interfaces/srv/AddTwoInts  # The ROS 2 service name
     ```
     Configure the topics to build and save the .yaml file as `bridge.yaml`. Then assuming you hase set the aliases properly in your .bashrc file, run the following command:
-    ```
+    ```sh
     sr1; rosparam load /<path to yaml>/bridge.yaml; sr2; ros2 run ros1_bridge parameter_bridge
     ```
 
