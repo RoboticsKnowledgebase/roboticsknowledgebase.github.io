@@ -33,7 +33,7 @@ Installation instructions are provided in the [ROS 1 bridge](https://github.com/
         source /opt/ros/noetic/setup.bash
         ```
     - Source ROS 2 install
-        ```
+        ```sh
         source /opt/ros/foxy/setup.bash
         ```
     - Build the ROS 1 bridge
