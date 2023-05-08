@@ -139,7 +139,7 @@ root
     ```
 2. A script to attach a given terminal to the running docker container. <br>
 `terminal_docker.sh` <br>
-    ```
+    ```sh
     docker exec -it image_name bash
     ```
     Whenever you attach to a terminal, you can type `sr1` or `sr2` to source ROS 1 or ROS 2 respectively. These aliases can also be used inside startup scripts to run nodes from the ROS 1 or ROS 2 workspace.
