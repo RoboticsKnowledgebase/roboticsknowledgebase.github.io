@@ -62,13 +62,13 @@ Porcupine is a hotword detection engine. It is available [here](https://picovoic
 
 Few-shot Keyword Spotting in Any Language and Multilingual Spoken Word Corpus by Harvard University. Follow this [link](https://github.com/harvard-edge/multilingual_kws) to know more.
 
-## Microphone selection
+## Microphone Selection
 
 Choosing the right microphone is crucial for good speech recognition. You would ideally want a microphone with a long pickup range and a high signal-to-noise ratio. You can use a USB microphone for this purpose. One such microphone is the Blue Yeti. It is a high quality USB microphone with a long pickup range and a high signal-to-noise ratio.
 
 If you are looking for a sleek and light-weight design, you can consider using conference microphones such as the Anker PowerConf series. You can also consider Movo MC1000. Both of these require a USB connection and are plug-and-play.
 
-## Noise supression
+## Noise suppression
 
 Often times, your robot might be operating in a noisy environment. This can cause the speech recognition to fail. To overcome this, you can use a noise suppression algorithm.
 
