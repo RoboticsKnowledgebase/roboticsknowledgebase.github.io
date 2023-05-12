@@ -7,7 +7,7 @@ This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu
 > It is recommended to begin the dual boot process as soon as possible in case things go wrong, or so that difficulties particular to the user’s hardware or desired setup are discovered as soon as possible.
 
 ## Create a bootable USB drive for Ubuntu
-First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for installation but the rest is needed for packages and coursework). 
+First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for the Ubuntu installation but it is recommended to reserve at least another 35 GB for packages and project files). 
 
 Go to the [Ubuntu Releases page](https://releases.ubuntu.com/) and select an LTS Release. Check with someone currently working with the software tools needed for the current project to know which version to install, as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher from the [Balena webpage](https://www.balena.io/etcher) with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
 
