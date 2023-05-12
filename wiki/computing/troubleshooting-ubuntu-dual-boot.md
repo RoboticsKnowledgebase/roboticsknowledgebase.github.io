@@ -1,16 +1,16 @@
 ---
-date: 2023-05-12
+date: {}
 title: Ubuntu Dual Boot and Troubleshooting Guide
 published: true
 ---
-This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu alongside Windows for the uninitiated. Several difficulties can be encountered during setup if not aware of the process in advance. Read the following sections as needed and be aware of the potential issues brought up.
+This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu alongside Windows for the uninitiated. This page assumes you have a PC or laptop with Windows 10 or 11 as the sole OS. Several difficulties can be encountered during setup if not aware of the process in advance. Read the following sections as needed and be aware of the potential issues brought up.
 
-> It is recommended to begin the dual boot process as soon as possible in case things go wrong so that project time is not wasted trying to reinstall Ubuntu for the fourth time, or wasting $300 on memory sticks that do not function with the laptop used for the dual boot, as the writers of this  page experienced.
+> It is recommended to begin the dual boot process as soon as possible in case things go wrong, or so that difficulties particular to the user’s hardware or desired setup are discovered as soon as possible.
 
 ## Create a bootable USB drive for Ubuntu
 First, acquire an empty USB pen drive that is 8 GB or larger and insert it into the computer of choice. Have at least 64 GB of unused hard disk space on the computer (only 25-30 GB is needed for installation but the rest is needed for packages and coursework). 
 
-Go to www.releases.ubuntu.com and select an LTS Release. Check with someone to know which version is trusted as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
+Go to the Ubuntu Releases page (https://releases.ubuntu.com/) and select an LTS Release. Check with someone currently working with the software tools needed for the current project to know which version to install, as the latest release may not work with all software needed. Download the .iso file for that release. Download and use balenaEtcher from the Balena webpage (https://www.balena.io/etcher) with that .iso and the inserted USB drive to create a bootable Ubuntu drive.
 
 ## Create partitions safely
 Creating the Ubuntu partition on the hard drive for the dual boot can be done while installing Ubuntu from the USB drive but it is better to do it while in Windows Go to the Disk Management page in Windows by right clicking the Start menu. From there, right click on a partition in the middle labeled “NTFS” and click “Shrink Volume”. Do not shrink the EFI System Partition or the Recovery Partition on either end of the large partition. Type in the amount of MB to free up - this should be at least 65536 for anticipated future work. This amount in GB should appear to the right of the Windows partition shrank with the label “Unallocated”.
@@ -25,7 +25,7 @@ If the Disk Management page is saying there are 0 MB available to shrink the vol
 Restart the computer. While it is booting up, press the button for the computer that opens BIOS Setup. This is either F2, F8, F10, or F12, but check the computer’s manual pages. When the partition options show up, move down to the name of the USB drive inserted and select it. When booting the USB, pick the option that says “Ubuntu (safe graphics)” to prevent display issues caused by the graphics card.
 
 ## Move/combine partitions to make use of inaccessible partitions
-Partitions of unallocated data can only be incorporated into another partition using Extend Volume if the unallocated partition is to the right of an existing partition with an OS. If there are multiple partitions of unallocated data or it is in a place where it is not able to get extended, use gparted in Ubuntu. This can be done before installing Ubuntu by selecting “Try Ubuntu” when loading Ubuntu from the bootable USB drive. Open a terminal by pressing at the same time Ctrl+Alt+T and run the command “gparted”. Once the window opens, select the partition of unallocated space and click the “Resize/Move” option to move the partition to where it can be used by Extend Volume on the partition, or click a partition used for an OS and move the sides of the partition to occupy the desired amount of unallocated memory. After each desired operation, click the Resize/Move button to queue the operation.
+Partitions of unallocated data can only be incorporated into another partition using Extend Volume if the unallocated partition is to the right of an existing partition with an OS. If there are multiple partitions of unallocated data or it is in a place where it is not able to get extended, use gparted in Ubuntu. (If it is not installed by default on Ubuntu, then install gparted following this guide: https://linuxways.net/centos/how-to-install-gparted-on-ubuntu-20-04/). This can be done before installing Ubuntu by selecting “Try Ubuntu” when loading Ubuntu from the bootable USB drive. Open a terminal by pressing at the same time Ctrl+Alt+T and run the command “gparted”. Once the window opens, select the partition of unallocated space and click the “Resize/Move” option to move the partition to where it can be used by Extend Volume on the partition, or click a partition used for an OS and move the sides of the partition to occupy the desired amount of unallocated memory. After each desired operation, click the Resize/Move button to queue the operation.
 
 ### Troubleshooting: gparted does not allow actions
 If gparted is not allowing a certain action or is preventing it from ocurring, undo all previous steps and make sure each step is done individually by clicking Resive/Move after the step to prevent operations from conflicting.
@@ -62,10 +62,10 @@ There are a few ways Ubuntu installation can go wrong or be delayed but this pag
 - [Upgrading Ubuntu Kernels](https://roboticsknowledgebase.com/wiki/computing/upgrading-ubuntu-kenel)
 
 ## Further Reading
-- www.github.com/lwfinger
-- www.askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11
+- [Git repositories for drivers for different types of RealTek cards](https://www.github.com/lwfinger)
+- [Instructions for how to install the driver listed in this page](https://www.askubuntu.com/questions/1412219/how-to-solve-no-wi-fi-adapter-found-error-with-realtek-rtl8852be-wifi-6-802-11)
 
 ## References
-- www.youtube.com/watch?v=GXxTxBPKecQ
-- www.youtube.com/watch?v=CWQMYN12QD0
-- www.gparted.org/display-doc.php%3Fname%3Dmoving-space-between-partitions
+- [How to Dual Boot Ubuntu 22.04 LTS and Windows 10 | Step by Step Tutorial - UEFI Linux](https://www.youtube.com/watch?v=GXxTxBPKecQ)
+- [The Best Way to Dual Boot Windows and Ubuntu](https://www.youtube.com/watch?v=CWQMYN12QD0)
+- [Moving Space Between Partitions](https://gparted.org/display-doc.php?name=moving-space-between-partitions)
