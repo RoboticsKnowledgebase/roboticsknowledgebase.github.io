@@ -1,6 +1,5 @@
 ---
-date:
-  2023/04/30: null
+date: 2023-05-12
 title: Ubuntu Dual Boot and Troubleshooting Guide
 published: true
 ---
