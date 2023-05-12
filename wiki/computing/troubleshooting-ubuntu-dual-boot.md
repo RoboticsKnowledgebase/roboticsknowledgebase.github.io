@@ -1,7 +1,6 @@
 ---
 date: 2023-05-12
 title: Ubuntu Dual Boot and Troubleshooting Guide
-published: true
 ---
 This page serves as a tutorial and troubleshooting guide for dual booting Ubuntu alongside Windows for the uninitiated. This page assumes you have a PC or laptop with Windows 10 or 11 as the sole OS. Several difficulties can be encountered during setup if not aware of the process in advance. Read the following sections as needed and be aware of the potential issues brought up.
 
