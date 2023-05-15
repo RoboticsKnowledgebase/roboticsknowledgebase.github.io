@@ -19,7 +19,7 @@ In both cases, tell them what you're going to say, use the sections below to say
 
 ## Introduction
 
-MBF is a navigation stack that is an extension of the Move Base navigation stack, with many great features. The package allows us to load/unload planners and controllers on the fly easily and even run multiple planning algorithms concurrently. The code base is highly flexible and modular. It is an improvement over the original move base navigation package, which only allows 2D costmaps and does not allow easy modification of the execution behavior of the navigation stack.
+[MBF](http://wiki.ros.org/move_base_flex) is a navigation stack that is an extension of the Move Base navigation stack, with many great features. The package allows us to load/unload planners and controllers on the fly easily and even run multiple planning algorithms concurrently. The code base is highly flexible and modular. It is an improvement over the original move base navigation package, which only allows 2D costmaps and does not allow easy modification of the execution behavior of the navigation stack.
 
 This package handles all the interactions between the planner, the controller (what they call their local planner), and recovery behaviors. Also, it provides action servers for sending and keeping track of goals. These are supposed to be implemented as classes and are dynamically loaded/unloaded in the memory using the ROS plugin library [1].
 

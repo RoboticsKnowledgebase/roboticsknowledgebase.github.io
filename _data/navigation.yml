@@ -309,6 +309,8 @@ wiki:
         url: /wiki/planning/multi-robot-planning/
       - title: Motion Planning in frenet frame
         url: /wiki/planning/frenet-frame-planning.md/
+      - title: Move Base Flex
+        url: /wiki/planning/move-base-flex/
 # Main links appear in the header.
 main:
   - title: Wiki
