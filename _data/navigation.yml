@@ -232,6 +232,8 @@ wiki:
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
+      - title: Ubuntu Dual Boot and Troubleshooting Guide
+      	url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
