@@ -68,27 +68,27 @@ Choosing the right microphone is crucial for good speech recognition. You would 
 
 If you are looking for a sleek and light-weight design, you can consider using conference microphones such as the Anker PowerConf series. You can also consider Movo MC1000. Both of these require a USB connection and are plug-and-play.
 
-## Noise suppression
+## Noise Suppression
 
 Often times, your robot might be operating in a noisy environment. This can cause the speech recognition to fail. To overcome this, you can use a noise suppression algorithm.
 
-### AI-based noise suppression
+### AI-based Noise Suppression
 
 One such algorithm is the NoiseTorch algorithm. It is a simple noise suppression algorithm that uses PyTorch. It is available [here](https://github.com/noisetorch/NoiseTorch). NoiseTorch is very light weight and works on most modern CPU out-of-the-box with very less computational load.
 
 If you have an NVIDIA GPU, you can try using NVIDIA RTX Voice. It is available [here](https://www.nvidia.com/en-us/geforce/guides/nvidia-rtx-voice-setup-guide/). It is a more advanced noise suppression algorithm that uses AI to remove noise. It is more computationally intensive and requires an NVIDIA GPU with RTX support.
 
-### Hardware-based noise suppression
+### Hardware-based Noise Suppression
 
 If you are using a Raspberry Pi, you can use the [ReSpeaker](https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/) microphone. It has a built-in noise suppression algorithm that works well in most environments.
 
-### Adjusting the microphone sensitivity
+### Adjusting the Microphone Sensitivity
 
 The microphone sensitivity can be adjusted using the `pavucontrol` program. This is available on Ubuntu. You can install it using `sudo apt install pavucontrol`. Once installed, you can run it using `pavucontrol`. This will open a GUI. You can then adjust the microphone gain using the slider:
 
 ![pavucontrol](assets/pavucontrol.png)
 
-### Echo cancellation
+### Echo Cancellation
 
 If you are using a speaker and a microphone, you might face issues with echo. This can be solved by using a software echo cancellation algorithm. One such algorithm is the PulseAudio echo cancellation module. It is available [here](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-echo-cancel). It is available on Ubuntu and can be installed using `sudo apt install pulseaudio-equalizer`. Once installed, you can enable it using `pactl load-module module-echo-cancel aec_method=webrtc sourc_name=echocancel sink_name=echocancel1`.
 
@@ -102,7 +102,7 @@ set-default-sink echocancel1
 .endif
 ```
 
-## Speech synthesis
+## Speech Synthesis
 
 Speech synthesis is the process of generating speech from text. This can be used to make the robot speak. This can be used to give feedback to the user or to make the robot more interactive.
 
