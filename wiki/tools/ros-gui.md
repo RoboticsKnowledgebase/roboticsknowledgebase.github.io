@@ -60,7 +60,7 @@ Red Button
 ![Red Button](assets/PyQt-red.png)
 
 The code block for this is given here:
-```
+```python
 def SystemTimerBlock(self):
     self.system_count = 0
     self.system_start = False
