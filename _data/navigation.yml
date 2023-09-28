@@ -159,7 +159,7 @@ wiki:
         url: /wiki/state-estimation/orb-slam2-setup/
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
-      - title: Cartographer SLAM ROS Integration 
+      - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
   - title: Programming
     url:  /wiki/programming/
@@ -193,7 +193,7 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
-      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+      - title: Setting up WiFi hotspot at the boot up for Linux devices
         url: /wiki/networking/wifi-hotspot/
   - title: Simulation
     url: /wiki/simulation/
@@ -233,7 +233,7 @@ wiki:
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
-      	url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+        url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
