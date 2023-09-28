@@ -69,6 +69,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-unsupported-os
       - title: Making RC Vehicles Autonomous
         url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
   - title: Sensing
     url: /wiki/sensing/
     children:

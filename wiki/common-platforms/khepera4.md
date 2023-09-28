@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2022-04-29
 title: Khepera 4
 published: true
 ---
