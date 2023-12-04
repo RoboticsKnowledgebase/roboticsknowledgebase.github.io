@@ -86,7 +86,7 @@ Here is an example of tracking tasks on Notion:
 Notion automatically converts your task list to a timeline format (Gantt chart). However, Notion can only do this to tasks that have a start date and end date defined. Additionally, you can edit the task list to add dependencies between tasks. 
 
 Here is an example of managing a project's schedule on Notion - 
-![Picture2.png](project-schedule)
+![Picture2.png](assets/images/project-schedule.png)
 
 > While coming up with a project schedule, make sure that you keep external milestones and delivery dates in mind. It is a good practice to come up with intermediate internal milestones enroute external milestones. The image below shows an example of how you can keep track of milestones for your project.
 ![Picture5.png](assets/images/milestones.png)
