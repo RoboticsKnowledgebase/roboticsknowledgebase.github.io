@@ -9,7 +9,7 @@ title: Cloud Robotics with ROS - Latency, Network Bandwidth, and Time-Synchroniz
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-Cloud robotics is an emerging field that combines robotics with cloud computing and services. While it offers many advantages, it also comes with several key challenges. Some of these are latency, network bandwidth and time-synchronization to for which we discuss options in this article and include examples on addressing these in a robotics project setup. As a preclude we provide a concise introduction to cloud robotics, emphasizing the latest research trends and enabling technologies. We will then delve into the specifics of building a cloud robotics testbed, which includes setting up a communication network. We discuss trade-offs and offer guidance on configuring a WLAN network. We present an overview of popular methods and trade-offs in time-synchronization techniques. We will explain on how to use Chrony to synchronize time across distributed systems in the absence of internet connectivity, timestamps from GPS receivers and real-time clocks. Simulating latency is another crucial consideration in cloud robotics testing. We will provide a primer
+Cloud robotics is an emerging field that combines robotics with cloud computing and services. While it offers many advantages, it also comes with several key challenges. Some of these are latency, network bandwidth and time-synchronization for which we discuss options in this article and include examples on addressing these in a robotics project setup. As a preclude we provide a concise introduction to cloud robotics, emphasizing the latest research trends and enabling technologies. We will then delve into the specifics of building a cloud robotics testbed, which includes setting up a communication network. We discuss trade-offs and offer guidance on configuring a WLAN network. We present an overview of popular methods and trade-offs in time-synchronization techniques. We will explain on how to use Chrony to synchronize time across distributed systems in the absence of internet connectivity, timestamps from GPS receivers and real-time clocks. Simulating latency is another crucial consideration in cloud robotics testing. We will provide a primer
 on common incorrect methods for simulating communication latency and offer a simple implementation of simulating latency in real-time systems
 deployed with ROS Noetic. 
 
@@ -17,7 +17,7 @@ deployed with ROS Noetic.
 Cloud robotics represents a paradigm shift in the field of robotics, where the traditional model of integrating sensing and computation within a single robotic system gives way to a distributed architecture with an extended or shared brain. In this approach, robots become compact, consume less power, and also cost-effective by offloading the bulk of processing tasks to the cloud. The core idea is to leverage on-demand computing resources offered by cloud infrastructure. This architecture also enables human operators to remotely teleoperate robots, enhancing flexibility and scalability in various applications. Moreover, the architecture facilitates information sharing across the entire system, fostering collective learning and optimization for multi-agent use cases. Achieving these advantages introduces novel research challenges, such as efficiently allocating parallel computation in the cloud at a reasonable cost, addressing inevitable bottlenecks associated with network connectivity, and devising algorithms capable of distributing computation tasks between the cloud and the robot.
 
 ## Configuring a WLAN network
-When choosing a WiFi router, you’ll have to decide whether you want a Wi-Fi 6 router, a Wi-Fi 5 (802.11ac) router, or a Wi-Fi mesh system. Whilst there are specific steps to configuring different Wi-Fi routers depending on the manufacturer, the below are some important points to keep in mind.
+When choosing a WiFi router, you’ll have to decide whether you want a Wi-Fi 6 router, a Wi-Fi 5 (802.11ac) router, or a Wi-Fi mesh system. While there are specific steps to configuring different Wi-Fi routers depending on the manufacturer, the below are some important points to keep in mind.
 
 1. **Frequency:** A 5GHz WLAN network offers several advantages. It provides better performance at short ranges compared to 2.4GHz. The 5GHz band, though somewhat faster, has shorter wavelengths, limiting its range and penetration through objects. However, this limitation becomes an advantage in terms of reduced interference and higher bandwidth. The 2.4GHz band, while traveling further, often faces more congestion and has fewer channel options. Therefore, opting for a 5GHz WLAN network results in higher bandwidth, less cross-network interference, but with the drawback of a relatively smaller range, making it suitable for environments with shorter distances between devices.
 
@@ -67,7 +67,7 @@ PTP stands for Precision Time Protocol. It is a protocol used to synchronize clo
 
 ### Configuring Chrony to time-synchronize distributed devcies
 
-Computers worldwide use the Network Time Protocol (NTP) to synchronize their times with internet standard reference clocks via a hierarchy of NTP servers. In this section we will look at configuring Chrony to synchronize devices on the same network in the absence of internet and GPS clocks (optionally using RTCs if availble). Is is done by configuring one machine as the master clock (primary timeserver) and making all other devices track the master clock. We set the master clock as the device which hosts the ROS master in our [multi-machine ROS](https://wiki.ros.org/ROS/Tutorials/MultipleMachines) setup. 
+Computers worldwide use the Network Time Protocol (NTP) to synchronize their times with internet standard reference clocks via a hierarchy of NTP servers. In this section, we will look at configuring Chrony to synchronize devices on the same network in the absence of internet and GPS clocks, optionally using RTCs if available. It is done by configuring one machine as the master clock (primary timeserver) and making all other devices track the master clock. We set the master clock as the device which hosts the ROS master in our [multi-machine ROS](https://wiki.ros.org/ROS/Tutorials/MultipleMachines) setup. 
 
 1. Download Chrony using your package manager (eg. sudo apt-get install chrony)
 2. Edit the Chrony configuration file (eg. sudo nano /etc/chrony/chrony.conf)
@@ -132,7 +132,7 @@ sudo chronyc clients
 ```
 
 ## Simulating latency
-Simulating latency can be tricky. To artificially inject latency in a system by delaying the published ROS messages one must ensure that both the rate at which the message is published and the timestamp are preserved after injecting the latency; and the messages must be available to the subsricriber(s) after the desired delay. This can be done using timer-based callbacks in ROS and the below implementation preserves the message frequency and timestamp. 
+Simulating latency can be tricky. To artificially inject latency in a system by delaying the published ROS messages one must ensure that both the rate at which the message is published and the timestamp are preserved after injecting the latency; and the messages must be available to the subsricriber(s) after the desired delay. This can be done using timer-based callbacks in ROS, and the below implementation preserves the message frequency and timestamp.
 
 ```
 #!/usr/bin/env python
@@ -159,7 +159,7 @@ class LatencySim():
         self.publisher.publish(msg)
 ```
 
-More features can be added - 1) Randomly varying latency to simulate varying connectivity strengths, 2) latency being adjusted using dynmically reconfigurable ROS parameters.
+More features can be added, such as 1) randomly varying latency to simulate varying connectivity strengths, and 2) latency being adjusted using dynamically reconfigurable ROS parameters.
 ## Summary
 Cloud robotics, the integration of robotics with cloud computing and services, presents numerous advantages and challenges. In this article, we explore key challenges such as latency, network bandwidth, and time synchronization in the context of cloud robotics projects. The discussion includes practical examples and solutions for addressing these challenges within a robotics project setup.
 
