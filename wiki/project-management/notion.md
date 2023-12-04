@@ -160,7 +160,7 @@ A fun strategy here is to define project ‘**Office Hours**’ – specific tim
 
 After committing to weekly ‘Office Hour’ timings, each team member should try to stick to these timings (or cover up for them where applicable). These office hours will help the project manager keep track of each individual’s progress, efficiency and contribution over time, which will help in future planning activities.
 
-
+Here is an example of Team Availability (Office Hours) that you could apply to your project as well:
 ![Picture4.png]({{site.baseurl}}/wiki/project-management/Picture4.png)
 
 
@@ -174,7 +174,7 @@ For example, a team could have a communication channel for each of the following
 - Technical Work
 - Logistics
 - Finances
-- Announcements
+- Assignments
 
 There are different communication platforms and teams can choose whichever one they are most comfortable with. Some common options are 
 - Discord
