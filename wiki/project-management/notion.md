@@ -135,7 +135,7 @@ For a weekly progress update, here are a few questions the project manager shoul
 
 ### Card System for Latecomers
 
-Coming on time to meetings exhibits qualities of professionalism and respect for other’s time. When managing student projects, it is especially important to ensure that team members are motivated and determined to start each meeting on time. 
+Arriving on time to meetings exhibits qualities of professionalism and respect for other’s time. When managing student projects, it is especially important to ensure that team members are motivated and determined to start each meeting on time. 
 Sometimes, a little incentive can go a long way. This is where the ‘Card System for Latecomers” can be a fun exercise for teams to try out. 
 
 Here are the rules: 
