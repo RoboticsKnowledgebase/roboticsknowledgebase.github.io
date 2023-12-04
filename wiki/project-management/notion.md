@@ -6,7 +6,7 @@ published: true
 
 Effective project management is crucial to the long-term success of any project, and there are various free tools that small teams (3-8 members) can use to effectively manage their project.
 
-This document explains how to use one such tool, Notion, for Project Management. [Notion](https://www.notion.so/product) is a documentation and task-tracking platform that can be significantly useful in managing different aspects of a project. In the first section, this document details how to set up and use Notion for Project Management. The second section then introduces various project management strategies that teams can use to improve their project management process.
+This document explains how to use one such tool, Notion, for Project Management. [Notion](https://www.notion.so/product) is a documentation and task-tracking platform that can be significantly useful in managing different aspects of a project. The first half of this document details how to set up and use Notion for Project Management. The second half then introduces various project management strategies that teams can use to improve their project management process.
 
 > The project manager’s role is to ensure that all aspects of the project are planned for and appropriately tracked throughout the life of the project. There should be at least one member in the team that assumes this role (could be in addition to other roles). 
 
@@ -35,7 +35,7 @@ Here is a [simple Notion project management template](https://short-gatsby-680.n
 
 
 
-## Meeting Notes
+### Meeting Notes
 Maintaining a section for meeting notes is critical to project management. Details of major internal discussions within team members, or external discussions with project sponsors, users or other stakeholders should be documented in this section. An advantage of Notion is that it enables filtering and sorting meeting notes based on date, type or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a prior meeting. 
 
 To effectively organize meetings on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add meeting notes (example below). The Notion Project Management template shared above includes the meeting notes section as well. 
@@ -56,7 +56,7 @@ Here is an example of maintaining meeting notes on Notion.
 ![Meeting Notes List]({{site.baseurl}}/wiki/project-management/image.png)
 
 
-## Task List
+### Task List
 Another critical aspect of project management is managing work and schedule. After completing the system design phase of a project, it is important to create a Work Breakdown Structure (WBS) that includes all tasks that need to be completed to meet the project goals. On a shorter-horizon, these can be tasks towards a specific milestone / sprint. 
 
 Notion makes it easy to track the progress of such tasks over time. It allows creation of task cards to be added to a Kanban board-type view, or simpy organized in a tabular form. A really useful feature here is that Notion enables filtering and sorting tasks based on date, type, assigned person or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a list of tasks. 
@@ -80,11 +80,69 @@ Here is an example of tracking tasks on Notion:
 
 
 
-## Gantt Chart 
+### Project Schedule
 Notion automatically converts your task list to a timeline format (Gantt chart). However, Notion can only do this to tasks that have a start date and end date defined. Additionally, you can edit the task list to add dependencies between tasks. 
 
-Here is an example of a Gantt Chart created on Notion - 
+Here is an example of managing a project's schedule on Notion - 
+![Picture2.png]({{site.baseurl}}/wiki/project-management/Picture2.png)
 
+
+
+### Documentation 
+Like meeting notes and task management, documenting team ideas, decisions, observations and results is significant to successful project management. While a lot of information can be documented through meeting notes, the work that happens outside of meetings may be better documented in a separate document. Notion provides ample options to filter, sort and categorize your documents into various types and categories, so feel free to be creative when setting up your Documentation section. 
+
+Here are some ideas for what you can document on Notion
+- Meeting Notes (if not already a separate section)
+- System Design documents
+- System Testing documents
+- Useful links and resources
+
+To effectively document the above on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add documents (example below). The Notion Project Management template shared above includes the task list section as well.
+
+
+### Project Logs
+
+Another form of documentation, like meeting notes and implementation / testing documentation are project logs. These are critical to managing the progress on a local basis, and can be a useful technique for members to structure their thoughts and observations in a common place. 
+
+Here are some ideas for what you can log on Notion
+- Individual Progress Logs
+- Issues Log
+- Risks Log
+- Decisions Log
+
+A project logs page can be created on Notion using the standard ‘Table’ template with a new database. The Notion Project Management template shared above includes the Project Logs section as well.
+
+
+## Effective Project Management Strategies
+
+### Weekly Meetings
+Deciding and committing to specific meeting times every week is one of the first actions a team should take. Use Google Calendar (or MS Teams) to set up weekly meeting slots and invite all team members.
+
+While every meeting could have a different set of agenda, the team should try to follow a common structure for each meeting. For example, every Monday meeting could start with a weekly progress update by each individual. Once individual progress has been recorded, the team can move on to team-level discussion / tasks. 
+
+For a weekly progress update, here are a few questions the project manager should ask each team member:
+- What were your tasks for last week? (cross-check with the task list)
+- What are your tasks for next week? 
+- Any concerns or obstacles that could prevent you from achieving your goals for next week?
+
+
+
+### Card System for Latecomers
+
+Coming on time to meetings exhibits qualities of professionalism and respect for other’s time. When managing student projects, it is especially important to ensure that team members are motivated and determined to start each meeting on time. 
+Sometimes, a little incentive can go a long way. This is where the ‘Card System for Latecomers” can be a fun exercise for teams to try out. 
+
+Here are the rules: 
+- There are two cards – Red and Yellow.
+- A yellow card leads to a 10-point penalty.
+- A red card leads to a 20-point penalty.
+- If a team member is 10 min late, they get a yellow card. 
+- If a team member is 30+ min late, they get a red card. 
+- Anytime a member gets 30 points, they have to sponsor lunch for the rest of the team. 
+
+Feel free to modify the rules to suit your team’s interests!
+
+![Picture3.png]({{site.baseurl}}/wiki/project-management/Picture3.png)
 
 
 
@@ -106,6 +164,10 @@ This section covers the basic syntax and some rules of thumb for writing.
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
 > This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+
+
+
+
 
 
 #### Bullet points and numbered lists
