@@ -51,12 +51,31 @@ A standard meeting notes document should have the following content-sections:
 - Action Items
 
 
-Here is an example of how to maintain meeting notes on Notion 
+Here is an example of maintaining meeting notes on Notion. 
 
-![Meeting Notes Table]({{site.baseurl}}/wiki/project-management/unnamed%20(3).png)
+![Meeting Notes List]({{site.baseurl}}/wiki/project-management/image.png)
 
 
-## T
+## Task Tracking
+Another critical aspect of project management is managing work and schedule. After completing the system design phase of a project, it is important to create a Work Breakdown Structure (WBS) that includes all tasks that need to be completed to meet the project goals. On a shorter-horizon, these can be tasks towards a specific milestone / sprint. Notion makes it easy to track the progress of such tasks over time.   
+
+An advantage of Notion is that it enables filtering and sorting tasks based on date, type, assigned person or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a list of tasks. 
+
+Additionally, Notion automatically converts your task list to a timeline format (Gantt chart). However, Notion can only do this to tasks that have a start date and end date defined. You can then edit the task list to add dependencies between tasks. 
+
+To effectively organize tasks on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add tasks (example below). Similarly, add a Timeline section to automatically create the project schedule after adding tasks in the database. The Notion Project Management template shared above includes the task list section as well.
+ 
+A standard task card should have the following indexing sections: 
+- Assignee
+- Start Date
+- Due Date
+- Type
+- Status
+
+A standard task card should have the following content-sections:
+- Objectives
+- Scope
+- Evidence of Completion
 
 
 
