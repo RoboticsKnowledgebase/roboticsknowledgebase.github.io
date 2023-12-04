@@ -122,9 +122,9 @@ A project logs page can be created on Notion using the standard ‘Table’ temp
 ## Effective Project Management Strategies
 
 ### Weekly Meetings
-Deciding and committing to specific meeting times every week is one of the first actions a team should take. Use Google Calendar (or MS Teams) to set up weekly meeting slots and invite all team members.
+Deciding and committing to specific meeting times every week is one of the first actions a team should perform. Use Google Calendar (or MS Teams) to set up weekly meeting slots and invite all team members.
 
-While every meeting could have a different set of agenda, the team should try to follow a common structure for each meeting. For example, every Monday meeting could start with a weekly progress update by each individual. Once individual progress has been recorded, the team can move on to team-level discussion / tasks. 
+While every meeting could have a different set of agenda, the team should try to follow a common structure for each meeting. For example, every Monday meeting could start with a weekly progress update by each individual. Once individual progress has been recorded, the team can move on to higher-level project discussions. 
 
 For a weekly progress update, here are a few questions the project manager should ask each team member:
 - What were your tasks for last week? (cross-check with the task list)
