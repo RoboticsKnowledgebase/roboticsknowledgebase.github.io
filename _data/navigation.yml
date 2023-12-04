@@ -36,6 +36,8 @@ wiki:
         url: /wiki/project-management/risk-management/
       - title: Jira
         url: /wiki/project-management/jira/
+      - title: Using Notion for Project Management
+        url: /wiki/project-management/using-notion-for-project-management/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
