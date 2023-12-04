@@ -181,11 +181,6 @@ There are different communication platforms and teams can choose whichever one t
 - Spaces
 
 
-
-
-
-----------------------------
-
 ## Summary
 In summary, Notion is a powerful tool for project management. It's clean UI and features enable structuring various aspects of a project well. Some of Notion's feature for project management were introduced in this article, along with a simple Project Management template to help you get started. Feel free to build on this template and test out some of the effective project management strategies introduced in your project! 
 
@@ -201,7 +196,3 @@ In summary, Notion is a powerful tool for project management. It's clean UI and 
 
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
