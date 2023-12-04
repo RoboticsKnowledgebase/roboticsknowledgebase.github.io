@@ -55,7 +55,7 @@ A standard meeting notes document should have the following content-sections:
 
 Here is an example of maintaining meeting notes on Notion. 
 
-![Meeting Notes List]({{site.baseurl}}/wiki/project-management/image.png)
+![Meeting Notes List](assets/images/meeting-notes.png)
 
 
 ### Task List
