@@ -75,13 +75,8 @@ A standard task card should have the following content-sections:
 - Scope
 - Evidence of Completion
 
-Here are example of tracking tasks on Notion: 
+Here is an example of tracking tasks on Notion: 
 ![image2.png]({{site.baseurl}}/wiki/project-management/image2.png)
-![image3.png]({{site.baseurl}}/wiki/project-management/image3.png)
-![image4.png]({{site.baseurl}}/wiki/project-management/image4.png)
-
-
-
 
 
 
