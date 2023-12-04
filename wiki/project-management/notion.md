@@ -27,9 +27,6 @@ Individual university students and teachers who associate their accounts with th
 **Note:** The above method does not lead to a private teamspace on Notion. You will need to upgrade to Notion's premium plan in order to convert this to a private teamspace (only members can see the teamspace exists).
 
 
-
-
-
 ## Notion Project Management Template 
 Here is a [simple Notion project management template](https://short-gatsby-680.notion.site/Dummy-Project-47645eb16177425d932332db325d0233?pvs=4) that you can use for your project. It contains the major sections that are needed to effectively manage your project. 
 - To use the entire template in your project, just click on 'Duplicate' button on the top-right of the home page.
@@ -39,8 +36,24 @@ Here is a [simple Notion project management template](https://short-gatsby-680.n
 
 
 ## Meeting Notes
+Maintaining a section for meeting notes is critical to project management. Details of major internal discussions within team members, or external discussions with project sponsors, users or other stakeholders should be documented in this section. An advantage of Notion is that it enables filtering and sorting meeting notes based on date, type or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a prior meeting. 
+
+To effectively organize meetings on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add meeting notes (example below). The Notion Project Management template shared above includes the meeting notes section as well. 
+A standard meeting notes document should have the following indexing sections: 
+- Meeting Date
+- Meeting Participants
+- Meeting Type
+
+A standard meeting notes document should have the following content-sections:
+- Meeting Agenda
+- Meeting Notes
+- Meeting Outcomes
+- Action Items
 
 
+Here is an example of how to maintain meeting notes on Notion 
+
+![Meeting Notes Table]({{site.baseurl}}/wiki/project-management/unnamed%20(3).png)
 
 
 ## T
