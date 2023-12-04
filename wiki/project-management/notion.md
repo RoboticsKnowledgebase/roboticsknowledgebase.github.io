@@ -18,11 +18,12 @@ Individual university students and teachers who associate their accounts with th
 2. Create a Notion team space. 
 	- Inside your Notion workspace, click on the 'Settings and the members' option on the top-left of the window. 
     - Navigate to Teamspaces and create a new team space.  
-3. To add members to your teamspace, you will need to pay their premium subscription fee.
-4. However, teams can still collaborate on a common project by setting the team space permission as ‘Closed’ and adding their team members. 
-5. To do this, go to the team page. On the top-right of the screen, click on the ‘Share’ button. 
-6. Enter the email IDs of your team members and click ‘Invite’ to share the team space with them. Make sure the permissions allow invited members to access and edit the team space. 
-7. Each member invited should now have access to view and edit the team space. While this space is hosted on an individual’s Notion account, it is still a common space which can be used by all members of the team.  
+3. Add team members to your new team space. 
+	- Go to the home page of your team space.
+    - On the top-right of the screen, click on the ‘Share’ button.
+    -  Enter the email IDs of your team members and click ‘Invite’ to share the team space with them. Make sure the permissions allow invited members to access and edit the team space.
+4. Each member invited should now have access to view and edit the team space. While this space is hosted on an individual’s Notion account, it is still a common team space which can be used by all members of the team (added as guests to the teamspace on Notion).
+
 
 
 
