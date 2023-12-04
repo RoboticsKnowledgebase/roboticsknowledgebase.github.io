@@ -30,16 +30,17 @@ Individual university students and teachers who associate their accounts with th
 
 ## Notion Project Management Template 
 Here is a [simple Notion project management template](https://short-gatsby-680.notion.site/Dummy-Project-47645eb16177425d932332db325d0233?pvs=4) that you can use for your project. It contains the major sections that are needed to effectively manage your project. 
-- To use the entire template in your project, just click on 'Duplicate' button on the top-right of the home page.
+- To use the entire template in your project, just click on the 'Duplicate' button on the top-right of the home page.
 - To use a particular section of the template in your project, navigate to the section that you would like to use (for eg. Meeting Notes) and then click on the 'Duplicate' button on the top-right of the page. 
-- When prompted where you would like to duplicate the tempalte to, just select your teamspace. 
+- When prompted where you would like to duplicate the tempalte to, select your teamspace. 
 
 
 
 ### Meeting Notes
-Maintaining a section for meeting notes is critical to project management. Details of major internal discussions within team members, or external discussions with project sponsors, users or other stakeholders should be documented in this section. An advantage of Notion is that it enables filtering and sorting meeting notes based on date, type or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a prior meeting. 
+Maintaining a section for meeting notes is critical to project management. Details of major internal discussions within the team, or external discussions with project sponsors, users or other stakeholders should be documented in this section. An advantage of Notion is that it enables filtering and sorting meeting notes based on date, type or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a prior meeting. 
 
 To effectively organize meetings on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add meeting notes (example below). The Notion Project Management template shared above includes the meeting notes section as well. 
+
 A standard meeting notes document should have the following indexing sections: 
 - Meeting Date
 - Meeting Participants
