@@ -12,6 +12,17 @@ This document explains how to use one such tool, Notion, for Project Management.
 
 
 ## Setting up Notion for your team
+Individual university students and teachers who associate their accounts with their school email addresses can get Notion’s Plus Plan for free. With this plan, one member in the team can host a teamspace which can be accessed and edited by upto 100 members. Here are the steps to set up Notion for your team: 
+
+1. Create a Notion account with your educational email ID. 
+2. Create a Notion team space. 
+	- Inside your Notion workspace, click on the 'Settings and the members' option on the top-left of the window. 
+    - Navigate to Teamspaces and create a new team space.  
+3. To add members to your teamspace, you will need to pay their premium subscription fee.
+4. However, teams can still collaborate on a common project by setting the team space permission as ‘Closed’ and adding their team members. 
+5. To do this, go to the team page. On the top-right of the screen, click on the ‘Share’ button. 
+6. Enter the email IDs of your team members and click ‘Invite’ to share the team space with them. Make sure the permissions allow invited members to access and edit the team space. 
+7. Each member invited should now have access to view and edit the team space. While this space is hosted on an individual’s Notion account, it is still a common space which can be used by all members of the team.  
 
 
 
