@@ -1,5 +1,5 @@
 ---
-date: {}
+date: {12/4/23}
 title: Using Notion for Project Management
 published: true
 ---
