@@ -154,7 +154,7 @@ Feel free to modify the rules to suit your team’s interests!
 ### Office Hours
 Accurate time estimation is critical to planning and tracking project progress. Typically, each team member is expected to work a specific number of hours per week on the project. Therefore, weekly individual goals and team goals should be defined based on that number. 
 
-For example, if it is estimated that a task will take 30 hours to complete, and one person is assigned to the task, then it should take approximately 2 weeks for that task to be completed, assuming the individual works 15 hours per week on the project. In student projects, fixed times to work during the day are often not defined. This could lead to slack in project schedule if team members do not work according to the expected time commitments. 
+For example, if it is estimated that a task will take 30 hours to complete, and one person is assigned to the task, then it should take approximately 2 weeks for that task to be completed, assuming the individual works 15 hours per week on the project. In student projects, fixed times to work during the day are not typically defined. While this freedom in schedule can be powerful, it could also lead to slack in project schedule if team members do not work according to the expected time commitments. 
 
 A fun strategy here is to define project ‘**Office Hours**’ – specific times during the week that each team member commits to work on this project. This is a minimum time estimate and should be based on the requirements of the course / project. Of course, every team member is free to work on the project more if they like. 
 
