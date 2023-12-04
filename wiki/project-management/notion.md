@@ -63,7 +63,7 @@ Another critical aspect of project management is managing work and schedule. Aft
 
 Notion makes it easy to track the progress of such tasks over time. It allows creation of task cards to be added to a Kanban board-type view, or simpy organized in a tabular form. A really useful feature here is that Notion enables filtering and sorting tasks based on date, type, assigned person or any other category that is used. Teams can use this feature to their advantage for quickly filtering out key information from a list of tasks. 
 
-To effectively organize tasks on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add tasks (example below). Similarly, add a Timeline section to automatically create the project schedule after adding tasks in the database. The Notion Project Management template shared above includes the task list section as well.
+To effectively organize tasks on Notion, create a new page on Notion and select a Table template. Connect a new database to your Table where you can add tasks (example below). Similarly, add a Timeline section to automatically create the project schedule after adding task details in the database. The Notion Project Management template shared above includes the task list section as well.
  
 A standard task card should have the following indexing sections: 
 - Assignee
