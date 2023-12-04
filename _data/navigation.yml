@@ -43,6 +43,8 @@ wiki:
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/     
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: Asctec Pelican UAV Setup Guide
@@ -197,6 +199,8 @@ wiki:
         url: /wiki/networking/ros-distributed/
       - title: Setting up WiFi hotspot at the boot up for Linux devices
         url: /wiki/networking/wifi-hotspot/
+      - title: Linux Packet Routing
+        url: /wiki/networking/linux-packet-routing.md
   - title: Simulation
     url: /wiki/simulation/
     children:
@@ -271,6 +275,8 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
+      - title: Docker Security
+        url: /wiki/tools/docker-security
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
