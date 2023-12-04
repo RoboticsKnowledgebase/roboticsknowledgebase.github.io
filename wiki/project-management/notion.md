@@ -24,7 +24,27 @@ Individual university students and teachers who associate their accounts with th
     -  Enter the email IDs of your team members and click ‘Invite’ to share the team space with them. Make sure the permissions allow invited members to access and edit the team space.
 4. Each member invited should now have access to view and edit the team space. While this space is hosted on an individual’s Notion account, it is still a common team space which can be used by all members of the team (added as guests to the teamspace on Notion).
 
-**Note:** The above method does not lead to a private teamspace on Notion. You will need to upgrade to Notion's premium plan in order to convert this to a private teamspace.
+**Note:** The above method does not lead to a private teamspace on Notion. You will need to upgrade to Notion's premium plan in order to convert this to a private teamspace (only members can see the teamspace exists).
+
+
+
+
+
+## Notion Project Management Template 
+Here is a [simple Notion project management template](https://short-gatsby-680.notion.site/Dummy-Project-47645eb16177425d932332db325d0233?pvs=4) that you can use for your project. It contains the major sections that are needed to effectively manage your project. 
+- To use the entire template in your project, just click on 'Duplicate' button on the top-right of the home page.
+- To use a particular section of the template in your project, navigate to the section that you would like to use (for eg. Meeting Notes) and then click on the 'Duplicate' button on the top-right of the page. 
+- When prompted where you would like to duplicate the tempalte to, just select your teamspace. 
+
+
+
+## Meeting Notes
+
+
+
+
+## T
+
 
 
 
