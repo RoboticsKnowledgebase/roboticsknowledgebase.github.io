@@ -8,7 +8,7 @@ Effective project management is crucial to the long-term success of any project,
 
 This document is a tutorial on how to use one such tool, Notion, for Project Management. [Notion](https://www.notion.so/product) is a documentation and task-tracking platform that can be significantly useful in managing different aspects of a project. The first half of this document details how to set up and use Notion for Project Management. The second half then introduces various project management strategies that teams can use to improve their project management process.
 
-> The project manager’s role is to ensure that all aspects of the project are planned for and appropriately tracked throughout the life of the project. There should be at least one member in the team that assumes this role (could be in addition to other roles). 
+> It is the project manager’s role to ensure that all aspects of the project are planned for and appropriately tracked throughout the life of the project. There should be at least one member in the team that assumes this role (could be in addition to other roles). 
 
 
 ## Setting up Notion for your team
