@@ -1,14 +1,20 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
+date: {}
+title: Using Notion for Project Management
+published: true
 ---
+
+Effective project management is crucial to the long-term success of any project, and there are various free tools that small teams (3-8 members) can use to effectively manage their project.
+
+This document explains how to use one such tool, Notion, for Project Management. [Notion](https://www.notion.so/product) is a documentation and task-tracking platform that can be significantly useful in managing different aspects of a project. In the first section, this document details how to set up and use Notion for Project Management. The second section then introduces various project management strategies that teams can use to improve their project management process.
+
+> The project manager’s role is to ensure that all aspects of the project are planned for and appropriately tracked throughout the life of the project. There should be at least one member in the team that assumes this role (could be in addition to other roles). 
+
+
+## Setting up Notion for your team
+
+
+
 This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
 This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
