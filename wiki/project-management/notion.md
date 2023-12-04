@@ -88,14 +88,14 @@ Notion automatically converts your task list to a timeline format (Gantt chart).
 Here is an example of managing a project's schedule on Notion - 
 ![Picture2.png]({{site.baseurl}}/wiki/project-management/Picture2.png)
 
-> While coming up with a project schedule, make sure that you keep external milestones and delivery dates in mind. It is a good practice to come up with intermediate internal milestones enroute the external milestone. The image below shows an example of how you can keep track of milestones for your project.
+> While coming up with a project schedule, make sure that you keep external milestones and delivery dates in mind. It is a good practice to come up with intermediate internal milestones enroute external milestones. The image below shows an example of how you can keep track of milestones for your project.
 ![Picture5.png]({{site.baseurl}}/wiki/project-management/Picture5.png)
 
 
 
 
 ### Documentation 
-Like meeting notes and task management, documenting team ideas, decisions, observations and results is significant to successful project management. While a lot of information can be documented through meeting notes, the work that happens outside of meetings may be better documented in a separate document. Notion provides ample options to filter, sort and categorize your documents into various types and categories, so feel free to be creative when setting up your Documentation section. 
+Like meeting notes and task management, documenting team ideas, decisions, observations and results is significant to successful project management. While a lot of information can be documented through meeting notes, the work that happens outside of meetings may be better documented in a separate section. Notion provides ample options to filter, sort and categorize your documents into various types and categories, so feel free to be creative when setting up your Documentation section. 
 
 Here are some ideas for what you can document on Notion
 - Meeting Notes (if not already a separate section)
@@ -108,7 +108,7 @@ To effectively document the above on Notion, create a new page on Notion and sel
 
 ### Project Logs
 
-Another form of documentation, like meeting notes and implementation / testing documentation are project logs. These are critical to managing the progress on a local basis, and can be a useful technique for members to structure their thoughts and observations in a common place. 
+Another important form of documentation that teams should keep in their project management arsenal are project logs. These are critical to managing the progress on a local basis, and can be a useful technique for members to structure their thoughts and observations in a common place. 
 
 Here are some ideas for what you can log on Notion
 - Individual Progress Logs
