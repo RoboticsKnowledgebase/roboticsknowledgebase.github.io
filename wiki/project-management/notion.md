@@ -108,7 +108,7 @@ To effectively document the above on Notion, create a new page on Notion and sel
 
 ### Project Logs
 
-Another important form of documentation that teams should keep in their project management arsenal are project logs. These are critical to managing the progress on a local basis, and can be a useful technique for members to structure their thoughts and observations in a common place. 
+Another important form of documentation that teams should keep in their project management arsenal are project logs. These are critical to managing project progress on a daily basis, and can be a useful technique for members to structure their thoughts and observations in a common place. 
 
 Here are some ideas for what you can log on Notion
 - Individual Progress Logs
