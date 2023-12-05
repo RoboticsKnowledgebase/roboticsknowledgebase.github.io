@@ -65,6 +65,12 @@ wiki:
         url: /wiki/common-platforms/ros/ros-navigation/
       - title: ROS Global Planner
         url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: Running ROS On An Unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -155,7 +161,7 @@ wiki:
         url: /wiki/state-estimation/orb-slam2-setup/
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
-      - title: Cartographer SLAM ROS Integration 
+      - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
   - title: Programming
     url:  /wiki/programming/
@@ -189,7 +195,7 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
-      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+      - title: Setting up WiFi hotspot at the boot up for Linux devices
         url: /wiki/networking/wifi-hotspot/
   - title: Simulation
     url: /wiki/simulation/
@@ -211,6 +217,8 @@ wiki:
         url: /wiki/interfacing/blink-1-led/
       - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
+      - title: ROS 1 - ROS 2 Bridge
+        url: /wiki/interfacing/ros1_ros2_bridge/
   - title: Computing
     url: /wiki/computing/
     children:
@@ -226,6 +234,8 @@ wiki:
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
+      - title: Ubuntu Dual Boot and Troubleshooting Guide
+        url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -271,6 +281,8 @@ wiki:
         url: /wiki/tools/tmux/
       - title: udev Rules
         url: /wiki/tools/udev-rules/
+      - title: ROS GUI
+        url: /wiki/tools/ros-gui/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
       - title: Making Field Testing Easier through Visualization and Simulation
