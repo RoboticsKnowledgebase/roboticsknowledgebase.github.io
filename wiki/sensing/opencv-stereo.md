@@ -1,6 +1,6 @@
 ---
 date: 2023-12-04
-title: OpenCV Stereo Vision Processing + OpenCV Methods with ROS 2
+title: OpenCV Stereo Vision Processing and Image Processing with ROS 2
 ---
 For a stereo vision camera, there are multiple operations that can be done like tracking, detection, position estimation, etc. OpenCV has lot of libraries which are much faster than MATLAB's computer vision toolbox.
 
