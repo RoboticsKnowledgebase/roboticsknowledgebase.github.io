@@ -59,7 +59,7 @@ Although image normalization showed promise, it proved less effective in clutter
 
 Normalized Image             |  HSV Image
 :-------------------------:|:-------------------------:
-![](assets/norm_img.png)  |  ![](assets/hsv_img.png)
+![Norm](assets/norm_img.png)  |  ![HSV](assets/hsv_img.png)
 
 
 
