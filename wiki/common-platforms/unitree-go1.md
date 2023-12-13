@@ -17,7 +17,7 @@ This is an article that provides an overview of the Unitree Go1 Edu robot, inclu
 There are three versions of the Unitree Go1: Air, Pro, and Edu. The Edu model is designed for educational purposes and provides developers with access to the platform. In this article, we will focus on the capabilities of the Go1 Edu, which is a popular choice for students and researchers due to its affordability and ease of use.
 
 ## Form Factor
-![Form_Factor](assets/images/form_factor.png)
+![Form_Factor](assets/form_factor.png)
 The Unitree Go1 Edu has compact dimensions of 645 x 280 x 400 mm and weighs 12 kg. 
 It boasts a top speed of 3.7-5 m/s and a maximum load capacity of 10 kg, although it's recommended to keep the payload under 5 kg. 
 By default, the robot can traverse steps up to 10 cm high, but with programming, it's possible to overcome larger obstacles. 
@@ -25,14 +25,14 @@ The Go1 Edu features 12 degrees of freedom, including HAA (hip abduction/adducti
 The Body/Thigh Joint Motor design is highly adaptable to various mechanical equipment, with an instantaneous torque of 23.7 N·m, while the Knee Joint has a torque of 35.55 N·m.
 
 ## Power and Interface
-![Unitree_TOP](assets/images/unitree_top.png)
+![Unitree_TOP](assets/unitree_top.png)
 
 The Unitree Go1 Edu robot is equipped with a reliable lithium-ion power cell with a 6000mAh capacity that provides an endurance time of 1-2.5 hours. The robot's battery management system (BMS) closely monitors the battery status, ensuring safe and stable operation during use. The batteries themselves feature overcharge protection, providing an additional layer of safety.
 
 The top plate of the robot features several ports, including USB and HDMI ports that connect to corresponding computers. The USB and HDMI port pair located closest to the Ethernet port, along with the Ethernet port itself, connects to the Raspberry Pi. Additionally, users can draw out 24V, 12A power from the top plate using an XT30 connector.
 
 ## Sensors and Processors
-![Unitree_Side](assets/images/unitree_side.png)
+![Unitree_Side](assets/unitree_side.png)
 
 The Unitree Go1 Edu robot is equipped with a range of sensors, including five pairs of stereo-fisheye cameras located at the face, chin, lower belly, right torso, and left torso, providing a 360-degree field of view. Additionally, it has three sets of ultrasonic sensors positioned in different directions to detect obstacles in its path. The robot also features an IMU, four foot force sensors, and face LEDs, which can be programmed to display different expressions.
 
@@ -44,7 +44,7 @@ Moreover, Unitree provides customization options for processors and additional s
 * Raspberry Pi also has an extra Wi-Fi card, which is used as a hotspot 192.168.12.1. 
 * User laptop connects to the robot hotspot, with a static IP 192.168.12.18.
 * Users can connect to all four devices via Ethernet cable, with a static IP 192.168.123.123.
-![Wired](assets/images/wired.png)
+![Wired](assets/wired.png)
 
 * Each Nano controls and processes a pair of fisheye cameras. The Unitree camera SDK provides an API that captures and rectifies skewed fisheye camera stream and sends out the UDP packets.
 * `./bins/example_putImagetrans` sends camera streams with udp packets
