@@ -108,6 +108,8 @@ wiki:
         url: /wiki/sensing/realsense/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
   - title: Actuation
     url: /wiki/actuation/
     children:
