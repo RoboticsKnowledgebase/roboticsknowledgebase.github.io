@@ -97,6 +97,4 @@ If you are considering using the Unitree Go1 for your project, be aware that you
 
 
 ## References
-- [Unitree Go1 Education Plus](https://www.wevolver.com/specs/unitree-robotics-go1-edu-plus)
-- [Unitree vs. Boston Dynamics](https://www.generationrobots.com/blog/en/unitree-robotics-vs-boston-dynamics-the-right-robot-dog-for-me/)
-- [Unitree 3D Lidar](https://www.active-robots.com/unitree-go1-air-3.html)
+- [MIT Jenga Playing Robot](https://news.mit.edu/2019/robot-jenga-0130)
