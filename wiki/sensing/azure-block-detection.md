@@ -49,6 +49,17 @@ Subsequently, we identify the two grasp points of the block by detecting its lon
 ![Contours](assets/zoom1.png)
 
 
+### Image HSV Thresholding vs. Normalization
+
+To mitigate the issue of filtering out irrelevant data, we explored two approaches: HSV thresholding and image normalization. In addition to the conventional representation of each pixel as an RGB value, pixels can also be depicted as 3D vectors in RGB space. While lighting influences the vector's magnitude, it doesn't alter its direction. Normalizing each vector nullifies the lighting effect, preserving only its direction and effectively converting RGB vectors into unit vectors.
+
+For identifying jenga block pixels, we calculated the cosine similarity between each pixel's RGB vector and the background color. Pixels with excessive similarity to the background were masked out.
+
+Although image normalization showed promise, it proved less effective in cluttered scenarios compared to the HSV method. The HSV method, involving thresholding in the HSV color space, exhibited greater reliability in detecting jenga blocks across varying lighting conditions.
+
+Normalized Image             |  HSV Image
+:-------------------------:|:-------------------------:
+![](assets/norm_img.png)  |  ![](assets/hsv_img.png)
 
 
 
