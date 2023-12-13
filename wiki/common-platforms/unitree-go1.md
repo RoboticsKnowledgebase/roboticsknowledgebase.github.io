@@ -9,9 +9,6 @@ title: Unitree Go1 Edu
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-
-(Note: This section contains the latest information as of May 2023)
-
 This is an article that provides an overview of the Unitree Go1 Edu robot, including its features and capabilities. Unitree Robotics is a leading Chinese manufacturer that specializes in developing, producing, and selling high-performance quadruped robots. One of the company's primary advantages is that they offer quadruped platforms at a significantly lower cost compared to competitors like Boston Dynamics. In addition, they have announced plans to release experimental humanoid platforms in the near future.
 
 There are three versions of the Unitree Go1: Air, Pro, and Edu. The Edu model is designed for educational purposes and provides developers with access to the platform. In this article, we will focus on the capabilities of the Go1 Edu, which is a popular choice for students and researchers due to its affordability and ease of use.
@@ -96,7 +93,8 @@ The Gazebo simulation environment currently limits the use of `unitree_legged_ms
 To ensure safety, it is crucial to carefully review the user manual and record the full action sequence of the Unitree Go1 robot. The provided software packages, including the unitree legged SDK and unitree ROS to real, can be used to study example codes and create custom packages for specific use cases. For instance, the example_walk.cpp can be used to send the HIGH Command message to the robot, allowing users to set start and end points for the robot to plan its route from start to end.
 
 ## Summary
-If you are considering using the Unitree Go1 for your project, be aware that you will either need to be content with the default controller or implement your own state estimation and legged controller. One of the main drawbacks of using commercial products like this is that the code is closed-source. When deploying your own code on the Unitree Raspberry Pi, it is important to keep an eye on memory usage and find a balance between performance and computing capabilities.
+If you are considering using the Unitree Go1 for your project, be aware that you will either need to be content with the default controller or implement your own state estimation and legged controller. One of the main drawbacks of using commercial products like this is that the code is closed-source. When deploying your own code on the Unitree Raspberry Pi, it is important to keep an eye on memory usage and find a balance between performance and computing capabilities. (Note: This section contains the latest information as of May 2023)
+
 
 ## References
 - [Unitree Go1 Education Plus](https://www.wevolver.com/specs/unitree-robotics-go1-edu-plus)
