@@ -62,5 +62,10 @@ Normalized Image             |  HSV Image
 ![Norm](assets/norm_img.png)  |  ![HSV](assets/hsv_img.png)
 
 
+## References
+- [MIT Jenga Robot](https://news.mit.edu/2019/robot-jenga-0130)
+
+
+
 
 
