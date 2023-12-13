@@ -36,6 +36,20 @@ To further refine Jenga block detection and eliminate background noise, we apply
 
 ![RGB Vector](assets/rgb_vector.png)
 
+### Block Contours
+
+Contours play a pivotal role in computer vision's object detection. In our perception system, we utilize the mask derived from the HSV thresholded image to generate precise and consistent contours, enhancing accuracy.
+
+We utilize OpenCV2's 'findContours' function to generate contours from the masked image. However, these contours encompass not only the Jenga blocks but also the robot manipulator. Since our focus is solely on detecting rectangular shapes corresponding to the Jenga blocks, we employ thresholding based on approximate block size and rectangular characteristics.
+
+To simplify contours and reduce points, we apply OpenCV2's 'minAreaRect' function to the contours. This function generates contours with only four points representing the four corners of the blocks. Comparing the area of the original contour with the 'minAreaRect' contour allows us to confirm if the detected object is indeed a rectangle by setting a threshold ratio.
+
+Subsequently, we identify the two grasp points of the block by detecting its longer sides. To determine these grasp points in the image frame, we align the depth image with the RGB image to acquire the depth value. Utilizing the x, y, and depth values, we transform the 2D pixel points back to the 3D pose in the camera frame using the intrinsic matrix. The grasp point concerning the base frame is then computed by performing a transform tree lookup, thereby completing the entire perception cycle.
+
+![Contours](assets/zoom1.png)
+
+
+
 
 
 
