@@ -96,5 +96,8 @@ To ensure safety, it is crucial to carefully review the user manual and record t
 If you are considering using the Unitree Go1 for your project, be aware that you will either need to be content with the default controller or implement your own state estimation and legged controller. One of the main drawbacks of using commercial products like this is that the code is closed-source. When deploying your own code on the Unitree Raspberry Pi, it is important to keep an eye on memory usage and find a balance between performance and computing capabilities. (Note: This section contains the latest information as of May 2023)
 
 
+
 ## References
-- [MIT Jenga Playing Robot](https://news.mit.edu/2019/robot-jenga-0130)
+- [Unitree Go1 Education Plus](https://www.wevolver.com/specs/unitree-robotics-go1-edu-plus)
+- [Unitree vs. Boston Dynamics](https://www.generationrobots.com/blog/en/unitree-robotics-vs-boston-dynamics-the-right-robot-dog-for-me/)
+- [Unitree 3D Lidar](https://www.active-robots.com/unitree-go1-air-3.html)
