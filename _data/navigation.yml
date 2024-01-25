@@ -108,6 +108,8 @@ wiki:
         url: /wiki/sensing/realsense/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
+      - title: Robot-Centric Elevation Mapping
+        url: /wiki/sensing/elevation-mapping/
   - title: Actuation
     url: /wiki/actuation/
     children:
