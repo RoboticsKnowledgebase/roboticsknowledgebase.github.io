@@ -73,6 +73,8 @@ wiki:
         url: /wiki/common-platforms/rccars-the-complete-guide/
       - title: Khepera 4
         url: /wiki/common-platforms/khepera4/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
   - title: Sensing
     url: /wiki/sensing/
     children:
