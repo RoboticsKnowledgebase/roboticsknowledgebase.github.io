@@ -45,6 +45,8 @@ wiki:
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/     
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: Asctec Pelican UAV Setup Guide
@@ -110,6 +112,8 @@ wiki:
         url: /wiki/sensing/realsense/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -275,6 +279,8 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
+      - title: Docker Security
+        url: /wiki/tools/docker-security
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
