@@ -1,17 +1,7 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2022-12-05 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2022-12-05
 title: DWM1001 UltraWideband Positioning System
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
-
-## Introduction
-
 This page will go into detail about to get started with UltraWideband positioning, particuarly with the [DWM1001-Dev module](https://www.qorvo.com/products/p/DWM1001-DEV).
 
 ### How does it work?
