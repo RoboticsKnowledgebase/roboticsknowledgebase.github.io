@@ -1,3 +1,7 @@
+---
+date: 2022-05-03
+title: Workign with the Hello Robot Stretch RE1
+---
 The Stretch RE1 by Hello Robot, is a lightweight and capable mobile manipulator designed to work safely around people in home and office environments. It has 4 degrees of freedom - a telescoping arm which can reach 50cm horizontally, a prismatic lift which can reach 110cm vertically, a differential drive base with a compact footprint of 34x34cm.
 
 The design principle of Hello Robot is making the mobile manipulation robot as simple as possible. To do that, Hello Robot referred to the Roomba robot for its omnidirectional mobile base design, adopted linear joints for simple lift and telescopic arm movement, and obtained enough degrees of freedom by adding pitch, and roll joints to the wrist. All together, the robot becomes a 3-DOF wrist and a 7_DOF robot. The robot’s operational principle is to have two modes that are navigation and manipulation. In the navigation mode, the robot’s telescopic arm retracts, and uses a mobile base as a main actuator. The robot can lower the lift joint and retract the arm joint to lower the robot’s COM and increase stability. In its manipulation mode, the robot uses the mobile base to perform rotations in addition to pure translations of Cartesian motion of the end of the arm. It is also possible to perform curvilinear motion. The Stretch RE1 is mainly designed to perform like a human in an indoor human environment. The configuration of the robot therefore, matches with human dimensions.
