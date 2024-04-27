@@ -308,7 +308,7 @@ wiki:
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
       - title: MapViz for Map Based Visualization in ROS2
-         url: /wiki/planning/mapviz/
+        url: /wiki/planning/mapviz/
       - title: Gazebo Simulation
         url: /wiki/tools/gazebo-simulation/
       - title: Code Editors - Introduction to VS Code and Vim
