@@ -110,8 +110,12 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: Robotic Total Station (Leica TS16)
+        url: /wiki/sensing/robotic-total-stations.md
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
+      - title: DWM1001 UltraWideband Positioning System
+        url: /wiki/sensing/ultrawideband-beacon-positioning.md
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -169,6 +173,8 @@ wiki:
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
+      - title: Externally Referenced State Estimation for GPS Lacking Environments
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
   - title: Programming
     url:  /wiki/programming/
     children:
