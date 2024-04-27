@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2022-12-05 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2022-12-05
 title: Docker for Pytorch
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 In this article we will go over the following:
    1. Creating a custom docker image for deep learning workflows
@@ -27,16 +20,16 @@ nvidia-smi
  
 For running the NVIDIA Container Toolkit, we can simply pull the NVIDIA Container Toolkit image at the top of our Dockerfile like so,
  
-<em><strong>
+```Dockerfile
 FROM nvidia/cuda:10.2-base
-</strong></em>
+```
  
  
 This is all the code we need to expose GPU drivers to Docker. In that Dockerfile we have imported the NVIDIA Container Toolkit image for 10.2 drivers. You should check your Nvidia driver versions and pull the appropriate image. The above command will only get us nvidia-smi. For deep learning tasks we also need cuDNN, for which we should pull the following image:
  
-<em><strong>
+```Dockerfile
 FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
-</strong></em>
+```
   
 For a list of all the available NVIDIA Container Toolkit images check the following webpage. You can choose from various Ubuntu versions depending on your Nvidia CUDA driver version[1]. The selected version is [2].
  
