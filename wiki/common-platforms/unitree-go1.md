@@ -29,7 +29,6 @@ The Unitree Go1 Edu robot is equipped with a reliable lithium-ion power cell wit
 The top plate of the robot features several ports, including USB and HDMI ports that connect to corresponding computers. The USB and HDMI port pair located closest to the Ethernet port, along with the Ethernet port itself, connects to the Raspberry Pi. Additionally, users can draw out 24V, 12A power from the top plate using an XT30 connector.
 
 ## Sensors and Processors
-![Unitree_Side](assets/unitree_side.png)
 
 The Unitree Go1 Edu robot is equipped with a range of sensors, including five pairs of stereo-fisheye cameras located at the face, chin, lower belly, right torso, and left torso, providing a 360-degree field of view. Additionally, it has three sets of ultrasonic sensors positioned in different directions to detect obstacles in its path. The robot also features an IMU, four foot force sensors, and face LEDs, which can be programmed to display different expressions.
 
