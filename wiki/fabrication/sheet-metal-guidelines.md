@@ -10,7 +10,7 @@ title: Sheet Metal Fabrication Guidelines
 # and used in other parts of the site.
 ---
 ## Overview
-Sheet metal is a versatile and cost-effective material, crucial for manufacturing parts efficiently, which is a key factor in rapid prototyping and robotic project development. This wiki page will out-line essential principles, such as minimum flange lengths, bending tolerances, and the importance of material selection, to avoid common pitfalls like material flaring or buckling. Furthermore, it will provide insights into optimizing SolidWorks for robotic design, including structuring files, handling external parts, and performing simulations to ensure designs are not only feasible but also optimized for real-world applications. Integrating these guidelines can enhance your ability to create more robust and sophisticated prototypes or final robot models, facilitating the transition from concept to tangible product.
+Sheet metal is a versatile and cost-effective material, crucial for manufacturing parts efficiently, which is a key factor in rapid prototyping and robotic project development. This wiki page will out-line essential principles, such as minimum flange lengths, bending tolerances, and the importance of material selection, to avoid common pitfalls like material flaring or buckling.  Integrating these guidelines can enhance your ability to create more robust and sophisticated prototypes or final robot models, facilitating the transition from concept to tangible product.
 
 ## The Fabrication Process
 
