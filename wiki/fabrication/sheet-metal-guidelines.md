@@ -10,7 +10,7 @@ title: Sheet Metal Fabrication Guidelines
 # and used in other parts of the site.
 ---
 ## Overview
-Sheet metal is a versatile and cost-effective material, crucial for manufacturing parts efficiently, which is a key factor in rapid prototyping and robotic project development. This wiki page will out-line essential principles, such as minimum flange lengths, bending tolerances, and the importance of material selection, to avoid common pitfalls like material flaring or buckling.  Integrating these guidelines can enhance your ability to create more robust and sophisticated prototypes or final robot models, facilitating the transition from concept to tangible product.
+Sheet metal is a versatile and cost-effective material, crucial for manufacturing parts efficiently, which is a key factor in rapid prototyping and robotic project development. This wiki page will out-line essential principles, such as minimum flange lengths, and bending tolerances, to avoid common pitfalls like material flaring or buckling. Integrating these guidelines can enhance your ability to create more robust and sophisticated prototypes or final robot models, facilitating the transition from concept to tangible product.
 
 ## The Fabrication Process
 
@@ -63,10 +63,6 @@ With this background in mind, let's delve into the specific guidelines that are 
 - **Avoiding Tabs and Slots**: For thicker structural components, avoid tabs and slots due to the risk of crack propagation.
 - **Bend Relaxation**: Bends should be made slightly over the desired angle to account for elastic versus plastic deformation.
 - **Welding Parallel Sheets**: Use butt welds sparingly due to difficulty in welding and the need for grinding.
-
-## Material Selection
-- **44W**: A standard material with 44000 psi yield strength, ideal for most applications.
-- **Thin Materials**: For sheet metals thinner than 3/16 inch, use 1010-1020 A36 material.
 
 ## Structural Integrity
 - **Buckling**: Sheet metal assemblies are weaker when they can buckle like a parallelogram.
