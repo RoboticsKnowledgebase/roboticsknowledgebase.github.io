@@ -22,9 +22,19 @@ Being a roboticist who has been using ROS and Gazebo for years, the 1st thing th
 
 Now that we know Isaac Sim does not use URDF, lets see how can we convert and import an URDF file to Isaac Sim. 
 
-Nvidia provides an extension to [import URDF to Isaac Sim](https://github.com/NVIDIA-Omniverse/urdf-importer-extension), which they have open-sourced. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
+Nvidia provides an extension to [import URDF to Isaac Sim](https://github.com/NVIDIA-Omniverse/urdf-importer-extension), which they have open-sourced. 
 
+#### Steps to Import URDF 
+
+1. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
 ![Step 1 - Access URDF Importer](assets/images/isaac_img_init.png)
+
+2. Configure the import settings. 
+	a. **Fix base link:** If you have mobile robot, un-select this option. For a manipulator this option should be selected
+    b. **Stage Units per meter:** Setthing this to 1, implies that the 1 unit of Isaac sim will be equal to 1m 
+    c. **Joint Drive Type:** Can be position or velocity based on your project requirements
+    d. **Joint Drive Strength and Joint Position Drive Damping:** Set them to **10000000.0** and **100000.0** respectively. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+ ![Step - 2 Define Import Properties](assets/images/isaac_img_import_settings.png)
 
 
 
