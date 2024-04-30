@@ -34,14 +34,29 @@ a. **Fix base link:** If you have mobile robot, un-select this option. For a man
 b. **Stage Units per meter:** Setthing this to 1, implies that the 1 unit of Isaac sim will be equal to 1m 
 c. **Joint Drive Type:** Can be position or velocity based on your project requirements 
 d. **Joint Drive Strength and Joint Position Drive Damping:** Set them to **10000000.0** and **100000.0** respectively. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+e. We do not select the self-collision. Though it sound like a un-intutive choice, but the importer does esstablishes the collision properties without selecting the option. Note, selecting the option doesn't hurt the process. 
 
  ![Step - 2 Define Import Properties](assets/images/isaac_img_import_settings.png)
 
-- Click the **Import** button to add the robot to the stage
+- Click the **Import** button to add the robot to the stage, and we see our robot in the simulation.
 
 ![Step - 3: Import the URDF](assets/images/isaac_img_import.png)
 
-- Define the collision properties
+- Isaac Sim by default does not create a ground plane, thus we need to do that. 
+
+![Step - 4: Create Ground Plane)(assets/images/isaac_img_ground_plane.png)
+
+- Now that we have created the ground plane, we will verify the collision properties of our imported robot.
+
+[Step - 5: Verify the Collision Properties](assets/images/isaac_img_colliders.png)
+
+[Step - 5: Verify the Collision Properties](assets/images/isaac_img_collision_vis.png)
+
+
+Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in **.usd** format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in **.usda** format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
+
+[Step - 6: Saving as USDA](assets/images/isaac_img_save_as.png)
+[Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
 
 
 
