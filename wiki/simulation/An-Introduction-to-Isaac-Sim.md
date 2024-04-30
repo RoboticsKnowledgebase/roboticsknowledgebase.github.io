@@ -1,6 +1,6 @@
 ---
 date: {}
-title: Title goes here
+title: An Introduction to Isaac Sim
 ---
 Nvidia's Isaac Sim is quickly becoming a must-know in the world of robotics training through simulation, leveraging powerful GPUs to train numerous agents simultaneously. While our project didn't involve reinforcement learning or parallel simulations, diving into Isaac Sim proved a rewarding detour.
 
@@ -26,15 +26,22 @@ Nvidia provides an extension to [import URDF to Isaac Sim](https://github.com/NV
 
 #### Steps to Import URDF 
 
-1. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
+- To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
 ![Step 1 - Access URDF Importer](assets/images/isaac_img_init.png)
 
-2. Configure the import settings. 
-	a. **Fix base link:** If you have mobile robot, un-select this option. For a manipulator this option should be selected
-    b. **Stage Units per meter:** Setthing this to 1, implies that the 1 unit of Isaac sim will be equal to 1m 
-    c. **Joint Drive Type:** Can be position or velocity based on your project requirements
-    d. **Joint Drive Strength and Joint Position Drive Damping:** Set them to **10000000.0** and **100000.0** respectively. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+- Configure the import settings. 
+a. **Fix base link:** If you have mobile robot, un-select this option. For a manipulator this option should be selected
+b. **Stage Units per meter:** Setthing this to 1, implies that the 1 unit of Isaac sim will be equal to 1m 
+c. **Joint Drive Type:** Can be position or velocity based on your project requirements 
+d. **Joint Drive Strength and Joint Position Drive Damping:** Set them to **10000000.0** and **100000.0** respectively. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+
  ![Step - 2 Define Import Properties](assets/images/isaac_img_import_settings.png)
+
+- Click the **Import** button to add the robot to the stage
+
+![Step - 3: Import the URDF](assets/images/isaac_img_import.png)
+
+- Define the collision properties
 
 
 
