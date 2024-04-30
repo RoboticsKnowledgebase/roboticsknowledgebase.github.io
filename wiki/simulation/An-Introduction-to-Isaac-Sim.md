@@ -8,7 +8,7 @@ Navigating the complexities of new software can be daunting, and while Nvidia's 
 
 Therefore, our took it upon ourself to shed some light on this innovative tool. This blog post aims to simplify your journey with Isaac Sim, providing insights and step-by-step guidance to make your experience as enriching as mine was. So, let’s dive into the world of advanced simulation with Isaac Sim and explore its vast potentials together!
 
-"NVIDIA Isaac Sim™ is an extensible robotics simulation platform that gives you a faster, better way to design, test, and train AI-based robots. It’s powered by Omniverse™ to deliver scalable, photorealistic, and physically accurate virtual environments for building high-fidelity simulations".  
+"NVIDIA Isaac Sim is an extensible robotics simulation platform that gives you a faster, better way to design, test, and train AI-based robots. It’s powered by Omniverse to deliver scalable, photorealistic, and physically accurate virtual environments for building high-fidelity simulations".  
 
 ## The 1st look
 NVIDIA's Isaac Sim is a cutting-edge robotics simulation platform designed to streamline the design, testing, and training of AI-based robots. Harnessing the power of NVIDIA's Omniverse, it offers scalable, photorealistic, and physically accurate virtual environments. This allows for the creation of high-fidelity simulations, significantly enhancing the development process of robotic systems.
@@ -17,46 +17,57 @@ But what exactly is NVIDIA Omniverse? It's a comprehensive platform comprising A
 
 With a better understanding of the foundational technologies behind Isaac Sim, we can now delve into the practical application of this platform. This involves utilizing Isaac Sim to simulate robotic operations, which I will guide you through step-by-step, ensuring you can leverage this powerful tool to its fullest potential. Let's explore how to effectively simulate robots using NVIDIA Isaac Sim.
 
-## The 1st Delima 
-Being a roboticist who has been using ROS and Gazebo for years, the 1st thing that comes to mind when we talk about simulation is URDFs. But as we discussed above, Isaac Sim doesn’t use URDFs but rather uses USD format to descirbe the properties of the robot. While this choice might not be highly appreicated by roboticist, USD format allows them to use the power of Omniverse to make photorealistic simulation, which is a key factor in zero-shot sim-to-real transfer. 
+## The 1st Delima
+As a seasoned roboticist familiar with ROS and Gazebo, I've grown accustomed to working with URDFs (Unified Robot Description Format) when discussing simulation. However, NVIDIA's Isaac Sim introduces a shift by utilizing the USD (Universal Scene Description) format to define robot properties. While this transition might initially raise eyebrows among traditional roboticists, the USD format synergizes with the Omniverse platform to deliver exceptionally photorealistic simulations, a crucial aspect for achieving zero-shot sim-to-real transfer.
 
-Now that we know Isaac Sim does not use URDF, lets see how can we convert and import an URDF file to Isaac Sim. 
-
-Nvidia provides an extension to [import URDF to Isaac Sim](https://github.com/NVIDIA-Omniverse/urdf-importer-extension), which they have open-sourced. 
+NVIDIA supports the process of importing URDF files into Isaac Sim with an [open-sourced extension](https://github.com/NVIDIA-Omniverse/urdf-importer-extension) designed specifically for this purpose. Here’s how you can integrate your existing URDF models into Isaac Sim.
 
 #### Steps to Import URDF 
 
-- To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
+1. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
+
 ![Step 1 - Access URDF Importer](assets/images/isaac_img_init.png)
 
-- Configure the import settings. 
-a. **Fix base link:** If you have mobile robot, un-select this option. For a manipulator this option should be selected
-b. **Stage Units per meter:** Setthing this to 1, implies that the 1 unit of Isaac sim will be equal to 1m 
-c. **Joint Drive Type:** Can be position or velocity based on your project requirements 
-d. **Joint Drive Strength and Joint Position Drive Damping:** Set them to **10000000.0** and **100000.0** respectively. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
-e. We do not select the self-collision. Though it sound like a un-intutive choice, but the importer does esstablishes the collision properties without selecting the option. Note, selecting the option doesn't hurt the process. 
+2. Adjust the import settings to suit your robot's specifications:
+- **Fix base link:** Deselect for mobile robots; select for manipulators.
+- **Stage Units per meter:** Setting this to 1 equates one unit in Isaac Sim to 1 meter.
+- **Joint Drive Type:** Choose between position or velocity, depending on project needs.
+- **Joint Drive Strength and Joint Position Drive Damping:** Recommended values are **10000000.0** and **100000.0** respectively to ensure accurate joint movement. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+- **Self-Collision:** Typically left unselected as the importer manages collision properties adequately, though enabling it does not impede the process.
 
  ![Step - 2 Define Import Properties](assets/images/isaac_img_import_settings.png)
 
-- Click the **Import** button to add the robot to the stage, and we see our robot in the simulation.
+3. Click the **Import** button to add your robot to the stage, visualizing it within the simulation.
 
 ![Step - 3: Import the URDF](assets/images/isaac_img_import.png)
 
-- Isaac Sim by default does not create a ground plane, thus we need to do that. 
+4. Since Isaac Sim does not automatically create a ground plane, thus we need to create a ground plane.
 
-![Step - 4: Create Ground Plane)(assets/images/isaac_img_ground_plane.png)
+![Step - 4: Create Ground Plane](assets/images/isaac_img_ground_plane.png)
 
-- Now that we have created the ground plane, we will verify the collision properties of our imported robot.
+5. Confirm that the collision properties of your imported robot function correctly.
 
 ![Step - 5: Verify the Collision Properties](assets/images/isaac_img_colliders.png)
 
 ![Step - 5: Verify the Collision Properties](assets/images/isaac_img_collision_vis.png)
 
 
-Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in **.usd** format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in **.usda** format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
+6. Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in **.usd** format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in **.usda** format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
 
 ![Step - 6: Saving as USDA](assets/images/isaac_img_save_as.png)
+
 ![Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
