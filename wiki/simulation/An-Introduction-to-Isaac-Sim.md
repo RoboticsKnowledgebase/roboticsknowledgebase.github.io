@@ -1,28 +1,34 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: {}
 title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+Nvidia's Isaac Sim is quickly becoming a must-know in the world of robotics training through simulation, leveraging powerful GPUs to train numerous agents simultaneously. While our project didn't involve reinforcement learning or parallel simulations, diving into Isaac Sim proved a rewarding detour.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+Navigating the complexities of new software can be daunting, and while Nvidia's official documentation provides a solid foundation, it can feel insufficient for beginners. This realization struck me particularly hard as I embarked on my project—there seemed to be a surprising lack of tutorials or comprehensive guides considering Isaac Sim's burgeoning popularity.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+Therefore, our took it upon ourself to shed some light on this innovative tool. This blog post aims to simplify your journey with Isaac Sim, providing insights and step-by-step guidance to make your experience as enriching as mine was. So, let’s dive into the world of advanced simulation with Isaac Sim and explore its vast potentials together!
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+"NVIDIA Isaac Sim™ is an extensible robotics simulation platform that gives you a faster, better way to design, test, and train AI-based robots. It’s powered by Omniverse™ to deliver scalable, photorealistic, and physically accurate virtual environments for building high-fidelity simulations".  
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+## The 1st look
+NVIDIA's Isaac Sim is a cutting-edge robotics simulation platform designed to streamline the design, testing, and training of AI-based robots. Harnessing the power of NVIDIA's Omniverse, it offers scalable, photorealistic, and physically accurate virtual environments. This allows for the creation of high-fidelity simulations, significantly enhancing the development process of robotic systems.
 
-This section covers the basic syntax and some rules of thumb for writing.
+But what exactly is NVIDIA Omniverse? It's a comprehensive platform comprising APIs, SDKs, and services that facilitate the integration of Universal Scene Description (OpenUSD) and RTX rendering technologies. This integration is crucial for developers looking to incorporate advanced photorealistic rendering capabilities and GPU-accelerated performance into their existing software tools and simulation workflows, particularly in AI system development.
 
-### Basic syntax
+With a better understanding of the foundational technologies behind Isaac Sim, we can now delve into the practical application of this platform. This involves utilizing Isaac Sim to simulate robotic operations, which I will guide you through step-by-step, ensuring you can leverage this powerful tool to its fullest potential. Let's explore how to effectively simulate robots using NVIDIA Isaac Sim.
+
+## The 1st Delima 
+Being a roboticist who has been using ROS and Gazebo for years, the 1st thing that comes to mind when we talk about simulation is URDFs. But as we discussed above, Isaac Sim doesn’t use URDFs but rather uses USD format to descirbe the properties of the robot. While this choice might not be highly appreicated by roboticist, USD format allows them to use the power of Omniverse to make photorealistic simulation, which is a key factor in zero-shot sim-to-real transfer. 
+
+Now that we know Isaac Sim does not use URDF, lets see how can we convert and import an URDF file to Isaac Sim. 
+
+Nvidia provides an extension to [import URDF to Isaac Sim](https://github.com/NVIDIA-Omniverse/urdf-importer-extension), which they have open-sourced. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
+
+![Step 1 - Access URDF Importer](assets/images/isaac_img_init.png)
+
+
+
+
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
 > This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
