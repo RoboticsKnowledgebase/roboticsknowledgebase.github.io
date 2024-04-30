@@ -58,6 +58,40 @@ NVIDIA supports the process of importing URDF files into Isaac Sim with an [open
 
 ![Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
 
+## Let's Integrate with ROS
+
+After successfully importing the URDF into Isaac Sim and saving the USD file, the next step is to ensure that all expected ROS topics are being published as anticipated. When I opened a terminal, entered the `ros2 topic list` command, and pressed enter, surprisingly, no topics appeared. I was confident that all necessary plugins were defined in the URDF. However, it became clear that the URDF importer does not handle these plugins, and Isaac Sim does not natively support ROS or ROS 2. This means that each component requiring topic publication must have a dedicated workflow defined.
+
+The steps to create an Omnigraph node that connects our simulation environment to ROS or ROS 2 can be approached in several ways: entirely through a GUI, scripting within the extension workflow, through standalone Python code, or a mix of both GUI and Python. For clarity and practicality, we'll discuss a hybrid approach, using both GUI and Python code. While the documentation provides numerous examples for standard sensors and actuaries, I'll briefly discuss them here, directing you to the documentation for more detailed information.
+
+<Talk about what are action graphs, and how to create them>
+
+These nodes certain inputs that we need to add to our action graph. The node we need to add is 'On Playback Tick'. The On Play Tick node acts as a trigger that executes at every simulation tick, which is a single update cycle of the simulation. 
+
+![Image of Adding On PLayback Tick](assets/images/isaac_img_on_playback_tick.png)
+
+The next node is 'ROS 2 Context'. This node acts as a bridge between Isaac Sim and ROS 2, enabling the simulation to communicate and interact with ROS 2-based systems. It sets up the necessary configurations to ensure that the simulation can send and receive messages, services, and actions to and from ROS 2.
+
+![Image of Adding ROS 2 Content](assets/images/isaac_img_ros2_context.png)
+
+The last, but the most important one is 'Isaac Read Simulation Time' that is designed to capture and provide access to the current simulation time within the simulation environment. This node is crucial for operations and tasks that depend on the simulation's temporal state. 
+
+![Image of Adding Isaac Read Simulation Time](assets/images/isaac_img_read_sim_time.png)
+
+Firstly, we'll address TFs, which are crucial for any robot, particularly where I encountered the most issues. My project involved setting up a simulation environment for a mobile manipulator, where TFs and Odometry are closely linked. The ROS 2 extension already includes a script node to publish TFs, but it requires specific inputs, which we will configure using the GUI.
+
+Unlike the differential drive plugin in Gazebo, Isaac Sim's differential drive controller doesn't automatically publish odometry data. Therefore, we need to develop an additional action graph to handle this. Isaac Sim does include a computational node to calculate odometry (Isaac Compute Odometry Node), so our action graph will take data from this node and publish it to the `/odom` topic using the ROS2 Publish Odometry Node. For the transformation tree, Isaac computes it in the background, and an action graph can simply call the ROS2 Publish Transform Tree, which takes the TF Tree, wraps it in a message format, and publishes it to the `/tf` topic. 
+
+#### Let it be
+
+Finally, we got URDF imported in Isaac Sim and we have saved the USD file as well. The next thing that strikes my mind is to make sure I am getting all the topics published as I would expect them to be. Opens a terminal, enters the command, ros2 topic list, pressed enter… What, why is there no topic? I am sure I had all the plugins defined in the URDF. Turns out, URDF importer doesn’t account for those plugins, and additionally, Isaac Sim doesn’t natively supports ROS or ROS 2. We need to define a workflow for each individual component which we need to be published as a topic. We can define 1 workflow which takes of everything, but that would be like asking why do we need functions in a code when we can write everything in a continuous flow. 
+
+The steps to define an omnigraph node that connects our simulation environment to ROS or ROS 2 can be done in various ways. Entirely through GUI, scripting inside the extension workflow, through a standalone Python code, or a combination of both GUI and Python code. For obvious reasons, we will cover a combination where we can add the connections using GUI and Python together. While the documentation gives a lot of examples of standard sensors and actuators, I discuss them briefly, leaving the finer details to refer to from the documentation. 
+
+We will first talk about TFs, essential for any robot, and the one where I faced the most bugs. Since I was establishing the simulation environment for a mobile manipulator, TFs and Odometery go hand in hand and thus the example will cover both. The ROS 2 extension already has a script node to publish TF, but it needs several inputs which we need to provide. We will use the GUI approach for configuring the TF and Odometry. 
+
+Unlike the differential drive gazebo plugin, Isaac’s differential drive controller does not publish the odometry data by itself thus we need to develop an additional action graph to publish the odometry data. Isaac does provide a computational node to compute the odometry (Isaac Compute Odometry Node), thus action graph takes the data from compute odometry node and publishes it to /odom topic using ROS2 Publish Odometry Node. Unlike odometry, Isaac computes the transformation tree in the backend thus an action graph can simply call ROS2 Publish Transform Tree which takes the TF Tree, wraps it in message type, and publishes it to the /tf topic.
+
 
 
 
