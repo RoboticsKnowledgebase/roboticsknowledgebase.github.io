@@ -48,15 +48,15 @@ e. We do not select the self-collision. Though it sound like a un-intutive choic
 
 - Now that we have created the ground plane, we will verify the collision properties of our imported robot.
 
-[Step - 5: Verify the Collision Properties](assets/images/isaac_img_colliders.png)
+![Step - 5: Verify the Collision Properties](assets/images/isaac_img_colliders.png)
 
-[Step - 5: Verify the Collision Properties](assets/images/isaac_img_collision_vis.png)
+![Step - 5: Verify the Collision Properties](assets/images/isaac_img_collision_vis.png)
 
 
 Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in **.usd** format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in **.usda** format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
 
-[Step - 6: Saving as USDA](assets/images/isaac_img_save_as.png)
-[Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
+![Step - 6: Saving as USDA](assets/images/isaac_img_save_as.png)
+![Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
 
 
 
