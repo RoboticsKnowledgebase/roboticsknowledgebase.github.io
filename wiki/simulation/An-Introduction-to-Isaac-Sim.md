@@ -107,23 +107,92 @@ Awesome, now that we have our entire action graph, lets save it (in .usda format
 
 Well, launch file here means slightly different from what a ros launch file is, but it does a similar action, load and run everything we need that is needed to run the entire simulation.
 
-Note that, if youp write a python script to load the simulation and action graph, make sure to define the path of action graph publishing the TF under the robot prim path, otherwise you would need to redefine the values which destorys the whole purpose of writing a script. (All this may not make sense, but as we read further about writing a script to launch the simulation, it will)
-
-<script src="https://gist.github.com/gauravsethia08/a8c8a8d51214e78c6bb7af697f1d026f.js"></script>
-
 ```python
 # Launchs the simulation
 from omni.isaac.kit import SimulationApp
 simulation_app = SimulationApp({"headless": False, "renderer": "RayTracedLighting"})
 ```
-Before proceeding with the import of other Omniverse libraries, it is crucial to complete this step first. Skipping this step will result in errors when attempting to import additional isaac libraries. Ensure this initial step is properly executed to maintain a smooth integration process.
+
+This code will essentially launch the barebone simulator. Before proceeding with the import of other Omniverse libraries, it is crucial to complete this step first. Skipping this step will result in errors when attempting to import additional Omniverse libraries. Ensure this initial step is properly executed to maintain a smooth integration process. 
+
+Now we import other libraries which are important for loading the USD and the aciton graph. 
+
+```python
+# Importing other libraries
+import logging
+import argparse
+import numpy as np
+
+# Isaac Libraries
+from omni.isaac.core import World
+from omni.isaac.core.prims import RigidPrim
+from omni.isaac.core.utils import extensions
+from omni.isaac.core.utils.stage import add_reference_to_stage
+from omni.isaac.core_nodes.scripts.utils import set_target_prims
+
+# ROS2 Libraries
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+```
+
+-------------------Some text about libraries-------------------
+
+```python
+# We make it a ROS2 Node
+class simWorld(Node):
+    def __init__(self) -> None:
+        # Initializing the ROS2 Node and can be used to define any other ROS functionalities
+        super().__init__('test_node')
+
+    def scene_setup(self) -> None:
+        logging.info("Defining World")
+        self.world = World(stage_units_in_meters = 1.0)
+        logging.info("World Setup Completed")
+
+        logging.info("Initializing Scene Setup")
+        # Adding objects to Simulation
+        add_reference_to_stage("env/aims_env.usda", prim_path="/env")
+        add_reference_to_stage("robots/fetch.usda", prim_path="/fetch")
+
+        # Updating Simulation
+        simulation_app.update()
+        logging.info("Scene Setup Completed")
+        self.ros2_bridge_setup()
+        
+```
+In the provided code snippet, we begin by defining and logging the initialization of a virtual world within an Omniverse application. The method establishes a `World` object, specifying that one unit in this isaac environment equates to one meter. Then proceeds to populate the simulation with objects, specifically adding environmental and robotic elements from USDA files to the stage. The simulation environment is then updated to reflect these additions. 
+
+```python
+def ros2_bridge_setup(self) -> None:
+        # enable ROS2 bridge extension
+        logging.info("Setting up ROS Bridge")
+        extensions.enable_extension("omni.isaac.ros2_bridge")
+        logging.info("ROS Bridge Setup done")
+        self.action_graph_setup() 
+
+```
+
+This method enables the ROS 2 bridge in Isaac Sim. Additionally, it calls another method which will load the action graphs, as described below. 
+
+```python
+def action_graph_setup(self) -> None:
+	# Adding TF and Odom Action Graph
+	add_reference_to_stage("robots/tf.usda", prim_path="/fetch/tf")
+    
+    # (Additional, but might come handy)
+    # This is used to define/set properties in Action Graph
+    set_target_prims(primPath="/fetch/tf/ActionGraph/ros2_publish_transform_tree", 
+            inputName="inputs:targetPrims", 
+            targetPrimPaths=["/fetch/base_link"]
+     )
+```
 
 
 
 
 
-
-
+Note that, if youp write a python script to load the simulation and action graph, make sure to define the path of action graph publishing the TF under the robot prim path, otherwise you would need to redefine the values which destorys the whole purpose of writing a script. (All this may not make sense, but as we read further about writing a script to launch the simulation, it will)
 
 #### Let it be
 
