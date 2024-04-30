@@ -64,9 +64,9 @@ After successfully importing the URDF into Isaac Sim and saving the USD file, th
 
 These workflows are defined as Action Graphs which are a part of OmniGraph. Omnigraph is Omniverse’s visual programming framework that seamlessly integrates various systems within Omniverse, enabling the creation of customized nodes and efficient computation for applications like Replicators, ROS bridges, and sensor management in Isaac Sim. Read [this](https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_omnigraph.html#isaac-sim-app-tutorial-gui-omnigraph) article from Nvidia for more details.
 
-The steps to create an Omnigraph node that connects our simulation environment to ROS or ROS 2 can be approached in several ways: entirely through a GUI, scripting within the extension workflow, through standalone Python code, or a mix of both GUI and Python. For clarity and practicality, we'll discuss a hybrid approach, using both GUI and Python code. While the documentation provides numerous examples for standard sensors and actuaries, I'll briefly discuss them here, directing you to the documentation for more detailed information.
+The steps to create an Omnigraph node that connects our simulation environment to ROS or ROS 2 can be approached in several ways: entirely through a GUI, scripting within the extension workflow, through standalone Python code, or a mix of both GUI and Python. For this tutorial, we will use GUI to make an action graph and write a script to launch the simulation. While the documentation provides numerous examples for standard sensors and actuaries, I'll briefly discuss them here, directing you to the documentation for more detailed information.
 
-We'll address the workflow of creating for publishing Transforms (TFs), which are crucial for any robot, particularly where our encountered the most issues. My project involved setting up a simulation environment for a mobile manipulator, where TFs and Odometry are closely linked. The ROS 2 extension already includes a script node to publish TFs, but it requires specific inputs, which we will configure using the GUI.
+We will explore the workflow for publishing Transforms (TFs), essential for any robotic application, particularly where our project faced significant challenges. Our focus was on establishing a simulation environment for a mobile manipulator, integrating closely linked TFs and Odometry. The ROS 2 extension provides a script node for publishing TFs, requiring specific configurations that we will set up through the GUI.
 
 ### Steps to Create Action Graph
 
@@ -92,11 +92,22 @@ We'll address the workflow of creating for publishing Transforms (TFs), which ar
 
 ![Image of Adding ROS2 Publish Odometry Node](assets/images/isaac_img_publish_odom.png)
 
-- Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the **'ROS2 Publish Transform Tree'**. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. To publish transforms for the static node, we will additonally add **'ROS2 Publish Raw Transform Tree'** node, which, as the name suggest, publishes transform of static prim.
+- Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the **'ROS2 Publish Transform Tree'**. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. To publish transforms for the static node, we will additonally add **'ROS2 Publish Raw Transform Tree'** node, which, as the name suggest, publishes transform of static prim. Note that, if youp write a python script to load the simulation and action graph, make sure to define the path of action graph publishing the TF under the robot prim path, otherwise you would need to redefine the values which destorys the whole purpose of writing a script. (All this may not make sense, but as we read further about writing a script to launch the simulation, it will)
 
 ![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf.png)
 
 ![Image of Adding ROS2 Publish Static TF](assets/images/isaac_img_publish_static_tf.png)
+
+Awesome, now that we have our entire action graph, lets save it (in .usda format). 
+
+![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph.png)
+
+
+## Lets Write a Launch File
+
+Well, launch file here means slightly different from what a ros launch file is, but it does a similar action, load and run everything we need that is needed to run the entire simulation.
+
+
 
 
 Unlike the differential drive plugin in Gazebo, Isaac Sim's differential drive controller doesn't automatically publish odometry data. Therefore, we need to develop an additional action graph to handle this. Isaac Sim does include a computational node to calculate odometry (Isaac Compute Odometry Node), so our action graph will take data from this node and publish it to the `/odom` topic using the ROS2 Publish Odometry Node. For the transformation tree, Isaac computes it in the background, and an action graph can simply call the ROS2 Publish Transform Tree, which takes the TF Tree, wraps it in a message format, and publishes it to the `/tf` topic. 
