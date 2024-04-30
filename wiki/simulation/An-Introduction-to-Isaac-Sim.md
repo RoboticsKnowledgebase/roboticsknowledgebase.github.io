@@ -62,23 +62,42 @@ NVIDIA supports the process of importing URDF files into Isaac Sim with an [open
 
 After successfully importing the URDF into Isaac Sim and saving the USD file, the next step is to ensure that all expected ROS topics are being published as anticipated. When I opened a terminal, entered the `ros2 topic list` command, and pressed enter, surprisingly, no topics appeared. I was confident that all necessary plugins were defined in the URDF. However, it became clear that the URDF importer does not handle these plugins, and Isaac Sim does not natively support ROS or ROS 2. This means that each component requiring topic publication must have a dedicated workflow defined.
 
+These workflows are defined as Action Graphs which are a part of OmniGraph. Omnigraph is Omniverse’s visual programming framework that seamlessly integrates various systems within Omniverse, enabling the creation of customized nodes and efficient computation for applications like Replicators, ROS bridges, and sensor management in Isaac Sim. Read [this](https://docs.omniverse.nvidia.com/isaacsim/latest/gui_tutorials/tutorial_gui_omnigraph.html#isaac-sim-app-tutorial-gui-omnigraph) article from Nvidia for more details.
+
 The steps to create an Omnigraph node that connects our simulation environment to ROS or ROS 2 can be approached in several ways: entirely through a GUI, scripting within the extension workflow, through standalone Python code, or a mix of both GUI and Python. For clarity and practicality, we'll discuss a hybrid approach, using both GUI and Python code. While the documentation provides numerous examples for standard sensors and actuaries, I'll briefly discuss them here, directing you to the documentation for more detailed information.
 
-<Talk about what are action graphs, and how to create them>
+We'll address the workflow of creating for publishing Transforms (TFs), which are crucial for any robot, particularly where our encountered the most issues. My project involved setting up a simulation environment for a mobile manipulator, where TFs and Odometry are closely linked. The ROS 2 extension already includes a script node to publish TFs, but it requires specific inputs, which we will configure using the GUI.
 
-These nodes certain inputs that we need to add to our action graph. The node we need to add is 'On Playback Tick'. The On Play Tick node acts as a trigger that executes at every simulation tick, which is a single update cycle of the simulation. 
+### Steps to Create Action Graph
+
+- Go to top menu bar and click Window -> Visual Scripting -> Action Graph
+- Click **New Action Graph** to open an empty graph
+- To start building our action graph, we start adding nodes. The first node we need to add is **'On Playback Tick'**. The On Play Tick node acts as a trigger that executes at every simulation tick, which is a single update cycle of the simulation. 
 
 ![Image of Adding On PLayback Tick](assets/images/isaac_img_on_playback_tick.png)
 
-The next node is 'ROS 2 Context'. This node acts as a bridge between Isaac Sim and ROS 2, enabling the simulation to communicate and interact with ROS 2-based systems. It sets up the necessary configurations to ensure that the simulation can send and receive messages, services, and actions to and from ROS 2.
+- The next node is **'ROS 2 Context'**. This node acts as a bridge between Isaac Sim and ROS 2, enabling the simulation to communicate and interact with ROS 2-based systems. It sets up the necessary configurations to ensure that the simulation can send and receive messages, services, and actions to and from ROS 2.
 
 ![Image of Adding ROS 2 Content](assets/images/isaac_img_ros2_context.png)
 
-The last, but the most important one is 'Isaac Read Simulation Time' that is designed to capture and provide access to the current simulation time within the simulation environment. This node is crucial for operations and tasks that depend on the simulation's temporal state. 
+- One of the most important node we add is **'Isaac Read Simulation Time'** that is designed to capture and provide access to the current simulation time within the simulation environment. This node is crucial for operations and tasks that depend on the simulation's temporal state. 
 
 ![Image of Adding Isaac Read Simulation Time](assets/images/isaac_img_read_sim_time.png)
 
-Firstly, we'll address TFs, which are crucial for any robot, particularly where I encountered the most issues. My project involved setting up a simulation environment for a mobile manipulator, where TFs and Odometry are closely linked. The ROS 2 extension already includes a script node to publish TFs, but it requires specific inputs, which we will configure using the GUI.
+- Now that all the house-keeping node are added, lets add node to which compute the odometry. Isaac Sim does include a computational node to calculate odometry named **'Isaac Compute Odometry Node'**
+
+![Image of Adding Isaac Compute Odometry Node](assets/images/isaac_img_isaac_compute_odom.png)
+
+- Once we have the node computing odometry, we now will publish the odometry data. The ROS2 plugin has node for publishing the odometry data called the **'ROS2 Publish Odometry Node'**. 
+
+![Image of Adding ROS2 Publish Odometry Node](assets/images/isaac_img_publish_odom.png)
+
+- Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the **'ROS2 Publish Transform Tree'**. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. To publish transforms for the static node, we will additonally add **'ROS2 Publish Raw Transform Tree'** node, which, as the name suggest, publishes transform of static prim.
+
+![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf.png)
+
+![Image of Adding ROS2 Publish Static TF](assets/images/isaac_img_publish_static_tf.png)
+
 
 Unlike the differential drive plugin in Gazebo, Isaac Sim's differential drive controller doesn't automatically publish odometry data. Therefore, we need to develop an additional action graph to handle this. Isaac Sim does include a computational node to calculate odometry (Isaac Compute Odometry Node), so our action graph will take data from this node and publish it to the `/odom` topic using the ROS2 Publish Odometry Node. For the transformation tree, Isaac computes it in the background, and an action graph can simply call the ROS2 Publish Transform Tree, which takes the TF Tree, wraps it in a message format, and publishes it to the `/tf` topic. 
 
