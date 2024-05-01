@@ -186,19 +186,46 @@ def action_graph_setup(self) -> None:
             inputName="inputs:targetPrims", 
             targetPrimPaths=["/fetch/base_link"]
      )
+     self.run_simulation()
+```
+The method above adds the action graph to our simulation setup. 
+
+> It is crucial to position the action graph responsible for publishing the Transforms (TFs) under the robot's primary path (prim path). This ensures that the TFs correctly identify and relate to the robot's body. Our team learnt it the hard way. 
+
+While the target prim is set during the action graph's definition, it's common to encounter issues where these settings do not persist when loading through a script. To address this, we use the function `set_target_prims` to explicitly set the value of the target prim again, ensuring accurate and consistent referencing within the simulation.
+
+And finally, we define a function to run the entire simulation by taking steps. Remember, before running the simulation its neccesary to initialize the physics setting by calling the `initialize_physics` method from the World object. We also define a ground plane (incase it wasn't defined in our environment USD file). We define an infinite loop and run the simulation until any erorr or keyboard interrupt is encounter. 
+
+```python
+def run_simulation(self) -> None:
+        # need to initialize physics getting any articulation..etc
+        logging.info("Initializing Physics")
+        self.world.initialize_physics()
+        self.world.add_default_ground_plane()
+        self.world.play()
+
+        while simulation_app.is_running():
+            # Run with a fixed step size
+            self.world.step(render=True)
+            # For updating ROS 2 blocks
+            rclpy.spin_once(world, timeout_sec = 0)
+
+        simulation_app.close()
 ```
 
+And thats it!!! We have defined a launch script to bring everything together. 
+
+## Summary
+In this article we learnt, how to import a standard URDF file to Isaac Sim, connect it to ROS and how to write a launch file to bring everything together. While this example covers the lessons we learnt the hard way, there is a lot more to explore and we highly recommend checking out the official documentation for a deeper understanding. 
 
 
+## END
+## See Also:
+- Links to relevant material within the Robotics Knowledgebase go here.
 
+## Further Reading
+- Links to articles of interest outside the Wiki (that are not references) go here.
 
-Note that, if youp write a python script to load the simulation and action graph, make sure to define the path of action graph publishing the TF under the robot prim path, otherwise you would need to redefine the values which destorys the whole purpose of writing a script. (All this may not make sense, but as we read further about writing a script to launch the simulation, it will)
-
-#### Let it be
-
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
 
 
 #### Bullet points and numbered lists
