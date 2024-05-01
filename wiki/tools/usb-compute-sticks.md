@@ -370,19 +370,3 @@ For more information on running demos, consult the manual in the Documents folde
 package you downloaded.
 
 ![Result of a demo on the Plai Plug](assets/plai_demo.png)
-
-
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
-
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
