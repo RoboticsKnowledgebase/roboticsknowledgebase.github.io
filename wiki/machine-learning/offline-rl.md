@@ -45,6 +45,10 @@ Behavior regularized offline RL [3] is another approach that aims to improve the
 #### Implicit Q-learning
 Implicit Q-learning [4] is a recent method that aims to improve the sample efficiency and stability of offline RL algorithms. This approach leverages implicit models to learn a value function that is consistent with the dataset while avoiding overfitting. By using implicit models, the algorithm can learn a more robust value function that generalizes well to unseen states and improves performance on challenging tasks.
 
+### Open problems
+#### Offline model-based RL
+Model-based reinforcement learning (RL) holds promise for offline RL challenges, but it relies heavily on accurate uncertainty estimation for models to address distributional shift. Current methods often use bootstrap ensembles, yet they fall short of ideal performance. Furthermore, modeling certain Markov decision processes (MDPs), especially those with high-dimensional image observations and long horizons, remains a significant hurdle. Hybrid approaches, combining model-based and model-free learning, show potential in overcoming these obstacles. Still, the fundamental question persists: can model-based RL surpass model-free dynamic programming algorithms? Both aim to predict future outcomes, with model-free methods offering flexibility in predicting various quantities. In linear function approximation scenarios, model-based updates and value iteration updates yield identical results, but this equivalence isn't guaranteed in nonlinear cases. Thus, exploring the theoretical boundaries of offline model-based RL against dynamic programming methods remains an open challenge.
+
 ### References
 [1] Levine, Sergey, Aviral Kumar, George Tucker, and Justin Fu. "Offline reinforcement learning: Tutorial, review, and perspectives on open problems." arXiv preprint arXiv:2005.01643 (2020).
 [2] Kumar, Aviral, Aurick Zhou, George Tucker, and Sergey Levine. "Conservative q-learning for offline reinforcement learning." Advances in Neural Information Processing Systems 33 (2020): 1179-1191.
