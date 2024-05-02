@@ -33,22 +33,22 @@ Sunrise Workbench is the IDE for developing Java applications running on the KUK
 
 Once you installed the Workbench and started a project, you need to manually install the software packages in the SunriseOS folder. From Help->Install New software, you select local as installing source, and browse toward the packages you want to install.
 
-![Sunrise Workbench](assets/images/sunrise_install_software.png)
+![Sunrise Workbench](assets/sunrise_install_software.png)
 
 Once you have installed the packages, in our case it solved all the missing dependencies in our existing project.
 
 Inside a project, StationSetup.cat is the file that defines the arm topology, what software should be installed into the control station, and the arm’s configuration like IP address and other parameters. The StationSetup should only be installed once, while project synchronization should be done every time you make modifications to the code.
 
-![Synchronize Project Button](assets/images/sunrise_workbench_synchronize.png)
+![Synchronize Project Button](assets/sunrise_workbench_synchronize.png)
 
 Because the KUKA software is proprietary, it’s not easy to find documentation online. Thus it’s hard to understand what is the function of the code. Luckily when in code editor view, if you hover over a function, it will pop out the function definition. If you want to dive deeper into the function, you can select “open attached Javadoc in a browser” to open the Javadoc that comes with the packages.
 
-![Open Javadoc Button](assets/images/sunrise_workbench_synchronize.png)
+![Open Javadoc Button](assets/sunrise_workbench_synchronize.png)
 
 ### Fast Robot Interface
 Fast Robot interface can stream out robot data in real-time, and when connection quality is good, it can also command the robot.
 
-![Software Architecture](assets/images/lbr_fri_ros2.svg)
+![Software Architecture](assets/lbr_fri_ros2.svg)
 
 (In AUT Mode) Run the LBRServer.java application from the robot pendant, and run the corresponding ROS2 node on the PC. Then the robot should be connected.
 
@@ -58,22 +58,17 @@ The purpose of the LBRServer application is to talk over the controller PC’s E
 
 Depending on the network quality, there might be issues that come up with using the LBR FRI connection issues. If the connection quality drops below a certain threshold, the ROS side of the system will kill the connection for safety reasons and crash the application. Based on the network quality, the application defines certain states, as shown below. 
 
-![Representation of the network connection states](assets/images/friquality.png)
+![Representation of the network connection states](assets/friquality.png)
 
 The system will let you monitor the state of the robot and control it as long as the connection is classified as “Good” or “Excellent”.  The behavior tree based on the connection status is as follows. You can get information about the robot’s joints if the status is MONITORING_READY, and you can give it goal values if the status is COMMANDING_ACTIVE.
 
-![System behavior tree based on the connection status](assets/images/fristate.png)
+![System behavior tree based on the connection status](assets/fristate.png)
 
 If the connection status is below “GOOD” anytime, The application will shut. We had this issue happen to us during our demo. To avoid that happening in the future, we intend to modify the ROS Client to allow the robot to stay connected even if the connection is lost for a second, and we’ll implement our manipulation code in a manner to handle these situations.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-
-## Further Reading
-- https://github.com/lbr-stack/lbr_fri_ros2_stack
-- https://lbr-stack.readthedocs.io/en/latest/
+In this wiki we covered most of the setup and usage of Kuka arm with ROS2 interface. We talked about the ROS side of the system and the java application side of the system. Hope this guide can help you quickly set up the Kuka arm.
 
 ## References
+- [LBR FRI ROS 2 GitHub Repository](https://github.com/lbr-stack/lbr_fri_ros2_stack)
+- [LBR FRI ROS 2 GitHub Online Document](https://lbr-stack.readthedocs.io/en/latest/)
