@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/gaurav/ws_moveit/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_py/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/gaurav/fetch_ws/install/fetch_moveit2/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/gaurav/ws_moveit/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_py/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/gaurav/ws_moveit/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/gaurav/fetch_ws/install/fetch_moveit2/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
