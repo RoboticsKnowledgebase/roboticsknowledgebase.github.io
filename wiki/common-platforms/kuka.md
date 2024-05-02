@@ -5,7 +5,7 @@
 date: 2024-05-01 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Working with the KUKA LBR Med
+title: Working with KUKA LBR Med
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
