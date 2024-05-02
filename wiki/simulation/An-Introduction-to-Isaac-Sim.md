@@ -84,7 +84,9 @@ We will explore the workflow for publishing Transforms (TFs), essential for any 
 
 ![Image of Adding Isaac Read Simulation Time](assets/images/isaac_img_read_sim_time.png)
 
-- Now that all the house-keeping node are added, lets add node to which compute the odometry. Isaac Sim does include a computational node to calculate odometry named **'Isaac Compute Odometry Node'**
+- Now that all the house-keeping node are added, lets add node to which compute the odometry. Isaac Sim does include a computational node to calculate odometry named **'Isaac Compute Odometry Node'**. <-------------Talk about adding the articulated robot here-----------------> 
+
+![Image of Defining Articulation Root](assets/images/isaac_img_add_articulation_root.png)
 
 ![Image of Adding Isaac Compute Odometry Node](assets/images/isaac_img_isaac_compute_odom.png)
 
@@ -94,13 +96,19 @@ We will explore the workflow for publishing Transforms (TFs), essential for any 
 
 - Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the **'ROS2 Publish Transform Tree'**. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. To publish transforms for the static node, we will additonally add **'ROS2 Publish Raw Transform Tree'** node, which, as the name suggest, publishes transform of static prim. 
 
-![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf.png)
+![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf_1.png)
+
+We also need to define all the child links for which we need to publish the transforms for. 
+
+![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf_2.png)
 
 ![Image of Adding ROS2 Publish Static TF](assets/images/isaac_img_publish_static_tf.png)
 
 Awesome, now that we have our entire action graph, lets save it (in .usda format). 
 
-![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph.png)
+![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph_1.png)
+
+![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph_2.png)
 
 
 ## Lets Write a Launch File
