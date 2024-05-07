@@ -10,14 +10,14 @@ published: false
     
 ## Examples of Lighting on Robots
 ![A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
-[https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg]]({{site.baseurl}/assets/fetch_robot.png)
+[https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg]](assets/fetch_robot.png)
 
 
-![](assets/pudu_bellabot.png)
+![A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. [link](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)](assets/pudu_bellabot.png)
 
 A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. (https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)
 
-![]({{site.baseurl}}assets/franka_lights.png)
+![title](assets/franka_lights.png)
 
 The Franka robot uses different LED colors to show robot status (https://wiki.arcoslab.org/tutorials_media/panfa-franka/extdeviceonoff.png) 
 
@@ -123,5 +123,3 @@ In summary, some key things to consider when selecting LEDs for purchase are as 
 8. CRI (color render index)
 9. Diffusers: some LED suppliers will sell diffusing covers with their LED. This is common especially for LED strips. In addition to diffusing light, they can increase the IP (ingress protection) rating.
 10. Mounting: Pay attention to how the LED is mounted: For single LEDs through hole, surface mount, and for larger LEDs screw mounting is common.  Many LED strips come with an adhesive backing. LED panels frequently come with screw holes for mounting.
-
-
