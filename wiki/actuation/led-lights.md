@@ -9,24 +9,24 @@ published: false
 	Well-executed LED lighting may appear simple from a user’s perspective, but there can be a deceiving amount of complexity involved in successful execution. In many robotic applications, lighting implementation involves not only the selection of the physical LEDs, but also product design, mechanical design and material selection, electrical considerations, and programming. This guide seeks to provide an overview of key topics in the application of LED lighting to robots.
     
 ## Examples of Lighting on Robots
-![]({{site.baseurl}}wiki/actuation/assets/fetch_robot.png)
+![]({{site.baseurl}/assets/fetch_robot.png)
 
 A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
 [https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg](https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg)
 
-![]({{site.baseurl}}wiki/actuation/assets/pudu_bellabot.png)
+![]({{site.baseurl}}assets/pudu_bellabot.png)
 
 A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. (https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)
 
-![]({{site.baseurl}}wiki/actuation/assets/franka_lights.png)
+![]({{site.baseurl}}assets/franka_lights.png)
 
 The Franka robot uses different LED colors to show robot status (https://wiki.arcoslab.org/tutorials_media/panfa-franka/extdeviceonoff.png) 
 
-![]({{site.baseurl}}wiki/actuation/assets/relay_robot.png)
+![]({{site.baseurl}}/assets/relay_robot.png)
 
 Relay Robotic’s delivery robot uses LEDs to light an interior compartment. (https://s3.amazonaws.com/digitaltrends-uploads-prod/2016/02/Relay-being-loaded.jpg) 
 
-![]({{site.baseurl}}wiki/actuation/assets/bear_robotics.png)
+![]({{site.baseurl}}assets/bear_robotics.png)
 
 Bear Robotic’s restaurant robot uses LEDs to communicate and indicate which shelf to take from. (https://www.bearrobotics.ai/servi-plus) 
 
@@ -35,7 +35,7 @@ Bear Robotic’s restaurant robot uses LEDs to communicate and indicate which sh
 
 ### LEDs
 	Visible light is electromagnetic radiation in the visible spectrum (shown below). Different colors of light correspond to different wavelengths. Additionally, colors can be imitated by mixing different wavelengths.  
-![]({{site.baseurl}}wiki/actuation/assets/em_spectrum.png)
+![]({{site.baseurl}}assets/em_spectrum.png)
 
 https://cdn.kastatic.org/ka-perseus-images/1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png
 
@@ -54,10 +54,10 @@ Light appears white when the whole spectrum of visible light is present.  This c
 	The quality of white light is often measured using the color render index (CRI). Objects appear to have color because they reflect that wavelength of light and absorb others (e.g. my notebook appears blue because it reflects blue light and absorbs other wavelengths).  However, for an object to reflect a wavelength, that wavelength must be present in the incident light. One issue with mixing red, green, and blue LEDs is that the light produced has a lot of light in only the specific emitted wavelengths, so while the light appears white to the human eye, objects illuminated with this light may not show their true colors.  The color render index measures how well a light source illuminates the true colors of different objects.  The image below shows spectral graphs for several different lighting sources. As can be seen, sunlight gives off the most consistent spectrum of visible light, and has the highest color render index.
 	For some applications, CRI does not matter and it makes sense to go with the cheapest option. Parking garages, for example, often appear to have poor light because low CRI lights are used. In other applications having a high CRI is important - for example high CRI lighting is often used in kitchens because being able to accurately judge the color of meat is important for food safety. In robotics, having high-CRI light may be important for culinary robots, exploratory robots, or medical robots. 
 
-![]({{site.baseurl}}wiki/actuation/assets/CRI_image.png)
+![]({{site.baseurl}}assets/CRI_image.png)
 https://goodearthlighting.com/media/CRI%20Good%20Earth%20Lighting%20-%20800%20x%20800.png 
 
-![]({{site.baseurl}}wiki/actuation/assets/spectral_graphs.png)
+![]({{site.baseurl}}assets/spectral_graphs.png)
 
 The image above shows the relative energy of wavelengths emitted by different light sources.
 https://www.researchgate.net/figure/Spectral-outputs-of-the-various-light-sources_fig14_320644849 
@@ -79,7 +79,7 @@ Increasing the distance between the LED and the diffuser will increase the appar
 A rough surface finish on a clear material is a very common diffuser. A common example of this is frosted glass.  By changing the roughness of the surface, the level of diffusion can be adjusted.
 Some materials are specifically engineered for diffusion, for example by imbedding them with particles which scatter light. These materials can achieve very high efficiency as measured by the amount of light that passes through the material. The Makrolon DQ line of plastics is one example of a material engineered for diffusion (https://solutions.covestro.com/en/highlights/articles/theme/applications/lighting-and-led).  Silicon is another commonly used diffuser for LED strips, since it is flexible.
 
-![]({{site.baseurl}}wiki/actuation/assets/Makrolon_plastic.png)
+![]({{site.baseurl}}assets/Makrolon_plastic.png)
 
 ### Refraction and Light Piping
 	One common problem encountered in robotics and other electronics is that putting an LED chip where you want the light to appear is often inconvenient. A technique called light piping allows you to put LEDs in one location, while “piping” the light to another location to be shown. One example of why this is useful: you can put an indicator light on the outside of an enclosure while keeping the LED for that light on a main PCB.  This can considerably simplify the electrical setup.
