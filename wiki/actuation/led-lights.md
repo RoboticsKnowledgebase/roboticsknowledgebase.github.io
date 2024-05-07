@@ -9,12 +9,11 @@ published: false
 	Well-executed LED lighting may appear simple from a user’s perspective, but there can be a deceiving amount of complexity involved in successful execution. In many robotic applications, lighting implementation involves not only the selection of the physical LEDs, but also product design, mechanical design and material selection, electrical considerations, and programming. This guide seeks to provide an overview of key topics in the application of LED lighting to robots.
     
 ## Examples of Lighting on Robots
-![]({{site.baseurl}/assets/fetch_robot.png)
+![A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
+[https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg]]({{site.baseurl}/assets/fetch_robot.png)
 
-A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
-[https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg](https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg)
 
-![]({{site.baseurl}}assets/pudu_bellabot.png)
+![](assets/pudu_bellabot.png)
 
 A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. (https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)
 
