@@ -3,46 +3,46 @@ date: {}
 title: LED Lighting
 published: false
 ---
-## Introduction
 	LED lighting is commonly used in robots for purposes including illumination, communication, and aesthetics. This article covers key topics in LED lighting design and implementation as relevant to the robotics field.
+
+## Motivation
+
 	As robots evolve to work in increasingly unstructured environments, interaction with humans becomes progressively more important to robot success. Often, humans are trained to work around robots (for example, in warehouse and manufacturing environments), while in other scenarios humans may be purchasing or encountering their first robot (for example, robot vacuums or mobile delivery robots). In both cases, LED lighting can serve as an efficient and cost-effective means to enhance robots’ utility in areas such as communication, aesthetics, and illumination. 
 	Well-executed LED lighting may appear simple from a user’s perspective, but there can be a deceiving amount of complexity involved in successful execution. In many robotic applications, lighting implementation involves not only the selection of the physical LEDs, but also product design, mechanical design and material selection, electrical considerations, and programming. This guide seeks to provide an overview of key topics in the application of LED lighting to robots.
     
 ## Examples of Lighting on Robots
-![A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
-[https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg]](assets/fetch_robot.png)
+![](assets/fetch_robot.png)
+A Fetch warehouse robot projects a blue light in front of it to alert people near corners 
+[link](https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg)
+
+![](assets/pudu_bellabot.png)
+A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. [link](https://mms.businesswire.com/media/20211021005119/en/918128/5/RollerTop-Guide-02229-FetchCore.jpg)
 
 
-![A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. [link](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)](assets/pudu_bellabot.png)
+![](assets/franka_lights.png)
+The Franka robot uses different LED colors to show robot status [link](https://wiki.arcoslab.org/tutorials_media/panfa-franka/extdeviceonoff.png)
 
-A Pudu Bellabot restaurant serving robot uses a subsurface display to communicate. (https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_daIrlB0pY08odSdAypHoyHqPbQiLgksTMQiYme9ilA&s)
 
-![title](assets/franka_lights.png)
+![](assets/relay_robot.png)
+Relay Robotic’s delivery robot uses LEDs to light an interior compartment. [link](https://s3.amazonaws.com/digitaltrends-uploads-prod/2016/02/Relay-being-loaded.jpg)
 
-The Franka robot uses different LED colors to show robot status (https://wiki.arcoslab.org/tutorials_media/panfa-franka/extdeviceonoff.png) 
-
-![]({{site.baseurl}}/assets/relay_robot.png)
-
-Relay Robotic’s delivery robot uses LEDs to light an interior compartment. (https://s3.amazonaws.com/digitaltrends-uploads-prod/2016/02/Relay-being-loaded.jpg) 
-
-![]({{site.baseurl}}assets/bear_robotics.png)
-
-Bear Robotic’s restaurant robot uses LEDs to communicate and indicate which shelf to take from. (https://www.bearrobotics.ai/servi-plus) 
+![](assets/bear_robotics.png)
+Bear Robotic’s restaurant robot uses LEDs to communicate and indicate which shelf to take from. [link](https://www.bearrobotics.ai/servi-plus)
 
 
 ## Physical Properties of Light
 
 ### LEDs
-	Visible light is electromagnetic radiation in the visible spectrum (shown below). Different colors of light correspond to different wavelengths. Additionally, colors can be imitated by mixing different wavelengths.  
-![]({{site.baseurl}}assets/em_spectrum.png)
+	
+    Visible light is electromagnetic radiation in the visible spectrum (shown below). Different colors of light correspond to different wavelengths. Additionally, colors can be imitated by mixing different wavelengths.  
+![](assets/em_spectrum.png)
 
-https://cdn.kastatic.org/ka-perseus-images/1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png
-
+[link](https://cdn.kastatic.org/ka-perseus-images/1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png)
 
 
 	LEDs (Light emitting diodes) are a very commonly used light source due to their small size and high power efficiency.  They are by far the most commonly used light source on robots for these reasons. LEDs use semiconducting materials with a specific energy gap, which corresponds to the emitted wavelength.
 
-This article: https://electronics.howstuffworks.com/led.htm provides a nice overview of some of the physics and chemistry of how LEDs work.
+This article: [https://electronics.howstuffworks.com/led.htm](https://cdn.kastatic.org/ka-perseus-images/1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png) provides a nice overview of some of the physics and chemistry of how LEDs work.
 
 	Due to the nature of LEDs, they can only emit light at a specific wavelength. Most commonly, these are red (620-625 nm), green (522-525 nm), or blue (467-470 nm).  Many LED chips are composed of these 3 types of LEDs, and other colors can be generated by activating all three LEDs in different ratios. 
 
@@ -53,13 +53,13 @@ Light appears white when the whole spectrum of visible light is present.  This c
 	The quality of white light is often measured using the color render index (CRI). Objects appear to have color because they reflect that wavelength of light and absorb others (e.g. my notebook appears blue because it reflects blue light and absorbs other wavelengths).  However, for an object to reflect a wavelength, that wavelength must be present in the incident light. One issue with mixing red, green, and blue LEDs is that the light produced has a lot of light in only the specific emitted wavelengths, so while the light appears white to the human eye, objects illuminated with this light may not show their true colors.  The color render index measures how well a light source illuminates the true colors of different objects.  The image below shows spectral graphs for several different lighting sources. As can be seen, sunlight gives off the most consistent spectrum of visible light, and has the highest color render index.
 	For some applications, CRI does not matter and it makes sense to go with the cheapest option. Parking garages, for example, often appear to have poor light because low CRI lights are used. In other applications having a high CRI is important - for example high CRI lighting is often used in kitchens because being able to accurately judge the color of meat is important for food safety. In robotics, having high-CRI light may be important for culinary robots, exploratory robots, or medical robots. 
 
-![]({{site.baseurl}}assets/CRI_image.png)
-https://goodearthlighting.com/media/CRI%20Good%20Earth%20Lighting%20-%20800%20x%20800.png 
+![](assets/CRI_image.png)
+[link](https://goodearthlighting.com/media/CRI%20Good%20Earth%20Lighting%20-%20800%20x%20800.png )
 
-![]({{site.baseurl}}assets/spectral_graphs.png)
+![](assets/spectral_graphs.png)
 
 The image above shows the relative energy of wavelengths emitted by different light sources.
-https://www.researchgate.net/figure/Spectral-outputs-of-the-various-light-sources_fig14_320644849 
+[link](https://www.researchgate.net/figure/Spectral-outputs-of-the-various-light-sources_fig14_320644849 )
 
 **White LEDs**
 	Due to the nature of LEDs, it’s not possible to emit across the whole visible spectrum directly. The most common method to achieve a higher quality white light is to cover a blue LED with a phosphor. The phosphor will absorb light from the blue LED and re-emit it at different wavelengths. This is frequently done for LED lights used for residential and commercial lighting (e.g., the lights you put in light fixtures). The bottom right spectral graph in the image above represents this combination.
@@ -76,13 +76,13 @@ Depending on the situation, a different metric may be more relevant.
 	While the small form factor of LEDs is one of their greatest strengths, it can also be a major downside from an aesthetic perspective. LEDs appear as a single point of light, which is useful in some contexts, but is often not desired. Often, more continuous-appearing lighting is desired. This is achieved by using a diffuser, which scatters light rays in different directions, giving a more continuous appearance. From an implementation standpoint just about anything can act as a diffuser. Putting a piece of paper in front of your phone light is a great example to show how diffusers work. However, from an engineering perspective a diffuser which is optimal in some respect is often desired. Engineers and designers often want to control the diffusion, and this is possible through several means.
 Increasing the distance between the LED and the diffuser will increase the apparent diffusion.
 A rough surface finish on a clear material is a very common diffuser. A common example of this is frosted glass.  By changing the roughness of the surface, the level of diffusion can be adjusted.
-Some materials are specifically engineered for diffusion, for example by imbedding them with particles which scatter light. These materials can achieve very high efficiency as measured by the amount of light that passes through the material. The Makrolon DQ line of plastics is one example of a material engineered for diffusion (https://solutions.covestro.com/en/highlights/articles/theme/applications/lighting-and-led).  Silicon is another commonly used diffuser for LED strips, since it is flexible.
+Some materials are specifically engineered for diffusion, for example by imbedding them with particles which scatter light. These materials can achieve very high efficiency as measured by the amount of light that passes through the material. The Makrolon DQ line of plastics is one example of a material engineered for diffusion ([https://solutions.covestro.com/en/highlights/articles/theme/applications/lighting-and-led](https://solutions.covestro.com/en/highlights/articles/theme/applications/lighting-and-led)).  Silicon is another commonly used diffuser for LED strips, since it is flexible.
 
-![]({{site.baseurl}}assets/Makrolon_plastic.png)
+![](assets/Makrolon_plastic.png)
 
 ### Refraction and Light Piping
 	One common problem encountered in robotics and other electronics is that putting an LED chip where you want the light to appear is often inconvenient. A technique called light piping allows you to put LEDs in one location, while “piping” the light to another location to be shown. One example of why this is useful: you can put an indicator light on the outside of an enclosure while keeping the LED for that light on a main PCB.  This can considerably simplify the electrical setup.
-	To do so, light pipes connect the LED to wherever the light is meant to be shown. Light pipes are often made of plastics like Polycarbonate (PC) or Acrylic (PMMA). They take advantage of total internal reflection - a phenomenon where all the lighting is kept within the light pipe as long as it hits the walls at certain angles.  This article provides a good overview of how it works: https://www.bivar.com/resources/blog/the-science-of-light-pipes-reflection-refraction-and-diffusion/ 
+	To do so, light pipes connect the LED to wherever the light is meant to be shown. Light pipes are often made of plastics like Polycarbonate (PC) or Acrylic (PMMA). They take advantage of total internal reflection - a phenomenon where all the lighting is kept within the light pipe as long as it hits the walls at certain angles.  This article provides a good overview of how it works: [https://www.bivar.com/resources/blog/the-science-of-light-pipes-reflection-refraction-and-diffusion/ ](https://www.bivar.com/resources/blog/the-science-of-light-pipes-reflection-refraction-and-diffusion/ )
 
 
 ## Common LED Form Factors
@@ -97,13 +97,13 @@ Other form factors: LED rings are fairly common and can be useful for some illum
 
 	While there are many different LED chips, one of the most common is the 5V WS2812B which integrated the control circuitry with the emitter (The SK6812 is a slightly newer, but almost equivalent chip) and uses a custom timing protocol for communication.  These are commonly sold as individual pixels and chained together on LED strips. To set the LED, 3 8-bit integers are used to set the red, green, and blue levels individually.
 
-	There are many software packages that abstract away interfacing the LEDs directly, and allow you to set high-level directions (e.g., set all LEDs to red, show a rainbow, flash on-and-off), as well as write custom light patterns.  Adafruit’s has a very good guide for using their library: https://learn.adafruit.com/adafruit-neopixel-uberguide Note: their library works for any WS2812 or or SK6812 chips, you don’t have to buy Adafruit's neopixels. It also works with WS2811 (which uses 12V instead of 5V).
+	There are many software packages that abstract away interfacing the LEDs directly, and allow you to set high-level directions (e.g., set all LEDs to red, show a rainbow, flash on-and-off), as well as write custom light patterns.  Adafruit’s has a very good guide for using their library: [https://learn.adafruit.com/adafruit-neopixel-uberguide](https://learn.adafruit.com/adafruit-neopixel-uberguide) Note: their library works for any WS2812 or or SK6812 chips, you don’t have to buy Adafruit's neopixels. It also works with WS2811 (which uses 12V instead of 5V).
 
 While WS2812 is one of the most common and useful things to learn, there are other chips and control methods. APA102 is also common.  It uses SPI, but is a little more expensive than WS2812b.  LED matrices often have supplier-supplied software for interfacing with their products.
 
 ## Other Considerations
 ### Power
-	While LEDs are a very efficient light source, they can still consume a lot of power, especially when you use a lot of them. For example, a 1 meter length strip of WS2812 LEDs from ipixelleds.com (https://www.ipixelleds.com/more.php?id=389) with a density of 60 LEDs/meter uses 14.4W at max power. 
+	While LEDs are a very efficient light source, they can still consume a lot of power, especially when you use a lot of them. For example, a 1 meter length strip of WS2812 LEDs from ipixelleds.com ([https://www.ipixelleds.com/more.php?id=389](https://www.ipixelleds.com/more.php?id=389)) with a density of 60 LEDs/meter uses 14.4W at max power. 
 
 ### Heat
 	Along with consuming a lot of power, LEDs produce a lot of heat. While this may or may not be a problem depending on the application, heat sinks are often used to dissipate heat for high-power LEDs.
