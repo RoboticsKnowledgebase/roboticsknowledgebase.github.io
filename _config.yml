@@ -165,6 +165,9 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  parse_block_html: true
+  syntax_highlighter_opts:
+    disable: true
 
 
 # Search

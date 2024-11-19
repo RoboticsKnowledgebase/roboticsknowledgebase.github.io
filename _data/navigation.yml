@@ -9,7 +9,9 @@ wiki:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
+      - title: Starting a Robotics Project
+        url: /docs/master_guide/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
@@ -365,7 +367,9 @@ docs:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
+      - title: Starting a Robotics Project
+        url: /docs/master_guide/
   - title: Contribute
     children:
       - title: Introduction
