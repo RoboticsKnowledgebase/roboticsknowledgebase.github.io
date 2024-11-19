@@ -3,12 +3,74 @@
 title: Starting a Robotics Project
 mermaid: true
 ---
-Why isn't it working...?====
+
+Starting a robotics project can be overwhelming. There's too many things to consider and if it's your first time doing robotics, then you may be flooded with all the options available in the internet. Let's say that you are developing a quadrupedal robot named `Tod`. `Tod`'s objective is to carry products in a shopping center for the elders so that they won't have a hard time shopping. We don't want to overwhelm you, but here's a map of possible options for each component of `Tod`. 
+```mermaid
+mindmap
+  root((Tod))
+    Quadruped Hardware
+      Boston Dynamics Spot
+      Unitreee 
+        Go1
+        Go2
+        B2
+      ANYmal
+    Sensors
+      Vision
+      IMU
+      State Estimation
+    Programming Language
+      C++
+      Python
+    Simulations
+    Mapping
+    Loco Controllers
+    Manipulators
+    Communications
+      ROS
+      ROS2
+
+```
+
+# Start here
+If you are starting a robotics project for the first time, this is a good place to begin! Here, we will give you some guidance on what to consider in each step of a robotics project in detail.
+
+Below is the overall flow you would need to take in a robotics project. Click on a step that you are interested in and it will take you there!
 
 ```mermaid
-graph LR;
-    A[Start] --> B[Forward Kinematics];
-    B --> C[Compute Joint Angles];
-    C --> D[End Effector Position];
-    D --> E[End];
+flowchart TD;
+    A[Define your goals and requirements] --> B[Choose a robot];
+    B --> C[Find out what peripheral hardware you need];
+    C --> D[Choose your language];
+    D --> E[Choose your communication method];
+    E --> F[Choose your simulation];
+    F --> G[Test and debug your robot];
+    G --> H[Demo day!];
+
+    click A href "#define-your-goals-and-requirements"
+    click B href "#choose-a-robot"
+    click C href "#find-out-what-peripheral-hardware-you-need"
+    click D href "#choose-your-language"
+    click E href "#choose-your-communication-method"
+    click F href "#choose-your-simulation"
+    click G href "#test-and-debug-your-robot"
+    click H href "#demo-day"
+
 ```
+
+
+### Define your goals and requirements
+
+### Choose a robot
+
+### Find out what peripheral hardware you need
+
+### Choose your language
+
+### Choose your communication method
+
+### Choose your simulation
+
+### Test and debug your robot
+
+### Demo day
