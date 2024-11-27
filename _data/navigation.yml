@@ -59,6 +59,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-intro/
       - title: ROS Arduino Interface
         url: /wiki/common-platforms/ros/ros-arduino-interface/
+      - title: ROS Node Lifecycle
+        url: /wiki/common-platforms/ros/ros-lifecycle/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros/ros-motion-server-framework/
       - title: ROS Cost Maps
