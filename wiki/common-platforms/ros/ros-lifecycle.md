@@ -20,13 +20,13 @@ Before ROS 2, state machine implementations basically relied on ignoring nodes w
 
 Given these advantages, it is recommended to use lifecycle nodes as the default implementation of ROS state machines.
 
-![An example of using node lifecycle to turn nodes on or off](assets/ros_states.png)
+![An example of using node lifecycle to turn nodes on or off](../assets/ros_states.png)
 
 ## Node Lifecycle
 
 The figure below summarizes the possible states and transitions for each managed node. This image was obtained from the [ROS Design Website]().
 
-![All states for a managed node](assets/life_cycle_sm.png)
+![All states for a managed node](../assets/life_cycle_sm.png)
 
 There are two types of states a node can be in:
 
