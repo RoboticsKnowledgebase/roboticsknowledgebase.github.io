@@ -76,7 +76,7 @@ Once the setup is determined, follow these steps to collect image data for YOLOv
 
 Once you have a set of images, it's time to upload them to Roboflow. Roboflow provides intuitive tools for quickly creating custom datasets, making it a top choice for projects requiring tailored image data. The free package allows up to three collaborators per workspace, making it accessible for small teams.
 
-![[./assets/TeamF24_Wiki_img1.png]]
+![Image](./assets/TeamF24_Wiki_img1.png)
 
 ### Choosing the Annotation Type
 Select the appropriate annotation type based on your project:
@@ -115,7 +115,7 @@ project.version(VERSION_NUMBER).deploy(model_type="yolov8", model_path="path/to/
 #### Streamlining Your Annotation Process
 ##### Using Roboflow’s Built-in Smart Polygon Tool
 Roboflow’s Smart Polygon tool allows you to efficiently annotate multiple objects simultaneously.
-![[TeamF24_Wiki_gif1.gif]]
+![gif](./assets/TeamF24_Wiki_gif1.gif)
 >[!NOTE]
 >For a detailed guide on Smart Polygon Labeling, refer to this blog: [Launch: Smart Polygon Labeling](https://blog.roboflow.com/automated-polygon-labeling-computer-vision/)
 ##### With Your Own Model
@@ -141,7 +141,7 @@ To apply augmentations in Roboflow:
 3. Select the desired images and configure the **Train/Test Split** and **Preprocessing** options.
 4. Under the **Augmentation** section, click **"Add Augmentation Step."**
 5. Choose and configure the desired augmentations.
-   ![[./assets/TeamF24_Wiki_img2.png]]
+   ![image](./assets/TeamF24_Wiki_img2.png)
 6. Generate the augmented dataset version.
 
 By following these steps, you can create a more robust dataset to maximize the effectiveness of your YOLOv8 model during training.
