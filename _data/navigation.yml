@@ -154,6 +154,8 @@ wiki:
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
+      - title: Generative modeling
+        url: /wiki/machine-learning/generative-modeling
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
