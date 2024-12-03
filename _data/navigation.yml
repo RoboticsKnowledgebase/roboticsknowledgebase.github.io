@@ -143,6 +143,8 @@ wiki:
         url: /wiki/actuation/task-prioritization-control/
       - title: Drive-by-wire Conversion for Autonomous Vehicle
         url: /wiki/actuation/drive-by-wire/
+      - title: Selecting the right Motor for your application
+        url: /wiki/actuation/selecting-the-right-motor/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
