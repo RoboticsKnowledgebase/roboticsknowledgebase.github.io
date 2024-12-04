@@ -13,7 +13,7 @@ title: Introduction to Cybersecurity in Embedded Devices and Robotics
 
 ## Introduction
 
-With each passing day, robots become a more common part of our day-to-day lives. However, when studying robotics, very little time is devoted to make these systems secure. Roboticists are used to thinking about reliability or meeting performance requirements, but wondering how your system might be attacked is usually an afterthought. 
+With each passing day, robots become a more common part of our day-to-day lives. However, when studying robotics, very little time is devoted to making these systems secure. Roboticists are used to thinking about reliability or meeting performance requirements, but wondering how your system might be attacked is usually an afterthought. 
 
 Sure, many systems don't have to worry about that. No one is going to attack a robotic arm used for research in some basement somewhere. But if you're working on developing drones for the US military, you might do well to check if your system is secure. If you don't secure your system and it gets attacked, very bad things can happen:
 
@@ -66,12 +66,12 @@ Once you have identified assets and goals, the level of security you implement d
 
 |   Attacker    |                         Description                          | Skill and Resources |
 | :-----------: | :----------------------------------------------------------: | :-----------------: |
-|   Hobbyists   | These are people that will basically try to exploit your robot for "funsies", while not usually seeking any higher level objective. |          1          |
-|  Researchers  | Will try to break into the robot as a research exercise. Usually affiliated with Universities. You should pay attention to these guys, because they usually publish their findings. |          2          |
+|   Hobbyists   | These are people that will basically try to exploit your robot for "funsies", while not usually seeking any higher-level objective. |          1          |
+|  Researchers  | Will try to break into the robot as a research exercise. Usually affiliated with Universities. You should pay attention to these guys because they usually publish their findings. |          2          |
 | Professionals | These attackers have a financial incentive to exploit your device. They could be cyber criminals, security companies or even competitors that want to "lift the hood" of your product. |         2-4         |
-| State Actors  | These groups are sanctioned by states to carry out cyber warfare activities as part of strategic goals. These actors will go to great lengths to achieve their goals (read [Stuxnet](https://en.wikipedia.org/wiki/Stuxnet), [EternalBlue](https://en.wikipedia.org/wiki/EternalBlue), and [Flame](https://en.wikipedia.org/wiki/Flame_(malware))). Such groups constitute the bulk of what a are called Advanced Persistent Threats (APTs). MITRE keeps a [database of these entities](https://attack.mitre.org/groups/). |          5          |
+| State Actors  | These groups are sanctioned by states to carry out cyber warfare activities as part of strategic goals. These actors will go to great lengths to achieve their goals (read [Stuxnet](https://en.wikipedia.org/wiki/Stuxnet), [EternalBlue](https://en.wikipedia.org/wiki/EternalBlue), and [Flame](https://en.wikipedia.org/wiki/Flame_(malware))). Such groups constitute the bulk of what are called Advanced Persistent Threats (APTs). MITRE keeps a [database of these entities](https://attack.mitre.org/groups/). |          5          |
 
-IF you're interested in learning how systematic attackers approach their targets, Lockheed Martin has developed a very interesting concept called "The Cyber Kill Chain":
+If you're interested in learning how systematic attackers approach their targets, Lockheed Martin has developed a very interesting concept called "The Cyber Kill Chain":
 
 ![The Cyber Kill Chain](./assets/killchain.png)
 
@@ -101,7 +101,7 @@ The most common building block of cryptography is encryption. The broad idea beh
 
 In symmetric encryption, both the sender and the receiver use the same key. This method usually offers more safety and is easier to implement. Of course, you have to figure out a way to get both parties to use the key beforehand (you can try [DHKE](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange), but be aware this method doesn't safeguard against man-in-the-middle attacks). For manufactured devices, you might want to burn the keys into one-time-programmable memory, but be careful to check if your encryption method allows the reuse of keys.
 
-The old standard for symmetric encryption in the US was the Data Encryption Standard (DES). Many legacy systems still use this. There was an attempt at retro-compatibility with Triple DES, but the reality is that DES is just obsolete. Indeed, DES's key is only 56 bits long, which can be [cracked in a day](https://en.wikipedia.org/wiki/EFF_DES_cracker) by moderns computers. The current standard is the [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). This is what you should use in 99% of the cases where you're trying to implement symmetric encryption (consider Salsa20 and its kids for the other 1%). NIST has documented the AES in [FIPS 197](https://csrc.nist.gov/pubs/fips/197/final).
+The old standard for symmetric encryption in the US was the Data Encryption Standard (DES). Many legacy systems still use this. There was an attempt at retro-compatibility with Triple DES, but the reality is that DES is just obsolete. Indeed, DES's key is only 56 bits long, which can be [cracked in a day](https://en.wikipedia.org/wiki/EFF_DES_cracker) by modern computers. The current standard is the [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard). This is what you should use in 99% of the cases where you're trying to implement symmetric encryption (consider Salsa20 and its kids for the other 1%). NIST has documented the AES in [FIPS 197](https://csrc.nist.gov/pubs/fips/197/final).
 
 Asymmetric encryption does away with the problem of key sharing by working with different keys. The receiver creates a private-public key pair. The public key is, of course, public, meaning it is not kept hidden. Only the private key is kept hidden. Anyone wishing to address the receiver encrypts their message using the public key. The message can then only be decrypted by the receiver.
 
@@ -137,7 +137,7 @@ As with DES, there is a lot of legacy systems running on SHA-1, MD4, and MD5 has
 
 Encryption **does not** protect against tampering in general. It only protects secrecy. You can, however, use the tools provided to generate MACs, message authentication codes, that are used as a check by the receiver to ensure the message they are getting is legit, both in content (integrity) and in sender (authenticity). Common alternatives are based on hashing or on encryption:
 
-- Hash-based MAC (HMAC): you can run a combination of the message with it's encryption key through a hash function to generate an HMAC that an attacker can't replicate. Check out [RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104).
+- Hash-based MAC (HMAC): you can run a combination of the message with its encryption key through a hash function to generate an HMAC that an attacker can't replicate. Check out [RFC 2104](https://datatracker.ietf.org/doc/html/rfc2104).
 - Cipher-based MAC (CMAC): use a cipher such as AES in a specific way to get a MAC. Check out [RFC 4493](https://www.rfc-editor.org/rfc/rfc4493.html). You can also use asymmetric ciphers to sign messages, such as Elliptic-Curve Digital Signature Algorithm (ECDSA), found in [FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final).
 
 ### Key and Random Number Generation
@@ -164,7 +164,7 @@ While quantum computers may still be years away from widespread use, their poten
 
 ## Embedded Security
 
-The design of secure embedded systems is whole topic unto itself and beyond the scope of this article, but some general ideas can be shared here. Robots usually have an embedded device for brains built around a PCB, so it is useful to know some general principles abut their security.
+The design of secure embedded systems is a whole topic unto itself and beyond the scope of this article, but some general ideas can be shared here. Robots usually have an embedded device for brains built around a PCB, so it is useful to know some general principles abut their security.
 
 Again, many MCUs come with modules to accelerate cryptographic models. The previously mentioned Nordic nRF52840 offers support for RNG, AES, RSA, ECC, Hashing and more. Now, offering these capabilities in hardware is not trivial, and encryption hardware can sometimes fall under the scope of export control. As such, even products inside the same brand offer different capabilities. STM, for example, offers acceleration in some products of its "eval" line, but not in their "discovery" of "nucleo" lines. Remember: these capabilities are a function of the MCU, not the CPU, so just because an MCU uses Cortex M4 doesn't mean it will offer crypto support.
 
@@ -190,7 +190,7 @@ This [paper](https://ieeexplore.ieee.org/document/8836824) assessed that ROS 2 c
 
 Finally, there have been big pushes in recent years to move away from the C programming language. Even the [White House](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf) and several [US agencies](https://www.techradar.com/pro/us-government-wants-businesses-to-stop-using-c-and-c) have started asking developers to migrate from C and C++. All roboticists know that C is a major tool of the trade, with pretty much all embedded devices being programmed in that language. C++ is also very common, especially in production software and ROS packages. 
 
-Most of the concern about C and C++ regards their [memory safety](https://en.wikipedia.org/wiki/Memory_safety). Part of what makes these languages powerful and dangerous at the same time is how lax they are when letting programmers access memory. In C, for example, especially in embedded development, it is very common to work with memory addresses directly. Neither C nor C++ provide any memory safety guarantees.
+Most of the concern about C and C++ regards their [memory safety](https://en.wikipedia.org/wiki/Memory_safety). Part of what makes these languages powerful and dangerous at the same time is how lax they are when letting programmers access memory. In C, for example, especially in embedded development, it is very common to work with memory addresses directly. Neither C nor C++ provides any memory safety guarantees.
 
 These safety problems can result in runtime issues, such as reading garbage from the wrong memory location, dereferencing null pointers and dangling pointers. Some of these errors can also lead to very well-known exploits, such as buffer overflows. 
 
@@ -200,9 +200,9 @@ It is possible to offer a simplified explanation of buffer overflow [2]. When a 
 
 There are many ways to protect memory in C and C++. Some are possible in the language itself, such as always checking for bounds before accessing an array. Some are external tools, such as [static program analyzers](https://en.wikipedia.org/wiki/Static_program_analysis) that will raise flags if some memory safety constraints have been violated. Some are techniques, such as [canaries](https://en.wikipedia.org/wiki/Buffer_overflow_protection#Canaries) for stack checking, and those can even be implemented by tools such as [StackGuard](https://www.usenix.org/legacy/publications/library/proceedings/sec98/full_papers/cowan/cowan.pdf). And some safety assistance can even be performed by the CPU itself, such as the [ARM Cortex MPU](https://developer.arm.com/documentation/100166/0001/Memory-Protection-Unit/About-the-MPU).
 
-The US government has been pushing to replace C and C++ for memory safe languages, especially Rust. It is true that memory safety in Rust is opt-out, rather than the opt-in design of C/C++. But just because a language is memory safe, it doesn't mean their code is bug free. Javascript is memory safe and the Internet is full of bugs... 
+The US government has been pushing to replace C and C++ with memory-safe languages, especially Rust. It is true that memory safety in Rust is opt-out, rather than the opt-in design of C/C++. But just because a language is memory-safe, it doesn't mean its code is bug-free. Javascript is memory safe and the Internet is full of bugs... 
 
-Programmers make programs, not the language. Better than shy away from C and C++, which are the languages that absolutely dominate the robotics market, it is better to educate better programmers, who are aware of what the languages can and can't do.
+Programmers make programs, not the language. Better than shying away from C and C++, which are the languages that absolutely dominate the robotics market, it is better to educate better programmers, who are aware of what the languages can and can't do.
 
 ## Tools and Resources
 
