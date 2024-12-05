@@ -40,37 +40,18 @@ Below is the overall flow you would need to take in a robotics project. Click on
 ```mermaid
 flowchart TD;
     A[Define your goals and requirements] --> B[Choose a robot];
-    B --> C[Find out what peripheral hardware you need];
-    C --> D[Choose your language];
-    D --> E[Choose your communication method];
-    E --> F[Choose your simulation];
-    F --> G[Test and debug your robot];
-    G --> H[Demo day!];
+    B --> C[Choose your language];
+    C --> D[Choose your communication method];
+    D --> E[Choose your simulator];
+    E --> F[Test and debug your robot];
+    F --> G[Demo day!];
 
-    click A href "#define-your-goals-and-requirements"
-    click B href "#choose-a-robot"
-    click C href "#find-out-what-peripheral-hardware-you-need"
-    click D href "#choose-your-language"
-    click E href "#choose-your-communication-method"
-    click F href "#choose-your-simulation"
-    click G href "#test-and-debug-your-robot"
-    click H href "#demo-day"
-
+    click A href "/wiki/robotics-project-guide/define-your-goals-and-requirements/"
+    click B href "/wiki/robotics-project-guide/choose-a-robot/"
+    click C href "/wiki/robotics-project-guide/choose-a-language/"
+    click D href "/wiki/robotics-project-guide/choose-comm/"
+    click E href "/wiki/robotics-project-guide/choose-a-sim/"
 ```
 
-
-### Define your goals and requirements
-
-### Choose a robot
-
-### Find out what peripheral hardware you need
-
-### Choose your language
-
-### Choose your communication method
-
-### Choose your simulation
-
-### Test and debug your robot
-
-### Demo day
+<!-- click F href "/wiki/robotics-project-guide/test-and-debug/"
+click G href "/wiki/robotics-project-guide/demo-day/" -->
