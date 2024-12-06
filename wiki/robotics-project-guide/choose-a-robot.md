@@ -157,7 +157,7 @@ Compared to wheeled robots, quadrupeds are generally slower but more versatile i
 | **Programming Languages** | Supports Python and C++ via SDKs                                                     | Supports Python and C++ via SDKs                                                    | Supports Python and C++ via proprietary API                                    | Supports Python and C++                                               |
 | **Price**                 | Affordable; suitable for education and entry-level research                          | Moderate; suitable for education and entry-level research                                       | High; tailored for industrial applications                                      | Very High; designed for specialized and hazardous environments                   |
 
-When comparing quadruped robots like Unitree's Go1 EDU and Go2 EDU, Boston Dynamics' Spot, and ANYbotics' ANYmal, the Unitree models offer a compelling balance of customizability and affordability. The Go2 EDU, in particular, supports programming in Python and is compatible with ROS2, facilitating extensive customization and integration with various applications. In contrast, Boston Dynamics' Spot, while user-friendly and capable, relies on proprietary SDKs, which can limit advanced customization. ANYmal is designed for industrial applications and advanced research, offering robust API and SDK, but it comes at a higher price point. Regarding cost-effectiveness, the Unitree Go2 EDU is notably more affordable, starting at approximately $16,000, making it accessible for educational purposes and research. In comparison, Boston Dynamics' Spot is priced between $74,500 and $94,500, positioning it at a premium level.
+When comparing quadruped robots like Unitree's Go1 EDU and Go2 EDU, Boston Dynamics' Spot, and ANYbotics' ANYmal, the Unitree models offer a compelling balance of customizability and affordability. The Go2 EDU, in particular, supports programming in Python and is compatible with ROS2, facilitating extensive customization and integration with various applications. In contrast, Boston Dynamics' Spot, while user-friendly and capable, relies on proprietary SDKs, which can limit advanced customization. ANYmal is designed for industrial applications and advanced research, offering robust API and SDK, but it comes at a higher price point. Regarding cost-effectiveness, the Unitree Go2 EDU is notably more affordable, starting at approximately \$16,000, making it accessible for educational purposes and research. In comparison, Boston Dynamics' Spot is priced between $74,500 and $94,500, positioning it at a premium level.
 
 **Resources and Tutorials:**
 
@@ -238,7 +238,7 @@ Fixed manipulators are stationary robotic arms designed for tasks such as assemb
 
 **Popular Platforms:**
 
-![Manipulator Robots]()
+![Manipulator Robots](/assets/images/robotics_project_guide/manipulators_all.png)
 
 1. **Kinova Gen3 (7 DoF):**
    - **Degrees of Freedom:** 7
@@ -267,14 +267,14 @@ Fixed manipulators are stationary robotic arms designed for tasks such as assemb
    - **Applications:** Research, delicate assembly tasks
    - **Source:** [Franka Emika Panda Kinematics](https://petercorke.com/robotics/franka-emika-panda-kinematics-and-singularities/)
 
-4. **KUKA KR AGILUS:**
+4. **KUKA KR Agilus:**
    - **Degrees of Freedom:** 6
    - **Dimensions:** Reach of 706.7 mm
    - **Payload:** Up to 6 kg
    - **Weight:** Approximately 50 kg
    - **Features:** High-speed operation, compact design
    - **Applications:** Small parts assembly, material handling
-   - **Source:** [KUKA KR AGILUS](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)
+   - **Source:** [KUKA KR Agilus](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)
 
 5. **ABB IRB 1200:**
    - **Degrees of Freedom:** 6
@@ -299,21 +299,22 @@ Fixed manipulators are stationary robotic arms designed for tasks such as assemb
 **Resources and Tutorials:**
 
 - **Kinova Gen3:**
-  - [Kinova Kortex API Documentation](https://github.com/Kinovarobotics/kortex)
-  - [Kinova Gen3 User Guide](https://www.kinovarobotics.com/uploads/User-Guide-Gen3-R07.pdf)
+  - **[`Kinova Robotics` (GitHub)](https://github.com/kinovarobotics)**
+  - **[Kinova Gen3 Getting Started Guide](https://schulich.libguides.com/c.php?g=721065&p=5155225)**
+  - **[Kinova Gen3 User Guide (PDF Download)](https://artifactory.kinovaapps.com/ui/api/v1/download?repoKey=generic-public&path=Documentation%2FGen3%20lite%2FTechnical%20documentation%2FUser%20Guide%2FGen3_lite_USER_GUIDE_R03.pdf)**
 
 - **Universal Robots UR5e:**
-  - [UR Academy](https://www.universal-robots.com/academy/)
-  - [UR5e Technical Details](https://www.universal-robots.com/media/1802778/ur5e-32528_ur_technical_details_.pdf)
+  - **[UR Academy](https://www.universal-robots.com/academy/)**
+  - **[UR5e Technical Details](https://www.universal-robots.com/media/1802778/ur5e-32528_ur_technical_details_.pdf)**
 
 - **Franka Emika Panda:**
-  - [Franka Control Interface (FCI) Documentation](https://frankaemika.github.io/docs/)
-  - [Franka Emika Panda Kinematics and Singularities](https://petercorke.com/robotics/franka-emika-panda-kinematics-and-singularities/)
+  - **[Franka Control Interface (FCI) Documentation](https://frankaemika.github.io/docs/)**
+  - **[Franka Emika Panda Kinematics and Singularities](https://petercorke.com/robotics/franka-emika-panda-kinematics-and-singularities/)**
 
 - **KUKA KR AGILUS:**
-  - [KUKA Robotics Training](https://www.kuka.com/en-de/services/training)
-  - [KR AGILUS Product Page](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)
+  - **[`OpenKuka` (GitHub)](https://github.com/openkuka)**
+  - **[KR Agilus Product Page](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)**
 
 - **ABB IRB 1200:**
-  - [ABB Robotics Training](https://new.abb.com/service/abb-university/robotics)
-  - [IRB 1200 Product Page](https://new.abb.com/products/robotics/industrial-robots/irb-1200)
+  - **[ABB Robotics Training](https://new.abb.com/products/robotics/training)**
+  - **[IRB 1200 Product Page](https://new.abb.com/products/robotics/industrial-robots/irb-1200)**
