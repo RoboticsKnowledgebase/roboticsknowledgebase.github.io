@@ -120,6 +120,8 @@ wiki:
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: Setting Up the ZED Camera with ROS and troubleshooting steps
+        url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
   - title: Actuation
     url: /wiki/actuation/
     children:
