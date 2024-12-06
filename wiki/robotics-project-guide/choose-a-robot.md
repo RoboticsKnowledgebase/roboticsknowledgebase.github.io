@@ -10,6 +10,8 @@ mermaid: true
 Truly, there are so many robots that you can choose from to achieve your goal. Once you choose what platform you will be using for your project, it's now time to choose the specific platform. 
 Selecting the appropriate robotic platform is a critical step in your project. The decision should be guided by the robot's intended environment, tasks, and specific requirements such as language support.
 
+Click on ["Quadrotors"](#quadrotors), ["Quadrupeds"](#quadrupeds), ["Wheeled Robots"](#wheeled-robots), and ["Fixed Manipulators"](#fixed-manipulators) in the graph below to go to the section!
+
 ```mermaid
 graph TD;
     A[Start] --> B{What is the primary environment?};
@@ -30,8 +32,6 @@ graph TD;
     click J "#wheeled-robots"
     click L "#fixed-manipulators"
 ```
-
-Click on ["Quadrotors"](#quadrotors), ["Quadrupeds"](#quadrupeds), ["Wheeled Robots"](#wheeled-robots), and ["Fixed Manipulators"](#fixed-manipulators) in the graph above to go to the section!
 
 <!-- ==================================================================================== -->
 <!-- ==================================================================================== -->
