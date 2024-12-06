@@ -176,6 +176,8 @@ wiki:
         url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
       - title: Comprehensive guide to albumentations
         url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
+      - title: Kornia technical guide
+        url: /wiki/machine-learning/kornia-technical-guide.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
