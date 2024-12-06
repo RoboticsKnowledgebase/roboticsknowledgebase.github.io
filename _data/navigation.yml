@@ -124,6 +124,8 @@ wiki:
         url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
       - title: Neural Depth Sensing in ZED Stereo Cameras
         url: /wiki/sensing/neural-depth-sensing-in-zed.md
+      - title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
+        url: /wiki/sensing/accelerating_point_cloud_processing_with_cuda_pcl.md
   - title: Actuation
     url: /wiki/actuation/
     children:
