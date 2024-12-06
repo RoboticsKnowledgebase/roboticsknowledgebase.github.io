@@ -191,6 +191,8 @@ wiki:
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+      - title: Complete Guide to Installing ORB SLAM3
+        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide.md
   - title: Programming
     url:  /wiki/programming/
     children:
