@@ -172,6 +172,8 @@ wiki:
         url: /wiki/machine-learning/6d_pose_tracking_yolo_zed.md
       - title: Practical Guide to Model Quantization and TensorRT Optimization
         url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
+      - title: Installing YOLO on ARM Architecture Devices
+        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
