@@ -122,6 +122,8 @@ wiki:
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
       - title: Setting Up the ZED Camera with ROS and troubleshooting steps
         url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
+      - title: Neural Depth Sensing in ZED Stereo Cameras
+        url: /wiki/sensing/neural-depth-sensing-in-zed.md
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -164,6 +166,10 @@ wiki:
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
       - title: NLP for robotics
         url: /wiki/machine-learning/nlp_for_robotics.md/
+      - title: 6D Pose Estimation with YOLO and ZED
+        url: /wiki/machine-learning/6d_pose_tracking_yolo_zed.md
+      - title: Practical Guide to Model Quantization and TensorRT Optimization
+        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
