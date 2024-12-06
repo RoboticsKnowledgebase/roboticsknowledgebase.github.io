@@ -1,4 +1,4 @@
-# Kornia: Advanced Computer Vision with PyTorch - A Theoretical and Practical Guide
+# Kornia technical guide
 
 ## Introduction to Differentiable Computer Vision
 
