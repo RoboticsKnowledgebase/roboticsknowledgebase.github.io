@@ -125,6 +125,56 @@ Agilicious
 
 # Quadrupeds
 
+Quadrupeds are agile, legged robots designed for tasks requiring rough terrain navigation, balance, and adaptability. Unlike wheeled or tracked robots, quadrupeds can traverse uneven surfaces, climb stairs, and recover from falls, making them ideal for search-and-rescue operations, construction sites, and even entertainment.
+
+Quadrupeds excel in dynamic environments, offering unparalleled mobility and flexibility. Advanced control algorithms and robust mechanical designs enable them to adapt their gait and posture, ensuring stability in challenging conditions. This adaptability extends to various payload configurations, with some models capable of carrying heavy loads for extended missions.
+
+Compared to wheeled robots, quadrupeds are generally slower but more versatile in unstructured settings. They are often equipped with sophisticated sensors like LiDAR, cameras, and IMUs, making them suitable for tasks like mapping, surveillance, and object manipulation. However, their mechanical complexity and reliance on advanced algorithms often result in higher costs and maintenance requirements. Additionally, their power consumption can be significant, limiting operational time unless supported by advanced battery technologies or external power sources.
+
+**Popular Platforms:**
+
+![Quadruped Platforms](/assets/images/robotics_project_guide/quadrupeds_all.png)
+
+1. **Unitree Robots:**
+   - **Unitree Go1 EDU:** A compact and affordable quadruped ideal for education and research, offering advanced locomotion capabilities and ROS support. [Unitree Go1](https://www.unitree.com/products/go1)
+   - **Unitree Go2 EDU:** A next-generation quadruped with improved sensors and enhanced computing capabilities, suitable for advanced applications in navigation and manipulation. [Unitree Go2](https://www.unitree.com/products/go2)
+
+2. **Boston Dynamics:**
+   - **Spot:** A highly capable quadruped designed for industrial applications, with a robust build and advanced autonomy features for inspection and data collection. [Boston Dynamics Spot](https://www.bostondynamics.com/products/spot)
+
+3. **ANYbotics:**
+   - **ANYmal:** A versatile and rugged quadruped for industrial inspection, capable of carrying heavy payloads and operating in hazardous environments. [ANYmal](https://www.anybotics.com/anymal/)
+
+**Comparison Table:**
+
+| Feature                   | Unitree Go1 EDU                                                                          | Unitree Go2 EDU                                                                          | Boston Dynamics Spot                                                           | ANYmal                                                                            |
+|---------------------------|---------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| **Payload Capacity**      | Up to 6 kg (MAX ~10kg)                                                                           | Up to 8 kg (MAX ~12kg)                                                                         | Up to 14 kg                                                                    | Up to 65 kg (unconfirmed)                                                                       |
+| **Maximum Speed**         | 3.7 m/s                                                                              | 3.7 m/s                                                                             | 1.6 m/s                                                                        | 1.3 m/s                                                                           |
+| **Battery Life**          | Up to 1.5 hours                                                                      | 2 - 4 hours                                                                       | Up to 1.5 hours                                                                | Up to 2.5 hours                                                                   |
+| **Terrain Adaptability**  | High; supports unstructured terrain with agile movements                              | High; enhanced agility and sensor-based navigation                                 | Very High; excels in industrial settings                                       | Extremely High; designed for hazardous and rugged environments                   |
+| **ROS Support**           | ROS (Partial support), ROS2 (Full support with with SDK features)                    | ROS2; Full support with SDK features                                          | ROS2; Partial support with proprietary wrapper for API access                            | (Cannot find information)                |
+| **Programming Languages** | Supports Python and C++ via SDKs                                                     | Supports Python and C++ via SDKs                                                    | Supports Python and C++ via proprietary API                                    | Supports Python and C++                                               |
+| **Price**                 | Affordable; suitable for education and entry-level research                          | Moderate; suitable for education and entry-level research                                       | High; tailored for industrial applications                                      | Very High; designed for specialized and hazardous environments                   |
+
+When comparing quadruped robots like Unitree's Go1 EDU and Go2 EDU, Boston Dynamics' Spot, and ANYbotics' ANYmal, the Unitree models offer a compelling balance of customizability and affordability. The Go2 EDU, in particular, supports programming in Python and is compatible with ROS2, facilitating extensive customization and integration with various applications. In contrast, Boston Dynamics' Spot, while user-friendly and capable, relies on proprietary SDKs, which can limit advanced customization. ANYmal is designed for industrial applications and advanced research, offering robust API and SDK, but it comes at a higher price point. Regarding cost-effectiveness, the Unitree Go2 EDU is notably more affordable, starting at approximately $16,000, making it accessible for educational purposes and research. In comparison, Boston Dynamics' Spot is priced between $74,500 and $94,500, positioning it at a premium level.
+
+**Resources and Tutorials:**
+
+Unitree:
+- **[Unitree SDK Documentation](https://support.unitree.com/home/en/developer)**: includes everything you need for all Unitree robots, including Go1 and Go2.
+- **[`Unitree Robotics` (GitHub)](https://github.com/unitreerobotics)**: this site includes various GitHub repositories developed by Unitree engineers. It's quite amazing.
+- **[ROS - Go1 Documentation](https://docs.trossenrobotics.com/unitree_go1_docs/getting_started/ros.html)**
+
+Boston Dynamics:
+- **[`spot_ros2` (GitHub)](https://github.com/bdaiinstitute/spot_ros2)**: official ROS2 support
+- **[`SPOT_ROS` (GitHub)](https://github.com/heuristicus/spot_ros)**: unofficial(?) ROS support
+- **[Spot SDK Documentation](https://dev.bostondynamics.com/)**: includes Python and C++ information
+
+ANYbotics:
+- **[Get Started with ANYmal](https://www.anybotics.com/get-started/)**
+- **[ANYmal Technical Specifications](https://www.anybotics.com/anymal-technical-specifications.pdf)**
+- **[ANYmal API and SDK](https://developer.siemens.com/anybotics/overview.html)**
 
 <!-- ==================================================================================== -->
 <!-- ==================================================================================== -->
@@ -184,5 +234,86 @@ These resources provide step-by-step instructions and examples to help users eff
 
 # Fixed Manipulators
 
+Fixed manipulators are stationary robotic arms designed for tasks such as assembly, material handling, and precision operations. Their fixed base provides stability, allowing for high repeatability and accuracy in controlled environments like manufacturing lines and research labs.
 
+**Popular Platforms:**
 
+![Manipulator Robots]()
+
+1. **Kinova Gen3 (7 DoF):**
+   - **Degrees of Freedom:** 7
+   - **Dimensions:** Maximum reach of 902 mm
+   - **Payload:** Up to 4 kg
+   - **Weight:** 8.2 kg
+   - **Features:** Ultra-lightweight design, integrated 2D/3D vision module, ROS compatibility
+   - **Applications:** Research, light industrial tasks
+   - **Source:** [Kinova Gen3 Robots](https://www.kinovarobotics.com/product/gen3-robots)
+
+2. **Universal Robots UR5e:**
+   - **Degrees of Freedom:** 6
+   - **Dimensions:** Reach of 850 mm
+   - **Payload:** Up to 5 kg
+   - **Weight:** 20.6 kg
+   - **Features:** Collaborative capabilities, easy programming, versatile deployment
+   - **Applications:** Medium-duty tasks, automation
+   - **Source:** [UR5e Lightweight, Versatile Cobot](https://www.universal-robots.com/products/ur5-robot/)
+
+3. **Franka Emika Panda:**
+   - **Degrees of Freedom:** 7
+   - **Dimensions:** Reach of 855 mm
+   - **Payload:** Up to 3 kg
+   - **Weight:** 18 kg
+   - **Features:** High sensitivity, user-friendly interface, ROS integration
+   - **Applications:** Research, delicate assembly tasks
+   - **Source:** [Franka Emika Panda Kinematics](https://petercorke.com/robotics/franka-emika-panda-kinematics-and-singularities/)
+
+4. **KUKA KR AGILUS:**
+   - **Degrees of Freedom:** 6
+   - **Dimensions:** Reach of 706.7 mm
+   - **Payload:** Up to 6 kg
+   - **Weight:** Approximately 50 kg
+   - **Features:** High-speed operation, compact design
+   - **Applications:** Small parts assembly, material handling
+   - **Source:** [KUKA KR AGILUS](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)
+
+5. **ABB IRB 1200:**
+   - **Degrees of Freedom:** 6
+   - **Dimensions:** Reach of 901 mm
+   - **Payload:** Up to 7 kg
+   - **Weight:** 52 kg
+   - **Features:** Compact footprint, versatile mounting options
+   - **Applications:** Material handling, machine tending
+   - **Source:** [ABB IRB 1200](https://new.abb.com/products/robotics/industrial-robots/irb-1200)
+
+**Comparison Table:**
+
+| Feature                 | Kinova Gen3 (7 DoF) | UR5e                  | Franka Emika Panda | KUKA KR AGILUS | ABB IRB 1200 |
+|-------------------------|---------------------|-----------------------|--------------------|----------------|--------------|
+| **Degrees of Freedom**  | 7                   | 6                     | 7                  | 6              | 6            |
+| **Reach**               | 902 mm              | 850 mm                | 855 mm             | 706.7 mm       | 901 mm       |
+| **Payload Capacity**    | 4 kg                | 5 kg                  | 3 kg               | 6 kg           | 7 kg         |
+| **Weight**              | 8.2 kg              | 20.6 kg               | 18 kg              | ~50 kg         | 52 kg        |
+| **Key Features**        | Lightweight, integrated vision, ROS support | Collaborative, easy programming | Sensitive, user-friendly, ROS integration | High-speed, compact | Compact, versatile mounting |
+| **Typical Applications**| Research, light industrial tasks | Medium-duty automation | Research, delicate assembly | Small parts assembly, material handling | Material handling, machine tending |
+
+**Resources and Tutorials:**
+
+- **Kinova Gen3:**
+  - [Kinova Kortex API Documentation](https://github.com/Kinovarobotics/kortex)
+  - [Kinova Gen3 User Guide](https://www.kinovarobotics.com/uploads/User-Guide-Gen3-R07.pdf)
+
+- **Universal Robots UR5e:**
+  - [UR Academy](https://www.universal-robots.com/academy/)
+  - [UR5e Technical Details](https://www.universal-robots.com/media/1802778/ur5e-32528_ur_technical_details_.pdf)
+
+- **Franka Emika Panda:**
+  - [Franka Control Interface (FCI) Documentation](https://frankaemika.github.io/docs/)
+  - [Franka Emika Panda Kinematics and Singularities](https://petercorke.com/robotics/franka-emika-panda-kinematics-and-singularities/)
+
+- **KUKA KR AGILUS:**
+  - [KUKA Robotics Training](https://www.kuka.com/en-de/services/training)
+  - [KR AGILUS Product Page](https://www.kuka.com/en-de/products/robot-systems/industrial-robots/kr-agilus)
+
+- **ABB IRB 1200:**
+  - [ABB Robotics Training](https://new.abb.com/service/abb-university/robotics)
+  - [IRB 1200 Product Page](https://new.abb.com/products/robotics/industrial-robots/irb-1200)
