@@ -178,8 +178,10 @@ wiki:
         url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
       - title: Kornia technical guide
         url: /wiki/machine-learning/kornia-technical-guide.md
-        - title: Integrating OLLAMA LLMs with Franka Arm
+      - title: Integrating OLLAMA LLMs with Franka Arm
         url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
+      - title: Multi-task learning A starter guide
+        url: /wiki/machine-learning/multitask-learning-starter.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
