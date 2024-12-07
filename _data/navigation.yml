@@ -182,6 +182,8 @@ wiki:
         url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
       - title: Multi-task learning A starter guide
         url: /wiki/machine-learning/multitask-learning-starter.md
+      - title: Understanding Kalman Filters and Visual Tracking
+        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
