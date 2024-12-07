@@ -255,6 +255,8 @@ wiki:
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
         url: /wiki/interfacing/ros1_ros2_bridge/
+      - title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for visualization
+        url: /wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization.md
   - title: Computing
     url: /wiki/computing/
     children:
