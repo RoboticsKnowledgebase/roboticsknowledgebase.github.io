@@ -184,6 +184,8 @@ wiki:
         url: /wiki/machine-learning/multitask-learning-starter.md
       - title: Understanding Kalman Filters and Visual Tracking
         url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
+      - title: Knowledge Distillation practical implementation guide
+        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
