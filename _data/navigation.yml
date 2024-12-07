@@ -188,6 +188,8 @@ wiki:
         url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
       - title: Neural Network optimization using model pruning
         url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
+      - title: Deep learning techniques for 3D datasets
+        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
