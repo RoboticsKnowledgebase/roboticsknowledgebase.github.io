@@ -190,6 +190,8 @@ wiki:
         url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
       - title: Deep learning techniques for 3D datasets
         url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
+      - title: Optical Flow - Classical to Deep Learning Implementation
+        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
