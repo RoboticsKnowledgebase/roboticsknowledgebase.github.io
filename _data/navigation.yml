@@ -186,6 +186,8 @@ wiki:
         url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
       - title: Knowledge Distillation practical implementation guide
         url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
+      - title: Neural Network optimization using model pruning
+        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
