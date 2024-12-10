@@ -29,6 +29,93 @@ void loop() {
 ```
 
 
+## Push Button
+
+A push button is a simple input device that completes an electrical circuit when pressed. It is commonly used to trigger events or control devices in Arduino projects. When the button is pressed, it allows current to flow, sending a signal to the Arduino. When released, the circuit is open, and no signal is sent. Pull-down or pull-up resistors are often used to ensure the circuit has a defined state (HIGH or LOW) when the button is not pressed. To connect a push button to an Arduino, attach one leg of the button to a digital input pin and the other to the ground. Additionally, use a pull-up resistor or enable the Arduino's internal pull-up resistor to stabilize the input state.
+
+A simple wiring setup for a push button can be seen below along with a code snippet. The code will cause the serial monitor to print "Button Pressed" when the button is pressed, and print "Not Pressed" when the button is not pressed.
+
+```
+const int buttonPin = 2;  // the number of the pushbutton pin
+
+// variables will change:
+int buttonState = 0;  // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonPin, INPUT);
+  Serial.begin(9600); // Start serial communication
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+	Serial.println("Button Pressed):
+} else {
+    Serial.println("Not Pressed):
+  }
+}
+```
+
+Note: When a push button is pressed, it may generate multiple rapid on/off signals due to the mechanical nature of the button. This is known as "bouncing" and can cause unexpected behavior in your circuit. To address this, you can use a small delay in your code or implement software debouncing techniques. You can read more about debouncing at the link in the "Further Reading" section below
+
+## Potentiometers
+
+A potentiometer is a variable resistor that allows you to adjust resistance by turning a knob or sliding a lever. It is commonly used as an input device for controlling brightness, volume, or speed in Arduino projects. A potentiometer has three terminals: two outer terminals connected to a fixed resistor and one middle terminal (the wiper) that moves along the resistor as you adjust the knob. By reading the voltage at the wiper, the Arduino can determine the position of the potentiometer.To wire a potentiometer, onnect one outer terminal to 5V on the Arduino and the other outer terminal to GND. Connect the middle terminal (wiper) to an analog input pin, such as A0. This setup allows the Arduino to read a voltage that corresponds to the potentiometer's position.
+
+An image of a simple wiring for a potentiometer can be seen below along with a code snippet. To read a potentiometer you will need to use an analog pin and the analogRead() Arduino function. 
+
+Note: A useful function when dealing with analog signals is the map() function. More can be found about this function in the "Further Reading section.
+
+```
+const int potPin = A0; // Pin connected to the potentiometer
+
+void setup() {
+  Serial.begin(9600); // Start serial communication
+}
+
+void loop() {
+  int potValue = analogRead(potPin); // Read potentiometer value (0-1023)
+  Serial.println(potValue);         // Print value to serial monitor
+  delay(100);                       // Delay for readability
+}
+```
+
+## Buzzers
+
+A buzzer is a simple electronic component that generates sound when powered, often used in Arduino projects for audible feedback, alarms, or notifications. There are two main types of buzzers: active and passive. An active buzzer generates sound when supplied with power and does not require any signal control, making it straightforward to use. A passive buzzer, on the other hand, requires a signal (such as a PWM signal) to produce sound, allowing for the creation of different tones.
+
+Buzzers work by converting electrical energy into sound through the vibration of a piezoelectric diaphragm. The frequency of the signal determines the tone of the sound produced. To wire a buzzer, connect the positive terminal to a digital output pin on the Arduino and the negative terminal to the ground (GND). For an active buzzer, you can simply turn it on and off using digital signals. For example, you can alternate between HIGH and LOW states to create a beep. A passive buzzer can generate tones of varying frequencies using the Arduino's tone() function.
+
+Buzzers are versatile components with applications in security systems, timers, notification systems, and user interfaces where audible feedback is needed. They provide an effective way to communicate events, warnings, or statuses in a project.
+
+The wiring for a simple piezo buzzer can be seen below alogn with a code snippet. The code will cause the buzzer to continuously start and stop buzzing.
+
+```
+const int buzzer = 9; //buzzer to arduino pin 9
+
+void setup(){
+  pinMode(buzzer, OUTPUT); // Set buzzer - pin 9 as an output
+}
+
+void loop(){
+  tone(buzzer, 1000); // Send 1KHz sound signal...
+  delay(1000);        // ...for 1 sec
+  noTone(buzzer);     // Stop sound...
+  delay(1000);        // ...for 1sec
+}
+```
+
+## Servo Motors
+
+A servo motor is a rotary actuator that allows precise control of angular position, speed, and torque. It is widely used in robotics and Arduino projects due to its compact size and ability to move to a specific position within a range. Servo motors are ideal for tasks that require controlled movements, such as steering mechanisms, robotic arms, or pan-tilt camera systems.
+
+Servo motors typically have three wires: a power wire (usually red), a ground wire (usually black or brown), and a signal wire (often yellow, orange, or white). The power and ground wires connect to the Arduino’s 5V and GND pins, respectively, while the signal wire connects to a digital output pin. The signal wire receives pulse-width modulation (PWM) signals from the Arduino, which dictate the servo's angle of rotation. Most standard servo motors have a range of motion from 0 to 180 degrees.
+
+Using the Arduino Servo library simplifies the control of servo motors. For example, you can set the angle of the motor by sending a specific value through the write() function.
 
 
 This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
