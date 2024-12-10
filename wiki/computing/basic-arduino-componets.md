@@ -1,5 +1,5 @@
 ---
-date: 2024-12-07
+date: {}
 title: Basic Arduino Components
 ---
 
@@ -10,6 +10,8 @@ Arduino is a widely used platform in robotics and electronics due to its ease of
 An LED (Light Emitting Diode) is one of the simplest and most commonly used components in Arduino projects. LEDs provide visual feedback and are often used as indicators for status, power, or signals. LEDs work by emitting light when an electric current flows through them in the correct direction. They require a resistor in series to prevent excessive current, which could damage the LED. To wire an LED to an Arduino, connect the long leg (anode) of the LED to a digital pin on the Arduino. The short leg (cathode) should be connected to the ground through a resistor, typically 220 ohms, to limit the current.
 
 A simple wiring setup for an LED can be seen below along with a code snippet. The code will cause the LED to blink on and off. 
+
+![LED Wiring Diagram](assets/led_wiring.png)
 
 ```
 // the setup function runs once when you press reset or power the board
@@ -117,74 +119,71 @@ Servo motors typically have three wires: a power wire (usually red), a ground wi
 
 Using the Arduino Servo library simplifies the control of servo motors. For example, you can set the angle of the motor by sending a specific value through the write() function.
 
+A simple wiring of a servo motor setup can be seen below. A code snippet is also below, and this snippet causes the servo motor to rotate back adn forth.
 
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
-
-This section covers the basic syntax and some rules of thumb for writing.
-
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
-
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
-
-
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
-
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
-
-Larger chunks of code should use this format:
 ```
-def recover_msg(msg):
+#include <Servo.h>
 
-        // Good coders comment their code for others.
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
 
-        pw = ProtocolWrapper()
+int pos = 0;    // variable to store the servo position
 
-        // Explanation.
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
 
-        if rec_crc != calc_crc:
-            return None
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
 ```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
+## Stepper Motors
+
+A stepper motor is a type of DC motor that divides a full rotation into a series of discrete steps, making it ideal for applications requiring precise control of angular or linear position, speed, and acceleration. Unlike servo motors, stepper motors are not limited to a specific range of motion and can rotate continuously in precise increments. This makes them widely used in CNC machines, 3D printers, robotic arms, and other Arduino-based projects.
+
+Stepper motors have multiple coils organized in phases, and the motor is driven by energizing these coils in a specific sequence. Most stepper motors have four or more wires that are connected to a motor driver, such as the A4988 or ULN2003, which interfaces with the Arduino. The motor driver controls the sequence of energizing the coils based on signals sent from the Arduino, allowing for smooth and precise movement.
+
+To use a stepper motor with an Arduino, the Stepper library simplifies the process. Stepper motors vary, so their wiring can vary based off the motor driver they require.The 28BYJ-48 4-Phase Stepper Motor is the simplest stepper motor that comes with Arduino beginner kits, and its wiring is shown in the diagram belwo along with a code snippet that rotates the motor clockwise and counter-clockwise at varying speeds. 
+
+```
+`//Includes the Arduino Stepper Library
+#include <Stepper.h>
+
+// Defines the number of steps per rotation
+const int stepsPerRevolution = 2038;
+
+// Creates an instance of stepper class
+// Pins entered in sequence IN1-IN3-IN2-IN4 for proper step sequence
+Stepper myStepper = Stepper(stepsPerRevolution, 8, 10, 9, 11);
+
+void setup() {
+    // Nothing to do (Stepper Library sets pins as outputs)
+}
+
+void loop() {
+	// Rotate CW slowly at 5 RPM
+	myStepper.setSpeed(5);
+	myStepper.step(stepsPerRevolution);
+	delay(1000);
+	
+	// Rotate CCW quickly at 10 RPM
+	myStepper.setSpeed(10);
+	myStepper.step(-stepsPerRevolution);
+	delay(1000);
+}`
+```
+
+
+
 
 #### Images and Video
 Images and embedded video are supported.
