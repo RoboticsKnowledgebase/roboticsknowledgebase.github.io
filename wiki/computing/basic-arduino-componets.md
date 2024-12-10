@@ -30,6 +30,7 @@ void loop() {
 
 ```
 
+https://docs.arduino.cc/built-in-examples/basics/Blink/: This official Arduino tutorial provides a step-by-step guide to creating a simple blinking LED circuit. It covers the basic wiring and programming needed to control an LED, making it an excellent resource for beginners starting with Arduino. It provides a more thorough discussion of this wiki on using LEDs with Arduino. 
 
 ## Push Button
 
@@ -65,15 +66,16 @@ void loop() {
 }
 ```
 
-Note: When a push button is pressed, it may generate multiple rapid on/off signals due to the mechanical nature of the button. This is known as "bouncing" and can cause unexpected behavior in your circuit. To address this, you can use a small delay in your code or implement software debouncing techniques. You can read more about debouncing at the link in the "Further Reading" section below
+Note: When a push button is pressed, it may generate multiple rapid on/off signals due to the mechanical nature of the button. This is known as "bouncing" and can cause unexpected behavior in your circuit. To address this, you can use a small delay in your code or implement software debouncing techniques. You can read more about debouncing at this link: https://docs.arduino.cc/built-in-examples/digital/Debounce/
+
+https://docs.arduino.cc/built-in-examples/digital/Button/ : This link provides a more thorough overview of pushbuttons in Arduino and can be used to help clarify information about Arduino pushbuttons. The link also discusses the wiring and reading the signals at a more detailed level. 
 
 ## Potentiometers
 
 A potentiometer is a variable resistor that allows you to adjust resistance by turning a knob or sliding a lever. It is commonly used as an input device for controlling brightness, volume, or speed in Arduino projects. A potentiometer has three terminals: two outer terminals connected to a fixed resistor and one middle terminal (the wiper) that moves along the resistor as you adjust the knob. By reading the voltage at the wiper, the Arduino can determine the position of the potentiometer.To wire a potentiometer, onnect one outer terminal to 5V on the Arduino and the other outer terminal to GND. Connect the middle terminal (wiper) to an analog input pin, such as A0. This setup allows the Arduino to read a voltage that corresponds to the potentiometer's position.
 
 An image of a simple wiring for a potentiometer can be seen below along with a code snippet. To read a potentiometer you will need to use an analog pin and the analogRead() Arduino function. 
-
-Note: A useful function when dealing with analog signals is the map() function. More can be found about this function in the "Further Reading section.
+.
 
 ![Potentiometer Wiring Diagram](assets/potentiometer_wiring.png)
 
@@ -91,6 +93,14 @@ void loop() {
   delay(100);                       // Delay for readability
 }
 ```
+
+
+https://docs.arduino.cc/learn/electronics/potentiometer-basics/ : This resource provies a more detaild discussion of potentiometers to clarify any unaddressed points in this article.
+
+https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/ : This link details the analogRead() function in Arduino. This is a very important functin that is required fo rhte analog Arduion pins. It is useful to understand for all Arduino analgo inputs. 
+
+https://docs.arduino.cc/language-reference/en/functions/math/map/ : A useful function when dealing with analog signals is the map() function. This link details the map function. The function can be used in many ways to connect the inputs/ouptus of different signals to one another, and it is a necessary function to understand when starting Arduion projects. 
+
 
 ## Buzzers
 
@@ -119,6 +129,10 @@ void loop(){
   delay(1000);        // ...for 1sec
 }
 ```
+
+https://sensorkit.arduino.cc/sensorkit/module/lessons/lesson/04-the-buzzer : This resource is very useful to understand the fundametals of buzzers in Arduino. It explains how buzzeres work, different types of buzzers and potential issues.
+
+https://www.ardumotive.com/how-to-use-a-buzzer-en.html : This link is very effective in outlining how to implement a buzzer. It provides more information than in this section and also includes a video that better details Arduino buzzer implementation. 
 
 ## Servo Motors
 
@@ -157,6 +171,12 @@ void loop() {
   }
 }
 ```
+
+https://docs.arduino.cc/tutorials/generic/basic-servo-control/ : This link provide s avery basic understanding of servo control in case you think more information is required. 
+
+https://docs.arduino.cc/learn/electronics/servo-motors/ : This is a very useful resource that expands on the basics of servo motors. This link shows how a potentiometer can be connected to a servo motor to control the rotor's position. This would be a very useful project to implement after learning about potentiometers and servos
+
+https://docs.arduino.cc/libraries/servo/ : This link discusses the servo library. This is a fundamental library used when using servo motors in Arduino. 
 
 ## Stepper Motors
 
@@ -197,16 +217,21 @@ void loop() {
 }`
 ```
 
+https://docs.arduino.cc/learn/electronics/stepper-motors/ : This link is very useful for learning about stepper motor implementation with Arduino and greatly expands upon this section. This link also provides code for different ways to control a stepper motor with Arduino.
+
+https://howtomechatronics.com/tutorials/arduino/stepper-motors-and-arduino-the-ultimate-guide/ : This is an amazing resource to understand how stepper motors work physically. This link is also extrmely useful at showing some common stepper motors that can be used with Arduino. 
+
+https://docs.arduino.cc/libraries/stepper/ : This is a link to the stepper motor library. It is a fundamental library for stepper motor control. 
 
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+This page provides an introduction to essential Arduino components, including LEDs, push buttons, potentiometers, buzzers, servo motors, and stepper motors. Each section explains how the component works, how to wire it to an Arduino, and includes example code to demonstrate its use. These components form the foundation of many robotics and electronics projects, offering a range of functionalities from input and output to precise motor control. Links to detailed tutorials and resources are provided throughout the guide to expand on each topic, making this a comprehensive starting point for anyone working with Arduino.
 
 ## See Also:
 - https://roboticsknowledgebase.com/wiki/computing/arduino/
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+- I strongly recommend the book in the references. It provided the inspiration for this page.
 
 ## References
 Arduino Project Handbook by Mark Geddes https://www.amazon.com/Arduino-Project-Handbook-Practical-Projects/dp/1593276907
