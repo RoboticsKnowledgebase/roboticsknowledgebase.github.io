@@ -199,34 +199,15 @@ void loop() {
 
 
 
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
 ## Summary
 Use this space to reinforce key points and to suggest next steps for your readers.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+- https://roboticsknowledgebase.com/wiki/computing/arduino/
 
 ## Further Reading
 - Links to articles of interest outside the Wiki (that are not references) go here.
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+Arduino Project Handbook by Mark Geddes https://www.amazon.com/Arduino-Project-Handbook-Practical-Projects/dp/1593276907
 
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
