@@ -3,7 +3,32 @@ date: 2024-12-07
 title: Basic Arduino Components
 ---
 
-Arduino is a powerful microcontroller that is most effective
+Arduino is a widely used platform in robotics and electronics due to its ease of use, affordability, and the wide variety of compatible components. Whether you're building a simple circuit or a complex robot, understanding how to use basic components like LEDs, push buttons, potentiometers, buzzers, servos, and stepper motors is essential. This guide will cover these fundamental Arduino components, explain their functionality, and provide simple examples to get you started to where you can incorporate them in to future robotic projects.
+
+## LEDs
+
+An LED (Light Emitting Diode) is one of the simplest and most commonly used components in Arduino projects. LEDs provide visual feedback and are often used as indicators for status, power, or signals. LEDs work by emitting light when an electric current flows through them in the correct direction. They require a resistor in series to prevent excessive current, which could damage the LED. To wire an LED to an Arduino, connect the long leg (anode) of the LED to a digital pin on the Arduino. The short leg (cathode) should be connected to the ground through a resistor, typically 220 ohms, to limit the current.
+
+A simple wiring setup for an LED can be seen below along with a code snippet. The code will cause the LED to blink on and off. 
+
+```
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(1000);                      // wait for a second
+}
+
+```
+
+
 
 
 This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
