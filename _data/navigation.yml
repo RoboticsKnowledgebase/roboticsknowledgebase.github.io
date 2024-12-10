@@ -252,6 +252,8 @@ wiki:
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Basic Arduino Components
+        url: /wiki/basic-arduino-components
   - title: Fabrication
     url: /wiki/fabrication/
     children:
