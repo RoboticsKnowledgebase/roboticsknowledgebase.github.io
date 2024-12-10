@@ -37,6 +37,9 @@ A push button is a simple input device that completes an electrical circuit when
 
 A simple wiring setup for a push button can be seen below along with a code snippet. The code will cause the serial monitor to print "Button Pressed" when the button is pressed, and print "Not Pressed" when the button is not pressed.
 
+![Push Button Diagram](assets/push_button.png)
+
+
 ```
 const int buttonPin = 2;  // the number of the pushbutton pin
 
@@ -72,6 +75,9 @@ An image of a simple wiring for a potentiometer can be seen below along with a c
 
 Note: A useful function when dealing with analog signals is the map() function. More can be found about this function in the "Further Reading section.
 
+![Potentiometer Wiring Diagram](assets/potentiometer_wiring.png)
+
+
 ```
 const int potPin = A0; // Pin connected to the potentiometer
 
@@ -95,6 +101,9 @@ Buzzers work by converting electrical energy into sound through the vibration of
 Buzzers are versatile components with applications in security systems, timers, notification systems, and user interfaces where audible feedback is needed. They provide an effective way to communicate events, warnings, or statuses in a project.
 
 The wiring for a simple piezo buzzer can be seen below alogn with a code snippet. The code will cause the buzzer to continuously start and stop buzzing.
+
+![Buzzer Wiring Diagram](assets/buzzer_wiring.png)
+
 
 ```
 const int buzzer = 9; //buzzer to arduino pin 9
@@ -120,6 +129,9 @@ Servo motors typically have three wires: a power wire (usually red), a ground wi
 Using the Arduino Servo library simplifies the control of servo motors. For example, you can set the angle of the motor by sending a specific value through the write() function.
 
 A simple wiring of a servo motor setup can be seen below. A code snippet is also below, and this snippet causes the servo motor to rotate back adn forth.
+
+![Servo Wiring Diagram](assets/servo_wiring.png)
+
 
 ```
 #include <Servo.h>
@@ -153,6 +165,9 @@ A stepper motor is a type of DC motor that divides a full rotation into a series
 Stepper motors have multiple coils organized in phases, and the motor is driven by energizing these coils in a specific sequence. Most stepper motors have four or more wires that are connected to a motor driver, such as the A4988 or ULN2003, which interfaces with the Arduino. The motor driver controls the sequence of energizing the coils based on signals sent from the Arduino, allowing for smooth and precise movement.
 
 To use a stepper motor with an Arduino, the Stepper library simplifies the process. Stepper motors vary, so their wiring can vary based off the motor driver they require.The 28BYJ-48 4-Phase Stepper Motor is the simplest stepper motor that comes with Arduino beginner kits, and its wiring is shown in the diagram belwo along with a code snippet that rotates the motor clockwise and counter-clockwise at varying speeds. 
+
+![Stepper Motor Wiring Diagram](assets/stepper_wiring.png)
+
 
 ```
 `//Includes the Arduino Stepper Library
