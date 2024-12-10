@@ -68,14 +68,14 @@ void loop() {
 
 Note: When a push button is pressed, it may generate multiple rapid on/off signals due to the mechanical nature of the button. This is known as "bouncing" and can cause unexpected behavior in your circuit. To address this, you can use a small delay in your code or implement software debouncing techniques. You can read more about debouncing at this link: https://docs.arduino.cc/built-in-examples/digital/Debounce/
 
-https://docs.arduino.cc/built-in-examples/digital/Button/ : This link provides a more thorough overview of pushbuttons in Arduino and can be used to help clarify information about Arduino pushbuttons. The link also discusses the wiring and reading the signals at a more detailed level. 
+https://docs.arduino.cc/built-in-examples/digital/Button/ : This link provides a more thorough overview of pushbuttons in Arduino and can be used to help clarify information about Arduino pushbuttons. The link also discusses wiring a pushbutton and reading its related signals at a more detailed level. 
 
 ## Potentiometers
 
-A potentiometer is a variable resistor that allows you to adjust resistance by turning a knob or sliding a lever. It is commonly used as an input device for controlling brightness, volume, or speed in Arduino projects. A potentiometer has three terminals: two outer terminals connected to a fixed resistor and one middle terminal (the wiper) that moves along the resistor as you adjust the knob. By reading the voltage at the wiper, the Arduino can determine the position of the potentiometer.To wire a potentiometer, onnect one outer terminal to 5V on the Arduino and the other outer terminal to GND. Connect the middle terminal (wiper) to an analog input pin, such as A0. This setup allows the Arduino to read a voltage that corresponds to the potentiometer's position.
+A potentiometer is a variable resistor that allows you to adjust resistance by turning a knob or sliding a lever. It is commonly used as an input device for controlling brightness, volume, or speed in Arduino projects. A potentiometer has three terminals: two outer terminals connected to a fixed resistor and one middle terminal (the wiper) that moves along the resistor as you adjust the knob. By reading the voltage at the wiper, the Arduino can determine the position of the potentiometer.To wire a potentiometer, connect one outer terminal to 5V on the Arduino and the other outer terminal to GND. Connect the middle terminal (wiper) to an analog input pin, such as A0. This setup allows the Arduino to read a voltage that corresponds to the potentiometer's position.
 
-An image of a simple wiring for a potentiometer can be seen below along with a code snippet. To read a potentiometer you will need to use an analog pin and the analogRead() Arduino function. 
-.
+An image of a simple wiring for a potentiometer can be seen below along with a code snippet. To read a potentiometer you will need to use an analog pin and the analogRead() Arduino function. The code will print the potentiometer's analog value. 
+
 
 ![Potentiometer Wiring Diagram](assets/potentiometer_wiring.png)
 
@@ -97,9 +97,9 @@ void loop() {
 
 https://docs.arduino.cc/learn/electronics/potentiometer-basics/ : This resource provies a more detaild discussion of potentiometers to clarify any unaddressed points in this article.
 
-https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/ : This link details the analogRead() function in Arduino. This is a very important functin that is required fo rhte analog Arduion pins. It is useful to understand for all Arduino analgo inputs. 
+https://docs.arduino.cc/built-in-examples/basics/AnalogReadSerial/ : This link details the analogRead() function in Arduino. This is a very important functin that is required for the analog Arduion pins. It is useful to understand for all Arduino analog inputs. 
 
-https://docs.arduino.cc/language-reference/en/functions/math/map/ : A useful function when dealing with analog signals is the map() function. This link details the map function. The function can be used in many ways to connect the inputs/ouptus of different signals to one another, and it is a necessary function to understand when starting Arduion projects. 
+https://docs.arduino.cc/language-reference/en/functions/math/map/ : A useful function when dealing with analog signals is the map() function. This link details the map function. The function can be used in many ways to connect the inputs/ouptus of different signals to one another, and it is a necessary function to understand when starting Arduino projects. 
 
 
 ## Buzzers
@@ -110,7 +110,7 @@ Buzzers work by converting electrical energy into sound through the vibration of
 
 Buzzers are versatile components with applications in security systems, timers, notification systems, and user interfaces where audible feedback is needed. They provide an effective way to communicate events, warnings, or statuses in a project.
 
-The wiring for a simple piezo buzzer can be seen below alogn with a code snippet. The code will cause the buzzer to continuously start and stop buzzing.
+The wiring for a simple piezo buzzer can be seen below along with a code snippet. The code will cause the buzzer to continuously start and stop buzzing.
 
 ![Buzzer Wiring Diagram](assets/buzzer_wiring.jpg)
 
@@ -130,7 +130,7 @@ void loop(){
 }
 ```
 
-https://sensorkit.arduino.cc/sensorkit/module/lessons/lesson/04-the-buzzer : This resource is very useful to understand the fundametals of buzzers in Arduino. It explains how buzzeres work, different types of buzzers and potential issues.
+https://sensorkit.arduino.cc/sensorkit/module/lessons/lesson/04-the-buzzer : This resource is very useful to understand the fundametals of buzzers in Arduino. It explains how buzzers work, different types of buzzers and potential issues.
 
 https://www.ardumotive.com/how-to-use-a-buzzer-en.html : This link is very effective in outlining how to implement a buzzer. It provides more information than in this section and also includes a video that better details Arduino buzzer implementation. 
 
@@ -142,7 +142,7 @@ Servo motors typically have three wires: a power wire (usually red), a ground wi
 
 Using the Arduino Servo library simplifies the control of servo motors. For example, you can set the angle of the motor by sending a specific value through the write() function.
 
-A simple wiring of a servo motor setup can be seen below. A code snippet is also below, and this snippet causes the servo motor to rotate back adn forth.
+A simple wiring of a servo motor setup can be seen below. A code snippet is also below, and this snippet causes the servo motor to rotate back and forth.
 
 ![Servo Wiring Diagram](assets/servo_wiring.png)
 
@@ -172,9 +172,9 @@ void loop() {
 }
 ```
 
-https://docs.arduino.cc/tutorials/generic/basic-servo-control/ : This link provide s avery basic understanding of servo control in case you think more information is required. 
+https://docs.arduino.cc/tutorials/generic/basic-servo-control/ : This link provides a very basic understanding of servo control in case you think more information is required. 
 
-https://docs.arduino.cc/learn/electronics/servo-motors/ : This is a very useful resource that expands on the basics of servo motors. This link shows how a potentiometer can be connected to a servo motor to control the rotor's position. This would be a very useful project to implement after learning about potentiometers and servos
+https://docs.arduino.cc/learn/electronics/servo-motors/ : This is a very useful resource that expands on the basics of servo motors. This link shows how a potentiometer can be connected to a servo motor to control the rotor's position. This would be a very useful project to implement after learning about potentiometers and servos.
 
 https://docs.arduino.cc/libraries/servo/ : This link discusses the servo library. This is a fundamental library used when using servo motors in Arduino. 
 
