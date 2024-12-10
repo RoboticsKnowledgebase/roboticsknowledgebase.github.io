@@ -102,7 +102,7 @@ Buzzers are versatile components with applications in security systems, timers, 
 
 The wiring for a simple piezo buzzer can be seen below alogn with a code snippet. The code will cause the buzzer to continuously start and stop buzzing.
 
-![Buzzer Wiring Diagram](assets/buzzer_wiring.png)
+![Buzzer Wiring Diagram](assets/buzzer_wiring.jpg)
 
 
 ```
