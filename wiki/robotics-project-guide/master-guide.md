@@ -40,7 +40,9 @@ Below is the overall flow you would need to take in a robotics project. Click on
 ```mermaid
 flowchart TD;
     A[Define your goals and requirements] --> B[Choose a robot];
+    A --> I[Make a robot];
     B --> C[Choose your language];
+    I --> C
     C --> D[Choose your communication method];
     D --> E[Choose peripherals];
     E --> F[Choose your simulator];
@@ -49,6 +51,7 @@ flowchart TD;
 
     click A href "/wiki/robotics-project-guide/define-your-goals-and-requirements/"
     click B href "/wiki/robotics-project-guide/choose-a-robot/"
+    click I href "/wiki/robotics-project-guide/make-a-robot/"
     click C href "/wiki/robotics-project-guide/choose-a-language/"
     click D href "/wiki/robotics-project-guide/choose-comm/"
     click E href "/wiki/robotics-project-guide/choose-peripherals/"
