@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Knowledge Distillation practical implementation guide
+---
+
 # Knowledge Distillation practical implementation guide
 
 ## Introduction to Model Compression

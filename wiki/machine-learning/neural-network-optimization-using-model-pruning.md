@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Neural Network optimization using model pruning
+---
+
 # Neural Network optimization using model pruning
 
 ## Understanding Model Pruning

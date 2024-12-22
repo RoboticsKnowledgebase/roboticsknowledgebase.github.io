@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for Visualizations
+---
+
 # Interfacing Streamlit, ROS2, and HTML/CSS/JS for Visualizations
 
 ## Introduction

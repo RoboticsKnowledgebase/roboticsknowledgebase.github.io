@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Practical Guide to Model Quantization and TensorRT Optimization
+---
+
 
 # Practical Guide to Model Quantization and TensorRT Optimization
 

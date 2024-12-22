@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Comprehensive guide to albumentations
+---
+
 # Comprehensive guide to albumentations
 
 ## Overview

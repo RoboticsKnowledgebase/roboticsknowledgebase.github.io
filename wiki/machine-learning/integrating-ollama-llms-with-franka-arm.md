@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Integrating Ollama LLMs with Franka Arm
+---
+
 # Integrating Ollama LLMs with Franka Arm
 
 ## Introduction

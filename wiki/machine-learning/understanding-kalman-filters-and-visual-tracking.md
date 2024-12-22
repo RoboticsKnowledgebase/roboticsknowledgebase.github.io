@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Understanding Kalman Filters and Visual Tracking
+---
+
 # Understanding Kalman Filters and Visual Tracking
 
 ## The Essence of Kalman Filtering

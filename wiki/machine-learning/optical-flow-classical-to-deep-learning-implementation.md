@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Optical Flow - Classical to Deep Learning Implementation
+---
+
 # Optical Flow: Classical to Deep Learning Implementation
 
 ## Introduction

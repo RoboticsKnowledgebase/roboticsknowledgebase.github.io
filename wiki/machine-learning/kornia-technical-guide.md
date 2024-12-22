@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Kornia technical guide
+---
+
 # Kornia technical guide
 
 ## Introduction to Differentiable Computer Vision

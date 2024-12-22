@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: 6D Pose Estimation with YOLO and ZED
+---
+
 # 6D Pose Estimation with YOLO and ZED
 
 ## Initial Setup and Configuration

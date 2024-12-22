@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Installing YOLO on ARM Architecture Devices
+---
+
 # Installing YOLO on ARM Architecture Devices
 
 This guide provides detailed instructions for installing and running YOLOv8 on ARM-based NVIDIA devices like the Jetson, Orin, and Xavier series. We'll cover setup requirements, installation steps, and optimization tips.

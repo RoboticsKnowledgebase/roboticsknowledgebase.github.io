@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Setting Up the ZED Camera with ROS
+---
+
 # Setting Up the ZED Camera with ROS
 
 The ZED stereo camera is a powerful perception sensor that provides depth sensing, visual odometry, and spatial mapping capabilities. This tutorial guides you through the complete setup process for integrating ZED cameras with ROS. You'll learn how to install required software, configure the camera, and access sensor data through ROS topics. By following this guide, you'll have a fully functional ZED camera system publishing depth, point cloud, and pose data to ROS.

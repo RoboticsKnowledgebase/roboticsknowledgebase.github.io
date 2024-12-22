@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Multi-task learning - A starter guide
+---
+
 # Multi-task learning: A starter guide
 
 ## Introduction to Multi-Task Learning in Computer Vision

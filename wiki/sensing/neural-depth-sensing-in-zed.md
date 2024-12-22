@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Neural Depth Sensing in ZED Stereo Cameras
+---
+
 # Neural Depth Sensing in ZED Stereo Cameras
 
 This technical analysis examines the implementation and performance characteristics of neural network-based depth estimation in stereo vision systems, specifically focusing on contemporary developments in the ZED stereo camera platform. We analyze the fundamental differences between traditional geometric approaches and neural network-based methods, presenting quantitative comparisons of their performance metrics.

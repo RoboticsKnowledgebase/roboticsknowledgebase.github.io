@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Deep learning techniques for 3D datasets
+---
+
 # Deep learning techniques for 3D datasets
 
 ## Introduction to Point Cloud Processing

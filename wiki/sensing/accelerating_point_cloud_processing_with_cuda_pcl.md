@@ -1,3 +1,8 @@
+---
+date: 2024-12-22
+title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
+---
+
 # Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
 
 ## Introduction
