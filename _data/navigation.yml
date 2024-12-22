@@ -120,6 +120,12 @@ wiki:
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: Setting Up the ZED Camera with ROS and troubleshooting steps
+        url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
+      - title: Neural Depth Sensing in ZED Stereo Cameras
+        url: /wiki/sensing/neural-depth-sensing-in-zed.md
+      - title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
+        url: /wiki/sensing/accelerating_point_cloud_processing_with_cuda_pcl.md
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -162,6 +168,30 @@ wiki:
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
       - title: NLP for robotics
         url: /wiki/machine-learning/nlp_for_robotics.md/
+      - title: 6D Pose Estimation with YOLO and ZED
+        url: /wiki/machine-learning/6d_pose_tracking_yolo_zed.md
+      - title: Practical Guide to Model Quantization and TensorRT Optimization
+        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
+      - title: Installing YOLO on ARM Architecture Devices
+        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
+      - title: Comprehensive guide to albumentations
+        url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
+      - title: Kornia technical guide
+        url: /wiki/machine-learning/kornia-technical-guide.md
+      - title: Integrating OLLAMA LLMs with Franka Arm
+        url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
+      - title: Multi-task learning A starter guide
+        url: /wiki/machine-learning/multitask-learning-starter.md
+      - title: Understanding Kalman Filters and Visual Tracking
+        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
+      - title: Knowledge Distillation practical implementation guide
+        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
+      - title: Neural Network optimization using model pruning
+        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
+      - title: Deep learning techniques for 3D datasets
+        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
+      - title: Optical Flow - Classical to Deep Learning Implementation
+        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -179,6 +209,8 @@ wiki:
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+      - title: Complete Guide to Installing ORB SLAM3
+        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide.md
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -235,6 +267,8 @@ wiki:
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
         url: /wiki/interfacing/ros1_ros2_bridge/
+      - title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for visualization
+        url: /wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization.md
   - title: Computing
     url: /wiki/computing/
     children:
