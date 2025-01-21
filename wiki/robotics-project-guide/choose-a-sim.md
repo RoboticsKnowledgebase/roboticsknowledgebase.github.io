@@ -13,7 +13,6 @@ By the end of this section, you will understand:
 - How physics simulators work. 
 - How to determine the type of simulator you require based on your project's specifications.  
 - The pros and cons of various simulators tailored for robotics, machine learning/reinforcement learning, and visualization.  
-- How to use a custom robot in a simulator.
 
 ## Why Are Simulators Important in Robotics Projects?
 
@@ -74,7 +73,7 @@ graph TD
 
 Before we get into what simulators are out there for robotics (and ML/RL), we need to talk about how they simulate the world for our use. What makes them comparable (although not nearly identical) to the real world? 
 
-The answer lies in **physics simulation**. Physics simulators like Gazebo and Isaac Gym provide a flexible and general-purpose framework for modeling a wide range of robotic systems. By representing robots as assemblies of rigid bodies connected by joints, applying appropriate constraints, and utilizing numerical integration methods, these engines can simulate complex dynamics without the need for hand-crafted equations of motion for each specific robot configuration.
+The answer lies in **physics simulation**. Physics simulators like Gazebo and Isaac Lab provide a flexible and general-purpose framework for modeling a wide range of robotic systems. By representing robots as assemblies of rigid bodies connected by joints, applying appropriate constraints, and utilizing numerical integration methods, these engines can simulate complex dynamics without the need for hand-crafted equations of motion for each specific robot configuration.
 
 ### Fundamental Concepts of Physics Simulation
 
@@ -148,9 +147,9 @@ For complex scenarios, users can enhance simulations by adding custom force mode
 
 ### Examples of Physics Simulators
 
-- **Gazebo**: An open-source robotics simulator that integrates with the Robot Operating System (ROS). Gazebo uses physics engines like ODE (Open Dynamics Engine) to simulate complex interactions between robots and their environments, including accurate modeling of sensors and actuators. :contentReference[oaicite:1]{index=1}
+- **Gazebo**: An open-source robotics simulator that integrates with the Robot Operating System (ROS). Gazebo uses physics engines like ODE (Open Dynamics Engine) to simulate complex interactions between robots and their environments, including accurate modeling of sensors and actuators. 
 
-- **Isaac Gym**: Developed by NVIDIA, Isaac Gym is a high-performance simulator designed for robot learning. It leverages GPU acceleration to perform physics simulations and neural network computations directly on the GPU, enabling the parallel simulation of thousands of environments. This capability significantly speeds up reinforcement learning training times for robotics applications. :contentReference[oaicite:2]{index=2}
+- **Isaac Lab**: Developed by NVIDIA, Isaac Lab is a high-performance simulator designed for robot learning. It leverages GPU acceleration to perform physics simulations and neural network computations directly on the GPU, enabling the parallel simulation of thousands of environments. This capability significantly speeds up reinforcement learning training times for robotics applications. 
 
 ## Determining the Right Simulator for Your Project
 
@@ -325,7 +324,7 @@ PyBullet is an open-source physics engine that offers real-time simulation of ri
 
 ![isaaclab_sim](/assets/images/robotics_project_guide/isaaclab_sim.jpg)
 
-Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built on top of NVIDIA Isaac Sim. It provides high-fidelity physics simulation using NVIDIA PhysX and photorealistic rendering, making it suitable for training robot policies in simulation before deploying them in real-world scenarios. :contentReference[oaicite:0]{index=0}
+Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built on top of NVIDIA Isaac Sim. It provides high-fidelity physics simulation using NVIDIA PhysX and photorealistic rendering, making it suitable for training robot policies in simulation before deploying them in real-world scenarios.
 
 **Pros**:
 - **High-Fidelity Simulation**: Offers realistic physics and sensor simulations, enhancing the quality of trained models.

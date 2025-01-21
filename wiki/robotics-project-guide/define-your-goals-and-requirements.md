@@ -211,7 +211,7 @@ gantt
 Defining your goals early affects all later stages:
 
 - Choosing a Robot: Your payload and mobility needs will influence whether you select a ready-made platform like Unitree Go1 or design a custom robot (see [Choose a Robot](/wiki/robotics-project-guide/choose-a-robot/)).
-- Peripheral Hardware: Requirements for navigation and interaction will determine the sensors and actuators needed (see [Find Out What Peripheral Hardware You Need](/wiki/robotics-project-guide/choose-peripherals/)).
+- Making a Robot: In the case of needing a unique robot that is not commercially available, you would need to build one yourself (see [Make a Robot](/wiki/robotics-project-guide/make-a-robot/))
 - Programming Language: Performance needs might lead you to choose C++ for speed, while complex algorithms or machine learning applications might favor Python (see [Choose Your Language](/wiki/robotics-project-guide/choose-a-language/)).
 - Communication Method: Depending on real-time requirements and system complexity, you might opt for ROS or ROS2 (see [Choose Your Communication Method](/wiki/robotics-project-guide/choose-comm/)).
 - Simulation: The need for testing in a virtual environment will guide your choice of simulator tools (see [Choose Your Simulator](/wiki/robotics-project-guide/choose-a-sim/)).
@@ -300,6 +300,6 @@ By preparing for iteration, you ensure "Tod" remains adaptable and capable of me
 With a solid foundation of goals and requirements, you're ready to proceed to the next phase:
 
 - [Choose a Robot](/wiki/robotics-project-guide/choose-a-robot/): Select a robot platform that aligns with your defined needs.
-Find Out What Peripheral Hardware You Need: Identify sensors and actuators essential for your robot's functionality.
+- [Make a Robot](/wiki/robotics-project-guide/make-a-robot/): In case you want to make a robot instead of choosing an already-available platform, here's a short guide on it.
 
 By thoroughly defining your goals and requirements, you set yourself up for a smoother development process, minimizing unexpected challenges and ensuring that each subsequent decision is informed and purposeful.

@@ -151,6 +151,5 @@ This approach ensures that each component of Tod’s architecture is implemented
 With a clear understanding of when to use Python, when to use C++, and how to combine them, you can make informed decisions for your robotics project.
 
 - **[Choose Your Communication Method](/wiki/robotics-project-guide/choose-comm/)**: Learn about how to connect your code to various robot components and systems.
-- **[Choose Peripherals](/wiki/robotics-project-guide/choose-peripherals/)**: Decide which sensors and actuators to use and integrate them with your chosen language.
 
 Your language choice affects everything from performance to maintainability. By balancing Python’s ecosystem and ease of use with C++’s speed and reliability, you can create a robust, high-performance, and adaptable robotics system—just like Tod.

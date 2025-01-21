@@ -23,8 +23,6 @@ wiki:
         url: /wiki/robotics-project-guide/choose-a-language/
       - title: Robot communication
         url: /wiki/robotics-project-guide/choose-comm/
-      - title: Choose peripherals
-        url: /wiki/robotics-project-guide/choose-peripherals/
       - title: Choose a simulator
         url: /wiki/robotics-project-guide/choose-a-sim/
       - title: Test and debug your robot

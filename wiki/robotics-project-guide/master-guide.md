@@ -44,19 +44,15 @@ flowchart TD;
     B --> C[Choose your language];
     I --> C
     C --> D[Choose your communication method];
-    D --> E[Choose peripherals];
-    E --> F[Choose your simulator];
-    F --> G[Test and debug your robot];
-    G --> H[Demo day!];
+    D --> E[Choose your simulator];
+    E --> F[Test and debug your robot];
+    F --> G[Demo day!];
 
     click A href "/wiki/robotics-project-guide/define-your-goals-and-requirements/"
     click B href "/wiki/robotics-project-guide/choose-a-robot/"
     click I href "/wiki/robotics-project-guide/make-a-robot/"
     click C href "/wiki/robotics-project-guide/choose-a-language/"
     click D href "/wiki/robotics-project-guide/choose-comm/"
-    click E href "/wiki/robotics-project-guide/choose-peripherals/"
-    click F href "/wiki/robotics-project-guide/choose-a-sim/"
+    click F href "/wiki/robotics-project-guide/test-and-debug/"
+    click G href "/wiki/robotics-project-guide/demo-day/"
 ```
-
-<!-- click F href "/wiki/robotics-project-guide/test-and-debug/"
-click G href "/wiki/robotics-project-guide/demo-day/" -->
