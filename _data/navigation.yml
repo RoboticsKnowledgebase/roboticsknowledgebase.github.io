@@ -9,7 +9,26 @@ wiki:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
+  - title: Robotics Project Guide
+    url: /wiki/robotics-project-guide/master-guide/
+    children:
+      - title: Define your goals and requirements
+        url: /wiki/robotics-project-guide/define-your-goals-and-requirements/
+      - title: Choose a robot
+        url: /wiki/robotics-project-guide/choose-a-robot/
+      - title: Make a robot
+        url: /wiki/robotics-project-guide/make-a-robot/
+      - title: Choose a language (or languages)
+        url: /wiki/robotics-project-guide/choose-a-language/
+      - title: Robot communication
+        url: /wiki/robotics-project-guide/choose-comm/
+      - title: Choose a simulator
+        url: /wiki/robotics-project-guide/choose-a-sim/
+      - title: Test and debug your robot
+        url: /wiki/robotics-project-guide/test-and-debug/
+      - title: Demo day!
+        url: /wiki/robotics-project-guide/demo-day/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
@@ -120,7 +139,7 @@ wiki:
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
-  - title: Actuation
+  - title: Controls & Actuation
     url: /wiki/actuation/
     children:
       - title: Motor Controller Feedback
@@ -365,7 +384,7 @@ docs:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
   - title: Contribute
     children:
       - title: Introduction
