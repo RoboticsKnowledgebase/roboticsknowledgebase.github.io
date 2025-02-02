@@ -78,6 +78,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-intro/
       - title: ROS Arduino Interface
         url: /wiki/common-platforms/ros/ros-arduino-interface/
+      - title: ROS Node Lifecycle
+        url: /wiki/common-platforms/ros/ros-lifecycle/
       - title: ROS Motion Server Framework
         url: /wiki/common-platforms/ros/ros-motion-server-framework/
       - title: ROS Cost Maps
@@ -98,6 +100,8 @@ wiki:
         url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Kinova Arms
+        url: /wiki/common-platforms/kinova-setup-and-apis/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -271,6 +275,8 @@ wiki:
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Quantum Computing and Qiskit
+        url: /wiki/computing/quantum/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -340,6 +346,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: Tutorial on Using USB Compute Sticks
+        url: /wiki/tools/usb-compute-sticks/
   - title: Datasets
     url: /wiki/datasets/
     children:
