@@ -10,6 +10,8 @@ wiki:
         url: /wiki/
       - title: Contribute
         url: /docs/index/
+  - title: Software Bootcamp
+    url: /wiki/bootcamp/bootcamp-guide/
   - title: Robotics Project Guide
     url: /wiki/robotics-project-guide/master-guide/
     children:
