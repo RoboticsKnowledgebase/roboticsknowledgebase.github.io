@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2025-03-11 # YYYY-MM-DD 
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2025-03-11 # YYYY-MM-DD
 title: Key Concepts of Reinforcement Learning
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 
 This tutorial provides an introduction to the fundamental concepts of Reinforcement Learning (RL). RL involves an agent interacting with an environment to learn optimal behaviors through trial and feedback. The main objective of RL is to maximize cumulative rewards over time.
@@ -31,13 +24,13 @@ The agent is the learner or decision-maker, while the environment represents eve
 A **policy** determines how an agent selects actions based on states:
 
 - **Deterministic policy**: Always selects the same action for a given state.
-  ```python
-  a_t = \mu(s_t)
-  ```
+  
+  $a_t = \mu(s_t)$
+  
 - **Stochastic policy**: Samples actions from a probability distribution.
-  ```python
-  a_t \sim \pi(\cdot | s_t)
-  ```
+  
+  $a_t \sim \pi(\cdot | s_t)$
+  
 
 ### Example: Deterministic Policy in PyTorch
 ```python
