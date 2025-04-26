@@ -79,6 +79,7 @@ Let's take a look at the high-speed interface ports that one might use to interf
   - Two ports at USB 3.2 Gen1 (5 Gbps) (J33 stacked pair).
   - All backward-compatible with USB 2.0.
   - VBUS supports up to 2A for each stacked pair (shared between the two connectors in the stack).
+  - ![USB 3.0 vs 2.0](/roboticsknowledgebase.github.io/assets/images/usb_3.png)
 
 - **2× USB Type-C Ports:**
   - Two Type C ports (J39 and J40)
