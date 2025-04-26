@@ -340,6 +340,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: Docker for Robotics
+        url: /wiki/tools/docker-for-robotics/
   - title: Datasets
     url: /wiki/datasets/
     children:
