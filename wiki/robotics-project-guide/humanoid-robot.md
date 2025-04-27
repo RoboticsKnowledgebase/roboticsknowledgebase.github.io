@@ -181,4 +181,3 @@ Going forward, advancing humanoid robotics will require innovations in both scal
 [1] Z. Gu, A. Shamsah, J. Li, W. Shen, Z. Xie, S. McCrory, R. Griffin, X. Cheng, C. K. Liu, A. Kheddar, X. B. Peng, G. Shi, X. Wang, and W. Yu, "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning," arXiv preprint arXiv:2501.02116, 2025.
 
 [2] J. Achiam, "Spinning Up in Deep Reinforcement Learning," OpenAI, 2018. [Online]. Available: https://spinningup.openai.com/en/latest/
-
