@@ -124,7 +124,7 @@ Common strategies to bridge the sim-to-real gap include:
 
 RL offers a pathway to learn novel, complex behaviors for humanoid loco-manipulation but remains impractical for direct real-world training due to its inefficiency and sim-to-real difficulties. Consequently, RL is predominantly used in simulation, with real-world deployment heavily relying on additional techniques like imitation learning (IL) to close the gap.
 
-## Imitation Learning from Robot Experience
+### Imitation Learning from Robot Experience
 
 Imitation Learning (IL) encompasses a range of techniques, including supervised, reinforcement, and unsupervised learning methods, that train policies using expert demonstrations. IL is particularly effective for complex tasks that are difficult to specify explicitly.
 
@@ -168,7 +168,6 @@ Going forward, advancing humanoid robotics will require innovations in both scal
 
 
 ## See Also:
-- ## See Also:
 - [Model Predictive Control (MPC) for Robotics](https://roboticsknowledgebase.com/wiki/actuation/model-predictive-control/)
 
 ## Further Reading
