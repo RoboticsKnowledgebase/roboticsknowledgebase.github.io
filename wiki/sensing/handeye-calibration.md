@@ -6,8 +6,28 @@ If you're writing a tutorial, use this section to specify what the reader will b
 
 In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
-## First subheading
+**This is a tutorial for estimating the frame transformation between a camera optical frame and a different operating frame such as the base frame of a manipulator. This needs access to the camera image stream and to the state estimator of the operating machine, such as the transform tree of a manipulator. This is a data-driven method and requires around thirty images to work reliably. **
+
+## Hand-Eye Calibration
 Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+
+**link to: https://github.com/AbhinandanVellanki/roboticsknowledgebase.github.io/blob/master/wiki/sensing/camera-calibration.md**
+
+**Different Frames:
+1. Image Frame (Pixel Space)
+2. Target Frame (Operation Space eg, base frame of manipulator)
+3. World Frame (Global Frame: usually set as the operating frame)**
+
+**The Algorithm:**
+link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7904a801b99
+research paper: https://ieeexplore.ieee.org/document/34770
+
+**This Setup:**
+For this tutorial, ROS2 will be used as the environment for its functionality that makes it easy to define frames and transformations using a transformation tree
+
+1. Image Frame: Realsense Camera Frame ()
+2. Target Frame: Base Frame of Manipulator ()
+3. World Frame: Center of Aruco Marker Plane
 
 This section covers the basic syntax and some rules of thumb for writing.
 
