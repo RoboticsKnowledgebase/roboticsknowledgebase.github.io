@@ -20,9 +20,9 @@ In both cases, tell them what you're going to say, use the sections below to say
 
 This package uses the method introduced by Lenz and Tsai in 1989. This is a data-driven method and it was observed that around thirty images are required for this method to work reliably.
 
-[Documentation](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7904a801b99)
-[Original Research Paper](https://ieeexplore.ieee.org/document/34770)
-[GitHub Package](https://github.com/SNAAK-CMU/handeye_calibration_ros2)
+- [Documentation](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7904a801b99)
+- [Original Research Paper](https://ieeexplore.ieee.org/document/34770)
+- [GitHub Package](https://github.com/SNAAK-CMU/handeye_calibration_ros2)
 
 ### This Setup
 
