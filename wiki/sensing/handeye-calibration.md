@@ -1,37 +1,49 @@
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+<!--This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
 This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
 
 If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).-->
 
-**This is a tutorial for estimating the frame transformation between a camera optical frame and a different operating frame such as the base frame of a manipulator. This needs access to the camera image stream and to the state estimator of the operating machine, such as the transform tree of a manipulator. This is a data-driven method and requires around thirty images to work reliably. **
+**This is a tutorial for estimating the frame transformation between a camera optical frame and a different operating frame such as the base frame of a manipulator. This code needs access to the camera image stream and to the state estimator of the operating machine, such as the transform tree of a manipulator. While most existing packages use ROS1, ROS2 has been chosen as the framework for this process due to its functionality that facilitates synchronized parallel communication, which also exist in ROS1, but for other reasons ROS2 might be the framework your system is setup in. In that case, this tutorial is for you. The entire workflow, from scene setup, data capture, computation and integration has been covered in this tutorial.**
 
 ## Hand-Eye Calibration
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+<!--Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.-->
 
-**link to: https://github.com/AbhinandanVellanki/roboticsknowledgebase.github.io/blob/master/wiki/sensing/camera-calibration.md**
+### Different Frames
+	1. Image Frame (Pixel Space)
+	2. Target Frame (Operation Space eg, base frame of manipulator or end-effector frame)
+	3. World Frame (Global Frame: usually set as the operating frame)
 
-**Different Frames:
-1. Image Frame (Pixel Space)
-2. Target Frame (Operation Space eg, base frame of manipulator)
-3. World Frame (Global Frame: usually set as the operating frame)**
+### The Algorithm
 
-**The Algorithm:**
-link: https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7904a801b99
-research paper: https://ieeexplore.ieee.org/document/34770
+This package uses the method introduced by Lenz and Tsai in 1989. This is a data-driven method and it was observed that around thirty images are required for this method to work reliably.
 
-**This Setup:**
+[Documentation](https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7904a801b99)
+[Original Research Paper](https://ieeexplore.ieee.org/document/34770)
+[GitHub Package](https://github.com/SNAAK-CMU/handeye_calibration_ros2)
+
+### This Setup
+
 For this tutorial, ROS2 will be used as the environment for its functionality that makes it easy to define frames and transformations using a transformation tree
 
-1. Image Frame: Realsense Camera Frame ()
-2. Target Frame: Base Frame of Manipulator ()
-3. World Frame: Center of Aruco Marker Plane
+	1. Image Frame: Realsense Camera Frame (ROS TF Frame: "camera_color_optical_frame")
+	2. Target Frame: Base Frame of manipulator (ROS TF Frames : 'base_link: "panda_link_0"; ee_link: "panda_hand")
+	3. World Frame: Aruco marker pose (From Aruco marker detection)
 
-This section covers the basic syntax and some rules of thumb for writing.
+### This Process
 
-### Basic syntax
+The GitHub package has detailed instructions on installation and setup. The parameters in the file `handeye_realsense/config.yaml` need to be rewritten with the ROS2 topic and frame names of your system. 
+
+## Summary:
+	1. Keep in mind that the manipulator's poses must be as different as possible when sampling data in order to get a generalized result. If possible, put your manipulator in guide mode and move to the poses yourself, as this repository does not include a random pose generator. 
+    2. Not moving the Aruco marker's position yeilds better results. 
+    3. Configuring a random pose generator would require defining your workspace in a planning framework such as MoveIt! and generate random, collision free poses where the aruco pose is in the field of view of the camera. 
+    4. Ensure that the `child frame` specified in the config is the frame on which images are published. If not, set the child frame as the camera frame and chain together an intrinsic transformation to the image frame with the extrinsic transform from the target frame you will get from this process. This process has been described in detail on the README of the repository
+    
+
+<!--### Basic syntax
 A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
 > This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
@@ -100,16 +112,24 @@ The video id can be found at the end of the URL. In this case, the URLs were
 & `https://vimeo.com/148982525`.
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
+Use this space to reinforce key points and to suggest next steps for your readers.-->
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+[This Wiki entry serves as an introduction to calibration](camera-calibration.md) 
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
+[Original GitHub Repository](https://github.com/shengyangzhuang/handeye_calibration_ros2)
 
 ## References
-- Links to References go here.
+<!--- Links to References go here.
 - References should be in alphabetical order.
 - References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+- If you are referencing experimental results, include it in your published report and link to it here.-->
+
+	1. https://github.com/shengyangzhuang/handeye_calibration_ros2
+	2. https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#gad10a5ef12ee3499a0774c7
+	904a801b99
+	3. https://docs.opencv.org/3.4/d0/de3/citelist.html#CITEREF_Tsai89
+	4. R. Y. Tsai and R. K. Lenz, "A new technique for fully autonomous and efficient 3D
+	robotics hand/eye calibration," in IEEE Transactions on Robotics and Automation,
+	vol. 5, no. 3, pp. 345-358, June 1989, doi: 10.1109/70.34770.
