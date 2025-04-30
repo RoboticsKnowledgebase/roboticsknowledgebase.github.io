@@ -63,7 +63,7 @@ To address MoGe’s ambiguity, we incorporated MADPose — a solver that optimiz
 
 ---
 
-### 5. **Monocular Metric Depth Predictors**
+### 4. **Monocular Metric Depth Predictors**
 
 We also tested monocular models trained to output metric depth directly. This problem would be the most ill-posed problem as you would definitely overfit to the baseline of your training data and the approach would fail to generalize to other baselines. These treat depth as a regression problem from single input $I$:
 
@@ -74,7 +74,7 @@ Thermal's lack of depth cues and color made the problem even harder, and the mod
 ---
 
 
-### 4. **Stereo Networks Trained on RGB (e.g., MS2, KITTI)**
+### 5. **Stereo Networks Trained on RGB (e.g., MS2, KITTI)**
 
 Alternatively, when a dual camera setup is used, we call it a stereo approach. This inherently is a much simpler problem to solve as you have two rays that intersect at the point of capture. I encourage looking at the following set of videos to understand epipolar geometry and the formualtion behind the stereo camera setup [Link](https://www.youtube.com/watch?v=6kpBqfgSPRc). 
 
