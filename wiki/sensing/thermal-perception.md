@@ -123,3 +123,6 @@ An example output is given below (thermal preprocessed on the top left, disparit
 ## Conclusion
 
 Recovering depth from thermal imagery is hard — but not impossible. While classical and RGB-trained methods struggled, modern foundation stereo models overcame the domain gap with minimal effort. Our experience suggests that for any team facing depth recovery in non-traditional modalities, foundation models are a compelling place to start.
+
+## See Also
+- The [Thermal Cameras wiki page](https://roboticsknowledgebase.com/wiki/sensing/thermal-cameras/) goes into more depth about how thermal cameras function.
