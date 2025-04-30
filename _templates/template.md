@@ -5,110 +5,102 @@
 date: 2020-05-11 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Thermal Perception
+title: Title goes here
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-## TODO: Description
+This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
 
-## Why Depth is Hard in Thermal
+This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
 
-Depth perception — inferring the 3D structure of a scene — generally relies on texture-rich, high-contrast inputs. Thermal imagery tends to violate these assumptions:
+If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
 
-- **Low Texture**: Stereo matching algorithms depend on local patches with distinctive features. Thermal scenes often lack these.
-- **High Noise**: Infrared sensors may introduce non-Gaussian noise, which confuses pixel-level correspondence.
-- **Limited Resolution**: Consumer-grade thermal cameras are often <640×480, constraining disparity accuracy.
-- **Spectral Domain Shift**: Models trained on RGB datasets fail to generalize directly to the thermal domain.
+In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
 
-## Our Depth Estimation Pipeline Evolution
+## First subheading
+Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
 
-### 1. **Stereo Block Matching**
+This section covers the basic syntax and some rules of thumb for writing.
 
-We started with classical stereo techniques. Given left and right images $I_L, I_R$, stereo block matching computes disparity $d(x, y)$ using a sliding window that minimizes a similarity cost (e.g., sum of absolute differences):
+### Basic syntax
+A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
 
-$d(x, y) = argmin_d \space Cost(x, y, d)$
-
-In broad strokes, this brute force approach compares blocks from $I_L$ and $I_R$. For each block it computes a cost based on the pixel to pixel similarity (using a loss between feature descriptors generally). Finally, once a block match is found, the disparity is found by checking how much each pixel has moved in the x direction.
-
-As you can imagine, this approach is simplea nd lightweight. However, it is dependent on many things such as the noise in your images, the contrast separation, and will struggle to find accurate matches when looking at textureless and colorless inputs (like a wall in a thermal image). The algorithm performed better than expected, but we chose not to go ahead with it.
-
----
-
-### 2. **Monocular Relative Depth with MoGe**
-
-If you are using a single camera setup, this is called a monocular approach. One issue is that this problem is ill posed. For example, I can move back the objects twice in distance and scale them to twice their size and you will end up with the same image as you did earlier. This means there are multiple solutions to the problem and when an image is captured in a single camera, this information is lost. Therefore, learning based models are employed to hallucinate the right depth (most likely based on data driven priors like the standard height of chairs). One such model is MoGe (Monocular Geometry) which estimates *relative* depth $z'$ from a single image. These estimates are affine-invariant, meaning they suffer from unknown global scale and shift:
-
-$z = s \cdot z' + t$
-
-This means they look visually coherent (look at the image below on the right), but the ambiguity limits 3D metric use (SLAM based applications).
-
-![Relative Depth on Thermal Images](/assets/images/Moge_relative_thermal.png)
-
----
-
-### 3. **MADPose Solver for Metric Recovery**
-
-To address MoGe’s ambiguity, we incorporated MADPose — a solver that optimizes scale and shift across time by integrating motion estimates. This optimizer also estimates other properties such as extrinsics between the cameras solving for more unknowns than that were necessary. Additionally, there is no temporal constraint imposed (you are looking at mostly the same things between $T$ and $T+1$ timesteps). This meant that the metric depth that we recovered would keep changing significantly across frames, resulting in pointclouds of different sizes and distances across timesteps.
-
----
-
-### 5. **Monocular Metric Depth Predictors**
-
-We also tested monocular models trained to output metric depth directly. This problem would be the most ill-posed problem as you would definitely overfit to the baseline of your training data and the approach would fail to generalize to other baselines. These treat depth as a regression problem from single input $I$:
-
-$z(x, y) = f(I(x, y))$
-
-Thermal's lack of depth cues and color made the problem even harder, and the models performed poorly.
-
----
+> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
 
 
-### 4. **Stereo Networks Trained on RGB (e.g., MS2, KITTI)**
+#### Bullet points and numbered lists
+Here are some hints on writing (in no particular order):
+- Focus on application knowledge.
+  - Write tutorials to achieve a specific outcome.
+  - Relay theory in an intuitive way (especially if you initially struggled).
+    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
+  - You do not need to be an expert to produce useful content.
+  - Document procedures as you learn them. You or others may refine them later.
+- Use a professional tone.
+  - Be non-partisan.
+    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
+    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
+  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
+- Use American English (for now).
+  - We made add support for other languages in the future.
+- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
 
-Alternatively, when a dual camera setup is used, we call it a stereo approach. This inherently is a much simpler problem to solve as you have two rays that intersect at the point of capture. I encourage looking at the following set of videos to understand epipolar geometry and the formualtion behind the stereo camera setup [Link](https://www.youtube.com/watch?v=6kpBqfgSPRc). 
+Entries in the Wiki should follow this format:
+1. Excerpt introducing the entry's contents.
+  - Be sure to specify if it is a tutorial or an article.
+  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
+2. The content of your entry.
+3. Summary.
+4. See Also Links (relevant articles in the Wiki).
+5. Further Reading (relevant articles on other sites).
+6. References.
 
-We evaluated multiple pretrained stereo disparity networks. However, there were a lot of differences between the datasets used for pretraining and our data distribution. These models failed to generalize due to:
+#### Code snippets
+There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
 
-- Domain mismatch (RGB → thermal)
-- Texture reliance
-- Exposure to only outdoor content
-- Reduced exposure
+Larger chunks of code should use this format:
+```
+def recover_msg(msg):
 
----
+        // Good coders comment their code for others.
 
+        pw = ProtocolWrapper()
 
-## Final Approach: FoundationStereo
+        // Explanation.
 
-Our final and most successful solution was [FoundationStereo](https://github.com/NVlabs/FoundationStereo), a foundation model for depth estimation that generalizes to unseen domains without retraining. It is trained on large-scale synthetic stereo data and supports robust zero-shot inference.
+        if rec_crc != calc_crc:
+            return None
+```
+This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
-### Why It Works:
+#### LaTex Math Support
+Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
+$$ \frac{1}{n^{2}} $$
 
-- **Zero-shot Generalization**: No need for thermal-specific fine-tuning.
-- **Strong Priors**: Learned over large datasets of scenes with varied geometry and lighting. (These variations helped overcome RGB to thermal domain shifts and textureless cues)
-- **Robust Matching**: Confidence estimation allows the model to ignore uncertain matches rathern than hallucinate.
-- **Formulation**: Formulating the problem as dense depth matching problem also served well. This allowed generalization to any baseline by constraining the output to the pixel space.
+#### Images and Video
+Images and embedded video are supported.
 
-Stereo rectified thermal image pairs are given to FoundationStereo and we receive clean disparity maps (image space). We recover metric depth using the intrinsics of the camera and the baseline. Finally we can reproject this into the 3D space to get consistent point clouds:
+![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
 
-$
-z = \frac{f \cdot B}{d}
-$
+{% include video id="8P9geWwi9e0" provider="youtube" %}
 
-Where:
-- $f$ = focal length,
-- $B$ = baseline between cameras,
-- $d$ = disparity at pixel.
+{% include video id="148982525" provider="vimeo" %}
 
-An example output is given below (thermal preprocessed on the top left, disparity is middle left, and the metric pointcloud is on the right).
+The video id can be found at the end of the URL. In this case, the URLs were
+`https://www.youtube.com/watch?v=8P9geWwi9e0`
+& `https://vimeo.com/148982525`.
 
-![Metric Depth using Foundation Models](/assets/images/foundation_stereo.png)
-## Lessons Learned
+## Summary
+Use this space to reinforce key points and to suggest next steps for your readers.
 
-1. **Texture matters**: Thermal's low detail forces the need for models that use global context.
-2. **Don’t trust pretrained RGB models**: They often don’t generalize without retraining.
-3. **Stereo > Monocular for thermal**: Even noisy stereo is better than ill-posed monocular predictions.
-4. **Foundation models are promising**: Large-scale pretrained vision backbones like FoundationStereo are surprisingly effective out-of-the-box.
+## See Also:
+- Links to relevant material within the Robotics Knowledgebase go here.
 
-## Conclusion
+## Further Reading
+- Links to articles of interest outside the Wiki (that are not references) go here.
 
-Recovering depth from thermal imagery is hard — but not impossible. While classical and RGB-trained methods struggled, modern foundation stereo models overcame the domain gap with minimal effort. Our experience suggests that for any team facing depth recovery in non-traditional modalities, foundation models are a compelling place to start.
+## References
+- Links to References go here.
+- References should be in alphabetical order.
+- References should follow IEEE format.
+- If you are referencing experimental results, include it in your published report and link to it here.
