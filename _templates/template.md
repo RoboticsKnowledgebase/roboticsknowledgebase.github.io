@@ -99,6 +99,9 @@ Where:
 - $B$ = baseline between cameras,
 - $d$ = disparity at pixel.
 
+An example output is given below (thermal preprocessed on the top left, disparity is middle left, and the metric pointcloud is on the right).
+
+![Metric Depth using Foundation Models](/assets/images/foundation_stereo.png)
 ## Lessons Learned
 
 1. **Texture matters**: Thermal's low detail forces the need for models that use global context.
