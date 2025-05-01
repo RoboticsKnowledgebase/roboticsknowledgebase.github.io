@@ -395,9 +395,12 @@ The hybrid approach of starting with a commercial platform allows for rapid algo
 
 
 ## References
-"DJI Matrice 100 (Pixhawk 1)," PX4 User Guide (v1.12). [Online]. Available: https://docs.px4.io/v1.12/en/frames_multicopter/matrice100.html
-"What are the parts of a drone - full list," UMiles Group. [Online]. Available: https://umilesgroup.com/en/what-are-the-parts-of-a-drone-full-list/
-"eCalc - xcopterCalc - the most reliable Multicopter Calculator on the Web." [Online]. Available: https://www.ecalc.ch/xcoptercalc.php
-"DJI M100 Matrice100," GrabCAD Library. [Online]. Available: https://grabcad.com/library/dji-m100-matrice100-1
-"Common 3DR Power Module," Ardupilot Copter Documentation. [Online]. Available: https://ardupilot.org/copter/docs/common-3dr-power-module.html
+- "DJI Matrice 100 (Pixhawk 1)," PX4 User Guide (v1.12). [Online]. Available: https://docs.px4.io/v1.12/en/frames_multicopter/matrice100.html
 
+- "What are the parts of a drone - full list," UMiles Group. [Online]. Available: https://umilesgroup.com/en/what-are-the-parts-of-a-drone-full-list/
+
+- "eCalc - xcopterCalc - the most reliable Multicopter Calculator on the Web." [Online]. Available: https://www.ecalc.ch/xcoptercalc.php
+
+- "DJI M100 Matrice100," GrabCAD Library. [Online]. Available: https://grabcad.com/library/dji-m100-matrice100-1
+
+- "Common 3DR Power Module," Ardupilot Copter Documentation. [Online]. Available: https://ardupilot.org/copter/docs/common-3dr-power-module.html
