@@ -1,6 +1,5 @@
 ---
-date: 2025-04-30
-# Comprehensive Engineering Guide: Building a Custom Drone for the DARPA Triage Challenge
+date: {}
 ---
 ## Introduction and Requirements Engineering
 
@@ -169,7 +168,7 @@ For a 5kg total weight target:
 A well-designed frame includes:
 
 1. **Central plates**:
-   - Upper and lower carbon fiber plates (3-4mm thickness)
+   - Upper and lower carbon fiber plates (1-2mm thickness)
    - Separated by spacers to create electronics bay
    - Vibration damping between layers for sensitive electronics
 
@@ -386,21 +385,19 @@ Detailed wiring diagrams for control connections:
    - Appropriate lighting
    - Registration markings
 
-## Conclusion
+## Summary
 
-Building a custom drone for the DARPA Triage Challenge requires systematic engineering from requirements definition through testing and validation. By following this process, you can create a platform optimized for the specific mission requirements while maintaining the flexibility to adapt as needed.
+Building a custom drone for the DARPA Triage Challenge requires system engineering from requirements definition through testing and validation. By following this process, you will be able to build a platform for the specific mission requirements while maintaining the flexibility to adapt as needed.
 
 The hybrid approach of starting with a commercial platform allows for rapid algorithm development while the fully custom design enables optimization for the mission's unique constraints. Both approaches require careful integration of mechanical, electrical, and software systems to create a reliable and effective UAV platform.
 
 
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
 
 
 ## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
+"DJI Matrice 100 (Pixhawk 1)," PX4 User Guide (v1.12). [Online]. Available: https://docs.px4.io/v1.12/en/frames_multicopter/matrice100.html
+"What are the parts of a drone - full list," UMiles Group. [Online]. Available: https://umilesgroup.com/en/what-are-the-parts-of-a-drone-full-list/
+"eCalc - xcopterCalc - the most reliable Multicopter Calculator on the Web." [Online]. Available: https://www.ecalc.ch/xcoptercalc.php
+"DJI M100 Matrice100," GrabCAD Library. [Online]. Available: https://grabcad.com/library/dji-m100-matrice100-1
+"Common 3DR Power Module," Ardupilot Copter Documentation. [Online]. Available: https://ardupilot.org/copter/docs/common-3dr-power-module.html
+
