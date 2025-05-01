@@ -254,6 +254,8 @@ wiki:
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
         url: /wiki/interfacing/ros1_ros2_bridge/
+      - title: Low Level Buffer issue debugging
+        url: /wiki/interfacing/buffer_issues.md
   - title: Computing
     url: /wiki/computing/
     children:
