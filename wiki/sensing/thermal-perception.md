@@ -30,6 +30,68 @@ Depth perception — inferring the 3D structure of a scene — generally relies 
 - **High Noise**: Infrared sensors may introduce non-Gaussian noise, which confuses pixel-level correspondence.
 - **Limited Resolution**: Consumer-grade thermal cameras are often <640×480, constraining disparity accuracy.
 - **Spectral Domain Shift**: Models trained on RGB datasets fail to generalize directly to the thermal domain.
+_________________________
+
+## Calibration
+Calibration is the process by which we can estimate the internal and external parameters of a camera. Usually, the camera intrinsics matrix has the following numbers
+- fx, fy - This the focal length of the camera in the x and y directions **in the camera's frame**. px/distance_unit
+- cx, cy OR px, py - The principal point or the optical center of the image
+- distortion coeffs (2 - 6 numbers depending on distortion model used)
+
+Additionally, we must also estimate camera extrinsics which is the pose of the camera relative to another sensor - the body frame of a robot is defined to be the same as the IMU, or another camera in the case of multi-camera system
+- This will be in the form of series of 12 numbers - 9 for the rotation matrix and 3 for the translation
+- *NOTE*: BE VERY CAREFUL OF COORDINATE FRAMES
+- If using more than one sensor, timesync will help you.
+
+- Calibrating thermal cameras is quite similar to calibrating any other RGB sensor. To accomplish this you must have a checkerboard pattern, Aruco grid or some other calibration target. 
+  - A square checkerboard is not ideal because it is symmetrical and it is hard for the algorithm to estimate if the orientation of the board has changed. 
+  - An aruco grid gives precise orientation and is the most reliable option but is not necesasary. 
+
+General tips
+- For a thermal camera you will need to use something with distinct hot and cold edges, eg: a thermal checkerboard
+- Ensure that the edges on the checkerboard are visible and are not fuzzy. If they are adjust the focus, wipe the lens and check if there is any blurring being applied
+- Ensure the hot parts of the checkerboard are the hottest things in the picture. This will make it easier to detect the checkboard
+- Thermal cameras by default give 16bit output. You will need to convert this to an 8bit grayscale image.
+- Other than the checkboard, the lesser things that are visible in the image, the better your calibration will be
+- If possible, preprocess your image so that other distracting features will be ignored
+
+### Camera Intrinsics
+- Calibrating thermal camera instrinsics will give you fx, fy, cx, cy, and the respective distortion coefficients
+1. Heat up the checkerboard
+2. Record a rosbag with the necessary topics
+3. Preprocess your images
+4. Run them through OpenCV or Kalibr. There are plenty of good resources online.
+
+Example output from Kalibr:
+```text
+  cam0:
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs: [-0.3418843277284295, 0.09554844659447544, 0.0006766728551819399, 0.00013250437150091342]
+  distortion_model: radtan
+  intrinsics: [404.9842534577856, 405.0992911907136, 313.1521147858522, 237.73982476898445]
+  resolution: [640, 512]
+  rostopic: /thermal_left/image
+```
+
+### Thermal Camera peculiarities
+- Thermal Cameras are extremely noisy. There are ways you can reduce this noise
+- **Camera gain calibration:** The gain values on the camera are used to reduce or increase the intensity of the noise in the image. 
+  - The noise is increased if you are trying to estimate the static noise and remove it from the image (FFC)
+
+- **Flat Field Correction**: FFC is used to remove any lens effects in the image such as vignetting and thermal patterns in the images
+  - FFC is carried out by placing a uniform object in front of the camera and taking a picture
+  - Then the noise patterns and then vigneting effects are estimated and then removed from the cameras
+  - The FLIR thermal cameras constantly "click" which them placing a shutter in front of the sensor and taking picture and correcting for any noise
+  - The FLIR documentation describes Supplemental FFC (SFFC) which is the user performing FFC manually. It is recommended that this is performed when the cameras are in their operating conditions
+
+
+### Camera Extrinsics
+- Relative camera pose is necessary to perform depth estimation. Kalibr calls this a camchain
+- Camera-IMU calibration is necessary to perform sensor fusion and integrate both sensor together. This can be estimated using CAD as well.
+- Time-sync is extremely important for this because the sensor readings need to be at the exact same time for the algorithm to effectively estimate poses.
+- While performing extrinsics calibration, ensure that all axes are excited (up-down, left-right, fwd-back, roll, pitch, yaw) sufficiently. ENSURE that you move slow enough that there is no motion blur with the calibration target but fast enough to excite the axes enough.
+________
 
 ## Our Depth Estimation Pipeline Evolution
 
