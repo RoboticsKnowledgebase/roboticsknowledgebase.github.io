@@ -2,10 +2,10 @@
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
 # You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
+date: 2025-05-01 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Title goes here
+title: Interfacing with the Nvidia Orin
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
@@ -79,7 +79,7 @@ Let's take a look at the high-speed interface ports that one might use to interf
   - Two ports at USB 3.2 Gen1 (5 Gbps) (J33 stacked pair).
   - All backward-compatible with USB 2.0.
   - VBUS supports up to 2A for each stacked pair (shared between the two connectors in the stack).
-  - ![USB 3.0 vs 2.0](/roboticsknowledgebase.github.io/assets/images/usb_3.png)
+  - As seem below, it is important to know the physical differences between the USB 3.0 and 2.0 cables. When using sensors with custom breakout boards, ensure that 3.0 pins (Tx+, Tx-, Rx+, Rx-) are exposed in order to interface with the sensor using 3.0 protocol.![USB 3.0 vs 2.0](/roboticsknowledgebase.github.io/assets/images/usb_3.png)
 
 - **2× USB Type-C Ports:**
   - Two Type C ports (J39 and J40)
