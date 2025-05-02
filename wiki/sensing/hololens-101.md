@@ -9,7 +9,7 @@ title: Robotics with the Microsoft Hololens2
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-This robot wiki entry revolves around Augmented Reality (AR) headset development, specifically the Microsoft HoloLens2. For most robotics related applications, one might want to capitalize on the perception capabilities of the device by accessing data from the onboard sensors, namely the RGB camera, 4 Greyscale cameras, 1 Time-of-Flight depth sensor and 1 IMU sensor. 
+This robot wiki entry revolves around Augmented Reality (AR) headset development, specifically the Microsoft HoloLens2. For most robotics related applications, one might want to capitalize on the perception capabilities of the device by accessing data from the [onboard sensors](https://learn.microsoft.com/en-us/hololens/hololens2-hardware), namely the RGB camera, 4 Greyscale cameras, 1 Time-of-Flight depth sensor and 1 IMU sensor. 
 
 Moreover, as the headset has a limited amount of onboard compute, it’s useful to have an Application Programming Interface (API) to get this information from the HoloLens2 with a Python backend that extracts this data onto the offboard system with communication between the HoloLens and offboard system being completely wireless. This article in the Robot wiki is about how to use a Unity-Python API to extract information from the HoloLens2 to access sensor data, crucial to any downstream computer vision application. The contents present a basic overview of the headset, including details about its hardware, and a script that allows for sensor access and measures latency of transmission over a private wifi network. 
 
@@ -66,7 +66,7 @@ from mmdet.datasets import DATASETS
 
 
 ### Testing HoloLens Latency Metrics
-With the environment correctly set up, you can now utilize the following Python script to evaluate the latency characteristics of data transmission from the HoloLens 2. This script establishes connections to the Personal Video (RGB) and Research Mode Depth Long Throw cameras, captures synchronized frames, and calculates various performance metrics, including end-to-end latency, frame delivery time, and processing time.
+With the environment correctly set up, you can now utilize the following Python script to evaluate the latency characteristics of data transmission from the HoloLens 2. This script establishes connections to the Personal Video (RGB) and [Research Mode](arXiv:2008.11239) Depth Long Throw cameras, captures synchronized frames, and calculates various performance metrics, including end-to-end latency, frame delivery time, and processing time.
 
 ```python
 import multiprocessing as mp
@@ -203,6 +203,83 @@ if __name__ == '__main__':
     main()
 ```
 
+## Understanding the producer-consumer software design principle employed in this codebase
+
+To write effective code using the hl2ss API for interfacing with the HoloLens 2, it is essential to understand the core software design principles that underlie this library.
+
+Take the following code snippet, for example. It independently creates clients to receive data from the HoloLens’ RGB and depth sensor streams:
+
+
+```python
+# # Start subsystems
+hl2ss_lnm.start_subsystem_pv(host, hl2ss.StreamPort.EXTENDED_VIDEO, shared=True, global_opacity=group_index, output_width=source_index, output_height=profile_index)
+hl2ss_lnm.start_subsystem_pv(host, hl2ss.StreamPort.EXTENDED_DEPTH, shared=True, global_opacity=group_index_depth, output_width=source_index_depth, output_height=profile_index_depth)
+
+# create clients
+depth_client = hl2ss_lnm.rx_extended_depth(host, hl2ss.StreamPort.EXTENDED_DEPTH, profile_z=profile_z, media_index=media_index_depth, mode=hl2ss.StreamMode.MODE_0)
+rgb_client = hl2ss_lnm.rx_pv(host, hl2ss.StreamPort.EXTENDED_VIDEO, width=width, height=height, framerate=framerate, divisor=divisor, decoded_format=decoded_format) #mode=hl2ss.StreamMode.MODE_1, 
+
+depth_client.open()
+rgb_client.open()
+
+while:
+    depth_data = depth_client.get_next_packet()
+    rgb_data = rgb_client.get_next_packet()
+
+# stop subsystems
+hl2ss_lnm.stop_subsystem_pv(host, hl2ss.StreamPort.EXTENDED_DEPTH)
+hl2ss_lnm.stop_subsystem_pv(host, hl2ss.StreamPort.EXTENDED_VIDEO)
+```
+
+Unfortunately, the above approach doesn’t work. This is because the hl2ss `receivers rx_[...]` work in blocking mode. When `rx_[...].get_next_packet` is called, the function does not return until a whole packet is received. To understand why the software is written this way, we need to analyse the pros and cons of adopting the [producer-consumer]((https://jenkov.com/tutorials/java-concurrency/producer-consumer.html)) design pattern in this case.
+
+The producer-consumer design pattern is a classic concurrency paradigm where producer threads generate data and place it into a shared buffer, while consumer threads retrieve and process it asynchronously. This decouples the rate of data production from data consumption, which is particularly advantageous in scenarios involving variable processing times or heterogeneous data sources. In the context of the HoloLens 2, each ```rx_[...]``` receiver acts as a producer, streaming data from a specific sensor (e.g., RGB, depth, IMU), while downstream components—such as visualization, fusion, or ML inference modules—function as consumers. One key benefit is that it allows sensor data to be buffered in memory, smoothing out jitter or delays caused by consumers processing at different rates. Additionally, this pattern supports modularity and scalability by allowing multiple independent consumers to access the same stream. However, it requires careful management of synchronization and buffer capacity to avoid overflows or stale data. Given the asynchronous nature of HL2SS’s multi-modal streaming and the need for frame-aligned processing across modalities, the producer-consumer pattern is an ideal choice—it enables parallelism without blocking and mitigates the latency and resource contention issues inherent in a naïve multi-receiver setup.
+
+ When using only one receiver, this is not a problem, but when using multiple receivers, all the blocking stalls transfers, increases latency, and can cause frame drops due to send/recv buffers getting full. We tried to work around this using threads but it was too slow due to the Global Interpreter Lock [(GIL)](https://realpython.com/python-gil/) which limits true parallelism, so we used multiprocessing.
+
+The producer wraps the receivers so each one can run on its own process (producer.configure). The received packets from ```rx_[...].get_next_packet``` are put into a circular buffer with a fixed capacity (capacity set by ```producer.initialize```) after streaming is started (producer.start). It is possible to have multiple producers (e.g., one producer per port), but the ports they access must not overlap.
+
+This design has been employed by the need to support multiple readers per stream. Each reader is a consumer, and the sinks provide access to each of the producer streams. It is possible to have multiple consumers reading the same producer stream (port), but a consumer can have at most one sink of a given stream (port).
+
+The sinks allow reading the nth most recent frame by using negative indices (-1 is most recent), or reading frames sequentially by using absolute non-negative indices (sink.get_buffered_frame). The absolute index of the most recent frame is given by ```sink.get_frame_stamp```. The most recent frame and its absolute index can also be obtained using ```sink.get_most_recent_frame```. When a sink is created, the producer gives it the index of the most recent frame, which can be obtained with ```sink_ev.get_attach_response``` (must always be called after creating the sink, even if the index is not used), then it is possible to read frames sequentially like this:
+
+```python
+index = sink_x.get_attach_response()
+
+while (some_condition):
+    status, frame_stamp, data = sink_x.get_buffered_frame(index)
+    # status: 
+    #      0 = ok
+    #     -1 = requested frame is too old and has been discarded (internal circular buffer has limited capacity)
+    #      1 = requested frame has not been received yet (index of future frame was given)
+    # frame_stamp: absolute index, same as index if index >= 0, used for converting negative (relative) indices to absolute indices, invalid if status != 0
+    # data: None if status != 0
+    if (data is None):
+        # optional wait
+        continue
+    index += 1
+    # process data
+    …
+
+```
+
+The frame closest in time to a given timestamp (and its absolute index) can be obtained using ```sink.get_nearest```. However, since all hl2ss server streams run independently and depending on network conditions, the optimal corresponding frame may not have yet arrived when ```sink.get_nearest``` is called. To keep it simple, I used a delay in the script in the above script to increase the chance that the optimal frame has been received, but it would be better to store the received color/depth frames, keep track of their timestamps, and then return optimal pairs. When a sink is not needed anymore, call ```sink.detach```. All sinks should be detached before stopping their corresponding producer stream (producer.stop). 
+Finally, sinks support waiting via semaphores, in hopes of reducing cpu power by not busy waiting and not messing the scheduler by using sleep. For the last parameter of consumer.create_sink, None means no semaphore and no support for waiting, ```...``` means create a new semaphore for the sink, and a member of ```hl2ss.StreamPort``` means reuse the semaphore created for the sink of that port (enables using a single wait for all sinks sharing the semaphore in an OR fashion). Waiting for new frames can be done using ```sink.acquire```. Peeking can be done using ```sink.acquire``` \ ```sink.release``` pairs. Then, sequential access can be written as:
+
+```python
+sink_x = consumer.create_sink(producer, port, manager, ...)
+index = sink_x.get_attach_response()
+
+while (some_condition):
+    sink_x.acquire()
+    index += 1
+    status, frame_stamp, data = sink_x.get_buffered_frame(index)
+    # status is always 0
+    # process data
+    …	
+
+```
+
 
 
 ## Summary
@@ -213,3 +290,7 @@ In this article, we explored the basics of the Microsoft Hololens2, including a 
 - [HoloLens2github](https://github.com/jdibenes/hl2ss)
 - [HL2forCV](https://github.com/microsoft/HoloLens2ForCV)
 - [hl2_rm](arXiv:2008.11239)
+- [PythonGlobalInterpreterLock](https://realpython.com/python-gil/)
+- [Producer-Consumer-Design-Pattern](https://jenkov.com/tutorials/java-concurrency/producer-consumer.html)
+- [HL2_hardware](https://learn.microsoft.com/en-us/hololens/hololens2-hardware)
+- [WMixedReality](https://learn.microsoft.com/en-us/windows/mixed-reality/)
