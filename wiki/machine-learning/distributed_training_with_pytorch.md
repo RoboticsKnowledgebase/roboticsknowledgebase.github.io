@@ -275,4 +275,4 @@ You may come across `DataParallel`, we have covered only `DistributedDataParalle
 - Official documentation for the RPC framework, which is now the default way to help "model-parallelise" your training.
 [RPC Framework](https://pytorch.org/docs/main/rpc.html)
 - Tutorial on how to combine RPC framework with DDP to train on large clusters, think in the order of 100s of GPUs
-[Combining Distributed DataParallel with Distributed RPC Framework](https://pytorch.org/docs/main/rpc.html)
+[Combining Distributed DataParallel with Distributed RPC Framework](https://pytorch.org/tutorials/advanced/rpc_ddp_tutorial.html#)
