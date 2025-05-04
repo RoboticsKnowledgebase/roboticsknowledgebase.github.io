@@ -1,205 +1,169 @@
-@@ -1,106 +1,127 @@
-# Debugging and Compiling ROS 2 Packages in Visual Studio Code
 
-This tutorial explains how to set up **Visual Studio Code** for building and debugging ROS 2 packages effectively.
+> This tutorial assumes you already have ROS 2 and Visual Studio Code installed and properly set up on your system.
 
----
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
-title: Title goes here
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
----
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+In this tutorial, we'll walk through setting up a development environment in Visual Studio Code (VS Code) to debug and compile ROS 2 packages effectively. We'll start with configuring debugging tools to help identify runtime errors and then explore how to streamline your build process using VS Code's task configurations.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-## 🧱 1. Preparing for Debugging
+## Debugging in VS Code
 
-Imagine this scenario: You comment out a line that creates a publisher in your ROS 2 C++ node. The code compiles fine, but running the node gives a **segmentation fault**, with no helpful error message.
+Let's begin with debugging.
 
-To debug such issues, we'll configure **GDB debugging** inside VS Code.
+Open VS Code and load a ROS 2 package. For this example, we'll be using a simple publisher node written in C++. We'll start by intentionally commenting out the line that creates the publisher to simulate a bug. Even though the code appears fine to C++ linting tools, compiling it with `colcon build` will complete successfully.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
----
+![image](https://github.com/user-attachments/assets/6eadbdbd-1b8e-4a15-99f7-0a303aa4e57d)
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
-## 🧰 2. Install GDB Server (If Needed)
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
-Ensure `gdbserver` is installed:
+However, when you try to run the node, you’ll get a segmentation fault. This error isn't informative, so we'll set up proper debugging using `gdb` and VS Code.
 
-This section covers the basic syntax and some rules of thumb for writing.
+![image](https://github.com/user-attachments/assets/d09892fb-50d6-4d78-b8c9-ea76a9dfe1b4)
+
+
+### Using GDB
+
+First, build your ROS 2 workspace with debugging symbols:
+
+```bash
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+```
+
+Then, run the node using `gdbserver`:
+
+```bash
+ros2 run --prefix 'gdbserver localhost:3000' <your_package> <your_node>
+```
+
+If `gdbserver` is not installed, you can install it with:
+
 ```bash
 sudo apt update
 sudo apt install gdbserver
 ```
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
----
+So here we see processing our node listening on Port 3000, but now we need to configure our Vs code
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
-## ⚙️ 3. Running a Node with GDB Server
+to communicate with the debugger.
 
-Use this command to run a ROS 2 node with GDB server:
+![image](https://github.com/user-attachments/assets/f9d6c269-eda2-4839-96e0-628bd8b95b70)
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
-```bash
-ros2 run --prefix 'gdbserver localhost:3000' <package_name> <executable_name>
-```
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
-Replace `<package_name>` and `<executable_name>` with your specific values.
-
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
----
-
-Larger chunks of code should use this format:
-## 🐞 4. Configure the Debugger in VS Code
-
-Create or edit the file `.vscode/launch.json`:
+Now, configure VS Code to connect to the `gdbserver`. Create a `.vscode/launch.json` file:
 
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "C++ Debugger",
-            "request": "launch",
-            "type": "cppdbg",
-            "miDebuggerServerAddress": "localhost:3000",
-            "cwd": "/",
-            "program": "/home/$USER/Workspaces/ros2_cpp_ws/install/udemy_ros2_pkg/lib/udemy_ros2_pkg/service_client"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to gdbserver",
+      "type": "cppdbg",
+      "request": "launch",
+      "miDebuggerServerAddress": "localhost:3000",
+      "program": "/path/to/install/<your_package>/lib/<your_package>/<your_node>",
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "externalConsole": false,
+      "stopAtEntry": false
+    }
+  ]
 }
 ```
-def recover_msg(msg):
 
-        // Good coders comment their code for others.
-> 📝 Replace the `program` path with your actual executable path inside `install/`.
 
-        pw = ProtocolWrapper()
-Now press `F5` to launch the debugger and catch segmentation faults right where they happen.
 
-        // Explanation.
----
+Once saved, go to the Debug tab in VS Code and click **Start Debugging**. You'll see the line where the segmentation fault occurred highlighted. The debug pane shows variables, their values, and the call stack—helping identify issues such as an uninitialized publisher.
 
-## 🔄 5. Use `--symlink-install` for Faster Builds
+![image](https://github.com/user-attachments/assets/2b411708-6e57-4882-a9c7-480f60ea1c68)
 
-By default, `colcon build` copies files from `build/` to `install/`. You can make builds faster by creating symbolic links:
 
-        if rec_crc != calc_crc:
-            return None
+
+## Simlink Install with colcon
+
+To improve build efficiency, use the `--symlink-install` flag with colcon. This creates symbolic links instead of copying files into the `install/` directory:
+
 ```bash
 colcon build --symlink-install
 ```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
 
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
-To switch to this method, first clean your workspace:
+If you've already built the workspace, delete `build/`, `install/`, and `log/` directories first:
 
-#### Images and Video
-Images and embedded video are supported.
 ```bash
 rm -rf build/ install/ log/
-colcon build --symlink-install
 ```
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
-This is especially helpful when you're making small changes to files like `package.xml`, launch files, or interface definitions.
+Then rerun the build command with the symlink flag.
 
-{% include video id="8P9geWwi9e0" provider="youtube" %}
----
+## Automating Tasks with tasks.json
 
-{% include video id="148982525" provider="vimeo" %}
-## 🔧 6. Automate Build and Debug Tasks with `tasks.json`
-
-Add this to `.vscode/tasks.json`:
+You can simplify your build process in VS Code using `tasks.json` under `.vscode/`. Here's an example configuration:
 
 ```json
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build",
-            "type": "shell",
-            "command": "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
-        },
-        {
-            "label": "debug",
-            "type": "shell",
-            "command": "echo -e '\n\nRun the node using the following prefix: \n  ros2 run --prefix 'gdbserver localhost:3000' <package_name> <executable_name> \n\nAnd modify the executable path in .vscode/launch.json file \n' && source /opt/ros/humble/setup.bash && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo"
-        },
-        {
-            "label": "test",
-            "type": "shell",
-            "command": "colcon test && colcon test-result"
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "source /opt/ros/humble/setup.bash && colcon build --symlink-install",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "debug",
+      "type": "shell",
+      "command": "echo \"\nRun your node with:\nros2 run --prefix 'gdbserver localhost:3000' <your_package> <your_node>\n\nThen update launch.json to point to the right executable.\"",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
 }
 ```
 
-Then in VS Code:
-- Press `Ctrl+Shift+B` to build.
-- Open the command palette (F1) → "Run Task" → choose `debug` or `test`.
-- Use the printed instructions to launch your node under GDB.
+You can now trigger builds via **Terminal > Run Build Task** or `Ctrl+Shift+B`.
 
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
----
+## Useful VS Code ROS 2 Extension Commands
+
+![image](https://github.com/user-attachments/assets/a6fcc84a-beca-4650-876f-2b4d9d7f4318)
+
+Click on the gear icon and by default we could set the Ros2 distribution to Humble.
+
+So this is cool because once you do this via code will automatically know how to implement certain functionality
+
+based on the ROS distro you are using.
+
+![image](https://github.com/user-attachments/assets/54980fdd-5871-414c-b97e-4c330adb1e4b)
+
+
+
+
+VS Code’s ROS 2 extension provides useful shortcuts:
+
+* `ROS: Show Status` – shows active nodes and topics.
+* `ROS: Create ROS Terminal` – opens a terminal with the ROS environment sourced.
+* `ROS: Run a ROS Executable` – select a package and executable to run.
+* `ROS: Update C++ Properties` – updates `c_cpp_properties.json` for intellisense.
+
+Access these with `F1` → search `ROS`.
+
+
 
 ## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-## 📌 Final Tips
+
+In this tutorial, we:
+
+* Learned to build ROS 2 workspaces with debug symbols.
+* Set up `gdbserver` with VS Code.
+* Used symlink installs to streamline builds.
+* Automated common tasks with `tasks.json`.
+* Explored ROS-related commands in the VS Code extension.
 
 ## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
-- Open your ROS workspace at the root level (`~/ros2_ws`) in VS Code.
-- The ROS VS Code extension adds tools like:
-  - Sourced terminals
-  - Node runners
-  - ROS topic graph visualizers
+
+* [Debugging ROS 2](https://docs.ros.org/en/rolling/Tutorials/Debugging-ROS-2.html)
+* [colcon documentation](https://colcon.readthedocs.io/en/released/index.html)
 
 ## Further Reading
-- Links to articles of interest outside the Wiki (that are not references) go here.
----
 
-## References
-- Links to References go here.
-- References should be in alphabetical order.
-- References should follow IEEE format.
-- If you are referencing experimental results, include it in your published report and link to it here.
-Happy debugging! 🛠️🐢
+* [VS Code launch.json reference](https://code.visualstudio.com/docs/editor/debugging)
+* [ROS 2 Tools Extension on Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
+
