@@ -186,6 +186,8 @@ wiki:
     children:
       - title: Key Concepts in Reinforcemnet Learning (RL)
         url: /wiki/reinforcemnet-learning/key-concepts-in-rl/
+      - title: Reinforcement Learning Algorithms
+        url: /wiki/reinforcemnet-learning/reinforcement-learning-algorithms/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
