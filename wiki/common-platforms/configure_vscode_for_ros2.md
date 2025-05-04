@@ -76,7 +76,7 @@ Once saved, go to the Debug tab in VS Code and click **Start Debugging**. You'll
 
 
 ## Simlink Install with colcon
-
+By default, when you run `colcon build`, the build system **copies** the compiled binaries, libraries, and resources into the `install/` directory. While this works fine, it can be **inefficient and slow**—especially during iterative development—because every time you rebuild, files are duplicated into the install space.
 To improve build efficiency, use the `--symlink-install` flag with colcon. This creates symbolic links instead of copying files into the `install/` directory:
 
 ```bash
