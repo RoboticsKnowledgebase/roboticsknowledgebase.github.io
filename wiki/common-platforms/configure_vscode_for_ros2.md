@@ -133,7 +133,7 @@ Here’s an example configuration:
 }
 ```
 
-> 🔧 **Tip:** If you want to source your full `.bashrc` instead of just ROS setup, modify the `command` line:
+> **Tip:** If you want to source your full `.bashrc` instead of just ROS setup, modify the `command` line:
 >
 > ```bash
 > source ~/.bashrc && colcon build --symlink-install
@@ -145,7 +145,7 @@ To run these tasks:
 
 This automates builds and reminds you of necessary debug setup steps.
 
-> ⚠️ **Important**: Make sure VS Code is opened in your **ROS 2 workspace root**. If you're in the wrong directory, `colcon build` may fail or build the wrong packages.
+> **Important**: Make sure VS Code is opened in your **ROS 2 workspace root**. If you're in the wrong directory, `colcon build` may fail or build the wrong packages.
 
 ---
 
@@ -163,7 +163,7 @@ Press **F1** and type `ROS` to view available commands:
 - **ROS: Update C++ Properties** – Updates your `c_cpp_properties.json` file to enable IntelliSense in C++ ROS projects.
 - **ROS: Install ROS Dependencies (rosdep)** – Installs missing dependencies in your workspace using `rosdep install`.
 
-> 🧠 Even if you’re using ROS 2 (e.g., Humble), some commands still reference `rosrun` from ROS 1. These labels are legacy but still work for launching executables.
+> Even if you’re using ROS 2 (e.g., Humble), some commands still reference `rosrun` from ROS 1. These labels are legacy but still work for launching executables.
 
 ### Running a Node via Extension
 
