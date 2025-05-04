@@ -188,6 +188,8 @@ wiki:
         url: /wiki/reinforcemnet-learning/key-concepts-in-rl/
       - title: Reinforcement Learning Algorithms
         url: /wiki/reinforcemnet-learning/reinforcement-learning-algorithms/
+      -title: Policy Gradient Methods
+        url: /wiki/reinforcemnet-learning/intro-to-policy-gradient-methods/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
