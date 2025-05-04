@@ -91,9 +91,15 @@ rm -rf build/ install/ log/
 
 Then rerun the build command with the symlink flag.
 
-## Automating Tasks with tasks.json
+## Automating Builds and Debugging with `tasks.json`
 
-You can simplify your build process in VS Code using `tasks.json` under `.vscode/`. Here's an example configuration:
+Now, it can be inconvenient to remember and re-type long commands like `colcon build --symlink-install`, especially if you often switch between workspaces. VS Code allows us to automate such tasks using a `tasks.json` file.
+
+### Creating a Build Task
+
+Open your workspace in VS Code. In the file explorer, navigate to the `.vscode/` directory. If it doesn’t exist, create it. Inside that directory, create a file named `tasks.json`.
+
+Here’s an example configuration:
 
 ```json
 {
@@ -110,9 +116,16 @@ You can simplify your build process in VS Code using `tasks.json` under `.vscode
       "problemMatcher": []
     },
     {
-      "label": "debug",
+      "label": "build (debug)",
       "type": "shell",
-      "command": "echo \"\nRun your node with:\nros2 run --prefix 'gdbserver localhost:3000' <your_package> <your_node>\n\nThen update launch.json to point to the right executable.\"",
+      "command": "source /opt/ros/humble/setup.bash && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "debug-helper",
+      "type": "shell",
+      "command": "echo "\nRun your node with:\nros2 run --prefix 'gdbserver localhost:3000' <your_package> <your_node>\n\nThen update launch.json to point to the right executable."",
       "group": "build",
       "problemMatcher": []
     }
@@ -120,44 +133,74 @@ You can simplify your build process in VS Code using `tasks.json` under `.vscode
 }
 ```
 
-You can now trigger builds via **Terminal > Run Build Task** or `Ctrl+Shift+B`.
+> 🔧 **Tip:** If you want to source your full `.bashrc` instead of just ROS setup, modify the `command` line:
+>
+> ```bash
+> source ~/.bashrc && colcon build --symlink-install
+> ```
 
-## Useful VS Code ROS 2 Extension Commands
+To run these tasks:
+- Go to **Terminal → Run Build Task** or press **Ctrl+Shift+B**.
+- Choose `build`, `build (debug)`, or `debug-helper`.
 
-![image](https://github.com/user-attachments/assets/a6fcc84a-beca-4650-876f-2b4d9d7f4318)
+This automates builds and reminds you of necessary debug setup steps.
 
-Click on the gear icon and by default we could set the Ros2 distribution to Humble.
+> ⚠️ **Important**: Make sure VS Code is opened in your **ROS 2 workspace root**. If you're in the wrong directory, `colcon build` may fail or build the wrong packages.
 
-So this is cool because once you do this via code will automatically know how to implement certain functionality
+---
 
-based on the ROS distro you are using.
+## Using the ROS 2 VS Code Extension
 
-![image](https://github.com/user-attachments/assets/54980fdd-5871-414c-b97e-4c330adb1e4b)
+The [ROS Tools extension](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros) in VS Code offers convenient tools for interacting with ROS 2.
 
+### Common ROS Commands in VS Code
 
+Press **F1** and type `ROS` to view available commands:
 
+- **ROS: Show Status** – Displays current ROS nodes, topics, and status.
+- **ROS: Create ROS Terminal** – Opens a terminal with the correct ROS environment sourced.
+- **ROS: Run a ROS Executable** – Lets you select a package and node to run from a dropdown.
+- **ROS: Update C++ Properties** – Updates your `c_cpp_properties.json` file to enable IntelliSense in C++ ROS projects.
+- **ROS: Install ROS Dependencies (rosdep)** – Installs missing dependencies in your workspace using `rosdep install`.
 
-VS Code’s ROS 2 extension provides useful shortcuts:
+> 🧠 Even if you’re using ROS 2 (e.g., Humble), some commands still reference `rosrun` from ROS 1. These labels are legacy but still work for launching executables.
 
-* `ROS: Show Status` – shows active nodes and topics.
-* `ROS: Create ROS Terminal` – opens a terminal with the ROS environment sourced.
-* `ROS: Run a ROS Executable` – select a package and executable to run.
-* `ROS: Update C++ Properties` – updates `c_cpp_properties.json` for intellisense.
+### Running a Node via Extension
 
-Access these with `F1` → search `ROS`.
+1. Press **F1** → `ROS: Run a ROS Executable`.
+2. Choose your package.
+3. Select the executable (e.g., `minimal_publisher`).
+4. If needed, enter arguments.
+5. A terminal will open and run the node with the correct environment.
 
+### Creating a ROS-Sourced Terminal
 
+Select **ROS: Create ROS Terminal** from the F1 menu. This opens a new terminal tab with ROS environment variables sourced, allowing you to run commands like:
 
-## Summary
+```bash
+ros2 topic echo /your_topic
+```
 
-In this tutorial, we:
+### Updating C++ IntelliSense
 
-* Learned to build ROS 2 workspaces with debug symbols.
-* Set up `gdbserver` with VS Code.
-* Used symlink installs to streamline builds.
-* Automated common tasks with `tasks.json`.
-* Explored ROS-related commands in the VS Code extension.
+If your C++ symbols or headers aren’t resolving correctly, use:
 
+```text
+ROS: Update C++ Properties
+```
+
+This command re-generates `c_cpp_properties.json` with include paths specific to your workspace and ROS installation.
+
+---
+
+## Troubleshooting and Best Practices
+
+- Always open VS Code in your **workspace root** directory.
+- Use `--symlink-install` to reduce rebuild times.
+- Use `launch.json` to attach VS Code’s debugger to ROS nodes.
+- Keep reusable scripts or environment helpers in your workspace for consistency.
+
+---
 ## See Also:
 
 * [Debugging ROS 2](https://docs.ros.org/en/rolling/Tutorials/Debugging-ROS-2.html)
