@@ -72,6 +72,7 @@ Once saved, go to the Debug tab in VS Code and click **Start Debugging**. You'll
 
 ![image](https://github.com/user-attachments/assets/2b411708-6e57-4882-a9c7-480f60ea1c68)
 
+![image](https://github.com/user-attachments/assets/77b4a867-58d8-4dbb-bfc1-1102aed37ec9)
 
 
 ## Simlink Install with colcon
