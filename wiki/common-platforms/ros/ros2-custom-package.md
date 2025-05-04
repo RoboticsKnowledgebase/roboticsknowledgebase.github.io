@@ -457,12 +457,18 @@ By following this tutorial and the best practices outlined, you should be able t
 
 ## Further Reading
 
-- [ROS 2 Tutorial - Writing a Simple Publisher and Subscriber (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)  
-- [ROS 2 Tutorial - Writing a Simple Publisher and Subscriber (C++)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html)  
+- [ROS 2 Tutorial - Writing a Simple Publisher and Subscriber (Python)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html)
+  - A step‑by‑step, official Humble‑branch tutorial that walks you through creating your first Python node pair using rclpy. It clarifies publisher/subscriber APIs, QoS defaults, and the directory layout that ROS 2 expects, making it an ideal foundation before tackling more advanced, high‑bandwidth recording scenarios.
+- [ROS 2 Tutorial - Writing a Simple Publisher and Subscriber (C++)](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html)
+  - The C++ counterpart to the Python guide, this page teaches how to write minimal rclcpp publisher and subscriber nodes, build them with ament_cmake, and test them with ros2 run. 
 - [ROS2 Create ROS Package with Colcon](https://www.youtube.com/watch?v=4zGUDisw4UI)
+  - A concise YouTube demo that shows the entire ros2 pkg create -> colcon build workflow, highlighting where package.xml, CMakeLists.txt, or setup.py live.
 - [ROS2 Build Packages with Colcon](https://www.youtube.com/watch?v=KLvUMtYI_Ag)
+  - This follow‑up video dives deeper into colcon build flags, selective‑build options, and troubleshooting failed builds. 
 - [ROS2 Publisher and Subscriber Package C++](https://www.youtube.com/watch?v=rGsyQHwWObA)
+  - Demonstrates building a small C++ package from scratch that publishes and subscribes to custom messages, then tests it live. The example reinforces how topic names, message types, and QoS settings must line up. 
 - [CMake Tutorial for Absolute Beginners - From GCC to CMake including Make and Ninja](https://www.youtube.com/watch?v=NGPo7mz1oa4)
+  - A beginner‑friendly introduction to modern CMake, Make, and Ninja. If you need to tweak the IPC recorder’s CMakeLists.txt or add custom compile flags for performance, this video quickly gets you comfortable with the build‑system fundamentals ROS 2 relies on.
 
 
 ## References

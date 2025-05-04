@@ -348,7 +348,9 @@ By adopting intra-process communication for rosbag recording, ROS 2 users can c
 ## Further Reading
 
 - [ROS 2 composition and ZED ROS 2 Wrapper](https://www.stereolabs.com/docs/ros2/ros2-composition)
+  - Stereolabs’ documentation page explains how to run multiple ZED camera components inside a single ComposableNodeContainer with use_intra_process_comms=True.
 - [rosbg2_composable_recorder](https://github.com/berndpfrommer/rosbag2\_composable\_recorder)
+  - An earlier, experimental project that turns the standard rosbag2 Recorder into a composable node. Reviewing its design and issues offers additional insight into the trade‑offs of zero‑copy bagging, complementing the Humble‑specific IPC recorder covered here.
 
 ## References
 
