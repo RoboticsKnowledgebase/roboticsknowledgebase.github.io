@@ -271,6 +271,8 @@ wiki:
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Jetson Orin AGX
+        url: /wiki/computing/jetson-orin-agx.md
   - title: Fabrication
     url: /wiki/fabrication/
     children:
