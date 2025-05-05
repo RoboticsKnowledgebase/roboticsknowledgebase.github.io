@@ -389,3 +389,5 @@ docs:
     children:
       - title: Introduction
         url: /docs/
+- title: gRPC Bridge for ROS2 and visionOS
+  url: /wiki/interfacing/gRPC-Bridge-for-ROS2-and-visionOS
