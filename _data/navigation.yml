@@ -34,6 +34,8 @@ wiki:
     children:
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
+      - title: Finite State Mchines
+        url: /wiki/System-design-development/finite-state-machine/
       - title: Mechanical Design
         url: /wiki/system-design-development/mechanical-design/
       - title: Printed Circuit Board Design
