@@ -90,6 +90,8 @@ wiki:
         url: /wiki/common-platforms/ros/ros-global-planner/
       - title: Running ROS On An Unsupported OS
         url: /wiki/common-platforms/ros/ros-unsupported-os
+      - title: ROS 2 Yasmin State Machine
+        url: /wiki/common-platforms/ros/yasmin-ros2-state-machine/
       - title: Making RC Vehicles Autonomous
         url: /wiki/common-platforms/rccars-the-complete-guide/
       - title: Khepera 4
