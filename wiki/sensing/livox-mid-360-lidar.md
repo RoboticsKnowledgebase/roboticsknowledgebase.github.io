@@ -1,8 +1,3 @@
----
-date: 2025-11-30
-title: LIVOX Mid-360 LiDAR
-published: true
----
 This article provides a comprehensive guide to the LIVOX Mid-360 LiDAR sensor, a popular choice in both academia and industry for robotic applications. This tutorial covers hardware connections, driver setup procedures, and step-by-step integration into the ROS 2 ecosystem. Advanced topics include Fast-LIO2 SLAM integration that leverages LiDAR-IMU data for robust odometry and mapping, point cloud processing pipelines. Following this guide, readers will be able to set up and integrate the LIVOX Mid-360 LiDAR into their robotic projects with ROS 2 Humble.
 
 ![LIVOX Mid-360 LiDAR](assets/livox-mid-360-lidar.png)
