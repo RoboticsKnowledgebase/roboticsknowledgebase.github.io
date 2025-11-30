@@ -1,6 +1,6 @@
 This article provides a comprehensive guide to the LIVOX Mid-360 LiDAR sensor, a popular choice in both academia and industry for robotic applications. This tutorial covers hardware connections, driver setup procedures, and step-by-step integration into the ROS 2 ecosystem. Advanced topics include Fast-LIO2 SLAM integration that leverages LiDAR-IMU data for robust odometry and mapping, point cloud processing pipelines. Following this guide, readers will be able to set up and integrate the LIVOX Mid-360 LiDAR into their robotic projects with ROS 2 Humble.
 
-![LIVOX Mid-360 LiDAR](assets/livox-mid-360-lidar.png)
+<img src="assets/livox-mid-360-lidar.png" alt="LIVOX Mid-360 LiDAR" width="30%">
 
 
 ## Sensor Overview
@@ -21,13 +21,17 @@ Key specifications:
 
 The Mid-360 features active anti-interference capabilities, allowing reliable operation even with multiple LiDAR signals in the same environment. The sensor performs consistently in both bright and low-light conditions, making it suitable for indoor and outdoor applications. Its compact size and short minimum detection range (10 cm) enable flexible mounting options and help eliminate blind spots in robot designs.
 
-![LIVOX Mid-360 LiDAR](assets/livox-mid-360-lidar-fov.png)
+
+   <img src="assets/livox-mid-360-lidar-fov.png" alt="LIVOX Mid-360 LiDAR" width="70%">
+
 
 > **Source**: Specifications and technical details are based on the [official LIVOX Mid-360 product page](https://www.livoxtech.com/mid-360).
 
 ## Hardware Connections
 
 ### Physical Setup
+
+![LIVOX Mid-360 LiDAR Connections](assets/livox-mid-360-lidar-connections.png)
 
 The LIVOX Mid-360 requires the following connections:
 
@@ -38,7 +42,6 @@ The LIVOX Mid-360 requires the following connections:
    
    **Mounting Tip**: For optimal horizontal FOV coverage, consider mounting the sensor at a slight angle. For example, [Tare Robotics](https://www.tarerobotics.com/) mounts the Mid-360 at a 20-degree tilt angle on their T-Bot platform, which helps balance the horizontal field of view distribution and improves ground-level obstacle detection.
 
-![LIVOX Mid-360 LiDAR Connections](assets/livox-mid-360-lidar-connections.png)
 
 ### Network Configuration
 
@@ -82,12 +85,6 @@ network:
       dhcp4: no
       addresses: 
         - 192.168.1.50/24  # Livox recommended IP address
-      # If you need internet access, add gateway and DNS:
-      # routes:
-      #   - to: default
-      #     via: 192.168.1.1
-      # nameservers:
-      #   addresses: [8.8.8.8, 8.8.8.4]
 ```
 
 Apply the configuration:
@@ -109,9 +106,6 @@ ip addr show eth0 | grep 192.168.1.50
 ping -c 3 192.168.1.1XX
 ```
 
-Expected result: 0-5ms latency, 0% packet loss.
-
-> **Note**: If you need to maintain multiple network connections (e.g., internet access and LiDAR communication), you can assign multiple IP addresses to the same interface. See the network configuration section for advanced setups.
 
 ## Driver Setup
 
