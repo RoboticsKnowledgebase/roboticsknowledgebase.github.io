@@ -36,34 +36,51 @@ The LIVOX Mid-360 is a compact, lightweight solid-state LiDAR sensor designed fo
 
 ### Key Specifications
 
-**Physical Characteristics:**
-- **Dimensions**: 65 × 65 × 60 mm (L × W × H)
-- **Weight**: 265 g
-- **Interface**: Ethernet (1000BASE-T)
-- **Power consumption**: 6.5W (9-27V DC)
-- **Operating temperature**: -20°C to 55°C
-- **Protection rating**: IP67
+#### Physical Characteristics
 
-**Performance Specifications:**
-- **Field of view**: 360° (horizontal) × 59° (vertical)
-- **Minimum detection range**: 0.1 m (10 cm)
-- **Maximum detection range**: 
-  - 40 m @ 10% reflectivity (typical indoor surfaces: concrete floor 15-30%, white wall 90-99%)
-  - 70 m @ 80% reflectivity (high-reflectivity surfaces)
-- **Point cloud output**: 200,000 points per second at 10 Hz frame rate
-- **Point cloud density**: 40-line
-- **Laser wavelength**: 905 nm (Class 1 eye-safe, IEC60825-1:2014)
+| Parameter | Specification |
+|----------|---------------|
+| **Dimensions** | 65 × 65 × 60 mm (L × W × H) |
+| **Weight** | 265 g |
+| **Interface** | Ethernet (1000BASE-T) |
+| **Power consumption** | 6.5W |
+| **Power supply** | 9-27V DC |
+| **Operating temperature** | -20°C to 55°C |
+| **Protection rating** | IP67 |
 
-**Accuracy Specifications:**
-- **Random range error (1σ)**: ≤ 2 cm at 10 m distance, ≤ 3 cm at 0.2 m distance
-- **Angular random error (1σ)**: < 0.15°
-- **False alarm rate**: < 0.01% at 100 klx ambient light
+#### Performance Specifications
 
-**Additional Features:**
-- **Built-in IMU**: ICM40609 providing high-frequency inertial data (typically 200 Hz)
-- **Default IP address**: 192.168.1.1XX (where XX is the last two digits of the sensor's serial number)
-- **Active anti-interference**: Reliable operation with multiple LiDAR signals in the same environment
-- **Non-repetitive scanning pattern**: Angular resolution improves over time, enhancing small object detection
+| Parameter | Specification |
+|----------|---------------|
+| **Field of view (horizontal)** | 360° |
+| **Field of view (vertical)** | 59° |
+| **Minimum detection range** | 0.1 m (10 cm) |
+| **Maximum detection range** | 40 m @ 10% reflectivity<br>70 m @ 80% reflectivity |
+| **Point cloud output** | 200,000 points/second |
+| **Frame rate** | 10 Hz (typical) |
+| **Point cloud density** | 40-line |
+| **Laser wavelength** | 905 nm |
+| **Eye safety** | Class 1 (IEC60825-1:2014) |
+
+> **Note**: Reflectivity reference values: concrete floor 15-30%, white wall 90-99%
+
+#### Accuracy Specifications
+
+| Parameter | Value |
+|----------|-------|
+| **Random range error (1σ)** | ≤ 2 cm @ 10 m<br>≤ 3 cm @ 0.2 m |
+| **Angular random error (1σ)** | < 0.15° |
+| **False alarm rate** | < 0.01% @ 100 klx |
+
+#### Additional Features
+
+| Feature | Description |
+|---------|-------------|
+| **Built-in IMU** | ICM40609, 200 Hz sampling rate |
+| **Default IP address** | `192.168.1.1XX` (XX = last 2 digits of serial number) |
+| **Active anti-interference** | Multi-LiDAR operation support |
+| **Scanning pattern** | Non-repetitive (resolution improves over time) |
+| **Time synchronization** | GPS PPS and PTPv2 support |
 
 The Mid-360 features active anti-interference capabilities, allowing reliable operation even with multiple LiDAR signals in the same environment. The sensor performs consistently in both bright and low-light conditions, making it suitable for indoor and outdoor applications. Its compact size and short minimum detection range (10 cm) enable flexible mounting options and help eliminate blind spots in robot designs. The non-repetitive scanning pattern ensures that over time, the angular resolution improves significantly, with more points accumulating in previously sparse areas, which is particularly beneficial for SLAM applications.
 
@@ -91,22 +108,67 @@ Before diving into software configuration, establishing proper physical connecti
 
 The LIVOX Mid-360 requires the following connections:
 
-1. **Power Supply**: Connect the power adapter to the sensor. The sensor operates at 9-27V DC with a power consumption of 6.5W. The power connector uses a standard aviation connector (M12), and Livox provides a splitter cable that separates power, Ethernet, and function connections. Ensure the power supply can provide sufficient current (typically 0.5-0.7A at 12V). Pay attention to polarity: the center pin is positive, and the outer shell is ground.
+#### 1. Power Supply
 
-2. **Ethernet Connection**: Connect the sensor directly to your computer or Jetson Orin using an Ethernet cable (1000BASE-T). While the sensor supports 1000BASE-T, it actually uses 100BASE-TX for data transmission. Use a high-quality Ethernet cable (Cat5e or better) with proper shielding to minimize interference. The cable length should not exceed 100 meters for reliable communication. For mobile robot applications, consider using flexible, shielded cables that can withstand repeated bending.
+Connect the power adapter to the sensor using the provided splitter cable.
 
-3. **Function Connector (Optional)**: The M12 function connector supports GPS time synchronization (PPS and GPS input) and PTPv2 network time synchronization. The connector pinout includes:
-   - Pin 8 (Gray/White): LVTTL_IN for GPS input
-   - Pin 10 (Purple/White): LVTTL_IN for Pulse Per Second (PPS)
-   - Pin 9 (Gray): LVTTL_OUT (reserved)
-   - Pin 11 (Purple): LVTTL_OUT (reserved)
-   - Black: Ground
+**Requirements:**
+- **Voltage**: 9-27V DC
+- **Power consumption**: 6.5W
+- **Current**: 0.5-0.7A @ 12V (typical)
+- **Connector**: M12 aviation connector
+- **Polarity**: Center pin positive (+), outer shell ground (-)
 
-   For GPS synchronization, configure the GPS module to output NMEA messages at 9600 baud rate, 8 data bits, no parity, 1 stop bit. The PPS signal should be a 3.3V TTL pulse with 1 Hz frequency.
+> **Warning**: Ensure correct polarity to avoid damaging the sensor. The Livox splitter cable separates power, Ethernet, and function connections.
 
-4. **Mounting**: Ensure the sensor is securely mounted on your robot platform. The sensor should be positioned to maximize its field of view for your specific application. Use the provided mounting holes (M3 threads) and ensure the mounting surface is flat and rigid. For optimal thermal management, mount the sensor on a metal surface with good thermal conductivity. Maintain at least 5 cm clearance around the sensor for proper heat dissipation. Avoid mounting near heat sources or in areas with restricted airflow.
-   
-   **Mounting Tip**: For optimal horizontal FOV coverage, consider mounting the sensor at a slight angle. For example, [Tare Robotics](https://www.tarerobotics.com/) mounts the Mid-360 at a 20-degree tilt angle on their T-Bot platform, which helps balance the horizontal field of view distribution and improves ground-level obstacle detection.
+#### 2. Ethernet Connection
+
+Connect the sensor directly to your computer or Jetson Orin using an Ethernet cable.
+
+**Cable Requirements:**
+- **Type**: Cat5e or better
+- **Shielding**: Recommended for noise reduction
+- **Length**: Maximum 100 meters
+- **Interface**: 1000BASE-T (actual data transmission: 100BASE-TX)
+
+**For Mobile Robots:**
+- Use flexible, shielded cables
+- Ensure cables can withstand repeated bending
+- Consider strain relief at connection points
+
+#### 3. Function Connector (Optional)
+
+The M12 function connector enables time synchronization for multi-sensor setups.
+
+**Pin Configuration:**
+
+| Pin | Color | Signal | Function |
+|-----|-------|--------|----------|
+| 8 | Gray/White | LVTTL_IN | GPS input |
+| 9 | Gray | LVTTL_OUT | Reserved output |
+| 10 | Purple/White | LVTTL_IN | Pulse Per Second (PPS) |
+| 11 | Purple | LVTTL_OUT | Reserved output |
+| - | Black | Ground | Common ground |
+
+**GPS Synchronization Settings:**
+- **Baud rate**: 9600
+- **Data bits**: 8
+- **Parity**: None
+- **Stop bits**: 1
+- **PPS signal**: 3.3V TTL, 1 Hz frequency
+
+#### 4. Mounting
+
+**Mounting Requirements:**
+- **Thread size**: M3 mounting holes
+- **Surface**: Flat, rigid, metal preferred (for thermal management)
+- **Clearance**: Minimum 5 cm around sensor for heat dissipation
+- **Location**: Avoid heat sources and restricted airflow areas
+
+> **Pro Tip**: [Tare Robotics](https://www.tarerobotics.com/) mounts the Mid-360 at a **20-degree tilt angle** on their T-Bot platform. This configuration:
+> - Balances horizontal FOV distribution
+> - Improves ground-level obstacle detection
+> - Optimizes coverage for mobile robot applications
 
 Once the physical connections are established and the sensor is properly mounted, the next critical step is configuring the network interface. Unlike USB-connected sensors, the Mid-360 relies entirely on Ethernet communication, making network configuration a prerequisite for any data acquisition. Proper network setup ensures reliable, low-latency data transmission between the sensor and your computing platform, which is essential for real-time robotic applications.
 
@@ -114,17 +176,39 @@ Once the physical connections are established and the sensor is properly mounted
 
 The LIVOX Mid-360 supports two IP modes: dynamic IP address mode and static IP address mode. All Mid-360 sensors are set to static IP address mode by default.
 
-#### LiDAR IP Address
+#### LiDAR IP Address Configuration
 
-The default IP address of each Mid-360 is `192.168.1.1XX`, where `XX` represents the last two digits of the sensor's serial number. For example, if the serial number ends in "54", the IP address will be `192.168.1.154`. The default subnet mask is `255.255.255.0` and the default gateway is `192.168.1.1`.
+**Default Settings:**
 
-**Important**: When multiple Mid-360 sensors are connected to one computer, each sensor must have a different static IP address.
+| Parameter | Value |
+|-----------|-------|
+| **IP address format** | `192.168.1.1XX` |
+| **XX** | Last two digits of sensor serial number |
+| **Subnet mask** | `255.255.255.0` |
+| **Default gateway** | `192.168.1.1` |
+
+**Example:**
+- Serial number ending in `54` → IP address: `192.168.1.154`
+- Serial number ending in `23` → IP address: `192.168.1.123`
+
+> **Important**: When multiple Mid-360 sensors are connected to one computer, **each sensor must have a different static IP address**.
 
 #### Computer IP Address Configuration
 
-Your host computer must be configured on the same subnet (`192.168.1.x`) to communicate with the sensor. Livox recommends setting the computer's IP address to `192.168.1.50` with subnet mask `255.255.255.0`.
+**Recommended Settings:**
 
-**Note**: If you have multiple computers connecting to the same Mid-360, each computer needs a different IP address within the `192.168.1.x` subnet (e.g., `192.168.1.50`, `192.168.1.51`, etc.).
+| Parameter | Value |
+|-----------|-------|
+| **IP address** | `192.168.1.50` (Livox recommended) |
+| **Subnet mask** | `255.255.255.0` |
+| **Subnet** | `192.168.1.x` |
+
+**Multi-Computer Setup:**
+If multiple computers connect to the same Mid-360, assign different IP addresses:
+- Computer 1: `192.168.1.50`
+- Computer 2: `192.168.1.51`
+- Computer 3: `192.168.1.52`
+- etc.
 
 #### Temporary Network Configuration (Current Session Only)
 
@@ -181,12 +265,21 @@ With network connectivity established, you can proceed to software installation.
 
 Before installing the LIVOX driver, ensure you have the following dependencies:
 
-- **OS**: Ubuntu 22.04 (recommended) or Ubuntu 20.04
-- **ROS**: ROS 2 Humble 
-- **System packages**: CMake 3.10+, Git, build tools
-- **ROS packages**: PCL libraries for ROS 2
+**System Requirements:**
 
-Install system dependencies:
+| Component | Requirement |
+|-----------|-------------|
+| **Operating System** | Ubuntu 22.04 (recommended) or Ubuntu 20.04 |
+| **ROS Version** | ROS 2 Humble Hawksbill |
+| **CMake** | Version 3.10 or later |
+| **Git** | Latest version |
+| **Build tools** | `build-essential` package |
+
+**Required ROS Packages:**
+- `ros-humble-pcl-ros`
+- `ros-humble-pcl-conversions`
+
+**Install System Dependencies:**
 
 ```bash
 sudo apt update
@@ -203,13 +296,16 @@ pip3 install --user 'setuptools<70'
 
 ### Installing LIVOX SDK2
 
-**Important**: The LIVOX Mid-360 requires **Livox SDK2** (not SDK1). SDK1 will not work with Mid-360. The SDK2 provides the low-level communication protocol and device management functions necessary for Mid-360 operation.
+> **Critical**: The LIVOX Mid-360 requires **Livox SDK2** (not SDK1). SDK1 will **not work** with Mid-360.
 
-The SDK2 architecture includes:
-- **Device discovery**: Automatic detection of connected Livox sensors on the network
-- **Data streaming**: Efficient point cloud and IMU data transmission
-- **Device control**: Parameter configuration and status monitoring
-- **Time synchronization**: Support for GPS and PTPv2 time sync protocols
+**SDK2 Architecture Components:**
+
+| Component | Function |
+|----------|----------|
+| **Device discovery** | Automatic detection of connected Livox sensors on the network |
+| **Data streaming** | Efficient point cloud and IMU data transmission |
+| **Device control** | Parameter configuration and status monitoring |
+| **Time synchronization** | Support for GPS and PTPv2 time sync protocols |
 
 1. Clone the LIVOX SDK2 repository:
 
@@ -306,19 +402,30 @@ ros2 launch livox_ros_driver2 msg_MID360_launch.py
 
 ### Published Topics
 
-The driver publishes the following topics:
+**ROS 2 Topics:**
 
-- `/livox/lidar`: Point cloud data in `livox_ros_driver2/CustomMsg` format. This custom message type contains raw point cloud data with timestamps, point coordinates (x, y, z), and intensity values. The message structure is optimized for Livox's non-repetitive scanning pattern and includes frame information for proper point cloud reconstruction.
+| Topic Name | Message Type | Description | Rate |
+|------------|--------------|-------------|------|
+| `/livox/lidar` | `livox_ros_driver2/CustomMsg` | Point cloud data with timestamps, coordinates (x, y, z), and intensity | 10 Hz (configurable) |
+| `/livox/imu` | `sensor_msgs/Imu` | IMU data: linear acceleration, angular velocity, covariance matrices | 200 Hz (hardware dependent) |
 
-- `/livox/imu`: IMU data in `sensor_msgs/Imu` format. The IMU provides linear acceleration and angular velocity measurements at high frequency (typically 200 Hz), which is essential for motion estimation and sensor fusion algorithms. The IMU data includes covariance matrices for uncertainty estimation.
+**Topic Details:**
 
-The driver also publishes TF transforms:
-- `base_link` → `livox_frame`: Transform from robot base to LiDAR sensor frame
-- The transform includes the mounting position and orientation of the sensor
+- **`/livox/lidar`**: 
+  - Custom message format optimized for Livox's non-repetitive scanning pattern
+  - Includes frame information for proper point cloud reconstruction
+  - Contains raw point cloud data with timestamps and intensity values
 
-Topic publication rates:
-- `/livox/lidar`: Typically 10 Hz (configurable)
-- `/livox/imu`: Typically 200 Hz (hardware dependent)
+- **`/livox/imu`**: 
+  - High-frequency inertial measurements (200 Hz)
+  - Essential for motion estimation and sensor fusion algorithms
+  - Includes covariance matrices for uncertainty estimation
+
+**TF Transforms:**
+
+| Transform | Description |
+|-----------|-------------|
+| `base_link` → `livox_frame` | Transform from robot base to LiDAR sensor frame<br>Includes mounting position and orientation |
 
 ### Verifying Data Stream
 
@@ -338,15 +445,19 @@ ros2 topic echo /livox/lidar --once
 
 ### Configuration
 
-Edit the driver configuration file to adjust parameters:
+**Configuration File Location:**
+```
+ros_ws/src/livox_ros_driver2/config/MID360_config.json
+```
 
-**Location**: `ros_ws/src/livox_ros_driver2/config/MID360_config.json`
+**Key Parameters:**
 
-Key parameters:
-- `lidar_bag_ip`: LiDAR IP address (default: 192.168.1.1XX, where XX is the last two digits of the sensor's serial number)
-- `host_bag_ip`: Host IP address (default: 192.168.1.50, Livox recommended)
-- `imu_bag`: Enable/disable IMU data
-- `frame_id`: TF frame name for the LiDAR
+| Parameter | Description | Default Value |
+|-----------|-------------|---------------|
+| `lidar_bag_ip` | LiDAR IP address | `192.168.1.1XX` (XX = last 2 digits of serial) |
+| `host_bag_ip` | Host computer IP address | `192.168.1.50` (Livox recommended) |
+| `imu_bag` | Enable/disable IMU data publishing | `true` |
+| `frame_id` | TF frame name for the LiDAR | `livox_frame` |
 
 The basic ROS 2 integration provides point cloud and IMU data streams, which are sufficient for many applications. However, for advanced robotic systems requiring simultaneous localization and mapping (SLAM), obstacle avoidance, or path planning, additional processing is necessary. The following section introduces Fast-LIO2, a state-of-the-art SLAM algorithm specifically designed to work with Livox sensors, demonstrating how to transform raw sensor data into actionable navigation information.
 
@@ -356,12 +467,15 @@ The basic ROS 2 integration provides point cloud and IMU data streams, which are
 
 Fast-LIO2 is a computationally efficient and robust LiDAR-inertial odometry framework that works well with LIVOX sensors. It provides real-time odometry and mapping capabilities. The algorithm uses an iterated Kalman filter to tightly couple LiDAR and IMU measurements, achieving high accuracy with low computational cost.
 
-Key advantages of Fast-LIO2 for Mid-360:
-- **Non-repetitive scan handling**: Designed to work with Livox's unique scanning patterns
-- **Real-time performance**: Typically runs at 10-20 Hz on modern hardware
-- **Robust to motion**: Handles aggressive motions and vibrations well
-- **Memory efficient**: Incremental map building without storing full point clouds
-- **Open source**: Actively maintained with ROS 2 support
+**Key Advantages of Fast-LIO2 for Mid-360:**
+
+| Advantage | Description |
+|-----------|-------------|
+| **Non-repetitive scan handling** | Designed to work with Livox's unique scanning patterns |
+| **Real-time performance** | Typically runs at 10-20 Hz on modern hardware |
+| **Robust to motion** | Handles aggressive motions and vibrations well |
+| **Memory efficient** | Incremental map building without storing full point clouds |
+| **Open source** | Actively maintained with ROS 2 support |
 
 The algorithm processes incoming point clouds incrementally, extracting features and matching them with the current map estimate. IMU data provides motion prediction between LiDAR scans, improving accuracy during fast movements.
 
@@ -405,18 +519,30 @@ ros2 run fast_lio fastlio_mapping --ros-args \
     --params-file src/FAST_LIO_ROS2/config/avia.yaml
 ```
 
-**Published topics:**
-- `/Odometry`: Odometry data (~10 Hz)
-- `/path`: Trajectory path visualization
-- `/cloud_registered`: Registered point cloud map
-- `/tf`: Transform tree
+**Published Topics:**
+
+| Topic | Message Type | Description | Rate |
+|-------|--------------|-------------|------|
+| `/Odometry` | `nav_msgs/Odometry` | Odometry data (pose, twist, covariance) | ~10 Hz |
+| `/path` | `nav_msgs/Path` | Trajectory path visualization | ~10 Hz |
+| `/cloud_registered` | `sensor_msgs/PointCloud2` | Registered point cloud map | ~10 Hz |
+| `/tf` | `tf2_msgs/TFMessage` | Transform tree | Dynamic |
 
 #### Configuration
 
-Edit `src/FAST_LIO_ROS2/config/avia.yaml` to match your setup:
-- LiDAR type: 1 (Livox series)
-- Scan lines: 6 (for Mid-360)
-- Input topics: `/livox/lidar`, `/livox/imu`
+**Configuration File:** `src/FAST_LIO_ROS2/config/avia.yaml`
+
+**Key Parameters:**
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `lidar_type` | `1` | Livox series LiDAR |
+| `scan_line` | `6` | For Mid-360 (40-line density) |
+| `point_filter_num` | `1` | Point cloud downsampling factor |
+| `filter_size_surf` | `0.2-0.3` (indoor)<br>`0.5-1.0` (outdoor) | Surface feature filter size (meters) |
+| `filter_size_map` | `0.2-0.3` (indoor)<br>`0.5-1.0` (outdoor) | Map filter size (meters) |
+| `lidar_topic` | `/livox/lidar` | Input LiDAR topic |
+| `imu_topic` | `/livox/imu` | Input IMU topic |
 
 For Mid-360, the default `avia.yaml` configuration works well for most applications. Adjust `filter_size_surf` and `filter_size_map` based on your environment: smaller values (0.2-0.3 m) for indoor environments, larger values (0.5-1.0 m) for outdoor environments.
 
@@ -461,23 +587,24 @@ source install/setup.bash
 
 #### Configuring Ego-Planner for Mid-360
 
-Ego-Planner requires configuration to work with the point cloud data from Fast-LIO2. The key configuration parameters include:
+Ego-Planner requires configuration to work with the point cloud data from Fast-LIO2.
 
-**Point Cloud Input:**
-- `map_topic`: Set to `/cloud_registered` (Fast-LIO2's registered point cloud output)
-- `point_cloud_inflation`: Inflation radius for obstacle expansion (typically 0.2-0.5 m for mobile robots)
+**Configuration File:** `src/ego_planner/config/planning.yaml`
 
-**Planning Parameters:**
-- `planning_horizon`: Maximum planning distance (adjust based on robot speed and sensor range)
-- `max_vel`: Maximum velocity constraints
-- `max_acc`: Maximum acceleration constraints
-- `resolution`: Grid resolution for point cloud processing (balance between accuracy and computation)
+**Key Configuration Parameters:**
 
-**Trajectory Optimization:**
-- `optimization_iterations`: Number of optimization iterations (typically 5-10)
-- `smoothing_weight`: Weight for trajectory smoothness (higher values produce smoother but potentially longer paths)
+| Category | Parameter | Typical Value | Description |
+|----------|-----------|---------------|-------------|
+| **Point Cloud Input** | `map_topic` | `/cloud_registered` | Fast-LIO2's registered point cloud output |
+| | `point_cloud_inflation` | 0.2-0.5 m | Inflation radius for obstacle expansion |
+| **Planning** | `planning_horizon` | 5-10 m | Maximum planning distance |
+| | `max_vel` | 1.0-2.0 m/s | Maximum velocity constraints |
+| | `max_acc` | 1.0-2.0 m/s² | Maximum acceleration constraints |
+| | `resolution` | 0.1-0.2 m | Grid resolution for point cloud processing |
+| **Optimization** | `optimization_iterations` | 5-10 | Number of optimization iterations |
+| | `smoothing_weight` | 0.5-1.0 | Weight for trajectory smoothness |
 
-Edit the configuration file `src/ego_planner/config/planning.yaml` to match your robot's specifications and operating environment.
+> **Tip**: Adjust `point_cloud_inflation` based on your robot's size. Larger robots require larger inflation radii for safe navigation.
 
 #### Running Ego-Planner
 
@@ -490,12 +617,18 @@ ros2 launch ego_planner ego_planner.launch.py
 ```
 
 **Published Topics:**
-- `/planning/trajectory`: Generated trajectory waypoints
-- `/planning/vis_trajectory`: Visualization markers for RViz
-- `/planning/vis_check_trajectory`: Collision checking visualization
+
+| Topic | Message Type | Description |
+|-------|--------------|-------------|
+| `/planning/trajectory` | `trajectory_msgs/JointTrajectory` | Generated trajectory waypoints |
+| `/planning/vis_trajectory` | `visualization_msgs/Marker` | Visualization markers for RViz |
+| `/planning/vis_check_trajectory` | `visualization_msgs/Marker` | Collision checking visualization |
 
 **Subscribed Topics:**
-- `/cloud_registered`: Point cloud map from Fast-LIO2
+
+| Topic | Message Type | Description |
+|-------|--------------|-------------|
+| `/cloud_registered` | `sensor_msgs/PointCloud2` | Point cloud map from Fast-LIO2 |
 - `/Odometry`: Current robot pose from Fast-LIO2
 - `/goal`: Goal position (geometry_msgs/PoseStamped)
 
@@ -555,9 +688,21 @@ Even with careful setup and configuration, real-world deployments often encounte
 
 #### LiDAR Not Connecting
 
-**Symptoms**: No data on `/livox/lidar` topic, driver shows connection errors
+**Symptoms:**
+- No data on `/livox/lidar` topic
+- Driver shows connection errors
+- `ping` to LiDAR IP fails
 
-**Solutions**:
+**Diagnosis Steps:**
+
+| Step | Command | Expected Result |
+|------|---------|-----------------|
+| 1. Check network config | `ip addr show eth0 \| grep 192.168.1.50` | Should show IP address assigned |
+| 2. Test connectivity | `ping -c 3 192.168.1.1XX` | Should receive replies |
+| 3. Check driver process | `ps aux \| grep livox_ros_driver2_node` | Should show running process |
+| 4. Verify hardware | Visual inspection | Power LED on, Ethernet connected |
+
+**Solutions:**
 ```bash
 # Check network configuration
 ip addr show eth0 | grep 192.168.1.50
@@ -571,9 +716,21 @@ ps aux | grep livox_ros_driver2_node
 
 #### No ROS Topics Published
 
-**Symptoms**: Driver launches but no topics appear
+**Symptoms:**
+- Driver launches successfully
+- No topics appear in `ros2 topic list`
+- No data flow
 
-**Solutions**:
+**Diagnosis Steps:**
+
+| Step | Command | Expected Result |
+|------|---------|-----------------|
+| 1. List topics | `ros2 topic list` | Should show `/livox/lidar` and `/livox/imu` |
+| 2. Check nodes | `ros2 node list` | Should show `livox_ros_driver2_node` |
+| 3. Check topic rate | `ros2 topic hz /livox/lidar` | Should show ~10 Hz |
+| 4. Verify connectivity | `ping 192.168.1.1XX` | Should receive replies |
+
+**Solutions:**
 ```bash
 # List all topics
 ros2 topic list
@@ -590,9 +747,21 @@ ping 192.168.1.1XX
 
 #### Fast-LIO2 Errors
 
-**Symptoms**: SLAM node fails to start or shows errors
+**Symptoms:**
+- SLAM node fails to start
+- Error messages in terminal
+- No odometry output
 
-**Solutions**:
+**Common Error Types:**
+
+| Error Type | Possible Cause | Solution |
+|------------|----------------|----------|
+| **Topic not found** | Driver not running | Start `livox_ros_driver2` first |
+| **IMU data missing** | IMU not enabled | Check `imu_bag` in driver config |
+| **TF errors** | Frame mismatch | Verify `frame_id` in config files |
+| **Memory errors** | Insufficient resources | Reduce `filter_size` parameters |
+
+**Solutions:**
 ```bash
 # Verify driver is running first
 ros2 topic list | grep livox
@@ -606,11 +775,21 @@ ls src/FAST_LIO_ROS2/config/avia.yaml
 
 #### Architecture Mismatch (ARM64/Jetson)
 
-**Symptoms**: "Exec format error" when running binaries
+**Symptoms:**
+- "Exec format error" when running binaries
+- Binary compatibility issues
 
-**Solutions**:
-- Ensure all packages are built from source on the target platform
-- Check binary architecture:
+**Solutions:**
+
+| Platform | Action | Command |
+|----------|--------|---------|
+| **ARM64/Jetson** | Build from source | `colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release` |
+| **Verify architecture** | Check binary format | `file ros2_ws/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node` |
+
+**Expected Output:**
+```
+ELF 64-bit LSB ... ARM aarch64
+```
 ```bash
 file ros2_ws/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node
 # Should show: "ELF 64-bit LSB ... ARM aarch64"
@@ -618,36 +797,69 @@ file ros2_ws/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_n
 
 #### RViz Shows Black Screen
 
-**Symptoms**: RViz launches but displays nothing
+**Symptoms:**
+- RViz launches successfully
+- No point cloud or visualization displayed
+- Empty display
 
-**Solutions**:
+**Diagnosis Steps:**
+
+| Step | Command | Expected Result |
+|------|---------|-----------------|
+| 1. Check TF tree | `ros2 run tf2_tools view_frames` | Should generate `frames.pdf` |
+| 2. Verify topics | `ros2 topic hz /livox/lidar` | Should show ~10 Hz |
+| 3. Check frame IDs | `ros2 topic echo /livox/lidar --once` | Should show correct `frame_id` |
+| 4. Verify RViz config | Check Fixed Frame setting | Should match `frame_id` |
+
+**Solutions:**
 - Verify TF tree exists: `ros2 run tf2_tools view_frames`
 - Check that topics are publishing: `ros2 topic hz /livox/lidar`
 - Ensure correct frame IDs in configuration
+- Set RViz Fixed Frame to match LiDAR frame ID
 
 ### Performance Optimization
 
-- Adjust point cloud publishing rate based on computational resources
-- Use point cloud filters to reduce data volume
-- Consider using compressed point cloud topics for network efficiency
-- For embedded platforms (Jetson), monitor CPU/GPU usage and adjust accordingly
+**Optimization Strategies:**
+
+| Strategy | Method | Benefit |
+|----------|--------|---------|
+| **Reduce data rate** | Adjust point cloud publishing rate | Lower CPU usage |
+| **Point cloud filtering** | Use PCL filters to reduce data volume | Faster processing |
+| **Compressed topics** | Enable point cloud compression | Network efficiency |
+| **Resource monitoring** | Monitor CPU/GPU usage (Jetson) | Identify bottlenecks |
+| **Parameter tuning** | Adjust `filter_size` in Fast-LIO2 | Balance accuracy/speed |
 
 ## 8. Platform-Specific Notes
 
 ### NVIDIA Jetson (ARM64)
 
-- Tested on Jetson Orin Nano and Xavier NX
-- Use `setuptools<70` for Python dependencies
-- All packages must be built from source
-- Monitor thermal throttling during long operations
+**Platform Details:**
 
-The platform-specific considerations discussed above highlight the importance of understanding your target hardware environment. Different platforms have different strengths and limitations, and optimizing your setup for the specific platform can significantly impact system performance. Whether you're deploying on embedded systems for field operation or developing on desktop computers for algorithm testing, these considerations should inform your configuration choices.
+| Aspect | Specification |
+|--------|---------------|
+| **Tested Platforms** | Jetson Orin Nano, Xavier NX |
+| **Python Dependencies** | Use `setuptools<70` |
+| **Build Method** | All packages must be built from source |
+| **Performance** | Monitor thermal throttling during long operations |
+| **Architecture** | ARM64 (aarch64) |
+
+**Important Notes:**
+- All packages must be built from source (no pre-compiled binaries)
+- Monitor thermal throttling during long operations
+- Use `setuptools<70` for Python dependencies: `pip3 install --user 'setuptools<70'`
 
 ### x86_64 Systems
 
-- Standard Ubuntu 22.04 installation should work
-- All build steps are the same
-- Generally better performance than ARM platforms
+**Platform Details:**
+
+| Aspect | Specification |
+|--------|---------------|
+| **OS** | Standard Ubuntu 22.04 installation |
+| **Build Method** | Standard build steps |
+| **Performance** | Generally better than ARM platforms |
+| **Architecture** | x86_64 (amd64) |
+
+> **Note**: The platform-specific considerations highlight the importance of understanding your target hardware environment. Different platforms have different strengths and limitations, and optimizing your setup for the specific platform can significantly impact system performance.
 
 ## 9. Application Scenarios
 
@@ -655,34 +867,61 @@ The LIVOX Mid-360's compact design, wide field of view, and high point cloud den
 
 ### Mobile Robot Navigation and SLAM
 
-**Autonomous Forklifts**: The Mid-360 is widely used in autonomous forklift systems for warehouse automation. Its 360° horizontal FOV enables comprehensive environment perception, allowing robots to navigate narrow aisles and handle complex loading scenarios. Companies like JingSong Intelligent have integrated Mid-360 into their forklift robots for precise pallet handling and outdoor navigation.
+**Application Categories:**
 
-**Service Robots**: Service robots in retail, hospitality, and healthcare environments benefit from Mid-360's ability to detect obstacles at close range (10 cm minimum distance) and provide dense point clouds for accurate localization in dynamic human environments.
+| Application | Use Case | Key Benefits |
+|-------------|----------|--------------|
+| **Autonomous Forklifts** | Warehouse automation, pallet handling | 360° FOV for narrow aisles, precise navigation |
+| **Service Robots** | Retail, hospitality, healthcare | 10 cm min range, dense point clouds for human environments |
+| **AMRs** | Manufacturing, logistics centers | Omnidirectional coverage, eliminates blind spots |
 
-**Autonomous Mobile Robots (AMRs)**: The sensor's omnidirectional coverage eliminates blind spots, making it ideal for AMRs operating in manufacturing facilities, logistics centers, and other industrial environments where safety and reliability are critical.
+**Notable Implementations:**
+- **JingSong Intelligent**: Integrated Mid-360 into forklift robots for precise pallet handling and outdoor navigation
+- **Tare Robotics**: T-Bot platform uses Mid-360 at 20° tilt angle for optimized FOV coverage
 
 ### 3D Mapping and Surveying
 
-**Handheld Scanning Systems**: Companies like Manifold Technology utilize Mid-360 in handheld scanning devices for various mapping applications. These systems enable rapid 3D mapping of indoor and outdoor environments, including:
+**Handheld Scanning Systems:**
 
-- **Building Interior Mapping**: High-resolution point cloud generation for architectural documentation, facility management, and renovation planning
-- **Urban Planning**: Street-level scanning for smart city applications, capturing detailed 3D models of urban environments
-- **Heritage Documentation**: Precise 3D scanning of historical sites and cultural heritage locations for preservation and digital archiving
-- **Construction Site Monitoring**: Regular scanning to track construction progress and verify as-built conditions
+| Application | Description | Key Features |
+|-------------|-------------|--------------|
+| **Building Interior Mapping** | Architectural documentation, facility management | High-resolution point clouds |
+| **Urban Planning** | Street-level scanning for smart cities | Detailed 3D models of urban environments |
+| **Heritage Documentation** | Historical sites, cultural preservation | Precise 3D scanning for digital archiving |
+| **Construction Site Monitoring** | Progress tracking, as-built verification | Regular scanning capabilities |
 
-The Mid-360's compact size and low power consumption make it ideal for portable scanning systems that can be operated by a single person, significantly reducing the time and cost compared to traditional surveying methods.
+**Notable Implementation:**
+- **Manifold Technology**: Utilizes Mid-360 in handheld scanning devices for various mapping applications
+
+> **Advantage**: The Mid-360's compact size (265g) and low power consumption (6.5W) make it ideal for portable scanning systems operated by a single person, significantly reducing time and cost compared to traditional surveying methods.
 
 ### Infrastructure Inspection
 
-**Railway Systems**: The Mid-360 is deployed in Train Intelligent Detection Systems (TIDS) for railway infrastructure monitoring. The sensor's ability to operate in various lighting conditions and provide detailed 3D point clouds enables detection of obstacles, track condition assessment, and tunnel clearance verification.
+**Application Areas:**
 
-**Tunnel and Underground Mapping**: The sensor's performance in low-light conditions makes it suitable for underground infrastructure mapping, including subway systems, utility tunnels, and mining operations.
+| Application | Use Case | Key Benefits |
+|-------------|----------|--------------|
+| **Railway Systems (TIDS)** | Train Intelligent Detection Systems | Obstacle detection, track condition assessment, tunnel clearance |
+| **Tunnel Mapping** | Subway systems, utility tunnels | Low-light performance, detailed 3D point clouds |
+| **Underground Mapping** | Mining operations, infrastructure | Reliable operation in challenging environments |
+
+**Key Features:**
+- Operates in various lighting conditions
+- Detailed 3D point clouds for infrastructure assessment
+- IP67 protection rating for harsh environments
 
 ### Drone and Aerial Applications
 
-**Autonomous Drones**: The Mid-360's lightweight design (265g) and wide field of view make it suitable for integration into drone platforms for autonomous navigation and obstacle avoidance. Research applications include indoor drone navigation where GPS is unavailable, requiring robust SLAM capabilities.
+**Application Categories:**
 
-**Aerial Mapping**: When mounted on aerial platforms, the Mid-360 can provide detailed ground-level point cloud data, complementing traditional aerial LiDAR systems for comprehensive 3D mapping projects.
+| Application | Description | Key Benefits |
+|-------------|-------------|--------------|
+| **Autonomous Drones** | Indoor navigation, obstacle avoidance | Lightweight (265g), wide FOV, GPS-free SLAM |
+| **Aerial Mapping** | Ground-level point cloud data | Complements traditional aerial LiDAR systems |
+
+**Research Applications:**
+- Indoor drone navigation (GPS unavailable)
+- Robust SLAM capabilities for autonomous flight
 
 ### Research and Development
 
