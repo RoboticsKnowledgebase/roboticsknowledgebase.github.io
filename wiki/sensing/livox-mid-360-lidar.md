@@ -6,107 +6,27 @@ This article provides a comprehensive guide to the LIVOX Mid-360 LiDAR sensor, a
 
 This guide is organized into logical sections that build upon each other. Follow the sections sequentially for a complete setup, or jump directly to any section based on your needs:
 
-**Quick Start Path**: For users who want to get the sensor running quickly, follow this sequence:
-1. [Hardware Connections](#2-hardware-connections) → 2. [Network Configuration](#network-configuration) → 3. [Driver Setup](#3-driver-setup) → 4. [ROS 2 Integration](#4-ros-2-integration)
+**Quick Start Path**: [2. Hardware Connections](#2-hardware-connections) → [3. Driver Setup](#3-driver-setup) → [4. ROS 2 Integration](#4-ros-2-integration)
 
-**Complete Integration Path**: For full SLAM and navigation capabilities:
-1. Quick Start Path (above) → 2. [Fast-LIO2 SLAM Integration](#51-fast-lio2-slam-integration) → 3. [Ego-Planner Path Planning Integration](#52-ego-planner-path-planning-integration) → 4. [Complete System Workflow](#6-complete-system-workflow)
+**Complete Integration Path**: Quick Start Path → [5.1 Fast-LIO2 SLAM Integration](#51-fast-lio2-slam-integration) → [5.2 Ego-Planner Path Planning Integration](#52-ego-planner-path-planning-integration) → [6. Complete System Workflow](#6-complete-system-workflow)
 
 ---
 
-### Part I: Getting Started
-
-**1. [Sensor Overview](#1-sensor-overview)**
-   - Technical specifications and sensor characteristics
-   - Scanning pattern and point cloud characteristics
-   - Understanding sensor capabilities and limitations
-
-**2. [Hardware Connections](#2-hardware-connections)**
-   - [Physical Setup](#physical-setup) - Power supply, Ethernet connection, mounting considerations
-   - [Network Configuration](#network-configuration) - IP address setup, connectivity verification
-     - LiDAR IP address configuration
-     - Computer IP address setup
-     - Temporary and permanent network configuration
-     - Advanced multi-network setups
-
----
-
-### Part II: Software Installation
-
-**3. [Driver Setup](#3-driver-setup)**
-   - [Prerequisites](#prerequisites) - System requirements, OS, ROS 2, and dependencies
-   - [Installing LIVOX SDK2](#installing-livox-sdk2) - Low-level SDK installation and verification
-   - [Installing ROS 2 Driver](#installing-ros-2-driver-livox_ros_driver2) - ROS 2 integration package
-
-**4. [ROS 2 Integration](#4-ros-2-integration)**
-   - [Launching the Driver](#launching-the-driver) - Starting the sensor node
-   - [Published Topics](#published-topics) - Understanding data formats and message types
-   - [Verifying Data Stream](#verifying-data-stream) - Confirming sensor operation
-   - [Configuration](#configuration) - Parameter adjustment and optimization
-
----
-
-### Part III: Advanced Applications
-
-**5. [Advanced Topics](#5-advanced-topics)**
-
-   **5.1 [Fast-LIO2 SLAM Integration](#51-fast-lio2-slam-integration)**
-   - Real-time mapping and localization
-   - [Installing Dependencies](#installing-dependencies) - Required libraries (Sophus, PCL, Eigen)
-   - [Building Fast-LIO2](#building-fast-lio2) - Compilation and workspace setup
-   - [Running Fast-LIO2](#running-fast-lio2) - Launching SLAM node
-   - [Configuration](#configuration-1) - Parameter tuning for Mid-360
-
-   **5.2 [Ego-Planner Path Planning Integration](#52-ego-planner-path-planning-integration)**
-   - Gradient-based trajectory planning
-   - [Why Ego-Planner with Mid-360?](#why-ego-planner-with-mid-360) - Integration advantages
-   - [Installing Ego-Planner](#installing-ego-planner) - Package installation
-   - [Configuring Ego-Planner](#configuring-ego-planner-for-mid-360) - Parameter setup
-   - [Running Ego-Planner](#running-ego-planner) - Launching planning node
-   - [Integration Workflow](#integration-workflow) - Complete system architecture
-   - [Performance Considerations](#performance-considerations) - Optimization guidelines
-
----
-
-### Part IV: System Integration and Troubleshooting
-
-**6. [Complete System Workflow](#6-complete-system-workflow)**
-   - Running all components together
-   - Multi-terminal setup procedures
-   - Visualization and monitoring
-
-**7. [Troubleshooting](#7-troubleshooting)**
-   - [Common Issues](#common-issues) - Connection problems, topic issues, errors
-     - LiDAR not connecting
-     - No ROS topics published
-     - Fast-LIO2 errors
-     - Architecture mismatch (ARM64/Jetson)
-     - RViz shows black screen
-   - [Performance Optimization](#performance-optimization) - System tuning and resource management
-
-**8. [Platform-Specific Notes](#8-platform-specific-notes)**
-   - [NVIDIA Jetson (ARM64)](#nvidia-jetson-arm64) - Embedded platform considerations
-   - [x86_64 Systems](#x86_64-systems) - Desktop development platforms
-   - Multi-sensor setup guidelines
-
----
-
-### Part V: Reference and Applications
-
-**9. [Application Scenarios](#9-application-scenarios)**
-   - Mobile robot navigation and SLAM
-   - 3D mapping and surveying (including handheld scanning systems)
-   - Infrastructure inspection
-   - Drone and aerial applications
-   - Research and development use cases
-
-**10. [Summary](#10-summary)**
-   - Key takeaways and best practices
-
-**11. Additional Resources**
-   - [See Also](#see-also) - Related wiki articles
-   - [Further Reading](#further-reading) - External documentation and resources
-   - [References](#references) - Academic papers and technical references
+1. [Sensor Overview](#1-sensor-overview)
+2. [Hardware Connections](#2-hardware-connections)
+3. [Driver Setup](#3-driver-setup)
+4. [ROS 2 Integration](#4-ros-2-integration)
+5. [Advanced Topics](#5-advanced-topics)
+   - 5.1 [Fast-LIO2 SLAM Integration](#51-fast-lio2-slam-integration)
+   - 5.2 [Ego-Planner Path Planning Integration](#52-ego-planner-path-planning-integration)
+6. [Complete System Workflow](#6-complete-system-workflow)
+7. [Troubleshooting](#7-troubleshooting)
+8. [Platform-Specific Notes](#8-platform-specific-notes)
+9. [Application Scenarios](#9-application-scenarios)
+10. [Summary](#10-summary)
+11. [See Also](#see-also)
+12. [Further Reading](#further-reading)
+13. [References](#references)
 
 ---
 
@@ -114,30 +34,40 @@ This guide is organized into logical sections that build upon each other. Follow
 
 The LIVOX Mid-360 is a compact, lightweight solid-state LiDAR sensor designed for low-speed robotics applications. Powered by Livox's unique rotating mirror hybrid-solid technology, the Mid-360 is the first Livox LiDAR to achieve a full 360° horizontal field of view, providing omnidirectional 3D perception capabilities. The sensor is optimized for mobile robot navigation, obstacle avoidance, and SLAM applications, delivering enhanced indoor and outdoor perception performance.
 
-Key specifications:
+### Key Specifications
+
+**Physical Characteristics:**
+- **Dimensions**: 65 × 65 × 60 mm (L × W × H)
+- **Weight**: 265 g
+- **Interface**: Ethernet (1000BASE-T)
+- **Power consumption**: 6.5W (9-27V DC)
+- **Operating temperature**: -20°C to 55°C
+- **Protection rating**: IP67
+
+**Performance Specifications:**
 - **Field of view**: 360° (horizontal) × 59° (vertical)
 - **Minimum detection range**: 0.1 m (10 cm)
 - **Maximum detection range**: 
   - 40 m @ 10% reflectivity (typical indoor surfaces: concrete floor 15-30%, white wall 90-99%)
   - 70 m @ 80% reflectivity (high-reflectivity surfaces)
+- **Point cloud output**: 200,000 points per second at 10 Hz frame rate
 - **Point cloud density**: 40-line
-- **Dimensions**: 65 × 65 × 60 mm (L × W × H)
-- **Weight**: 265 g
-- **Interface**: Ethernet (1000BASE-T)
-- **Default IP address**: 192.168.1.1XX (where XX is the last two digits of the sensor's serial number)
+- **Laser wavelength**: 905 nm (Class 1 eye-safe, IEC60825-1:2014)
 
-The Mid-360 features active anti-interference capabilities, allowing reliable operation even with multiple LiDAR signals in the same environment. The sensor performs consistently in both bright and low-light conditions, making it suitable for indoor and outdoor applications. Its compact size and short minimum detection range (10 cm) enable flexible mounting options and help eliminate blind spots in robot designs.
-
-### Technical Specifications Details
-
-The Mid-360 employs a 905 nm laser wavelength, classified as Class 1 eye-safe (IEC60825-1:2014 standard), ensuring safe operation in human environments. The sensor's angular resolution improves over time due to its non-repetitive scanning pattern, which enhances small object detection capabilities. The point cloud output rate reaches 200,000 points per second at a typical frame rate of 10 Hz, providing dense environmental data for high-fidelity mapping and localization.
-
-Range accuracy specifications include:
+**Accuracy Specifications:**
 - **Random range error (1σ)**: ≤ 2 cm at 10 m distance, ≤ 3 cm at 0.2 m distance
 - **Angular random error (1σ)**: < 0.15°
 - **False alarm rate**: < 0.01% at 100 klx ambient light
 
-The built-in IMU (ICM40609) provides inertial data at high frequency, enabling tight coupling with LiDAR data for robust odometry estimation. The sensor operates in temperatures ranging from -20°C to 55°C with IP67 protection rating, making it suitable for harsh industrial environments.
+**Additional Features:**
+- **Built-in IMU**: ICM40609 providing high-frequency inertial data (typically 200 Hz)
+- **Default IP address**: 192.168.1.1XX (where XX is the last two digits of the sensor's serial number)
+- **Active anti-interference**: Reliable operation with multiple LiDAR signals in the same environment
+- **Non-repetitive scanning pattern**: Angular resolution improves over time, enhancing small object detection
+
+The Mid-360 features active anti-interference capabilities, allowing reliable operation even with multiple LiDAR signals in the same environment. The sensor performs consistently in both bright and low-light conditions, making it suitable for indoor and outdoor applications. Its compact size and short minimum detection range (10 cm) enable flexible mounting options and help eliminate blind spots in robot designs. The non-repetitive scanning pattern ensures that over time, the angular resolution improves significantly, with more points accumulating in previously sparse areas, which is particularly beneficial for SLAM applications.
+
+   <img src="assets/livox-mid-360-lidar-fov.png" alt="LIVOX Mid-360 LiDAR" width="70%">
 
 ### Scanning Pattern and Point Cloud Characteristics
 
@@ -147,7 +77,6 @@ The vertical field of view distribution is not uniform across the range. The eff
 
 Understanding these technical characteristics is essential for proper sensor integration. The combination of wide field of view, high point cloud density, and robust environmental performance makes the Mid-360 particularly well-suited for applications requiring comprehensive spatial awareness. However, to fully leverage these capabilities, proper hardware setup and configuration are critical. The following sections will guide you through the physical installation, network configuration, and software integration necessary to bring the sensor online in your robotic system.
 
-   <img src="assets/livox-mid-360-lidar-fov.png" alt="LIVOX Mid-360 LiDAR" width="70%">
 
 
 > **Source**: Specifications and technical details are based on the [official LIVOX Mid-360 product page](https://www.livoxtech.com/mid-360).
