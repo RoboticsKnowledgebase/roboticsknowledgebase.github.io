@@ -1,5 +1,11 @@
 This article provides a comprehensive guide to the LIVOX Mid-360 LiDAR sensor, a popular choice in both academia and industry for robotic applications. This tutorial covers hardware connections, driver setup procedures, and step-by-step integration into the ROS 2 ecosystem. Advanced topics include Fast-LIO2 SLAM integration that leverages LiDAR-IMU data for robust odometry and mapping, point cloud processing pipelines. Following this guide, readers will be able to set up and integrate the LIVOX Mid-360 LiDAR into their robotic projects with ROS 2 Humble.
 
+**Tested setup**
+- OS: Ubuntu 22.04
+- ROS 2: Humble
+- Architectures: x86_64 workstation; NVIDIA Jetson Orin (ARM64) with JetPack 5
+- Livox drivers: Livox SDK2 >= 1.0, livox_ros_driver2 master, built from source
+
 <img src="assets/livox-mid-360-lidar.png" alt="LIVOX Mid-360 LiDAR" width="30%">
 
 ## Table of Contents
@@ -42,9 +48,8 @@ The LIVOX Mid-360 is a compact, lightweight solid-state LiDAR sensor designed fo
 |----------|---------------|
 | **Dimensions** | 65 × 65 × 60 mm (L × W × H) |
 | **Weight** | 265 g |
-| **Interface** | Ethernet (1000BASE-T) |
-| **Power consumption** | 6.5W |
-| **Power supply** | 9-27V DC |
+| **Interface** | Ethernet 100BASE-TX over M12 A-code (RJ45 via splitter) |
+| **Power supply** | 9-27 V DC, max ~14 W peak (6.5 W typical) |
 | **Operating temperature** | -20°C to 55°C |
 | **Protection rating** | IP67 |
 
@@ -110,16 +115,14 @@ The LIVOX Mid-360 requires the following connections:
 
 #### 1. Power Supply
 
-Connect the power adapter to the sensor using the provided splitter cable.
+Power is provided via the Livox M12 A-code connector using the bundled 1-to-3 splitter cable.
 
-**Requirements:**
-- **Voltage**: 9-27V DC
-- **Power consumption**: 6.5W
-- **Current**: 0.5-0.7A @ 12V (typical)
-- **Connector**: M12 aviation connector
-- **Polarity**: Center pin positive (+), outer shell ground (-)
+- **Voltage**: 9-27 V DC
+- **Typical power**: 6.5 W (up to ~14 W in transient conditions)
+- **Power pins (on M12)**: 1 and 9 (Power+), 2 and 3 (GND)
+- **Splitter wiring**: red = +9-27 V, black = GND
 
-> **Warning**: Ensure correct polarity to avoid damaging the sensor. The Livox splitter cable separates power, Ethernet, and function connections.
+> **Warning**: The RJ45 data port does **not** support PoE. Do not connect PoE-enabled switches or injectors directly; Livox warns this may permanently damage the device.
 
 #### 2. Ethernet Connection
 
@@ -129,7 +132,9 @@ Connect the sensor directly to your computer or Jetson Orin using an Ethernet ca
 - **Type**: Cat5e or better
 - **Shielding**: Recommended for noise reduction
 - **Length**: Maximum 100 meters
-- **Interface**: 1000BASE-T (actual data transmission: 100BASE-TX)
+- **Interface**: Ethernet (100BASE-TX over M12 A-code, RJ45 via 1-to-3 splitter)
+
+When connected via the Livox 1-to-3 splitter cable, the sensor negotiates a 100 Mbit/s link over RJ45, even if the host NIC supports 1 Gbit/s.
 
 **For Mobile Robots:**
 - Use flexible, shielded cables
@@ -144,10 +149,10 @@ The M12 function connector enables time synchronization for multi-sensor setups.
 
 | Pin | Color | Signal | Function |
 |-----|-------|--------|----------|
-| 8 | Gray/White | LVTTL_IN | GPS input |
-| 9 | Gray | LVTTL_OUT | Reserved output |
-| 10 | Purple/White | LVTTL_IN | Pulse Per Second (PPS) |
-| 11 | Purple | LVTTL_OUT | Reserved output |
+| 8 | Gray/White | LVTTL_IN | GPS input (UART) |
+| 9 | Gray | LVTTL_OUT | Reserved output IO |
+| 10 | Purple/White | LVTTL_IN | PPS input (3.3V, 1 Hz) |
+| 11 | Purple | LVTTL_OUT | Reserved output IO |
 | - | Black | Ground | Common ground |
 
 **GPS Synchronization Settings:**
@@ -156,6 +161,8 @@ The M12 function connector enables time synchronization for multi-sensor setups.
 - **Parity**: None
 - **Stop bits**: 1
 - **PPS signal**: 3.3V TTL, 1 Hz frequency
+
+> **Note**: All function-connector IO is 3.3V only and not 5V tolerant.
 
 #### 4. Mounting
 
@@ -174,7 +181,7 @@ Once the physical connections are established and the sensor is properly mounted
 
 ### Network Configuration
 
-The LIVOX Mid-360 supports two IP modes: dynamic IP address mode and static IP address mode. All Mid-360 sensors are set to static IP address mode by default.
+The LIVOX Mid-360 supports two IP modes: dynamic IP address mode and static IP address mode. All Mid-360 sensors are set to static IP address mode by default. Dynamic IP (DHCP) is available when routed through a DHCP-capable switch/router and is configured via Livox Viewer 2 per the user manual; this guide focuses on the static setup.
 
 #### LiDAR IP Address Configuration
 
@@ -350,8 +357,6 @@ For advanced users, the SDK2 provides C++ APIs for custom applications. Key API 
 
 Refer to the SDK2 documentation and sample code in the `samples/` directory for implementation examples.
 
-While the SDK2 provides direct access to sensor data, most robotic applications benefit from integration with the Robot Operating System (ROS). The ROS 2 driver serves as a bridge between the Livox SDK2 and the ROS ecosystem, converting raw sensor data into standard ROS message formats that can be easily consumed by navigation, SLAM, and perception algorithms. This abstraction layer simplifies development and enables seamless integration with the broader ROS software ecosystem.
-
 ### Installing ROS 2 Driver (livox_ros_driver2)
 
 The ROS 2 driver bridges the Livox SDK2 to ROS 2 topics.
@@ -386,13 +391,15 @@ colcon build
 source install/setup.bash
 ```
 
+> **Note**: Livox recommends building via their `build.sh` helper (see the driver README) instead of calling `colcon build` directly. If you hit build issues, switch to the vendor flow: `./src/livox_ros_driver2/build.sh humble` from your workspace root after sourcing ROS 2 Humble.
+
 Having installed both the SDK2 and the ROS 2 driver, you're now ready to launch the sensor and begin receiving data through ROS topics. The driver handles the complex task of converting Livox's proprietary data format into ROS messages, managing network communication, and publishing sensor data at appropriate rates. This section covers the practical aspects of launching the driver, verifying data streams, and configuring parameters to match your specific application requirements.
 
 ## 4. ROS 2 Integration
 
 ### Launching the Driver
 
-Launch the LIVOX Mid-360 driver:
+Launch the LIVOX Mid-360 driver (uses CustomMsg, recommended for Fast-LIO2):
 
 ```bash
 cd ~/ros2_ws
@@ -402,17 +409,23 @@ ros2 launch livox_ros_driver2 msg_MID360_launch.py
 
 ### Published Topics
 
-**ROS 2 Topics:**
+**When using `msg_MID360_launch.py` (CustomMsg, xfer_format=1; recommended for Fast-LIO2):**
 
-| Topic Name | Message Type | Description | Rate |
-|------------|--------------|-------------|------|
-| `/livox/lidar` | `livox_ros_driver2/CustomMsg` | Point cloud data with timestamps, coordinates (x, y, z), and intensity | 10 Hz (configurable) |
-| `/livox/imu` | `sensor_msgs/Imu` | IMU data: linear acceleration, angular velocity, covariance matrices | 200 Hz (hardware dependent) |
+| Topic Name | Message Type | Description |
+|------------|--------------|-------------|
+| `/livox/lidar` | `livox_ros_driver2/CustomMsg` | Livox custom packet with per-point timestamps |
+| `/livox/imu` | `sensor_msgs/Imu` | Built-in ICM-40609 IMU (~200 Hz) |
+
+**When using `rviz_MID360_launch.py`:**
+
+| Topic Name | Message Type | Description |
+|------------|--------------|-------------|
+| `/livox/lidar` | `sensor_msgs/PointCloud2` | Packed as PointXYZI |
 
 **Topic Details:**
 
 - **`/livox/lidar`**: 
-  - Custom message format optimized for Livox's non-repetitive scanning pattern
+  - Custom message format optimized for Livox's non-repetitive scanning pattern (when launched with `msg_MID360_launch.py`)
   - Includes frame information for proper point cloud reconstruction
   - Contains raw point cloud data with timestamps and intensity values
 
@@ -426,6 +439,14 @@ ros2 launch livox_ros_driver2 msg_MID360_launch.py
 | Transform | Description |
 |-----------|-------------|
 | `base_link` → `livox_frame` | Transform from robot base to LiDAR sensor frame<br>Includes mounting position and orientation |
+
+Example static transform (update xyz/rpy for your mount):
+
+```bash
+ros2 run tf2_ros static_transform_publisher \
+  0.0 0.0 0.2  0.0 0.0 0.0 \
+  base_link livox_frame
+```
 
 ### Verifying Data Stream
 
@@ -458,26 +479,40 @@ ros_ws/src/livox_ros_driver2/config/MID360_config.json
 | `host_bag_ip` | Host computer IP address | `192.168.1.50` (Livox recommended) |
 | `imu_bag` | Enable/disable IMU data publishing | `true` |
 | `frame_id` | TF frame name for the LiDAR | `livox_frame` |
+| `xfer_format` | 0 = `sensor_msgs/PointCloud2`, 1 = `livox_ros_driver2/CustomMsg` | `1` (required for Fast-LIO2) |
+| `publish_freq` | Driver output rate (Hz) | `10` |
 
-The basic ROS 2 integration provides point cloud and IMU data streams, which are sufficient for many applications. However, for advanced robotic systems requiring simultaneous localization and mapping (SLAM), obstacle avoidance, or path planning, additional processing is necessary. The following section introduces Fast-LIO2, a state-of-the-art SLAM algorithm specifically designed to work with Livox sensors, demonstrating how to transform raw sensor data into actionable navigation information.
+`xfer_format = 1` is required to publish `CustomMsg` on `/livox/lidar`, which Fast-LIO2 depends on for per-point timestamps. `publish_freq` controls the effective frame rate of the driver output.
+
+**Example `MID360_config.json` (single sensor, static IP):**
+
+```json
+{
+  "lidar_summary_info": {
+    "lidar_type": "MID360",
+    "lidar_bag_ip": "192.168.1.101",
+    "host_bag_ip": "192.168.1.50"
+  },
+  "hub_summary_info": {},
+  "general_cfg": {
+    "xfer_format": 1,
+    "publish_freq": 10,
+    "multi_topic": 0,
+    "data_src": 0,
+    "lidar_pub_en": 1,
+    "imu_pub_en": 1,
+    "frame_id": "livox_frame"
+  }
+}
+```
+
+The basic ROS 2 integration provides point cloud and IMU data streams, which is enough for visualization and logging. The optional section below keeps Fast-LIO2 guidance concise so this page stays focused on Mid-360 bring-up.
 
 ## 5. Advanced Topics
 
 ### 5.1 Fast-LIO2 SLAM Integration
 
-Fast-LIO2 is a computationally efficient and robust LiDAR-inertial odometry framework that works well with LIVOX sensors. It provides real-time odometry and mapping capabilities. The algorithm uses an iterated Kalman filter to tightly couple LiDAR and IMU measurements, achieving high accuracy with low computational cost.
-
-**Key Advantages of Fast-LIO2 for Mid-360:**
-
-| Advantage | Description |
-|-----------|-------------|
-| **Non-repetitive scan handling** | Designed to work with Livox's unique scanning patterns |
-| **Real-time performance** | Typically runs at 10-20 Hz on modern hardware |
-| **Robust to motion** | Handles aggressive motions and vibrations well |
-| **Memory efficient** | Incremental map building without storing full point clouds |
-| **Open source** | Actively maintained with ROS 2 support |
-
-The algorithm processes incoming point clouds incrementally, extracting features and matching them with the current map estimate. IMU data provides motion prediction between LiDAR scans, improving accuracy during fast movements.
+Fast-LIO2 is a LiDAR-IMU odometry/mapping stack; here’s the minimal ROS 2 setup for Mid-360.
 
 #### Installing Dependencies
 
@@ -498,26 +533,30 @@ sudo make install
 
 #### Building Fast-LIO2
 
-Fast-LIO2 can be built in a ROS 2 workspace. There are ROS 2 ports available:
-
 ```bash
+# 1. Clone ROS 2 port of FAST-LIO2
 cd ~/ros2_ws/src
-git clone https://github.com/hku-mars/FAST_LIO_ROS2.git
+git clone https://github.com/Ericsii/FAST_LIO_ROS2.git --recursive
+
+# 2. Install dependencies and build
 cd ~/ros2_ws
-colcon build
+rosdep install --from-paths src --ignore-src -y
+colcon build --symlink-install
 source install/setup.bash
+
+# 3. Launch FAST-LIO2 (example config)
+ros2 launch fast_lio mapping.launch.py config_file:=avia.yaml
 ```
 
-#### Running Fast-LIO2
+For Livox Mid-360, set in `config/avia.yaml`:
+- `lid_topic`: `/livox/lidar`
+- `imu_topic`: `/livox/imu`
+- `extrinsic_T`, `extrinsic_R`: your LiDAR→IMU extrinsics
+- Leave other parameters at defaults unless you have a strong reason to change them.
 
-In a separate terminal:
+> **Compatibility Note (Livox):** Fast-LIO2 expects Livox data in `CustomMsg` format with per-point timestamps. Use the Livox `*_msg` launch (e.g., `msg_MID360_launch.py` / `xfer_format=1`); PointCloud2 output from `rviz_MID360_launch.py`/`livox_lidar.launch` will not work correctly.
 
-```bash
-cd ~/ros2_ws
-source install/setup.bash
-ros2 run fast_lio fastlio_mapping --ros-args \
-    --params-file src/FAST_LIO_ROS2/config/avia.yaml
-```
+> **Compatibility Note (Livox):** Fast-LIO2 expects Livox data in `CustomMsg` format with per-point timestamps. Use the Livox `*_msg` launch (e.g., `msg_MID360_launch.py` / `xfer_format=1`); PointCloud2 output from `rviz_MID360_launch.py`/`livox_lidar.launch` will not work correctly.
 
 **Published Topics:**
 
@@ -532,123 +571,30 @@ ros2 run fast_lio fastlio_mapping --ros-args \
 
 **Configuration File:** `src/FAST_LIO_ROS2/config/avia.yaml`
 
-**Key Parameters:**
+Edit the config with only the essentials (per the FAST_LIO_ROS2 docs):
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `lidar_type` | `1` | Livox series LiDAR |
-| `scan_line` | `6` | For Mid-360 (40-line density) |
-| `point_filter_num` | `1` | Point cloud downsampling factor |
-| `filter_size_surf` | `0.2-0.3` (indoor)<br>`0.5-1.0` (outdoor) | Surface feature filter size (meters) |
-| `filter_size_map` | `0.2-0.3` (indoor)<br>`0.5-1.0` (outdoor) | Map filter size (meters) |
-| `lidar_topic` | `/livox/lidar` | Input LiDAR topic |
+| Parameter | Recommended Value | Description |
+|-----------|-------------------|-------------|
+| `lid_topic` | `/livox/lidar` | Input LiDAR topic |
 | `imu_topic` | `/livox/imu` | Input IMU topic |
+| `extrinsic_T` | Set to your LiDAR→IMU translation | Extrinsic translation |
+| `extrinsic_R` | Set to your LiDAR→IMU rotation | Extrinsic rotation |
 
-For Mid-360, the default `avia.yaml` configuration works well for most applications. Adjust `filter_size_surf` and `filter_size_map` based on your environment: smaller values (0.2-0.3 m) for indoor environments, larger values (0.5-1.0 m) for outdoor environments.
+Leave other parameters at their defaults unless you have strong reasons and know what you’re doing; template values (including scan settings) are already tuned in the provided `avia.yaml`.
 
-While Fast-LIO2 provides excellent odometry and mapping capabilities, many robotic applications require not just localization but also path planning and obstacle avoidance. The point cloud maps generated by Fast-LIO2 serve as the foundation for navigation algorithms, but transforming these maps into executable trajectories requires additional planning components. Ego-Planner represents a state-of-the-art solution for this challenge, offering efficient gradient-based path planning that works directly with point cloud data without requiring expensive distance field computations.
+### 5.2 Ego-Planner Path Planning Integration (pointer only)
 
-### 5.2 Ego-Planner Path Planning Integration
+Ego-Planner is an ESDF-free gradient-based local planner that has been demonstrated with Livox sensors. The original implementation targets ROS 1. The authors also maintain a ROS 2 port in the `ros2_version` branch of the `ego-planner-swarm` repository.
 
-Ego-Planner is an ESDF-free gradient-based local planner designed for efficient and safe trajectory generation. Unlike traditional planning methods that require building Euclidean Signed Distance Fields (ESDF) for gradient optimization, Ego-Planner performs optimization directly on point cloud data, significantly reducing computational overhead while maintaining safety guarantees. This makes it particularly well-suited for real-time applications where computational resources are limited, such as mobile robots and drones.
+A full ROS 2 Ego-Planner pipeline is out of scope for this article. If you want to experiment with it:
 
-The algorithm's key innovation lies in its ability to construct effective collision penalty terms by comparing collision-prone trajectories with collision-free reference paths, all without explicitly building distance fields. This approach, combined with an anisotropic curve fitting algorithm, produces smooth, feasible trajectories that respect both dynamic constraints and obstacle boundaries.
+- Repo: `https://github.com/ZJU-FAST-Lab/ego-planner-swarm`
+- Branch: `ros2_version`
+- Follow the build and launch instructions in that repository’s README, and connect it to the `/cloud_registered` and `/Odometry` topics from Fast-LIO2.
 
-#### Why Ego-Planner with Mid-360?
+Be prepared for API changes; this code is less stable than Livox’s official drivers or Fast-LIO2.
 
-The combination of LIVOX Mid-360 and Ego-Planner offers several advantages for robotic navigation systems. The Mid-360's dense point cloud output provides rich environmental information that Ego-Planner can leverage for accurate obstacle representation. The sensor's 360° horizontal field of view ensures comprehensive coverage, eliminating blind spots that could lead to planning failures. Additionally, the non-repetitive scanning pattern gradually improves point cloud density over time, which enhances the quality of collision checking as the robot operates in an environment.
-
-For mobile robot applications, this integration enables real-time reactive planning in dynamic environments. The planner can quickly adapt to newly detected obstacles, recalculating trajectories within milliseconds to ensure safe navigation. This capability is particularly valuable in environments with moving obstacles, such as warehouses with other robots or public spaces with pedestrians.
-
-#### Installing Ego-Planner
-
-Ego-Planner is available as an open-source ROS 2 package. To integrate it with your Mid-360 and Fast-LIO2 setup:
-
-1. Clone the Ego-Planner repository:
-
-```bash
-cd ~/ros2_ws/src
-git clone https://github.com/ZJU-FAST-Lab/ego-planner.git
-```
-
-2. Install dependencies:
-
-```bash
-cd ~/ros2_ws
-rosdep install --from-paths src --ignore-src -r -y
-```
-
-3. Build the workspace:
-
-```bash
-colcon build --packages-select ego_planner
-source install/setup.bash
-```
-
-#### Configuring Ego-Planner for Mid-360
-
-Ego-Planner requires configuration to work with the point cloud data from Fast-LIO2.
-
-**Configuration File:** `src/ego_planner/config/planning.yaml`
-
-**Key Configuration Parameters:**
-
-| Category | Parameter | Typical Value | Description |
-|----------|-----------|---------------|-------------|
-| **Point Cloud Input** | `map_topic` | `/cloud_registered` | Fast-LIO2's registered point cloud output |
-| | `point_cloud_inflation` | 0.2-0.5 m | Inflation radius for obstacle expansion |
-| **Planning** | `planning_horizon` | 5-10 m | Maximum planning distance |
-| | `max_vel` | 1.0-2.0 m/s | Maximum velocity constraints |
-| | `max_acc` | 1.0-2.0 m/s² | Maximum acceleration constraints |
-| | `resolution` | 0.1-0.2 m | Grid resolution for point cloud processing |
-| **Optimization** | `optimization_iterations` | 5-10 | Number of optimization iterations |
-| | `smoothing_weight` | 0.5-1.0 | Weight for trajectory smoothness |
-
-> **Tip**: Adjust `point_cloud_inflation` based on your robot's size. Larger robots require larger inflation radii for safe navigation.
-
-#### Running Ego-Planner
-
-Launch Ego-Planner in a separate terminal:
-
-```bash
-cd ~/ros2_ws
-source install/setup.bash
-ros2 launch ego_planner ego_planner.launch.py
-```
-
-**Published Topics:**
-
-| Topic | Message Type | Description |
-|-------|--------------|-------------|
-| `/planning/trajectory` | `trajectory_msgs/JointTrajectory` | Generated trajectory waypoints |
-| `/planning/vis_trajectory` | `visualization_msgs/Marker` | Visualization markers for RViz |
-| `/planning/vis_check_trajectory` | `visualization_msgs/Marker` | Collision checking visualization |
-
-**Subscribed Topics:**
-
-| Topic | Message Type | Description |
-|-------|--------------|-------------|
-| `/cloud_registered` | `sensor_msgs/PointCloud2` | Point cloud map from Fast-LIO2 |
-- `/Odometry`: Current robot pose from Fast-LIO2
-- `/goal`: Goal position (geometry_msgs/PoseStamped)
-
-#### Integration Workflow
-
-The complete integration involves three main components working together:
-
-1. **Fast-LIO2** processes Mid-360 point clouds and IMU data to generate odometry and a registered point cloud map
-2. **Ego-Planner** uses the point cloud map and current odometry to generate collision-free trajectories toward the goal
-3. **Robot Controller** executes the planned trajectory, sending velocity commands to the robot's actuators
-
-This pipeline enables autonomous navigation in previously unknown environments, with the robot simultaneously mapping its surroundings, localizing itself within the map, and planning safe paths to designated goals. The real-time nature of all three components ensures responsive behavior, allowing the robot to adapt quickly to environmental changes.
-
-#### Performance Considerations
-
-Ego-Planner's efficiency makes it suitable for resource-constrained platforms, but optimal performance requires careful parameter tuning. For indoor environments with dense obstacles, use smaller inflation radii and higher resolution grids. For outdoor environments with sparse obstacles, larger inflation radii and lower resolution can reduce computational load while maintaining safety. The planning horizon should be set based on your robot's maximum speed and the sensor's effective range—too short a horizon may cause frequent replanning, while too long a horizon may include outdated obstacle information.
-
-Monitoring computational performance is important, especially on embedded platforms. Use tools like `htop` or `ros2 topic hz` to verify that planning cycles complete within acceptable time limits (typically 50-100 ms for real-time operation). If planning becomes too slow, consider reducing the optimization iterations or grid resolution, though this may impact trajectory quality.
-
-Now that we've covered the individual components—hardware setup, network configuration, driver installation, SLAM integration, and path planning—it's time to bring everything together into a complete working system. A typical robotic application requires coordinating multiple processes running simultaneously, each handling different aspects of sensor data processing, localization, mapping, and robot control. The following workflow demonstrates how these components interact in a real-world deployment scenario, providing a practical template for your own implementations.
+Now that we've covered the individual components—hardware setup, network configuration, driver installation, and SLAM integration—it's time to bring everything together into a complete working system. A typical robotic application requires coordinating multiple processes running simultaneously, each handling different aspects of sensor data processing, localization, mapping, and robot control. The following workflow demonstrates how these components interact in a real-world deployment scenario, providing a practical template for your own implementations.
 
 ## 6. Complete System Workflow
 
@@ -665,8 +611,7 @@ ros2 launch livox_ros_driver2 msg_MID360_launch.py
 ```bash
 cd ~/ros2_ws
 source install/setup.bash
-ros2 run fast_lio fastlio_mapping --ros-args \
-    --params-file src/FAST_LIO_ROS2/config/avia.yaml
+ros2 launch fast_lio mapping.launch.py config_file:=avia.yaml
 ```
 
 ### Terminal 3: Visualization (Optional)
@@ -959,7 +904,7 @@ The LIVOX Mid-360 LiDAR provides an excellent solution for robotic perception wi
 - [LIVOX Official Documentation](https://www.livoxtech.com/) - Comprehensive product information, user manuals, and technical specifications
 - [Livox SDK2 GitHub Repository](https://github.com/Livox-SDK/Livox-SDK2) - Source code, API documentation, and sample programs
 - [livox_ros_driver2 GitHub Repository](https://github.com/Livox-SDK/livox_ros_driver2) - ROS 2 driver source code and configuration examples
-- [Fast-LIO2 GitHub Repository](https://github.com/hku-mars/FAST_LIVO2) - Fast-LIO2 SLAM algorithm implementation and documentation
+- [FAST-LIO / FAST-LIO2 GitHub Repository](https://github.com/hku-mars/FAST_LIO) - Canonical LiDAR-IMU Fast-LIO implementations
 
 ### Application Case Studies
 - [JingSong Intelligent Forklift Application](https://www.livoxtech.com/cn/showcase/20) - Case study on autonomous forklift implementation using Mid-360
