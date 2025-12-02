@@ -246,6 +246,8 @@ wiki:
   - title: Interfacing
     url: /wiki/interfacing/
     children:
+      - title: Apple Vision Pro for Robotics Applications
+        url: /wiki/interfacing/apple-vision-pro-for-robotics-applications/
       - title: Myo
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
