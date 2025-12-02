@@ -139,6 +139,8 @@ wiki:
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: LIVOX Mid-360 LiDAR
+        url: /wiki/sensing/livox-mid-360-lidar/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
