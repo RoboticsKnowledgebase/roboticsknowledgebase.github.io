@@ -14,6 +14,9 @@ We are actively seeking contributions to expand the resources available in this 
 - **[A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)**
   A step-by-step tutorial on implementing the A* algorithm for robot motion planning. Covers key concepts such as heuristic design, map representation, and non-holonomic motion primitives for Ackermann vehicles.
 
+- **[Behavior Trees](/wiki/planning/behavior_tree/)**
+  Comprehensive guide to Behavior Trees for robot decision-making. Covers BT architecture vs FSM/HFSM, node types (Action, Condition, Sequence, Fallback), AirStack implementation, and ROS2 integration with hands-on tutorials.
+
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
 
