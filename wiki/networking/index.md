@@ -24,6 +24,9 @@ This section focuses on **networking techniques, tools, and protocols** commonly
 - **[XBee Pro DigiMesh 900](/wiki/networking/xbee-pro-digimesh-900/)**
   A tutorial for configuring XBee Pro DigiMesh modules to create low-bandwidth mesh networks. Includes instructions for using X-CTU for module setup and a Python-based script for serial communication over a mesh network. Covers advanced configurations like multi-transmit, broadcast radius, and mesh retries.
 
+- **[Real-Time Video Processing on Jetson with GStreamer](/wiki/networking/gstreamer-jetson-realtime-video/)**
+  A comprehensive guide to using GStreamer on Jetson Orin for hardware-accelerated video streaming over networks. Covers zero-copy video processing with NVMM, UDP/RTP streaming pipelines, H.264 encoding, and integration with Python/C++ for teleoperation and remote monitoring applications.
+
 ## Resources
 
 ### General Networking
