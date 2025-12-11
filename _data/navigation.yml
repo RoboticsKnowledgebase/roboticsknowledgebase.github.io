@@ -139,6 +139,8 @@ wiki:
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise.md
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
@@ -271,6 +273,8 @@ wiki:
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Jetson Orin AGX
+        url: /wiki/computing/jetson-orin-agx.md
   - title: Fabrication
     url: /wiki/fabrication/
     children:
