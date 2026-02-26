@@ -358,6 +358,8 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Behavior Trees
+        url: /wiki/planning/behavior_tree/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
