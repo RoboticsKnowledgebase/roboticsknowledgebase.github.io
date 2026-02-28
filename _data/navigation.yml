@@ -226,6 +226,8 @@ wiki:
     children:
       - title: Bluetooth Sockets
         url: /wiki/networking/bluetooth-sockets/
+      - title: Cloud Robotics with ROS - Latency, Network Bandwidth, and Time-Synchronization
+        url: /wiki/networking/cloud-robotics/
       - title: Xbee Pro DigiMesh 900
         url: /wiki/networking/xbee-pro-digimesh-900/
       - title: ROCON Multi-Master Framework
