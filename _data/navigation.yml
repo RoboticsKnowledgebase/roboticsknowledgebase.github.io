@@ -164,6 +164,8 @@ wiki:
         url: /wiki/actuation/task-prioritization-control/
       - title: Drive-by-wire Conversion for Autonomous Vehicle
         url: /wiki/actuation/drive-by-wire/
+      - title: LED lighting for Robotics
+        url: /wiki/actuation/led-lights/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
