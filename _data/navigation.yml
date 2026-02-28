@@ -368,6 +368,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: Google Linear Optimization Package (GLOP) 
+        url: /wiki/planning/glop/
 # Main links appear in the header.
 main:
   - title: Wiki
