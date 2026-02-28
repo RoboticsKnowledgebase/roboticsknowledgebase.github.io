@@ -44,6 +44,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
         url: /wiki/system-design-development/In-Loop-Testing/
+      - title: Introduction to Cybersecurity in Embedded Devices and Robotics
+        url: /wiki/system-design-development/cybersec-intro/
   - title: Project Management
     url: /wiki/project-management/
     children:
