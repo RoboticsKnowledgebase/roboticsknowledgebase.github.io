@@ -98,6 +98,8 @@ wiki:
         url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Building ROS2 Custom Packages
+        url: /wiki/common-platforms/ros2-custom-packages/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -344,6 +346,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: ROS2 Humble Intra-Process Communication Recorder
+        url: /wiki/tools/ros2-humble-ipc-recorder/
   - title: Datasets
     url: /wiki/datasets/
     children:
