@@ -200,6 +200,8 @@ wiki:
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+      - title: Using g2o for Pose Graph Optimization in C++
+        url: /wiki/state-estimation/g2o-pose-graphs.md
   - title: Programming
     url:  /wiki/programming/
     children:
