@@ -183,6 +183,10 @@ wiki:
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
       - title: NLP for robotics
         url: /wiki/machine-learning/nlp_for_robotics.md/
+      - title: Distributed Training With PyTorch Tutorial
+        url: /wiki/machine-learning/distributed_training_with_pytorch.md/
+      - title: Imitation Learning With a Focus on Humanoids
+        url: /wiki/machine-learning/imitation-learning.md/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
