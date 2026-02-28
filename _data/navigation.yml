@@ -98,6 +98,8 @@ wiki:
         url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Working with KUKA LBR Med
+        url: /wiki/common-platforms/kuka
   - title: Sensing
     url: /wiki/sensing/
     children:
