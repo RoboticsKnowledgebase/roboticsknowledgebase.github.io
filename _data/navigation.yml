@@ -34,6 +34,8 @@ wiki:
     children:
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
+      - title: Finite State Mchines
+        url: /wiki/System-design-development/finite-state-machine/
       - title: Mechanical Design
         url: /wiki/system-design-development/mechanical-design/
       - title: Printed Circuit Board Design
@@ -358,6 +360,8 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+        title: Specialized Planners
+        url: wiki/planning/pilz-chomp.md
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
