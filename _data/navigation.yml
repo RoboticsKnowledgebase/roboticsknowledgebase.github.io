@@ -164,6 +164,11 @@ wiki:
         url: /wiki/actuation/task-prioritization-control/
       - title: Drive-by-wire Conversion for Autonomous Vehicle
         url: /wiki/actuation/drive-by-wire/
+  - title: Manipulators
+    url: /wiki/manipulators/
+    children:
+      - title: Integrating KUKA LBR Manipulators with MoveIt2
+        url: /wiki/manipulators/integrating-kuka-lbr-manipulators-with-moveIt2/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
