@@ -158,6 +158,8 @@ wiki:
         url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
         url: /wiki/actuation/moveit-and-HEBI-integration.md
+      - title: MoveIt Hybrid Planning Architecture for Motion Compensation
+        url: /wiki/actuation/moveit-hybrid-planning-architecture.md
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
