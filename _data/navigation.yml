@@ -298,6 +298,8 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Ultimaker Series (3/S3)
+        url: /wiki/fabrication/ultimaker-series/
   - title: Math
     url: /wiki/math/
     children:
