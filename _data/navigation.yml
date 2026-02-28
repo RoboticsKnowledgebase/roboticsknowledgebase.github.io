@@ -278,6 +278,8 @@ wiki:
   - title: Fabrication
     url: /wiki/fabrication/
     children:
+      - title: Sheet Metal Fabrication
+        url: /wiki/fabrication/sheet-metal-guidelines/
       - title: Fabrication Considerations for 3D printing
         url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
       - title: Machining & Prototyping
