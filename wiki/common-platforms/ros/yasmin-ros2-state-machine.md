@@ -125,7 +125,7 @@ sm()
 - Visualization: `YasminViewerPub("yasmin_snaak", sm)` publishes the state machine so operators can inspect progress live. The visualization of our system is shown below
 
 
-![Yasmin state machine](../../../assets/images/robotics_project_guide/state_machine.png)
+![Yasmin state machine](/assets/images/robotics_project_guide/state_machine.png)
 
 
 ## Yasmin vs. Behavior Trees
@@ -137,13 +137,14 @@ sm()
 Yasmin brings a clear, ROS 2–native state machine to structure task logic with minimal boilerplate. Define outcomes, wire transitions, and keep run-time data on the blackboard. In our sandwich-assembly robot it ties together perception, manipulation, and inventory tracking while remaining easy to visualize. Reach for behavior trees when you need more complex composition; otherwise Yasmin offers a simple, readable backbone for many manipulation workflows.
 
 ## See Also:
-- ROS 2 Navigation for Clearpath Husky
-- ROS Motion Server Framework
+- [ROS 2 Navigation for Clearpath Husky](/wiki/common-platforms/ros2-navigation-for-clearpath-husky/)
+- [ROS Motion Server Framework](/wiki/common-platforms/ros/ros-motion-server-framework/)
 
 ## Further Reading
 - Yasmin documentation (4.0.1): https://uleroboticsgroup.github.io/yasmin/4.0.1/
-- Yasmin source and documentation (official repository)
-- ROS 2 action and service design guides
+- Yasmin source and documentation (official repository): https://github.com/uleroboticsgroup/yasmin
+- ROS 2 action design guide: https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-a-Simple-Py-Service-And-Client.html
+- ROS 2 service design guide: https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-a-Simple-Py-Action-Server-And-Client.html
 - Behavior tree tutorials for ROS 2
 
 ## References
