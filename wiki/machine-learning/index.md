@@ -26,7 +26,7 @@ This section demonstrates how machine learning enhances robotic systems by enabl
 - **[Mediapipe: Real-Time ML for Robotics](/wiki/machine-learning/mediapipe-live-ml-anywhere/)**
   Introduces MediaPipe for live ML inference on various platforms, including Android, iOS, and IoT. Highlights body pose tracking, hand tracking, and object detection pipelines.
 
-- **[NLP for Robotics](/wiki/machine-learning/nlp_for_robotics/)**
+- **[NLP for Robotics](/wiki/machine-learning/nlp-for-robotics/)**
   Explores how natural language processing (NLP) enables robots to understand and respond to human language. Includes an overview of transformer models and HuggingFace library usage.
 
 - **[Python Libraries for Reinforcement Learning](/wiki/machine-learning/python-libraries-for-reinforcement-learning/)**

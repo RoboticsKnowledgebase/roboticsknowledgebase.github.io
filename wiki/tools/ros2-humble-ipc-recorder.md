@@ -341,9 +341,9 @@ By adopting intra-process communication for rosbag recording, ROS 2 users can c
 
 ## See Also
 
-- [Building ROS2 Custom Packages](/wiki/common-platforms/ros/ros2-custom-package)
-- [ROS Introduction](/wiki/common-platforms/ros/ros-intro)
-- [Building an iOS App for ROS2 Integration – A Step-by-Step Guide](/wiki/common-platforms/ros2_ios_app_with_swift)
+- [Building ROS2 Custom Packages](/wiki/common-platforms/ros/ros2-custom-package/)
+- [ROS Introduction](/wiki/common-platforms/ros/ros-intro/)
+- [Building an iOS App for ROS2 Integration – A Step-by-Step Guide](/wiki/common-platforms/ros2-ios-app-with-swift/)
 
 ## Further Reading
 
