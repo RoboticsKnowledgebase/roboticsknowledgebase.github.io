@@ -143,9 +143,9 @@ Yasmin brings a clear, ROS 2–native state machine to structure task logic with
 ## Further Reading
 - [Yasmin documentation (4.0.1)](https://uleroboticsgroup.github.io/yasmin/4.0.1/)
 - [Yasmin source and documentation (official repository)](https://github.com/uleroboticsgroup/yasmin)
-- [ROS 2 action design guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-a-Simple-Py-Service-And-Client.html)
-- [ROS 2 service design guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-a-Simple-Py-Action-Server-And-Client.html)
-- [Behavior tree tutorials for ROS 2](https://navigation.ros.org/behavior_trees/index.html)
+- [ROS 2 action design guide](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client.html)
+- [ROS 2 service design guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html)
+- [Behavior tree tutorials for ROS 2](https://docs.nav2.org/behavior_trees/index.html)
 
 ## References
 - Include project-specific reports or papers here.
