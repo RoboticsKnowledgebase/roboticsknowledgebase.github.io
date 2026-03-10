@@ -1,3 +1,7 @@
+---
+title: Onshape Tutorial
+date: 2026-03-09
+---
 This tutorial is for MRSD students who are new to CAD and want a practical, robotics-focused introduction to Onshape. By the end, you will be able to create sketches, build solid models, assemble parts, add basic parametric behavior, and export drawings for 3D printing and manufacturing!
 
 ## 1: Onshape overview and key concepts

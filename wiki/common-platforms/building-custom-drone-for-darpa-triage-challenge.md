@@ -1,5 +1,6 @@
 ---
-date: {}
+title: Building a Custom Drone for the DARPA Triage Challenge
+date: 2026-03-09
 ---
 ## Introduction and Requirements Engineering
 
