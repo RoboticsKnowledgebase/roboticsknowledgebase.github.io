@@ -62,6 +62,8 @@ wiki:
     children:
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
+      - title: Building a Custom Drone for the DARPA Triage Challenge
+        url: /wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
       - title: Unitree Go1
@@ -134,13 +136,15 @@ wiki:
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
       - title: Robotic Total Station (Leica TS16)
-        url: /wiki/sensing/robotic-total-stations.md
+        url: /wiki/sensing/robotic-total-stations/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
       - title: Azure Block Detection
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
-        url: /wiki/sensing/ultrawideband-beacon-positioning.md
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
@@ -155,9 +159,9 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-HEBI-integration.md
+        url: /wiki/actuation/moveit-and-HEBI-integration/
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
@@ -203,7 +207,7 @@ wiki:
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
-        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -264,19 +268,21 @@ wiki:
     url: /wiki/computing/
     children:
       - title: Amazon Web Services Quickstart
-        url: wiki/computing/aws-quickstart.md
+        url: /wiki/computing/aws-quickstart/
       - title: Adruino
         url: /wiki/computing/arduino/
       - title: Single Board Computers
         url: /wiki/computing/single-board-computers/
       - title: Upgrading Ubuntu Kernels
-        url: /wiki/computing/upgrading-ubuntu-kenel/
+        url: /wiki/computing/upgrading-ubuntu-kernel/
       - title: Ubuntu 14.04 on Chromebook
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Jetson Orin AGX
+        url: /wiki/computing/jetson-orin-agx.md
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -300,6 +306,8 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Onshape Tutorial
+        url: /wiki/fabrication/onshape-tutorial/
   - title: Math
     url: /wiki/math/
     children:
@@ -352,9 +360,9 @@ wiki:
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
@@ -362,6 +370,8 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Behavior Trees
+        url: /wiki/planning/behavior-tree/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
@@ -369,7 +379,7 @@ wiki:
       - title: Multi Robot Planning Design
         url: /wiki/planning/multi-robot-planning/
       - title: Motion Planning in frenet frame
-        url: /wiki/planning/frenet-frame-planning.md/
+        url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
 # Main links appear in the header.
