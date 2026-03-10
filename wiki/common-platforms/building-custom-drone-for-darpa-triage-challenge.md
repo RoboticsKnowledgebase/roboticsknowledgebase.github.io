@@ -39,7 +39,7 @@ Refer to this [full list of drone components](https://umilesgroup.com/en/what-ar
 
 #### 1.2.2 Flight Controller Installation
 
-![Pixhawk Flight Controller](/assets/images/px4 ardupilot.png)
+![Pixhawk Flight Controller](/assets/images/px4-ardupilot.png)
 {: .notice--info}
 
 1. **Mount the Pixhawk** securely to the center plate of the M100 using vibration-dampening foam to isolate it from motor vibrations.
@@ -58,7 +58,7 @@ Refer to this [full list of drone components](https://umilesgroup.com/en/what-ar
 
 #### 1.2.3 Power System Configuration
 
-![Power Module](/assets/images/power module.png)
+![Power Module](/assets/images/power-module.png)
 {: .notice--info}
 
 The power module is critical for proper operation:
@@ -215,7 +215,7 @@ A well-designed frame includes:
 
 Following the wiring diagram:
 
-![Drone Wiring Diagram](/assets/images/Wiring Diagram.jpg)
+![Drone Wiring Diagram](/assets/images/wiring-diagram.jpg)
 {: .notice--info}
 
 1. **Power flow**:
