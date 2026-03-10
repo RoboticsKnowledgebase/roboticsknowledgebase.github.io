@@ -41,9 +41,6 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[ROS 2 Navigation with Clearpath Husky](/wiki/common-platforms/ros2-navigation-for-clearpath-husky/)**
   A step-by-step tutorial on integrating ROS 1 and ROS 2 for Clearpath Husky navigation, including the configuration of the ROS 2 Nav2 stack.
 
-- **[ROS 2 Yasmin State Machine](/wiki/common-platforms/ros/yasmin-ros2-state-machine/)**
-  A tutorial on using the Yasmin framework for state machine-based task logic in ROS 2, featuring examples for manipulation and coordination.
-
 - **[Unitree Go1 Guide](/wiki/common-platforms/unitree-go1/)**
   Highlights the features and capabilities of the Unitree Go1 Edu quadruped robot. Includes power, sensors, networking configuration, and tips for simulation and real-world control.
 
@@ -89,10 +86,6 @@ Here is a compiled list of external resources referenced in the subsections:
 9. **UR5e Robotic Arm**
    - [Universal Robots ROS Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver)
    - [MoveIt Setup for UR5e](http://moveit.ros.org/)
-
-10. **ROS 2 Yasmin State Machine**
-    - [Yasmin Documentation (4.0.1)](https://uleroboticsgroup.github.io/yasmin/4.0.1/)
-    - [Official Yasmin Repository](https://github.com/uleroboticsgroup/yasmin)
 
 ## Development Needs
 We seek contributions in the following areas:
