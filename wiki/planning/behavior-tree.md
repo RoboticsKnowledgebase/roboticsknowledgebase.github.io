@@ -1,3 +1,8 @@
+---
+title: "Behavior Trees"
+date: 2026-03-09
+---
+
 # AirStack Behavior Tree: Complete Engineering Guide
 
 This document provides a comprehensive guide to understanding, implementing, and extending Behavior Trees in AirStack. It is designed as an executable engineering reference with checkpoints for incremental development.
