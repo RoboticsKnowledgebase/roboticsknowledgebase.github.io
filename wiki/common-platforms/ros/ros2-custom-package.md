@@ -5,7 +5,7 @@ title: Building ROS2 Custom Packages
 
 When working on a larger ROS 2 project, you'll often need to add new packages to an existing workspace. This tutorial provides a step‑by‑step guide on how to create and integrate a new ROS 2 package (targeting **ROS 2 Humble**) into an existing workspace. We focus on using **colcon** as the build tool and cover both Python‑based packages (using **ament_python**) and C++ packages (using **ament_cmake**). You will learn how to set up the package manifest and build files, build the workspace with colcon, verify that the new package is recognized by the ROS 2 environment, and debug common issues that can arise. By the end of this tutorial, you'll be confident in adding new ROS 2 packages to your workspace and troubleshooting integration problems.
 
-**Note:** The primary example uses a Python package, but we include notes on integrating C++ packages. We'll also discuss a real‑world debugging scenario (a rosbag2 composable node issue we encountered when developing our [ROS2 Humble Intra‑Process Communication Recorder](/wiki/tools/ros2-humble-ipc-recorder.md)) to illustrate how to tackle workspace integration challenges in practice.
+**Note:** The primary example uses a Python package, but we include notes on integrating C++ packages. We'll also discuss a real‑world debugging scenario (a rosbag2 composable node issue we encountered when developing our [ROS2 Humble Intra‑Process Communication Recorder](/wiki/tools/ros2-humble-ipc-recorder/)) to illustrate how to tackle workspace integration challenges in practice.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -451,9 +451,9 @@ By following this tutorial and the best practices outlined, you should be able t
 
 ## See Also:
 
-- [ROS Introduction](/wiki/common-platforms/ros/ros-intro)
-- [ROS 2 Humble IPC Recorder](/wiki/tools/ros2-humble-ipc-recorder)
-- [Building an iOS App for ROS2 Integration – A Step-by-Step Guide](/wiki/common-platforms/ros2_ios_app_with_swift)
+- [ROS Introduction](/wiki/common-platforms/ros/ros-intro/)
+- [ROS 2 Humble IPC Recorder](/wiki/tools/ros2-humble-ipc-recorder/)
+- [Building an iOS App for ROS2 Integration – A Step-by-Step Guide](/wiki/common-platforms/ros2-ios-app-with-swift/)
 
 ## Further Reading
 
