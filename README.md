@@ -1,106 +1,96 @@
-## Overview
-The **Robotics Knowledgebase** is the Wiki for Robot Builders. It exists to advance knowledge in the robotics discipline. We document and share application details left out of textbooks and academic papers.
+# Robotics Knowledgebase 🤖
 
-This Knowledgebase holds knowledge essential to building working robots. We believe robots should be built to solve specific problems. We take a systems-based approach to creating them. We include Project Management practices to ensure project completion.
+[![Jekyll Build](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/actions/workflows/jekyll-github-pages-deploy.yml/badge.svg)](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/actions/workflows/jekyll-github-pages-deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Contribution Quickstart Guide
-### New Entries
-To submit an original article follow these steps:
-1. Fork this repository.
-2. Locate the appropriate directory for your submission in `/wiki`.
-3. Copy `_templates/template.md` into the directory.
-4. Write your article. We recommend the following options:
-  - Connect [Prose.io](http://prose.io/) to your Github account and write from your browser.
-  - Clone the repository to your device. We recommend using the [Atom editor](https://atom.io/) with the  [Markdown-Writer](https://atom.io/packages/markdown-writer) and [Markdown-Image-Helper](https://atom.io/packages/markdown-image-helper) packages.
-5. Rename `template.md` to the subject of your article. The new name should be lowercase, have hyphens for spaces, and end with `.md` (`this-is-an-example.md`)
-6. Add a link to your article to `_data/navigation.yml` under the `wiki` heading.
-  - Do not modify the `main` or `docs` lists.
-7. Submit a pull request to the Robotics Knowledgebase.
-  - If you're working from your device, don't forget to add, commit, and push your changes first.
-8. Editors may request changes before they accept your pull request. Use their feedback to improve your entry and resubmit.
+The **Robotics Knowledgebase** is an open-source wiki for robot builders, researchers, and hobbyists. It focuses on the practical application details often omitted from textbooks—the "tribal knowledge" required to build, program, and deploy working robotic systems.
 
-### Improving Articles
-If you spot a mistake (or think that you have an improvement to an article), [create an issue](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/issues) to discuss your recommended changes.
+We take a **systems-based approach**, integrating engineering best practices with hands-on implementation guides for modern robotics frameworks.
 
-### Keeping your Fork Updated
-Syncing a fork is accomplished through git on your local device. You should already have Git installed and cloned your fork to your computer.
-1. Navigate to the working directory of your local project.
-2. Configure a remote that points to the upstream repository. On your Linux device, use:
-  - `git remote add upstream https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io`.
-  - This only needs to be done once.
-3. Use `git remote -v` to verify that the upstream repository is listed.
-4. Fetch the latest commits from the upstream repository. These will be stored in a local branch `upstream/master`:
-  - `git fetch upstream`
-5. Check out your fork's local `master` branch:
-  - `git checkout master`
-6. This brings your fork's master branch into sync with the upstream repository, **without losing your local changes**:
-  - `git merge upstream/master`
+---
 
-### Clear Changes and Update your Fork
-This method is used specifically to erase all changes to your fork and replace it with the most updated copy of the Wiki.
-1. Follow steps 1-5 from **Keeping your Fork Updated** above.
-2. Reset your local repository:
-  - `git reset --hard upstream/master `
-3. Force the new repository to overwrite your remote fork:
-  - `git push origin master --force`
+## 🚀 Quickstart for Contributors
 
-## Site Structure
-### Supporting technology
-The Robotics Knowledgebase makes use of the following:
-- [Github Pages](https://help.github.com/categories/20/articles)
-- [Jekyll](https://jekyllrb.com/)
-- [Minimal Mistakes Theme](https://mmistakes.github.io/minimal-mistakes/) by [Michael Rose](https://mademistakes.com/)
-- [MathJax](http://docs.mathjax.org/en/latest/)
+We welcome contributions from the community! Whether you're fixing a typo or adding a new deep-dive article, here's how to get started.
 
-### Directories
-The wiki itself is contained in the `/wiki` folder. The `/docs` folder exists to contain future documentation on contributing and supporting the wiki. The wiki contains the following categories:
-- **Controls & Actuation**
-  - Topics related to the moving components including motors and controls.
-- **Common Platforms**
-  - Covers common hardware and software frameworks used in robotics. ROS is included here.
-- **Computing**
-  - Topics related to hardware brains for robotics including on-board computers and cluster computing.
-- **Fabrication**
-  - Topics related to techniques and tools for fabricating a robot.
-- **Interfacing**
-  - Covers means of interfacing with a robot outside of networking.
-- **Networking**
-  - Topics related to communications infrastructure for robotics including programming and wireless technologies.
-- **Programming**
-  - General programming topics including languages and practices.
-- **Project Management**
-  - Topics related to project management practices.
-- **Sensing**
-  - Covers topics related to sensors including computer vision and cameras.
-- **State Estimation**
-  - Topics related to the position and orientation of a robot including navigation, localization, and mapping.
-- **System Design and Development**
-  - Covers topics related to Systems Engineering.
-- **Tools**
-  - Useful hardware and software for robotics not used directly in the robot itself.
+### Adding New Articles
+1. **Fork** the repository and clone it locally.
+2. **Choose a category** in the `/wiki` directory (e.g., `sensing`, `actuation`, `programming`).
+3. **Template**: Copy `/_templates/template.md` to your chosen directory.
+4. **Name**: Rename it using `kebab-case.md` (e.g., `my-new-sensor-guide.md`).
+5. **Write**: Author your article using Markdown.
+   - Use absolute paths for images: `![Alt Text](/assets/images/my_image.png)`.
+   - Use absolute paths for internal links: `[Other Page](/wiki/category/other-page/)`.
+6. **Navigation**: Add your entry to `/_data/navigation.yml` and the parent category's `index.md`.
+7. **PR**: Submit a Pull Request. Our editors will review and provide feedback.
 
-## Directory Structure
-Individual subfolders should contain both an `/assets` folder (for supporting files including images) and an `index.md` file.
-## Future Work
-This Knowledgebase is an evolving project. There are numerous areas for improvement in both content and site features.
+### Tools We Recommend
+- **Editor**: [VS Code](https://code.visualstudio.com/) with Markdown extensions.
+- **Preview**: [Jekyll](https://jekyllrb.com/) (see Local Development below).
+- **Web Editor**: [Prose.io](http://prose.io/) for quick browser-based edits.
 
-### Needed topics
-- Introduction to planning your robotics project
-- Updated overview of single-board computers (`/wiki/computing/single-board-computers.md`)
-- Mobility Overview (put in `/actuation`)
-- Manipulation Overview (put in `/actuation`)
-- State Estimation Overview
-- System Engineering Overview
-- Using GPUs for Computer Vision
-- Using GPUs for Machine Learning
-- V-model
+---
 
-### Todo
-- Logo for Robotics Knowledgebase
-- Writing & style standards
-- Link to Github
-- Collapsed Navigation for sidebar
-- Separate repositories for content and technical files
-- Dynamic Navigation Generation
-- ~~Default template~~
-- ~~Implement Math Support~~
+## 🛠 Local Development
+
+To build and preview the site locally, we recommend using a Ruby virtual environment for dependency isolation.
+
+### Prerequisites
+- **Ruby**: Version specified in [`.ruby-version`](.ruby-version). We recommend [rbenv](https://github.com/rbenv/rbenv).
+- **Bundler**: `gem install bundler`
+
+### Setup and Build
+1. **Configure local path**:
+   ```bash
+   bundle config set --local path 'vendor/bundle'
+   ```
+2. **Install dependencies**:
+   ```bash
+   bundle install
+   ```
+3. **Local Preview**:
+   ```bash
+   bundle exec jekyll serve
+   ```
+   The site will be available at `http://localhost:4000`.
+
+---
+
+## 📂 Project Structure
+
+### Supporting Technology
+- **Engine**: [Jekyll](https://jekyllrb.com/) (Static Site Generator)
+- **Theme**: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
+- **Hosting**: [GitHub Pages](https://pages.github.com/)
+- **Math**: [MathJax](https://www.mathjax.org/) (LaTeX rendering)
+
+### Key Directories
+- `/wiki/`: The core content, organized by robotic subsystem.
+- `/_data/`: Navigation and UI configuration.
+- `/assets/images/`: Central store for all diagrams and photos.
+- `/_templates/`: Base templates for new wiki entries.
+
+---
+
+## 🗺 Wiki Categories
+
+- **[Controls & Actuation](/wiki/actuation/)**: Motors, PID, and motion control.
+- **[Common Platforms](/wiki/common-platforms/)**: ROS, UAVs, and mobile bases.
+- **[Computing](/wiki/computing/)**: SBCs, GPUs, and embedded controllers.
+- **[Fabrication](/wiki/fabrication/)**: 3D printing, machining, and prototyping.
+- **[Interfacing](/wiki/interfacing/)**: Microcontrollers and low-level protocols.
+- **[Networking](/wiki/networking/)**: Communications and distributed systems.
+- **[Programming](/wiki/programming/)**: Languages, libraries (Eigen, Boost), and practices.
+- **[Project Management](/wiki/project-management/)**: Workflows for robotics teams.
+- **[Sensing](/wiki/sensing/)**: Computer vision, LiDAR, and IMUs.
+- **[State Estimation](/wiki/state-estimation/)**: SLAM, localization, and navigation.
+- **[System Design](/wiki/system-design-development/)**: Systems engineering for robotics.
+- **[Tools](/wiki/tools/)**: External software, editors, and utilities.
+
+---
+
+## 🤝 Community & Support
+If you find a bug or have a suggestion, please [open an issue](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/issues) or join the discussion in our Pull Requests.
+
+---
+*Maintained by the Robotics Knowledgebase Team. Built for the community, by the community.*
