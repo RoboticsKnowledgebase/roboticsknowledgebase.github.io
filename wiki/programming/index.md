@@ -33,6 +33,9 @@ This section focuses on **programming techniques, tools, and libraries** commonl
 - **[Python Construct Library](/wiki/programming/python-construct/)**
   Explores the Python Construct library for building and parsing binary data. Highlights its utility for reliable serial communication in robotics systems. Includes examples of creating structured messages with CRC error-checking.
 
+- **[ROS 2 Yasmin State Machine](/wiki/programming/yasmin-ros2-state-machine/)**
+  A tutorial on using the Yasmin framework for state machine-based task logic in ROS 2. Covers core fundamentals, installation, and practical usage examples.
+
 ## Resources
 
 ### General Programming Resources
@@ -50,6 +53,8 @@ This section focuses on **programming techniques, tools, and libraries** commonl
 - [Pthreads Tutorial](https://computing.llnl.gov/tutorials/pthreads/)
 - [Python Construct GitHub](https://github.com/construct/construct)
 - [Protocol Wrappers for Python](http://eli.thegreenplace.net/2009/08/20/frames-and-protocols-for-the-serial-port-in-python)
+- [Yasmin Documentation (4.0.1)](https://uleroboticsgroup.github.io/yasmin/4.0.1/)
+- [Official Yasmin Repository](https://github.com/uleroboticsgroup/yasmin)
 
 ### Tutorials and Forums
 - [Learn Code the Hard Way](https://learncodethehardway.org/): Without a doubt, the best, most comprehensive tutorials for Python and C in existence.
