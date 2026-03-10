@@ -17,10 +17,16 @@ This section demonstrates how machine learning enhances robotic systems by enabl
 - **[Introduction to Reinforcement Learning](/wiki/machine-learning/intro-to-rl/)**
   Covers reinforcement learning concepts and Bellman equations. Discusses methods like dynamic programming, Monte Carlo, and temporal difference learning, with an emphasis on robotic applications.
 
+- **[Introduction to Diffusion Models and Diffusion Policy](/wiki/machine-learning/intro-to-diffusion/)**
+  Comprehensive introduction to diffusion models and their application in robotics through diffusion policies. Covers ODE and SDE formulations, their practical implications, and how diffusion policies enable multi-modal action learning for complex robotic tasks.
+
+- **[GRPO for Diffusion Policies in Robotics](/wiki/machine-learning/grpo-diffusion-policies/)**
+  Introduces Group Relative Policy Optimization (GRPO) and its application to diffusion policies using SDE formulation for stochastic sampling. Covers GRPO's origins in LLMs, the mathematical framework, and practical implementation strategies for optimizing robot policies with reward-based learning.
+
 - **[Mediapipe: Real-Time ML for Robotics](/wiki/machine-learning/mediapipe-live-ml-anywhere/)**
   Introduces MediaPipe for live ML inference on various platforms, including Android, iOS, and IoT. Highlights body pose tracking, hand tracking, and object detection pipelines.
 
-- **[NLP for Robotics](/wiki/machine-learning/nlp_for_robotics/)**
+- **[NLP for Robotics](/wiki/machine-learning/nlp-for-robotics/)**
   Explores how natural language processing (NLP) enables robots to understand and respond to human language. Includes an overview of transformer models and HuggingFace library usage.
 
 - **[Python Libraries for Reinforcement Learning](/wiki/machine-learning/python-libraries-for-reinforcement-learning/)**

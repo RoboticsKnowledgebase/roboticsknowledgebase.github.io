@@ -100,6 +100,8 @@ wiki:
         url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Building ROS2 Custom Packages
+        url: /wiki/common-platforms/ros/ros2-custom-package/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -177,6 +179,10 @@ wiki:
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl/
+      - title: Diffusion Models and Diffusion Policy
+        url: /wiki/machine-learning/intro-to-diffusion/
+      - title: GRPO for Diffusion Policies
+        url: /wiki/machine-learning/grpo-diffusion-policies/
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
@@ -184,7 +190,7 @@ wiki:
       - title: Mediapipe - Live ML anywhere
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere/
       - title: NLP for robotics
-        url: /wiki/machine-learning/nlp_for_robotics/
+        url: /wiki/machine-learning/nlp-for-robotics/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -348,6 +354,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: ROS2 Humble Intra-Process Communication Recorder
+        url: /wiki/tools/ros2-humble-ipc-recorder/
   - title: Datasets
     url: /wiki/datasets/
     children:
