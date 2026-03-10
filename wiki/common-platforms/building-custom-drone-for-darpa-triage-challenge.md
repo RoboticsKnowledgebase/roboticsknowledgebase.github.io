@@ -25,7 +25,8 @@ The initial implementation leverages the DJI Matrice 100 airframe with a PX4 fli
 
 ### 1.2 Integration Procedure
 
-#### 1.2.1 Components (please see "[full list of drone](https://umilesgroup.com/en/what-are-the-parts-of-a-drone-full-list/)")
+#### 1.2.1 Components
+Refer to this [full list of drone components](https://umilesgroup.com/en/what-are-the-parts-of-a-drone-full-list/) for a general overview.
 - DJI Matrice 100 platform (DJI platform flexible)
 - Pixhawk flight controller (versions flexible)
 - GPS + Compass module
