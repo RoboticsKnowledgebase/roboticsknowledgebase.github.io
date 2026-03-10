@@ -62,6 +62,8 @@ wiki:
     children:
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
+      - title: Building a Custom Drone for the DARPA Triage Challenge
+        url: /wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
       - title: Unitree Go1
@@ -294,6 +296,8 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Onshape Tutorial
+        url: /wiki/fabrication/onshape-tutorial/
   - title: Math
     url: /wiki/math/
     children:
