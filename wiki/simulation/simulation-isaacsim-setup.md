@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2026-03-10
 title: NVIDIA Isaac Sim Setup and ROS2 Workflow for MRSD Projects
 ---
 
@@ -86,13 +86,12 @@ For MRSD teams utilizing powerful remote servers without a connected monitor, Is
 Isaac Sim provides several sample scenes such as **industrial warehouses, office interiors, and outdoor blocks** that simplify early development.
 
 -  Load an example scene, simple room:
-	````bash
-	Create → Environment → Simple Room 
-	 ````
-     ![simple room](assets/images/isaac_simpleroom.jpg)
-     
-     You can browse other scene samples in Isaac Sim Asset Browser.
-     It is accessible from the **Window > Browser tab.**
+````bash
+Create → Environment → Simple Room 
+````
+![simple room](/wiki/simulation/assets/images/isaac_simpleroom.png)
+
+You can browse other scene samples in Isaac Sim Asset Browser. It is accessible from the **Window > Browser tab.**
 
 ## Importing Robot Models
 
@@ -104,7 +103,7 @@ You can browse these robots in Isaac Sim Asset Browser under Robots folder.
 It is accessible from the **Window > Browser tab.**
 
 For example, a popular wheeled robot for navigation is Nova Carter. We can import from the Robots/Carter/nova_carter.usd
-![nova carter](assets/images/carter.png)
+![nova carter](/wiki/simulation/assets/images/carter.png)
 
 Here are some properties that can be tuned to correct the robot's behavior:
 
@@ -128,7 +127,7 @@ NVIDIA Isaac Sim also supports many realistic sensors modules, such as **stereo 
 For example, creating a Camera Sensor:
 To create the camera from the menu: **Create>Sensors>Camera and Depth Sensors>Intel>Intel Realsense D455**. 
 The Intel Realsense Depth Camera D455 consists of multiple RGB and depth image sensors and a 6-axis IMU.
-![realsense](assets/images/realsense.png)
+![realsense](/wiki/simulation/assets/images/realsense.png)
 
 [Camera, RTX, Physics Based Sensors](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/sensors/index.html#sensors)
 
@@ -154,7 +153,7 @@ Simulation time is important because ROS 2 nodes often require synchronized time
 ### Nav2 Setup
 
 This diagram shows the ROS2 messages required for Nav2:
-![nav2](assets/images/nav2.png)
+![nav2](/wiki/simulation/assets/images/nav2.png)
 
 1. Install Nav2, refer to the [Nav2 installation page](https://docs.nav2.org/getting_started/index.html#installation).
 

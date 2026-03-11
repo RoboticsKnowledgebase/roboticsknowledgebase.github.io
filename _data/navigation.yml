@@ -243,7 +243,7 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
-      - title: Isaacsim Setup
+      - title: NVIDIA Isaac Sim Setup and ROS2 Workflow
         url: /wiki/simulation/simulation-isaacsim-setup/
   - title: Interfacing
     url: /wiki/interfacing/
