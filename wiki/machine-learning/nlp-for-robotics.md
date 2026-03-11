@@ -19,9 +19,9 @@ Transformers have become increasingly popular in NLP due to their ability to cap
 
 Transformers are a powerful tool for NLP and have revolutionized the field. They have enabled researchers to create models that can accurately capture the meaning of text and make accurate predictions.
 
-![Transformer Architecture simplified](/assets/images/NLP_image1.png)
+![Transformer Architecture simplified](/assets/images/machine-learning/NLP_image1.png)
 
-![Transformer Architecture](/assets/images/NLP_image2.png)
+![Transformer Architecture](/assets/images/machine-learning/NLP_image2.png)
  
 
 Encoder (left): The encoder receives an input and builds a representation of it (its features). This means that the model is optimized to acquire understanding from the input.
@@ -135,7 +135,7 @@ preds = vqa(image=image, question=question)
 preds = [{"score": round(pred["score"], 4), "answer": pred["answer"]} for pred in preds]
 ```
 
-![Input Image](/assets/images/NLP_image3.png)
+![Input Image](/assets/images/machine-learning/NLP_image3.png)
 
 
 
@@ -161,7 +161,7 @@ OUTPUT: [
 
 Below is a table describing some of the basic pipeline identifiers and their use.
 
-![List of different pipelines](/assets/images/NLP_image4.png)
+![List of different pipelines](/assets/images/machine-learning/NLP_image4.png)
 
 
 # Fine-tuning a pretrained model

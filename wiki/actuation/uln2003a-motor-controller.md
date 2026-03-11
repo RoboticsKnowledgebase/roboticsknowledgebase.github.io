@@ -2,7 +2,7 @@
 date: 2017-08-21
 title: Using ULN 2003A as a motor controller
 ---
-![Using ULN 2003A as a stepper motor controller](/assets/images/ULN2003AMotorController-8ee22.png)
+![Using ULN 2003A as a stepper motor controller](/assets/images/actuation/ULN2003AMotorController-8ee22.png)
 
 ## ULN 2003A - Darlington Array
 ULN 2003A or otherwise known as Darlington array is a way to use signals from a microcontroller or any device that can only withstand low currents to control high current drawing devices such as relays, motors, bulbs etc.

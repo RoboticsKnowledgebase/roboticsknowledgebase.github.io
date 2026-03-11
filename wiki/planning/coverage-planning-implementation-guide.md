@@ -19,7 +19,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 ## High Level Architecture of Coverage Planner
  Before we dive into the small details of this coverage planner, we will first look at the high level architecture of the coverage planner we will be designing. The image below shows the three main steps. 
 
- ![Coverage Planner Steps](/assets/images/coverage_planner_steps.png)
+ ![Coverage Planner Steps](/assets/images/planning/coverage_planner_steps.png)
 
  The input to the coverage planner is the region we want to generate the coverage plan for. We will represent our region of interest as an outer polygon with a set of polygonal holes. The holes represent areas within the overall outer polygon that we don't want to cover. For instance, in a robotic lawnmowing application, holes could represent gardens in the middle of the lawn that we don't want to mow. Similarly, in a drone wildfire-monitoring application, holes might represent lakes, which would not have any fire, and so you would not want to spend time monitoring them. The outer polygon as well as polygonal holes each are represented as lists of vertices, with each vertex being an x,y coordinate pair.
 
@@ -31,7 +31,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  As mentioned above, the first step to our coverage planner will be decomposing the region of interest into simpler trapezoids. To perform this trapezoidal decomposition, we will use a vertical sweep line method. This involves "sweeping" a vertical line from left to right across the region. As the sweep line encounters events, which correspond to vertices, it processes them. We maintain a list of trapezoidal cells that are currently open, meaning that their right edge is unknown. Processing an event involves closing some open cells and opening new cells. Once the sweep line has made it past the right-most event, there should be no more open cells and the closed cells represent the full trapezoidal decomposition of the region. An example of such a trapezoidal decomposition from section 6.1 of the Principles of Robot Motion textbook is shown in the image below.
 
- ![Trapezoidal Decomposition](/assets/images/trapezoid_decomposition.png)
+ ![Trapezoidal Decomposition](/assets/images/planning/trapezoid_decomposition.png)
 
  Diving into more detail, the first step of trapezoidal decomposition is to convert the outer boundary and holes into a list of events. To do this, we need to discuss what an event is. Events correspond to vertices of the region of interest, but they also contain some additional information. In addition to the current vertex (the vertex that the event corresponds to), an event contains the previous vertex, the next vertex, and the event type. The previous vertex and next vertex refer to the two vertices directly connected to the current vertex via edges. In order to distinguish between the next and previous vertex, we will use the convention that as you traverse the edges of the outer boundary or a hole, the region of interest (area you care about covering) will be to your left. Thus, we will traverse the outer boundary in counter-clockwise order and traverse holes in clockwise order.
 
@@ -41,7 +41,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  This classification into different event types will be useful later as we process events, since each type will need to be processed differently.
 
- ![Coverage Planner Event Types](/assets/images/coverage_planner_event_types.png)
+ ![Coverage Planner Event Types](/assets/images/planning/coverage_planner_event_types.png)
 
  To generate the list of events, loop through the vertices of the outer boundary in CCW order and loop through the vertices of each hole in CW order. At each vertex, add a new event with its previous, current, and next vertex. To determine the event type, you need to examine the x and y components of the previous and next vertex. For example, if both the previous and next vertex have an x component to the left of the current vertex, the event is either an OUT or CLOSE event. Comparing the y coordinate of the previous and next vertex can then distinguish between these two event types. Similarly, if the previous and next vertex are both to the right of the current vertex, the event type is either OPEN or IN. Again, you can then compare the y coordinate of the previous and next vertex to distinguish them. If the previous vertex is to the left of the current vertex and the next vertex is to the right of the current vertex, the event type is FLOOR. Finally, if the previous vertex is to the right while the next vertex is to the left, the event type is CEILING. 
 
@@ -69,7 +69,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  The trapezoidal cells define an implicit graph via their neighbor lists. Once we have the trapezoidal cells, we need to determine a cell traversal. This is an order in which to visit each cell. An example (incomplete) cell traversal from section 6.1 of the Principles of Robot Motion textbook is shown below.
 
- ![Cell Traversal](/assets/images/cell_traversal.png)
+ ![Cell Traversal](/assets/images/planning/cell_traversal.png)
 
  There are lots of different ways to generate a cell traversal. For example, you could start from some random cell and perform depth-first search. You could use a greedy method where, from each cell, you go to the nearest unvisited cell. You could also use a more complex method such as using a TSP solver. 
 

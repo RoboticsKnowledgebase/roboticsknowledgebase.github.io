@@ -54,7 +54,7 @@ track_bbs_ids = mot_tracker.update(detections)
 ...
 ```
 
-![SORT Tracker](/assets/images/sort-tracker.jpg)
+![SORT Tracker](/assets/images/state-estimation/sort-tracker.jpg)
 
 ### Inverse Perspective Mapping
 Inverse Perspective Mapping is basically a perspective transformation or a homography between two planes in the world. The idea here is to project the camera view (image plane) on to the ground plane in the world to obtain a birds-eye-view of the scene. One way to do this is to directly pick a set of points (minimum 4) in the image corresponding to a rectangular region on the ground plane and then estimate the homography matrix.
@@ -63,13 +63,13 @@ In order to estimate the homography, you need a set of correspondences. You need
 
 Once the homography is known, pick the bottom center of all the bounding boxes, as this point most closely represents the point on the ground plane, and apply the homography to this image point to obtain an estimate of location in the world frame.
 
-![IPM Calibration](/assets/images/ipm_two.png)
+![IPM Calibration](/assets/images/state-estimation/ipm_two.png)
 
 There are many pitfalls and assumptions in this technique. As mentioned earlier, the objects to detect must lie on the same ground plane and the relative distance of the camera sensor and orientation with respect to the ground plane must remain constant. If the bounding box detection is inaccurate, a small deviation in the image point might lead to a significant error in the estimated position in the world frame.
 
 You can also model the uncertainty in the position estimate to generate an occupancy grid with the mean and covariance of the position of the object. We will later see how to fuse these estimates with another sensor modality such as a Radar to refine our estimate and track these detections as well.
 
-![Occupancy Grid Gaussian](/assets/images/occupancy-grid.png)
+![Occupancy Grid Gaussian](/assets/images/state-estimation/occupancy-grid.png)
 
 #### Camera Output
 Camera returns two states for every detections. According to our current camera configuration, state (Ego vehicle frame) of the detections are given as: 
@@ -89,7 +89,7 @@ Radar provides four states for every detections, moreover depending on the use c
 
 Following is the result of camera detection and estimated position in the 3D world. The detection was performed on image stream from Carla simulator and the results are visualized in Rviz. The blue cubes represent estimates from camera and red cubes are the Radar detections.
 
-![Occupancy Grid](/assets/images/camera-radar-targets.png)
+![Occupancy Grid](/assets/images/state-estimation/camera-radar-targets.png)
 
 ## Tracker Framework
 The framework has the following major components:
@@ -150,7 +150,7 @@ Once you have the motion compensated tracks, you need to follow the same algorit
 
 
 #### Final Results of Tracking and Sensor Fusion
-![Tracker Results](/assets/images/Tracker-01.PNG) ![Tracker Results](/assets/images/Tracker-02.PNG)
+![Tracker Results](/assets/images/state-estimation/Tracker-01.PNG) ![Tracker Results](/assets/images/state-estimation/Tracker-02.PNG)
 
 
 ### Tracker Evaluation and Metrics

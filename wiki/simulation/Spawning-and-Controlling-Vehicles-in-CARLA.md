@@ -19,7 +19,7 @@ First, start the CARLA server:
 ```
 This should open up the CARLA server and you will be greeted with a camera feed:
 
-![Hello CARLA](/assets/images/carla_opning.png)
+![Hello CARLA](/assets/images/simulation/carla_opning.png)
 
 ## Spawning a vehicle in CARLA
 Now that we have the CARLA server running, we need to connect a client to it. 
@@ -49,7 +49,7 @@ draw_waypoints(waypoints, road_id=10, life_time=20)
 ```
 All roads in CARLA have an associated road_id. The code above will query the CARLA server for all the waypoints in the map, and the light up the waypoints that are present on road with road_id 10. You should see something like this:
 
-![CARLA Navigation](/assets/images/carla2.png)
+![CARLA Navigation](/assets/images/simulation/carla2.png)
 
 This visualization helps us in finding out a good spawn location for a vehicle.
 Let's spawn a car somewhere on road 10 now.
@@ -77,7 +77,7 @@ vehicle = client.get_world().spawn_actor(vehicle_blueprint, spawn_point)
 The reason for increasing the 'z' coordinate of the spawn point it to avoid any collisions with the road. CARLA does not internally handle these collisions during spawn and not having a 'z' offset can lead to issues.
 
 We should now have a car on road 10.
-![Spawn Completed](/assets/images/carla3.png)
+![Spawn Completed](/assets/images/simulation/carla3.png)
 
 ## Controlling the spawned car
 We will be using CARLA's built-in PID controllers for controlling our spawned model 3.
@@ -98,7 +98,7 @@ client.get_world().debug.draw_string(target_waypoint.transform.location, 'O', dr
 ```
 The tracked waypoint should now be red in color.
 
-![Visualizing the tracked waypoint](/assets/images/carla4.png)
+![Visualizing the tracked waypoint](/assets/images/simulation/carla4.png)
 
 
 Now, track!
@@ -109,7 +109,7 @@ for i in range(ticks_to_track):
 	vehicle.apply_control(control_signal)
 ```
 You should see something like the GIF below:
-![Tracking](/assets/images/carlaTrack.gif)
+![Tracking](/assets/images/simulation/carlaTrack.gif)
 
 
 

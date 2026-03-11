@@ -86,7 +86,7 @@ If you are using a Raspberry Pi, you can use the [ReSpeaker](https://wiki.seeeds
 
 The microphone sensitivity can be adjusted using the `pavucontrol` program. This is available on Ubuntu. You can install it using `sudo apt install pavucontrol`. Once installed, you can run it using `pavucontrol`. This will open a GUI. You can then adjust the microphone gain using the slider:
 
-![pavucontrol](/assets/images/pavucontrol.png)
+![pavucontrol](/assets/images/sensing/pavucontrol.png)
 
 ### Echo Cancellation
 

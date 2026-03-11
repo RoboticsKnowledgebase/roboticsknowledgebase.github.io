@@ -4,7 +4,7 @@ title: Choose a Simulator
 mermaid: true  
 ---
 
-![all_sim](/assets/images/all_sim.png)
+![all_sim](/assets/images/robotics-project-guide/all_sim.png)
 
 Selecting the appropriate simulator is a pivotal step in any robotics project. Simulators allow you to test algorithms, design robots, and visualize environments without the need for physical hardware, saving both time and resources. This section will guide you through the importance of simulators, help you identify the type of simulator that suits your project's needs, and provide comparisons of popular options across various categories.
 
@@ -138,7 +138,7 @@ Users define the physical and kinematic properties of robots using formats like 
 
 By providing this information in a URDF file, simulators can accurately construct and simulate the robot's behavior within a virtual environment.
 
-![urdf_to_sim](/assets/images/urdf_to_sim.png)
+![urdf_to_sim](/assets/images/robotics-project-guide/urdf_to_sim.png)
 Here, the `"link"` in the red square on left-side is the URDF section that defines the Unitree G1's pelvis link. Based on the information provided here, the physics engine simulates the pelvis on the humanoid robot.   
 
 **Extended Effects Through Plugins or Force/Torque Models**
@@ -176,7 +176,7 @@ We first go over some popular simulators tailored for robotics applications.
 *Free for personal or educational use; commercial licenses may apply.
 
 ### [Gazebo](https://gazebosim.org/home)
-![gazebo_sim](/assets/images/gazebo_sim.png)
+![gazebo_sim](/assets/images/robotics-project-guide/gazebo_sim.png)
 
 Gazebo is a widely-used open-source robotics simulator that offers robust physics simulation and sensor modeling capabilities. It provides a 3D environment where users can test and develop robots in realistic scenarios. Gazebo's integration with the Robot Operating System (ROS) makes it a standard choice for many robotics projects, facilitating seamless communication between simulation and real-world applications. 
 
@@ -192,7 +192,7 @@ Gazebo is a widely-used open-source robotics simulator that offers robust physic
 - **Learning Curve**: May require time to master its extensive features and functionalities.
 
 ### [AirSim (on Unity)](https://microsoft.github.io/AirSim/Unity/?utm_source=chatgpt.com)
-![airsim_sim](/assets/images/airsim_sim.png)
+![airsim_sim](/assets/images/robotics-project-guide/airsim_sim.png)
 Developed by Microsoft, AirSim is an open-source simulator designed primarily for drones and autonomous vehicles. Built on the Unreal Engine, it provides high-fidelity visuals and accurate physics modeling, making it suitable for machine learning and computer vision research. AirSim supports both software-in-the-loop and hardware-in-the-loop simulations, allowing for seamless transitions from virtual to real-world testing. 
 
 **Pros**:  
@@ -208,7 +208,7 @@ Developed by Microsoft, AirSim is an open-source simulator designed primarily fo
 
 ### [CoppeliaSim (formerly V-REP)](https://www.coppeliarobotics.com/)
 
-![coppeliasim_sim](/assets/images/CoppeliaSim_sim.jpg)
+![coppeliasim_sim](/assets/images/robotics-project-guide/CoppeliaSim_sim.jpg)
 
 CoppeliaSim is a versatile robotics simulator known for its extensive feature set and modularity. It supports a wide range of robot models and includes several physics engines for accurate simulation. CoppeliaSim's integrated development environment allows for rapid prototyping and testing of robotic algorithms. It also offers support for multiple programming languages, enhancing its flexibility for various applications.
 
@@ -225,7 +225,7 @@ CoppeliaSim is a versatile robotics simulator known for its extensive feature se
 
 ### [Unity](https://unity.com/blog/engine-platform/robotics-simulation-is-easy-as-1-2-3)
 
-![unity_sim](/assets/images/unity_sim.png)
+![unity_sim](/assets/images/robotics-project-guide/unity_sim.png)
 
 Unity is a powerful game development platform that has gained popularity in robotics for its high-quality rendering and flexible environment creation. While not specifically designed for robotics, Unity's extensive asset store and scripting capabilities allow users to build complex simulations. With the addition of plugins and bridges, Unity can integrate with ROS, enabling the development of sophisticated robotic applications with realistic visuals. 
 
@@ -254,7 +254,7 @@ As the field of robotics increasingly incorporates reinforcement learning (RL) t
 
 ### OpenAI Gym
 
-![openaigym_sim](/assets/images/openaigym_sim.png)
+![openaigym_sim](/assets/images/robotics-project-guide/openaigym_sim.png)
 
 OpenAI Gym is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gym framework, making it a foundational tool in the RL community.
 OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gym.
@@ -278,7 +278,7 @@ OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a
 
 ### MuJoCo
 
-![mujoco_sim](/assets/images/mujoco_sim.jpg)
+![mujoco_sim](/assets/images/robotics-project-guide/mujoco_sim.jpg)
 
 MuJoCo (Multi-Joint dynamics with Contact) is a physics engine designed for fast and accurate simulation of articulated structures, making it ideal for reinforcement learning tasks that require high-fidelity physics modeling.
 
@@ -300,7 +300,7 @@ MuJoCo (Multi-Joint dynamics with Contact) is a physics engine designed for fast
 
 ### PyBullet
 
-![pybullet_sim](/assets/images/pybullet_sim.png)
+![pybullet_sim](/assets/images/robotics-project-guide/pybullet_sim.png)
 
 PyBullet is an open-source physics engine that offers real-time simulation of rigid body dynamics, making it suitable for reinforcement learning and robotics research.
 
@@ -322,7 +322,7 @@ PyBullet is an open-source physics engine that offers real-time simulation of ri
 
 ### Isaac Lab
 
-![isaaclab_sim](/assets/images/isaaclab_sim.jpg)
+![isaaclab_sim](/assets/images/robotics-project-guide/isaaclab_sim.jpg)
 
 Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built on top of NVIDIA Isaac Sim. It provides high-fidelity physics simulation using NVIDIA PhysX and photorealistic rendering, making it suitable for training robot policies in simulation before deploying them in real-world scenarios.
 

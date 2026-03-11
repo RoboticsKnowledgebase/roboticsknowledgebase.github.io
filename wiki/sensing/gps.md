@@ -42,20 +42,20 @@ Position information can be critical for achieving high accuracy localization an
 - Setting the frame rate for the GPS
   - Only should need to change the Measurement Period
 
-  ![](/assets/images/gps1.png)
+  ![](/assets/images/sensing/gps1.png)
 
 - Making the settings permanent on the GPS
 
-![](/assets/images/gps2.png)
+![](/assets/images/sensing/gps2.png)
 
 - Poor connection between the base station and robot GPS
 
 
-![](/assets/images/gps3.png)
+![](/assets/images/sensing/gps3.png)
 
 - Make sure that all the values match between the base station and robot GPS except for the target - robot should be UART2 and the base station UART1
 
 - Loading a configuration file (You may not need to do this)
 
 
-![](/assets/images/gps4.png)
+![](/assets/images/sensing/gps4.png)

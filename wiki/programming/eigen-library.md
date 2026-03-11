@@ -30,7 +30,7 @@ Additionally, you can:
 The applications are the following
 1. Convert Pose to Quaternions and vice versa
 2. Find the relative pose transformations by just using simple 3D homogeneous transformation `Eigen::Affine3d T` is a 4*4 homogeneous transform:
-![Homogeneous Equation Example](/assets/images/EigenLibrary-35715.png)
+![Homogeneous Equation Example](/assets/images/programming/EigenLibrary-35715.png)
 3. Now all the transformations (rotation or translation) can be represented in homogeneous form as simple 4*4 matrix multiplications.
 4. Suppose you have a pose transform T of robot in the world and you want to find robot’s X-direction relative to the world. You can do this by using
 `Eigen::Vector3d x_bearing= T.rotation * Eigen::Vector3d::UnitX();`

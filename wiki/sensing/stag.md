@@ -64,7 +64,7 @@ In informal tests, the STag were able to achieve accuracy within +- 2 centimeter
     
    **Exposure**, **ISO sensitivity** and **shutter type** are three camera main parameters which can help greatly improve marker detection. It is highly recommend to use ***global shutter cameras*** instead of rolling shutter cameras to avoid aliasing effects. Exposure and ISO sensitivity parameters are dependent on the application. In our case (TeamJ, MRSD 2021-23), the camera was mounted on a VTOL and the marker was to be detected from at least 12 meters away in outdoor environments. In order to do so, we had to use the lowest exposure (= 1 microsecond) and ISO sensitivity (= 100) settings for our camera. The GIF below shows how exposure and ISO sensitivity affects marker detection output.
 
-    ![exposure and iso sensitivity settings affecting marker detection](/assets/images/stag_exposure.gif)
+    ![exposure and iso sensitivity settings affecting marker detection](/assets/images/sensing/stag_exposure.gif)
 
 ## Tips
 

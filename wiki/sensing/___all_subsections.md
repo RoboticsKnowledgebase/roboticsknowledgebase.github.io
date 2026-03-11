@@ -3,7 +3,7 @@
 date: 2017-08-15
 title: Adafruit GPS
 ---
-![Adafruit GPS Components](/assets/images/AdafruitGPS-c715f.png) ![Adafruit GPS Assembled](/assets/images/AdafruitGPS-69ceb.png)
+![Adafruit GPS Components](/assets/images/sensing/AdafruitGPS-c715f.png) ![Adafruit GPS Assembled](/assets/images/sensing/AdafruitGPS-69ceb.png)
 
 The Adafruit Ultimate GPS module is designed for convenient use with Arduino, Raspberry Pi, or other commonly used micro-controllers. The breakout is built around the MTK3339 chipset, a no-nonsense, high-quality GPS module that can track up to 22 satellites on 66 channels, has an excellent high-sensitivity receiver (-165 dB tracking), and a built-in antenna!
 
@@ -43,7 +43,7 @@ title: AprilTags
 ---
 AprilTags is a visual fiducial system, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration. The tags provide a means of identification and 3D positioning, even in low visibility conditions. The tags act like barcodes, storing a small amount of information (tag ID), while also enabling simple and accurate 6D (x, y, z, roll, pitch, yaw) pose estimation of the tag.
 
-![AprilTags placed on multiple mobile robots platforms](/assets/images/apriltags-6719c.png)
+![AprilTags placed on multiple mobile robots platforms](/assets/images/sensing/apriltags-6719c.png)
 
 The AprilTags project originates from a team at the University of Michigan, that has a [detailed website dedicated to the research](https://april.eecs.umich.edu/apriltag/), which is a good starting off point for learning how to use all of the software. The team has provided implementations in both Java and C to read AprilTags from a camera and there are additional implementations available online for tag reading. In addition to the software available on their website, a student at MIT has released a [C++ implementation](http://people.csail.mit.edu/kaess/apriltags). This website also has printable AprilTags for several tag families available in PDF format.
 
@@ -105,14 +105,14 @@ This article presents an overview of object detection using the Azure camera wit
 To identify individual blocks and their respective grasping points, the perception subsystem undergoes a series of five steps. Initially, it crops the Azure Kinect camera image to center on the workspace. Following this, it applies color thresholding to filter out irrelevant objects and discern the blocks. Subsequently, it identifies the contours of these blocks and filters them based on their area and shape characteristics. Once the blocks are recognized, the perception subsystem computes the grasping points for each block. Collectively, these steps facilitate the accurate detection of block locations and their corresponding grasping points on the workstation.
 
 
-![Pipeline of Block Detection](/assets/images/pipeline.png)
+![Pipeline of Block Detection](/assets/images/sensing/pipeline.png)
 
 ### Image Cropping
 The initial stage of the perception subsystem involves cropping the raw image. Raw images often contain extraneous details, such as the workspace's supporting platform or the presence of individuals' feet near the robot. By cropping the image to focus solely on the workspace, we eliminate a significant amount of unnecessary information, thereby enhancing the system's efficiency and robustness.
 
 Currently, this approach employs hard-coded cropping parameters, requiring manual specification of the rows and columns to retain within the image.
 
-![Cropped Image](/assets/images/cropped.png)
+![Cropped Image](/assets/images/sensing/cropped.png)
 
 ### Color Segmentation
 Color segmentation can pose challenges in images with prominent shadows. Shadows cause a decrease in RGB pixel values, while light causes an increase, making it challenging to distinguish between different colors. To address this, we employ HSV (Hue, Saturation, Value) thresholding on the image.
@@ -123,7 +123,7 @@ To tackle this issue, we employed color meter software to establish the brown co
 
 To further refine Jenga block detection and eliminate background noise, we apply a mask to the HSV thresholded image. Initially, we create a mask by contour area thresholding and then fill any holes within the contour to obtain a solid mask. The resulting masked image is shown in Figure 6a. This process ensures the reliable detection of Jenga blocks by removing remaining noise or unwanted objects.
 
-![RGB Vector](/assets/images/rgb_vector.png)
+![RGB Vector](/assets/images/sensing/rgb_vector.png)
 
 ### Block Contours
 
@@ -135,7 +135,7 @@ To simplify contours and reduce points, we apply OpenCV2's 'minAreaRect' functio
 
 Subsequently, we identify the two grasp points of the block by detecting its longer sides. To determine these grasp points in the image frame, we align the depth image with the RGB image to acquire the depth value. Utilizing the x, y, and depth values, we transform the 2D pixel points back to the 3D pose in the camera frame using the intrinsic matrix. The grasp point concerning the base frame is then computed by performing a transform tree lookup, thereby completing the entire perception cycle.
 
-![Contours](/assets/images/zoom1.png)
+![Contours](/assets/images/sensing/zoom1.png)
 
 
 ### Image HSV Thresholding vs. Normalization
@@ -148,7 +148,7 @@ Although image normalization showed promise, it proved less effective in clutter
 
 Normalized Image             |  HSV Image
 :-------------------------:|:-------------------------:
-![Norm](/assets/images/norm_img.png)  |  ![HSV](/assets/images/hsv_img.png)
+![Norm](/assets/images/sensing/norm_img.png)  |  ![HSV](/assets/images/sensing/hsv_img.png)
 
 
 ## References
@@ -338,12 +338,12 @@ date: 2017-08-15
 title: Delphi ESR Radar
 ---
 
-![Delphi ESR Radar](/assets/images/DelphiESRRadar-8394b.png)
+![Delphi ESR Radar](/assets/images/sensing/DelphiESRRadar-8394b.png)
 
 Delphi's multimode Electronically Scanning RADAR (ESR) combines a wide field of view at mid-range with long-range coverage to provide two measurement modes simultaneously. The mid-range coverage (60m, +/-45 deg) not only allows vehicles cutting in from adjacent lanes to be detected but also identifies vehicles and pedestrians across the width of the equipped vehicle. The long-range coverage (175m, +/-11 deg) provides accurate range and speed data with powerful object discrimination that can identify up to 64 targets in the vehicle's path.
 Delphi's technologically advanced ESR uses proven solid state technology plus class-leading performance, packaging and durability to offer customers game-changing forward radar detection. The quality of data provided by Delphi's system enables powerful functionality including adaptive cruise control, forward collision warning, brake support and headway alert.
 
-![Radar Detection Cones](/assets/images/DelphiESRRadar-eba02.png)
+![Radar Detection Cones](/assets/images/sensing/DelphiESRRadar-eba02.png)
 
 For more introductory information about the sensor and its state-of-the-art technology, please refer to the [official datasheet released by Delphi.](http://cmumrsdproject.wikispaces.com/file/view/delphi_esr_datasheet.pdf/613230495/delphi_esr_datasheet.pdf)
 
@@ -494,23 +494,23 @@ Position information can be critical for achieving high accuracy localization an
 - Setting the frame rate for the GPS
   - Only should need to change the Measurement Period
 
-  ![](/assets/images/gps1.png)
+  ![](/assets/images/sensing/gps1.png)
 
 - Making the settings permanent on the GPS
 
-![](/assets/images/gps2.png)
+![](/assets/images/sensing/gps2.png)
 
 - Poor connection between the base station and robot GPS
 
 
-![](/assets/images/gps3.png)
+![](/assets/images/sensing/gps3.png)
 
 - Make sure that all the values match between the base station and robot GPS except for the target - robot should be UART2 and the base station UART1
 
 - Loading a configuration file (You may not need to do this)
 
 
-![](/assets/images/gps4.png)
+![](/assets/images/sensing/gps4.png)
 
 
 /wiki/sensing/opencv-stereo.md
@@ -549,7 +549,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
 1. ## Microsoft Kinect
 
-    ![Kinect](/assets/images/kinect.jpg)
+    ![Kinect](/assets/images/sensing/kinect.jpg)
 
     ### Overview:
     Kinect for Xbox 360 is a low-cost vision device equipped with one IR camera, one color camera, and one IR projector to produce RGB images as well as voxel (depth-pixel) images. The RGB video stream gives an 8-bit VGA resolution (640 x 480 pixels) with a Bayer color filter, while the monochrome depth-sensing video stream is in VGA resolution. The sensor has an angular field of view of 57 degrees horizontally and 43 degrees vertically. Kinect has been reverse engineered to a great extent by the open-source community which has revealed many facts on how depth is measured. Kinect uses a structured light approach form in which we can extract the time of return. They use a standard off-the-shelf CMOS sensor for the same.
@@ -575,7 +575,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
 2. ## Intel Realsense D435i
     
-    ![Realsense](/assets/images/realsense.jpg)
+    ![Realsense](/assets/images/sensing/realsense.jpg)
 
     ### Overview:
     The Intel® RealSense™ Depth Camera D400 Series uses stereo vision to calculate depth. The D435 is a USB-powered depth camera and consists of a pair of depth sensors, an RGB sensor, and an infrared projector. It gives a good depth map a well the processed reconstructed 3D point clouds.
@@ -626,7 +626,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         ```
         The function pcl_callback will then be called every time the sensor publishes a new pc2.PointCloud2 message.
 
-        ![original](/assets/images/original.png)
+        ![original](/assets/images/sensing/original.png)
     
     3. **Voxel Filter Downsampling**
     
@@ -642,7 +642,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         downsampled = vox.filter()
         ```
         
-        ![downsampled](/assets/images/downsampled.png)
+        ![downsampled](/assets/images/sensing/downsampled.png)
         
     4. **Region cropping**
     
@@ -669,7 +669,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         passed = passthrough.filter()
         ```
         
-        ![cropped](/assets/images/cropped.png)
+        ![cropped](/assets/images/sensing/cropped.png)
     
     5. **RANSAC ground segmentation**
     
@@ -691,9 +691,9 @@ Although PCL comes installed with ROS full installation by default, a complete i
         cloud_objects = cloud_filtered.extract(inliers, negative=True)
         ```
         
-        ![ransac1](/assets/images/ransac1.png)   
+        ![ransac1](/assets/images/sensing/ransac1.png)   
         
-        ![ransac2](/assets/images/ransac2.png)
+        ![ransac2](/assets/images/sensing/ransac2.png)
         
         Here Inliers are the points that fit a plane equation, therefore, they should belong to the table. On the other hand, outliers are the remaining points that represent the objects over the table.
         
@@ -736,7 +736,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         cluster_indices = ec.Extract()
         ```
 
-        ![cluster](/assets/images/cluster.png)
+        ![cluster](/assets/images/sensing/cluster.png)
 
     8. **Sprinkle some machine learning**   
     
@@ -750,7 +750,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
     Here is a visualization of a sample mapped environment.
 
-    ![RTABMAP](/assets/images/slam.png)
+    ![RTABMAP](/assets/images/sensing/slam.png)
 
 /wiki/sensing/photometric-calibration.md
 ---
@@ -1026,7 +1026,7 @@ This page will go into detail about to get started with the TS16 Total Station, 
 
 Total stations have an extended heritage in civil engineering, where they have been used to precisely survey worksites since the 1970s. The total station sends beams of light directly to a glass reflective prism, and uses the time-of-flight properties of the beam to measure distances. The robotic total station tracks it's calibration orientaiton to high precision, such that the measured distance can be converted into a high-precision 3D position mesaurement. Total stations, depending on the prism type and other factors, can accurate track with in millimeter range at up to 3.5km [Leica-Geosystems](file:///home/john/Downloads/Leica_Viva_TS16_DS-2.pdf).
 
-![Example usage of a Total Station in the Field](/assets/images/assets_leica_field_image.jpg)
+![Example usage of a Total Station in the Field](/assets/images/sensing/assets_leica_field_image.jpg)
 [Source](https://leica-geosystems.com/)
 
 ### Best Use Cases & Expected Quality
@@ -1057,7 +1057,7 @@ This method has been tested on a TS16, but it would likely work on a TS15 or oth
 
 The other side of the total station is the reflector, which is used to get the high precision ranging. This is an important piece of hardware, especially in this use case. Since the prism will be moving, having high quality glass will reduce the imperfections that could cause the reflected beam to be off-center, resulting in a higher likelihood of losing tracking of the prism. A high quality prism from Leica will cost more than [$1k](https://www.allenprecision.com/360-reflector).
 
-![Leica GRZ122 360 Prism](/assets/images/leica_360_prism.jpeg)
+![Leica GRZ122 360 Prism](/assets/images/sensing/leica_360_prism.jpeg)
 [Source](https://leica-geosystems.com/)
 
 In order to connect the total station to a compute platform, it's possble to use wired or wireless methods. This wiki only explores the usage of USB connections using Leica's custom (and [expensive](https://www.baselineequipment.com/leica-instrument-to-datacollector-laptop-usb-cable)) cable.
@@ -1186,7 +1186,7 @@ If you are using a Raspberry Pi, you can use the [ReSpeaker](https://wiki.seeeds
 
 The microphone sensitivity can be adjusted using the `pavucontrol` program. This is available on Ubuntu. You can install it using `sudo apt install pavucontrol`. Once installed, you can run it using `pavucontrol`. This will open a GUI. You can then adjust the microphone gain using the slider:
 
-![pavucontrol](/assets/images/pavucontrol.png)
+![pavucontrol](/assets/images/sensing/pavucontrol.png)
 
 ### Echo Cancellation
 
@@ -1304,7 +1304,7 @@ In informal tests, the STag were able to achieve accuracy within +- 2 centimeter
     
    **Exposure**, **ISO sensitivity** and **shutter type** are three camera main parameters which can help greatly improve marker detection. It is highly recommend to use ***global shutter cameras*** instead of rolling shutter cameras to avoid aliasing effects. Exposure and ISO sensitivity parameters are dependent on the application. In our case (TeamJ, MRSD 2021-23), the camera was mounted on a VTOL and the marker was to be detected from at least 12 meters away in outdoor environments. In order to do so, we had to use the lowest exposure (= 1 microsecond) and ISO sensitivity (= 100) settings for our camera. The GIF below shows how exposure and ISO sensitivity affects marker detection output.
 
-    ![exposure and iso sensitivity settings affecting marker detection](/assets/images/stag_exposure.gif)
+    ![exposure and iso sensitivity settings affecting marker detection](/assets/images/sensing/stag_exposure.gif)
 
 ## Tips
 
@@ -1434,11 +1434,11 @@ title: Tracking vehicles using a static traffic camera
 Tracking vehicles using static camera is a useful tool for various use cases pertaining to both macro/micro traffic flow. We present a system where we extract vehicle trajectories using a monocular camera mounted at an intersection.
 
 We utilize a HD map and precompute homographies between the image plane of the camera and a bird's eye view plane where we finally project our trajectories.
-![data_capture](/assets/images/Data_capture.png)
+![data_capture](/assets/images/sensing/Data_capture.png)
 
 1. ### 2D detection and tracking
 We use detectron 2 and SORT as preliminary vehicle detection and tracking algorithms in the camera frame. The algorithms give a bounding box on estimate.
-![detectron_sort_result](/assets/images/detection_sort_output.png)
+![detectron_sort_result](/assets/images/sensing/detection_sort_output.png)
 
 2. ### Homography estimation to transform points image plane corresponding to a bird's eye view
 A ransac based homography is required to be precomputed between 2 image planes in camera and bird's eye view space. OpenCV's `cv::findhomography()` might be handy here.
@@ -1446,11 +1446,11 @@ A ransac based homography is required to be precomputed between 2 image planes i
 3. ### Bird's eye view and region of interest
 For getting a bird's eye view of an
 The bird's eye view can capture a fairly large space of the map depending on where the view is taken from. However the homography estimate is not good at the points far away from the camera origin. For this case we predefine a region of interest in the bird's eye view space and any vehicle out of this region is ignored.
-![Bev_frame](/assets/images/bev_fifthcraig.jpg)
+![Bev_frame](/assets/images/sensing/bev_fifthcraig.jpg)
 
 4. ### HD Map
 A HD Map for the world is a prerequisite. Since the intersection we captured data from didn't have a prior map available, we ended up creating our own vanilla map. The major requirements for the map are the information containing the lanes, their directions and the corresponding lane center lines.  
-    ![HD_Map](/assets/images/HD_map.png)
+    ![HD_Map](/assets/images/sensing/HD_map.png)
 
 5. ### Tracking in the bird's eye view space
 For sake of avoiding confusion with the tracker in the camera space (SORT) , we will call this tracker as the BEV tracker throughout the rest of this post. This tracker tracks the position and velocity of the vehicles in the bird's eye view frame.
@@ -1474,9 +1474,9 @@ Tracked state of a vehicle - **[x, y, vx, vy]**
 
 * #### Data Association - 
     The ID association problem is modeled as a linear sum assignment. We use the Hungarian  algorithm to solve this. The cost is defined as the euclidean distance between states of any two vehicles.
-    ![Cost between two vehicles](/assets/images/distance.png)
+    ![Cost between two vehicles](/assets/images/sensing/distance.png)
     * This is then formed into a matrix where rows contain ids from bev tracker and columns contain ids from SORT.
-    ![Linear Sum assignment problem](/assets/images/costmatrix_formation.png)
+    ![Linear Sum assignment problem](/assets/images/sensing/costmatrix_formation.png)
     * Adding the priors from SORT- 
     The same IDs from tracker and SORT (say i and j), we assign the cost
     between those vehicles as 0 or C<sub>ij</sub> = 0.
@@ -1501,7 +1501,7 @@ Tracked state of a vehicle - **[x, y, vx, vy]**
         * Number of  consecutive frames they are seen for.
         * Number of  consecutive frames they have not been seen for.
 
-![Tracking Results](/assets/images/tracking_results.png)
+![Tracking Results](/assets/images/sensing/tracking_results.png)
 
 #### References:
 * [1] Yuxin Wu, Alexander Kirillov, Francisco Massa, Wan-Yen Lo, and Ross Girshick.Detectron2. https://github.com/facebookresearch/detectron2, 2019.
@@ -1525,7 +1525,7 @@ Ultrawideband positioning takes advantage of the communication pulses to sense d
 
 By using multiple stationary devices, a single or multiple mobile beacons can be tracked by combining ranges through trilateration. 
 
-![Example usage of a DWM1001 setup](/assets/images/assets_decawave_example_multi_anchor.png)
+![Example usage of a DWM1001 setup](/assets/images/sensing/assets_decawave_example_multi_anchor.png)
 [Source](https://www.researchgate.net/profile/Teijo-Lehtonen/publication/281346001/figure/fig4/AS:284460038803456@1444831966619/DecaWave-UWB-localization-system-SDK-5.png)
 
 ### Best Use Cases & Expected Quality
@@ -1542,7 +1542,7 @@ Even in the best scenario, it should be expected that a UWB positioning system w
 
 In order to setup a DWM1001-Dev UltraWideband positioning system, it's important to have enough DWM1001-Dev modules (`beacons`) for your use case. Each one of the `beacons` can either be configured as a `tag`, `anchor`, or `gateway`. `tag`s represent mobile `beacons` that will be on your robot, `anchors` represent stationary anchors, and `gateways` are modules that sole job are to pipe information over serial to your compute stack. While there are multiple ways to get information from these devices, this guide will describes how to access it over a direct USB serial connection. 
 
-![Architecture of a DWM1001-Dev setup with multiple gateways](/assets/images/dwm_arch.png)
+![Architecture of a DWM1001-Dev setup with multiple gateways](/assets/images/sensing/dwm_arch.png)
 
 Before any work can be done on the `beacons`, they must be flashed with the pre-built software provided by the manufacturer for this task. A detailed guide can be found [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjNrN-T8OP7AhWTFVkFHRNTCzcQFnoECBMQAQ&url=https%3A%2F%2Fwww.qorvo.com%2Fproducts%2Fd%2Fda007972&usg=AOvVaw2va8gKJNC_mfXq5EQZAO0S)
 
@@ -1550,7 +1550,7 @@ Before any work can be done on the `beacons`, they must be flashed with the pre-
 
 Once the beacons have been flashed, they need to be configured and calibrated. This can be one most easily using their provided Android app, [Decawave DRTLS APK](https://apkcombo.com/decawave-drtls-manager-r1/com.decawave.argomanager/). There is also information found [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjNrN-T8OP7AhWTFVkFHRNTCzcQFnoECBMQAQ&url=https%3A%2F%2Fwww.qorvo.com%2Fproducts%2Fd%2Fda007972&usg=AOvVaw2va8gKJNC_mfXq5EQZAO0S) about performing this work directly through a command line, but it is less documented.
 
-![DRTLS App Screenshot](/assets/images/drtls_app.png)
+![DRTLS App Screenshot](/assets/images/sensing/drtls_app.png)
 
 In order to use the app, follow the instructions linked [here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi-id_G9-P7AhVIGVkFHVIPBZ0QFnoECA0QAQ&url=https%3A%2F%2Fwww.qorvo.com%2Fproducts%2Fd%2Fda007996&usg=AOvVaw09yRMbgwEx7hxTDpJP4G8D). 
 
@@ -1562,7 +1562,7 @@ It is possible to change the update rate of all `beacons`. For most real time po
 
 During configuration, make note of the `beacon` IDS (eg. from `Tag DW11A1` the tag ID is `11A1`). This should be the ID used in the driver config to identify multiple tags independently.
 
-![DRTLS App - Beacon IDS](/assets/images/drtls_ids.png)
+![DRTLS App - Beacon IDS](/assets/images/sensing/drtls_ids.png)
 
 At this point, the DRTLS app can be used directly to test the 3D positioning. Ensure all modules are powered, and if ther are, enter the "map" page of the app to view all of the `beacons` live, including the dynamic positioning of the `tag`.
 
@@ -1570,7 +1570,7 @@ At this point, the DRTLS app can be used directly to test the 3D positioning. En
 
 In most cases, the `anchors` are located around a room, such that they are relatively planar with respect to each other. For 2D localization, this is perfectly acceptable, but it becomes an issue when attempting 3D localization. This is due to the concept of *[dilution of precision](https://en.wikipedia.org/wiki/Dilution_of_precision_(navigation))*, which originated from GPS. For GPS, it means that as GPS satellites attempting to provide a location to a ground side receiver get relatively close to each other, the output precision of the ground side position estimation becomes poorer, as seen below:
 
-![GDOP Example](/assets/images/gdop_example.png)
+![GDOP Example](/assets/images/sensing/gdop_example.png)
 
 For UWB, this means that if the `anchors` are all close to the same Z plane, their Z localization precision will suffer. Ideally, all anchors should be placed at widely different heights to improve this. However, the beacons need to also be placed away from corners (such as the intersection of the floor/ceiling to the wall), leading to a difficulty.
 

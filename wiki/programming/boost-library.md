@@ -2,7 +2,7 @@
 date: 2017-08-21
 title: Boost C++ Libraries
 ---
-[![Boost Logo](/assets/images/BoostLibrary-f962f.png)](https://www.boost.org/)
+[![Boost Logo](/assets/images/programming/BoostLibrary-f962f.png)](https://www.boost.org/)
 
 Boost is the most popular and widely used C++ library. It is available online for free. This stable C++ library contains many helpful data structures, algorithms, utilities, and more. This library influenced the design and implementation of the newest C++ library standard (C++11).
 

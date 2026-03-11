@@ -167,7 +167,7 @@ image_topic.subscribe(function(message) {
 
 Here is an example of a dashboard (DeltaViz) for Delta Autonomy developed by [me](mailto:heethesh@gmail.com). The GUI makes use of ROS diagnostic message to monitor FPS of different nodes in the pipeline, subscribes to images and virtual camera stream from Rviz, and also has sound alerts and flashes to notify the users (developed for their specific use-case). The source code is available on our repository [here](https://github.com/deltaautonomy/delta_viz/blob/master/delta_viz_app/index.html).
 
-![](/assets/images/deltaviz.jpg)
+![](/assets/images/tools/deltaviz.jpg)
 
 ## See Also
 - A [tutorial](https://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.

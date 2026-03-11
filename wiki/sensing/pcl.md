@@ -18,7 +18,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
 1. ## Microsoft Kinect
 
-    ![Kinect](/assets/images/kinect.jpg)
+    ![Kinect](/assets/images/sensing/kinect.jpg)
 
     ### Overview:
     Kinect for Xbox 360 is a low-cost vision device equipped with one IR camera, one color camera, and one IR projector to produce RGB images as well as voxel (depth-pixel) images. The RGB video stream gives an 8-bit VGA resolution (640 x 480 pixels) with a Bayer color filter, while the monochrome depth-sensing video stream is in VGA resolution. The sensor has an angular field of view of 57 degrees horizontally and 43 degrees vertically. Kinect has been reverse engineered to a great extent by the open-source community which has revealed many facts on how depth is measured. Kinect uses a structured light approach form in which we can extract the time of return. They use a standard off-the-shelf CMOS sensor for the same.
@@ -44,7 +44,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
 2. ## Intel Realsense D435i
     
-    ![Realsense](/assets/images/realsense.jpg)
+    ![Realsense](/assets/images/sensing/realsense.jpg)
 
     ### Overview:
     The Intel® RealSense™ Depth Camera D400 Series uses stereo vision to calculate depth. The D435 is a USB-powered depth camera and consists of a pair of depth sensors, an RGB sensor, and an infrared projector. It gives a good depth map a well the processed reconstructed 3D point clouds.
@@ -95,7 +95,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         ```
         The function pcl_callback will then be called every time the sensor publishes a new pc2.PointCloud2 message.
 
-        ![original](/assets/images/original.png)
+        ![original](/assets/images/sensing/original.png)
     
     3. **Voxel Filter Downsampling**
     
@@ -111,7 +111,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         downsampled = vox.filter()
         ```
         
-        ![downsampled](/assets/images/downsampled.png)
+        ![downsampled](/assets/images/sensing/downsampled.png)
         
     4. **Region cropping**
     
@@ -138,7 +138,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         passed = passthrough.filter()
         ```
         
-        ![cropped](/assets/images/cropped.png)
+        ![cropped](/assets/images/sensing/cropped.png)
     
     5. **RANSAC ground segmentation**
     
@@ -160,9 +160,9 @@ Although PCL comes installed with ROS full installation by default, a complete i
         cloud_objects = cloud_filtered.extract(inliers, negative=True)
         ```
         
-        ![ransac1](/assets/images/ransac1.png)   
+        ![ransac1](/assets/images/sensing/ransac1.png)   
         
-        ![ransac2](/assets/images/ransac2.png)
+        ![ransac2](/assets/images/sensing/ransac2.png)
         
         Here Inliers are the points that fit a plane equation, therefore, they should belong to the table. On the other hand, outliers are the remaining points that represent the objects over the table.
         
@@ -205,7 +205,7 @@ Although PCL comes installed with ROS full installation by default, a complete i
         cluster_indices = ec.Extract()
         ```
 
-        ![cluster](/assets/images/cluster.png)
+        ![cluster](/assets/images/sensing/cluster.png)
 
     8. **Sprinkle some machine learning**   
     
@@ -219,5 +219,5 @@ Although PCL comes installed with ROS full installation by default, a complete i
 
     Here is a visualization of a sample mapped environment.
 
-    ![RTABMAP](/assets/images/slam.png)
+    ![RTABMAP](/assets/images/sensing/slam.png)
 

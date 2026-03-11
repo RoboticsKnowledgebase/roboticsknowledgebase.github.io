@@ -24,7 +24,7 @@ Throttle-by-wire, or accelerate-by-wire, was the first type of drive-by-wire sys
 
 As shown in the figure below, With throttle by wire a sensor is attached to the gas pedal and detects how far it has been pressed. This information is then sent down a wire to the car's computer. The computer analyzes the information and commands a motor to open the butterfly in the throttle body. Since the computer is in control of the throttle opening things like idle speed control, cruise control, and traction control can easily be integrated. Because automatic transmissions are also usually controlled by the computer it can adjust the throttle during gear changes. It also allows the addition of eco or sport buttons to change the way the throttle reacts when pressed, increasing fuel economy or throttle response.
 
-![Throttle-by-wire Outline](/assets/images/throttle-by-wire.png)
+![Throttle-by-wire Outline](/assets/images/actuation/throttle-by-wire.png)
 
 ### Brake-by-wire
 There are two types of brake-by-wire systems. Hydraulic, or "wet," brake-by-wire uses additional hydraulic parts to create pressure on the brakes. Electric, or "dry," brake-by-wire, on the other hand, simply uses an electric motor and no hydraulic brake fluid.
@@ -47,7 +47,7 @@ Most vehicles use a rack-and-pinion unit or worm-and-sector steering gear that i
 
 As shown in the figure below, in vehicles that are equipped with steer-by-wire technology, there is no physical connection between the steering wheel and the tires. Steer-by-wire systems don't technically need to use steering wheels at all. When a steering wheel is used, some type of steering feel emulator is typically used to provide the driver with feedback.
 
-![Steer-by-wire Outline](/assets/images/steer-by-wire.png)
+![Steer-by-wire Outline](/assets/images/actuation/steer-by-wire.png)
 
 ## Benefits and Drawbacks of Drive-by-wire Systems
 Some people are excited about the prospect of more drive-by-wire systems in cars. By replacing conventional throttle systems, drive-by-wire systems can significantly reduce the number of moving parts in a vehicle. This reduces weight, increases operational accuracy and stretches out the time between service visits for things like mechanical maintenance and other adjustments. Some by-wire systems wouldn't even require service at all. Less weight and better accuracy would equal better fuel efficiency and fewer emissions, too.

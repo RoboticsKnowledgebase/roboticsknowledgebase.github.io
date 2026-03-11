@@ -41,15 +41,15 @@ Like any other IDE, CLion has countless features. These can also be extended by 
 
 #### Debugging
 
-![CLion Debugging 1](/assets/images/debug1.jpeg)
+![CLion Debugging 1](/assets/images/tools/debug1.jpeg)
 
 After opening the project folder in CLion, right-click on the `CMakeLists.txt` and choose Reload CMake Project. The various executable target added in the CMake file will be available in the drop-down menu at the top right as shown in the above image.
 
-![CLion Debug 2](/assets/images/debug2.jpeg)
+![CLion Debug 2](/assets/images/tools/debug2.jpeg)
 
 Add the breakpoint in the code where you want to pause the code and press the debug button as shown in the image.
 
-![CLion Debug 3](/assets/images/debug3.jpeg)
+![CLion Debug 3](/assets/images/tools/debug3.jpeg)
 
 CLion will pause the execution at the breakpoint. You can view all the global, local variables and their values in the variable inspector. It also provides the functionality to run the code line by line by using various step in, step over, step out function. You can also press the resume button to continue execution till the next break-point. You can add new breakpoints even when code is paused at a breakpoint.
 
@@ -57,7 +57,7 @@ CLion will pause the execution at the breakpoint. You can view all the global, l
 
 Refactoring is one of the most powerful tools in the CLion. Simplest re-factor operation is renaming a variable.
 
-![Refactor 1](/assets/images/refactor1.png)
+![Refactor 1](/assets/images/tools/refactor1.png)
 
 While simple text-editor can do find and replace, it is not context-aware. CLion re-factor is context-aware meaning renaming of the variable will only happen inside the scope of that variable. To rename variable using refactor select the variable:
 
@@ -68,7 +68,7 @@ A more useful refactoring tool is to extract the method or extract the function 
 
 `right-click -> Refactor -> Extract -> Method`
 
-![Refactor 2](/assets/images/refactor2.jpeg)
+![Refactor 2](/assets/images/tools/refactor2.jpeg)
 
 Refactor will analyze the selected text and identify the variables that need to be passed to the new function. It will show those variables in the GUI form as shown in the above image. Will GUI interface, user can add, rename, delete variables that are being passed as well change the name of the function. After verifying the function signature, the user can press the `Extract` button. It will cut the code from the original place and will put it inside a new function along with all the necessary changes in the header file to add that function/method.
 
@@ -84,7 +84,7 @@ Entity linking is very useful in efficiently navigating code-base in CLion. The 
 
 Entity linking works to the imported library as well. If you have imported some C++ library and want to check the source code inside the library, just use entity linking. It will open the source code of the library if it's available. For example, in the below image, definition of `std::vector::push_back()` is opened using entity linking of CLion.
 
-![Refactor 3](/assets/images/refactor3.png)
+![Refactor 3](/assets/images/tools/refactor3.png)
 
 #### Context-Aware Search
 
@@ -92,7 +92,7 @@ Given a function or a variable, all its usage inside the code can also be search
 
  `right-click -> Find Usages`
 
-![Refactor 4](/assets/images/refactor4.png)
+![Refactor 4](/assets/images/tools/refactor4.png)
 
 Above image shows the various usages CLion found of the private variable `costMap` inside the repository.
 

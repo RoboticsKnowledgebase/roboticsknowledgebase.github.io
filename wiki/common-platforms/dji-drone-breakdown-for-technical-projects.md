@@ -13,7 +13,7 @@ DJI drones have one of the best commercially available PID controllers along wit
 
 To be more specific, below we will look at the components involved in controlling a DJI drone.
 
-![DJI Control Scheme](/assets/images/DJI.png)
+![DJI Control Scheme](/assets/images/common-platforms/DJI.png)
 
 The keypoint is:
 > DJI drones *need to read from its own GPS* to satisfy its EKF needs in order to produce proper state estimations for Position and Velocity Controls.

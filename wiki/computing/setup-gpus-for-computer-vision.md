@@ -94,7 +94,7 @@ Download the CUDA driver from the [official nvidia website here](https://develop
 
 *At the time of writing this document, the latest stable version is CUDA 10.0*.
 
-![](/assets/images/nvidia-cuda.png)
+![](/assets/images/computing/nvidia-cuda.png)
 
 After downloading the file, go to the folder where you have downloaded the file and run the following commands from the terminal to install the CUDA drivers. Please make sure that the filename used in the command below is the same as the downloaded file and replace the `<version>` number.
 
@@ -123,7 +123,7 @@ Go to official cuDNN website [official cuDNN website](https://developer.nvidia.c
 
 **Make sure you download the correct cuDNN version which matches with you CUDA version.**
 
-![](/assets/images/nvidia-cudnn.png)
+![](/assets/images/computing/nvidia-cudnn.png)
 
 ### Installing from TAR file (Recommended Method)
 For cuDNN downloaded using _cuDNN Library for Linux_ method, go to the folder where you have downloaded the “.tgz” file and from the command line execute the following (update the filename).

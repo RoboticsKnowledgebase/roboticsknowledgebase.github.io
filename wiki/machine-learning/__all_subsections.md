@@ -25,7 +25,7 @@ def encode_segmap(self, mask):
     return mask[:, :, 0] # target should be h x w, no depth
 ```
 
-![mask annotation](/assets/images/mask_annotation.png)
+![mask annotation](/assets/images/machine-learning/mask_annotation.png)
 
 ## Installing gimp
 copy and paste the following command in your terminal to install gimp  
@@ -41,17 +41,17 @@ Navigate to  file->open botton on the top left to open a rgb image that you'd li
 ### Step 2 Create mask
 Navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
 
-![mask annotation](/assets/images/new_layer.png)
+![mask annotation](/assets/images/machine-learning/new_layer.png)
 
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
-![manage layers](/assets/images/manage_layers.png)
+![manage layers](/assets/images/machine-learning/manage_layers.png)
 
 ### Step 3 Creating annotations
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
 
-![free select tool](/assets/images/select_tool.png)
-![create annotation](/assets/images/bucket_fill.png)
+![free select tool](/assets/images/machine-learning/select_tool.png)
+![create annotation](/assets/images/machine-learning/bucket_fill.png)
 
 ### Step 4 Saving files
 Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.
@@ -201,7 +201,7 @@ MediaPipe offers cross-platform, customizable ML solutions for live and streamin
 
 ## Solutions offered
 
-![Figure 1. Mediapipe Solutions](/assets/images/mediapipe_solutions.png)
+![Figure 1. Mediapipe Solutions](/assets/images/machine-learning/mediapipe_solutions.png)
 The image above summarizes the solutions offered by mediapipe. 
 The solutions below have been classified into 2 categories based on the use cases:
 
@@ -241,7 +241,7 @@ MediaPipe Objectron is a mobile real-time 3D object detection solution for every
 MediaPipe KNIFT is a template-based feature matching solution using KNIFT (Keypoint Neural Invariant Feature Transform). KNIFT is a strong feature descriptor robust not only to affine distortions, but to some degree of perspective distortions as well. This can be a crucial building block to establish reliable correspondences between different views of an object or scene, forming the foundation for approaches like template matching, image retrieval and structure from motion.
 
 The table below describes the support of the above models for currently available platforms:
-![Figure 1. Mediapipe supported platforms](/assets/images/mediapipe_platforms.png)
+![Figure 1. Mediapipe supported platforms](/assets/images/machine-learning/mediapipe_platforms.png)
 
 ## Quickstart Guide
 Mediapipe solutions are available for various platforms viz. Android, iOS, Python, JavaScript, C++. The guide at [Getting Started](https://google.github.io/mediapipe/getting_started/getting_started.html) comprises instructions for various platforms. 
@@ -354,9 +354,9 @@ Transformers have become increasingly popular in NLP due to their ability to cap
 
 Transformers are a powerful tool for NLP and have revolutionized the field. They have enabled researchers to create models that can accurately capture the meaning of text and make accurate predictions.
 
-![Transformer Architecture simplified](/assets/images/NLP_image1.png)
+![Transformer Architecture simplified](/assets/images/machine-learning/NLP_image1.png)
 
-![Transformer Architecture](/assets/images/NLP_image2.png)
+![Transformer Architecture](/assets/images/machine-learning/NLP_image2.png)
  
 
 Encoder (left): The encoder receives an input and builds a representation of it (its features). This means that the model is optimized to acquire understanding from the input.
@@ -470,7 +470,7 @@ preds = vqa(image=image, question=question)
 preds = [{"score": round(pred["score"], 4), "answer": pred["answer"]} for pred in preds]
 ```
 
-![Input Image](/assets/images/NLP_image3.png)
+![Input Image](/assets/images/machine-learning/NLP_image3.png)
 
 
 
@@ -496,7 +496,7 @@ OUTPUT: [
 
 Below is a table describing some of the basic pipeline identifiers and their use.
 
-![List of different pipelines](/assets/images/NLP_image4.png)
+![List of different pipelines](/assets/images/machine-learning/NLP_image4.png)
 
 
 # Fine-tuning a pretrained model
@@ -676,7 +676,7 @@ This article serves as a step-by-step tutorial of how to integrate YOLO in ROS a
 
 ---
 ## Integrating YOLO with ROS
-![YOLO Demo](/assets/images/yolo_demo.png)
+![YOLO Demo](/assets/images/machine-learning/yolo_demo.png)
 
 To install YOLO in ROS, we will use a YOLO ROS wrapper GitHub repository [darknet_ros](https://github.com/leggedrobotics/darknet_ros). You can simply follow their instructions in the README or follow the instructions below. 
 
@@ -1209,9 +1209,9 @@ After training is finished, the training script will save the model weights to a
 
 YOLOv5's official repository provides an exporting script, and to simplify the post-processing steps, please checkout a newer commit, eg. “070af88108e5675358fd783aae9d91e927717322”. At the root folder of the repository, run `python export.py --weights WEIGHT_PATH/WEIGHT_FILE_NAME.pt --img IMAGE_LENGTH --batch-size 1 --device cpu --include onnx --simplify --opset 11`. There’ll be a .onnx file generated next to the .pt file, and [netron](https://netron.app/) provides a tool to easily visualize and verify the onnx file. For example, if the image size is 416x416, the model is YOLOv5s and the class number is 2, you should see the following input and output structures:
 
-![Figure 1. YOLOv5 onnx visualization (the input part)](/assets/images/yolov5_onnx_input.png)
+![Figure 1. YOLOv5 onnx visualization (the input part)](/assets/images/machine-learning/yolov5_onnx_input.png)
 
-![Figure 2. YOLOv5 onnx visualization (the output part)](/assets/images/yolov5_onnx_output.png)
+![Figure 2. YOLOv5 onnx visualization (the output part)](/assets/images/machine-learning/yolov5_onnx_output.png)
 
 After moving the .onnx file to your Jetson, run `trtexec --onnx=ONNX_FILE.onnx --workspace=4096 --saveEngine=ENGINE_NAME.engine --verbose` to obtain the final TensorRT engine file. The 4096 is the upper bound of the memory usage and should be adapted according to the platform. Besides, if there’s no trtexec command while TensorRT was installed, add `export PATH=$PATH:/usr/src/tensorrt/bin` to your `~/.bashrc` or `~/.zshrc`, depending on your default shell.
 

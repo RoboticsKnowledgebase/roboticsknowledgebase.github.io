@@ -121,7 +121,7 @@ Some more example automation possibilities can be found here:
 
 The burndown chart is a popular chart among project managers. This allows the PM to view how the work is progressing over a sprint and the work is not falling behind.  It displays the days in the sprint by the story points allocated for that sprint. This can be found in Reports → Burndown Chart. The goal is to have the remaining work track the Guideline.
 
-![Example Burndown Chart](/assets/images/jira_burndown_chart.png)
+![Example Burndown Chart](/assets/images/project-management/jira_burndown_chart.png)
 
 ## Summary
 In summary, Jira is a powerful tool for agile development. There are numerous features that can help a project be propelled to success. This article only lists a few features. Use whichever features work best for your team.

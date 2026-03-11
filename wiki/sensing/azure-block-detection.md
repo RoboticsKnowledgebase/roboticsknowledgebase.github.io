@@ -16,14 +16,14 @@ This article presents an overview of object detection using the Azure camera wit
 To identify individual blocks and their respective grasping points, the perception subsystem undergoes a series of five steps. Initially, it crops the Azure Kinect camera image to center on the workspace. Following this, it applies color thresholding to filter out irrelevant objects and discern the blocks. Subsequently, it identifies the contours of these blocks and filters them based on their area and shape characteristics. Once the blocks are recognized, the perception subsystem computes the grasping points for each block. Collectively, these steps facilitate the accurate detection of block locations and their corresponding grasping points on the workstation.
 
 
-![Pipeline of Block Detection](/assets/images/pipeline.png)
+![Pipeline of Block Detection](/assets/images/sensing/pipeline.png)
 
 ### Image Cropping
 The initial stage of the perception subsystem involves cropping the raw image. Raw images often contain extraneous details, such as the workspace's supporting platform or the presence of individuals' feet near the robot. By cropping the image to focus solely on the workspace, we eliminate a significant amount of unnecessary information, thereby enhancing the system's efficiency and robustness.
 
 Currently, this approach employs hard-coded cropping parameters, requiring manual specification of the rows and columns to retain within the image.
 
-![Cropped Image](/assets/images/cropped.png)
+![Cropped Image](/assets/images/sensing/cropped.png)
 
 ### Color Segmentation
 Color segmentation can pose challenges in images with prominent shadows. Shadows cause a decrease in RGB pixel values, while light causes an increase, making it challenging to distinguish between different colors. To address this, we employ HSV (Hue, Saturation, Value) thresholding on the image.
@@ -34,7 +34,7 @@ To tackle this issue, we employed color meter software to establish the brown co
 
 To further refine Jenga block detection and eliminate background noise, we apply a mask to the HSV thresholded image. Initially, we create a mask by contour area thresholding and then fill any holes within the contour to obtain a solid mask. The resulting masked image is shown in Figure 6a. This process ensures the reliable detection of Jenga blocks by removing remaining noise or unwanted objects.
 
-![RGB Vector](/assets/images/rgb_vector.png)
+![RGB Vector](/assets/images/sensing/rgb_vector.png)
 
 ### Block Contours
 
@@ -46,7 +46,7 @@ To simplify contours and reduce points, we apply OpenCV2's 'minAreaRect' functio
 
 Subsequently, we identify the two grasp points of the block by detecting its longer sides. To determine these grasp points in the image frame, we align the depth image with the RGB image to acquire the depth value. Utilizing the x, y, and depth values, we transform the 2D pixel points back to the 3D pose in the camera frame using the intrinsic matrix. The grasp point concerning the base frame is then computed by performing a transform tree lookup, thereby completing the entire perception cycle.
 
-![Contours](/assets/images/zoom1.png)
+![Contours](/assets/images/sensing/zoom1.png)
 
 
 ### Image HSV Thresholding vs. Normalization
@@ -59,7 +59,7 @@ Although image normalization showed promise, it proved less effective in clutter
 
 Normalized Image             |  HSV Image
 :-------------------------:|:-------------------------:
-![Norm](/assets/images/norm_img.png)  |  ![HSV](/assets/images/hsv_img.png)
+![Norm](/assets/images/sensing/norm_img.png)  |  ![HSV](/assets/images/sensing/hsv_img.png)
 
 
 ## References

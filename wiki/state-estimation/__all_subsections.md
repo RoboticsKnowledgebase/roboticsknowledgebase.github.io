@@ -6,7 +6,7 @@ title:  Adaptive Monte Carlo Localization
 ## What is a particle filter?
 Particle filter are initialized by a very high number of particles spanning the entire state space. As you get additional measurements, you predict and update your measurements which makes your robot have a multi-modal posterior distribution. This is a big difference from a Kalman Filter which approximates your posterior distribution to be a Gaussian. Over multiple iterations, the particles converge to a unique value in state space.
 
-![Particle Filter in Action over Progressive Time Steps](/assets/images/AdaptiveMonteCarloLocalization-65e37.png)
+![Particle Filter in Action over Progressive Time Steps](/assets/images/state-estimation/AdaptiveMonteCarloLocalization-65e37.png)
 
 **Figure 1:** Particle Filter in Action over Progressive Time Steps
 
@@ -31,7 +31,7 @@ The key idea is to bound the error introduced by the sample-based representation
 ## Use of Adaptive Particle Filter for Localization
 To use adaptive particle filter for localization, we start with a map of our environment and we can either set robot to some position, in which case we are manually localizing it or we could very well make the robot start from no initial estimate of its position. Now as the robot moves forward, we generate new samples that predict the robot's position after the motion command. Sensor readings are incorporated by re-weighting these samples and normalizing the weights. Generally it is good to add few random uniformly distributed samples as it helps the robot recover itself in cases where it has lost track of its position. In those cases, without these random samples, the robot will keep on re-sampling from an incorrect distribution and will never recover. The reason why it takes the filter multiple sensor readings to converge is that within a map, we might have dis-ambiguities due to symmetry in the map, which is what gives us a multi-modal posterior belief.
 
-![Localization Process using Particle Filters](/assets/images/AdaptiveMonteCarloLocalization-0d322.png)
+![Localization Process using Particle Filters](/assets/images/state-estimation/AdaptiveMonteCarloLocalization-0d322.png)
 
 [Dieter Fox's paper on Monte Carlo Localization for Mobile Robots](https://www.ri.cmu.edu/pub_files/pub1/fox_dieter_1999_1/fox_dieter_1999_1.pdf) gives further details on this topic and also compares this technique to many others such as Kalman Filter based Localization, Grid Based and Topological Markov Localization.
 
@@ -116,7 +116,7 @@ The detailed explanation of the Cartographer's algorithm and tuning can be found
 
 One of Cartographer's strength is that its 2D SLAM is aware of the 3D world (it will project a titled LiDAR scan to the horizontal axis). This is in contrast to gmapping which requires the LaserScan to always be perfectly level and horizontal. As seen below, the tracking frame (base_link) is not level, causing the LiDAR LaserScan to be tilted, but Cartographer takes the tilt into account.
 
-![](/assets/images/carto-1.png)
+![](/assets/images/state-estimation/carto-1.png)
 
 # Installation
 
@@ -162,7 +162,7 @@ You need to provide a static TF transform from `base_link` to your imu frame and
 
 Example shown below
 
-![](/assets/images/carto-2.png)
+![](/assets/images/state-estimation/carto-2.png)
 
 An important point is that `base_link` needs to be **coincident** with `imu_link` (both must have the exact same position and orientation). If you need `base_link` for navigational purposes, I recommend creating one more child frame from`base_link`, e.g. `nav_link` that is at the appropriate location on the robot for navigation, e.g. centre of the wheels and at the axis of rotation.
 
@@ -176,7 +176,7 @@ Requirements:
 - The IMU should be fast, at around 100 Hz
 - The IMU should have the correct timestamps, errors in this will cause errors in the SLAM
 
-![](/assets/images/carto-3.jpeg)
+![](/assets/images/state-estimation/carto-3.jpeg)
 
 ## 3. Prepare LiDAR LaserScan data
 
@@ -217,7 +217,7 @@ You can refer to a sample config file [here](https://github.com/howde-robotics/d
 
 Cartographer will output TF for robot pose in the map frame and an [OccupancyGrid](http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/OccupancyGrid.html). However, if you want to use the provided OccupancyGrid with other navigation modules, such as move_base, the standard Cartographer OccupancyGrid will not work. This is because most navigation apps require the costmap to only have either of 3 values, FREE (0), OBSTACLES (100), or UNKNOWN (-1). Cartographer instead has a range of values depending on the confidence that the algorithms have about the state of the cells. For example, at first detection, a cell can have a value of around ~40, but as more data is collected that cell's value can go to 0 (if it is FREE) or 100 (if it is OBSTACLES). If you try to use this map as a global costmap for move_base, you will get a costmap that looks like the image below.
 
-![](/assets/images/carto-4.png)
+![](/assets/images/state-estimation/carto-4.png)
 
 The workaround is to change the way Cartographer looks at obstacles. Refer to the commit [here](https://github.com/howde-robotics/cartographer/commit/93eee6e207bcbeccdbd696f2ea2f5a00234665f1) for the changes necessary. You need to change a line in `cartographer/io/submap_painter.cc` in line `209` from:
 
@@ -238,11 +238,11 @@ This will immediately make an obstacle in Cartographer's OccupancyGrid to be at 
 
 However, if you now try to use it as a costmap, you will get something like the image below:
 
-![](/assets/images/carto-5.png)
+![](/assets/images/state-estimation/carto-5.png)
 
 As you can see, it now has obstacles and walls, but they are very sparse with gaps in between. The solution is to add `inflation_layer` using the costmap package. See more [here](http://wiki.ros.org/costmap_2d/hydro/inflation). Now once you inflate the walls and obstacles you will get a costmap that looks like this:
 
-![](/assets/images/carto-6.png)
+![](/assets/images/state-estimation/carto-6.png)
 
 Now that is a usable costmap for navigation.
 
@@ -282,7 +282,7 @@ Ultrawideband positioning takes advantage of the communication pulses to sense d
 
 By using multiple stationary devices, a single or multiple mobile beacons can be tracked by combining ranges through trilateration. 
 
-![Example usage of a DWM1001 setup](/assets/images/decawave_example_multi_anchor.png)
+![Example usage of a DWM1001 setup](/assets/images/state-estimation/decawave_example_multi_anchor.png)
 [Source](https://www.researchgate.net/profile/Teijo-Lehtonen/publication/281346001/figure/fig4/AS:284460038803456@1444831966619/DecaWave-UWB-localization-system-SDK-5.png)
 
 At the time of writing, one of the most common modules for UWB is the DWM1001. Since these modules are mass manufactured, they can be purchased very inexpensively and should be considered one of the most affordable options for positioning systems.
@@ -292,7 +292,7 @@ At the time of writing, one of the most common modules for UWB is the DWM1001. S
 Ultrasonic positioning works in a similar way to UWB, but rather than transitting frequencies at a very high frequency, the products instead rely on a combination of lower frquency communication pulses and beamforming. By using a sensor array on each device, they are able to claim a 2D positioning accuracy of +-2cm.
 
 
-![Example usage of a DWM1001 setup](/assets/images/marvelmind_example.jpg)
+![Example usage of a DWM1001 setup](/assets/images/state-estimation/marvelmind_example.jpg)
 [Source](https://marvelmind.com/)
 
 As an important note, ultrasonic pulses are harmful to human hearing over an extended period of time and should not deployed around humans without ear protection.
@@ -301,7 +301,7 @@ As an important note, ultrasonic pulses are harmful to human hearing over an ext
 
 Total stations have an extended heritage in civil engineering, where they have been used to precisely survey worksites since the 1970s. The total station sends beams of light directly to a glass reflective prism, and uses the time-of-flight properties of the beam to measure distances. The robotic total station tracks it's calibration orientaiton to high precision, such that the measured distance can be converted into a high-precision 3D position mesaurement. Total stations, depending on the prism type and other factors, can accurate track with in millimeter range at up to 3.5km [Leica-Geosystems](file:///home/john/Downloads/Leica_Viva_TS16_DS-2.pdf).
 
-![Example usage of a Total Station in the Field](/assets/images/leica_field_image.jpg)
+![Example usage of a Total Station in the Field](/assets/images/state-estimation/leica_field_image.jpg)
 [Source](https://leica-geosystems.com/)
 
 ## Key Factors to Consider
@@ -671,7 +671,7 @@ track_bbs_ids = mot_tracker.update(detections)
 ...
 ```
 
-![SORT Tracker](/assets/images/sort-tracker.jpg)
+![SORT Tracker](/assets/images/state-estimation/sort-tracker.jpg)
 
 ### Inverse Perspective Mapping
 Inverse Perspective Mapping is basically a perspective transformation or a homography between two planes in the world. The idea here is to project the camera view (image plane) on to the ground plane in the world to obtain a birds-eye-view of the scene. One way to do this is to directly pick a set of points (minimum 4) in the image corresponding to a rectangular region on the ground plane and then estimate the homography matrix.
@@ -680,13 +680,13 @@ In order to estimate the homography, you need a set of correspondences. You need
 
 Once the homography is known, pick the bottom center of all the bounding boxes, as this point most closely represents the point on the ground plane, and apply the homography to this image point to obtain an estimate of location in the world frame.
 
-![IPM Calibration](/assets/images/ipm_two.png)
+![IPM Calibration](/assets/images/state-estimation/ipm_two.png)
 
 There are many pitfalls and assumptions in this technique. As mentioned earlier, the objects to detect must lie on the same ground plane and the relative distance of the camera sensor and orientation with respect to the ground plane must remain constant. If the bounding box detection is inaccurate, a small deviation in the image point might lead to a significant error in the estimated position in the world frame.
 
 You can also model the uncertainty in the position estimate to generate an occupancy grid with the mean and covariance of the position of the object. We will later see how to fuse these estimates with another sensor modality such as a Radar to refine our estimate and track these detections as well.
 
-![Occupancy Grid Gaussian](/assets/images/occupancy-grid.png)
+![Occupancy Grid Gaussian](/assets/images/state-estimation/occupancy-grid.png)
 
 #### Camera Output
 Camera returns two states for every detections. According to our current camera configuration, state (Ego vehicle frame) of the detections are given as: 
@@ -706,7 +706,7 @@ Radar provides four states for every detections, moreover depending on the use c
 
 Following is the result of camera detection and estimated position in the 3D world. The detection was performed on image stream from Carla simulator and the results are visualized in Rviz. The blue cubes represent estimates from camera and red cubes are the Radar detections.
 
-![Occupancy Grid](/assets/images/camera-radar-targets.png)
+![Occupancy Grid](/assets/images/state-estimation/camera-radar-targets.png)
 
 ## Tracker Framework
 The framework has the following major components:
@@ -767,7 +767,7 @@ Once you have the motion compensated tracks, you need to follow the same algorit
 
 
 #### Final Results of Tracking and Sensor Fusion
-![Tracker Results](/assets/images/Tracker-01.PNG) ![Tracker Results](/assets/images/Tracker-02.PNG)
+![Tracker Results](/assets/images/state-estimation/Tracker-01.PNG) ![Tracker Results](/assets/images/state-estimation/Tracker-02.PNG)
 
 
 ### Tracker Evaluation and Metrics
@@ -1205,7 +1205,7 @@ For our application for using the quadcopter to servo over a block, the interact
 ## Visual Servoing Application
 We used the formulation described above in order to build an application where the drone uses 4 corners of a block as feature points in the image in order to align over the block. The desired coordinates of the feature points were used as input and the servoing system computed the required velocities in order to move towards the desired configuration. We made sure to clip the output velocities to a value of 0.4m/s for safety and we were able to successfully servo over the block. We also needed to make sure that we are servoing at an appropriate height in order to ensure the block stays in the field of view.
 
-| ![Visual Servoing in action](/assets/images/servoing-action.png) |
+| ![Visual Servoing in action](/assets/images/state-estimation/servoing-action.png) |
 |:--:|
 | *Visual Servoing in action from the onboard camera* |
 

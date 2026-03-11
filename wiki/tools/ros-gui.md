@@ -32,7 +32,7 @@ $ pip install PyQt5
 
 This is the final application you can get by following this tutorial. Blocks that require customization will be explained in the documentation.
 
-![Final QT](/assets/images/PyQt-final.png)
+![Final QT](/assets/images/tools/PyQt-final.png)
 
 ## Application Walkthrough
 
@@ -51,13 +51,13 @@ The system level timer captures the time taken between the start and the end of 
 The color change for the timers are as follows:
 
 Green Button
-![Green Button](/assets/images/PyQt-green.png)
+![Green Button](/assets/images/tools/PyQt-green.png)
 Yellow Button
-![Yellow Button](/assets/images/PyQt-yellow.png)
+![Yellow Button](/assets/images/tools/PyQt-yellow.png)
 Orange Button
-![Orange Button](/assets/images/PyQt-orange.png)
+![Orange Button](/assets/images/tools/PyQt-orange.png)
 Red Button
-![Red Button](/assets/images/PyQt-red.png)
+![Red Button](/assets/images/tools/PyQt-red.png)
 
 The code block for this is given here:
 ```python
@@ -82,7 +82,7 @@ The task level timer captures the time taken between the start and the end of on
 
 One additional feature of the task level timer is it saves the task logs. These are outputted in the `Task Times` block that is directly below the button.
 
-![Red Button](/assets/images/PyQt-logs.png)
+![Red Button](/assets/images/tools/PyQt-logs.png)
 
 ```
 def TaskTimerBlock(self):
