@@ -62,6 +62,8 @@ wiki:
     children:
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
+      - title: Building a Custom Drone for the DARPA Triage Challenge
+        url: /wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
       - title: Unitree Go1
@@ -98,6 +100,8 @@ wiki:
         url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Building ROS2 Custom Packages
+        url: /wiki/common-platforms/ros/ros2-custom-package/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -132,13 +136,15 @@ wiki:
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
       - title: Robotic Total Station (Leica TS16)
-        url: /wiki/sensing/robotic-total-stations.md
+        url: /wiki/sensing/robotic-total-stations/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
       - title: Azure Block Detection
         url: /wiki/sensing/azure-block-detection/
       - title: DWM1001 UltraWideband Positioning System
-        url: /wiki/sensing/ultrawideband-beacon-positioning.md
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
@@ -153,9 +159,9 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-HEBI-integration.md
+        url: /wiki/actuation/moveit-and-HEBI-integration/
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
@@ -172,15 +178,23 @@ wiki:
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
-        url: /wiki/machine-learning/intro-to-rl
+        url: /wiki/machine-learning/intro-to-rl/
+      - title: Diffusion Models and Diffusion Policy
+        url: /wiki/machine-learning/intro-to-diffusion/
+      - title: GRPO for Diffusion Policies
+        url: /wiki/machine-learning/grpo-diffusion-policies/
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
         url: /wiki/machine-learning/yolov5-tensorrt/
       - title: Mediapipe - Live ML anywhere
-        url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
+        url: /wiki/machine-learning/mediapipe-live-ml-anywhere/
       - title: NLP for robotics
-        url: /wiki/machine-learning/nlp_for_robotics.md/
+        url: /wiki/machine-learning/nlp-for-robotics/
+      - title: Distributed Training With PyTorch Tutorial
+        url: /wiki/machine-learning/distributed-training-with-pytorch/
+      - title: Imitation Learning With a Focus on Humanoids
+        url: /wiki/machine-learning/imitation-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -197,7 +211,7 @@ wiki:
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
-        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -219,6 +233,8 @@ wiki:
         url: /wiki/programming/tutorials-resources/
       - title: Python Construct
         url: /wiki/programming/python-construct/
+      - title: ROS 2 Yasmin State Machine
+        url: /wiki/programming/yasmin-ros2-state-machine/
   - title: Networking
     url: /wiki/networking/
     children:
@@ -232,6 +248,8 @@ wiki:
         url: /wiki/networking/ros-distributed/
       - title: Setting up WiFi hotspot at the boot up for Linux devices
         url: /wiki/networking/wifi-hotspot/
+      - title: Real-Time Video Processing on Jetson with GStreamer
+        url: /wiki/networking/gstreamer-jetson-realtime-video/
   - title: Simulation
     url: /wiki/simulation/
     children:
@@ -243,9 +261,15 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
+      - title: Gazebo Classic Simulation of Graspable and Breakable Objects
+        url: /wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects
+      - title: NVIDIA Isaac Sim Setup and ROS2 Workflow
+        url: /wiki/simulation/simulation-isaacsim-setup/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
+      - title: Apple Vision Pro for Robotics Applications
+        url: /wiki/interfacing/apple-vision-pro-for-robotics-applications/
       - title: Myo
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
@@ -258,19 +282,21 @@ wiki:
     url: /wiki/computing/
     children:
       - title: Amazon Web Services Quickstart
-        url: wiki/computing/aws-quickstart.md
+        url: /wiki/computing/aws-quickstart/
       - title: Adruino
         url: /wiki/computing/arduino/
       - title: Single Board Computers
         url: /wiki/computing/single-board-computers/
       - title: Upgrading Ubuntu Kernels
-        url: /wiki/computing/upgrading-ubuntu-kenel/
+        url: /wiki/computing/upgrading-ubuntu-kernel/
       - title: Ubuntu 14.04 on Chromebook
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Jetson Orin AGX
+        url: /wiki/computing/jetson-orin-agx.md
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -294,6 +320,8 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Onshape Tutorial
+        url: /wiki/fabrication/onshape-tutorial/
   - title: Math
     url: /wiki/math/
     children:
@@ -340,13 +368,15 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: ROS2 Humble Intra-Process Communication Recorder
+        url: /wiki/tools/ros2-humble-ipc-recorder/
   - title: Datasets
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
@@ -354,6 +384,8 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Behavior Trees
+        url: /wiki/planning/behavior-tree/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
@@ -361,11 +393,13 @@ wiki:
       - title: Multi Robot Planning Design
         url: /wiki/planning/multi-robot-planning/
       - title: Motion Planning in frenet frame
-        url: /wiki/planning/frenet-frame-planning.md/
+        url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
       - title: Google Linear Optimization Package (GLOP) 
         url: /wiki/planning/glop/
+      - title: Advanced MoveIt usage for Manipulator Motion Planning
+        url: /wiki/planning/advanced-moveit-manipulator-planning/
 # Main links appear in the header.
 main:
   - title: Wiki
