@@ -18,7 +18,7 @@ A ransac based homography is required to be precomputed between 2 image planes i
 3. ### Bird's eye view and region of interest
 For getting a bird's eye view of an
 The bird's eye view can capture a fairly large space of the map depending on where the view is taken from. However the homography estimate is not good at the points far away from the camera origin. For this case we predefine a region of interest in the bird's eye view space and any vehicle out of this region is ignored.
-![Bev_frame](assets/bev_fifthcraig.jpg)
+![Bev_frame](/assets/images/bev_fifthcraig.jpg)
 
 4. ### HD Map
 A HD Map for the world is a prerequisite. Since the intersection we captured data from didn't have a prior map available, we ended up creating our own vanilla map. The major requirements for the map are the information containing the lanes, their directions and the corresponding lane center lines.  

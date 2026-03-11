@@ -97,7 +97,7 @@ from Frenet coordinates to the local vehicle frame in Cartesian coordinates is a
 #### Images and Video
 Images and embedded video are supported.
 
-![Path planning in frenet coordinates](assets/path_planning.jpg)
+![Path planning in frenet coordinates](/assets/images/path_planning.png)
 ![frenet path](/assets/images/ref_path.png)
 ![f_path](/assets/images/f_path.png)
 ## Summary

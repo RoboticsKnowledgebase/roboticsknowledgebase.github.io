@@ -500,7 +500,7 @@ rosrun moveit_setup_assistant setup_assistant.launch
 
 From here, you will be launched into a MoveIt setup assistant menu, as shown below:
 
-![moveit_setup_assistant_start[(assets/moveit_setup_assistant_start.png)
+![moveit_setup_assistant_start](/assets/images/moveit_setup_assistant_start.png)
 
 Select “Create New MoveIt Configuration Package” then select the URDF model file created earlier. Select “Load Files” to load the URDF file.
 
@@ -737,7 +737,7 @@ This goal position keeps on changing and is a point on the trajectory to be foll
 
 The following image explains the concept of lookahead distance and the arc to follow.
 
-![Geometry of Pure Pursuit Algorithm [1]](assets/images/pure_pursuit_geometry.png)
+![Geometry of Pure Pursuit Algorithm [1]](/assets/images/pure_pursuit_geometry.png)
 
 In the image above, we see that given a point at a particular location from the robot say at location (x,y) in the robot's frame (the frame fixed on the robot). The point is at a distance l from the current location of the robot. Using a geometrical derivation, we can derive the radius of curvature of this arc as -
 
@@ -1074,4 +1074,4 @@ The main webpage of the Vedder Esc project is [found here](http://vedder.se/2015
 The speed controller can be built from scratch, but it is far more time-effective to purchase a model from a supplier. These can be purchased for between $80 - $150 with various design modifications. A proven model is the VESC-X from Enertion. Despite being an Australian company, the controllers are produced and distributed in the US with a 3-5 day lead time. There is a quantity discount for 4+ controllers and if you place the controllers in your cart after registering and wait a bit, you'll get a 10% off coupon code by e-mail. The current code as of 3/5/2017 was *"pushingsucks".*
 
 ## Sample Arduino Code
-The [code in this zip file](assets/DriveCharacterization.zip) interfaces an Arduino Mega 2560 to a VESC-X over serial. The sketch runs an open loop characterization routine that drives the motor in each direction. Motor braking is applied when a duty cycle command is set to 0. Motor freewheeling occurs when a current command is set to 0.
+The [code in this zip file](/wiki/actuation/assets/DriveCharacterization.zip) interfaces an Arduino Mega 2560 to a VESC-X over serial. The sketch runs an open loop characterization routine that drives the motor in each direction. Motor braking is applied when a duty cycle command is set to 0. Motor freewheeling occurs when a current command is set to 0.

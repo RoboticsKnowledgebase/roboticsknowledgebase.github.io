@@ -25,7 +25,7 @@ This goal position keeps on changing and is a point on the trajectory to be foll
 
 The following image explains the concept of lookahead distance and the arc to follow.
 
-![Geometry of Pure Pursuit Algorithm [1]](assets/images/pure_pursuit_geometry.png)
+![Geometry of Pure Pursuit Algorithm [1]](/assets/images/pure_pursuit_geometry.png)
 
 In the image above, we see that given a point at a particular location from the robot say at location (x,y) in the robot's frame (the frame fixed on the robot). The point is at a distance l from the current location of the robot. Using a geometrical derivation, we can derive the radius of curvature of this arc as -
 

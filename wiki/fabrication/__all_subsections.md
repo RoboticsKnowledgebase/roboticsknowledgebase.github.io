@@ -337,7 +337,7 @@ This is a good starting points for anyone looking to convert files from their So
 ### Space Jockey Custom Profile
 This is 2013-14 Team B's Makerbot slicer profile designed for faster, stronger parts (faster infill, 3 shells), with the temperature settings already tweaked for the MRSD MakerBot. Download and unzip to User/My Things/Profiles, and then select "Space Jockey Hull Parts" in your print settings in Makerware.
 
-[Download Space_Jockey_Profile.zip](assets/Space_Jockey_Profile.zip)
+[Download Space_Jockey_Profile.zip](/wiki/fabrication/assets/Space_Jockey_Profile.zip)
 
 ## Issues Log
 1. **Issue:** Large objects would start peeling off the left side of the plate.
@@ -434,7 +434,7 @@ The Series A Pro printer generally uses PLA (as opposed to ABS). PLA requires ve
 
 ### Print Profiles
 The standard profile is a good compromise between speed and print quality for PLA on the Series A Pro. 
-[Download SeriesA_Standard_Profile.zip](assets/SeriesA_Standard_Profile.zip)
+[Download SeriesA_Standard_Profile.zip](/wiki/fabrication/assets/SeriesA_Standard_Profile.zip)
 ![Print Quality of Standard Profile](/assets/images/SeriesA_PLA_SP.jpg)
 
 ## Tips

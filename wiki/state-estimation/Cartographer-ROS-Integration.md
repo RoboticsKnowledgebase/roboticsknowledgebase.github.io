@@ -80,7 +80,7 @@ Requirements:
 - The IMU should be fast, at around 100 Hz
 - The IMU should have the correct timestamps, errors in this will cause errors in the SLAM
 
-![](/home/kelvin/hw_ws/roboticsknowledgebase.github.io/wiki/state-estimation/assets/carto-3.jpeg)
+![](/assets/images/carto-3.jpeg)
 
 ## 3. Prepare LiDAR LaserScan data
 
@@ -121,7 +121,7 @@ You can refer to a sample config file [here](https://github.com/howde-robotics/d
 
 Cartographer will output TF for robot pose in the map frame and an [OccupancyGrid](http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/OccupancyGrid.html). However, if you want to use the provided OccupancyGrid with other navigation modules, such as move_base, the standard Cartographer OccupancyGrid will not work. This is because most navigation apps require the costmap to only have either of 3 values, FREE (0), OBSTACLES (100), or UNKNOWN (-1). Cartographer instead has a range of values depending on the confidence that the algorithms have about the state of the cells. For example, at first detection, a cell can have a value of around ~40, but as more data is collected that cell's value can go to 0 (if it is FREE) or 100 (if it is OBSTACLES). If you try to use this map as a global costmap for move_base, you will get a costmap that looks like the image below.
 
-![](/home/kelvin/hw_ws/roboticsknowledgebase.github.io/wiki/state-estimation/assets/carto-4.png)
+![](/assets/images/carto-4.png)
 
 The workaround is to change the way Cartographer looks at obstacles. Refer to the commit [here](https://github.com/howde-robotics/cartographer/commit/93eee6e207bcbeccdbd696f2ea2f5a00234665f1) for the changes necessary. You need to change a line in `cartographer/io/submap_painter.cc` in line `209` from:
 
@@ -142,11 +142,11 @@ This will immediately make an obstacle in Cartographer's OccupancyGrid to be at 
 
 However, if you now try to use it as a costmap, you will get something like the image below:
 
-![](/home/kelvin/hw_ws/roboticsknowledgebase.github.io/wiki/state-estimation/assets/carto-5.png)
+![](/assets/images/carto-5.png)
 
 As you can see, it now has obstacles and walls, but they are very sparse with gaps in between. The solution is to add `inflation_layer` using the costmap package. See more [here](http://wiki.ros.org/costmap_2d/hydro/inflation). Now once you inflate the walls and obstacles you will get a costmap that looks like this:
 
-![](/home/kelvin/hw_ws/roboticsknowledgebase.github.io/wiki/state-estimation/assets/carto-6.png)
+![](/assets/images/carto-6.png)
 
 Now that is a usable costmap for navigation.
 

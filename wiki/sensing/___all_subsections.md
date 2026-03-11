@@ -799,7 +799,7 @@ Method II is the most desirable way to go about solving the problem at hand.
 ## References
 Use these for choosing the type of validation of photometric calibration:
 
-1. https://www.labsphere.com/site/assets/files/2928/pb-13089-000_rev_00_waf.pdf
+1. https://www.labsphere.com/site/assets/images/files/2928/pb-13089-000_rev_00_waf.pdf
 - http://ericfossum.com/Publications/Papers/1999%20Program%20Test%20Methodologies%20for%20Digital%20Camera%20on%20a%20Chip%20Image%20Sensors.pdf
 - http://sensing.konicaminolta.us/2013/10/measuring-light-intensity-using-a-lux-meter/
 - http://tmi.yokogawa.com/products/portable-and-bench-instruments/luxmeters/digital-lux-meters/
@@ -1446,7 +1446,7 @@ A ransac based homography is required to be precomputed between 2 image planes i
 3. ### Bird's eye view and region of interest
 For getting a bird's eye view of an
 The bird's eye view can capture a fairly large space of the map depending on where the view is taken from. However the homography estimate is not good at the points far away from the camera origin. For this case we predefine a region of interest in the bird's eye view space and any vehicle out of this region is ignored.
-![Bev_frame](assets/bev_fifthcraig.jpg)
+![Bev_frame](/assets/images/bev_fifthcraig.jpg)
 
 4. ### HD Map
 A HD Map for the world is a prerequisite. Since the intersection we captured data from didn't have a prior map available, we ended up creating our own vanilla map. The major requirements for the map are the information containing the lanes, their directions and the corresponding lane center lines.  

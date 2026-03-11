@@ -31,7 +31,7 @@ The Series A Pro printer generally uses PLA (as opposed to ABS). PLA requires ve
 
 ### Print Profiles
 The standard profile is a good compromise between speed and print quality for PLA on the Series A Pro. 
-[Download SeriesA_Standard_Profile.zip](assets/SeriesA_Standard_Profile.zip)
+[Download SeriesA_Standard_Profile.zip](/wiki/fabrication/assets/SeriesA_Standard_Profile.zip)
 ![Print Quality of Standard Profile](/assets/images/SeriesA_PLA_SP.jpg)
 
 ## Tips

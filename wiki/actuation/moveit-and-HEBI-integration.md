@@ -58,7 +58,7 @@ rosrun moveit_setup_assistant setup_assistant.launch
 
 From here, you will be launched into a MoveIt setup assistant menu, as shown below:
 
-![moveit_setup_assistant_start[(assets/moveit_setup_assistant_start.png)
+![moveit_setup_assistant_start](/assets/images/moveit_setup_assistant_start.png)
 
 Select “Create New MoveIt Configuration Package” then select the URDF model file created earlier. Select “Load Files” to load the URDF file.
 

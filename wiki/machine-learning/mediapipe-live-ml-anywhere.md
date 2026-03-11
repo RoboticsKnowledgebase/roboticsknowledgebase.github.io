@@ -16,7 +16,7 @@ MediaPipe offers cross-platform, customizable ML solutions for live and streamin
 
 ## Solutions offered
 
-![Figure 1. Mediapipe Solutions](../assets/mediapipe_solutions.png)
+![Figure 1. Mediapipe Solutions](/assets/images/mediapipe_solutions.png)
 The image above summarizes the solutions offered by mediapipe. 
 The solutions below have been classified into 2 categories based on the use cases:
 
@@ -56,7 +56,7 @@ MediaPipe Objectron is a mobile real-time 3D object detection solution for every
 MediaPipe KNIFT is a template-based feature matching solution using KNIFT (Keypoint Neural Invariant Feature Transform). KNIFT is a strong feature descriptor robust not only to affine distortions, but to some degree of perspective distortions as well. This can be a crucial building block to establish reliable correspondences between different views of an object or scene, forming the foundation for approaches like template matching, image retrieval and structure from motion.
 
 The table below describes the support of the above models for currently available platforms:
-![Figure 1. Mediapipe supported platforms](../assets/mediapipe_platforms.png)
+![Figure 1. Mediapipe supported platforms](/assets/images/mediapipe_platforms.png)
 
 ## Quickstart Guide
 Mediapipe solutions are available for various platforms viz. Android, iOS, Python, JavaScript, C++. The guide at [Getting Started](https://google.github.io/mediapipe/getting_started/getting_started.html) comprises instructions for various platforms. 

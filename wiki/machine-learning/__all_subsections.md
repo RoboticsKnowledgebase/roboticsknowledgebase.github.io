@@ -201,7 +201,7 @@ MediaPipe offers cross-platform, customizable ML solutions for live and streamin
 
 ## Solutions offered
 
-![Figure 1. Mediapipe Solutions](../assets/mediapipe_solutions.png)
+![Figure 1. Mediapipe Solutions](/assets/images/mediapipe_solutions.png)
 The image above summarizes the solutions offered by mediapipe. 
 The solutions below have been classified into 2 categories based on the use cases:
 
@@ -241,7 +241,7 @@ MediaPipe Objectron is a mobile real-time 3D object detection solution for every
 MediaPipe KNIFT is a template-based feature matching solution using KNIFT (Keypoint Neural Invariant Feature Transform). KNIFT is a strong feature descriptor robust not only to affine distortions, but to some degree of perspective distortions as well. This can be a crucial building block to establish reliable correspondences between different views of an object or scene, forming the foundation for approaches like template matching, image retrieval and structure from motion.
 
 The table below describes the support of the above models for currently available platforms:
-![Figure 1. Mediapipe supported platforms](../assets/mediapipe_platforms.png)
+![Figure 1. Mediapipe supported platforms](/assets/images/mediapipe_platforms.png)
 
 ## Quickstart Guide
 Mediapipe solutions are available for various platforms viz. Android, iOS, Python, JavaScript, C++. The guide at [Getting Started](https://google.github.io/mediapipe/getting_started/getting_started.html) comprises instructions for various platforms. 
@@ -1209,9 +1209,9 @@ After training is finished, the training script will save the model weights to a
 
 YOLOv5's official repository provides an exporting script, and to simplify the post-processing steps, please checkout a newer commit, eg. “070af88108e5675358fd783aae9d91e927717322”. At the root folder of the repository, run `python export.py --weights WEIGHT_PATH/WEIGHT_FILE_NAME.pt --img IMAGE_LENGTH --batch-size 1 --device cpu --include onnx --simplify --opset 11`. There’ll be a .onnx file generated next to the .pt file, and [netron](https://netron.app/) provides a tool to easily visualize and verify the onnx file. For example, if the image size is 416x416, the model is YOLOv5s and the class number is 2, you should see the following input and output structures:
 
-![Figure 1. YOLOv5 onnx visualization (the input part)](../assets/yolov5_onnx_input.png)
+![Figure 1. YOLOv5 onnx visualization (the input part)](/assets/images/yolov5_onnx_input.png)
 
-![Figure 2. YOLOv5 onnx visualization (the output part)](../assets/yolov5_onnx_output.png)
+![Figure 2. YOLOv5 onnx visualization (the output part)](/assets/images/yolov5_onnx_output.png)
 
 After moving the .onnx file to your Jetson, run `trtexec --onnx=ONNX_FILE.onnx --workspace=4096 --saveEngine=ENGINE_NAME.engine --verbose` to obtain the final TensorRT engine file. The 4096 is the upper bound of the memory usage and should be adapted according to the platform. Besides, if there’s no trtexec command while TensorRT was installed, add `export PATH=$PATH:/usr/src/tensorrt/bin` to your `~/.bashrc` or `~/.zshrc`, depending on your default shell.
 
