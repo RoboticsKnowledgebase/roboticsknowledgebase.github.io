@@ -261,6 +261,8 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
+      - title: Gazebo Classic Simulation of Graspable and Breakable Objects
+        url: /wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects
       - title: NVIDIA Isaac Sim Setup and ROS2 Workflow
         url: /wiki/simulation/simulation-isaacsim-setup/
   - title: Interfacing
@@ -394,6 +396,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: Advanced MoveIt usage for Manipulator Motion Planning
+        url: /wiki/planning/advanced-moveit-manipulator-planning/
 # Main links appear in the header.
 main:
   - title: Wiki

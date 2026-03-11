@@ -9,6 +9,9 @@ This section focuses on **simulation tools, techniques, and environments** for r
 
 ## Key Subsections and Highlights
 
+- **[Gazebo Classic Simulation of Graspable and Breakable Objects](/wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects/)**
+  Details the setup of a Gazebo Classic simulator for bimanual manipulation, featuring breakable joints and robust grasping plugins.
+
 - **[Building a Light-Weight Custom Simulator](/wiki/simulation/Building-a-Light-Weight-Custom-Simulator/)**
   Discusses the design and implementation of a minimal simulator for testing reinforcement learning algorithms. Focuses on simplicity, customizability, and minimal noise. Highlights considerations like minimizing external disturbances, reducing development effort, and maintaining a reliable architecture.
 
