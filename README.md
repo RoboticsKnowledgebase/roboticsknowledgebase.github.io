@@ -22,12 +22,8 @@ We welcome contributions from the community! Whether you're fixing a typo or add
    - Use absolute paths for images: `![Alt Text](/assets/images/my_image.png)`.
    - Use absolute paths for internal links: `[Other Page](/wiki/category/other-page/)`.
 6. **Navigation**: Add your entry to `/_data/navigation.yml` and the parent category's `index.md`.
-7. **PR**: Submit a Pull Request. Our editors will review and provide feedback.
-
-### Tools We Recommend
-- **Editor**: [VS Code](https://code.visualstudio.com/) with Markdown extensions.
-- **Preview**: [Jekyll](https://jekyllrb.com/) (see Local Development below).
-- **Web Editor**: [Prose.io](http://prose.io/) for quick browser-based edits.
+7. **Build & Test**: See 'Local Development' below on instructions to build and deploylocally. Open all modified pages and verify your changes visually.
+7. **PR**: Submit a Pull Request. Our editors will review and provide feedback. Follow through with changes until merge.
 
 ---
 
@@ -36,19 +32,29 @@ We welcome contributions from the community! Whether you're fixing a typo or add
 To build and preview the site locally, we recommend using a Ruby virtual environment for dependency isolation.
 
 ### Prerequisites
-- **Ruby**: Version specified in [`.ruby-version`](.ruby-version). We recommend [rbenv](https://github.com/rbenv/rbenv).
-- **Bundler**: `gem install bundler`
+- **Ruby version manager**: We recommend [rbenv](https://github.com/rbenv/rbenv) to manage Ruby versions.
+  - **macOS**: `brew install rbenv`
+  - **Linux**: See the [rbenv installer](https://github.com/rbenv/rbenv-installer) or use your package manager.
 
 ### Setup and Build
-1. **Configure local path**:
+1. **Install Ruby**:
+   From root of the project, run:
+   ```bash
+   rbenv install $(cat .ruby-version)
+   ```
+2. **Install Bundler**:
+   ```bash
+   gem install bundler
+   ```
+3. **Configure local path**:
    ```bash
    bundle config set --local path 'vendor/bundle'
    ```
-2. **Install dependencies**:
+4. **Install dependencies**:
    ```bash
    bundle install
    ```
-3. **Local Preview**:
+5. **Local Preview**:
    ```bash
    bundle exec jekyll serve
    ```
