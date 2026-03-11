@@ -2,10 +2,10 @@
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances.
 # You should set the date the article was last updated like this:
-date: 2020-05-11 # YYYY-MM-DD
+date: 2025-12-05 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Title goes here
+title: Google Linear Optimization Package (GLOP)
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
