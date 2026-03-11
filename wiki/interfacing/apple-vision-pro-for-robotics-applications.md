@@ -35,10 +35,10 @@ This article targets roboticists who want to use Vision Pro as an interaction an
 ```
 
 ### Key Apple APIs and References
-- Overview of ARKit capabilities on visionOS: world tracking, hand tracking, object tracking, and more: https://developer.apple.com/documentation/arkit/arkit-in-visionos
-- Track and visualize hand joints with `HandTrackingProvider` and `ARKitSession` (official sample): https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement
-- Configure cross-platform RealityKit anchors and request tracking authorization via `SpatialTrackingSession` (visionOS 2.0): https://developer.apple.com/videos/play/wwdc2024/10104/
-- RealityKit cross-platform APIs and hand tracking input (WWDC24): https://developer.apple.com/videos/play/wwdc2024/10103/
+- [Overview of ARKit capabilities on visionOS](https://developer.apple.com/documentation/arkit/arkit-in-visionos): world tracking, hand tracking, object tracking, and more.
+- [Track and visualize hand joints with HandTrackingProvider and ARKitSession](https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement) (official sample).
+- [Configure cross-platform RealityKit anchors and request tracking authorization via SpatialTrackingSession](https://developer.apple.com/videos/play/wwdc2024/10104/) (visionOS 2.0).
+- [RealityKit cross-platform APIs and hand tracking input](https://developer.apple.com/videos/play/wwdc2024/10103/) (WWDC24).
 
 ### Capture and Stream Hand and Device Pose (visionOS app example)
 The snippet uses RealityKit’s `SpatialTrackingSession` for authorization and ARKit’s `HandTrackingProvider` with `ARKitSession` to collect asynchronous hand anchor updates, package them as JSON, and stream them to the robot.
@@ -101,7 +101,7 @@ final class TeleopTracker {
 }
 ```
 
-When using world tracking and device/head pose, include `WorldTrackingProvider` or query device pose to perform frame transforms and kinematic constraints. See the WWDC24 RealityKit drawing app for the `SpatialTrackingSession` workflow: https://developer.apple.com/videos/play/wwdc2024/10104/
+When using world tracking and device/head pose, include `WorldTrackingProvider` or query device pose to perform frame transforms and kinematic constraints. See the WWDC24 [RealityKit drawing app](https://developer.apple.com/videos/play/wwdc2024/10104/) for the `SpatialTrackingSession` workflow.
 
 ### Frames and Calibration
 - Define frames: `HMD` (headset), `World` (ARKit world), `Robot` (robot base).
@@ -122,13 +122,13 @@ Map poses/velocities to robot topics (for example, ROS 2 `geometry_msgs/Twist` 
 - Implement safety policies that clamp speeds/accelerations and trigger failsafe stops.
 
 ### Authorization and Privacy
-- RealityKit hand `AnchorEntity` enables visual anchoring but doesn’t expose precise transforms. For cross‑joint transforms, use ARKit `HandTrackingProvider` with user authorization. WWDC24: https://developer.apple.com/videos/play/wwdc2024/10104/
+- RealityKit hand `AnchorEntity` enables visual anchoring but doesn’t expose precise transforms. For cross‑joint transforms, use ARKit `HandTrackingProvider` with user authorization (see [WWDC24 Session 10104](https://developer.apple.com/videos/play/wwdc2024/10104/)).
 
 ## Spatial Perception: Object Tracking and Anchors for Robot Tasks
 
 ### Capabilities and Use Cases
-- Object tracking: recognize and track specific real‑world items (static placement) and attach content or extract object pose for robot manipulation. See WWDC24 sessions: https://developer.apple.com/videos/play/wwdc2024/10100/ and https://developer.apple.com/videos/play/wwdc2024/10101/
-- World/plane anchors: environment understanding for tables, floors, rooms; use as constraints for navigation or collision reasoning. Overview: https://developer.apple.com/documentation/arkit/arkit-in-visionos
+- Object tracking: recognize and track specific real‑world items (static placement) and attach content or extract object pose for robot manipulation. See WWDC24 sessions [10100](https://developer.apple.com/videos/play/wwdc2024/10100/) and [10101](https://developer.apple.com/videos/play/wwdc2024/10101/).
+- World/plane anchors: environment understanding for tables, floors, rooms; use as constraints for navigation or collision reasoning. See [ARKit Overview](https://developer.apple.com/documentation/arkit/arkit-in-visionos).
 
 ### Reference Object Workflow
 1. Obtain a USDZ 3D model of the target object.
@@ -151,11 +151,11 @@ func startObjectTracking(referenceObjects: [ReferenceObject]) async throws {
     }
 }
 ```
-Full sample and workflow guides: https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit and https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit
+Full sample and workflow guides: [Exploring object tracking with ARKit](https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit) and [Using a reference object with ARKit](https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit).
 
 ### RealityKit Anchors and UI
-- Use `AnchorEntity` to affix content to world/plane/hand/object anchors for coaching UIs and overlays: https://developer.apple.com/documentation/realitykit/anchorentity
-- In visionOS, body‑related anchor transforms may be restricted; for precise transforms in robot compute, use ARKit providers with authorization: https://developer.apple.com/videos/play/wwdc2024/10104/
+- Use `AnchorEntity` to affix content to world/plane/hand/object anchors for [coaching UIs and overlays](https://developer.apple.com/documentation/realitykit/anchorentity).
+- In visionOS, body‑related anchor transforms may be restricted; for precise transforms in robot compute, use [ARKit providers with authorization](https://developer.apple.com/videos/play/wwdc2024/10104/).
 
 ### Robot Integration Examples
 - Manipulation: obtain object pose from anchors, apply extrinsics, generate grasp pose/trajectory, send to end effector.
@@ -169,7 +169,7 @@ Full sample and workflow guides: https://developer.apple.com/documentation/visio
 ## On‑Device Intelligence: Foundation Models on visionOS
 
 ### Overview
-- Apple’s Foundation Models framework provides on‑device LLM capabilities across iOS, iPadOS, macOS, and visionOS, including prompting, guided generation, streaming, and tool calling. Intro: https://developer.apple.com/videos/play/wwdc2025/286/ Deep dive: https://developer.apple.com/videos/play/wwdc2025/301/
+- Apple’s Foundation Models framework provides on‑device LLM capabilities across iOS, iPadOS, macOS, and visionOS, including prompting, guided generation, streaming, and tool calling. See [WWDC25 Intro (286)](https://developer.apple.com/videos/play/wwdc2025/286/) and [WWDC25 Deep Dive (301)](https://developer.apple.com/videos/play/wwdc2025/301/).
 - Use on‑device semantics for command parsing, plan drafting, scene descriptions, or task planning prototypes.
 
 ### Example (guided generation)
@@ -191,13 +191,13 @@ func plan(from userInput: String) async throws -> CommandPlan {
 ```
 
 ### Tools and Multimodal Fusion
-- Use tool calling to access device sensors or external services: query robot status or object poses, then produce semantic summaries or step plans. Code‑along demo: https://developer.apple.com/videos/play/wwdc2025/259/
+- Use tool calling to access device sensors or external services: query robot status or object poses, then produce semantic summaries or step plans. See [WWDC25 Code‑along (259)](https://developer.apple.com/videos/play/wwdc2025/259/).
 
 ### Adapter Training (advanced)
-- Train `.fmadapter` to specialize the system LLM for your domain; entitlement and deployment details: https://developer.apple.com/apple-intelligence/foundation-models-adapter/
+- Train `.fmadapter` to specialize the system LLM for your domain; see [entitlement and deployment details](https://developer.apple.com/apple-intelligence/foundation-models-adapter/).
 
 ### Safety and HIG
-- Apply layered safety: model suggestions feed deterministic safety controllers. Prompt design and safety guidance: https://developer.apple.com/videos/play/wwdc2025/248/
+- Apply layered safety: model suggestions feed deterministic safety controllers. See [WWDC25 Prompt design and safety (248)](https://developer.apple.com/videos/play/wwdc2025/248/).
 
 ## End‑to‑End Integration Example
 
@@ -205,11 +205,11 @@ func plan(from userInput: String) async throws -> CommandPlan {
 - Operator uses hand gestures to control a manipulator to grasp an object on a table. The system interprets a spoken/text instruction on device, identifies the target, plans a grasp, and sends commands to the robot.
 
 ### Steps
-1. Authorization and tracking: `SpatialTrackingSession` requests hand and world capabilities: https://developer.apple.com/videos/play/wwdc2024/10104/
-2. Collect hand joints and device pose: `HandTrackingProvider` and `WorldTrackingProvider` streams: https://developer.apple.com/documentation/arkit/arkit-in-visionos
-3. Object tracking: load `.referenceobject`, run `ObjectTrackingProvider`, maintain target pose: https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit
+1. Authorization and tracking: `SpatialTrackingSession` requests hand and world capabilities (see [WWDC24 Session 10104](https://developer.apple.com/videos/play/wwdc2024/10104/)).
+2. Collect hand joints and device pose: `HandTrackingProvider` and `WorldTrackingProvider` streams (see [ARKit in visionOS](https://developer.apple.com/documentation/arkit/arkit-in-visionos)).
+3. Object tracking: load `.referenceobject`, run `ObjectTrackingProvider`, maintain target pose (see [Exploring object tracking with ARKit](https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit)).
 4. Frame fusion and grasp planning: combine object pose with robot extrinsics to compute grasp pose and trajectory.
-5. On‑device semantics: Foundation Models parses the instruction and emits structured steps and safety notes: https://developer.apple.com/videos/play/wwdc2025/286/
+5. On‑device semantics: Foundation Models parses the instruction and emits structured steps and safety notes (see [WWDC25 Session 286](https://developer.apple.com/videos/play/wwdc2025/286/)).
 6. Control and safety: execute, monitor force/vision feedback, and apply safety policies.
 
 ### Data Structures
@@ -226,10 +226,10 @@ func plan(from userInput: String) async throws -> CommandPlan {
 
 ### Resource Use
 - Foundation Models run on device without increasing app size, but inference incurs power/thermal costs; apply throttling/timeouts for long sessions.
-- Object tracking has limits on detection rate and instance counts; configure `TrackingConfiguration` and related entitlements when needed: https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit
+- Object tracking has limits on detection rate and instance counts; configure `TrackingConfiguration` and related entitlements when needed (see [Using a reference object with ARKit](https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit)).
 
 ### Privacy and Permissions
-- Access to hand/world/object anchors follows visionOS authorization; if denied, RealityKit `AnchorEntity` may still visually anchor content but won’t update transform data flows—degrade UX and control accordingly: https://developer.apple.com/videos/play/wwdc2024/10104/
+- Access to hand/world/object anchors follows visionOS authorization; if denied, RealityKit `AnchorEntity` may still visually anchor content but won’t update transform data flows—degrade UX and control accordingly (see [WWDC24 Session 10104](https://developer.apple.com/videos/play/wwdc2024/10104/)).
 
 ### Environment and Robustness
 - Lighting, texture, occlusions, and reflections impact tracking; prefer textured targets and place visual aids where possible.
@@ -258,29 +258,29 @@ Map `endEffectorPose` to the robot control interface (position or velocity contr
 - Address latency, resources, privacy, and environment robustness with layered safety and concurrent data pipelines.
 
 ## See Also
-- ARKit overview (visionOS): https://developer.apple.com/documentation/arkit/arkit-in-visionos
-- Hand tracking sample: https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement
-- RealityKit cross‑platform APIs (WWDC24): https://developer.apple.com/videos/play/wwdc2024/10103/
-- RealityKit drawing app and `SpatialTrackingSession` (WWDC24): https://developer.apple.com/videos/play/wwdc2024/10104/
-- Object tracking workflow (WWDC24): https://developer.apple.com/videos/play/wwdc2024/10101/
-- Foundation Models framework: https://developer.apple.com/videos/play/wwdc2025/286/
-- Foundation Models deep dive: https://developer.apple.com/videos/play/wwdc2025/301/
+- [ARKit overview (visionOS)](https://developer.apple.com/documentation/arkit/arkit-in-visionos)
+- [Hand tracking sample](https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement)
+- [RealityKit cross‑platform APIs (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10103/)
+- [RealityKit drawing app and SpatialTrackingSession (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10104/)
+- [Object tracking workflow (WWDC24)](https://developer.apple.com/videos/play/wwdc2024/10101/)
+- [Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/286/)
+- [Foundation Models deep dive](https://developer.apple.com/videos/play/wwdc2025/301/)
 
 ## Further Reading
-- Using reference objects with ARKit: https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit
-- Exploring object tracking with ARKit: https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit
-- RealityKit AnchorEntity documentation: https://developer.apple.com/documentation/realitykit/anchorentity
-- Code‑along with Foundation Models (WWDC25): https://developer.apple.com/videos/play/wwdc2025/259/
-- Prompt design and safety (WWDC25): https://developer.apple.com/videos/play/wwdc2025/248/
+- [Using reference objects with ARKit](https://developer.apple.com/documentation/visionos/using-a-reference-object-with-arkit)
+- [Exploring object tracking with ARKit](https://developer.apple.com/documentation/visionos/exploring_object_tracking_with_arkit)
+- [RealityKit AnchorEntity documentation](https://developer.apple.com/documentation/realitykit/anchorentity)
+- [Code‑along with Foundation Models (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/259/)
+- [Prompt design and safety (WWDC25)](https://developer.apple.com/videos/play/wwdc2025/248/)
 
 ## References
-- Apple, “ARKit in visionOS,” Apple Developer Documentation. Available: https://developer.apple.com/documentation/arkit/arkit-in-visionos
-- Apple, “Tracking and visualizing hand movement,” Apple Developer Documentation. Available: https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement
-- Apple, “Discover RealityKit APIs for iOS, macOS, and visionOS,” WWDC24. Available: https://developer.apple.com/videos/play/wwdc2024/10103/
-- Apple, “Build a spatial drawing app with RealityKit,” WWDC24. Available: https://developer.apple.com/videos/play/wwdc2024/10104/
-- Apple, “Create enhanced spatial computing experiences with ARKit,” WWDC24. Available: https://developer.apple.com/videos/play/wwdc2024/10100/
-- Apple, “Explore object tracking for visionOS,” WWDC24. Available: https://developer.apple.com/videos/play/wwdc2024/10101/
-- Apple, “AnchorEntity,” Apple Developer Documentation. Available: https://developer.apple.com/documentation/realitykit/anchorentity
-- Apple, “Meet the Foundation Models framework,” WWDC25 Session. Available: https://developer.apple.com/videos/play/wwdc2025/286/
-- Apple, “Deep dive into the Foundation Models framework,” WWDC25 Session. Available: https://developer.apple.com/videos/play/wwdc2025/301/
-- Apple, “Foundation Models adapter training,” Apple Intelligence. Available: https://developer.apple.com/apple-intelligence/foundation-models-adapter/
+- Apple, [ARKit in visionOS](https://developer.apple.com/documentation/arkit/arkit-in-visionos), Apple Developer Documentation.
+- Apple, [Tracking and visualizing hand movement](https://developer.apple.com/documentation/visionos/tracking-and-visualizing-hand-movement), Apple Developer Documentation.
+- Apple, [Discover RealityKit APIs for iOS, macOS, and visionOS](https://developer.apple.com/videos/play/wwdc2024/10103/), WWDC24.
+- Apple, [Build a spatial drawing app with RealityKit](https://developer.apple.com/videos/play/wwdc2024/10104/), WWDC24.
+- Apple, [Create enhanced spatial computing experiences with ARKit](https://developer.apple.com/videos/play/wwdc2024/10100/), WWDC24.
+- Apple, [Explore object tracking for visionOS](https://developer.apple.com/videos/play/wwdc2024/10101/), WWDC24.
+- Apple, [AnchorEntity](https://developer.apple.com/documentation/realitykit/anchorentity), Apple Developer Documentation.
+- Apple, [Meet the Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/286/), WWDC25 Session.
+- Apple, [Deep dive into the Foundation Models framework](https://developer.apple.com/videos/play/wwdc2025/301/), WWDC25 Session.
+- Apple, [Foundation Models adapter training](https://developer.apple.com/apple-intelligence/foundation-models-adapter/), Apple Intelligence.
