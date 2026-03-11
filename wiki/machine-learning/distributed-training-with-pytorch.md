@@ -108,7 +108,8 @@ For GPU-based training, NCCL is almost always the preferred choice due to its su
 
 Setting Up a DDP Training Loop (Single Node):
 
-```import os
+```python
+import os
 import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
@@ -149,11 +150,11 @@ if __name__ == "__main__":
 ```
 
 Launching with torchrun:
-```
+```bash
 torchrun --nproc_per_node=4 train.py
 ```
 ### Process Group Initialization Function
-```
+```python
 def setup(rank, world_size):
     os.environ["MASTER_ADDR"] = "localhost"
     os.environ["MASTER_PORT"] = "12355"
@@ -169,7 +170,7 @@ This function configures the distributed environment:
 * torch.cuda.set_device(rank): Maps this process to a specific GPU. When running on a multi-GPU system, each process is typically assigned to a different GPU, and the rank value conveniently serves as the GPU index.
 
 ### Training Function
-```
+```python
 def train(rank, world_size):
     setup(rank, world_size)
 
@@ -230,7 +231,7 @@ Training loop:
 GPUs to utilize hardware efficiently.
 Example: Manual Layer Partitioning
 
-```
+```python
 class ModelParallelNet(nn.Module):
     def __init__(self):
         super().__init__()
