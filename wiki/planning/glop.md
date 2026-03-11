@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances.
-# You should set the date the article was last updated like this:
-date: 2025-12-05 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2025-05-11
 title: Google Linear Optimization Package (GLOP)
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 
 In the context of robotic task planning, Convex Optimization refers to the process of minimizing a specific cost function over a set of variables, subject to constraints. This property ensures that if a local minimum exists, it is also the global minimum—a critical feature for reliable autonomous decision-making. This entry outlines how to use the Google Linear Optimization Package (GLOP) in C++ to solve such problems. We will cover the theoretical definition, setting up cost functions, integrating the GLOP solver, and converting the abstract mathematical output into actionable robot poses, using the Lunar ROADSTER project as a case study.
