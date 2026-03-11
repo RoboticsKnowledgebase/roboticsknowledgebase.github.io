@@ -29,23 +29,23 @@ This package handles all the interactions between the planner, the controller (w
 
 This is what the architecture of MBF looks like: 
 
-![MBF Architecture](assets/MBF/move_base_flex_full.png)
+![MBF Architecture](/assets/images/move_base_flex_full.png)
 
 The parts above the dotted line are the abstract classes and their interactions between them. These abstract classes are what you have to implement to get MBF to work. After doing this, you can write a simple node that instantiates the navigation server class you implemented, and your navigation stack is ready to be used on the robot. 
 
 ### Plugin classes
-![MBF Architecture](assets/MBF/abstract_plugin_classes.png)
+![MBF Architecture](/assets/images/abstract_plugin_classes.png)
 
 These classes are dynamically loaded at runtime by the navigation server (detailed below) using ROS pluginlib, and do the high-level planning, low-level planning, and recovery behaviors. These classes are purely abstract. You have to make your global planner, local planner, and recovery classes inherit from these classes and implement the pure virtual functions of these classes. You can look at the header files in the *mbf_abstract_core* package in the MBF repository to find more information on the methods that you must implement.
 
 ### The abstract navigation server class
-![MBF Architecture](assets/MBF/abstract_navigation_server.png)
+![MBF Architecture](/assets/images/abstract_navigation_server.png)
 
 This class is the main class that runs the entire navigation stack and handles the loading, initialization, and interaction of the plugin classes mentioned above. The abstract_navigation_server is also a pure abstract class. You have to make your navigation server class inherit from the abstract_navigation_server and implement the pure virtual functions of these classes. You can look at `abstract_navigation_server.h` in the *mbf_abstraction_nav* package to get more information on what methods you must implement. Note here that, unlike the plugin classes, you don't need to re-implement all the functions of the abstract navigation server, just the pure virtual ones. However, you can re-implement any of those functions as well if you want to change the execution of those functions.
 
 
 ### The abstract execution classes
-![MBF Architecture](assets/MBF/abstract_execution_classes.png)
+![MBF Architecture](/assets/images/abstract_execution_classes.png)
 
 There are abstract classes for controlling the planner, controller, and recovery execution, but these are not pure abstract classes, and MBF has already implemented their functions. However, you may want to change how your planner, controller, and recovery behaviors execute and tie in with your navigation server. In that case, you can inherit from these classes and implement the functions you want to change. You can look at the `abstract_planner_execution.h`, `abstract_controller_execution.h`, and `abstract_recovery_execution.h` in the *mbf_abstract_nav* package to get more information on the functions. 
 

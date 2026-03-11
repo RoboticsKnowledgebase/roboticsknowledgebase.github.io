@@ -30,7 +30,7 @@ A* is a popular search algorithm that is guaranteed to return an optimal path, a
 
 A* works by computing optimal g-values for all states along the search at any point in time.
 
-![](assets/astar_h_viz.png)
+![](/assets/images/astar_h_viz.png)
 
 ## Planning Representation
 When designing a planner, you first need to decide a few things about how your problem will be represented. Key questions:
@@ -132,7 +132,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 ## High Level Architecture of Coverage Planner
  Before we dive into the small details of this coverage planner, we will first look at the high level architecture of the coverage planner we will be designing. The image below shows the three main steps. 
 
- ![Coverage Planner Steps](assets/coverage_planner_steps.png)
+ ![Coverage Planner Steps](/assets/images/coverage_planner_steps.png)
 
  The input to the coverage planner is the region we want to generate the coverage plan for. We will represent our region of interest as an outer polygon with a set of polygonal holes. The holes represent areas within the overall outer polygon that we don't want to cover. For instance, in a robotic lawnmowing application, holes could represent gardens in the middle of the lawn that we don't want to mow. Similarly, in a drone wildfire-monitoring application, holes might represent lakes, which would not have any fire, and so you would not want to spend time monitoring them. The outer polygon as well as polygonal holes each are represented as lists of vertices, with each vertex being an x,y coordinate pair.
 
@@ -144,7 +144,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  As mentioned above, the first step to our coverage planner will be decomposing the region of interest into simpler trapezoids. To perform this trapezoidal decomposition, we will use a vertical sweep line method. This involves "sweeping" a vertical line from left to right across the region. As the sweep line encounters events, which correspond to vertices, it processes them. We maintain a list of trapezoidal cells that are currently open, meaning that their right edge is unknown. Processing an event involves closing some open cells and opening new cells. Once the sweep line has made it past the right-most event, there should be no more open cells and the closed cells represent the full trapezoidal decomposition of the region. An example of such a trapezoidal decomposition from section 6.1 of the Principles of Robot Motion textbook is shown in the image below.
 
- ![Trapezoidal Decomposition](assets/trapezoid_decomposition.png)
+ ![Trapezoidal Decomposition](/assets/images/trapezoid_decomposition.png)
 
  Diving into more detail, the first step of trapezoidal decomposition is to convert the outer boundary and holes into a list of events. To do this, we need to discuss what an event is. Events correspond to vertices of the region of interest, but they also contain some additional information. In addition to the current vertex (the vertex that the event corresponds to), an event contains the previous vertex, the next vertex, and the event type. The previous vertex and next vertex refer to the two vertices directly connected to the current vertex via edges. In order to distinguish between the next and previous vertex, we will use the convention that as you traverse the edges of the outer boundary or a hole, the region of interest (area you care about covering) will be to your left. Thus, we will traverse the outer boundary in counter-clockwise order and traverse holes in clockwise order.
 
@@ -154,7 +154,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  This classification into different event types will be useful later as we process events, since each type will need to be processed differently.
 
- ![Coverage Planner Event Types](assets/coverage_planner_event_types.png)
+ ![Coverage Planner Event Types](/assets/images/coverage_planner_event_types.png)
 
  To generate the list of events, loop through the vertices of the outer boundary in CCW order and loop through the vertices of each hole in CW order. At each vertex, add a new event with its previous, current, and next vertex. To determine the event type, you need to examine the x and y components of the previous and next vertex. For example, if both the previous and next vertex have an x component to the left of the current vertex, the event is either an OUT or CLOSE event. Comparing the y coordinate of the previous and next vertex can then distinguish between these two event types. Similarly, if the previous and next vertex are both to the right of the current vertex, the event type is either OPEN or IN. Again, you can then compare the y coordinate of the previous and next vertex to distinguish them. If the previous vertex is to the left of the current vertex and the next vertex is to the right of the current vertex, the event type is FLOOR. Finally, if the previous vertex is to the right while the next vertex is to the left, the event type is CEILING. 
 
@@ -182,7 +182,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
 
  The trapezoidal cells define an implicit graph via their neighbor lists. Once we have the trapezoidal cells, we need to determine a cell traversal. This is an order in which to visit each cell. An example (incomplete) cell traversal from section 6.1 of the Principles of Robot Motion textbook is shown below.
 
- ![Cell Traversal](assets/cell_traversal.png)
+ ![Cell Traversal](/assets/images/cell_traversal.png)
 
  There are lots of different ways to generate a cell traversal. For example, you could start from some random cell and perform depth-first search. You could use a greedy method where, from each cell, you go to the nearest unvisited cell. You could also use a more complex method such as using a TSP solver. 
 
@@ -321,8 +321,8 @@ from Frenet coordinates to the local vehicle frame in Cartesian coordinates is a
 Images and embedded video are supported.
 
 ![Path planning in frenet coordinates](assets/path_planning.jpg)
-![frenet path](assets/ref_path.png)
-![f_path](assets/f_path.png)
+![frenet path](/assets/images/ref_path.png)
+![f_path](/assets/images/f_path.png)
 ## Summary
 
 The given article describes in detail what is Frenet Frame and how robot motion planning is done. The importance and relevance of frenet frame with path planning in systems engineering is also highlighted in the given article. 
@@ -373,23 +373,23 @@ This package handles all the interactions between the planner, the controller (w
 
 This is what the architecture of MBF looks like: 
 
-![MBF Architecture](assets/MBF/move_base_flex_full.png)
+![MBF Architecture](/assets/images/move_base_flex_full.png)
 
 The parts above the dotted line are the abstract classes and their interactions between them. These abstract classes are what you have to implement to get MBF to work. After doing this, you can write a simple node that instantiates the navigation server class you implemented, and your navigation stack is ready to be used on the robot. 
 
 ### Plugin classes
-![MBF Architecture](assets/MBF/abstract_plugin_classes.png)
+![MBF Architecture](/assets/images/abstract_plugin_classes.png)
 
 These classes are dynamically loaded at runtime by the navigation server (detailed below) using ROS pluginlib, and do the high-level planning, low-level planning, and recovery behaviors. These classes are purely abstract. You have to make your global planner, local planner, and recovery classes inherit from these classes and implement the pure virtual functions of these classes. You can look at the header files in the *mbf_abstract_core* package in the MBF repository to find more information on the methods that you must implement.
 
 ### The abstract navigation server class
-![MBF Architecture](assets/MBF/abstract_navigation_server.png)
+![MBF Architecture](/assets/images/abstract_navigation_server.png)
 
 This class is the main class that runs the entire navigation stack and handles the loading, initialization, and interaction of the plugin classes mentioned above. The abstract_navigation_server is also a pure abstract class. You have to make your navigation server class inherit from the abstract_navigation_server and implement the pure virtual functions of these classes. You can look at `abstract_navigation_server.h` in the *mbf_abstraction_nav* package to get more information on what methods you must implement. Note here that, unlike the plugin classes, you don't need to re-implement all the functions of the abstract navigation server, just the pure virtual ones. However, you can re-implement any of those functions as well if you want to change the execution of those functions.
 
 
 ### The abstract execution classes
-![MBF Architecture](assets/MBF/abstract_execution_classes.png)
+![MBF Architecture](/assets/images/abstract_execution_classes.png)
 
 There are abstract classes for controlling the planner, controller, and recovery execution, but these are not pure abstract classes, and MBF has already implemented their functions. However, you may want to change how your planner, controller, and recovery behaviors execute and tie in with your navigation server. In that case, you can inherit from these classes and implement the functions you want to change. You can look at the `abstract_planner_execution.h`, `abstract_controller_execution.h`, and `abstract_recovery_execution.h` in the *mbf_abstract_nav* package to get more information on the functions. 
 
@@ -588,7 +588,7 @@ Centralised family of algorithms can be further subdivided into two classes of a
 ## Navigation Stack Design 1 : [Planning based approach](https://www.youtube.com/watch?v=K1_bagcw8Gc&themeRefresh=1)
 In a planning based approach, we design and implement a centralised multi robot planner which calculates collision free trajectories for each robot in the fleet and then these are executed by each robot with a decentralised controller.
 
-![](assets/central_planner.png)
+![](/assets/images/central_planner.png)
 
 ### Centralised Planner : [Prioritised Collaborative A*](https://github.com/MRSD-Team-RoboSAR/robosar_navigation)
 
@@ -608,7 +608,7 @@ At a high level the prioritized multi A* performs these steps in a loop to perfo
 
 The planner is built on top of a 3D graph which consists of nodes in x,y and time. The graph handles all the nearest neighbor searches, collision checks, distance queries and other utility functions for the planner. The graph uses a cost map of the environment to do its collision checks. The costmap inflates all the obstacles in the occupancy grid map and also assigns some cost to neutral motion to encourage planner to take the shortest paths. It also uses cached trajectories of other robots while doing the collision checks so that robots have collision free trajectories in time. The planner currently uses a manhattan distance heuristic to estimate the cost to goal. All set and map data structures are optimized using a custom 3D hash function and have an O(1) lookup time. Priorities are currently assigned to the robots arbitrary before planning and then planning is done sequentially. This is something that can be improved! An interesting finding is about relative cost of waiting in time as against moving. We found that if both moving as well as waiting have the same cost, then A* almost always prefer moving than waiting which can lead to suboptimal behavior. So as of now we have lower cost to waiting than moving which gives us better paths leads to increased search times which is undesirable. We found the paths to be very suboptimal in a 4 connected grid so we use an 8 connected grid which gives very good results but obviously also contributes to our increased search times. 
 
-![](assets/prioritised_astar.png)
+![](/assets/images/prioritised_astar.png)
 
 ### Decentralised controller : [LGController](https://github.com/MRSD-Team-RoboSAR/robosar_controller)
 
@@ -627,7 +627,7 @@ Our trajectories in time include some pauses/stops along the way for avoiding co
 
 We wrote a ROS action server to wrap this controller and use it with the rest of the subsystems. So during operation we have a LGController action server running per robot. So we can say that the planning is centralized but the control is completely decentralised. 
 
-![](assets/mission_exec.png)
+![](/assets/images/mission_exec.png)
 
 Once the planner and the controller were ready, there was a need to integrate them with the rest of the system. For this we wrote the Mission Executive class. Mission Executive does a lot of things during the operation. The first thing it is incharge of is asking the latest fleet information from the fleet management system and then setting up the controller servers for each robot in the fleet. It also listens for any changes in the fleet from the FMS and takes appropriate action based on it. It listens to tasks from the task allocation subsystem and is in charge of executing this mission. It first runs the planner on the tasks received from the task allocation. If planning was successful then the mission executive creates a ROS action client for each successful plan and then sends the planned trajectory to the appropriate controller server for execution. Then the mission executive also monitors the execution of the controller and gets ready for a new mission as soon as the controllers are done executing.
 
@@ -656,7 +656,7 @@ The Lazy Traffic controller takes in the paths from the decentralised planner an
 
 At high level the basic principle is to not do extensive collision checking or planning unless explicitly required due to an immediate impending collision. How we do this is by enforcing a narrow neighborhood around each robot and doing local collision avoidance to avoid collisions in this neighborhood. This gives the controller its ‘laziness’. This local collision avoidance is implemented using the velocity obstacles algorithm. For each agent, all other agents act as obstacles in the velocity space and hence invalidate a set of velocities that this agent can execute. Velocity obstacles tries to select the best velocity as close to the preferred velocity as possible from the set of valid velocities. Preferred velocity is calculated for each agent from the global A* path found by the planner. Staying on this A* path is the preferred thing to do unless otherwise ruled out due to obstacles. 
 
-![](assets/velocity_obstacles.png)
+![](/assets/images/velocity_obstacles.png)
 
 The lazy traffic controller has many interfaces with a lot of subsystems. The LT controller talks to the fleet management system to receive updates on the status of the fleet. It talks to the SLAM subsystem to receive the latest map of the environment. It also takes the pose for each agent from the transformation tree. It advertises a controller service which is used by the Mission Executive to actually send the list of agents and their planned paths for execution by the controller. Last but not least, it advertises the controller status of each robot, so that the task allocator can assign new tasks once old ones are completed! 
 Pseudocode for the LT controller can be written as : 
@@ -672,7 +672,7 @@ Pseudocode for the LT controller can be written as :
         - Modify velocity using interrobot repulsion if another neighbour within repulsion radius
         
  
-![](assets/lt_controller.png)
+![](/assets/images/lt_controller.png)
 
 ### Takeaways
 1. This design works really well when robots have unconstrained motion around each other in 2D and robots are small in size compared to the free space around them!

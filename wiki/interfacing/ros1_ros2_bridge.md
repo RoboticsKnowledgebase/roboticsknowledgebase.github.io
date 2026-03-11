@@ -15,7 +15,7 @@ ROS 2 is widely used nowadays due to its better security features and code organ
 ### ROS 1 - ROS 2 Bridge
 The [ROS 1 bridge](https://github.com/ros2/ros1_bridge) is a ROS 2 package that provides nodes to bridge topics between ROS 1 and ROS 2. A point to be noted here is that bridging is only available on Ubuntu 20.04, as this distribution is the only one that supports both ROS 1 Noetic and ROS 2 Foxy. This package is capable of bridging the stantard ROS interfaces (messages/services) listed in the [ros2/common_interfaces](https://github.com/ros2/common_interfaces) repository. To use the bridge with custom message types, the package needs to be build from source, and the custom types should also be sourced in seperate ROS 1 and ROS 2 workspaces. Services need to be bridged explicitly between ROS 2 and ROS 1, and ROS 1 and ROS 2. 
 
-![ROS 1 - ROS 2 Bridge Setup](assets/images/ros-bridge.png)
+![ROS 1 - ROS 2 Bridge Setup](/assets/images/ros-bridge.png)
 
 ### Installation:
 Installation instructions are provided in the [ROS 1 bridge](https://github.com/ros2/common_interfaces) repository README. Note that you need to have both ROS 1 Noetic and ROS 2 Foxy installed in the system. There are 2 main ways to install the bridge:

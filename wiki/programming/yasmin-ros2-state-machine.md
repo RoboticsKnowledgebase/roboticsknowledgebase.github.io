@@ -125,7 +125,7 @@ sm()
 - Visualization: `YasminViewerPub("yasmin_snaak", sm)` publishes the state machine so operators can inspect progress live. The visualization of our system is shown below
 
 
-![Yasmin state machine](/assets/images/robotics_project_guide/state_machine.png)
+![Yasmin state machine](/assets/images/state_machine.png)
 
 
 ## Yasmin vs. Behavior Trees

@@ -114,19 +114,19 @@ roslaunch ur5e_moveit_config moveit_rviz.launch rviz_config:=$(rospack find ur5e
 
 This should launch a Rviz window with a robot model.
 
-![](./assets/moveit_1.png)
+![](/assets/images/moveit_1.png)
 
 You can change the tcp target by dragging around the blue ball. The orange robot will show the configuration used to reach the target pose.
 
-![](./assets/moveit_2.png)
+![](/assets/images/moveit_2.png)
 
 By clicking on the "Plan" button in the left panel a path from the current pose to the target pose is calculated. On success, it gets animated using a semi-transparent version of the robot.
 
-![](./assets/moveit_3.png)
+![](/assets/images/moveit_3.png)
 
 By clicking on the Execute button in the left panel the robot executes the planned motion.
 
-![](./assets/moveit_4.png)
+![](/assets/images/moveit_4.png)
 
 In a real-world application you would not use the ur5e_moveit_config package but create your own moveit configuration matching your actual workcell with all obstacles and sensors.
 

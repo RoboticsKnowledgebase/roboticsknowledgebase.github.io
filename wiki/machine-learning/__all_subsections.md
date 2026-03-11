@@ -25,7 +25,7 @@ def encode_segmap(self, mask):
     return mask[:, :, 0] # target should be h x w, no depth
 ```
 
-![mask annotation](assets/mask_annotation.png)
+![mask annotation](/assets/images/mask_annotation.png)
 
 ## Installing gimp
 copy and paste the following command in your terminal to install gimp  
@@ -41,17 +41,17 @@ Navigate to  file->open botton on the top left to open a rgb image that you'd li
 ### Step 2 Create mask
 Navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
 
-![mask annotation](assets/new_layer.png)
+![mask annotation](/assets/images/new_layer.png)
 
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
-![manage layers](assets/manage_layers.png)
+![manage layers](/assets/images/manage_layers.png)
 
 ### Step 3 Creating annotations
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
 
-![free select tool](assets/select_tool.png)
-![create annotation](assets/bucket_fill.png)
+![free select tool](/assets/images/select_tool.png)
+![create annotation](/assets/images/bucket_fill.png)
 
 ### Step 4 Saving files
 Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.
@@ -354,9 +354,9 @@ Transformers have become increasingly popular in NLP due to their ability to cap
 
 Transformers are a powerful tool for NLP and have revolutionized the field. They have enabled researchers to create models that can accurately capture the meaning of text and make accurate predictions.
 
-![Transformer Architecture simplified](./assets/NLP_image1.png)
+![Transformer Architecture simplified](/assets/images/NLP_image1.png)
 
-![Transformer Architecture](./assets/NLP_image2.png)
+![Transformer Architecture](/assets/images/NLP_image2.png)
  
 
 Encoder (left): The encoder receives an input and builds a representation of it (its features). This means that the model is optimized to acquire understanding from the input.
@@ -470,7 +470,7 @@ preds = vqa(image=image, question=question)
 preds = [{"score": round(pred["score"], 4), "answer": pred["answer"]} for pred in preds]
 ```
 
-![Input Image](./assets/NLP_image3.png)
+![Input Image](/assets/images/NLP_image3.png)
 
 
 
@@ -496,7 +496,7 @@ OUTPUT: [
 
 Below is a table describing some of the basic pipeline identifiers and their use.
 
-![List of different pipelines](./assets/NLP_image4.png)
+![List of different pipelines](/assets/images/NLP_image4.png)
 
 
 # Fine-tuning a pretrained model
@@ -676,7 +676,7 @@ This article serves as a step-by-step tutorial of how to integrate YOLO in ROS a
 
 ---
 ## Integrating YOLO with ROS
-![YOLO Demo](assets/yolo_demo.png)
+![YOLO Demo](/assets/images/yolo_demo.png)
 
 To install YOLO in ROS, we will use a YOLO ROS wrapper GitHub repository [darknet_ros](https://github.com/leggedrobotics/darknet_ros). You can simply follow their instructions in the README or follow the instructions below. 
 

@@ -334,7 +334,7 @@ DJI drones have one of the best commercially available PID controllers along wit
 
 To be more specific, below we will look at the components involved in controlling a DJI drone.
 
-![DJI Control Scheme](../../assets/images/DJI.png)
+![DJI Control Scheme](/assets/images/DJI.png)
 
 The keypoint is:
 > DJI drones *need to read from its own GPS* to satisfy its EKF needs in order to produce proper state estimations for Position and Velocity Controls.
@@ -610,7 +610,7 @@ published: true
 ---
 This article with serve as an introduction, overview, and quick-start guide to K-Team's Khepera 4 robots. 
 
-![Put a relevant caption here](assets/KHEPERA4.png)
+![Put a relevant caption here](/assets/images/KHEPERA4.png)
 
 The Khepera 4 is a robot platform designed for indoor applications, meant to operate on tables and floor of labs. They are meant to provide a way to test algorithms developed in simulations or on paper in the real world. They're  most often used to test navigation, swarm, and artificial intelligence applications, providing researchers an easy way to see how their code runs on an actual robot. 
 
@@ -1305,7 +1305,7 @@ This is an article that provides an overview of the Unitree Go1 Edu robot, inclu
 There are three versions of the Unitree Go1: Air, Pro, and Edu. The Edu model is designed for educational purposes and provides developers with access to the platform. In this article, we will focus on the capabilities of the Go1 Edu, which is a popular choice for students and researchers due to its affordability and ease of use.
 
 ## Form Factor
-![Form_Factor](assets/form_factor.png)
+![Form_Factor](/assets/images/form_factor.png)
 The Unitree Go1 Edu has compact dimensions of 645 x 280 x 400 mm and weighs 12 kg. 
 It boasts a top speed of 3.7-5 m/s and a maximum load capacity of 10 kg, although it's recommended to keep the payload under 5 kg. 
 By default, the robot can traverse steps up to 10 cm high, but with programming, it's possible to overcome larger obstacles. 
@@ -1313,7 +1313,7 @@ The Go1 Edu features 12 degrees of freedom, including HAA (hip abduction/adducti
 The Body/Thigh Joint Motor design is highly adaptable to various mechanical equipment, with an instantaneous torque of 23.7 N·m, while the Knee Joint has a torque of 35.55 N·m.
 
 ## Power and Interface
-![Unitree_TOP](assets/unitree_top.png)
+![Unitree_TOP](/assets/images/unitree_top.png)
 
 The Unitree Go1 Edu robot is equipped with a reliable lithium-ion power cell with a 6000mAh capacity that provides an endurance time of 1-2.5 hours. The robot's battery management system (BMS) closely monitors the battery status, ensuring safe and stable operation during use. The batteries themselves feature overcharge protection, providing an additional layer of safety.
 
@@ -1331,7 +1331,7 @@ Moreover, Unitree provides customization options for processors and additional s
 * Raspberry Pi also has an extra Wi-Fi card, which is used as a hotspot 192.168.12.1. 
 * User laptop connects to the robot hotspot, with a static IP 192.168.12.18.
 * Users can connect to all four devices via Ethernet cable, with a static IP 192.168.123.123.
-![Wired](assets/wired.png)
+![Wired](/assets/images/wired.png)
 
 * Each Nano controls and processes a pair of fisheye cameras. The Unitree camera SDK provides an API that captures and rectifies skewed fisheye camera stream and sends out the UDP packets.
 * `./bins/example_putImagetrans` sends camera streams with udp packets
@@ -1511,19 +1511,19 @@ roslaunch ur5e_moveit_config moveit_rviz.launch rviz_config:=$(rospack find ur5e
 
 This should launch a Rviz window with a robot model.
 
-![](./assets/moveit_1.png)
+![](/assets/images/moveit_1.png)
 
 You can change the tcp target by dragging around the blue ball. The orange robot will show the configuration used to reach the target pose.
 
-![](./assets/moveit_2.png)
+![](/assets/images/moveit_2.png)
 
 By clicking on the "Plan" button in the left panel a path from the current pose to the target pose is calculated. On success, it gets animated using a semi-transparent version of the robot.
 
-![](./assets/moveit_3.png)
+![](/assets/images/moveit_3.png)
 
 By clicking on the Execute button in the left panel the robot executes the planned motion.
 
-![](./assets/moveit_4.png)
+![](/assets/images/moveit_4.png)
 
 In a real-world application you would not use the ur5e_moveit_config package but create your own moveit configuration matching your actual workcell with all obstacles and sensors.
 

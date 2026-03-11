@@ -16,7 +16,7 @@ This article serves as a step-by-step tutorial of how to integrate YOLO in ROS a
 
 ---
 ## Integrating YOLO with ROS
-![YOLO Demo](assets/yolo_demo.png)
+![YOLO Demo](/assets/images/yolo_demo.png)
 
 To install YOLO in ROS, we will use a YOLO ROS wrapper GitHub repository [darknet_ros](https://github.com/leggedrobotics/darknet_ros). You can simply follow their instructions in the README or follow the instructions below. 
 

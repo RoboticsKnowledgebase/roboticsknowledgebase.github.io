@@ -64,55 +64,55 @@ Select “Create New MoveIt Configuration Package” then select the URDF model 
 
 Once the URDF model is loaded, you will go through the various steps to configure and set up the MoveIt model. Select “Self-Collisions”. You should see the following:
 
-![moveit_setup_assistant_collision](assets/moveit_setup_assistant_collision_check.png)
+![moveit_setup_assistant_collision](/assets/images/moveit_setup_assistant_collision_check.png)
 
 The best option to choose here is to slide the “Sampling Density” slider all the way to the right to the highest density setting. With this setting, the GUI will compute all pairs of geometries that can collide with each other and pairs that will definitely not. Select “Generate Collision Matrix” to compute the non-colliding geometry pairs of the model.
 
 The next option window is the virtual joints window. Here, you would configure a robot link with an external frame of reference that is fixed. In this particular case you can configure the world frame to the world frame as a virtual joint if you want the origin point of the robot arm to be the same as the URDF file.
 
-![moveit_setup_assistant_virtual_joints](assets/moveit_setup_assistant_virtual_joints.png)
+![moveit_setup_assistant_virtual_joints](/assets/images/moveit_setup_assistant_virtual_joints.png)
 
 The next window is the “Planning Groups” window. Here, you would configure the joint groups of the robot model. There are many ways to go about this, but one method is to create a kinetic chain of joints, given you are working with a serial manipulator arm. 
 
-![moveit_setup_assistant_planning_groups](assets/moveit_setup_assistant_planning_groups.png)
+![moveit_setup_assistant_planning_groups](/assets/images/moveit_setup_assistant_planning_groups.png)
 
 Select “Add Group”. Fill in a name for the planning group you are using. Next, select “Kinematic Solver”. The most common solver is the “kdl_kinematics_plugin/KDLKinematicsPlugin” option. Next, select the “Group Default Planner”. The most common planner is “RRTConnect”. The next step is to define your kinematic chain. Select “Add Kin. Chain” option. Given how you set up your URDF model, the chain of joints and linkages should be created and shown for you. All you have to do is to select the base link, which is the “world” link, and the tip link which is the “end_link/INPUT_INTERFACE” in this case. Afterwards, select “Save”. 
 
 NOTE: There are tutorials available online that go through the “Add Joints” method to create the planning group, which can be another viable configuration option to explore.
 
-![moveit_setup_assistant_kinematic_chain](assets/moveit_setup_assistant_planning_group_kinematic_chain.png)
+![moveit_setup_assistant_kinematic_chain](/assets/images/moveit_setup_assistant_planning_group_kinematic_chain.png)
 
 Moving onto “Robot Poses”, you can configure different preset positions of the robot. In the screenshot below, preset positions were made for when the serial manipulator arm is stretched out, compacted in, and in an intermediate position. Create however many preset poses you desire.
 
-![moveit_setup_assistant_robot_poses](assets/moveit_setup_assistant_robot_poses.png)
+![moveit_setup_assistant_robot_poses](/assets/images/moveit_setup_assistant_robot_poses.png)
 
 The next window is the “End Effectors” window. For this particular article, I will not go into the details of configuring an actuated end effector. Instead, this particular project opted to go for a simple end effector and as such configured a simple one through MoveIt. Essentially, the tip link configured in the kinetic chain portion of the setup was selected as the “Parent Link” of the end effector.
 
-![moveit_setup_assistant_end_effectors](assets/moveit_setup_assistant_end_effectors.png)
+![moveit_setup_assistant_end_effectors](/assets/images/moveit_setup_assistant_end_effectors.png)
 
 The “Passive Joints” section of the setup was autofilled, so we can skip the details of this window.
 
-![moveit_setup_assistant_passive_joints](assets/moveit_setup_assistant_passive_joints.png)
+![moveit_setup_assistant_passive_joints](/assets/images/moveit_setup_assistant_passive_joints.png)
 
 The next window “ROS Control” can be an important one. Here, you can configure a ROS controller to control the physical hardware of your robot. This can be important if you want the MoveIt pipeline to directly interface with your motors and actuators using different control schemes such as effort, velocity, or position controllers. In our case, we opted to use the simulation portion of the ROS controller, which is essentially a fake joint controller. 
 
-![moveit_setup_assistant_controllers](assets/moveit_setup_assistant_controllers.png)
+![moveit_setup_assistant_controllers](/assets/images/moveit_setup_assistant_controllers.png)
 
 The next window is the “Simulation” window. By selecting the “Generate URDF” option, you can generate replacement URDF code to input to your URDF file in order to have the model working on Gazebo, which is the ROS simulation environment. Simply copy and paste the selected code over to your URDF file code.
 
-![moveit_setup_assistant_simulation](assets/moveit_setup_assistant_simulation.png)
+![moveit_setup_assistant_simulation](/assets/images/moveit_setup_assistant_simulation.png)
 
 In the “3D perception” window, you can configure a point cloud or depth map topic to interface with MoveIt. Here, the Octomap plugin for MoveIt will look at this topic and configure obstacles within the environment, as shown in RViz. This is an important window if you want to configure dynamic obstacles for the robot to be aware of and avoid.
 
-![moveit_setup_assistant_perception](assets/moveit_setup_assistant_perception.png)
+![moveit_setup_assistant_perception](/assets/images/moveit_setup_assistant_perception.png)
 
 The next window is “Author Information” within which you would fill in your name and the email of the maintainer of this ROS MoveIt node.
 
-![moveit_setup_assistant_author_information](assets/moveit_setup_assistant_author_information.png)
+![moveit_setup_assistant_author_information](/assets/images/moveit_setup_assistant_author_information.png)
 
 Finally, within the “Configuration File” portion of the setup assistant, the GUI will drop all the configured files to a set folder location. If this is a first-time setup, normally you would like to check off all the selected file options. Otherwise, you may want to only drop the files that you have changed since the last setup instance. Specify a “Configuration Package Save Path” location and select “Generate Package”. Once that is completed, you can select “Exit Setup Assistant”.
 
-![moveit_setup_assistant_configuration_file](assets/moveit_setup_assistant_end.png)
+![moveit_setup_assistant_configuration_file](/assets/images/moveit_setup_assistant_end.png)
 
 
 ### Simulate URDF model through Rviz

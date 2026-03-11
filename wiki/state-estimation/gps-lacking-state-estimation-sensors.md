@@ -22,7 +22,7 @@ Ultrawideband positioning takes advantage of the communication pulses to sense d
 
 By using multiple stationary devices, a single or multiple mobile beacons can be tracked by combining ranges through trilateration. 
 
-![Example usage of a DWM1001 setup](assets/decawave_example_multi_anchor.png)
+![Example usage of a DWM1001 setup](/assets/images/decawave_example_multi_anchor.png)
 [Source](https://www.researchgate.net/profile/Teijo-Lehtonen/publication/281346001/figure/fig4/AS:284460038803456@1444831966619/DecaWave-UWB-localization-system-SDK-5.png)
 
 At the time of writing, one of the most common modules for UWB is the DWM1001. Since these modules are mass manufactured, they can be purchased very inexpensively and should be considered one of the most affordable options for positioning systems.
@@ -32,7 +32,7 @@ At the time of writing, one of the most common modules for UWB is the DWM1001. S
 Ultrasonic positioning works in a similar way to UWB, but rather than transitting frequencies at a very high frequency, the products instead rely on a combination of lower frquency communication pulses and beamforming. By using a sensor array on each device, they are able to claim a 2D positioning accuracy of +-2cm.
 
 
-![Example usage of a DWM1001 setup](assets/marvelmind_example.jpg)
+![Example usage of a DWM1001 setup](/assets/images/marvelmind_example.jpg)
 [Source](https://marvelmind.com/)
 
 As an important note, ultrasonic pulses are harmful to human hearing over an extended period of time and should not deployed around humans without ear protection.
@@ -41,7 +41,7 @@ As an important note, ultrasonic pulses are harmful to human hearing over an ext
 
 Total stations have an extended heritage in civil engineering, where they have been used to precisely survey worksites since the 1970s. The total station sends beams of light directly to a glass reflective prism, and uses the time-of-flight properties of the beam to measure distances. The robotic total station tracks it's calibration orientaiton to high precision, such that the measured distance can be converted into a high-precision 3D position mesaurement. Total stations, depending on the prism type and other factors, can accurate track with in millimeter range at up to 3.5km [Leica-Geosystems](file:///home/john/Downloads/Leica_Viva_TS16_DS-2.pdf).
 
-![Example usage of a Total Station in the Field](assets/leica_field_image.jpg)
+![Example usage of a Total Station in the Field](/assets/images/leica_field_image.jpg)
 [Source](https://leica-geosystems.com/)
 
 ## Key Factors to Consider

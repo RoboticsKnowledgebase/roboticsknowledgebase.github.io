@@ -98,8 +98,8 @@ from Frenet coordinates to the local vehicle frame in Cartesian coordinates is a
 Images and embedded video are supported.
 
 ![Path planning in frenet coordinates](assets/path_planning.jpg)
-![frenet path](assets/ref_path.png)
-![f_path](assets/f_path.png)
+![frenet path](/assets/images/ref_path.png)
+![f_path](/assets/images/f_path.png)
 ## Summary
 
 The given article describes in detail what is Frenet Frame and how robot motion planning is done. The importance and relevance of frenet frame with path planning in systems engineering is also highlighted in the given article. 

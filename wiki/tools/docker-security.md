@@ -88,7 +88,7 @@ whoami # Success!!
 
 ## Mitigation of Privilege Escalation
 
-![images/privesc.png](../../assets/images/privesc.png)
+![images/privesc.png](/assets/images/privesc.png)
 
 ## Exposed Docker Socket
 

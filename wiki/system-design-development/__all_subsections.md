@@ -11,7 +11,7 @@ To illustrate its importance imagine the following scenario:
 
 You are at the final integration steps of your project and something isn't working. You start by checking out the hardware and see Figure 1.
 
-![Cable Management Gone Wrong](assets/CableManagement-c5b3a.png)
+![Cable Management Gone Wrong](/assets/images/CableManagement-c5b3a.png)
 
 **Figure 1: Cable management gone wrong**
 
@@ -26,7 +26,7 @@ If this is your first time creating a wiring diagram for your system you will pr
 
 Note: in systems engineering you will be required to create a cyberphysical architecture for your system. This diagram may be similar, but they are still fundamentally different. Notice how here we are explicitly differentiating cables, and boards. We get more information from a cable management perspective this way. For example notice how, in **Figure 2**, cable 3 only has one plug. This tells us that Sensor 1 has an unremovable cable attached to it.
 
-![Wiring Managment](assets/CableManagement-b3a03.png)
+![Wiring Managment](/assets/images/CableManagement-b3a03.png)
 
 **Figure 2: Example wiring block diagram of 2 circuit card assembly boards and 1 sensor connected by three cables. Here the JX labels stand for the jacks on the different circuit boards and the PX stand for the plugs of the cables.**
 
@@ -35,7 +35,7 @@ Now that you have outlined all of the different boards and connections it is tim
 
 If you are defining your own connections it is time to make some cable wiring diagrams. You can imagine these diagrams as a zoomed in detailed picture of each of the cables in your wiring block diagram. Figure 3 shows an example cable wiring diagram. It is not necessary to get as detailed as Figure 3. In fact, I've used excel to create very effective wiring diagrams before. The most important objective of these diagrams is to understand the signals and wires on each cable. One more crucial detail highlighted in these diagrams is the length of each cable. Make sure you have a rough idea of how long each cable will be, keyword: rough. You may not be able to determine the exact length of your cable, but going through this exercise will make you start thinking about cable routing. At this step it is necessary to sit down with the mechanical designer of your system and discuss how your cables are physically getting from A to B.
 
-![Example Cable Wiring Diagram for a USB Cable](assets/CableManagement-654ae.png)
+![Example Cable Wiring Diagram for a USB Cable](/assets/images/CableManagement-654ae.png)
 
 **Figure 3: Example Cable wiring diagram for a USB cable**
 
@@ -91,7 +91,7 @@ If you do decide to use connectors that require crimps it is important that you 
 ### Grouping Wires
 Once you know what connector, wires, and crimps to use it is time to assemble the cable. For the most part this is straightforward, but there are some tricks that will make cable management later on easier. First, if you have any twisted pairs in your cable or want to group wires together without additional hardware, you can use the drill trick to make nice looking cables like **Figure 4**. A video of the Twisted Pair Drill Trick can be viewed [here](https://www.youtube.com/watch?v=uTJhrTTl-EE)
 
-![Twisted Wires Done Using a Drill](assets/CableManagement-6f4d5.png)
+![Twisted Wires Done Using a Drill](/assets/images/CableManagement-6f4d5.png)
 
 **Figure 4: Twisted wires done using a drill**
 
@@ -302,17 +302,17 @@ title: PCB Design Notes
 (electrolytic and non­electrolytic) for noise­reduction.
 - It is important to have proper LED indication  on the PCB (as shown in **Figure 1** and **Figure 2**) for testing and accountability. Use LED  indicators to ensure proper functioning of the board.
 
-![LED indication in schematic with noise reduction cap](assets/PCBDesignNotes-8fedc.png)
+![LED indication in schematic with noise reduction cap](/assets/images/PCBDesignNotes-8fedc.png)
 
 **Figure 1: LED indication in schematic with noise reduction cap**
 
-![Labeled Fuse and Zener­diode for Protection](assets/PCBDesignNotes-09baf.png)
+![Labeled Fuse and Zener­diode for Protection](/assets/images/PCBDesignNotes-09baf.png)
 
 **Figure 2: Labeled Fuse and Zener­diode for Protection**
 
 - You can add additional comments on schematic as shown in **Figure 3**, this helps to put information related to board  which is otherwise not explicit from the schematic.
 
-![Schematic with comments](assets/PCBDesignNotes-d5ba2.png)
+![Schematic with comments](/assets/images/PCBDesignNotes-d5ba2.png)
 
 **Figure 3: Schematic with comments**
 
@@ -326,7 +326,7 @@ As you get your board design ready, please keep in mind that you want to have so
 manufacturing process, some metal is going to be deposited inside each hole. This reduces the diameter of the hole, making it smaller than it was when it was drilled. As a rule of thumb, add 8­12mils to the nominal round lead diameter, and round up if you need to match the diameter to a particular drill size list. Keep in mind that a bit bigger is better than too small; you don't want to find yourself filing a lead that is too big (you
 cannot make the hole bigger, because it would remove the through­hole metal). Double­check and make sure that none of the holes is smaller than 0.015” diameter, and that neither tracks nor clearances between tracks/pads/planes are smaller than 0.006”.
 
-![Variable Track Width](assets/PCBDesignNotes-05e85.png)
+![Variable Track Width](/assets/images/PCBDesignNotes-05e85.png)
 
 **Figure 4: Variable Track Width**
 
@@ -420,22 +420,22 @@ One of the most useful views is the operational. In practice, you will rarely go
 
 #### Level 1
 In this level, one can usually put the Use Case. While technically it belongs in the Capability View or All View, since we're otherwise not using CVs (unless you start modeling at the very beginning and use the CV for requirements). In the Use Case, put the Actors (the user, obviously, and the highest level subsystems you'd normally see in a WBS), and then what information flows between them. This would be the highest level information packet containing all other information flow we see on the level 2 Activity Diagrams.
-![SIDD colorless OV 1](assets/SubsystemInterfaceModeling-8748c.png)
+![SIDD colorless OV 1](/assets/images/SubsystemInterfaceModeling-8748c.png)
 
 #### Level 2
 This is the meat of the Interface Design Description, where you can flow out all the things the system might do. Rather than go into a lot of operational or capability viewpoints, go straight into activity diagrams since the system is relatively small. Each box at the first indenture of level 2.
 
 >Use "indentures" of activity diagrams since the other "levels" of OV are technically something else, signified by letters like OV-2b or OV-2c) is a high level activity (see below for the highest level view of MRSD 2015 "Dock In Piece" project).
 
-![SIDD colorless OV 2 Dock Quadcopter](assets/SubsystemInterfaceModeling-fb765.png)
+![SIDD colorless OV 2 Dock Quadcopter](/assets/images/SubsystemInterfaceModeling-fb765.png)
 
 As you can see from this chart, the highest level activities of docking the quadcopter are things like 'take off' and 'rendezvous with docking face', which have lines between to signify the temporal flow, and labels to signify what information needs to pass in order to make it happen. Most important are the labels which cross swimlanes, because that's information that will have to be packaged and sent from one subsystem to another. At this level the swimlanes are the actors and high level subsystems, but if we go a level down, we see subsystems within subsystems (the system-of-systems concept made manifest).
 
-![SIDD-colorless-OV-2b Rendezvous with Docking Face](assets/SubsystemInterfaceModeling-4e816.png)
+![SIDD-colorless-OV-2b Rendezvous with Docking Face](/assets/images/SubsystemInterfaceModeling-4e816.png)
 
 The first three swimlanes from the left are subsystems of the quadcopter while the final is crossing to/from the Palantir.
 
-![SIDD-colorless-OV-2a Determine Docking Possibility](assets/SubsystemInterfaceModeling-8e94f.png)
+![SIDD-colorless-OV-2a Determine Docking Possibility](/assets/images/SubsystemInterfaceModeling-8e94f.png)
 
 Here all four swimlanes are different subsystems (though the Palantir is technically part of the dock, it is quite separate physically and informationally), but support the higher level activity of docking)
 
@@ -443,7 +443,7 @@ Here all four swimlanes are different subsystems (though the Palantir is technic
 #### Level 3
 OV-2c is where intrasystem activities show up in the architecture. This indenture shows information flowing and activities that occur entirely on one system, sometimes with a single information flow leaving the internal swimlanes to some external box or all flowing to a single box which has the same name as a box in an indenture above, signifying what information and actions flow inside a system to make that one action occur - similar how how an OV-2b is often the expanded version of a single box in the OV-2a indenture. We cancelled all of our OV-2c diagrams early on and by the time the new system was finalized, we didn't have time to model, but this is what it looked like when we had the quadcopter doing localization with an onboard camera.
 
-![SIDD-colorless-CANCELED OV-2c Localize Quadcopter](assets/SubsystemInterfaceModeling-73d8e.png)
+![SIDD-colorless-CANCELED OV-2c Localize Quadcopter](/assets/images/SubsystemInterfaceModeling-73d8e.png)
 
 All swimlanes are of systems internal to the quadcopter subsystem, and eventually flow out to it keeping a fixed hover point.
 
@@ -453,7 +453,7 @@ If you were modeling from the very beginning, capability and to some extent acti
 ### Data and Information View
 You can always dive straight into DIV-2 rather than DIV-1, but if you start early with modeling a DIV-1 is useful. We'll cover the second level here. Each line in the activity diagram had a name (or should have). That was a data flow, and these data flows naturally have information. In the DIV-2, you show what this information is.
 
-![SIDD-colorless-DIV-2 DockMotionDetails](assets/SubsystemInterfaceModeling-7097d.png)
+![SIDD-colorless-DIV-2 DockMotionDetails](/assets/images/SubsystemInterfaceModeling-7097d.png)
 
 It may seem trivial at first, but these views show not just information, but their type, names, and what larger information boxes they flow into. This can make integration much easier as everyone knows what every subsystem needs from every other subsystem and if the naming conventions are kept to, there is no confusion in how to get that information.
 

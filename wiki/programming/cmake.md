@@ -10,7 +10,7 @@ Writing a Makefile can be a complicated task, especially for larger projects. CM
 
 When using CMake, it is common and accepted practice to organize a project folder according to a specific folder structure, as seen in the image below.
 
-![CMake File Structure](assets/cmake_file_structure.png)
+![CMake File Structure](/assets/images/cmake_file_structure.png)
 
 - **bin:** contains the executable files which can be run on the computer.
 - **build:** contains the makefiles which are required to build the project.

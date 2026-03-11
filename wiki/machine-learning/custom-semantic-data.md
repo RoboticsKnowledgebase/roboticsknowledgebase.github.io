@@ -24,7 +24,7 @@ def encode_segmap(self, mask):
     return mask[:, :, 0] # target should be h x w, no depth
 ```
 
-![mask annotation](assets/mask_annotation.png)
+![mask annotation](/assets/images/mask_annotation.png)
 
 ## Installing gimp
 copy and paste the following command in your terminal to install gimp  
@@ -40,17 +40,17 @@ Navigate to  file->open botton on the top left to open a rgb image that you'd li
 ### Step 2 Create mask
 Navigate to layer->new layer to create a mask over your image. Choose Foreground color will create a black layer over your image. You can also change the foreground color on the left panel before you create a new layer, this will give you a layer with different color (which would corresponds to background in this tutorial)
 
-![mask annotation](assets/new_layer.png)
+![mask annotation](/assets/images/new_layer.png)
 
 After creating new layer, you will see your newly created layer on the right panel. Click on the eye symbol and make the layer invisible.
 
-![manage layers](assets/manage_layers.png)
+![manage layers](/assets/images/manage_layers.png)
 
 ### Step 3 Creating annotations
 Select the free select tool on the left panel. **IMPORTANT:** Uncheck the anti-aliasing option, otherwise non-solid colors will appear at the edge of your annotations. Select the region of interest, and then use bucket fill tool to fill in color annotation. Click on the eye symbol again on the right panel will show you the annotated layer.
 
-![free select tool](assets/select_tool.png)
-![create annotation](assets/bucket_fill.png)
+![free select tool](/assets/images/select_tool.png)
+![create annotation](/assets/images/bucket_fill.png)
 
 ### Step 4 Saving files
 Hit ctrl+E to export your layer as an png image, which is your label for this image. Hit ctrl+S to save the gimp file as .xcf file. This step is important if you want to modify your annotation in the future.

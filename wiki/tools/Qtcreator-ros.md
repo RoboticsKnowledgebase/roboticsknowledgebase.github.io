@@ -70,19 +70,19 @@ This section will guide you to create your first simple Hello-World Qt program
 
 2. Create new project using `File -> New File or Project -> Application -> Qt Widgets Application`
 
-   ![](assets/Qtcreator-ros-new-project.png)
+   ![](/assets/images/Qtcreator-ros-new-project.png)
 
 3. Name your project/application
 
-   ![](assets/Qtcreator-ros-new-project-menu.png)
+   ![](/assets/images/Qtcreator-ros-new-project-menu.png)
 
 4. If you installed correctly, the Kit will be detected automatically, if not this [link](https://stackoverflow.com/questions/26499404/qtcreator-no-valid-kits-found) might be useful
 
-   ![](assets/Qtcreator-ros-new-project-kit.png)
+   ![](/assets/images/Qtcreator-ros-new-project-kit.png)
 
 5. Name your main class. Although this is not the main function, it acts as the entry point of the application
 
-   ![](assets/Qtcreator-ros-new-project-class-menu.png)
+   ![](/assets/images/Qtcreator-ros-new-project-class-menu.png)
 
 6. Select finish
 
@@ -90,11 +90,11 @@ This section will guide you to create your first simple Hello-World Qt program
 
 8. Click the green arrow at the bottom left side or use `Ctrl + R` to build and run. You should see a blank application window like this one
 
-   ![](assets/Qtcreator-ros-new-project-run.png)
+   ![](/assets/images/Qtcreator-ros-new-project-run.png)
 
 9. Close the program by clicking on the red cross on the `MainWindow` window. and navigate to the `mainwindow.ui` file under `Forms` on the left menu. It will automatically switch to the `Design` tab and open this UI editor tool
 
-   ![](assets/Qtcreator-ros-new-project-design.png)
+   ![](/assets/images/Qtcreator-ros-new-project-design.png)
 
 10. The left menu is now switched to the basic UI widgets available. You can put them through drag and drop. Try to drag and drop these 4 types of widgets:
 
@@ -103,23 +103,23 @@ This section will guide you to create your first simple Hello-World Qt program
     3. `Display Widgets -> Label`
     4. `Display Widgets -> Text Browser`
 
-    ![](assets/Qtcreator-ros-new-project-ui-elements.png)
+    ![](/assets/images/Qtcreator-ros-new-project-ui-elements.png)
 
 11. Some of the widgets have text that is displayed on them such as the `Label` and `Push Button`, you can double-left-click on them and edit the display text 
 
-    ![](assets/Qtcreator-ros-new-project-edit-text.png)
+    ![](/assets/images/Qtcreator-ros-new-project-edit-text.png)
 
 12. On the right menu you should see a summary of all the objects and widgets that you have created. Here we can see the 4 widgets we added. An important distinction here is that the left column is the name of the object (unique entity) and the right column is the class name (not unique). Hence, you can have multiple labels, but these are based on `QLabel` class
 
-    ![](assets/Qtcreator-ros-new-project-ui-obj.png)
+    ![](/assets/images/Qtcreator-ros-new-project-ui-obj.png)
 
 13. To drive the point home, try to rename the objects. It is advisable to give it meaningful name as you would name a variable. Also, remember to save often with `Ctrl + S`
 
-    ![](assets/Qtcreator-ros-new-project-ui-obj-rename.png)
+    ![](/assets/images/Qtcreator-ros-new-project-ui-obj-rename.png)
 
 14. Run the program again `Ctrl + R` and you should see your widget. Try to type on the line edit widget
 
-    ![](assets/Qtcreator-ros-new-project-run2.png)
+    ![](/assets/images/Qtcreator-ros-new-project-run2.png)
 
 # Qt communication framework
 

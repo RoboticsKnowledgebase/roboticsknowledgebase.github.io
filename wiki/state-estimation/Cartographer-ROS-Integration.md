@@ -20,7 +20,7 @@ The detailed explanation of the Cartographer's algorithm and tuning can be found
 
 One of Cartographer's strength is that its 2D SLAM is aware of the 3D world (it will project a titled LiDAR scan to the horizontal axis). This is in contrast to gmapping which requires the LaserScan to always be perfectly level and horizontal. As seen below, the tracking frame (base_link) is not level, causing the LiDAR LaserScan to be tilted, but Cartographer takes the tilt into account.
 
-![](assets/carto-1.png)
+![](/assets/images/carto-1.png)
 
 # Installation
 
@@ -66,7 +66,7 @@ You need to provide a static TF transform from `base_link` to your imu frame and
 
 Example shown below
 
-![](assets/carto-2.png)
+![](/assets/images/carto-2.png)
 
 An important point is that `base_link` needs to be **coincident** with `imu_link` (both must have the exact same position and orientation). If you need `base_link` for navigational purposes, I recommend creating one more child frame from`base_link`, e.g. `nav_link` that is at the appropriate location on the robot for navigation, e.g. centre of the wheels and at the axis of rotation.
 

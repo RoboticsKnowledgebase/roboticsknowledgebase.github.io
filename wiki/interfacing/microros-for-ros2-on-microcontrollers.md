@@ -14,7 +14,7 @@ title: micro-ROS for ROS2 on Microcontrollers
 ## Conceptual Overview
 micro-ROS consists of a `node` running on the microcontroller and an `agent` running on the host computer. The `agent` handles the interface between the `node` and the rest of the ROS2 stack. This allows the ROS2 stack and microcontroller `node` to publish and subscribe to each other as if the `node` was like any other ROS2 node. Great! The hardware interface is most commonly a serial connection, such as USB. This tutorial will walk through how to prepare the microcontroller and host computer environments for the `node` and `agent` respectively, and then show some examples for how to test the connection and make a first `node` on the microcontroller. 
 
-![Simplified micro-ROS architecture](assets/images/micro-ros-architecture.png)
+![Simplified micro-ROS architecture](/assets/images/micro-ros-architecture.png)
 
 ## Installation Overview
 
@@ -154,7 +154,7 @@ This container should be some variant of Linux OS with a ROS2 installation. You 
 exit
 ```
 
-![Example steps of running micro-ROS Docker image](assets/images/micro-ros-docker.png)
+![Example steps of running micro-ROS Docker image](/assets/images/micro-ros-docker.png)
 
 
 7. Finally, don't forget to stop the container and remove any unnecessary build cache. You can do so by:

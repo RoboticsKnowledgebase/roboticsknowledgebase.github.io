@@ -4,7 +4,7 @@ title: Choose a Robot
 mermaid: true
 ---
 
-![RobotOverview](/assets/images/robotics_project_guide/robot_overview.png)
+![RobotOverview](/assets/images/robot_overview.png)
 [Image source](https://www.machinedesign.com/markets/robotics/article/21835000/whats-the-difference-between-industrial-robots)
 
 Truly, there are so many robots that you can choose from to achieve your goal. Once you choose what platform you will be using for your project, it's now time to choose the specific platform. 
@@ -49,7 +49,7 @@ Despite their advantages, quadrotors come with notable disadvantages. Their limi
 
 **Popular Platforms:**
 
-![Quadrotor Platforms](/assets/images/robotics_project_guide/quadrotors_all.png)
+![Quadrotor Platforms](/assets/images/quadrotors_all.png)
 
 Without getting into the nitty-gritty details, the basic idea is - if you want to have an extremely customized quadrotor, you should use the PX4 Autopilot Platform. PX4 is an open-source flight control system that provides unparalleled flexibility, allowing users to design and implement custom hardware configurations, integrate specialized sensors, and modify flight algorithms. Its modular architecture supports a wide range of hardware, from small indoor drones to large outdoor quadrotors, making it adaptable to various applications.
 
@@ -133,7 +133,7 @@ Compared to wheeled robots, quadrupeds are generally slower but more versatile i
 
 **Popular Platforms:**
 
-![Quadruped Platforms](/assets/images/robotics_project_guide/quadrupeds_all.png)
+![Quadruped Platforms](/assets/images/quadrupeds_all.png)
 
 1. **Unitree Robots:**
    - **Unitree Go1 EDU:** A compact and affordable quadruped ideal for education and research, offering advanced locomotion capabilities and ROS support. [Unitree Go1](https://www.unitree.com/products/go1)
@@ -192,7 +192,7 @@ Although wheeled robots are primarily suited to flat, obstacle-free environments
 
 **Popular Platforms:**
 
-![Wheeled Robots](/assets/images/robotics_project_guide/wheeled_robots_all.png)
+![Wheeled Robots](/assets/images/wheeled_robots_all.png)
 
 1. **TurtleBot Series:**
    - **TurtleBot3 Burger:** A compact, affordable, and programmable ROS-based mobile robot designed for education and research. It features modularity and open-source software, allowing for extensive customization.
@@ -238,7 +238,7 @@ Fixed manipulators are stationary robotic arms designed for tasks such as assemb
 
 **Popular Platforms:**
 
-![Manipulator Robots](/assets/images/robotics_project_guide/manipulators_all.png)
+![Manipulator Robots](/assets/images/manipulators_all.png)
 
 1. **Kinova Gen3 (7 DoF):**
    - **Degrees of Freedom:** 7
