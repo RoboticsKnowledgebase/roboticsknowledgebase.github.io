@@ -14,14 +14,6 @@ In the context of robotic task planning, Convex Optimization refers to the proce
 
 In this tutorial, we demonstrate how to implement a Linear Programming solver to optimize the movement of lunar regolith from source piles to target craters. We will walk through the installation of Google OR-Tools, the formulation of the mathematical model, and the C++ code required to solve it. By the end of this guide, you will be able to set up your own optimization pipeline for resource allocation or path planning tasks.
 
-<!-- This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
-
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
-
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
-
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study). -->
-
 ## Convex Optimization
 
 Before diving into code, it is vital to understand the mathematical structure GLOP expects. A specific and highly useful subset of convex optimization is Linear Programming (LP). In an LP problem, both the objective function and all constraints are linear equations.
