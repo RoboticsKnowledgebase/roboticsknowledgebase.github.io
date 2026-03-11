@@ -23,10 +23,13 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
 
+- **[Google Linear Optimization Package (GLOP)](/wiki/planning/glop/)**
+  Explains how to use the Google Linear Optimization Package (GLOP) in C++ to solve robotic task planning problems as convex optimization tasks. Includes a case study from the Lunar ROADSTER project.
+
 - **[Trajectory Planning in the Frenet Space](/wiki/planning/frenet-frame-planning/)**
   Explains Frenet-frame trajectory planning, useful for structured environments like highways. Includes algorithmic steps, transformation techniques, and advantages over Cartesian coordinates.
 
-- **[Move Base Flex](/wiki/planning/move_base_flex/)**
+- **[Move Base Flex](/wiki/planning/move-base-flex/)**
   A comprehensive guide to the ROS-based Move Base Flex navigation stack. Covers its architecture, plugin implementation, and customization for 2.5D/3D maps or custom planners.
 
 - **[Multi-Robot Navigation Stack Design](/wiki/planning/multi-robot-planning/)**

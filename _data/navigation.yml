@@ -396,6 +396,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: Google Linear Optimization Package (GLOP) 
+        url: /wiki/planning/glop/
       - title: Advanced MoveIt usage for Manipulator Motion Planning
         url: /wiki/planning/advanced-moveit-manipulator-planning/
 # Main links appear in the header.
