@@ -255,11 +255,11 @@ For deployment guidance, we recommend examining FALCON's sim2real pipeline. Toge
 
 ## See Also
 
-1. [Unitree Go1](../../common-platforms/unitree-go1.md)
+1. [Unitree Go1](/wiki/common-platforms/unitree-go1/)
 
 ## Further Reading
 
-1. Concept of thinking systems in human cognition [webpage](assets/system1system2.png)
+1. [Concept of thinking systems in human cognition](/wiki/machine-learning/assets/system1system2.png)
 2. Figure AI's robot sorting packages [youtube](https://www.youtube.com/watch?v=lkc2y0yb89U&t=70s)
 3. 1X performing human-like long-horizon tasks [youtube](https://www.youtube.com/watch?v=uVcBa6NXAbk)
 4. Sunday Robotics performing distinct household tasks [youtube](https://www.youtube.com/watch?v=jjOfpsMRhL4)
