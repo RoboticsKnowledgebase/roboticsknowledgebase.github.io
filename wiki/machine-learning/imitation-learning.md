@@ -26,7 +26,7 @@ The most foundational IL method is Behavior Cloning (BC). In BC, a supervised le
 To address this limitation, DAgger-style iterative methods expand the dataset by repeatedly allowing the robot to act, querying the expert for corrections, and aggregating these new samples. This produces a training distribution that more closely matches what the robot will encounter at deployment time, significantly improving robustness.
 Modern IL for humanoid robots also relies on rich, multi-modal representations. 
 
-![The workings of Diffusion Policy](assets/diffusion_policy_diagram.png)
+![The workings of Diffusion Policy](/wiki/machine-learning/assets/diffusion_policy_diagram.png)
 
 image [source](https://arxiv.org/pdf/2303.04137)
 
@@ -206,7 +206,7 @@ A useful conceptual framing of this pipeline is the **System-1 / System-2 hierar
 
 The ability to process large volumes of data and generate responses swiftly mirrors a type of human cognition described by psychologist Daniel Kahneman in his book “Thinking, Fast and Slow”. Kahneman identifies two types of thinking systems in human cognition: System 1 and System 2 (see Figure below).
 
-![Concept of thinking systems in human cognition](assets/system1system2.png)
+![Concept of thinking systems in human cognition](/wiki/machine-learning/assets/system1system2.png)
 
 image source: Nguyen Ha Thanh Bridging Generative Models and System 1 with System 2: [link](https://blog.nguyenthanh.asia/bridging-generative-models-and-system-1-with-system-2-the-role-of-logical-programming-in-ai-58ca105c2f)
 
@@ -216,7 +216,7 @@ Whereas System-1 executes moment-to-moment motor control, System-2 provides **pl
 
 The figure below demonstrates NVIDIA GR00T’s System1-System2 architecture:
 
-![NVIDIA Isaac GR00T N1 Model Architecture](assets/Gr00t.png)
+![NVIDIA Isaac GR00T N1 Model Architecture](/wiki/machine-learning/assets/Gr00t.png)
 
 image source: [GR00T paper](https://arxiv.org/pdf/2503.14734)
 
