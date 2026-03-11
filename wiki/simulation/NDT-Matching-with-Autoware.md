@@ -50,5 +50,5 @@ Then you will see the mapping running really quickly in one terminal and the num
 Once you have finished creating the map, save it in your desired location with either a downsampling (to reduce the file size), or full/original quality output, by using the “app” tab in the NDT_Mapping node in the Computing tab. It will save as a .pcd file that can either be viewed using PCL_Viewer (a PCL tool) or RViz with Autoware.
 The image below shows a map we made of NSH B-level on 29th January, 2020. To view a map in RViz, load Autoware, initialize the point cloud in the Mapping tab, and click on the TF button for a default TF. Then you should be able to launch RViz and visualize the point_map as shown below. You can change the point colours and axis colours to “intensity” and the sizes/transparencies as well.
 
-![PCD of B-Level RI](/assets/images/autoware_blevel.png)
+![PCD of B-Level RI](/assets/images/simulation/autoware_blevel.png)
 
