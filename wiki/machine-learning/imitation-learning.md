@@ -130,11 +130,9 @@ python teleop_hand_and_arm.py --record
         
         https://192.168.168.231:8012/?ws=wss://192.168.168.231:8012
         
-        > Note: This IP address should match the
-        > 
-        > 
-        > **host machine**
-        > 
+**Note:** This IP address should match the **host machine**.
+{: .notice--info}
+        
     3. Click **Enter VR** and **Allow** to start the VR session.
     4. You should now see the robot’s first-person view in Apple Vision Pro.
 3. Once VR is ready, Operator B presses **r** in the teleop terminal to start the program.
