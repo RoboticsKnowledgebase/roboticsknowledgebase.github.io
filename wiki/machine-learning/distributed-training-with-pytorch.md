@@ -14,7 +14,7 @@ Deep learning applications, being fundamentally data-driven, require substantial
 ### The Multi-GPU Solution
 When multiple smaller-VRAM GPUs are configured in a daisy-chain arrangement on a single motherboard or across a network (such as in a cluster), they can be utilized collectively within a single training pipeline. PyTorch provides built-in functionality for training models, accumulating gradients, and performing backpropagation across multiple GPU units.
 ### Purpose of This Tutorial
-While PyTorch offers multi-GPU capabilities, implementing these features effectively on specific hardware configurations presents significant challenges. This tutorial provides step-by-step guidance for configuring and optimizing distributed GPU training for deep learning applications in robotics. For guidance on data curation methodologies, please refer to our "Machine Learning" section within this wiki.
+While PyTorch offers multi-GPU capabilities, implementing these features effectively on specific hardware configurations presents significant challenges. This tutorial provides step-by-step guidance for configuring and optimizing distributed GPU training for deep learning applications in robotics. For guidance on data curation methodologies, please refer to our [Machine Learning](/wiki/machine-learning/) section within this wiki.
 
 ## Introduction:
 
@@ -262,7 +262,7 @@ You have been introduced to the concept of distributed training and when to use 
 
 ### See Also
 Dataset curation for semantic segmentation:
-- [Custom data-set for segmentation](https://roboticsknowledgebase.com/wiki/machine-learning/custom-semantic-data/)
+- [Custom data-set for segmentation](/wiki/machine-learning/custom-semantic-data/)
 
 ## Further Reading
 You may come across `DataParallel`, we have covered only `DistributedDataParallel`. 
