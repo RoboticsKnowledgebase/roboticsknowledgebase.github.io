@@ -10,7 +10,7 @@ title: Advanced MoveIt usage for Manipulator Motion Planning
 # and used in other parts of the site.
 ---
 
-# Motivation
+## Motivation
 
 Every robotics project with manipulator arms requires careful selection of motion planning components, and a good understanding of when to use what planning approach. This guide intends to show our process for implementing motion planning for dual XArm 7 manipulators in our project, VADER.
 
@@ -20,7 +20,7 @@ Every robotics project with manipulator arms requires careful selection of motio
 
 * Finally, we describe our testing routines for the motion planner to ensure overall success and reason about common failure modes.
 
-## Planner Usage
+### Planner Usage
 
 The primary task of our dual-manipulator project is to harvest and store green peppers autonomously. We have a left arm with a cutter attachment, and a right arm with a gripper attachment. The overall harvesting sequence requires the following movements of the manipulators:
 
@@ -34,7 +34,7 @@ The primary task of our dual-manipulator project is to harvest and store green p
 
 The home pose of both arms, as well as the gripper pose when storing the pepper, are fixed. The coarse and fine pose estimates of the target pepper depends on the placement of the system, and are therefore fairly variable.
 
-# RRTStar vs. Cartesian Planner
+## RRTStar vs. Cartesian Planner
 
 A mixture of these two planners are used during our harvesting process along different stages.
 
@@ -51,11 +51,11 @@ The Cartesian planner plans in a straight line from A to B, and computes the joi
 
 We will talk about each of these planners in greater detail below.
 
-# RRTStar settings and custom cost objectives
+## RRTStar settings and custom cost objectives
 
 The `ompl_planning.yaml` file is where the planner settings are derived from - but that's not all you can specify! The best reference for all the available planner parameters are available from their source code [HERE](https://ompl.kavrakilab.org/RRTstar_8h_source.html), with plenty of default values that aren't shown in the configuration file. Even if your use case doesn't concern as many special settings as this covers, it is helpful to be aware of extra settings not present in the files by default.
 
-## Creating a custom optimization objective for MoveIt
+### Creating a custom optimization objective for MoveIt
 
 We wanted to implement our own cost objective function instead of the default minimize-path-length option. To define a custom objective for RRT (or for any planner), extend the `OptimizationObjective` class with your logic, where the motion cost between two states (joint configurations) is set.
 
@@ -65,7 +65,7 @@ To create a task-space cost function, we fetched the Denavit-Hartenburg paramete
 
 Finally, the `VADERCustomObjective` class is an instance of the `MultiOptimizationObjective` class from OMPL, which uses a weighted combination of different optimization classes. We can now use this objective in place of the default `PathLengthOptimizationObjective` (or, better yet, add the path length objective as one of the weighted sum classes in your custom objective).
 
-## Using a custom objective
+### Using a custom objective
 
 After building this objective, using it in your planner through MoveIt requires some changes to MoveIt's source code. This is because it takes an if-else list of acceptable objectives, and you have to add your own option directed at your custom class. Fork your copy of MoveIt, and modify `model_based_planning_context.cpp` and refer to [HERE](https://github.com/VADER-CMU/moveit/blob/master/moveit_planners/ompl/ompl_interface/src/model_based_planning_context.cpp#L326-L331) for our changes.
 
@@ -86,7 +86,7 @@ xarm7:
 
 The efficacy of the multi optimization objective depends on your weighted sum of objectives, among other factors, but now you have full control over your desired behavior of the RRT planner!
 
-# Planning in Cartesian space
+## Planning in Cartesian space
 
 Besides RRT, Cartesian space planning can also be done in native MoveIt with `move_group.computeCartesianPath()`. You can specify just a goal pose, or an entire preset vector of waypoints, and it outputs a trajectory and the resulting 'fraction' of the path covered by the plan - in general, any fraction lower than 1.0 indicates planning failure, since it wasn't able to account for the full motion.
 
@@ -96,7 +96,7 @@ A few things to be aware when using the Cartesian planner are:
 
 * If you are using intermediate waypoints, use `tf::Quaternion::slerp()` to interpolate between rotations by a ratio.
 
-# Testing, testing, testing
+## Testing, testing, testing
 
 To help in testing the robustness and failure modes of our planning and state machine subsystems, we created a Simulation Director system to test the entire system (minus Perception parts) in an RViz/Gazebo simulation. 
 
@@ -106,6 +106,6 @@ For each simulated run, a randomized pepper ground truth pose is generated, and 
 
 This helped us quantify exactly how the overall system may fail due to lack of reachability for either arms, and how to position our platform in front of peppers during the Fall Validation Demo.
 
-# Conclusion
+## Conclusion
 
 With the use of a combination of the two planners, as well as repeated testing, we were able to create a robust planning subsystem for our dual-armed system. We hope our findings are useful for future teams using MoveIt for articulated arms!

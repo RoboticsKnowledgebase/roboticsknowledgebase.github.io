@@ -10,7 +10,7 @@ title: Gazebo Classic Simulation of Graspable and Breakable Objects
 # and used in other parts of the site.
 ---
 
-# Motivation 
+## Motivation 
 
 In order to fulfill our SVD demonstration requirements, a simulator was required to test out bimanual manipulation due to the lack of a second physical arm. While an out-of-the-box solution for a Gazebo Classic simulator is already provided by the xarm-ros repository, which additionally provided the option of attaching one of their officially supported end effectors to the end effector of a single simulated arm, several functionalities were required that needed to be addressed:
 
@@ -20,7 +20,7 @@ In order to fulfill our SVD demonstration requirements, a simulator was required
 
 * The pepper should be robustly grasped by the gripper end effector and not cause physics engine glitches or randomly fall from the hand. 
 
-## Alternatives 
+### Alternatives 
 
 Our team had several choices to start exploring:
 
