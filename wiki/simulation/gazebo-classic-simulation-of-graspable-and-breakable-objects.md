@@ -32,7 +32,7 @@ Our team had several choices to start exploring:
 
 ## Development Journey
 
-First of all, the end effectors had to be included in the scene and attached to the arms, and to do this, we leveraged the Solidworks to URDF extension (https://wiki.ros.org/sw_urdf_exporter) to export our CAD assembly into an URDF file. The documentation to do this is available at (https://www.notion.so/Turning-Assemblies-into-URDF-for-RViz-Gazebo-1b6cedb4810780728bdec28add6a1891?pvs=4).
+First of all, the end effectors had to be included in the scene and attached to the arms, and to do this, we leveraged the [Solidworks to URDF extension](https://wiki.ros.org/sw_urdf_exporter) to export our CAD assembly into an URDF file. The documentation to do this is available at [this Notion guide](https://www.notion.so/Turning-Assemblies-into-URDF-for-RViz-Gazebo-1b6cedb4810780728bdec28add6a1891?pvs=4).
 
  In short, the assembly was significantly simplified, a base link (where the end effector attaches to the arm) is specified, revolute joints were defined and tested, and the files were exported (URDF and STL).
 
@@ -72,7 +72,7 @@ After some research, a native plugin called libBreakableJointPlugin was found, w
     </joint>
 ```
   
- Secondly, referring to the existing code in xarm_ros, a third-party library called libgazebo_grasp_fix was found (https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin), which fixes the object to the gripper given threshold conditions and lets go of the object when the force applied on the object is less than a threshold. This allowed the specification of multiple links (in our case, the gripper fingers and base) to be considered, along with some other options:
+ Secondly, referring to the existing code in xarm_ros, a third-party library called [libgazebo_grasp_fix](https://github.com/JenniferBuehler/gazebo-pkgs/wiki/The-Gazebo-grasp-fix-plugin) was found, which fixes the object to the gripper given threshold conditions and lets go of the object when the force applied on the object is less than a threshold. This allowed the specification of multiple links (in our case, the gripper fingers and base) to be considered, along with some other options:
 
 ```xml
 <xacro:macro name="vader_gripper_grasp_fix" params="prefix:='' arm_name:='xarm' palm_link:='link_base'">
@@ -99,4 +99,4 @@ After some research, a native plugin called libBreakableJointPlugin was found, w
 
 ## Conclusion 
 
-With these plugins and a large amount of infrastructure work, Gazebo Classic was successfully configured to simulate a breakable pepper, import URDFs of both end effectors, and allow stable grasp of the pepper in the gripper hand. See our teaser (https://youtu.be/Uqwh7hMD_l8?si=i2ckLbr7Mejvx8_g&t=135) for a demonstration of the results!
+With these plugins and a large amount of infrastructure work, Gazebo Classic was successfully configured to simulate a breakable pepper, import URDFs of both end effectors, and allow stable grasp of the pepper in the gripper hand. See [our teaser](https://youtu.be/Uqwh7hMD_l8?si=i2ckLbr7Mejvx8_g&t=135) for a demonstration of the results!
