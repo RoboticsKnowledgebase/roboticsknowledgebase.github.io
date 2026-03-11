@@ -74,11 +74,11 @@ For each dataset, write down:
 
 Below is the full pipeline we used to collect, convert, and transfer data for IL on the Unitree G1 using Apple Vision Pro teleoperation and a LeRobot-style dataset for GR00T-based training.
 
-### **Data Collection**
+### Data Collection
 
 **Repo:** [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate)
 
-### **1. Start the image server on the robot**
+### 1. Start the image server on the robot
 
 SSH into the G1’s onboard computer and launch the RealSense image server:
 
@@ -106,7 +106,7 @@ python image_client.py
 
 If everything is working, you should see streamed images from the robot’s head camera on the host.
 
-### **Launch the AVP teleoperation**
+### Launch the AVP teleoperation
 
 1. It’s best to have **two operators**:
     - **Operator A:** wears Apple Vision Pro and teleoperates.
@@ -148,7 +148,7 @@ python teleop_hand_and_arm.py --record
 
 **Repo:** [unitree_IL_lerobot](https://github.com/YifuYuan/unitree_IL_lerobot_nissan.git)
 
-### **1. Sort and rename raw data folders**
+### 1. Sort and rename raw data folders
 
 Use the utility script to standardize and clean your data folder structure.
 
@@ -160,7 +160,7 @@ python unitree_lerobot/utils/sort_and_rename_folders.py \
     --data_dir $HOME/datasets/task_name
 ```
 
-### **2. Convert Unitree JSON dataset to LeRobot format**
+### 2. Convert Unitree JSON dataset to LeRobot format
 
 Convert the raw Unitree JSON logs into a LeRobot-compatible dataset. This will optionally push the dataset to the Hugging Face Hub.
 
