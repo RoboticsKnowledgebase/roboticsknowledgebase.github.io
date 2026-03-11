@@ -11,7 +11,7 @@ This article targets roboticists who want to use Vision Pro as an interaction an
 
 ### Scenarios and Goals
 - An operator wears Vision Pro and remotely controls a mobile robot or manipulator using head pose and hand joint data.
-- Simultaneously record high-quality human demonstrations for downstream policy learning or imitation learning.
+- Simultaneously record high-quality human demonstrations for downstream policy learning or [imitation learning](/wiki/machine-learning/imitation-learning/).
 
 ### System Architecture (schematic)
 ```
