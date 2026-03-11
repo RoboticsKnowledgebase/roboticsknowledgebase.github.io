@@ -11,9 +11,9 @@ title: Distributed Training With PyTorch Tutorial
 ---
 
 Deep learning applications, being fundamentally data-driven, require substantial datasets for effective training. In 2025, the robotics field has widely adopted deep learning technologies, particularly for vision systems that enable semantic understanding of the environment in which it operates. Vision Transformers (ViT) have become the industry standard, effectively replacing Convolutional Neural Networks (CNNs) in most applications. However, organizations/teams frequently face resource constraints regarding high-performance GPUs with sufficient Video RAM (VRAM).
-### The Multi-GPU Solution
+## The Multi-GPU Solution
 When multiple smaller-VRAM GPUs are configured in a daisy-chain arrangement on a single motherboard or across a network (such as in a cluster), they can be utilized collectively within a single training pipeline. PyTorch provides built-in functionality for training models, accumulating gradients, and performing backpropagation across multiple GPU units.
-### Purpose of This Tutorial
+## Purpose of This Tutorial
 While PyTorch offers multi-GPU capabilities, implementing these features effectively on specific hardware configurations presents significant challenges. This tutorial provides step-by-step guidance for configuring and optimizing distributed GPU training for deep learning applications in robotics. For guidance on data curation methodologies, please refer to our [Machine Learning](/wiki/machine-learning/) section within this wiki.
 
 ## Introduction:
@@ -39,7 +39,7 @@ In this tutorial, we will cover:
 This tutorial is intended for those already comfortable with PyTorch who want to scale their models to use multiple GPUs or machines.
 
 
-### Why Distributed Training?
+## Why Distributed Training?
 
 What is the problem?
 
