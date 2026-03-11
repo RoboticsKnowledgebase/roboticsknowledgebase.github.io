@@ -21,6 +21,9 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[Simulating Vehicles Using Autoware](/wiki/simulation/simulating-vehicle-using-autoware/)**
   Details the process of simulating an Ackermann-drive chassis in Autoware. Includes configuring vehicle models, adding sensors, customizing worlds in Gazebo, and using path-planning algorithms like Pure Pursuit and OpenPlanner. Explores sensor simulation and integration with existing ROS packages for enhanced functionality.
 
+- **[NVIDIA Isaac Sim Setup and ROS2 Workflow](/wiki/simulation/simulation-isaacsim-setup/)**
+  Provides a complete guide for installing Isaac Sim, configuring sensor modules, and integrating it with ROS 2 frameworks like Nav2 and MoveIt. Covers both local and remote (headless) installations, and demonstrates scene management and robot model imports for MRSD projects.
+
 - **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/)**
   A hands-on tutorial for spawning and controlling vehicles in the CARLA simulator. Covers connecting to the CARLA server, visualizing waypoints, spawning vehicles, and using PID controllers for motion control. Demonstrates waypoint tracking with visual aids and includes example scripts for quick implementation.
 
