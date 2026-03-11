@@ -344,9 +344,9 @@ In this entry, we demonstrated how to transform a robotic task planning problem 
 
 ## References
 
-- ![Lunar ROADSTER Github](https://github.com/Lunar-ROADSTER/Lunar-ROADSTER/tree/SVD-Encore)
-- ![Linear Programming Wikipedia](https://en.wikipedia.org/wiki/Linear_programming)
-- ![Google OR-Tools C++ Reference](https://developers.google.com/optimization/reference/linear_solver/linear_solver)
+- [Lunar ROADSTER GitHub](https://github.com/Lunar-ROADSTER/Lunar-ROADSTER/tree/SVD-Encore)
+- [Linear Programming Wikipedia](https://en.wikipedia.org/wiki/Linear_programming)
+- [Google OR-Tools C++ Reference](https://developers.google.com/optimization/reference/linear_solver/linear_solver)
 
 ## Further Reading
 
