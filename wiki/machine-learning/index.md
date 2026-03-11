@@ -35,6 +35,12 @@ This section demonstrates how machine learning enhances robotic systems by enabl
 - **[YOLOv5 on NVIDIA Jetson Platforms](/wiki/machine-learning/yolov5-tensorrt/)**
   Guides training YOLOv5 and deploying it on Jetson edge devices using TensorRT. Includes environment setup, ONNX export, and TensorRT integration with ROS.
 
+- **[Distributed Training With PyTorch](/wiki/machine-learning/distributed-training-with-pytorch/)**
+  A tutorial on scaling deep learning models across multiple GPUs and nodes using PyTorch's `DistributedDataParallel` (DDP).
+
+- **[Imitation Learning With a Focus on Humanoids](/wiki/machine-learning/imitation-learning/)**
+  Covers the foundations of imitation learning and provides a practical guide for data collection and policy deployment on humanoid robots.
+
 ## Resources
 
 - [GIMP Installation Guide](https://www.gimp.org/)
