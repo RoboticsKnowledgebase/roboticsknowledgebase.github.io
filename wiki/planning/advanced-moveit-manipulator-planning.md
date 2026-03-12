@@ -30,7 +30,7 @@ The primary task of our dual-manipulator project is to harvest and store green p
 * Move cutter fully into grasp position,
 * After harvest, the cutter goes to home pose while the gripper moves the pepper to a storage bin.
 
-![VADER planning sequence](/assets/images/adv-moveit-manipulator-planning/vader_planning_seq.png)
+![VADER planning sequence](/assets/images/planning/vader_planning_seq.png)
 
 The home pose of both arms, as well as the gripper pose when storing the pepper, are fixed. The coarse and fine pose estimates of the target pepper depends on the placement of the system, and are therefore fairly variable.
 
@@ -47,7 +47,7 @@ The Cartesian planner plans in a straight line from A to B, and computes the joi
 | Advantages | Consistently finds a viable solution, especially if using joint goals. Maneuvers freely in obstacle-rich environment to disentangle arms. | Very fast to compute & execute. Path deterministic and predictable. |
 | Drawbacks | Solution not deterministic and can travel too far in free space. Requires careful placement of collision objects to discourage winding paths. Slower to compute & execute. | Solution could cause singularities and controller error if running into joint limits. This means the solution success is dependent on the starting joint configuration. |
 | Usage | This is used in our Homing motions as well as the gripper move-to-storage motion. | This is used in our pregrasp, final grasp, retraction (after harvest), and lowering the pepper down to the final storage location. |
-| Example Path | ![RRTStar example path](/assets/images/adv-moveit-manipulator-planning/rrtstar.png) | ![Cartesian example path](/assets/images/adv-moveit-manipulator-planning/cartesian.png) |
+| Example Path | ![RRTStar example path](/assets/images/planning/rrtstar.png) | ![Cartesian example path](/assets/images/planning/cartesian.png) |
 
 We will talk about each of these planners in greater detail below.
 
@@ -102,7 +102,7 @@ To help in testing the robustness and failure modes of our planning and state ma
 
 For each simulated run, a randomized pepper ground truth pose is generated, and noise added. We run the entire system given this pose estimate, and watch how the RRT and Cartesian planners fail in which circumstances (due to reachability, planner failure, etc.). An example result of 100 aggregated runs is shown below, and higher failure rates at either ends of the horizontal workspace are observed.
 
-![Simulation testing results](/assets/images/adv-moveit-manipulator-planning/simulation_testing.png)
+![Simulation testing results](/assets/images/planning/simulation_testing.png)
 
 This helped us quantify exactly how the overall system may fail due to lack of reachability for either arms, and how to position our platform in front of peppers during the Fall Validation Demo.
 

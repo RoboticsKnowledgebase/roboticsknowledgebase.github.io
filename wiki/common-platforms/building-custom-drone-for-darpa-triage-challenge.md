@@ -15,7 +15,7 @@ This tutorial will guide you through two implementation approaches - starting wi
 
 ## Part 1: Rapid Prototyping with DJI Matrice 100 + PX4
 
-![DJI Matrice 100](/assets/images/DjiM100.png)
+![DJI Matrice 100](/assets/images/common-platforms/DjiM100.png)
 {: .notice--info}
 
 ### 1.1 System Architecture
@@ -39,7 +39,7 @@ Refer to this [full list of drone components](https://umilesgroup.com/en/what-ar
 
 #### 1.2.2 Flight Controller Installation
 
-![Pixhawk Flight Controller](/assets/images/px4-ardupilot.png)
+![Pixhawk Flight Controller](/assets/images/common-platforms/px4-ardupilot.png)
 {: .notice--info}
 
 1. **Mount the Pixhawk** securely to the center plate of the M100 using vibration-dampening foam to isolate it from motor vibrations.
@@ -58,7 +58,7 @@ Refer to this [full list of drone components](https://umilesgroup.com/en/what-ar
 
 #### 1.2.3 Power System Configuration
 
-![Power Module](/assets/images/power-module.png)
+![Power Module](/assets/images/common-platforms/power-module.png)
 {: .notice--info}
 
 The power module is critical for proper operation:
@@ -157,7 +157,7 @@ For a 5kg total weight target:
    - BLHeli_32 or KISS firmware for precise control
    - Consider 4-in-1 ESC as shown in the image below for cleaner wiring
 
-![4-in-1 ESC](/assets/images/wire.webp)
+![4-in-1 ESC](/assets/images/common-platforms/wire.webp)
 {: .notice--info}
 
 4. **Propellers**:
@@ -215,7 +215,7 @@ A well-designed frame includes:
 
 Following the wiring diagram:
 
-![Drone Wiring Diagram](/assets/images/wiring-diagram.jpg)
+![Drone Wiring Diagram](/assets/images/common-platforms/wiring-diagram.jpg)
 {: .notice--info}
 
 1. **Power flow**:

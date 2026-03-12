@@ -8,28 +8,28 @@ Altium Circuitmaker is a Community Driven PCB Design Application. Circuitmaker c
 ## Strengths and Weaknesses
 ### Benefits
 1. Cloud based part library drawn from the Octopart database
-  - ![Library Menu](assets/AltiumCircuitmaker-8aecd.png)
+  - ![Library Menu](/assets/images/tools/AltiumCircuitmaker-8aecd.png)
 2. Friendlier UI
   - This is strictly a comparison to EagleCAD. Eagle's UI is a more involved style, which lets the user get deeper into things, but is also not nearly as easy for the casual or new user, or for someone in a hurry.
-  - ![Part Info Window](assets/AltiumCircuitmaker-78555.png)
+  - ![Part Info Window](/assets/images/tools/AltiumCircuitmaker-78555.png)
 3. Can output STEP files and view the part in 3D in Circuitmaker
-  - ![3D View](assets/AltiumCircuitmaker-fcf01.png)
+  - ![3D View](/assets/images/tools/AltiumCircuitmaker-fcf01.png)
 4. The autorouter appears somewhat smarter
   - Partially due to the easier UI, it also feels like it takes it less time and effort to find a good path. You can make multiple profiles of routing schemes and widths, and choose to route only one net at a time. However, by putting in multiple width rules that each cover a single net, you can autoroute every net at once at the correct width.
-  - ![Rule Menu](assets/AltiumCircuitmaker-4b425.png)
+  - ![Rule Menu](/assets/images/tools/AltiumCircuitmaker-4b425.png)
 5. Collaborative cloud based development method
 6. Outputs include an excel BOM
 7. No trial version; all functionality provided for free in the open beta.
 
 ### Drawbacks
 1. No preloaded set of common drill sizes
-  - ![Hole Menu](assets/AltiumCircuitmaker-f5782.png)
+  - ![Hole Menu](/assets/images/tools/AltiumCircuitmaker-f5782.png)
 2. No board outline by default
 3. Poor default wiring options
 4. Copper Pours are not intelligent
-  - ![Pour Plane Cutout](assets/AltiumCircuitmaker-e83b9.png)
+  - ![Pour Plane Cutout](/assets/images/tools/AltiumCircuitmaker-e83b9.png)
 5. Some UI still obviously in need of tweaking
-  - ![Library Side Menu](assets/AltiumCircuitmaker-1caa4.png)
+  - ![Library Side Menu](/assets/images/tools/AltiumCircuitmaker-1caa4.png)
 
 ### Summary
 In many ways, Circuitmaker is an improvement over EagleCAD. As an *open beta*, there are occasional stability issues as well as very long periods where it stops to work through an instruction. It's far enough along that the instability issues are a minor nuisance and do not appear to affect better computers. As for the freezes, Circuitmaker is a bit slow to start and to close, to load menus, and there are peak usage periods where it's slow to fetch new part information from the cloud. Otherwise it runs quite well. For projects, it could save a lot of time. In Eagle, the teams all make and remake the same parts, and often do much the same kind of thing throughout their project if they rely on PCBs. With Circuitmaker, all the parts fetch from Octop
@@ -74,15 +74,15 @@ Like any other IDE, CLion has countless features. These can also be extended by 
 
 #### Debugging
 
-![CLion Debugging 1](assets/debug1.jpeg)
+![CLion Debugging 1](/assets/images/tools/debug1.jpeg)
 
 After opening the project folder in CLion, right-click on the `CMakeLists.txt` and choose Reload CMake Project. The various executable target added in the CMake file will be available in the drop-down menu at the top right as shown in the above image.
 
-![CLion Debug 2](assets/debug2.jpeg)
+![CLion Debug 2](/assets/images/tools/debug2.jpeg)
 
 Add the breakpoint in the code where you want to pause the code and press the debug button as shown in the image.
 
-![CLion Debug 3](assets/debug3.jpeg)
+![CLion Debug 3](/assets/images/tools/debug3.jpeg)
 
 CLion will pause the execution at the breakpoint. You can view all the global, local variables and their values in the variable inspector. It also provides the functionality to run the code line by line by using various step in, step over, step out function. You can also press the resume button to continue execution till the next break-point. You can add new breakpoints even when code is paused at a breakpoint.
 
@@ -90,7 +90,7 @@ CLion will pause the execution at the breakpoint. You can view all the global, l
 
 Refactoring is one of the most powerful tools in the CLion. Simplest re-factor operation is renaming a variable.
 
-![Refactor 1](assets/refactor1.png)
+![Refactor 1](/assets/images/tools/refactor1.png)
 
 
 `right-click -> Refactor -> Rename`
@@ -99,7 +99,7 @@ Refactoring is one of the most powerful tools in the CLion. Simplest re-factor o
 
 `right-click -> Refactor -> Extract -> Method`
 
-![Refactor 2](assets/refactor2.jpeg)
+![Refactor 2](/assets/images/tools/refactor2.jpeg)
 
 
 #### Entity Linking
@@ -111,7 +111,7 @@ Entity linking is very useful in efficiently navigating code-base in CLion. The 
 
 Entity linking works to the imported library as well. If you have imported some C++ library and want to check the source code inside the library, just use entity linking. It will open the source code of the library if it's available. For example, in the below image, definition of `std::vector::push_back()` is opened using entity linking of CLion.
 
-![Refactor 3](assets/refactor3.png)
+![Refactor 3](/assets/images/tools/refactor3.png)
 
 #### Context-Aware Search
 
@@ -119,7 +119,7 @@ Given a function or a variable, all its usage inside the code can also be search
 
  `right-click -> Find Usages`
 
-![Refactor 4](assets/refactor4.png)
+![Refactor 4](/assets/images/tools/refactor4.png)
 
 Above image shows the various usages CLion found of the private variable `costMap` inside the repository.
 
@@ -192,16 +192,16 @@ A link for [downloading](https://code.visualstudio.com/download).
 2. Open VS Code (can use the Linux search/windows button). Source folders into the workspace.
 3. The top left tab gives you file explorer. Click it!
 
-![File Explorer](assets/vscode4.png)
+![File Explorer](/assets/images/tools/vscode4.png)
 
 #### Features
 1. **Keyword search**: Right-click inside the file explorer space. Check out “Find in Folder..” and try searching for a keyword and you’d see lightning fast multi-file search (or) click on the search button below the explorer and use the find and replace options.
 
-![Keyword Search](assets/vscode11.png)
+![Keyword Search](/assets/images/tools/vscode11.png)
 
 2. **Seek definition**: Open any file and right-click to peek at the definition of functions. Why is this useful? Reading code implies trying to figure out what each function is doing. Super useful in projects. Works for variables, classes, functions. You name it. VS-code can define it.
 
-![Seek Definition](assets/vscode5.png)
+![Seek Definition](/assets/images/tools/vscode5.png)
 
 3. **Open the file by name**: Ctrl+P, and type file name.
 4. **Shortcuts**: I use sublime shortcuts on VS Code. That’s the cool thing. You can configure it to work for your style. How to configure? You can install a sublime text key-bindings plugin. More on plugins later. But this specific one is called: ms-vscode.sublime-keybindings.
@@ -217,15 +217,15 @@ Add all custom shortcuts in preferences, keyboard shortcuts. Do ctrl+shift+P and
 
 5. **Integrated terminal**: Click on terminal and open a new terminal. 
 
-![Open terminal](assets/vscode2.png)
+![Open terminal](/assets/images/tools/vscode2.png)
 
 Now you can run programs without rotating between terminal and editor. Reduces a lot of strain on the eyes. You can also create multiple screens in the terminal.
 
 6. **Python debugger**: You can put breakpoints and run python programs and look into the state of the program for faster debugging. Click next to the line number and that should drop a BP. Now start debugging. Choose whichever option makes sense (for trials go for current file).
 
-![Python Breakpoint - 1](assets/vscode10.png)
-![Python Breakpoint - 2](assets/vscode8.png)
-![Python Breakpoint - 3](assets/vscode3.png)
+![Python Breakpoint - 1](/assets/images/tools/vscode10.png)
+![Python Breakpoint - 2](/assets/images/tools/vscode8.png)
+![Python Breakpoint - 3](/assets/images/tools/vscode3.png)
 
 You can step through the lines or move to the next BP or let the program run till the end.
 
@@ -233,7 +233,7 @@ Drawback: Image data cannot be displayed. Spyder offers that option. You cannot 
 
 7. **Language support**: What we MRSD people use? It supports all of it. Python, C++, Markdown, JSON, YAML, XML, CMake. How to change? Click on python/whatever there is.
 
-![Language Support](assets/vscode6.png)
+![Language Support](/assets/images/tools/vscode6.png)
 
 Random thoughts: Spaces to tabs, the right-hand small screen helps find easy chunks of code, terminal focus shortcuts, file explorer shows modified files, tracked/untracked files, squiggles show if invalid syntax, auto-complete, function argument list displays.
 
@@ -241,15 +241,15 @@ Random thoughts: Spaces to tabs, the right-hand small screen helps find easy chu
 1. **Git graph**:
 I think git support is auto existing on baseline VS Code but this just ups it. Why good?
 
-![tracking/modification status](assets/vscode9.png)
+![tracking/modification status](/assets/images/tools/vscode9.png)
 
 When you do a git rebase/merge, conflicts show up in nice blocks which you can just choose. No more million backspaces to remove code.
 
-![git rebase/merge](assets/vscode12.png)
+![git rebase/merge](/assets/images/tools/vscode12.png)
 
 If you use it with the integrated terminal, you can just choose a file from the terminal output, choose a block of code to stay, and continue rebasing.
 
-![The graph: click on the git graph button on the bottom toolbar and voila](assets/vscode13.png)
+![The graph: click on the git graph button on the bottom toolbar and voila](/assets/images/tools/vscode13.png)
 
 2. **Python**:
 This covers all the python debugging tools + module search functionality.
@@ -549,7 +549,7 @@ whoami # Success!!
 
 ## Mitigation of Privilege Escalation
 
-![images/privesc.png](../../assets/images/privesc.png)
+![images/privesc.png](/assets/images/tools/privesc.png)
 
 ## Exposed Docker Socket
 
@@ -559,7 +559,7 @@ If docker.sock is mounted from the host into a container, we can use docker.sock
 
 The Docker socket is a type of UNIX socket used by the Docker CLI to execute Docker commands with root privileges. docker.sock is not originally present inside the container, but users inside the container may need to mount it to manage or create other containers. However, mounting docker.sock inside the container increases the attack surface and poses a security risk.
 
-![images/docker_socket.png](../../assets/images/docker_socket.png)
+![images/docker_socket.png](/assets/images/tools/docker_socket.png)
 
 Next, we will go through the steps of the demo experiment:
 
@@ -1395,19 +1395,19 @@ This section will guide you to create your first simple Hello-World Qt program
 
 2. Create new project using `File -> New File or Project -> Application -> Qt Widgets Application`
 
-   ![](assets/Qtcreator-ros-new-project.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project.png)
 
 3. Name your project/application
 
-   ![](assets/Qtcreator-ros-new-project-menu.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project-menu.png)
 
 4. If you installed correctly, the Kit will be detected automatically, if not this [link](https://stackoverflow.com/questions/26499404/qtcreator-no-valid-kits-found) might be useful
 
-   ![](assets/Qtcreator-ros-new-project-kit.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project-kit.png)
 
 5. Name your main class. Although this is not the main function, it acts as the entry point of the application
 
-   ![](assets/Qtcreator-ros-new-project-class-menu.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project-class-menu.png)
 
 6. Select finish
 
@@ -1415,11 +1415,11 @@ This section will guide you to create your first simple Hello-World Qt program
 
 8. Click the green arrow at the bottom left side or use `Ctrl + R` to build and run. You should see a blank application window like this one
 
-   ![](assets/Qtcreator-ros-new-project-run.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project-run.png)
 
 9. Close the program by clicking on the red cross on the `MainWindow` window. and navigate to the `mainwindow.ui` file under `Forms` on the left menu. It will automatically switch to the `Design` tab and open this UI editor tool
 
-   ![](assets/Qtcreator-ros-new-project-design.png)
+   ![](/assets/images/tools/Qtcreator-ros-new-project-design.png)
 
 10. The left menu is now switched to the basic UI widgets available. You can put them through drag and drop. Try to drag and drop these 4 types of widgets:
 
@@ -1428,15 +1428,15 @@ This section will guide you to create your first simple Hello-World Qt program
     3. `Display Widgets -> Label`
     4. `Display Widgets -> Text Browser`
 
-    ![](assets/Qtcreator-ros-new-project-ui-elements.png)
+    ![](/assets/images/tools/Qtcreator-ros-new-project-ui-elements.png)
 
 11. Some of the widgets have text that is displayed on them such as the `Label` and `Push Button`, you can double-left-click on them and edit the display text 
 
-    ![](assets/Qtcreator-ros-new-project-edit-text.png)
+    ![](/assets/images/tools/Qtcreator-ros-new-project-edit-text.png)
 
 12. On the right menu you should see a summary of all the objects and widgets that you have created. Here we can see the 4 widgets we added. An important distinction here is that the left column is the name of the object (unique entity) and the right column is the class name (not unique). Hence, you can have multiple labels, but these are based on `QLabel` class
 
-    ![](assets/Qtcreator-ros-new-project-ui-obj.png)
+    ![](/assets/images/tools/Qtcreator-ros-new-project-ui-obj.png)
 
 13. To drive the point home, try to rename the objects. It is advisable to give it mear a new message is received.
 
@@ -1650,7 +1650,7 @@ $ pip install PyQt5
 
 This is the final application you can get by following this tutorial. Blocks that require customization will be explained in the documentation.
 
-![Final QT](assets/PyQt-final.png)
+![Final QT](/assets/images/tools/PyQt-final.png)
 
 ## Application Walkthrough
 
@@ -1669,13 +1669,13 @@ The system level timer captures the time taken between the start and the end of 
 The color change for the timers are as follows:
 
 Green Button
-![Green Button](assets/PyQt-green.png)
+![Green Button](/assets/images/tools/PyQt-green.png)
 Yellow Button
-![Yellow Button](assets/PyQt-yellow.png)
+![Yellow Button](/assets/images/tools/PyQt-yellow.png)
 Orange Button
-![Orange Button](assets/PyQt-orange.png)
+![Orange Button](/assets/images/tools/PyQt-orange.png)
 Red Button
-![Red Button](assets/PyQt-red.png)
+![Red Button](/assets/images/tools/PyQt-red.png)
 
 The code block for this is given here:
 ```python
@@ -1700,7 +1700,7 @@ The task level timer captures the time taken between the start and the end of on
 
 One additional feature of the task level timer is it saves the task logs. These are outputted in the `Task Times` block that is directly below the button.
 
-![Red Button](assets/PyQt-logs.png)
+![Red Button](/assets/images/tools/PyQt-logs.png)
 
 ```
 def TaskTimerBlock(self):
@@ -1829,7 +1829,7 @@ Basic rosbag parsing is as follows:
 3. For straightforward values in a message, run `timeseries(bag_select,'<message element>')`
 4. For more complicated messages, run `readMessages`
 
-[This script](assets/parseRosbag.m) parses Rosbags and creates a `.mat` and `.csv` file from it given a custom definition. The particular message referenced is an aggregation of multiple messages, hence the recursive structure.
+[This script](/wiki/tools/assets/parseRosbag.m) parses Rosbags and creates a `.mat` and `.csv` file from it given a custom definition. The particular message referenced is an aggregation of multiple messages, hence the recursive structure.
 
 
 /wiki/tools/roslibjs/
@@ -1980,7 +1980,7 @@ You can do more advanced stuff such as subscribing to images, Rviz visualization
 To visualize and update an image stream live within your web app, first you need a placeholder in HTML for your image. Define it as follows within the `body` tag with an unique ID to update it later via JavaScript.
 
 ```
-<img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="assets/img/placeholder.png">
+<img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="/assets/images/placeholder.png">
 ```
 
 Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
@@ -2001,7 +2001,7 @@ image_topic.subscribe(function(message) {
 });
 ```epository [here](https://github.com/deltaautonomy/delta_viz/blob/master/delta_viz_app/index.html).
 
-![](https://roboticsknowledgebase.com/wiki/tools/assets/deltaviz.jpg)
+![](/assets/images/tools/deltaviz.jpg)
 
 ## See Also
 - A [tutorial](https://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.
