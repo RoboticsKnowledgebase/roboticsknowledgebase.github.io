@@ -66,6 +66,8 @@ wiki:
         url: /wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: Unitree G1
+        url: /wiki/common-platforms/unitree-g1/  
       - title: Unitree Go1
         url: /wiki/common-platforms/unitree-go1/     
       - title: Pixhawk

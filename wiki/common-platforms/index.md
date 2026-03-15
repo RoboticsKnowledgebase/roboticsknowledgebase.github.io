@@ -41,6 +41,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[ROS 2 Navigation with Clearpath Husky](/wiki/common-platforms/ros2-navigation-for-clearpath-husky/)**
   A step-by-step tutorial on integrating ROS 1 and ROS 2 for Clearpath Husky navigation, including the configuration of the ROS 2 Nav2 stack.
 
+- **[Unitree G1](/wiki/common-platforms/unitree-g1/)**
+  Covers the Unitree G1 humanoid robot SDK usage, including high-level motion control, low-level joint commands, arm control, debug mode, and common pitfalls when integrating with ROS 2.
+
 - **[Unitree Go1 Guide](/wiki/common-platforms/unitree-go1/)**
   Highlights the features and capabilities of the Unitree Go1 Edu quadruped robot. Includes power, sensors, networking configuration, and tips for simulation and real-world control.
 
