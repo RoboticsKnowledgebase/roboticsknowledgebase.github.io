@@ -239,6 +239,8 @@ wiki:
         url: /wiki/programming/tutorials-resources/
       - title: Python Construct
         url: /wiki/programming/python-construct/
+      - title: Building Software from Source
+        url: /wiki/programming/build-from-source/
       - title: ROS 2 Yasmin State Machine
         url: /wiki/programming/yasmin-ros2-state-machine/
   - title: Networking

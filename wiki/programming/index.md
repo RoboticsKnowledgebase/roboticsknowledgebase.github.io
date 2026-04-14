@@ -33,6 +33,9 @@ This section focuses on **programming techniques, tools, and libraries** commonl
 - **[Python Construct Library](/wiki/programming/python-construct/)**
   Explores the Python Construct library for building and parsing binary data. Highlights its utility for reliable serial communication in robotics systems. Includes examples of creating structured messages with CRC error-checking.
 
+- **[Building Software from Source](/wiki/programming/build-from-source/)**
+  Covers the process of configuring, building, and installing libraries from source code. Uses OpenCV as an example to demonstrate obtaining source code, managing dependencies, and configuring builds with CMake.
+
 - **[ROS 2 Yasmin State Machine](/wiki/programming/yasmin-ros2-state-machine/)**
   A tutorial on using the Yasmin framework for state machine-based task logic in ROS 2. Covers core fundamentals, installation, and practical usage examples.
 
