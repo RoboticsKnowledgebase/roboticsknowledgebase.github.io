@@ -3,9 +3,6 @@ title: Apple Vision Pro for Robotics
 date: 2025-05-04
 ---
 
-# Apple Vision Pro for Robotics
-
-
 ## Introduction
 
 This guide provides an overview on integrating robotics projects with Apple Vision Pro. Broadly covering setting up the Vision Pro for development, use it for object tracking, understand spatial coordinate frames, and send data to a ROS (Robot Operating System) environment over TCP.
