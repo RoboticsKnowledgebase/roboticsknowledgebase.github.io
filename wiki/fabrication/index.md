@@ -27,6 +27,9 @@ This section provides in-depth resources and tutorials for various fabrication t
 - **[Milling Process](/wiki/fabrication/milling-process/)**
   Essential tutorials on the milling process, ideal for prototyping and creating precise mechanical components.
 
+- **[Onshape Tutorial](/wiki/fabrication/onshape-tutorial/)**
+  A practical, robotics-focused introduction to Onshape CAD. Covers sketching, 3D modeling, assemblies, and creating 2D drawings for manufacturing.
+
 - **[Rapid Prototyping](/wiki/fabrication/rapid-prototyping/)**
   Discusses the iterative nature of rapid prototyping, highlighting techniques like CAD design, 3D printing, and laser cutting. Emphasizes the importance of validating designs early and cost-effectively.
 

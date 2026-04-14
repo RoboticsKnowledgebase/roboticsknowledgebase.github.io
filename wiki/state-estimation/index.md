@@ -61,6 +61,12 @@ The "State Estimation" section provides a comprehensive understanding of how to 
   - Pose-based and image-based approaches.
   - Application to drones for precise alignment tasks.
 
+- **[Using g2o for Pose Graph Optimization in C++](/wiki/state-estimation/g2o-pose-graphs/)**
+  Provides a practical introduction to using g2o for pose graph optimization in C++, essential for SLAM and state estimation.
+  - Overview of g2o and its graph-based representation.
+  - Implementation details for vertices, edges, and solvers.
+  - Common applications in robotic perception and mapping.
+
 ## Resources
 
 - [AMCL ROS Wiki](http://wiki.ros.org/amcl)

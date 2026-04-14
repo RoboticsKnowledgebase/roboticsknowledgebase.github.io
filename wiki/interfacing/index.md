@@ -9,6 +9,9 @@ This section delves into **interfacing techniques and tools** for robotics appli
 
 ## Key Subsections and Highlights
 
+- **[Apple Vision Pro for Robotics Applications](/wiki/interfacing/apple-vision-pro-for-robotics-applications/)**
+  A systems-focused guide to integrating Apple Vision Pro with robotic systems. Covers teleoperation using head and hand tracking, spatial perception with object tracking, and on-device intelligence using Apple's Foundation Models framework on visionOS.
+
 - **[Blink(1) LED](/wiki/interfacing/blink-1-led/)**
   A practical guide to using the Blink(1) USB RGB LED for visual feedback and troubleshooting. Includes step-by-step instructions for setting up the LED on Linux, basic command-line usage, and integration with ROS nodes for monitoring states and providing visual indicators.
 
