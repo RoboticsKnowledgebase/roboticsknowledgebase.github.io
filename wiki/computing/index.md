@@ -13,6 +13,9 @@ This section is curated for developers and researchers working on robotics appli
 - **[Arduino](/wiki/computing/arduino/)**
   Learn the fundamentals of Arduino boards, including the Uno and Mega, wiring configurations for components like limit switches and motor drivers, and practical examples with annotated code snippets.
 
+- **[Comparing Commercial Off The Shelf Embedded Platforms](/wiki/computing/comparing-cots-embedded-systems/)**
+  A comprehensive guide and comparison of popular embedded systems like Arduino, ESP32, and Raspberry Pi, helping you choose the right platform for your project's compute and control needs.
+
 - **[Amazon Web Services Quickstart](/wiki/computing/aws-quickstart/)**
   A step-by-step guide to launching, accessing, and managing AWS EC2 instances for cloud computing. Covers SSH configuration, tmux for persistent sessions, and tips for stopping or managing instances effectively.
 
