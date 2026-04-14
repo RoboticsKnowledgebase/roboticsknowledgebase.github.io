@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2025-05-04 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2025-05-04
 title: Building software from source
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 
 This tutorial describes how to configure and build libraries from source for your unique system.
