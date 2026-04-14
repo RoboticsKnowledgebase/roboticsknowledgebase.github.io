@@ -172,10 +172,10 @@ CHOMP has influenced subsequent work in trajectory optimization and continues to
 
 ### References
 
-1. Ratliff, N., Zucker, M., Bagnell, J. A., & Srinivasa, S. (2009). CHOMP: Gradient optimization techniques for efficient motion planning. In IEEE International Conference on Robotics and Automation (pp. 489-494).
+[1] N. Ratliff, M. Zucker, J. A. Bagnell, and S. Srinivasa, "CHOMP: Gradient optimization techniques for efficient motion planning," in *IEEE International Conference on Robotics and Automation*, 2009, pp. 489-494.
 
-2. Ratliff, N., Zucker, M., Bagnell, J. A., & Srinivasa, S. (2013). CHOMP: Covariant Hamiltonian optimization for motion planning. The International Journal of Robotics Research, 32(9-10), 1164-1193.
+[2] N. Ratliff, M. Zucker, J. A. Bagnell, and S. Srinivasa, "CHOMP: Covariant Hamiltonian optimization for motion planning," *The International Journal of Robotics Research*, vol. 32, no. 9-10, pp. 1164-1193, 2013.
 
-3. Schleicher, J. (2020). Introducing the New Pilz Industrial Motion Planner for MoveIt. MoveIt Blog.
+[3] J. Schleicher, "Introducing the New Pilz Industrial Motion Planner for MoveIt," *MoveIt Blog*, 2020.
 
-4. MoveIt Documentation: Pilz Industrial Motion Planner. https://moveit.picknik.ai
+[4] MoveIt Documentation, "Pilz Industrial Motion Planner." [Online]. Available: https://moveit.picknik.ai
