@@ -1,3 +1,8 @@
+---
+title: Finite State Machine Implementation Guide for Robotics
+date: 2026-04-13
+---
+
 # Finite State Machine Implementation Guide for Robotics
 
 ## Introduction
