@@ -13,6 +13,9 @@ The **System Design and Development** section provides comprehensive resources a
 - **[Cable Management](/wiki/system-design-development/cable-management/)**
   Focuses on effective planning, creation, and installation of cables to ensure reliability, ease of debugging, and modularity in robotic systems.
 
+- **[Finite State Machine Implementation Guide for Robotics](/wiki/system-design-development/finite-state-machine/)**
+  Provides a structured approach to managing complex robot behaviors through states, transitions, and actions. Covers theoretical foundations and implementation in ROS and embedded systems.
+
 - **[Hardware-in-Loop and Software-in-Loop Testing](/wiki/system-design-development/In-Loop-Testing/)**
   Discusses HIL and SIL methodologies for testing real-time embedded controllers, with specific use cases like ADAS and autonomous vehicles.
 
