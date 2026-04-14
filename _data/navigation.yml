@@ -149,6 +149,8 @@ wiki:
         url: /wiki/sensing/ultrawideband-beacon-positioning/
       - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
         url: /wiki/sensing/sensor-noise/
+      - title: Apple Vision Pro for Robotics
+        url: /wiki/sensing/apple-vision-pro/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
