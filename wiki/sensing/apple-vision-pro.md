@@ -1,4 +1,10 @@
+---
+title: Apple Vision Pro for Robotics
+date: 2025-05-04
+---
+
 # Apple Vision Pro for Robotics
+
 
 ## Introduction
 
