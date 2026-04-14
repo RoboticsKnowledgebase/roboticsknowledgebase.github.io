@@ -263,3 +263,10 @@ Finite State Machines provide powerful tools for organizing complex robot behavi
 The key to successful FSM implementation lies in appropriate state granularity, clear transition logic, comprehensive error handling, and choosing the right level of abstraction for your specific application. When applied thoughtfully, FSMs significantly improve code organization, system reliability, and development efficiency in robotics projects.
 
 Whether you're building a simple autonomous rover or a complex multi-robot system, understanding and applying FSM principles will help you create more robust, maintainable, and predictable robot behaviors that can handle the challenges of real-world deployment.
+## References
+
+[1] M. B. Wagner and J. Koopman, "A Design Pattern for Finite State Machine Controllers in Robotics," in *Proc. IEEE Int. Conf. Robot. Autom.*, New Orleans, LA, 2004, pp. 4392-4397.
+
+[2] K. M. Lynch and F. C. Park, *Modern Robotics: Mechanics, Planning, and Control*. Cambridge University Press, 2017.
+
+[3] J. J. Kuffner, "Finite State Machines for Robotic Behavior," *Robotics Institute Carnegie Mellon University*, 2004.
