@@ -1,3 +1,8 @@
+---
+title: Industrial and Specialized Motion Planning Approaches
+date: 2026-04-13
+---
+
 # Industrial and Specialized Motion Planning Approaches
 
 This article aims to present two specialized approaches for robot motion planning that are particularly relevant for industrial applications and optimization-based planning. While basic motion planning algorithms like A*, RRT, and PRM provide fundamental solutions for robot navigation, industrial applications often require more specialized planners that can generate predictable, efficient, and smooth trajectories.
