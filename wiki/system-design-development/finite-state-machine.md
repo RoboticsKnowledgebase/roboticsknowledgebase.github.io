@@ -3,8 +3,6 @@ title: Finite State Machine Implementation Guide for Robotics
 date: 2026-04-13
 ---
 
-# Finite State Machine Implementation Guide for Robotics
-
 ## Introduction
 
 Finite State Machines (FSMs) are fundamental architectural patterns that provide structured approaches to managing complex robot behaviors. As robots become more sophisticated, they must coordinate multiple subsystems, handle various operational modes, and respond appropriately to environmental changes. FSMs offer a proven methodology for organizing these complex interactions into manageable, predictable, and maintainable code structures.
