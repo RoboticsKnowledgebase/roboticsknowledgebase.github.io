@@ -20,6 +20,9 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Trajectory Planning in the Frenet Space](/wiki/planning/frenet-frame-planning/)**
   Explains Frenet-frame trajectory planning, useful for structured environments like highways. Includes algorithmic steps, transformation techniques, and advantages over Cartesian coordinates.
 
+- **[Industrial and Specialized Motion Planning Approaches](/wiki/planning/pilz-chomp/)**
+  Presents two specialized approaches: PILZ Industrial Motion Planner for deterministic industrial-style motions and CHOMP for covariant gradient-based trajectory optimization.
+
 - **[Move Base Flex](/wiki/planning/move_base_flex/)**
   A comprehensive guide to the ROS-based Move Base Flex navigation stack. Covers its architecture, plugin implementation, and customization for 2.5D/3D maps or custom planners.
 
