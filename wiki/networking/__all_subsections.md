@@ -157,7 +157,7 @@ sudo /etc/init.d/chrony start
 1. If clients communicating to the same ROS master are publishing/subscribing to the same
 topics, there may be a namespace clash and the computers will not be able to distinguish one topic from the other. Link: http://nootrix.com/2013/08/ros­namespaces/
 Hence, make the topics specific to that particular machine. For example, `/cmd_vel` topic for robot 1 should now become `/robot1/cmd_vel` and for robot 2, it should be `/robot2/cmd_vel`. Also, namespaces should be added to the frames also. For three robots, transformation tree should look like this:
-![Transofromation Tree for Three Robots](assets/ROSDistributed-1b70c.png)
+![Transofromation Tree for Three Robots](/assets/images/networking/ROSDistributed-1b70c.png)
   - Similarly, there may also be clashing transforms that may cause problems and they need to be fixed in the same way.
 2. Try not to run any graphics such as Rviz or RQt on the clients while communicating as they consume a lot of bandwidth and may cause the system to slow down.
 All the computers can be controlled from the server laptop for any commands that need to run on them by performing ‘ssh’ into the client laptop from the server laptop.
@@ -241,7 +241,7 @@ XBee-PRO 900 DigiMesh is useful for setting up your own low bandwidth mesh netwo
 Firstly, download and install X-CTU. [The official guide from DIGI](https://docs.digi.com/display/XCTU/Download+and+install+XCTU) will walk you through this process.
 
 Once you are done with this, plug in your XBee adapter and launch X-CTU. The device should get detected automatically and you'll be presented with a screen similar to the one seen below.
-![X-CTU Screen](assets/XbeeProDigiMesh900-1fc56.png)
+![X-CTU Screen](/assets/images/networking/XbeeProDigiMesh900-1fc56.png)
 
 Now it is important to note that this is not an ordinary XBee adapter which is why you'll see many more options than usual. Firstly, all your devices should be have same Modem VID (ID) and Hopping Channel (HP) for them to communicate. Now, further settings will depend on your individual requirements but just to explain some important parameters:
 - **Multi-Transmit (MT):** To set/read number of additional broadcast re-transmissions. All broadcast packets are transmitted MT+1 times to ensure it is received.

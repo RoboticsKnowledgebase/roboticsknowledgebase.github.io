@@ -29,7 +29,7 @@ Start by clarifying the primary function of your robot:
 
 Example: For our quadrupedal robot Tod, the goal is to assist elderly shoppers by carrying their products in a shopping center. The end-users are senior citizens who may have difficulty carrying heavy items, and the environment is a bustling retail space with various obstacles.
 
-<img src="/assets/images/robotics_project_guide/go2_package.png" alt="Go2 Package Robot" style="width: 33%;">
+<img src="/assets/images/robotics-project-guide/go2_package.png" alt="Go2 Package Robot" style="width: 33%;">
 
 This is the Go2 Package Robot, designed to assist users in carrying heavy items. The robot can navigate autonomously, avoid obstacles, and carry payloads of up to 12 kg. With its robust design, it is well-suited for use in indoor environments such as shopping centers or warehouses.  
 
@@ -48,7 +48,7 @@ Functional requirements detail what your robot must be able to do:
 - **Navigation**: Will it operate autonomously or require human control?
 - **Interaction**: Does it need to communicate with users or other systems?
 
-| ![Quadruped Robot](/assets/images/robotics_project_guide/go2_image.jpg) | ![Wheeled Robot](/assets/images/robotics_project_guide/wheeled_robot_image.png) | ![Drone Robot](/assets/images/robotics_project_guide/drone_image.png) |
+| ![Quadruped Robot](/assets/images/robotics-project-guide/go2_image.jpg) | ![Wheeled Robot](/assets/images/robotics-project-guide/wheeled_robot_image.png) | ![Drone Robot](/assets/images/robotics-project-guide/drone_image.png) |
 |:---------------------------------:|:---------------------------------:|:-------------------------------:|
 | Quadruped                 | Wheeled Vehicle                    | Drone                    |
 
