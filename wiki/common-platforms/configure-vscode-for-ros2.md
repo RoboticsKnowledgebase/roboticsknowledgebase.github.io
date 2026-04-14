@@ -1,3 +1,7 @@
+---
+title: Configure VS Code for ROS 2
+date: 2026-04-13
+---
 
 > This tutorial assumes you already have ROS 2 and Visual Studio Code installed and properly set up on your system.
 
