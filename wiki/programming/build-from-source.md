@@ -145,7 +145,7 @@ Let's break down this command:
 - `-S` is where the source code to be compiled it. This directory must contain the `CMakeLists.txt` file.
 - `-D<option>=<value>` The options being configured. Most are package-specific (such as `-DOPENCV_EXTRA_MODULES_PATH`
   and `-DWITH_TIFF=ON`). Some package-agnostic options (the `-DCMAKE_<option>=<value>`) are elaborated upon below:
-    - `-DCMAKE_INSTALL_PREFIX=<install_directory>`: This option tells CMake teh directory under which to place all the
+    - `-DCMAKE_INSTALL_PREFIX=<install_directory>`: This option tells CMake the directory under which to place all the
       libraries, binaries, headers and auxiliary files. By default, CMake will try to install to your root system and
       this can cause conflicts with the package manager. **It is highly recommended to set this to a well-organized
       location.**
@@ -153,7 +153,7 @@ Let's break down this command:
       and disable debug information. **Set this for optimal performance**.
 
 Upon running the above command, CMake will check your system to see if everything is available.
-If it complains about not finding something, wither install it via the method described in the section above, or build
+If it complains about not finding something, either install it via the method described in the section above, or build
 it from source and include its install prefix in the `CMAKE_PREFIX_PATH` environment variable.
 
 If this step is successful, proceed to building and installing the package.
