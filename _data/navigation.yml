@@ -140,7 +140,7 @@ wiki:
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
       - title: Apple Vision Pro for Robotics
-        url: /wiki/sensing/apple-vision-pro.md
+        url: /wiki/sensing/apple-vision-pro/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
