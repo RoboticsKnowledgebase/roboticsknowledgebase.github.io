@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2026-03-12 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2026-03-12
 title: Unitree G1
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 The Unitree G1 is a compact bipedal humanoid robot manufactured by Unitree Robotics. At a lower price point than most humanoid platforms, the G1 has seen growing adoption in university and research settings.
 
