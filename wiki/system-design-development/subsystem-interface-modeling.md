@@ -14,22 +14,22 @@ One of the most useful views is the operational. In practice, you will rarely go
 
 #### Level 1
 In this level, one can usually put the Use Case. While technically it belongs in the Capability View or All View, since we're otherwise not using CVs (unless you start modeling at the very beginning and use the CV for requirements). In the Use Case, put the Actors (the user, obviously, and the highest level subsystems you'd normally see in a WBS), and then what information flows between them. This would be the highest level information packet containing all other information flow we see on the level 2 Activity Diagrams.
-![SIDD colorless OV 1](assets/SubsystemInterfaceModeling-8748c.png)
+![SIDD colorless OV 1](/assets/images/system-design-development/SubsystemInterfaceModeling-8748c.png)
 
 #### Level 2
 This is the meat of the Interface Design Description, where you can flow out all the things the system might do. Rather than go into a lot of operational or capability viewpoints, go straight into activity diagrams since the system is relatively small. Each box at the first indenture of level 2.
 
 >Use "indentures" of activity diagrams since the other "levels" of OV are technically something else, signified by letters like OV-2b or OV-2c) is a high level activity (see below for the highest level view of MRSD 2015 "Dock In Piece" project).
 
-![SIDD colorless OV 2 Dock Quadcopter](assets/SubsystemInterfaceModeling-fb765.png)
+![SIDD colorless OV 2 Dock Quadcopter](/assets/images/system-design-development/SubsystemInterfaceModeling-fb765.png)
 
 As you can see from this chart, the highest level activities of docking the quadcopter are things like 'take off' and 'rendezvous with docking face', which have lines between to signify the temporal flow, and labels to signify what information needs to pass in order to make it happen. Most important are the labels which cross swimlanes, because that's information that will have to be packaged and sent from one subsystem to another. At this level the swimlanes are the actors and high level subsystems, but if we go a level down, we see subsystems within subsystems (the system-of-systems concept made manifest).
 
-![SIDD-colorless-OV-2b Rendezvous with Docking Face](assets/SubsystemInterfaceModeling-4e816.png)
+![SIDD-colorless-OV-2b Rendezvous with Docking Face](/assets/images/system-design-development/SubsystemInterfaceModeling-4e816.png)
 
 The first three swimlanes from the left are subsystems of the quadcopter while the final is crossing to/from the Palantir.
 
-![SIDD-colorless-OV-2a Determine Docking Possibility](assets/SubsystemInterfaceModeling-8e94f.png)
+![SIDD-colorless-OV-2a Determine Docking Possibility](/assets/images/system-design-development/SubsystemInterfaceModeling-8e94f.png)
 
 Here all four swimlanes are different subsystems (though the Palantir is technically part of the dock, it is quite separate physically and informationally), but support the higher level activity of docking)
 
@@ -37,7 +37,7 @@ Here all four swimlanes are different subsystems (though the Palantir is technic
 #### Level 3
 OV-2c is where intrasystem activities show up in the architecture. This indenture shows information flowing and activities that occur entirely on one system, sometimes with a single information flow leaving the internal swimlanes to some external box or all flowing to a single box which has the same name as a box in an indenture above, signifying what information and actions flow inside a system to make that one action occur - similar how how an OV-2b is often the expanded version of a single box in the OV-2a indenture. We cancelled all of our OV-2c diagrams early on and by the time the new system was finalized, we didn't have time to model, but this is what it looked like when we had the quadcopter doing localization with an onboard camera.
 
-![SIDD-colorless-CANCELED OV-2c Localize Quadcopter](assets/SubsystemInterfaceModeling-73d8e.png)
+![SIDD-colorless-CANCELED OV-2c Localize Quadcopter](/assets/images/system-design-development/SubsystemInterfaceModeling-73d8e.png)
 
 All swimlanes are of systems internal to the quadcopter subsystem, and eventually flow out to it keeping a fixed hover point.
 
@@ -47,7 +47,7 @@ If you were modeling from the very beginning, capability and to some extent acti
 ### Data and Information View
 You can always dive straight into DIV-2 rather than DIV-1, but if you start early with modeling a DIV-1 is useful. We'll cover the second level here. Each line in the activity diagram had a name (or should have). That was a data flow, and these data flows naturally have information. In the DIV-2, you show what this information is.
 
-![SIDD-colorless-DIV-2 DockMotionDetails](assets/SubsystemInterfaceModeling-7097d.png)
+![SIDD-colorless-DIV-2 DockMotionDetails](/assets/images/system-design-development/SubsystemInterfaceModeling-7097d.png)
 
 It may seem trivial at first, but these views show not just information, but their type, names, and what larger information boxes they flow into. This can make integration much easier as everyone knows what every subsystem needs from every other subsystem and if the naming conventions are kept to, there is no confusion in how to get that information.
 
