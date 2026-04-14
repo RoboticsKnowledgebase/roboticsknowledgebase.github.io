@@ -3,7 +3,7 @@ title: Industrial and Specialized Motion Planning Approaches
 date: 2026-04-13
 ---
 
-# Industrial and Specialized Motion Planning Approaches
+## Introduction
 
 This article aims to present two specialized approaches for robot motion planning that are particularly relevant for industrial applications and optimization-based planning. While basic motion planning algorithms like A*, RRT, and PRM provide fundamental solutions for robot navigation, industrial applications often require more specialized planners that can generate predictable, efficient, and smooth trajectories.
 
@@ -17,17 +17,17 @@ Motion planning approaches can be broadly categorized into several families:
 
 This article focuses on two specific motion planners: PILZ Industrial Motion Planner, which provides deterministic industrial-style motions, and CHOMP, which uses covariant gradient techniques to optimize trajectories. These planners represent different approaches to specialized motion planning and are valuable additions to the motion planning toolkit beyond the basic algorithms.
 
-# PILZ Industrial Motion Planner
+## PILZ Industrial Motion Planner
 
 For industrial robot applications, it is often necessary to have predictable, deterministic motion along well-defined paths like straight lines or circular arcs. PILZ Industrial Motion Planner is a trajectory generator that provides these capabilities within the MoveIt framework, offering a simple and predictable way to plan standard robot motions.
 
-## Background
+### Background
 
 PILZ Industrial Motion Planner was initially developed as part of the ROS-Industrial project with the concept of bringing interfaces equivalent to conventional industrial robots into the world of ROS. It was designed for situations where "industrial applications often also demand simple things like just moving in a straight line." The planner was incorporated into the MoveIt repository in 2020, making it available as a standard component for ROS-based robotic systems.
 
 Unlike sampling-based planners such as OMPL (Open Motion Planning Library), which focus on finding collision-free paths in complex environments but may produce jerky movements, PILZ was specifically designed to generate trajectories with precise, predictable motion patterns that are common in industrial settings.
 
-## Core Motion Types
+### Core Motion Types
 
 PILZ supports three fundamental motion types:
 
@@ -37,19 +37,19 @@ PILZ supports three fundamental motion types:
 
 3. **CIRC (Circular)**: Allows the end effector to move in a circular arc. To define the arc, additional information beyond start and end points is required, such as a center point or another point on the arc.
 
-## Mathematical Formulation
+### Mathematical Formulation
 
 For PTP motion, PILZ generates trajectories with trapezoidal joint velocity profiles. All joints are assumed to have the same maximal joint velocity/acceleration/deceleration limits, with the strictest limits being adopted if they differ. The joint with the longest time to reach the goal (lead axis) determines the overall motion time, while other axes are decelerated to maintain synchronized motion phases.
 
 For LIN motion, the planner generates a straight-line path in Cartesian space. The rotational motion uses quaternion slerp between start and goal orientation, while translational and rotational motions are synchronized in time.
 
-## Blending Feature
+### Blending Feature
 
 A key feature of PILZ is its ability to blend multiple motion segments together, creating smooth transitions between waypoints without stopping at each point. When the TCP (Tool Center Point) comes closer to a goal than the specified blend radius, it is allowed to begin moving toward the next goal. When leaving a sphere around the current goal, the robot returns to the trajectory it would have taken without blending.
 
 This blending capability is particularly valuable in applications where cycle time is critical, as it allows the robot to move continuously through a sequence of points without the acceleration/deceleration that would otherwise be required at each waypoint.
 
-## Algorithm
+### Algorithm
 
 The PILZ planning process involves these steps:
 
@@ -61,13 +61,13 @@ The PILZ planning process involves these steps:
 6. When planning sequences, it applies blending between segments if blend radii are specified.
 7. The resulting trajectory includes positions, velocities, and accelerations for each waypoint.
 
-## Implementation in ROS and MoveIt
+### Implementation in ROS and MoveIt
 
 PILZ is implemented as a plugin for MoveIt and can be accessed through the standard MoveIt interfaces. By loading the corresponding planning pipeline, the trajectory generation functionalities can be accessed through the user interface (C++, Python, or RViz) provided by the move_group node.
 
 The planner uses maximum velocities and accelerations from the parameters of the ROS node. These limits can be specified in the joint_limits.yaml file, which is typically generated using the MoveIt Setup Assistant.
 
-## Applications
+### Applications
 
 PILZ is particularly useful in:
 
@@ -76,7 +76,7 @@ PILZ is particularly useful in:
 3. Pick-and-place operations where cycle time is critical
 4. Tasks requiring smooth blending between multiple motion segments
 
-## Limitations
+### Limitations
 
 While PILZ offers predictable motion patterns, it has some limitations:
 
@@ -86,21 +86,21 @@ While PILZ offers predictable motion patterns, it has some limitations:
 
 ---
 
-# CHOMP: Covariant Hamiltonian Optimization for Motion Planning
+## CHOMP: Covariant Hamiltonian Optimization for Motion Planning
 
-## Background
+### Background
 
 CHOMP (Covariant Hamiltonian Optimization for Motion Planning) is an optimization-based motion planning algorithm developed at Carnegie Mellon University. CHOMP was introduced as "a novel method for continuous path refinement that uses covariant gradient techniques to improve the quality of sampled trajectories."
 
 Unlike traditional motion planning approaches that separate path finding from trajectory optimization, CHOMP integrates these processes, capitalizing on gradient-based optimization techniques to directly generate smooth, collision-free trajectories.
 
-## Motivation
+### Motivation
 
 Traditional motion planning algorithms often produce jerky or inefficient paths that require post-processing. CHOMP was developed to address these limitations by directly optimizing trajectories for both smoothness and collision avoidance simultaneously.
 
 While high-dimensional motion planners can navigate complex environments, they often struggle with "narrow passages" and require additional post-processing to remove jerky motions. CHOMP aims to resolve these issues by providing a standalone motion planner that can converge over a wide range of inputs and optimize higher-order dynamics.
 
-## Mathematical Formulation
+### Mathematical Formulation
 
 CHOMP optimizes trajectories by minimizing a cost functional that combines two primary components:
 
@@ -121,7 +121,7 @@ Where:
 
 CHOMP uses functional gradient techniques to iteratively improve the trajectory, computing the gradient of the cost function and updating the trajectory accordingly.
 
-## Algorithm
+### Algorithm
 
 CHOMP is a gradient-based trajectory optimization procedure that makes many everyday motion planning problems both simple and trainable. The basic algorithm follows these steps:
 
@@ -132,13 +132,13 @@ CHOMP is a gradient-based trajectory optimization procedure that makes many ever
 
 What makes CHOMP unique is its use of covariant gradient techniques that properly account for the geometry of the trajectory space, leading to more efficient optimization.
 
-## Collision Avoidance
+### Collision Avoidance
 
 CHOMP represents obstacles using distance fields, which provide a measure of distance to the nearest obstacle at any point in the workspace. This allows for efficient computation of collision costs and their gradients.
 
 In implementations like MATLAB's manipulatorCHOMP, the robot is modeled as a collection of spheres (spherical approximation), and obstacles can be represented either as collections of spheres or as truncated signed distance fields.
 
-## Implementation and Applications
+### Implementation and Applications
 
 CHOMP has been implemented for various robotic systems, including:
 
@@ -150,7 +150,7 @@ CHOMP is particularly well-suited for:
 3. Applications requiring smooth, natural motions
 4. Scenarios where trajectory quality is important
 
-## Advantages and Limitations
+### Advantages and Limitations
 
 **Advantages**:
 - Produces smooth, natural-looking trajectories
@@ -164,13 +164,13 @@ CHOMP is particularly well-suited for:
 - Performance depends on the quality of the initial trajectory
 - Not guaranteed to find a solution in highly constrained environments
 
-## Relation to Other Motion Planning Approaches
+### Relation to Other Motion Planning Approaches
 
 CHOMP belongs to a family of optimization-based motion planners that also includes TrajOpt and STOMP (Stochastic Trajectory Optimization for Motion Planning). These approaches differ from sampling-based planners like RRT and PRM, which focus on geometric path finding without considering trajectory smoothness directly.
 
 CHOMP has influenced subsequent work in trajectory optimization and continues to be an important reference in the field of motion planning.
 
-## References
+### References
 
 1. Ratliff, N., Zucker, M., Bagnell, J. A., & Srinivasa, S. (2009). CHOMP: Gradient optimization techniques for efficient motion planning. In IEEE International Conference on Robotics and Automation (pp. 489-494).
 
