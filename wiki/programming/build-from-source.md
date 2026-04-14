@@ -223,4 +223,4 @@ Moreover, using the above framework you can install and use multiple versions of
 
 ## See Also:
 
-- [A short guide on using CMake](https://roboticsknowledgebase.com/wiki/programming/cmake/)
+- [A short guide on using CMake](/wiki/programming/cmake/)
