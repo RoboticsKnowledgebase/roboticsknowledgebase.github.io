@@ -17,6 +17,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Building a Custom Drone for the DARPA Triage Challenge](/wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/)**
   A comprehensive guide to designing and building UAVs for disaster scenarios. Covers both modified commercial platforms and fully custom designs, including hardware selection, electrical integration, and software configuration.
 
+- **[Configure VS Code for ROS 2](/wiki/common-platforms/configure-vscode-for-ros2/)**
+  A guide on setting up Visual Studio Code for ROS 2 development, including debugging with GDB, using symlink-install with colcon, and automating builds with tasks.json.
+
 - **[DJI Drone Breakdown for Technical Projects](/wiki/common-platforms/dji-drone-breakdown-for-technical-projects/)**
   Explores the advantages and limitations of DJI drones in research projects. Includes information on flight modes, GPS dependencies, and practical tips for successful drone operations.
 
