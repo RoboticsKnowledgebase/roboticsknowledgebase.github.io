@@ -13,12 +13,12 @@ Let's begin with debugging.
 
 Open VS Code and load a ROS 2 package. For this example, we'll be using a simple publisher node written in C++. We'll start by intentionally commenting out the line that creates the publisher to simulate a bug. Even though the code appears fine to C++ linting tools, compiling it with `colcon build` will complete successfully.
 
-![image](https://github.com/user-attachments/assets/6eadbdbd-1b8e-4a15-99f7-0a303aa4e57d)
+![VS Code showing a C++ publisher node with the publisher creation line commented out](/assets/images/common-platforms/vscode-ros2-publisher-bug.png)
 
 
 However, when you try to run the node, you’ll get a segmentation fault. This error isn't informative, so we'll set up proper debugging using `gdb` and VS Code.
 
-![image](https://github.com/user-attachments/assets/d09892fb-50d6-4d78-b8c9-ea76a9dfe1b4)
+![Terminal output showing a segmentation fault error](/assets/images/common-platforms/vscode-ros2-segfault.png)
 
 
 ### Using GDB
@@ -46,7 +46,7 @@ So here we see processing our node listening on Port 3000, but now we need to co
 
 to communicate with the debugger.
 
-![image](https://github.com/user-attachments/assets/f9d6c269-eda2-4839-96e0-628bd8b95b70)
+![Terminal showing gdbserver listening on port 3000](/assets/images/common-platforms/gdbserver-listening.png)
 
 
 Now, configure VS Code to connect to the `gdbserver`. Create a `.vscode/launch.json` file:
@@ -72,11 +72,9 @@ Now, configure VS Code to connect to the `gdbserver`. Create a `.vscode/launch.j
 
 
 
-Once saved, go to the Debug tab in VS Code and click **Start Debugging**. You'll see the line where the segmentation fault occurred highlighted. The debug pane shows variables, their values, and the call stack—helping identify issues such as an uninitialized publisher.
+Once saved, go to the Debug tab in VS Code and click **Start Debugging**. The debug pane shows variables, their values, and the call stack—helping identify issues such as an uninitialized publisher.
 
-![image](https://github.com/user-attachments/assets/2b411708-6e57-4882-a9c7-480f60ea1c68)
-
-![image](https://github.com/user-attachments/assets/77b4a867-58d8-4dbb-bfc1-1102aed37ec9)
+![VS Code debug pane showing the call stack and variables at the time of the crash](/assets/images/common-platforms/vscode-ros2-debug-pane.png)
 
 
 ## Simlink Install with colcon
