@@ -3,6 +3,8 @@ title: Configure VS Code for ROS 2
 date: 2026-04-13
 ---
 
+This tutorial provides a comprehensive guide to configuring Visual Studio Code (VS Code) for effective ROS 2 development. It covers essential setup steps including debugging C++ nodes with GDB, optimizing build processes using colcon's symlink-install, and automating common workflows through VS Code's tasks.json. Additionally, it explores the features of the official ROS 2 extension to further streamline your development environment. By following these best practices, developers can significantly improve their productivity and more easily identify runtime errors in their robotic systems.
+
 > This tutorial assumes you already have ROS 2 and Visual Studio Code installed and properly set up on your system.
 
 In this tutorial, we'll walk through setting up a development environment in Visual Studio Code (VS Code) to debug and compile ROS 2 packages effectively. We'll start with configuring debugging tools to help identify runtime errors and then explore how to streamline your build process using VS Code's task configurations.
@@ -203,13 +205,15 @@ This command re-generates `c_cpp_properties.json` with include paths specific to
 - Keep reusable scripts or environment helpers in your workspace for consistency.
 
 ---
-## See Also:
 
+## Summary
+In summary, setting up a robust development environment in VS Code is crucial for efficient ROS 2 development. By using GDB for debugging, symlink-install for faster builds, and automating tasks with `tasks.json`, you can create a more responsive and error-resistant workflow. The ROS 2 extension further enhances this by providing integrated tools for common ROS operations.
+
+## See Also
 * [Debugging ROS 2](https://docs.ros.org/en/rolling/Tutorials/Debugging-ROS-2.html)
 * [colcon documentation](https://colcon.readthedocs.io/en/released/index.html)
 
 ## Further Reading
-
 * [VS Code launch.json reference](https://code.visualstudio.com/docs/editor/debugging)
 * [ROS 2 Tools Extension on Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
 
