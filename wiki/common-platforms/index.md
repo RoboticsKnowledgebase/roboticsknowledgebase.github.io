@@ -14,6 +14,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Asctec UAV Setup Guide](/wiki/common-platforms/asctec-uav-setup-guide/)**
   A detailed tutorial for setting up the Asctec Pelican UAV for autonomous waypoint navigation using ROS. Covers configuring network settings, flashing firmware, and running the ROS package on the onboard Atomboard.
 
+- **[Configure VS Code for ROS 2](/wiki/common-platforms/configure-vscode-for-ros2/)**
+  A guide on setting up Visual Studio Code for ROS 2 development, including debugging with GDB, using symlink-install with colcon, and automating builds with tasks.json.
+
 - **[DJI Drone Breakdown for Technical Projects](/wiki/common-platforms/dji-drone-breakdown-for-technical-projects/)**
   Explores the advantages and limitations of DJI drones in research projects. Includes information on flight modes, GPS dependencies, and practical tips for successful drone operations.
 
