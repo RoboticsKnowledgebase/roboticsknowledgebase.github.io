@@ -80,7 +80,7 @@ Once everything is set up, generate the MoveIt config package (e.g., `my_lbr_mov
 
 You can now use this package to bring up the robot in RViz, plan paths, and visualize trajectories with your custom end-effector.
 
-I highly recommend going through the [MoveIt Setup Assistant guide](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html#step-2-generate-self-collision-matrix) as this tutorial is too short to cover all details needed to make a complete config package.
+Refer to the [MoveIt Setup Assistant guide](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html#step-2-generate-self-collision-matrix) for exhaustive details on generating a complete configuration package.
 
 ```text
 src/
@@ -103,7 +103,7 @@ Now that your basic package is set up, try running sample commands from `lbr_bri
 
 If everything works well, congratulations — you’ve successfully integrated your own end effector with the KUKA arm.
 
-If not, feel free to retrace the steps in this tutorial or consult the official documentation linked above. A personal recommendation: don’t waste time searching for YouTube tutorials. I spent hours doing that and found little of value. Your go-to references should be the GitHub repositories and official docs.
+If not, feel free to retrace the steps in this tutorial or consult the official documentation linked above. Official documentation and GitHub repositories are the most reliable sources of information; generic video tutorials often lack the specific details required for this integration.
 
 **Note:** This tutorial is not meant to be exhaustive. Many minor steps and configuration details have been omitted intentionally to provide a clear starting point without overwhelming the reader. 
 
@@ -116,4 +116,4 @@ This tutorial walked through the core steps needed to integrate a custom end eff
 - [MoveIt Documentation](https://moveit.picknik.ai/)
 - [LBR-Stack Documentation](https://lbr-stack.readthedocs.io/en/latest/index.html#)
 - [ros2_control Documentation](https://index.ros.org/p/ros2_control/)
-- [Explore B.O.N.E.Parte: My Capstone Project That Enhanced My Understanding of KUKA LBR and MoveIt](https://github.com/KNEEpoleon/Boneparte/)
+- [Explore B.O.N.E.Parte: A Capstone Project demonstrating KUKA LBR and MoveIt integration](https://github.com/KNEEpoleon/Boneparte/)
