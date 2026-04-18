@@ -19,7 +19,7 @@ The LBR-Stack is an open-source suite of ROS/ROS2 packages built around KUKA’s
 ## Step 1: Defining your end-effector 
 
 Assuming you've designed a custom end-effector in your preferred CAD software, your first step is to define it in URDF and incorporate it into the robot's description. Most CAD tools (e.g., SolidWorks, Fusion 360) offer plugins or exporters that generate URDF or Xacro files directly. Use those to export your end-effector geometry. Next, integrate the end-effector model into the `lbr_description` package. Navigate to:`lbr_description/urdf/med7/med7_description.xacro` In this file, you'll need to append a fixed joint that connects your end-effector to the flange of the arm (i.e., link 7). Add the following snippet:
-```
+```xml
 <joint name="${robot_name}_joint_ee" type="fixed">
     <parent link="${robot_name}_link_7" />
     <child link="${robot_name}_link_ee" />
@@ -27,7 +27,7 @@ Assuming you've designed a custom end-effector in your preferred CAD software, y
 </joint>
 ```
 Then replace or define the following block with the URDF link corresponding to your end-effector:
-```
+```xml
 <link name="${robot_name}_link_ee">
     <!-- Your end-effector geometry and inertial parameters go here -->
 </link>
@@ -82,7 +82,7 @@ You can now use this package to bring up the robot in RViz, plan paths, and visu
 
 I highly recommend going through the [MoveIt Setup Assistant guide](https://moveit.picknik.ai/main/doc/examples/setup_assistant/setup_assistant_tutorial.html#step-2-generate-self-collision-matrix) as this tutorial is too short to cover all details needed to make a complete config package.
 
-```
+```text
 src/
 ├── manipulation/
 │   ├── fri/
