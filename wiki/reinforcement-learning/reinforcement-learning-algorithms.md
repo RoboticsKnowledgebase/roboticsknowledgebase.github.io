@@ -29,6 +29,9 @@ Model-free algorithms do not attempt to learn or use an internal model of the en
 
 In contrast, model-based algorithms explicitly learn or use a model of the environment that predicts future states and rewards. The agent can then plan ahead by simulating trajectories using this model.
 
+![Multi-contact planning for a humanoid robot using model-based RL](/assets/images/multi-contact-planning.png)
+{: .full}
+
 **Key Advantages:**
 - Better sample efficiency through planning and simulation.
 - Can separate learning from data collection, enabling "dream-based" training.

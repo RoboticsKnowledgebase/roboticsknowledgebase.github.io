@@ -10,6 +10,9 @@ This tutorial provides an introduction to the fundamental concepts of Reinforcem
 ### Agent and Environment
 The agent is the learner or decision-maker, while the environment represents everything the agent interacts with. The agent receives observations from the environment and takes actions that influence the environment's state.
 
+![Humanoid robot agent interacting with its environment](/assets/images/humanoid-robot.drawio.png)
+{: .full}
+
 ### States and Observations
 - A **state** (s) fully describes the world at a given moment.
 - An **observation** (o) is a partial view of the state.
