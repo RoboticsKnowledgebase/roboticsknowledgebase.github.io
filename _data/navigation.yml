@@ -203,6 +203,17 @@ wiki:
         url: /wiki/machine-learning/distributed-training-with-pytorch/
       - title: Imitation Learning With a Focus on Humanoids
         url: /wiki/machine-learning/imitation-learning/
+  - title: Reinforcement Learning
+    url: /wiki/reinforcement-learning/
+    children:
+      - title: Key Concepts in Reinforcement Learning (RL)
+        url: /wiki/reinforcement-learning/key-concepts-in-rl/
+      - title: Reinforcement Learning Algorithms
+        url: /wiki/reinforcement-learning/reinforcement-learning-algorithms/
+      - title: Policy Gradient Methods
+        url: /wiki/reinforcement-learning/intro-to-policy-gradient-methods/
+      - title: Foundation of Value-Based Reinforcement Learning
+        url: /wiki/reinforcement-learning/value-based-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
