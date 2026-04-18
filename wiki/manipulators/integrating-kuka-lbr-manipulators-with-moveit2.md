@@ -15,6 +15,7 @@ This tutorial walks through setting up and programming a KUKA industrial robotic
 The LBR-Stack is an open-source suite of ROS/ROS2 packages built around KUKA’s Fast Robot Interface (FRI) to support LBR IIWA and Med robot arms in simulation and on real hardware. At its core is the `fri` package (CMake support for KUKA’s FRI client), and on top sit higher-level packages for ROS integration. In ROS2, these include the URDFs for LBR Med/IIWA (`lbr_description`) , the FRI ROS2 interface (`lbr_fri_ros2`), controllers (`lbr_fri_ros2_control`), MoveIt configuration generator (`lbr_moveit_config`), and a set of launch files (`lbr_bringup`) allowing easy terminal access. All of these can be found on the [lbr_fri_ros2_stack](https://github.com/lbr-stack/lbr_fri_ros2_stack). Remember to follow the instructions given in the repo readme, these will give you two more packages called `lbr_fri` and `lbr_fri_idl`(Interface definition language messages for FRI). These provide the core functionality needed to bring up an LBR arm in MoveIt: you get the robot description and controllers from the LBR-Stack rather than writing them from scratch. If you plan to add a custom end effector, you can ignore the moveit package completely as this tutorial will guide you on adding a custom end effector to your arm.
 
 **Note:** This tutorial does not cover integrating an active end-effector via KUKA’s native hardware interfaces or IO protocols. If your application requires direct integration through the KUKA flange, this is outside the scope of what’s covered here. Instead, this guide focuses on customizing the arm setup for passive end effectors or active ones that are controlled independently (e.g., via a separate microcontroller interface).
+{: .notice--info}
 
 ## Step 1: Defining your end-effector 
 
@@ -106,6 +107,7 @@ If everything works well, congratulations — you’ve successfully integrated y
 If not, feel free to retrace the steps in this tutorial or consult the official documentation linked above. Official documentation and GitHub repositories are the most reliable sources of information; generic video tutorials often lack the specific details required for this integration.
 
 **Note:** This tutorial is not meant to be exhaustive. Many minor steps and configuration details have been omitted intentionally to provide a clear starting point without overwhelming the reader. 
+{: .notice--info}
 
 ## Summary
 This tutorial walked through the core steps needed to integrate a custom end effector with a KUKA LBR Med/IIWA arm using the `lbr-stack` and MoveIt. By customizing the robot description, setting up a dedicated MoveIt config package, and using the provided bringup tools, you can get your modified robot running in both simulation and hardware. While many fine details have been abstracted away, you now have a structured foundation to build on for more complex applications like task planning, Cartesian control, or perception-driven manipulation.
