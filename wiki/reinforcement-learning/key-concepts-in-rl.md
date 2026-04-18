@@ -46,34 +46,34 @@ pi_net = nn.Sequential(
 ```
 
 ## Trajectories
-A **trajectory (\tau)** is a sequence of states and actions:
-```math
-\tau = (s_0, a_0, s_1, a_1, ...)
-```
+A **trajectory ($\tau$)** is a sequence of states and actions:
+$$
+\tau = (s_0, a_0, s_1, a_1, \dots)
+$$
 State transitions follow deterministic or stochastic rules:
-```math
+$$
 s_{t+1} = f(s_t, a_t)
-```
+$$
 or
-```math
+$$
 s_{t+1} \sim P(\cdot|s_t, a_t)
-```
+$$
 
 ## Reward and Return
-The **reward function (R)** determines the agent's objective:
-```math
+The **reward function ($R$)** determines the agent's objective:
+$$
 r_t = R(s_t, a_t, s_{t+1})
-```
+$$
 ### Types of Return
 1. **Finite-horizon undiscounted return**:
-   ```math
+   $$
    R(\tau) = \sum_{t=0}^T r_t
-   ```
+   $$
 2. **Infinite-horizon discounted return**:
-   ```math
+   $$
    R(\tau) = \sum_{t=0}^{\infty} \gamma^t r_t
-   ```
-   where \( \gamma \) (discount factor) balances immediate vs. future rewards.
+   $$
+   where $\gamma$ (discount factor) balances immediate vs. future rewards.
 
 ## Summary
 This tutorial introduced fundamental RL concepts, including agents, environments, policies, action spaces, trajectories, and rewards. These components are essential for designing RL algorithms.
