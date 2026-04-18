@@ -140,7 +140,7 @@ wiki:
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning.md
       - title: Robotics with the Microsoft Hololens2
-        url: /wiki/sensing/hololens-101.md
+        url: /wiki/sensing/hololens-101/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
