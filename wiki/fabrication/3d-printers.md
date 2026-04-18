@@ -8,7 +8,7 @@ title: 3D Printers
 ### What is 3D printing?
 Fundamentally, 3D Printing is the concept of additively producing a physical part from a 3D part file. Typically, this done by breaking a 3D part into horizontal layers and then printing each layer as a planar part of constant thickness. However, there are other methods. For example, [Carbon3D](http://carbon3d.com/), uses an alternative approach known as Digital Light Synthesis which is a two step process of printing with a support resin then melting the support structure away.
 
-![Layering of Material to Create a Shape used in 3D Printing](assets/3DPrinters-10477.png)
+![Layering of Material to Create a Shape used in 3D Printing](/assets/images/fabrication/3DPrinters-10477.png)
 
 Recently 3D printing has become somewhat of a revolution for three reasons:
 
@@ -58,7 +58,7 @@ Material jetting machines are known to produce parts with good surface finishes 
 
 ## Industry Segmentation
 [IBISWorld](http://clients1.ibisworld.com/?u=XTrdcEUxGT9ofTiep6uaiw==&p=Evn+48Pl8G+/5sICIXpGHA==) provides a overview of the 3D printer manufacturing industry. This is focused on large high volume companies such as Straysis and [3D Systems](http://www.3dsystems.com/) and does not include many of the effects of smaller volume 'maker' targeted companies. It shows a roughly equal breakdown between SLA, SLS, and FDM technologies.
-![Industry Segmentation by 3D Printing Technologies](assets/3DPrinters-a3389.png)
+![Industry Segmentation by 3D Printing Technologies](/assets/images/fabrication/3DPrinters-a3389.png)
 
 
 

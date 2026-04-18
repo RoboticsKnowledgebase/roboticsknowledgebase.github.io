@@ -60,10 +60,10 @@ The following tutorial uses a Quadrotor with RGB-D Sensor as the base platform. 
 Here is the setup:
 
 Quadrotor (`base_link`): [3DR Iris+](https://store.3dr.com/products/IRIS)
-![3DR Iris+](assets/ROSCostMaps-90ce8.png)
+![3DR Iris+](/assets/images/ROSCostMaps-90ce8.png)
 
 Depth Sensor (`camera_link`): [Xtion Pro Live](https://www.asus.com/us/3D-Sensor/Xtion_PRO_LIVE/)
-![Xtion Pro Live](assets/ROSCostMaps-fad65.png)
+![Xtion Pro Live](/assets/images/ROSCostMaps-fad65.png)
 
 ### Setup of the camera
 The Xtion Pro Live is a sensor made by Asus. It is a structured light stereo camera that is able to generate 3D point clouds indoors. If you want to read more about structured light cameras, here is a link to [the Wikipedia page](https://en.wikipedia.org/wiki/Structured-light_3D_scanner). [This paper](http://fofi.pagesperso-orange.fr/Downloads/Fofi_EI2004.pdf) that covers the general methods of structured light cameras. The Asus Xtion Pro Live is able to provide RGB and depth data. This data needs to be manipulated by a package that is able to handle point cloud information. OpenNI is a convenient package that is able to handle complicated camera sensor data and suited for this purpose.
@@ -134,7 +134,7 @@ The source code for MAVROS, which will be similar to the folder you will find by
 
 You will want to find the file named `px4_config.yaml` or `apm_config.yaml` depending on which of the flight controller firmware you are running. If you are running the PX4 firmware, you are going to want to open `px4_config.yaml` and find this section:
 
-![Code Snippet](assets/ROSCostMaps-2dba7.png)
+![Code Snippet](/assets/images/ROSCostMaps-2dba7.png)
 
 Once you find it, you will want to change:
 - `frame_id: "local_origin"` to `frame_id: "map"`
@@ -208,7 +208,7 @@ $ roslaunch column move_base.launch
 ```
 ### Output
 The output of the costmap is shown here.
-![CostMap Output](assets/ROSCostMaps-8c746.png)
+![CostMap Output](/assets/images/ROSCostMaps-8c746.png)
 
 ## Communications with PIXHAWK
 The APM firmware stack is not as powerful as the PX4 firmware. In order to get communication from the PIXHAWK flight controller to the onboard computer you need to use the Telem 1 or Telem 2 port to transfer information through UART. More information can be found [here](http://ardupilot.org/copter/docs/common-telemetry-port-setup-for-apm-px4-and-pixhawk.html). You can also transfer through USB, which is often unreliable, however.

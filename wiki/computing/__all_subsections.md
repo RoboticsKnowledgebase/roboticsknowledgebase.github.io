@@ -9,7 +9,7 @@ This tutorial covers the basics of different Arduinos, and how to implement comm
 The main Arduino boards witnessed being used in these applications are the Arduino Uno and Arduino Mega.
 
 ## The Uno
-![Arduino Uno R3 Front](assets/Arduino-d9b3f.png)
+![Arduino Uno R3 Front](/assets/images/computing/Arduino-d9b3f.png)
 
 Good for smaller projects
 - Has 14 digital input/output pins, 6 analog inputs (which can also be used as digital input/output pins), and a 5v as well as a 3.3v regulator
@@ -19,7 +19,7 @@ Good for smaller projects
 - If you are going to power it externally, you have to use between 7 and 12 volts on the Vin pin, and the ground of your power source has to go to a GND pin. A 9 volt battery works well for this. Make sure you connect the hot to Vin and the ground/negative terminal to ground of the power supply, or else you can fry the board.
 
 ## The Mega
-![Arduino Mega R3](assets/Arduino-c30e6.png)
+![Arduino Mega R3](/assets/images/computing/Arduino-c30e6.png)
 
 Good for bigger projects
 - Has 54 digital input/output pins, 16 analog inputs (which can also be used as digital input/output pins), and a 5v as well as a 3.3v regulator
@@ -32,7 +32,7 @@ Good for bigger projects
 ## Wiring:
 ### Limit Switch:
 #### Example:
-![Limit Switch Wiring](assets/Arduino-2369d.png)
+![Limit Switch Wiring](/assets/images/computing/Arduino-2369d.png)
 
 Whatever pin that is connected to the Normally Open pin of the limit switch, needs to be setup by using ``pinMode(pin#, INPUT_PULLUP);``
 
@@ -48,7 +48,7 @@ So to use this intuitively, use ``!digitalRead(pin#);`` this will return HIGH wh
 ## Motor Driver:
 Example with L298 Compact Motor Driver available in Mechatronics Lab:
 
-![Motor Driver Wiring](assets/Arduino-de522.png)
+![Motor Driver Wiring](/assets/images/computing/Arduino-de522.png)
 
 With this example, the yellow lines connected to pins 10 and 11 (which are PWM) are the enables for the motors. When the enable is HIGH, the motor is turned on. For PWM lines, you use ``analogWrite(pin#, pwmValue);``, where ``pwmValue`` is an integer between 0-255, with 0 being off, and 255 being always HIGH, with inbetween values able to control speed if your motor is capable of that.
 
@@ -285,7 +285,7 @@ Download the CUDA driver from the [official nvidia website here](https://develop
 
 *At the time of writing this document, the latest stable version is CUDA 10.0*.
 
-![](https://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cuda.png)
+![](/assets/images/computing/nvidia-cuda.png)
 
 After downloading the file, go to the folder where you have downloaded the file and run the following commands from the terminal to install the CUDA drivers. Please make sure that the filename used in the command below is the same as the downloaded file and replace the `<version>` number.
 
@@ -314,7 +314,7 @@ Go to official cuDNN website [official cuDNN website](https://developer.nvidia.c
 
 **Make sure you download the correct cuDNN version which matches with you CUDA version.**
 
-![](https://roboticsknowledgebase.com/wiki/computing/assets/nvidia-cudnn.png)
+![](/assets/images/computing/nvidia-cudnn.png)
 
 ### Installing from TAR file (Recommended Method)
 For cuDNN downloaded using _cuDNN Library for Linux_ method, go to the folder where you have downloaded the “.tgz” file and from the command line execute the following (update the filename).

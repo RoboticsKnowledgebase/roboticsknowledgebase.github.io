@@ -80,7 +80,7 @@ $$ \frac{1}{n^{2}} $$
 #### Images and Video
 Images and embedded video are supported.
 
-![Put a relevant caption here](assets/images/Hk47portrait-298x300.jpg)
+![Put a relevant caption here](/assets/images/images_Hk47portrait-298x300.jpg)
 
 {% include video id="8P9geWwi9e0" provider="youtube" %}
 
