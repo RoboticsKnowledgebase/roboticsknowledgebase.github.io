@@ -56,6 +56,12 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Robotic Total Station (Leica TS16)](/wiki/sensing/robotic-total-stations/):**
   Discusses the use of robotic total stations for high-precision 3D positioning and their applications in surveying and robotics.
 
+- **[Reducing Sensor Noise in Thermal or Visual Imaging sensors](/wiki/sensing/sensor-noise/):**
+  Explains various techniques for reducing noise in thermal and visual imaging sensors, including filtering and post-processing methods.
+
+- **[Robotics with the Microsoft Hololens2](/wiki/sensing/hololens-101/):**
+  Introduces the Microsoft HoloLens 2 as an AR headset for robotics applications, focusing on accessing its onboard sensors (RGB, Greyscale, Depth, and IMU) using a Unity-Python API.
+
 - **[Speech Recognition](/wiki/sensing/speech-recognition/):**
   Explores speech recognition as a robotic interface, including offline and online solutions, wakeword detection, and speech synthesis.
 

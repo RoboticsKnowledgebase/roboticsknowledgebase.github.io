@@ -153,6 +153,8 @@ wiki:
         url: /wiki/sensing/sensor-noise/
       - title: Apple Vision Pro for Robotics
         url: /wiki/sensing/apple-vision-pro/
+      - title: Robotics with the Microsoft Hololens2
+        url: /wiki/sensing/hololens-101/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
