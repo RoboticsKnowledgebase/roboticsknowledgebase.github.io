@@ -166,7 +166,7 @@ wiki:
     url: /wiki/manipulators/
     children:
       - title: Integrating KUKA LBR Manipulators with MoveIt2
-        url: /wiki/manipulators/integrating-kuka-lbr-manipulators-with-moveIt2/
+        url: /wiki/manipulators/integrating-kuka-lbr-manipulators-with-moveit2/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
