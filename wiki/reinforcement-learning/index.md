@@ -27,4 +27,3 @@ This section provides a comprehensive guide to reinforcement learning, covering 
 
 ## Further Reading
 - [Spinning Up in Deep RL – OpenAI](https://spinningup.openai.com/en/latest/)
-- [Reinforcement Learning: An Introduction – Sutton and Barto](http://incompleteideas.net/book/the-book-2nd.html)

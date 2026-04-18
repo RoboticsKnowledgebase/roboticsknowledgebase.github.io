@@ -155,7 +155,6 @@ Understanding these trade-offs is key to selecting or designing an RL algorithm 
 ## Further Reading
 - [Spinning Up in Deep RL – OpenAI](https://spinningup.openai.com/en/latest/)
 - [RL Course by David Silver](https://www.davidsilver.uk/teaching/)
-- [RL Book – Sutton and Barto (2nd ed.)](http://incompleteideas.net/book/the-book-2nd.html)
 - [CS285: Deep Reinforcement Learning – UC Berkeley (Sergey Levine)](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - [Deep RL Bootcamp (2017) – Stanford](https://sites.google.com/view/deep-rl-bootcamp/lectures)
 - [Lil’Log – Reinforcement Learning Series by Lilian Weng](https://lilianweng.github.io/lil-log/)
