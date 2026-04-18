@@ -287,10 +287,10 @@ In this article, we explored the basics of the Microsoft Hololens2, including a 
 
 
 ## References
-- [HoloLens2github](https://github.com/jdibenes/hl2ss)
-- [HL2forCV](https://github.com/microsoft/HoloLens2ForCV)
-- [hl2_rm](https://arxiv.org/abs/2008.11239)
-- [PythonGlobalInterpreterLock](https://realpython.com/python-gil/)
-- [Producer-Consumer-Design-Pattern](https://jenkov.com/tutorials/java-concurrency/producer-consumer.html)
-- [HL2_hardware](https://learn.microsoft.com/en-us/hololens/hololens2-hardware)
-- [WMixedReality](https://learn.microsoft.com/en-us/windows/mixed-reality/)
+- [1] J. Dibenes, "hl2ss: HoloLens 2 Sensor Streaming," GitHub Repository. [Online]. Available: https://github.com/jdibenes/hl2ss.
+- [2] J. Jenkov, "Producer-Consumer," Jenkov.com. [Online]. Available: https://jenkov.com/tutorials/java-concurrency/producer-consumer.html.
+- [3] Microsoft, "HoloLens 2 For CV," GitHub Repository. [Online]. Available: https://github.com/microsoft/HoloLens2ForCV.
+- [4] Microsoft, "HoloLens 2 Hardware Details," Microsoft Learn. [Online]. Available: https://learn.microsoft.com/en-us/hololens/hololens2-hardware.
+- [5] Microsoft, "Windows Mixed Reality Documentation," Microsoft Learn. [Online]. Available: https://learn.microsoft.com/en-us/windows/mixed-reality/.
+- [6] Real Python, "What Is the Python Global Interpreter Lock (GIL)?," Real Python. [Online]. Available: https://realpython.com/python-gil/.
+- [7] N. Seira, et al., "HoloLens 2 Research Mode as a Tool for Computer Vision," arXiv preprint arXiv:2008.11239, 2020. [Online]. Available: https://arxiv.org/abs/2008.11239.
