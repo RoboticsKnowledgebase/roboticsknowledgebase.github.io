@@ -23,6 +23,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Hello Robot Stretch RE1](/wiki/common-platforms/hello-robot/)**
   Provides guidance on working with the Hello Robot Stretch RE1 mobile manipulator. Covers software configuration, extending the robot's capabilities with custom tools, and leveraging ROS for control.
 
+- **[Interfacing with the Nvidia Orin](/wiki/common-platforms/interfacing-with-nvidia-orin/)**
+  A comprehensive guide to using the Nvidia Jetson AGX Orin for robotics. Covers power delivery, GPIO pinouts, high-speed interfaces like USB and Ethernet, and debugging tools for reliable sensor integration.
+
 - **[Husky Interfacing and Communication](/wiki/common-platforms/husky_interfacing_and_communication/)**
   Discusses how to set up communication with the Clearpath Husky robot, including hardware setup and localization using GPS, IMU, and odometry.
 
