@@ -66,7 +66,7 @@ from mmdet.datasets import DATASETS
 
 
 ### Testing HoloLens Latency Metrics
-With the environment correctly set up, you can now utilize the following Python script to evaluate the latency characteristics of data transmission from the HoloLens 2. This script establishes connections to the Personal Video (RGB) and [Research Mode](arXiv:2008.11239) Depth Long Throw cameras, captures synchronized frames, and calculates various performance metrics, including end-to-end latency, frame delivery time, and processing time.
+With the environment correctly set up, you can now utilize the following Python script to evaluate the latency characteristics of data transmission from the HoloLens 2. This script establishes connections to the Personal Video (RGB) and [Research Mode](https://arxiv.org/abs/2008.11239) Depth Long Throw cameras, captures synchronized frames, and calculates various performance metrics, including end-to-end latency, frame delivery time, and processing time.
 
 ```python
 import multiprocessing as mp
@@ -289,7 +289,7 @@ In this article, we explored the basics of the Microsoft Hololens2, including a 
 ## References
 - [HoloLens2github](https://github.com/jdibenes/hl2ss)
 - [HL2forCV](https://github.com/microsoft/HoloLens2ForCV)
-- [hl2_rm](arXiv:2008.11239)
+- [hl2_rm](https://arxiv.org/abs/2008.11239)
 - [PythonGlobalInterpreterLock](https://realpython.com/python-gil/)
 - [Producer-Consumer-Design-Pattern](https://jenkov.com/tutorials/java-concurrency/producer-consumer.html)
 - [HL2_hardware](https://learn.microsoft.com/en-us/hololens/hololens2-hardware)
