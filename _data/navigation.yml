@@ -182,16 +182,16 @@ wiki:
       - title: NLP for robotics
         url: /wiki/machine-learning/nlp_for_robotics.md/
   - title: Reinforcement Learning
-    url: /wiki/reinforcemnet-learning
+    url: /wiki/reinforcement-learning/
     children:
-      - title: Key Concepts in Reinforcemnet Learning (RL)
-        url: /wiki/reinforcemnet-learning/key-concepts-in-rl/
+      - title: Key Concepts in Reinforcement Learning (RL)
+        url: /wiki/reinforcement-learning/key-concepts-in-rl/
       - title: Reinforcement Learning Algorithms
-        url: /wiki/reinforcemnet-learning/reinforcement-learning-algorithms/
+        url: /wiki/reinforcement-learning/reinforcement-learning-algorithms/
       - title: Policy Gradient Methods
-        url: /wiki/reinforcemnet-learning/intro-to-policy-gradient-methods/
+        url: /wiki/reinforcement-learning/intro-to-policy-gradient-methods/
       - title: Foundation of Value-Based Reinforcement Learning
-        url: /wiki/reinforcemnet-learning/value-based-reinforcement-learning/
+        url: /wiki/reinforcement-learning/value-based-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
