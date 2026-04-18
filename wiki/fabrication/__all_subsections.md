@@ -9,7 +9,7 @@ title: 3D Printers
 ### What is 3D printing?
 Fundamentally, 3D Printing is the concept of additively producing a physical part from a 3D part file. Typically, this done by breaking a 3D part into horizontal layers and then printing each layer as a planar part of constant thickness. However, there are other methods. For example, [Carbon3D](http://carbon3d.com/), uses an alternative approach known as Digital Light Synthesis which is a two step process of printing with a support resin then melting the support structure away.
 
-![Layering of Material to Create a Shape used in 3D Printing](assets/3DPrinters-10477.png)
+![Layering of Material to Create a Shape used in 3D Printing](/assets/images/fabrication/3DPrinters-10477.png)
 
 Recently 3D printing has become somewhat of a revolution for three reasons:
 
@@ -59,7 +59,7 @@ Material jetting machines are known to produce parts with good surface finishes 
 
 ## Industry Segmentation
 [IBISWorld](http://clients1.ibisworld.com/?u=XTrdcEUxGT9ofTiep6uaiw==&p=Evn+48Pl8G+/5sICIXpGHA==) provides a overview of the 3D printer manufacturing industry. This is focused on large high volume companies such as Straysis and [3D Systems](http://www.3dsystems.com/) and does not include many of the effects of smaller volume 'maker' targeted companies. It shows a roughly equal breakdown between SLA, SLS, and FDM technologies.
-![Industry Segmentation by 3D Printing Technologies](assets/3DPrinters-a3389.png)
+![Industry Segmentation by 3D Printing Technologies](/assets/images/fabrication/3DPrinters-a3389.png)
 
 
 
@@ -337,7 +337,7 @@ This is a good starting points for anyone looking to convert files from their So
 ### Space Jockey Custom Profile
 This is 2013-14 Team B's Makerbot slicer profile designed for faster, stronger parts (faster infill, 3 shells), with the temperature settings already tweaked for the MRSD MakerBot. Download and unzip to User/My Things/Profiles, and then select "Space Jockey Hull Parts" in your print settings in Makerware.
 
-[Download Space_Jockey_Profile.zip](assets/Space_Jockey_Profile.zip)
+[Download Space_Jockey_Profile.zip](/wiki/fabrication/assets/Space_Jockey_Profile.zip)
 
 ## Issues Log
 1. **Issue:** Large objects would start peeling off the left side of the plate.
@@ -421,7 +421,7 @@ In a bowser window, go to <http://series1-10610.local:5000>. This should load th
 Once you are connected, open Cura Type A. When prompted, type in our printer's serial number and API key:
 - Serial number: 10610
 - API Key: Click on the wrench icon in the upper right hand corner of the Series A webpage and go to the API tab. Copy and paste the API key. 
-![Find your API Key here](assets/SeriesA_APIKey.jpg)
+![Find your API Key here](/assets/images/fabrication/SeriesA_APIKey.jpg)
 
 Click the "Configure" button to prepare your printer. Cura Type A should open. 
 
@@ -434,8 +434,8 @@ The Series A Pro printer generally uses PLA (as opposed to ABS). PLA requires ve
 
 ### Print Profiles
 The standard profile is a good compromise between speed and print quality for PLA on the Series A Pro. 
-[Download SeriesA_Standard_Profile.zip](assets/SeriesA_Standard_Profile.zip)
-![Print Quality of Standard Profile](assets/SeriesA_PLA_SP.jpg)
+[Download SeriesA_Standard_Profile.zip](/wiki/fabrication/assets/SeriesA_Standard_Profile.zip)
+![Print Quality of Standard Profile](/assets/images/fabrication/SeriesA_PLA_SP.jpg)
 
 ## Tips
 #### Changing Fillament

@@ -55,7 +55,7 @@ A standard meeting notes document should have the following content-sections:
 
 Here is an example of maintaining meeting notes on Notion. 
 
-![Meeting Notes List](assets/images/meeting-notes.png)
+![Meeting Notes List](/assets/images/project-management/meeting-notes.png)
 
 
 ### Task List
@@ -78,7 +78,7 @@ A standard task card should have the following content-sections:
 - Evidence of Completion
 
 Here is an example of tracking tasks on Notion. 
-![image2.png](assets/images/task-list.png)
+![image2.png](/assets/images/project-management/task-list.png)
 
 
 
@@ -86,10 +86,10 @@ Here is an example of tracking tasks on Notion.
 Notion automatically converts your task list to a timeline format (Gantt chart). However, Notion can only do this to tasks that have a start date and end date defined. Additionally, you can edit the task list to add dependencies between tasks. 
 
 Here is an example of managing a project's schedule on Notion. 
-![Picture2.png](assets/images/project-schedule.png)
+![Picture2.png](/assets/images/project-management/project-schedule.png)
 
 > While coming up with a project schedule, make sure that you keep external milestones and delivery dates in mind. It is a good practice to come up with intermediate internal milestones enroute external milestones. The image below shows an example of how you can keep track of milestones for your project.
-![Picture5.png](assets/images/milestones.png)
+![Picture5.png](/assets/images/project-management/milestones.png)
 
 
 
@@ -148,7 +148,7 @@ Here are the rules:
 
 Feel free to modify the rules to suit your team’s interests!
 
-![Picture3.png](assets/images/card-system.png)
+![Picture3.png](/assets/images/project-management/card-system.png)
 
 
 ### Office Hours
@@ -161,7 +161,7 @@ A fun strategy here is to define project ‘**Office Hours**’ – specific tim
 After committing to weekly ‘Office Hour’ timings, each team member should try to stick to these timings (or cover up for them where applicable). These office hours will help the project manager keep track of each individual’s progress, efficiency and contribution over time, which will help in future planning activities.
 
 Here is an example of Team Availability (Office Hours) that you could apply to your project as well.
-![Picture4.png](assets/images/office-hours.png)
+![Picture4.png](/assets/images/project-management/office-hours.png)
 
 
 ### Communication Channels
