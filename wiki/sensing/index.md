@@ -14,6 +14,9 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Adafruit GPS](/wiki/sensing/adafruit-gps/):**
   Discusses the Adafruit Ultimate GPS module for precise localization, including its features, technical specifications, and usage tips. 
 
+- **[Apple Vision Pro](/wiki/sensing/apple-vision-pro/):**
+  Provides an overview on integrating Apple Vision Pro with robotics, covering object tracking, spatial coordinate frames, and ROS communication.
+
 - **[AprilTags](/wiki/sensing/apriltags/):**
   Introduces AprilTags as a fiducial marker system for visual identification and 6D pose estimation. Explains their use in robotics and potential pitfalls.
 

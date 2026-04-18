@@ -47,7 +47,7 @@ Here is a consolidated list of external resources and templates referenced in th
    - [Creating Breakthrough Products](https://www.pearson.com/)
 
 4. **Risk Management**
-   - [MRSD Risk Matrix & Tracker](assets/MRSD_Risk.xlsx)
+   - [MRSD Risk Matrix & Tracker](/wiki/project-management/assets/MRSD_Risk.xlsx)
 
 5. **Using Notion**
    - [Notion for Education](https://www.notion.so/product)
