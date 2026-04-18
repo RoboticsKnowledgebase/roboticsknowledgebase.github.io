@@ -36,9 +36,9 @@ It is important to always check the total current draw of all the peripherals co
 
 > On that note it is highly recommended to have an external power supply for sensors like Lidars.
 
-![Orin Power Lines](/roboticsknowledgebase.github.io/assets/images/orin_power.png)
+![Orin Power Lines](/assets/images/orin_power.png)
 
-![Orin Current Limits](/roboticsknowledgebase.github.io/assets/images/orin_current_capabilities.png)
+![Orin Current Limits](/assets/images/orin_current_capabilities.png)
 
 >For more detailed information, look at the developer carrier kit documentation
 [Jetson AGX Orin Developer Kit Carrier Board Documentation](https://developer.download.nvidia.com/assets/embedded/secure/jetson/agx_orin/Jetson-AGX-Orin-Module-Carrier-Board-Specification_SP-10900-001_v1.2.pdf?__token__=exp=1745640142~hmac=8c43b28413aec27743181671dfd845da71122f1ea6abd01125043603e10e3249&t=eyJscyI6IndlYnNpdGUiLCJsc2QiOiJkZXZlbG9wZXIubnZpZGlhLmNvbS8/ZmlsZW5hbWU9NDAzLmh0bWwifQ==)
@@ -48,7 +48,7 @@ The 40-Pin header provides access to many GPIO pins that can be used to interfac
 
 Below is the pinout for the 40 pin header, these can be used for interfacing with sensors and devices that don't require fast processing and have low power requirements.
 
-![J30 Pinout](/roboticsknowledgebase.github.io/assets/images/orin_header.png)
+![J30 Pinout](/assets/images/orin_header.png)
 
 - **Power Pins:**
   - 3.3V (Pin 1 and 17)
@@ -70,7 +70,7 @@ There are other pins that support the communication protocol that you may want t
 
 Let's take a look at the high-speed interface ports that one might use to interface with relevant sensors like cameras, flight controllers, LiDars.
 
-![Orin SoC interface with Dev Kit Carrier Board](/roboticsknowledgebase.github.io/assets/images/Orin_Soc_carrier.png)
+![Orin SoC interface with Dev Kit Carrier Board](/assets/images/Orin_Soc_carrier.png)
 
 **USB Ports:**
 
@@ -79,7 +79,7 @@ Let's take a look at the high-speed interface ports that one might use to interf
   - Two ports at USB 3.2 Gen1 (5 Gbps) (J33 stacked pair).
   - All backward-compatible with USB 2.0.
   - VBUS supports up to 2A for each stacked pair (shared between the two connectors in the stack).
-  - As seem below, it is important to know the physical differences between the USB 3.0 and 2.0 cables. When using sensors with custom breakout boards, ensure that 3.0 pins (Tx+, Tx-, Rx+, Rx-) are exposed in order to interface with the sensor using 3.0 protocol.![USB 3.0 vs 2.0](/roboticsknowledgebase.github.io/assets/images/usb_3.png)
+  - As seem below, it is important to know the physical differences between the USB 3.0 and 2.0 cables. When using sensors with custom breakout boards, ensure that 3.0 pins (Tx+, Tx-, Rx+, Rx-) are exposed in order to interface with the sensor using 3.0 protocol.![USB 3.0 vs 2.0](/assets/images/usb_3.png)
 
 - **2× USB Type-C Ports:**
   - Two Type C ports (J39 and J40)
