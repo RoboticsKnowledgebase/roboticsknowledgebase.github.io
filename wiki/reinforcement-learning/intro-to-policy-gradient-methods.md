@@ -1,6 +1,6 @@
 ---
 date: 2025-05-04
-title: Proximal Policy Optimization (PPO): Concepts, Theory, and Insights
+title: "Proximal Policy Optimization (PPO): Concepts, Theory, and Insights"
 ---
 
 Proximal Policy Optimization (PPO) is one of the most widely used algorithms in modern reinforcement learning. It combines the benefits of policy gradient methods with a set of improvements that make training more stable, sample-efficient, and easy to implement. PPO is used extensively in robotics, gaming, and simulated environments like MuJoCo and OpenAI Gym. This article explains PPO from the ground up: its motivation, theory, algorithmic structure, and practical considerations.

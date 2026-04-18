@@ -1,6 +1,6 @@
 ---
 date: 2025-05-04
-title: Deep Q-Networks (DQN): A Foundation of Value-Based Reinforcement Learning
+title: "Deep Q-Networks (DQN): A Foundation of Value-Based Reinforcement Learning"
 ---
 
 Deep Q-Networks (DQN) introduced the integration of Q-learning with deep neural networks, enabling reinforcement learning to scale to high-dimensional environments. Originally developed by DeepMind to play Atari games from raw pixels, DQN laid the groundwork for many modern value-based algorithms. This article explores the motivation, mathematical structure, algorithmic details, and practical insights for implementing and improving DQN.
