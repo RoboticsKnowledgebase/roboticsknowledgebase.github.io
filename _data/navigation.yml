@@ -72,6 +72,8 @@ wiki:
         url: /wiki/common-platforms/unitree-g1/
       - title: Unitree Go1
         url: /wiki/common-platforms/unitree-go1/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: Asctec Pelican UAV Setup Guide
