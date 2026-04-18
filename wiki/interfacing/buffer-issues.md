@@ -97,10 +97,10 @@ Key takeaways:
 - Document the issue to help others in your team recognize and handle it efficiently.
 
 ## See Also:
-- [F1/10th Platform Setup Guide](/f110-setup)
-- [ROS Serial Communication Tips](/ros-serial)
-- [Jetson Xavier NX UART/USB Handling](/jetson-usb-debug)
-- [Pure Pursuit Controller Tuning](/pure-pursuit)
+- [RC Cars for Autonomous Vehicle Research](/wiki/common-platforms/rccars-the-complete-guide/)
+- [ROS-Arduino Interface using rosserial](/wiki/common-platforms/ros/ros-arduino-interface/)
+- [Vedder Open-Source Electronic Speed Controller](/wiki/actuation/vedder-electronic-speed-controller/)
+- [Pure Pursuit Controller for Skid-Steering Robot](/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/)
 
 ## Further Reading
 - https://vesc-project.com/
