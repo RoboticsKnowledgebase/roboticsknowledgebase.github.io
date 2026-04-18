@@ -34,14 +34,15 @@ The Orin has multiple internal power lines derived from the 19V input from the b
 
 It is important to always check the total current draw of all the peripherals connected to the power rail to ensure you do not exceed max current draw. For example, the USB ports are connected to the 5V power line and would be powering certain devices. If you try and power on something large from the 5V pin on the J30, you can exceed maximum current draw in some conditions.
 
-> On that note it is highly recommended to have an external power supply for sensors like Lidars.
+It is highly recommended to have an external power supply for sensors like Lidars.
+{: .notice--info}
 
 ![Orin Power Lines](/assets/images/orin_power.png)
 
 ![Orin Current Limits](/assets/images/orin_current_capabilities.png)
 
->For more detailed information, look at the developer carrier kit documentation
-[Jetson AGX Orin Developer Kit Carrier Board Documentation](https://developer.download.nvidia.com/assets/embedded/secure/jetson/agx_orin/Jetson-AGX-Orin-Module-Carrier-Board-Specification_SP-10900-001_v1.2.pdf?__token__=exp=1745640142~hmac=8c43b28413aec27743181671dfd845da71122f1ea6abd01125043603e10e3249&t=eyJscyI6IndlYnNpdGUiLCJsc2QiOiJkZXZlbG9wZXIubnZpZGlhLmNvbS8/ZmlsZW5hbWU9NDAzLmh0bWwifQ==)
+For more detailed information, look at the developer carrier kit documentation: [Jetson AGX Orin Developer Kit Carrier Board Documentation](https://developer.nvidia.com/embedded/learn/jetson-agx-orin-devkit-user-guide/developer_kit_layout.html)
+{: .notice--info}
 
 ## 40 Pin Expansion Connector (J30)
 The 40-Pin header provides access to many GPIO pins that can be used to interface (read/write) with sensors such as IMUs, Lidars, and encoders.
@@ -54,16 +55,21 @@ Below is the pinout for the 40 pin header, these can be used for interfacing wit
   - 3.3V (Pin 1 and 17)
   - 5V (pin 2 and 4)
   - Multiple ground pins
-  - > Always ensure a **common ground** between Jetson and peripherals.
 
-- - **GPIOs:**
+Always ensure a **common ground** between Jetson and peripherals.
+{: .notice--warning}
+
+- **GPIOs:**
   - Configurable general-purpose I/O pins.
   - Very helpful for setting data to specific registers on drivers allowing configuration of sensors. 
-  - >Always refer to the sensor datasheet to ensure you meet conditions for interfacting with sensor. For example, adhering to the timing diagram.
+
+Always refer to the sensor datasheet to ensure you meet conditions for interfacing with the sensor. For example, adhering to the timing diagram.
+{: .notice--info}
 
 There are other pins that support the communication protocol that you may want to use (UART, SPI, I2C, CAN). [Different Embedded Communication Protocols](https://www.parlezvoustech.com/en/comparaison-protocoles-communication-i2c-spi-uart/)
 
-> **Important:** All signal pins operate at 3.3 V logic levels and are *not 5V-tolerant*. This means trying to read a High (5V) pulse can damage the pin permanently. Use level shifters when interfacing with 5V devices. [Level Shifters](https://www.digikey.com/en/blog/logic-level-shifting-basics)
+**Important:** All signal pins operate at 3.3 V logic levels and are *not 5V-tolerant*. This means trying to read a High (5V) pulse can damage the pin permanently. Use level shifters when interfacing with 5V devices. [Level Shifters](https://www.digikey.com/en/blog/logic-level-shifting-basics)
+{: .notice--warning}
 
 
 ## High-Speed Interfaces and USB Architecture
@@ -88,7 +94,8 @@ Let's take a look at the high-speed interface ports that one might use to interf
 - **1× Micro-USB (Micro-B) Port:**
   - Used for flashing, serial console access, and device mode operations.
 
-- > **Important:** USB C ports are directly connected to the Orin SoC (dedicated UPHY Lanes), while USB A are connected via onboard hubs (share a single UPHY Lane). This means the bandwidth is shared across all connected USB A ports. For maximum performance (e.g., USB cameras), prefer direct USB 3.2 ports (Type C) when possible. 
+**Important:** USB C ports are directly connected to the Orin SoC (dedicated UPHY Lanes), while USB A are connected via onboard hubs (share a single UPHY Lane). This means the bandwidth is shared across all connected USB A ports. For maximum performance (e.g., USB cameras), prefer direct USB 3.2 ports (Type C) when possible. 
+{: .notice--warning}
 
 **Networking:**
 
@@ -106,7 +113,8 @@ There are some tools to test the connections of your peripheral devices with the
 
 - Finally, `/dev/` contains device files that are created by the `udev` system. These files are created when the kernel detects and initializes the hardware. If file is not present in `/dev/`, look into damaged wires, pins, low power, not recognized by driver, and other such issues.
 
-> **Important:** When the Orin is boots up, the power rails will provide power to your sensors and they may boot up before the Orin, attempting communication. This may lead to sensors being in unknown states and behavior that is very hard to debug. I heavily recommend power sequencing to ensure reliable bringup of sensors every time. A simple way to power sequence is using a mosfet switch that enables power to the sensor given an input signal (can be given from the Orin after boot).
+**Important:** When the Orin boots up, the power rails provide power to the sensors, which may boot up before the Orin and attempt communication. This can lead to sensors being in unknown states and behavior that is very hard to debug. Power sequencing is heavily recommended to ensure reliable bringup of sensors every time. A simple way to power sequence is using a MOSFET switch that enables power to the sensor given an input signal (which can be provided by the Orin after boot).
+{: .notice--warning}
 
 ## Conclusion
 Hopefully, this provides you enough information about the NVIDIA Jetson AGX Orin and the Developer Kit Carrier Board that interfaces the peripherals with the SoC. Now you should be able to make the best design choices for connecting multiple sensors and actuators to the Orin with important considerations such as power, bandwidth, communication protocols, and different logic levels.
