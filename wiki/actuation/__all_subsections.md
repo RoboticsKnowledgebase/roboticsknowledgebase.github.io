@@ -26,7 +26,7 @@ Throttle-by-wire, or accelerate-by-wire, was the first type of drive-by-wire sys
 
 As shown in the figure below, With throttle by wire a sensor is attached to the gas pedal and detects how far it has been pressed. This information is then sent down a wire to the car's computer. The computer analyzes the information and commands a motor to open the butterfly in the throttle body. Since the computer is in control of the throttle opening things like idle speed control, cruise control, and traction control can easily be integrated. Because automatic transmissions are also usually controlled by the computer it can adjust the throttle during gear changes. It also allows the addition of eco or sport buttons to change the way the throttle reacts when pressed, increasing fuel economy or throttle response.
 
-![Throttle-by-wire Outline](assets/throttle-by-wire.png)
+![Throttle-by-wire Outline](/assets/images/actuation/throttle-by-wire.png)
 
 ### Brake-by-wire
 There are two types of brake-by-wire systems. Hydraulic, or "wet," brake-by-wire uses additional hydraulic parts to create pressure on the brakes. Electric, or "dry," brake-by-wire, on the other hand, simply uses an electric motor and no hydraulic brake fluid.
@@ -49,7 +49,7 @@ Most vehicles use a rack-and-pinion unit or worm-and-sector steering gear that i
 
 As shown in the figure below, in vehicles that are equipped with steer-by-wire technology, there is no physical connection between the steering wheel and the tires. Steer-by-wire systems don't technically need to use steering wheels at all. When a steering wheel is used, some type of steering feel emulator is typically used to provide the driver with feedback.
 
-![Steer-by-wire Outline](assets/steer-by-wire.png)
+![Steer-by-wire Outline](/assets/images/actuation/steer-by-wire.png)
 
 ## Benefits and Drawbacks of Drive-by-wire Systems
 Some people are excited about the prospect of more drive-by-wire systems in cars. By replacing conventional throttle systems, drive-by-wire systems can significantly reduce the number of moving parts in a vehicle. This reduces weight, increases operational accuracy and stretches out the time between service visits for things like mechanical maintenance and other adjustments. Some by-wire systems wouldn't even require service at all. Less weight and better accuracy would equal better fuel efficiency and fewer emissions, too.
@@ -500,61 +500,61 @@ rosrun moveit_setup_assistant setup_assistant.launch
 
 From here, you will be launched into a MoveIt setup assistant menu, as shown below:
 
-![moveit_setup_assistant_start[(assets/moveit_setup_assistant_start.png)
+![moveit_setup_assistant_start](/assets/images/actuation/moveit_setup_assistant_start.png)
 
 Select “Create New MoveIt Configuration Package” then select the URDF model file created earlier. Select “Load Files” to load the URDF file.
 
 Once the URDF model is loaded, you will go through the various steps to configure and set up the MoveIt model. Select “Self-Collisions”. You should see the following:
 
-![moveit_setup_assistant_collision](assets/moveit_setup_assistant_collision_check.png)
+![moveit_setup_assistant_collision](/assets/images/actuation/moveit_setup_assistant_collision_check.png)
 
 The best option to choose here is to slide the “Sampling Density” slider all the way to the right to the highest density setting. With this setting, the GUI will compute all pairs of geometries that can collide with each other and pairs that will definitely not. Select “Generate Collision Matrix” to compute the non-colliding geometry pairs of the model.
 
 The next option window is the virtual joints window. Here, you would configure a robot link with an external frame of reference that is fixed. In this particular case you can configure the world frame to the world frame as a virtual joint if you want the origin point of the robot arm to be the same as the URDF file.
 
-![moveit_setup_assistant_virtual_joints](assets/moveit_setup_assistant_virtual_joints.png)
+![moveit_setup_assistant_virtual_joints](/assets/images/actuation/moveit_setup_assistant_virtual_joints.png)
 
 The next window is the “Planning Groups” window. Here, you would configure the joint groups of the robot model. There are many ways to go about this, but one method is to create a kinetic chain of joints, given you are working with a serial manipulator arm. 
 
-![moveit_setup_assistant_planning_groups](assets/moveit_setup_assistant_planning_groups.png)
+![moveit_setup_assistant_planning_groups](/assets/images/actuation/moveit_setup_assistant_planning_groups.png)
 
 Select “Add Group”. Fill in a name for the planning group you are using. Next, select “Kinematic Solver”. The most common solver is the “kdl_kinematics_plugin/KDLKinematicsPlugin” option. Next, select the “Group Default Planner”. The most common planner is “RRTConnect”. The next step is to define your kinematic chain. Select “Add Kin. Chain” option. Given how you set up your URDF model, the chain of joints and linkages should be created and shown for you. All you have to do is to select the base link, which is the “world” link, and the tip link which is the “end_link/INPUT_INTERFACE” in this case. Afterwards, select “Save”. 
 
 NOTE: There are tutorials available online that go through the “Add Joints” method to create the planning group, which can be another viable configuration option to explore.
 
-![moveit_setup_assistant_kinematic_chain](assets/moveit_setup_assistant_planning_group_kinematic_chain.png)
+![moveit_setup_assistant_kinematic_chain](/assets/images/actuation/moveit_setup_assistant_planning_group_kinematic_chain.png)
 
 Moving onto “Robot Poses”, you can configure different preset positions of the robot. In the screenshot below, preset positions were made for when the serial manipulator arm is stretched out, compacted in, and in an intermediate position. Create however many preset poses you desire.
 
-![moveit_setup_assistant_robot_poses](assets/moveit_setup_assistant_robot_poses.png)
+![moveit_setup_assistant_robot_poses](/assets/images/actuation/moveit_setup_assistant_robot_poses.png)
 
 The next window is the “End Effectors” window. For this particular article, I will not go into the details of configuring an actuated end effector. Instead, this particular project opted to go for a simple end effector and as such configured a simple one through MoveIt. Essentially, the tip link configured in the kinetic chain portion of the setup was selected as the “Parent Link” of the end effector.
 
-![moveit_setup_assistant_end_effectors](assets/moveit_setup_assistant_end_effectors.png)
+![moveit_setup_assistant_end_effectors](/assets/images/actuation/moveit_setup_assistant_end_effectors.png)
 
 The “Passive Joints” section of the setup was autofilled, so we can skip the details of this window.
 
-![moveit_setup_assistant_passive_joints](assets/moveit_setup_assistant_passive_joints.png)
+![moveit_setup_assistant_passive_joints](/assets/images/actuation/moveit_setup_assistant_passive_joints.png)
 
 The next window “ROS Control” can be an important one. Here, you can configure a ROS controller to control the physical hardware of your robot. This can be important if you want the MoveIt pipeline to directly interface with your motors and actuators using different control schemes such as effort, velocity, or position controllers. In our case, we opted to use the simulation portion of the ROS controller, which is essentially a fake joint controller. 
 
-![moveit_setup_assistant_controllers](assets/moveit_setup_assistant_controllers.png)
+![moveit_setup_assistant_controllers](/assets/images/actuation/moveit_setup_assistant_controllers.png)
 
 The next window is the “Simulation” window. By selecting the “Generate URDF” option, you can generate replacement URDF code to input to your URDF file in order to have the model working on Gazebo, which is the ROS simulation environment. Simply copy and paste the selected code over to your URDF file code.
 
-![moveit_setup_assistant_simulation](assets/moveit_setup_assistant_simulation.png)
+![moveit_setup_assistant_simulation](/assets/images/actuation/moveit_setup_assistant_simulation.png)
 
 In the “3D perception” window, you can configure a point cloud or depth map topic to interface with MoveIt. Here, the Octomap plugin for MoveIt will look at this topic and configure obstacles within the environment, as shown in RViz. This is an important window if you want to configure dynamic obstacles for the robot to be aware of and avoid.
 
-![moveit_setup_assistant_perception](assets/moveit_setup_assistant_perception.png)
+![moveit_setup_assistant_perception](/assets/images/actuation/moveit_setup_assistant_perception.png)
 
 The next window is “Author Information” within which you would fill in your name and the email of the maintainer of this ROS MoveIt node.
 
-![moveit_setup_assistant_author_information](assets/moveit_setup_assistant_author_information.png)
+![moveit_setup_assistant_author_information](/assets/images/actuation/moveit_setup_assistant_author_information.png)
 
 Finally, within the “Configuration File” portion of the setup assistant, the GUI will drop all the configured files to a set folder location. If this is a first-time setup, normally you would like to check off all the selected file options. Otherwise, you may want to only drop the files that you have changed since the last setup instance. Specify a “Configuration Package Save Path” location and select “Generate Package”. Once that is completed, you can select “Exit Setup Assistant”.
 
-![moveit_setup_assistant_configuration_file](assets/moveit_setup_assistant_end.png)
+![moveit_setup_assistant_configuration_file](/assets/images/actuation/moveit_setup_assistant_end.png)
 
 
 ### Simulate URDF model through Rviz
@@ -737,7 +737,7 @@ This goal position keeps on changing and is a point on the trajectory to be foll
 
 The following image explains the concept of lookahead distance and the arc to follow.
 
-![Geometry of Pure Pursuit Algorithm [1]](assets/images/pure_pursuit_geometry.png)
+![Geometry of Pure Pursuit Algorithm [1]](/assets/images/actuation/pure_pursuit_geometry.png)
 
 In the image above, we see that given a point at a particular location from the robot say at location (x,y) in the robot's frame (the frame fixed on the robot). The point is at a distance l from the current location of the robot. Using a geometrical derivation, we can derive the radius of curvature of this arc as -
 
@@ -1025,7 +1025,7 @@ https://www.sv-jme.eu/article/a-weighted-gradient-projection-method-for-inverse-
 date: 2017-08-21
 title: Using ULN 2003A as a motor controller
 ---
-![Using ULN 2003A as a stepper motor controller](assets/ULN2003AMotorController-8ee22.png)
+![Using ULN 2003A as a stepper motor controller](/assets/images/actuation/ULN2003AMotorController-8ee22.png)
 
 ## ULN 2003A - Darlington Array
 ULN 2003A or otherwise known as Darlington array is a way to use signals from a microcontroller or any device that can only withstand low currents to control high current drawing devices such as relays, motors, bulbs etc.
@@ -1074,4 +1074,4 @@ The main webpage of the Vedder Esc project is [found here](http://vedder.se/2015
 The speed controller can be built from scratch, but it is far more time-effective to purchase a model from a supplier. These can be purchased for between $80 - $150 with various design modifications. A proven model is the VESC-X from Enertion. Despite being an Australian company, the controllers are produced and distributed in the US with a 3-5 day lead time. There is a quantity discount for 4+ controllers and if you place the controllers in your cart after registering and wait a bit, you'll get a 10% off coupon code by e-mail. The current code as of 3/5/2017 was *"pushingsucks".*
 
 ## Sample Arduino Code
-The [code in this zip file](assets/DriveCharacterization.zip) interfaces an Arduino Mega 2560 to a VESC-X over serial. The sketch runs an open loop characterization routine that drives the motor in each direction. Motor braking is applied when a duty cycle command is set to 0. Motor freewheeling occurs when a current command is set to 0.
+The [code in this zip file](/wiki/actuation/assets/DriveCharacterization.zip) interfaces an Arduino Mega 2560 to a VESC-X over serial. The sketch runs an open loop characterization routine that drives the motor in each direction. Motor braking is applied when a duty cycle command is set to 0. Motor freewheeling occurs when a current command is set to 0.

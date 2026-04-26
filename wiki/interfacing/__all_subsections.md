@@ -74,7 +74,7 @@ title: micro-ROS for ROS2 on Microcontrollers
 ## Conceptual Overview
 micro-ROS consists of a `node` running on the microcontroller and an `agent` running on the host computer. The `agent` handles the interface between the `node` and the rest of the ROS2 stack. This allows the ROS2 stack and microcontroller `node` to publish and subscribe to each other as if the `node` was like any other ROS2 node. Great! The hardware interface is most commonly a serial connection, such as USB. This tutorial will walk through how to prepare the microcontroller and host computer environments for the `node` and `agent` respectively, and then show some examples for how to test the connection and make a first `node` on the microcontroller. 
 
-![Simplified micro-ROS architecture](assets/images/micro-ros-architecture.png)
+![Simplified micro-ROS architecture](/assets/images/interfacing/micro-ros-architecture.png)
 
 ## Installation Overview
 
@@ -214,7 +214,7 @@ This container should be some variant of Linux OS with a ROS2 installation. You 
 exit
 ```
 
-![Example steps of running micro-ROS Docker image](assets/images/micro-ros-docker.png)
+![Example steps of running micro-ROS Docker image](/assets/images/interfacing/micro-ros-docker.png)
 
 
 7. Finally, don't forget to stop the container and remove any unnecessary build cache. You can do so by:
@@ -609,7 +609,7 @@ ROS 2 is widely used nowadays due to its better security features and code organ
 ### ROS 1 - ROS 2 Bridge
 The [ROS 1 bridge](https://github.com/ros2/ros1_bridge) is a ROS 2 package that provides nodes to bridge topics between ROS 1 and ROS 2. A point to be noted here is that bridging is only available on Ubuntu 20.04, as this distribution is the only one that supports both ROS 1 Noetic and ROS 2 Foxy. This package is capable of bridging the stantard ROS interfaces (messages/services) listed in the [ros2/common_interfaces](https://github.com/ros2/common_interfaces) repository. To use the bridge with custom message types, the package needs to be build from source, and the custom types should also be sourced in seperate ROS 1 and ROS 2 workspaces. Services need to be bridged explicitly between ROS 2 and ROS 1, and ROS 1 and ROS 2. 
 
-![ROS 1 - ROS 2 Bridge Setup](assets/images/ros-bridge.png)
+![ROS 1 - ROS 2 Bridge Setup](/assets/images/interfacing/ros-bridge.png)
 
 ### Installation:
 Installation instructions are provided in the [ROS 1 bridge](https://github.com/ros2/common_interfaces) repository README. Note that you need to have both ROS 1 Noetic and ROS 2 Foxy installed in the system. There are 2 main ways to install the bridge:

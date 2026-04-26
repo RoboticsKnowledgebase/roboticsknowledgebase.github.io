@@ -17,4 +17,4 @@ Basic rosbag parsing is as follows:
 3. For straightforward values in a message, run `timeseries(bag_select,'<message element>')`
 4. For more complicated messages, run `readMessages`
 
-[This script](assets/parseRosbag.m) parses Rosbags and creates a `.mat` and `.csv` file from it given a custom definition. The particular message referenced is an aggregation of multiple messages, hence the recursive structure.
+[This script](/wiki/tools/assets/parseRosbag.m) parses Rosbags and creates a `.mat` and `.csv` file from it given a custom definition. The particular message referenced is an aggregation of multiple messages, hence the recursive structure.

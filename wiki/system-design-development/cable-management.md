@@ -10,7 +10,7 @@ To illustrate its importance imagine the following scenario:
 
 You are at the final integration steps of your project and something isn't working. You start by checking out the hardware and see Figure 1.
 
-![Cable Management Gone Wrong](assets/CableManagement-c5b3a.png)
+![Cable Management Gone Wrong](/assets/images/system-design-development/CableManagement-c5b3a.png)
 
 **Figure 1: Cable management gone wrong**
 
@@ -25,7 +25,7 @@ If this is your first time creating a wiring diagram for your system you will pr
 
 Note: in systems engineering you will be required to create a cyberphysical architecture for your system. This diagram may be similar, but they are still fundamentally different. Notice how here we are explicitly differentiating cables, and boards. We get more information from a cable management perspective this way. For example notice how, in **Figure 2**, cable 3 only has one plug. This tells us that Sensor 1 has an unremovable cable attached to it.
 
-![Wiring Managment](assets/CableManagement-b3a03.png)
+![Wiring Managment](/assets/images/system-design-development/CableManagement-b3a03.png)
 
 **Figure 2: Example wiring block diagram of 2 circuit card assembly boards and 1 sensor connected by three cables. Here the JX labels stand for the jacks on the different circuit boards and the PX stand for the plugs of the cables.**
 
@@ -34,7 +34,7 @@ Now that you have outlined all of the different boards and connections it is tim
 
 If you are defining your own connections it is time to make some cable wiring diagrams. You can imagine these diagrams as a zoomed in detailed picture of each of the cables in your wiring block diagram. Figure 3 shows an example cable wiring diagram. It is not necessary to get as detailed as Figure 3. In fact, I've used excel to create very effective wiring diagrams before. The most important objective of these diagrams is to understand the signals and wires on each cable. One more crucial detail highlighted in these diagrams is the length of each cable. Make sure you have a rough idea of how long each cable will be, keyword: rough. You may not be able to determine the exact length of your cable, but going through this exercise will make you start thinking about cable routing. At this step it is necessary to sit down with the mechanical designer of your system and discuss how your cables are physically getting from A to B.
 
-![Example Cable Wiring Diagram for a USB Cable](assets/CableManagement-654ae.png)
+![Example Cable Wiring Diagram for a USB Cable](/assets/images/system-design-development/CableManagement-654ae.png)
 
 **Figure 3: Example Cable wiring diagram for a USB cable**
 
@@ -90,7 +90,7 @@ If you do decide to use connectors that require crimps it is important that you 
 ### Grouping Wires
 Once you know what connector, wires, and crimps to use it is time to assemble the cable. For the most part this is straightforward, but there are some tricks that will make cable management later on easier. First, if you have any twisted pairs in your cable or want to group wires together without additional hardware, you can use the drill trick to make nice looking cables like **Figure 4**. A video of the Twisted Pair Drill Trick can be viewed [here](https://www.youtube.com/watch?v=uTJhrTTl-EE)
 
-![Twisted Wires Done Using a Drill](assets/CableManagement-6f4d5.png)
+![Twisted Wires Done Using a Drill](/assets/images/system-design-development/CableManagement-6f4d5.png)
 
 **Figure 4: Twisted wires done using a drill**
 
