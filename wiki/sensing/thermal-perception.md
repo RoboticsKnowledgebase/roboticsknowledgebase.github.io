@@ -220,9 +220,9 @@ We
 recover metric depth using the intrinsics of the camera and the baseline. Finally, we can reproject this into the 3D
 space to get consistent point clouds:
 
-$
+$$
 z = \frac{f \cdot B}{d}
-$
+$$
 
 Where:
 
