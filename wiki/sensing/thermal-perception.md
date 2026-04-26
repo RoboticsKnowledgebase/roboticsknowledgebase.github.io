@@ -2,7 +2,7 @@
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
 # You should set the date the article was last updated like this:
-date: 2025-04-29 # YYYY-MM-DD
+date: 2026-04-26 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
 title: Perception via Thermal Imaging
