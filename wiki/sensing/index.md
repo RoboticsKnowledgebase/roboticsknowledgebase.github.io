@@ -71,6 +71,9 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Thermal Cameras](/wiki/sensing/thermal-cameras/):**
   Examines the use of thermal cameras in robotics, including types of thermal cameras, calibration techniques, and debug tips.
 
+- **[Perception via Thermal Imaging](/wiki/sensing/thermal-perception/):**
+  Discusses strategies to implement key steps in a robotic perception pipeline using thermal cameras, including depth estimation and metric recovery.
+
 - **[Tracking Vehicles Using a Static Traffic Camera](/wiki/sensing/trajectory_extraction_static_camera/):**
   Describes a system for extracting vehicle trajectories using static traffic cameras, incorporating detection, tracking, and homography estimation.
 

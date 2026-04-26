@@ -157,6 +157,8 @@ wiki:
         url: /wiki/sensing/apple-vision-pro/
       - title: Robotics with the Microsoft Hololens2
         url: /wiki/sensing/hololens-101/
+      - title: Perception via Thermal Imaging
+        url: /wiki/sensing/thermal-perception/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
