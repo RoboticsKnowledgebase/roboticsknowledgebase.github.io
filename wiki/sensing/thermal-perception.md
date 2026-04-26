@@ -154,7 +154,7 @@ $z = s \cdot z' + t$
 This means they look visually coherent (look at the image below on the right), but the ambiguity limits 3D metric use (
 SLAM based applications).
 
-![Relative Depth on Thermal Images](/assets/images/Moge_relative_thermal.png)
+![Relative Depth on Thermal Images](/assets/images/moge-relative-thermal.png)
 
 ---
 
@@ -233,7 +233,7 @@ Where:
 An example output is given below (thermal preprocessed on the top left, disparity is middle left, and the metric
 pointcloud is on the right).
 
-![Metric Depth using Foundation Models](/assets/images/foundation_stereo.png)
+![Metric Depth using Foundation Models](/assets/images/foundation-stereo.png)
 
 ## Lessons Learned
 
