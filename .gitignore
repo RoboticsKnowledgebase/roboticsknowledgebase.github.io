@@ -13,4 +13,6 @@ vendor/
 
 # Ignore review workflow files
 .gemini/
+.codex/
 .reviews/
+
