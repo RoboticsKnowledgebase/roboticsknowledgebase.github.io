@@ -3,7 +3,7 @@
 date: 2017-08-21
 title: Boost C++ Libraries
 ---
-[![Boost Logo](assets/BoostLibrary-f962f.png)](https://www.boost.org/)
+[![Boost Logo](/assets/images/programming/BoostLibrary-f962f.png)](https://www.boost.org/)
 
 Boost is the most popular and widely used C++ library. It is available online for free. This stable C++ library contains many helpful data structures, algorithms, utilities, and more. This library influenced the design and implementation of the newest C++ library standard (C++11).
 
@@ -61,7 +61,7 @@ Writing a Makefile can be a complicated task, especially for larger projects. CM
 
 When using CMake, it is common and accepted practice to organize a project folder according to a specific folder structure, as seen in the image below.
 
-![CMake File Structure](assets/cmake_file_structure.png)
+![CMake File Structure](/assets/images/programming/cmake_file_structure.png)
 
 - **bin:** contains the executable files which can be run on the computer.
 - **build:** contains the makefiles which are required to build the project.
@@ -163,7 +163,7 @@ Additionally, you can:
 The applications are the following
 1. Convert Pose to Quaternions and vice versa
 2. Find the relative pose transformations by just using simple 3D homogeneous transformation `Eigen::Affine3d T` is a 4*4 homogeneous transform:
-![Homogeneous Equation Example](assets/EigenLibrary-35715.png)
+![Homogeneous Equation Example](/assets/images/programming/EigenLibrary-35715.png)
 3. Now all the transformations (rotation or translation) can be represented in homogeneous form as simple 4*4 matrix multiplications.
 4. Suppose you have a pose transform T of robot in the world and you want to find robot’s X-direction relative to the world. You can do this by using
 `Eigen::Vector3d x_bearing= T.rotation * Eigen::Vector3d::UnitX();`
