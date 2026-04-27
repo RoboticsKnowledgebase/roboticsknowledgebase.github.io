@@ -340,6 +340,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: xarm_ros Guide
+        url: /wiki/tools/xarm-ros-guide/
   - title: Datasets
     url: /wiki/datasets/
     children:
@@ -364,6 +366,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: CHOMP Path Planning
+        url: /wiki/planning/chomp-planning/
 # Main links appear in the header.
 main:
   - title: Wiki
