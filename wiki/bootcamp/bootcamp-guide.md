@@ -1,5 +1,5 @@
 ---
-# layout: single
+date: 2026-04-26
 title: Software Bootcamp
 ---
 
