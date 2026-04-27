@@ -111,6 +111,8 @@ wiki:
         url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
       - title: Computer Vision Consideration
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
