@@ -31,11 +31,26 @@ CHOMP uses precomputed gradient information and operates on a discretized versio
 In MoveIt!, CHOMP is integrated as a planning plugin. To use CHOMP in your xArm robot configuration:
 
 1. Ensure `moveit_chomp_optimizer_adapter` is installed.
-2. Update your `ompl_planning.yaml`:
+2. Update your `chomp_planning.yaml` (usually found in your moveit_config package):
 
+```yaml
+chomp:
+  planning_time_limit: 10.0
+  max_iterations: 200
+  max_iterations_after_collision_free: 5
+  smoothness_cost_weight: 0.1
+  obstacle_cost_weight: 1.0
+  learning_rate: 0.01
+  animate_path: false
+  add_randomness: true
+  collision_threshold: 0.07
+```
 
-3. Set CHOMP as your default planner in `moveit_config`'s `planning_pipeline_config`:
+3. Set CHOMP as your default planner in `moveit_config`'s launch files:
 
+```xml
+<arg name="planning_pipeline" value="chomp" />
+```
 
 > This is a note. CHOMP relies on well-defined signed distance fields. Use OctoMap or preprocessed collision geometries for reliable performance.
 
@@ -80,9 +95,9 @@ In MoveIt!, CHOMP is integrated as a planning plugin. To use CHOMP in your xArm 
 CHOMP is a highly effective local trajectory optimizer that enhances motion planning for xArm by generating smooth and safe paths. Its deterministic and gradient-based nature makes it ideal for precision applications. However, it must be used with good initial trajectories and accurate environment models to work well. By combining CHOMP with robust environment sensing and hybrid planning strategies, it becomes a valuable tool for both industrial and research robotics.
 
 ## See Also:
-- [MoveIt! Planning Pipelines](/moveit/planning_pipelines/)
-- [xarm_ros Setup Guide](/xarm/setup/)
-- [ROS Navigation Planning Concepts](/ros/navigation/)
+- [xarm_ros Guide](/wiki/tools/xarm-ros-guide/)
+- [MoveIt and HEBI Integration](/wiki/actuation/moveit-and-HEBI-integration/)
+- [Pure Pursuit Controller for Skid Steering](/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/)
 
 ## Further Reading
 - [CHOMP: Gradient Optimization Techniques for Efficient Motion Planning](https://homes.cs.washington.edu/~joschu/docs/chomp.pdf)
