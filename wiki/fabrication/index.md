@@ -42,6 +42,9 @@ This section provides in-depth resources and tutorials for various fabrication t
 - **[Turning Process](/wiki/fabrication/turning-process/)**
   A detailed guide to the turning process on lathe machines, including video tutorials for creating components with rotational symmetry, such as shafts and pulleys.
 
+- **[Ultimaker Series (3/S3)](/wiki/fabrication/ultimaker-series/)**
+  A comprehensive guide to using the Ultimaker 3 and S3 printers, covering software setup in Cura, material matching, previewing parts, and troubleshooting common failures like nozzle offset errors.
+
 ## Resources
 
 ### 3D Printing and Prototyping
