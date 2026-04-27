@@ -1,9 +1,4 @@
----
-title: Specialized Planners (PILZ and CHOMP)
-date: 2026-04-26
----
-
-## Industrial and Specialized Motion Planning Approaches
+# Industrial and Specialized Motion Planning Approaches
 
 This article aims to present two specialized approaches for robot motion planning that are particularly relevant for industrial applications and optimization-based planning. While basic motion planning algorithms like A*, RRT, and PRM provide fundamental solutions for robot navigation, industrial applications often require more specialized planners that can generate predictable, efficient, and smooth trajectories.
 
@@ -17,7 +12,7 @@ Motion planning approaches can be broadly categorized into several families:
 
 This article focuses on two specific motion planners: PILZ Industrial Motion Planner, which provides deterministic industrial-style motions, and CHOMP, which uses covariant gradient techniques to optimize trajectories. These planners represent different approaches to specialized motion planning and are valuable additions to the motion planning toolkit beyond the basic algorithms.
 
-## PILZ Industrial Motion Planner
+# PILZ Industrial Motion Planner
 
 For industrial robot applications, it is often necessary to have predictable, deterministic motion along well-defined paths like straight lines or circular arcs. PILZ Industrial Motion Planner is a trajectory generator that provides these capabilities within the MoveIt framework, offering a simple and predictable way to plan standard robot motions.
 
@@ -86,7 +81,7 @@ While PILZ offers predictable motion patterns, it has some limitations:
 
 ---
 
-## CHOMP: Covariant Hamiltonian Optimization for Motion Planning
+# CHOMP: Covariant Hamiltonian Optimization for Motion Planning
 
 ## Background
 
