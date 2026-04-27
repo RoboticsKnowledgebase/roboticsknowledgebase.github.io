@@ -8,6 +8,8 @@ wiki:
         url: /about/
       - title: Wiki Index
         url: /wiki/
+      - title: Knowledge Graph
+        url: /wiki/knowledge-graph/
       - title: Contribute
         url: /docs/index/
   - title: Software Bootcamp
@@ -471,6 +473,8 @@ wiki:
 main:
   - title: Wiki
     url: /wiki/
+  - title: Knowledge Graph
+    url: /wiki/knowledge-graph/
   - title: About
     url: /about/
   - title: Contribute
