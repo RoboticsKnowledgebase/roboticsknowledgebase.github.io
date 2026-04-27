@@ -31,26 +31,8 @@ CHOMP uses precomputed gradient information and operates on a discretized versio
 In MoveIt!, CHOMP is integrated as a planning plugin. To use CHOMP in your xArm robot configuration:
 
 1. Ensure `moveit_chomp_optimizer_adapter` is installed.
-2. Update your `chomp_planning.yaml` (usually found in your moveit_config package):
-
-```yaml
-chomp:
-  planning_time_limit: 10.0
-  max_iterations: 200
-  max_iterations_after_collision_free: 5
-  smoothness_cost_weight: 0.1
-  obstacle_cost_weight: 1.0
-  learning_rate: 0.01
-  animate_path: false
-  add_randomness: true
-  collision_threshold: 0.07
-```
-
-3. Set CHOMP as your default planner in `moveit_config`'s launch files:
-
-```xml
-<arg name="planning_pipeline" value="chomp" />
-```
+2. Update your `chomp_planning.yaml` (usually found in your moveit_config package)
+3. Set CHOMP as your default planner in `moveit_config`'s launch files
 
 CHOMP relies on well-defined signed distance fields. Use OctoMap or preprocessed collision geometries for reliable performance.
 {: .notice--info}
