@@ -21,7 +21,7 @@ Using the options on the left side of the screen (Circle 2), move your piece(s) 
 
 <figcaption align = "center"><b>Figure 1: Ultimaker Cura PREPARE screen when preparing a print. </b></figcaption>
 
-![Ultimaker Cura Screen](assets/ultimaker_fig1.png)
+![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig1.png)
 
 Next, check that the material in the menu indicated by Circle 3 **matches what is actually loaded into your printer**. If you don't do this, you your spliced file may not load correctly when you attempt to start the print.
 
@@ -34,7 +34,7 @@ The preview screen is a last look at your part and what the print will look like
 
 <figcaption align = "center"><b>Figure 2: Ultimaker Cura PREVIEW screen. </b></figcaption>
 
-![Ultimaker Cura Screen](assets/ultimaker_fig2.png)
+![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig2.png)
 
 Following the circles in Figure 2, this is what to look out for on your print:
 
@@ -85,16 +85,17 @@ Sometimes, things just go wrong. Figure 3 has an example of a very long print th
 
 <figcaption align = "center"><b>Figure 3: Prints can fail. It happens! </b></figcaption>
 
-![Ultimaker Cura Screen](assets/ultimaker_fig3.jpg)
+![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig3.JPG)
 
 ## Summary
 All in all, the Ultimaker Series 3 is relatively capable 3D printer that is easy to work with even if it is your first time 3D printing. With ease of fabrication come the real benefits of rapid prototyping - quick parts, quick iterations, and faster development cycles for your project. We have seen this printer prove itself for all kinds of projects, including a winch system for autonomous drone package delivery, camera and sensor mounts on robotic rovers, custom hold-and-cut grippers for indoor farming robots, and much more.
 
 
 ## See Also
+- [3D Printers](/wiki/fabrication/3d-printers/)
+- [Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication_considerations_for_3D_printing/)
 
 ## Further Reading
 
-## References and Relevant Links
-
-https://ultimaker.com/3d-printers/ultimaker-s3
+## References
+- [Ultimaker S3 Product Page](https://ultimaker.com/3d-printers/ultimaker-s3)
