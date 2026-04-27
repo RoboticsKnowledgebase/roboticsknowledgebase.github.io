@@ -30,7 +30,7 @@ wiki:
       - title: Demo day!
         url: /wiki/robotics-project-guide/demo-day/
       - title: A Comprehensive Overview of Humanoid Robot Planning, Control, and Skill Learning
-        url: /wiki/robotics-project-guide/humanoid-robot.md
+        url: /wiki/robotics-project-guide/humanoid-robot/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:

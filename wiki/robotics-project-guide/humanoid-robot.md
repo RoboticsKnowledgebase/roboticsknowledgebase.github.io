@@ -1,13 +1,6 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2025-04-26 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2025-04-26
 title: A Comprehensive Overview of Humanoid Robot Planning, Control, and Skill Learning
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
 Humanoid robots are uniquely well-suited for executing human-level tasks, as they are designed to closely replicate human motions across a variety of activities. This capability enables them to perform whole-body loco-manipulation tasks, ranging from industrial manufacturing operations to service-oriented applications. Their anthropomorphic structure resembling the human form provides a natural advantage when interacting with environments built for humans, setting them apart from other robotic platforms.
 
@@ -168,7 +161,7 @@ Going forward, advancing humanoid robotics will require innovations in both scal
 
 
 ## See Also:
-- [Model Predictive Control (MPC) for Robotics](https://roboticsknowledgebase.com/wiki/actuation/model-predictive-control/)
+- [Model Predictive Control (MPC) for Robotics](/wiki/actuation/model-predictive-control/)
 
 ## Further Reading
 - [Sim-to-Real Transfer for Reinforcement Learning Policies in Robotics](https://arxiv.org/abs/2009.13303) — A detailed exploration of strategies to overcome the sim-to-real gap in robotic learning.
