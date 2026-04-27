@@ -416,6 +416,8 @@ wiki:
         url: /wiki/tools/xarm-ros-guide/
       - title: ROS2 Humble Intra-Process Communication Recorder
         url: /wiki/tools/ros2-humble-ipc-recorder/
+      - title: Docker for Robotics
+        url: /wiki/tools/docker-for-robotics/
   - title: Datasets
     url: /wiki/datasets/
     children:
