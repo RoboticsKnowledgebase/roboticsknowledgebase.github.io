@@ -9,8 +9,14 @@ This section delves into **interfacing techniques and tools** for robotics appli
 
 ## Key Subsections and Highlights
 
+- **[Apple Vision Pro for Robotics Applications](/wiki/interfacing/apple-vision-pro-for-robotics-applications/)**
+  A systems-focused guide to integrating Apple Vision Pro with robotic systems. Covers teleoperation using head and hand tracking, spatial perception with object tracking, and on-device intelligence using Apple's Foundation Models framework on visionOS.
+
 - **[Blink(1) LED](/wiki/interfacing/blink-1-led/)**
   A practical guide to using the Blink(1) USB RGB LED for visual feedback and troubleshooting. Includes step-by-step instructions for setting up the LED on Linux, basic command-line usage, and integration with ROS nodes for monitoring states and providing visual indicators.
+
+- **[Low Level Buffer issue debugging](/wiki/interfacing/buffer-issues/)**
+  Discusses a persistent but subtle issue with VESC communication in real-time ROS environments, particularly on F1/10th vehicles. Outlines the diagnostics process to identify buffer-locked states and provides best practices for software and hardware-level resolution.
 
 - **[micro-ROS for ROS 2 on Microcontrollers](/wiki/interfacing/microros-for-ros2-on-microcontrollers/)**
   Explores the use of micro-ROS to integrate low-resource microcontrollers, like the Arduino Due, into ROS 2 systems. Covers setup for both microcontroller nodes and host computer agents, with options for native installations or Docker containers. Includes examples of creating publishers, handling transient connections, and debugging techniques.

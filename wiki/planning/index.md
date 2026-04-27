@@ -11,8 +11,14 @@ We are actively seeking contributions to expand the resources available in this 
 
 ## Key Subsections and Highlights
 
+- **[Advanced MoveIt usage for Manipulator Motion Planning](/wiki/planning/advanced-moveit-manipulator-planning/)**
+  Discusses motion planning for dual XArm 7 manipulators using RRTStar and Cartesian planners. Includes details on custom cost objectives and testing in simulation.
+
 - **[A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)**
   A step-by-step tutorial on implementing the A* algorithm for robot motion planning. Covers key concepts such as heuristic design, map representation, and non-holonomic motion primitives for Ackermann vehicles.
+
+- **[Behavior Trees](/wiki/planning/behavior-tree/)**
+  Comprehensive guide to Behavior Trees for robot decision-making. Covers BT architecture vs FSM/HFSM, node types (Action, Condition, Sequence, Fallback), AirStack implementation, and ROS2 integration with hands-on tutorials.
 
 - **[CHOMP Path Planning](/wiki/planning/chomp-planning/)**
   An optimization-based trajectory planner that produces smooth, collision-free paths for manipulators like the xArm.
@@ -20,10 +26,16 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
 
+- **[Google Linear Optimization Package (GLOP)](/wiki/planning/glop/)**
+  Explains how to use the Google Linear Optimization Package (GLOP) in C++ to solve robotic task planning problems as convex optimization tasks. Includes a case study from the Lunar ROADSTER project.
+
 - **[Trajectory Planning in the Frenet Space](/wiki/planning/frenet-frame-planning/)**
   Explains Frenet-frame trajectory planning, useful for structured environments like highways. Includes algorithmic steps, transformation techniques, and advantages over Cartesian coordinates.
 
-- **[Move Base Flex](/wiki/planning/move_base_flex/)**
+- **[Industrial and Specialized Motion Planning Approaches](/wiki/planning/pilz-chomp/)**
+  Presents two specialized approaches: PILZ Industrial Motion Planner for deterministic industrial-style motions and CHOMP for covariant gradient-based trajectory optimization.
+
+- **[Move Base Flex](/wiki/planning/move-base-flex/)**
   A comprehensive guide to the ROS-based Move Base Flex navigation stack. Covers its architecture, plugin implementation, and customization for 2.5D/3D maps or custom planners.
 
 - **[Multi-Robot Navigation Stack Design](/wiki/planning/multi-robot-planning/)**
@@ -34,6 +46,9 @@ We are actively seeking contributions to expand the resources available in this 
 
 - **[Resolved-Rate Motion Control](/wiki/planning/resolved-rates/)**
   A Jacobian-based control scheme for precise Cartesian movements of robot manipulators, ideal for real-time applications like surgical robotics and motion compensation.
+
+- **[Sampling-Based Motion Planning with RRT and PRM Variants](/wiki/planning/rrt-prm-planning/)**
+  Explores implementations of RRT and PRM variants, focusing on practical enhancements such as goal biasing, path smoothing, and multi-agent coordination.
 
 ## Development Needs
 This section seeks contributions in the following areas:
