@@ -301,14 +301,16 @@ wiki:
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
         url: /wiki/planning/astar_planning_implementation_guide/
+      - title: Extensions To A* for Dynamic Planning
+        url: /wiki/planning/non-a-star-planning/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
-      - title: Multi Robot Planning Design
+      - title: Multi-Robot Planning
         url: /wiki/planning/multi-robot-planning/
-      - title: Motion Planning in frenet frame
-        url: /wiki/planning/frenet-frame-planning.md/
+      - title: Motion Planning in Frenet Frame
+        url: /wiki/planning/frenet-frame-planning/
 # Main links appear in the header.
 main:
   - title: Wiki
