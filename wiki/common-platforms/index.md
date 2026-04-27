@@ -14,6 +14,12 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Asctec UAV Setup Guide](/wiki/common-platforms/asctec-uav-setup-guide/)**
   A detailed tutorial for setting up the Asctec Pelican UAV for autonomous waypoint navigation using ROS. Covers configuring network settings, flashing firmware, and running the ROS package on the onboard Atomboard.
 
+- **[Building a Custom Drone for the DARPA Triage Challenge](/wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/)**
+  A comprehensive guide to designing and building UAVs for disaster scenarios. Covers both modified commercial platforms and fully custom designs, including hardware selection, electrical integration, and software configuration.
+
+- **[Configure VS Code for ROS 2](/wiki/common-platforms/configure-vscode-for-ros2/)**
+  A guide on setting up Visual Studio Code for ROS 2 development, including debugging with GDB, using symlink-install with colcon, and automating builds with tasks.json.
+
 - **[DJI Drone Breakdown for Technical Projects](/wiki/common-platforms/dji-drone-breakdown-for-technical-projects/)**
   Explores the advantages and limitations of DJI drones in research projects. Includes information on flight modes, GPS dependencies, and practical tips for successful drone operations.
 
@@ -22,6 +28,9 @@ We encourage contributions to further enhance the knowledge base in this section
 
 - **[Hello Robot Stretch RE1](/wiki/common-platforms/hello-robot/)**
   Provides guidance on working with the Hello Robot Stretch RE1 mobile manipulator. Covers software configuration, extending the robot's capabilities with custom tools, and leveraging ROS for control.
+
+- **[Interfacing with the Nvidia Orin](/wiki/common-platforms/interfacing-with-nvidia-orin/)**
+  A comprehensive guide to using the Nvidia Jetson AGX Orin for robotics. Covers power delivery, GPIO pinouts, high-speed interfaces like USB and Ethernet, and debugging tools for reliable sensor integration.
 
 - **[Husky Interfacing and Communication](/wiki/common-platforms/husky_interfacing_and_communication/)**
   Discusses how to set up communication with the Clearpath Husky robot, including hardware setup and localization using GPS, IMU, and odometry.
@@ -37,6 +46,9 @@ We encourage contributions to further enhance the knowledge base in this section
 
 - **[ROS 2 Navigation with Clearpath Husky](/wiki/common-platforms/ros2-navigation-for-clearpath-husky/)**
   A step-by-step tutorial on integrating ROS 1 and ROS 2 for Clearpath Husky navigation, including the configuration of the ROS 2 Nav2 stack.
+
+- **[Unitree G1](/wiki/common-platforms/unitree-g1/)**
+  Covers the Unitree G1 humanoid robot SDK usage, including high-level motion control, low-level joint commands, arm control, debug mode, and common pitfalls when integrating with ROS 2.
 
 - **[Unitree Go1 Guide](/wiki/common-platforms/unitree-go1/)**
   Highlights the features and capabilities of the Unitree Go1 Edu quadruped robot. Includes power, sensors, networking configuration, and tips for simulation and real-world control.
