@@ -44,6 +44,9 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Resolved-Rate Motion Control](/wiki/planning/resolved-rates/)**
   A Jacobian-based control scheme for precise Cartesian movements of robot manipulators, ideal for real-time applications like surgical robotics and motion compensation.
 
+- **[Sampling-Based Motion Planning with RRT and PRM Variants](/wiki/planning/rrt-prm-planning/)**
+  Explores implementations of RRT and PRM variants, focusing on practical enhancements such as goal biasing, path smoothing, and multi-agent coordination.
+
 ## Development Needs
 This section seeks contributions in the following areas:
 - Advanced sampling-based algorithms (e.g., RRT*, PRM*)
