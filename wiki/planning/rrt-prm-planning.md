@@ -120,25 +120,25 @@ The following section presents visual demonstrations of several planning algorit
 
 In the first demonstration, we apply the **RRT (Rapidly-Exploring Random Tree)** algorithm to a single-agent navigation problem.
 
-![RRT Example](./assets/rrt_demo.gif) <!-- Replace with actual path -->
+![RRT Example](/assets/images/planning/rrt_demo.gif) <!-- Replace with actual path -->
 
 RRT is known for its speed and simplicity, making it a popular choice for generating feasible paths quickly in high-dimensional or dynamic environments. In this case, RRT effectively explores the space and reaches the goal, although the resulting path contains unnecessary detours and sharp turns. This limitation stems from RRT’s lack of cost optimization or path refinement. However, in scenarios where a robot simply needs to reach a goal as fast as possible—such as a drone avoiding obstacles in real time or a mobile robot rerouting during emergencies—RRT’s raw efficiency becomes a strength, and its path quality limitations are acceptable.
 
 In contrast, the **PRM (Probabilistic Roadmap)** planner takes a different approach.
 
-![PRM Example](./assets/prm_demo.gif) <!-- Replace with actual path -->
+![PRM Example](/assets/images/planning/prm_demo.gif) <!-- Replace with actual path -->
 
 Rather than growing a tree, PRM builds a roadmap by sampling random points and connecting them to their neighbors. The advantage here is that once the roadmap is constructed, multiple path queries can be answered quickly. This makes PRM ideal for environments where the obstacles remain static and the robot must plan paths repeatedly—for instance, a robotic arm operating on an assembly line. However, PRM has a high upfront computation cost and is poorly suited to dynamic environments or tasks where immediate replanning is needed. In our visualization, the roadmap forms a dense graph that yields a feasible path, albeit not always the most direct.
 
 To improve both path quality and reliability, **RRT\*** introduces optimization to the RRT framework.
 
-![RRTStar Example](./assets/rrt_star_demo.gif) <!-- Replace with actual path -->
+![RRTStar Example](/assets/images/planning/rrt_star_demo.gif) <!-- Replace with actual path -->
 
 RRT\* selects parent nodes based on cumulative path cost and performs local rewiring to iteratively reduce overall cost. The result is a much smoother and shorter trajectory, especially when allowed to run for more iterations. This makes RRT\* particularly suitable for applications where efficiency and path quality matter, such as robotic manipulation or long-range navigation. Although it requires more computation than RRT, the tradeoff is worthwhile in structured or semi-structured environments. In our demonstration, RRT\* quickly finds a path and then refines it, making it a better candidate than RRT when time allows.
 
 The final single-agent example uses **Lazy PRM**, a variation that delays collision checking until a path is proposed.
 
-![Lazy PRM Example](./assets/lazy_prm_demo.gif) <!-- Replace with actual path -->
+![Lazy PRM Example](/assets/images/planning/lazy_prm_demo.gif) <!-- Replace with actual path -->
 
 This strategy speeds up roadmap construction in complex environments by assuming all edges are valid and only checking them during query time. In our test case, Lazy PRM rapidly builds a large graph, and although a few initial paths are invalid due to obstacles, it quickly retries until a valid one is found. Lazy PRM is especially useful when dealing with large configuration spaces or expensive collision checks—for example, planning paths for complex robot configurations where each collision test is computationally heavy. While it may fail occasionally due to poor connectivity assumptions, these failures are usually acceptable in contexts where roadmap updates are inexpensive or infrequent.
 
@@ -146,13 +146,13 @@ This strategy speeds up roadmap construction in complex environments by assuming
 
 In multi-agent environments, coordination becomes a central challenge. We first demonstrate a hybrid strategy where the first agent uses **PRM** and the second uses **RRT**.
 
-![PRM+RRT Multi-Agent Example](./assets/multi_agent_rrt.gif) <!-- Replace with actual path -->
+![PRM+RRT Multi-Agent Example](/assets/images/planning/multi_agent_rrt.gif) <!-- Replace with actual path -->
 
 This combination leverages the strengths of both algorithms. PRM efficiently generates a path for the first agent in a static roadmap, while RRT allows the second agent to dynamically plan around it by treating the first agent’s path as a series of temporary obstacles. This setup is particularly effective in semi-cooperative tasks—such as a warehouse robot avoiding a robotic arm’s workspace—where one agent has a predictable role and the other must adapt on the fly. While the RRT agent’s path may not be optimal, this doesn’t hinder performance because the primary requirement is conflict avoidance, not minimal travel time.
 
 In the second multi-agent example, we combine **RRT\*** for the first agent with **RRT** for the second.
 
-![RRT+RRTStar Multi-Agent Example](./assets/multi_agent_rrtstar.gif) <!-- Replace with actual path -->
+![RRT+RRTStar Multi-Agent Example](/assets/images/planning/multi_agent_rrtstar.gif) <!-- Replace with actual path -->
 
 Here, the first agent finds a high-quality, optimized path, while the second agent reacts to it in a more opportunistic manner. This setup is ideal when one agent’s role or path is mission-critical—such as a robotic arm executing a precision task—while the other simply needs to move without interfering. The use of RRT\* ensures the primary path is both smooth and efficient, while RRT provides the secondary agent with flexibility and responsiveness. Although this method doesn’t explicitly handle timing or temporal collisions, adding buffers or dynamic obstacle inflation mitigates most of these issues in practice.
 
