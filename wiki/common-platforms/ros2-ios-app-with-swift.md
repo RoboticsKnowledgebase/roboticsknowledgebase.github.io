@@ -1,22 +1,18 @@
-## A New Post
-
 ---
 date: 2025-04-29
-title: Building an iOS App for ROS2 Integration – A Step-by-Step Guide
-categories: [Tutorial, ROS2, iOS]
-tags: [ROS2, iOS, Swift, Tutorial]
+title: Building an iOS App for ROS 2 Integration
 ---
 
-This document provides a detailed, step-by-step guide on building an iOS application integrated with ROS2 using the SwiftROS2 framework. In this guide, you will learn how to set up the project, configure ROS2 nodes, implement publishers and subscribers to exchange messages via DDS, and build a SwiftUI-based user interface for operating ROS2 functionality. In addition, this README offers an in-depth explanation of the dependency packages and how the DDS mechanism is implemented to support ROS2 communication. This guide assumes you have a basic understanding of Swift and iOS development. By the end, you will be able to create and run an iOS app that seamlessly interacts with ROS2 nodes.
+This document provides a detailed, step-by-step guide on building an iOS application integrated with ROS 2 using the SwiftROS2 framework. In this guide, you will learn how to set up the project, configure ROS 2 nodes, implement publishers and subscribers to exchange messages via DDS, and build a SwiftUI-based user interface for operating ROS 2 functionality. In addition, this guide offers an in-depth explanation of the dependency packages and how the DDS mechanism is implemented to support ROS 2 communication. This guide assumes you have a basic understanding of Swift and iOS development. By the end, you will be able to create and run an iOS app that seamlessly interacts with ROS 2 nodes.
 
-The complete code can be found at https://github.com/LiaoChiawen/ROS2iOSApp
+The complete code can be found at <https://github.com/LiaoChiawen/ROS2iOSApp>.
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Background and Key Concepts](#background-and-key-concepts)
-- [Step-by-Step Tutorial: Building an iOS App for ROS2](#step-by-step-tutorial-building-an-ios-app-for-ros2)
+- [Step-by-Step Tutorial: Building an iOS App for ROS 2](#step-by-step-tutorial-building-an-ios-app-for-ros-2)
   - [1. Project Setup and Dependencies](#1-project-setup-and-dependencies)
-  - [2. Creating the ROS2 Node](#2-creating-the-ros2-node)
+  - [2. Creating the ROS 2 Node](#2-creating-the-ros-2-node)
   - [3. Implementing Publishers and Subscribers](#3-implementing-publishers-and-subscribers)
   - [4. Building the User Interface](#4-building-the-user-interface)
   - [5. Running and Testing the App](#5-running-and-testing-the-app)
@@ -32,18 +28,18 @@ The complete code can be found at https://github.com/LiaoChiawen/ROS2iOSApp
 - [References](#references)
 
 ## Introduction
-This tutorial explains how to build an iOS app that leverages ROS2 capabilities using the SwiftROS2 framework. In this guide you will learn to initialize a ROS2 node, set up publishers and subscribers via a DDS-based system, and construct a simple user interface with SwiftUI to operate core functionalities including initialization, message publishing, and node shutdown. The first 100 words of this introduction will be used as an excerpt on the Wiki index.
+This tutorial explains how to build an iOS app that leverages ROS 2 capabilities using the SwiftROS2 framework. In this guide you will learn to initialize a ROS 2 node, set up publishers and subscribers via a DDS-based system, and construct a simple user interface with SwiftUI to operate core functionalities including initialization, message publishing, and node shutdown.
 
 ## Background and Key Concepts
 Before diving into the code, it is useful to understand these key concepts:
-- **ROS2 (Robot Operating System 2):** A set of libraries and tools for building robot applications, which employs nodes, topics, and messaging to facilitate robust communication.
-- **DDS (Data Distribution Service):** A middleware protocol used in ROS2 for real-time, scalable, and high-performance data exchange. It allows configuration of Quality of Service (QoS) parameters such as reliability and latency.
-- **Nodes:** The computational executables in ROS2 that handle processing and communication.
+- **ROS 2 (Robot Operating System 2):** A set of libraries and tools for building robot applications, which employs nodes, topics, and messaging to facilitate robust communication.
+- **DDS (Data Distribution Service):** A middleware protocol used in ROS 2 for real-time, scalable, and high-performance data exchange. It allows configuration of Quality of Service (QoS) parameters such as reliability and latency.
+- **Nodes:** The computational executables in ROS 2 that handle processing and communication.
 - **Publishers and Subscribers:** Mechanisms for sending (publishing) and receiving (subscribing) messages across nodes.
-- **SwiftROS2:** A simulated Swift library that provides interfaces to create ROS2 nodes, publishers, and subscribers.
+- **SwiftROS2:** A simulated Swift library that provides interfaces to create ROS 2 nodes, publishers, and subscribers.
 - **iOS Development using SwiftUI:** SwiftUI is utilized for building modern, responsive user interfaces on iOS.
 
-## Step-by-Step Tutorial: Building an iOS App for ROS2
+## Step-by-Step Tutorial: Building an iOS App for ROS 2
 
 ### 1. Project Setup and Dependencies
 1. **Clone the Repository:**  
@@ -63,8 +59,8 @@ Before diving into the code, it is useful to understand these key concepts:
 3. **Configure Xcode:**  
    In Xcode, set the deployment target to iOS 17.0 and ensure proper code signing configurations.
 
-### 2. Creating the ROS2 Node
-The heart of the app is the ROS2 node. The `CentralNode` class encapsulates ROS2 functionalities including initialization and resource management.
+### 2. Creating the ROS 2 Node
+The heart of the app is the ROS 2 node. The `CentralNode` class encapsulates ROS 2 functionalities including initialization and resource management.
 
 - **Initialization:**  
   In `ContentView.swift`, the `initialize()` function performs the following:
@@ -121,7 +117,7 @@ public func sendString() {
 
 ### 4. Building the User Interface
 The UI is built using SwiftUI and consists of three main buttons:
-- **Initialize:** Sets up the ROS2 node and publishers.
+- **Initialize:** Sets up the ROS 2 node and publishers.
 - **Publish Message:** Sends a test message.
 - **Destroy Node:** Tears down the node and cleans up.
 
@@ -167,7 +163,7 @@ var body: some View {
 - **Build the Project:**  
   Use Xcode to build the project ensuring that all dependencies are properly integrated.
 - **Run on Simulator or Device:**  
-  Launch the app on an iOS device or Simulator. Use the buttons to initialize the ROS2 node, publish a message, and destroy the node.
+  Launch the app on an iOS device or Simulator. Use the buttons to initialize the ROS 2 node, publish a message, and destroy the node.
 - **Testing:**  
   Verify the functionality by checking Xcode console logs and running unit tests located in `/ROS2iOSAppTests`.
 
@@ -175,15 +171,15 @@ var body: some View {
 
 ### swift-ros2
 - **Purpose:**  
-  Provides a high-level Swift interface to interact with ROS2, allowing creation of nodes, publishers, and subscribers.
+  Provides a high-level Swift interface to interact with ROS 2, allowing creation of nodes, publishers, and subscribers.
 - **Usage:**  
-  Classes such as `CentralNode` use this package to encapsulate ROS2 operations and expose easy-to-use methods to initialize nodes and create communication channels.
+  Classes such as `CentralNode` use this package to encapsulate ROS 2 operations and expose easy-to-use methods to initialize nodes and create communication channels.
 - **Implementation:**  
-  Utilizes Swift’s async/await for asynchronous operations and error-handling mechanisms for reliable integration with ROS2 middleware.
+  Utilizes Swift’s async/await for asynchronous operations and error-handling mechanisms for reliable integration with ROS 2 middleware.
 
 ### FastRTPSSwift
 - **Purpose:**  
-  Bridges ROS2 DDS functionalities by leveraging the Fast RTPS (Real-Time Publish-Subscribe) protocol.
+  Bridges ROS 2 DDS functionalities by leveraging the Fast RTPS (Real-Time Publish-Subscribe) protocol.
 - **Usage:**  
   Manages low-level DDS operations such as registering writers (publishers) and readers (subscribers) and handles QoS settings (e.g., reliability, durability).
 - **Implementation:**  
@@ -191,21 +187,21 @@ var body: some View {
 
 ### ros2msg
 - **Purpose:**  
-  Defines message types and data structures used in ROS2 communications.
+  Defines message types and data structures used in ROS 2 communications.
 - **Usage:**  
   Provides message models like `ROS2String` to package data and ensure proper serialization and deserialization using Swift’s Codable protocol.
 - **Implementation:**  
-  Structures messages in a way that aligns with ROS2 standards, facilitating seamless interaction between different nodes and platforms.
+  Structures messages in a way that aligns with ROS 2 standards, facilitating seamless interaction between different nodes and platforms.
 
 ## Understanding the DDS Mechanism
-DDS (Data Distribution Service) underpins the efficient and reliable exchange of data between ROS2 nodes. Key points include:
+DDS (Data Distribution Service) underpins the efficient and reliable exchange of data between ROS 2 nodes. Key points include:
 - **DDS Communication Model:**  
   Uses a publish/subscribe model where publishers send messages to topics and subscribers receive them based on topic subscriptions.
 - **Quality of Service (QoS):**  
   DDS allows customization of parameters (e.g., reliability, durability, latency) ensuring high-performance communication even in real-time applications.
 - **Fast RTPS Integration:**  
   The FastRTPSSwift package bridges the Fast RTPS library with SwiftROS2, managing:
-  - **Participant Creation:** The ROS2 node (CentralNode) acts as a participant joining a DDS domain.
+  - **Participant Creation:** The ROS 2 node (CentralNode) acts as a participant joining a DDS domain.
   - **Writer and Reader Registration:** Publishers (writers) and subscribers (readers) are registered with the DDS participant.
   - **Message Routing:** DDS middleware routes messages efficiently between registered writers and readers, applying QoS policies.
 - **Abstraction in SwiftROS2:**  
@@ -219,22 +215,22 @@ DDS (Data Distribution Service) underpins the efficient and reliable exchange of
 3. **Build and Run:**  
    Build the project and run the app on the desired iOS simulator or device.
 4. **Interact with the App:**  
-   - Tap **Initialize** to set up the ROS2 node.
-   - Tap **Publish Message** to send a test ROS2 message.
-   - Tap **Destroy Node** to gracefully shut down the ROS2 node.
+   - Tap **Initialize** to set up the ROS 2 node.
+   - Tap **Publish Message** to send a test ROS 2 message.
+   - Tap **Destroy Node** to gracefully shut down the ROS 2 node.
 5. **Review Logs:**  
    Monitor the Xcode console for log messages confirming successful node initialization, message publishing, and node destruction.
 
 ## Summary
-This guide provided a comprehensive walkthrough for building an iOS app integrated with ROS2:
+This guide provided a comprehensive walkthrough for building an iOS app integrated with ROS 2:
 - Project setup, dependency resolution, and Xcode configuration.
-- Initializing a ROS2 node with `CentralNode` and configuring communication via DDS.
+- Initializing a ROS 2 node with `CentralNode` and configuring communication via DDS.
 - Implementing publishers and subscribers to exchange messages.
 - Designing a user interface with SwiftUI and testing the functionality.
 - Detailed insights into the core dependency packages and DDS integration research.
 
 ## See Also
-- [ROS2 Official Documentation](https://docs.ros.org/)
+- [ROS 2 Official Documentation](https://docs.ros.org/)
 - [Fast RTPS Documentation](https://fast-dds.docs.eprosima.com/en/latest/)
 - [Swift Package Manager Documentation](https://swift.org/package-manager/)
 - [SwiftUI Tutorials](https://developer.apple.com/tutorials/swiftui)
@@ -242,14 +238,10 @@ This guide provided a comprehensive walkthrough for building an iOS app integrat
 ## Further Reading
 - Advanced DDS configuration and Quality of Service (QoS) settings.
 - Detailed tutorials on integrating C/C++ libraries with Swift.
-- Comprehensive studies of ROS2 communication patterns and best practices.
+- Comprehensive studies of ROS 2 communication patterns and best practices.
 
 ## References
-1. Y. Hu, swift-ros2 – ROS2-like node that supports subscription and publication of DDS messages in ROS2 message format” GitHub Repository, https://github.com/strapsai/swift-ros2.
-2. ROS Documentation, “Getting Started with ROS2,” available at https://docs.ros.org/.
-3. Fast RTPS Documentation, available at https://fast-dds.docs.eprosima.com/en/latest/.
-4. Apple Developer Documentation, “SwiftUI,” available at https://developer.apple.com/documentation/swiftui.
-
-<!-- 
-This README is based on the Robotics Knowledgebase Template. It provides a detailed guide on building an iOS ROS2 application, explains the core dependencies, and describes how the DDS mechanism underpins ROS2 communication. Modify sections as needed to match your project specifics.
--->
+1. Y. Hu, "swift-ros2 – ROS2-like node that supports subscription and publication of DDS messages in ROS2 message format," GitHub Repository, <https://github.com/strapsai/swift-ros2>.
+2. ROS Documentation, "Getting Started with ROS 2," available at <https://docs.ros.org/>.
+3. Fast RTPS Documentation, available at <https://fast-dds.docs.eprosima.com/en/latest/>.
+4. Apple Developer Documentation, "SwiftUI," available at <https://developer.apple.com/documentation/swiftui>.

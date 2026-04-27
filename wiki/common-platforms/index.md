@@ -14,6 +14,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Asctec UAV Setup Guide](/wiki/common-platforms/asctec-uav-setup-guide/)**
   A detailed tutorial for setting up the Asctec Pelican UAV for autonomous waypoint navigation using ROS. Covers configuring network settings, flashing firmware, and running the ROS package on the onboard Atomboard.
 
+- **[Building an iOS App for ROS 2 Integration](/wiki/common-platforms/ros2-ios-app-with-swift/)**
+  A step-by-step guide on building an iOS application integrated with ROS 2 using the SwiftROS2 framework, covering project setup, node configuration, and SwiftUI interface development.
+
 - **[Building a Custom Drone for the DARPA Triage Challenge](/wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/)**
   A comprehensive guide to designing and building UAVs for disaster scenarios. Covers both modified commercial platforms and fully custom designs, including hardware selection, electrical integration, and software configuration.
 
@@ -95,6 +98,11 @@ Here is a compiled list of external resources referenced in the subsections:
 9. **UR5e Robotic Arm**
    - [Universal Robots ROS Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver)
    - [MoveIt Setup for UR5e](http://moveit.ros.org/)
+
+10. **ROS 2 iOS Integration**
+   - [SwiftROS2 Framework](https://github.com/strapsai/swift-ros2)
+   - [Fast RTPS Documentation](https://fast-dds.docs.eprosima.com/en/latest/)
+   - [Apple SwiftUI Documentation](https://developer.apple.com/documentation/swiftui)
 
 ## Development Needs
 We seek contributions in the following areas:
