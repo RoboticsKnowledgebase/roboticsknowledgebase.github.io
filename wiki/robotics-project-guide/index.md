@@ -2,5 +2,10 @@
 date: 2024-12-01
 title: Robotics Project Guide
 ---
-**This page is a stub.** You can help us improve it by [editing it](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
-{: .notice--warning}
+
+The Robotics Project Guide provides high-level overviews and step-by-step instructions for designing, building, and deploying robotic systems. It covers the full lifecycle of a robotics project, from initial goal setting to final demonstration.
+
+### Key Articles
+
+- **[A Comprehensive Overview of Humanoid Robot Planning, Control, and Skill Learning](/wiki/robotics-project-guide/humanoid-robot/):**
+  An in-depth look at the challenges and methodologies involved in humanoid robotics, covering traditional planning and control as well as emerging learning-based approaches.
