@@ -406,6 +406,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: xarm_ros Guide
+        url: /wiki/tools/xarm-ros-guide/
       - title: ROS2 Humble Intra-Process Communication Recorder
         url: /wiki/tools/ros2-humble-ipc-recorder/
   - title: Datasets
@@ -438,6 +440,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: CHOMP Path Planning
+        url: /wiki/planning/chomp-planning/
       - title: Google Linear Optimization Package (GLOP) 
         url: /wiki/planning/glop/
       - title: Advanced MoveIt usage for Manipulator Motion Planning

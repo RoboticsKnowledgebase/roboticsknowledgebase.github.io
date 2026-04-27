@@ -20,6 +20,9 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Behavior Trees](/wiki/planning/behavior-tree/)**
   Comprehensive guide to Behavior Trees for robot decision-making. Covers BT architecture vs FSM/HFSM, node types (Action, Condition, Sequence, Fallback), AirStack implementation, and ROS2 integration with hands-on tutorials.
 
+- **[CHOMP Path Planning](/wiki/planning/chomp-planning/)**
+  An optimization-based trajectory planner that produces smooth, collision-free paths for manipulators like the xArm.
+
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
 
