@@ -14,7 +14,7 @@ title: ROS2 Actions for Asynchronous Tasks
 
 Action servers are an intermediate option between ROS services and ROS publisher-subscriber models.
 
-![](/assets/images/Action-SingleActionClient.gif)
+![Action-SingleActionClient](/assets/images/Action-SingleActionClient.gif)
 
 - **Services**
   - Take input request and execute an action
@@ -27,7 +27,7 @@ Action servers are an intermediate option between ROS services and ROS publisher
     - Can provide response on input acceptance (goal_handle.accept())
     - Can provide continuous feedback when the task is being executed (goal_handle.publish_feedback())
     - Can provide final success/failure completion response after the task has ended
-  - All above communication is defined in a ```.action``` file
+  - All above communication is defined in a `.action` file
 
 ## Basic Skeleton of an Action Server and Client
 
