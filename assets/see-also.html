@@ -43,71 +43,32 @@ sitemap: false
   Phase 1: tokenize title + body separately for every article in the wiki.
   Per-article record: url@@@title@@@cat@@@|title_toks|@@@|body_toks|
   Article separator: ###
+  Per-article tokenization is factored into _includes/see-also-tokenize.html
+  so the same logic runs for both regular `cat.children` entries and the rare
+  parent-as-page cat (e.g. "Robotics Project Guide" → master-guide.md).
 ============================================================ {%- endcomment -%}
 {%- assign blob = "" -%}
 {%- for cat in site.data.navigation.wiki -%}
   {%- if cat.title == "Overview" -%}{%- continue -%}{%- endif -%}
+
+  {%- comment -%} Parent-as-page nav entry (e.g. Robotics Project Guide → master-guide):
+    include the cat as an article only when its URL has a slug after the category
+    (/wiki/foo/bar/), not a bare category landing (/wiki/foo/) — those resolve to
+    auto-generated index pages with generic titles that pollute the recommender. {%- endcomment -%}
+  {%- if cat.url -%}
+    {%- assign cat_norm_url = cat.url | append: "/" | replace: "//", "/" -%}
+    {%- assign cat_suffix = cat_norm_url | remove_first: "/wiki/" | replace: "/", " " | strip -%}
+    {%- if cat_suffix contains " " -%}
+      {%- assign cat_page = site.pages | where: "url", cat_norm_url | first -%}
+      {%- if cat_page and cat_page.content -%}
+        {%- include see-also-tokenize.html article=cat cat_title=cat.title -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+
   {%- if cat.children -%}
     {%- for child in cat.children -%}
-      {%- assign norm_url = child.url | append: "/" | replace: "//", "/" -%}
-      {%- assign page = site.pages | where: "url", norm_url | first -%}
-
-      {%- assign title_text = child.title | downcase -%}
-      {%- assign title_text = title_text | replace: ".", " " | replace: ",", " " | replace: ";", " " | replace: ":", " " | replace: "(", " " | replace: ")", " " | replace: "[", " " | replace: "]", " " | replace: "{", " " | replace: "}", " " | replace: "/", " " | replace: "-", " " | replace: "_", " " | replace: "&", " " | replace: "?", " " | replace: "!", " " | replace: "=", " " | replace: "+", " " | replace: "*", " " | replace: "'", " " | replace: '"', " " | replace: "\\", " " | replace: "<", " " | replace: ">", " " | replace: "#", " " -%}
-      {%- assign title_wrapped = "|" -%}
-      {%- assign title_raw = title_text | split: " " -%}
-      {%- for tok in title_raw -%}
-        {%- assign t = tok | strip -%}
-        {%- if t.size < 3 or t.size > 24 -%}{%- continue -%}{%- endif -%}
-        {%- if STOP contains t -%}{%- continue -%}{%- endif -%}
-        {%- assign first_char = t | slice: 0, 1 -%}
-        {%- if first_char == "0" or first_char == "1" or first_char == "2" or first_char == "3" or first_char == "4" or first_char == "5" or first_char == "6" or first_char == "7" or first_char == "8" or first_char == "9" -%}{%- continue -%}{%- endif -%}
-        {%- comment -%} Light stemming: strip trailing 's' to unify plurals
-          (apriltags->apriltag, sensors->sensor). Skip if "ss" (address) or
-          short (toss). Naive but effective on technical English. {%- endcomment -%}
-        {%- assign last2 = t | slice: -2, 2 -%}
-        {%- if t.size > 4 and last2 != "ss" -%}
-          {%- assign last1 = t | slice: -1, 1 -%}
-          {%- if last1 == "s" -%}
-            {%- assign sz_m = t.size | minus: 1 -%}
-            {%- assign t = t | slice: 0, sz_m -%}
-          {%- endif -%}
-        {%- endif -%}
-        {%- assign needle = "|" | append: t | append: "|" -%}
-        {%- if title_wrapped contains needle -%}{%- continue -%}{%- endif -%}
-        {%- assign title_wrapped = title_wrapped | append: t | append: "|" -%}
-      {%- endfor -%}
-
-      {%- assign body_wrapped = "|" -%}
-      {%- if page and page.content -%}
-        {%- assign body_text = page.content | strip_html | strip_newlines | truncate: BODY_LEAD_CHARS, "" | downcase -%}
-        {%- assign body_text = body_text | replace: ".", " " | replace: ",", " " | replace: ";", " " | replace: ":", " " | replace: "(", " " | replace: ")", " " | replace: "[", " " | replace: "]", " " | replace: "{", " " | replace: "}", " " | replace: "/", " " | replace: "-", " " | replace: "_", " " | replace: "&", " " | replace: "?", " " | replace: "!", " " | replace: "=", " " | replace: "+", " " | replace: "*", " " | replace: "'", " " | replace: '"', " " | replace: "\\", " " | replace: "<", " " | replace: ">", " " | replace: "#", " " -%}
-        {%- comment -%} Body dedup is seeded with title_wrapped so we never
-          double-count tokens that appeared in the title. {%- endcomment -%}
-        {%- assign b_seen = title_wrapped -%}
-        {%- assign body_raw = body_text | split: " " -%}
-        {%- for tok in body_raw -%}
-          {%- assign t = tok | strip -%}
-          {%- if t.size < 4 or t.size > 24 -%}{%- continue -%}{%- endif -%}
-          {%- if STOP contains t -%}{%- continue -%}{%- endif -%}
-          {%- assign first_char = t | slice: 0, 1 -%}
-          {%- if first_char == "0" or first_char == "1" or first_char == "2" or first_char == "3" or first_char == "4" or first_char == "5" or first_char == "6" or first_char == "7" or first_char == "8" or first_char == "9" -%}{%- continue -%}{%- endif -%}
-          {%- assign last2 = t | slice: -2, 2 -%}
-          {%- if t.size > 4 and last2 != "ss" -%}
-            {%- assign last1 = t | slice: -1, 1 -%}
-            {%- if last1 == "s" -%}
-              {%- assign sz_m = t.size | minus: 1 -%}
-              {%- assign t = t | slice: 0, sz_m -%}
-            {%- endif -%}
-          {%- endif -%}
-          {%- assign needle = "|" | append: t | append: "|" -%}
-          {%- if b_seen contains needle -%}{%- continue -%}{%- endif -%}
-          {%- assign b_seen = b_seen | append: t | append: "|" -%}
-          {%- assign body_wrapped = body_wrapped | append: t | append: "|" -%}
-        {%- endfor -%}
-      {%- endif -%}
-
-      {%- assign blob = blob | append: child.url | append: "@@@" | append: child.title | append: "@@@" | append: cat.title | append: "@@@" | append: title_wrapped | append: "@@@" | append: body_wrapped | append: "###" -%}
+      {%- include see-also-tokenize.html article=child cat_title=cat.title -%}
     {%- endfor -%}
   {%- endif -%}
 {%- endfor -%}
@@ -119,7 +80,11 @@ sitemap: false
   is a Liquid-friendly stand-in for IDF weighting (no log() in Liquid). The
   Lucene MoreLikeThis paper and the BM25 reproducibility study both find
   binned IDF nearly indistinguishable from continuous IDF in practice.
-  Title tokens skip this stage — they get a uniform TITLE_WEIGHT in scoring.
+  Title tokens are not iterated here — they get a uniform TITLE_WEIGHT in
+  scoring. Note tok_freq counts |tok| occurrences across the whole blob
+  (title + body segments), so a body token whose word also appears in many
+  titles inherits those into its DF bucket. Hyperparameters were tuned
+  against this exact count, not against a body-only DF.
 {%- endcomment -%}
 {%- assign rare_set = "|" -%}
 {%- assign medium_set = "|" -%}
