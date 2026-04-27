@@ -52,7 +52,8 @@ chomp:
 <arg name="planning_pipeline" value="chomp" />
 ```
 
-> This is a note. CHOMP relies on well-defined signed distance fields. Use OctoMap or preprocessed collision geometries for reliable performance.
+CHOMP relies on well-defined signed distance fields. Use OctoMap or preprocessed collision geometries for reliable performance.
+{: .notice--info}
 
 ## Pros and Cons
 
