@@ -360,7 +360,7 @@ wiki:
         url: /wiki/planning/resolved-rates/
       - title: Multi Robot Planning Design
         url: /wiki/planning/multi-robot-planning/
-      - title: Sampling-Based Motion Planning with RRT and PRM Variants for Multi-Agent Systems
+      - title: Sampling-Based RRT and PRM Variants
         url: /wiki/planning/rrt-prm-planning/
       - title: Motion Planning in frenet frame
         url: /wiki/planning/frenet-frame-planning.md/
