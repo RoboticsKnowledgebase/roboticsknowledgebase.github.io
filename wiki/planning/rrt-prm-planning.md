@@ -179,9 +179,9 @@ This table is intended as a quick reference for selecting the appropriate planne
 We implemented and tested several RRT and PRM variants, extended them with planning utilities, and demonstrated multi-agent coordination. These algorithms, enhanced with goal biasing and path smoothing, offer practical and adaptable solutions for both single-robot and multi-agent applications.
 
 ## See Also:
-- [Planning Overview](https://roboticsknowledgebase.com/wiki/planning/planning-overview/)
-- [A* Implementation Guide](https://roboticsknowledgebase.com/wiki/planning/astar_planning_implementation_guide/)
-- [Multi Robot Navigation Stack Design](https://roboticsknowledgebase.com/wiki/planning/multi-robot-planning/)
+- [Planning Overview](/wiki/planning/planning-overview/)
+- [A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)
+- [Multi Robot Navigation Stack Design](/wiki/planning/multi-robot-planning/)
 
 ## Further Reading
 - LaValle, S. M. "Planning Algorithms." (Available online: http://planning.cs.uiuc.edu/)
