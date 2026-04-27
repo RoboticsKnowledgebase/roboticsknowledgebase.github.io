@@ -2,19 +2,22 @@
 date: 2024-12-05
 title: Computing
 ---
-<!-- **This page is a stub.** You can help us improve it by [editing it](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
-{: .notice--warning} -->
-
 
 This section is curated for developers and researchers working on robotics applications, offering practical solutions for computing challenges and enabling efficient system integration. It provides comprehensive resources and tutorials on computing platforms and tools used in robotics, including setup guides, troubleshooting, and interfacing with hardware. 
 
 ## Key Subsections and Highlights
 
-- **[Arduino](/wiki/computing/arduino/)**
+- **[Arduino Overview](/wiki/computing/arduino/)**
   Learn the fundamentals of Arduino boards, including the Uno and Mega, wiring configurations for components like limit switches and motor drivers, and practical examples with annotated code snippets.
+
+- **[Basic Arduino Components](/wiki/computing/basic-arduino-components/)**
+  A foundational guide to using essential Arduino components like LEDs, push buttons, potentiometers, buzzers, servo motors, and stepper motors, including wiring and example code.
 
 - **[Comparing Commercial Off The Shelf Embedded Platforms](/wiki/computing/comparing-cots-embedded-systems/)**
   A comprehensive guide and comparison of popular embedded systems like Arduino, ESP32, and Raspberry Pi, helping you choose the right platform for your project's compute and control needs.
+
+- **[Jetson Orin AGX](/wiki/computing/jetson-orin-agx/)**
+  Setup and optimization guide for the NVIDIA Jetson Orin AGX platform.
 
 - **[Amazon Web Services Quickstart](/wiki/computing/aws-quickstart/)**
   A step-by-step guide to launching, accessing, and managing AWS EC2 instances for cloud computing. Covers SSH configuration, tmux for persistent sessions, and tips for stopping or managing instances effectively.
