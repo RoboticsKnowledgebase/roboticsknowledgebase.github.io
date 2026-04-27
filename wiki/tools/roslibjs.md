@@ -145,7 +145,7 @@ You can do more advanced stuff such as subscribing to images, Rviz visualization
 To visualize and update an image stream live within your web app, first you need a placeholder in HTML for your image. Define it as follows within the `body` tag with an unique ID to update it later via JavaScript.
 
 ```
-<img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="assets/img/placeholder.png">
+<img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="/assets/images/placeholder.png">
 ```
 
 Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
@@ -168,7 +168,7 @@ image_topic.subscribe(function(message) {
 
 Here is an example of a dashboard (DeltaViz) for Delta Autonomy developed by [me](mailto:heethesh@gmail.com). The GUI makes use of ROS diagnostic message to monitor FPS of different nodes in the pipeline, subscribes to images and virtual camera stream from Rviz, and also has sound alerts and flashes to notify the users (developed for their specific use-case). The source code is available on our repository [here](https://github.com/deltaautonomy/delta_viz/blob/master/delta_viz_app/index.html).
 
-![](https://roboticsknowledgebase.com/wiki/tools/assets/deltaviz.jpg)
+![](/assets/images/tools/deltaviz.jpg)
 
 ## See Also
 - A [tutorial](https://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.

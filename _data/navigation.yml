@@ -9,12 +9,40 @@ wiki:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
+  - title: Software Bootcamp
+    url: /wiki/bootcamp/
+    children:
+      - title: Bootcamp Guide
+        url: /wiki/bootcamp/bootcamp-guide/
+  - title: Robotics Project Guide
+    url: /wiki/robotics-project-guide/master-guide/
+    children:
+      - title: Define your goals and requirements
+        url: /wiki/robotics-project-guide/define-your-goals-and-requirements/
+      - title: Choose a robot
+        url: /wiki/robotics-project-guide/choose-a-robot/
+      - title: Make a robot
+        url: /wiki/robotics-project-guide/make-a-robot/
+      - title: Choose a language (or languages)
+        url: /wiki/robotics-project-guide/choose-a-language/
+      - title: Robot communication
+        url: /wiki/robotics-project-guide/choose-comm/
+      - title: Choose a simulator
+        url: /wiki/robotics-project-guide/choose-a-sim/
+      - title: Test and debug your robot
+        url: /wiki/robotics-project-guide/test-and-debug/
+      - title: Demo day!
+        url: /wiki/robotics-project-guide/demo-day/
+      - title: A Comprehensive Overview of Humanoid Robot Planning, Control, and Skill Learning
+        url: /wiki/robotics-project-guide/humanoid-robot/
   - title: System Design & Development
     url: /wiki/system-design-development/
     children:
       - title: System Engineering
         url: /wiki/system-design-development/system-engineering/
+      - title: Finite State Machines
+        url: /wiki/system-design-development/finite-state-machine/
       - title: Mechanical Design
         url: /wiki/system-design-development/mechanical-design/
       - title: Printed Circuit Board Design
@@ -36,13 +64,23 @@ wiki:
         url: /wiki/project-management/risk-management/
       - title: Jira
         url: /wiki/project-management/jira/
+      - title: Using Notion for Project Management
+        url: /wiki/project-management/using-notion-for-project-management/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
+      - title: Building a Custom Drone for the DARPA Triage Challenge
+        url: /wiki/common-platforms/building-custom-drone-for-darpa-triage-challenge/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: Unitree G1
+        url: /wiki/common-platforms/unitree-g1/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
       - title: Pixhawk
         url: /wiki/common-platforms/pixhawk/
       - title: Asctec Pelican UAV Setup Guide
@@ -65,6 +103,22 @@ wiki:
         url: /wiki/common-platforms/ros/ros-navigation/
       - title: ROS Global Planner
         url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: Running ROS On An Unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
+      - title: Hello Robot Stretch RE1
+        url: /wiki/common-platforms/hello-robot
+      - title: Building an iOS App for ROS 2 Integration
+        url: /wiki/common-platforms/ros2-ios-app-with-swift/
+      - title: Configure VS Code for ROS 2
+        url: /wiki/common-platforms/configure-vscode-for-ros2/
+      - title: Building ROS2 Custom Packages
+        url: /wiki/common-platforms/ros/ros2-custom-package/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -78,6 +132,8 @@ wiki:
         url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
       - title: Computer Vision Consideration
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
@@ -98,9 +154,23 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: Robotic Total Station (Leica TS16)
+        url: /wiki/sensing/robotic-total-stations/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
-  - title: Actuation
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
+      - title: DWM1001 UltraWideband Positioning System
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise/
+      - title: Apple Vision Pro for Robotics
+        url: /wiki/sensing/apple-vision-pro/
+      - title: Robotics with the Microsoft Hololens2
+        url: /wiki/sensing/hololens-101/
+      - title: Perception via Thermal Imaging
+        url: /wiki/sensing/thermal-perception/
+  - title: Controls & Actuation
     url: /wiki/actuation/
     children:
       - title: Motor Controller Feedback
@@ -114,15 +184,20 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-HEBI-integration.md
+        url: /wiki/actuation/moveit-and-HEBI-integration/
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
         url: /wiki/actuation/task-prioritization-control/
       - title: Drive-by-wire Conversion for Autonomous Vehicle
         url: /wiki/actuation/drive-by-wire/
+  - title: Manipulators
+    url: /wiki/manipulators/
+    children:
+      - title: Integrating KUKA LBR Manipulators with MoveIt2
+        url: /wiki/manipulators/integrating-kuka-lbr-manipulators-with-moveit2/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
@@ -133,15 +208,34 @@ wiki:
       - title: Python libraries for Reinforcement Learning
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
-        url: /wiki/machine-learning/intro-to-rl
+        url: /wiki/machine-learning/intro-to-rl/
+      - title: Diffusion Models and Diffusion Policy
+        url: /wiki/machine-learning/intro-to-diffusion/
+      - title: GRPO for Diffusion Policies
+        url: /wiki/machine-learning/grpo-diffusion-policies/
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
         url: /wiki/machine-learning/yolov5-tensorrt/
       - title: Mediapipe - Live ML anywhere
-        url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
+        url: /wiki/machine-learning/mediapipe-live-ml-anywhere/
       - title: NLP for robotics
-        url: /wiki/machine-learning/nlp_for_robotics.md/
+        url: /wiki/machine-learning/nlp-for-robotics/
+      - title: Distributed Training With PyTorch Tutorial
+        url: /wiki/machine-learning/distributed-training-with-pytorch/
+      - title: Imitation Learning With a Focus on Humanoids
+        url: /wiki/machine-learning/imitation-learning/
+  - title: Reinforcement Learning
+    url: /wiki/reinforcement-learning/
+    children:
+      - title: Key Concepts in Reinforcement Learning (RL)
+        url: /wiki/reinforcement-learning/key-concepts-in-rl/
+      - title: Reinforcement Learning Algorithms
+        url: /wiki/reinforcement-learning/reinforcement-learning-algorithms/
+      - title: Policy Gradient Methods
+        url: /wiki/reinforcement-learning/intro-to-policy-gradient-methods/
+      - title: Foundation of Value-Based Reinforcement Learning
+        url: /wiki/reinforcement-learning/value-based-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -155,8 +249,12 @@ wiki:
         url: /wiki/state-estimation/orb-slam2-setup/
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
-      - title: Cartographer SLAM ROS Integration 
+      - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
+      - title: Externally Referenced State Estimation for GPS Lacking Environments
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
+      - title: Using g2o for Pose Graph Optimization in C++
+        url: /wiki/state-estimation/g2o-pose-graphs/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -178,6 +276,10 @@ wiki:
         url: /wiki/programming/tutorials-resources/
       - title: Python Construct
         url: /wiki/programming/python-construct/
+      - title: Building Software from Source
+        url: /wiki/programming/build-from-source/
+      - title: ROS 2 Yasmin State Machine
+        url: /wiki/programming/yasmin-ros2-state-machine/
   - title: Networking
     url: /wiki/networking/
     children:
@@ -189,8 +291,10 @@ wiki:
         url: /wiki/networking/rocon-multi-master/
       - title: ROS over Multiple Machines
         url: /wiki/networking/ros-distributed/
-      - title: Setting up WiFi hotspot at the boot up for Linux devices 
+      - title: Setting up WiFi hotspot at the boot up for Linux devices
         url: /wiki/networking/wifi-hotspot/
+      - title: Real-Time Video Processing on Jetson with GStreamer
+        url: /wiki/networking/gstreamer-jetson-realtime-video/
   - title: Simulation
     url: /wiki/simulation/
     children:
@@ -202,30 +306,48 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
+      - title: Gazebo Classic Simulation of Graspable and Breakable Objects
+        url: /wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects
+      - title: NVIDIA Isaac Sim Setup and ROS2 Workflow
+        url: /wiki/simulation/simulation-isaacsim-setup/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
+      - title: Apple Vision Pro for Robotics Applications
+        url: /wiki/interfacing/apple-vision-pro-for-robotics-applications/
       - title: Myo
         url: /wiki/interfacing/myo/
       - title: Blink(1) LED
         url: /wiki/interfacing/blink-1-led/
       - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
+      - title: ROS 1 - ROS 2 Bridge
+        url: /wiki/interfacing/ros1_ros2_bridge/
+      - title: Low Level Buffer issue debugging
+        url: /wiki/interfacing/buffer-issues/
   - title: Computing
     url: /wiki/computing/
     children:
       - title: Amazon Web Services Quickstart
-        url: wiki/computing/aws-quickstart.md
-      - title: Adruino
+        url: /wiki/computing/aws-quickstart/
+      - title: Arduino
         url: /wiki/computing/arduino/
+      - title: Basic Arduino Components
+        url: /wiki/computing/basic-arduino-components/
       - title: Single Board Computers
         url: /wiki/computing/single-board-computers/
+      - title: Comparing Commercial Off The Shelf Embedded Platforms
+        url: /wiki/computing/comparing-cots-embedded-systems/
+      - title: Jetson Orin AGX
+        url: /wiki/computing/jetson-orin-agx/
       - title: Upgrading Ubuntu Kernels
-        url: /wiki/computing/upgrading-ubuntu-kenel/
+        url: /wiki/computing/upgrading-ubuntu-kernel/
       - title: Ubuntu 14.04 on Chromebook
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
+      - title: Ubuntu Dual Boot and Troubleshooting Guide
+        url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -249,6 +371,10 @@ wiki:
         url: /wiki/fabrication/cube-pro/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Ultimaker Series (3/S3)
+        url: /wiki/fabrication/ultimaker-series/
+      - title: Onshape Tutorial
+        url: /wiki/fabrication/onshape-tutorial/
   - title: Math
     url: /wiki/math/
     children:
@@ -261,6 +387,10 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
+      - title: Docker Security
+        url: /wiki/tools/docker-security
+      - title: Docker for PyTorch
+        url: /wiki/tools/docker-for-pytorch/
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
@@ -271,6 +401,8 @@ wiki:
         url: /wiki/tools/tmux/
       - title: udev Rules
         url: /wiki/tools/udev-rules/
+      - title: ROS GUI
+        url: /wiki/tools/ros-gui/
       - title: Rosbags in Matlab
         url: /wiki/tools/rosbags-matlab/
       - title: Making Field Testing Easier through Visualization and Simulation
@@ -281,19 +413,27 @@ wiki:
         url: /wiki/tools/stream-rviz/
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
+      - title: MapViz for Map Based Visualization in ROS2
+        url: /wiki/planning/mapviz/
       - title: Gazebo Simulation
         url: /wiki/tools/gazebo-simulation/
       - title: Code Editors - Introduction to VS Code and Vim
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: xarm_ros Guide
+        url: /wiki/tools/xarm-ros-guide/
+      - title: ROS2 Humble Intra-Process Communication Recorder
+        url: /wiki/tools/ros2-humble-ipc-recorder/
+      - title: Docker for Robotics
+        url: /wiki/tools/docker-for-robotics/
   - title: Datasets
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
@@ -303,14 +443,28 @@ wiki:
         url: /wiki/planning/astar_planning_implementation_guide/
       - title: Extensions To A* for Dynamic Planning
         url: /wiki/planning/non-a-star-planning/
+      - title: Behavior Trees
+        url: /wiki/planning/behavior-tree/
+      - title: Specialized Planners
+        url: /wiki/planning/pilz-chomp/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
         url: /wiki/planning/resolved-rates/
       - title: Multi-Robot Planning
         url: /wiki/planning/multi-robot-planning/
+      - title: Sampling-Based RRT and PRM Variants
+        url: /wiki/planning/rrt-prm-planning/
       - title: Motion Planning in Frenet Frame
         url: /wiki/planning/frenet-frame-planning/
+      - title: Move Base Flex
+        url: /wiki/planning/move-base-flex/
+      - title: CHOMP Path Planning
+        url: /wiki/planning/chomp-planning/
+      - title: Google Linear Optimization Package (GLOP) 
+        url: /wiki/planning/glop/
+      - title: Advanced MoveIt usage for Manipulator Motion Planning
+        url: /wiki/planning/advanced-moveit-manipulator-planning/
 # Main links appear in the header.
 main:
   - title: Wiki
@@ -331,7 +485,7 @@ docs:
       - title: Wiki Index
         url: /wiki/
       - title: Contribute
-        url: /docs/
+        url: /docs/index/
   - title: Contribute
     children:
       - title: Introduction

@@ -32,7 +32,7 @@ Theta\* should always give paths with lower cost than those from standard A\*, s
 
 Node Exploration Behaviour of Theta\*           |  Path Comparison 
 :-------------------------:|:-------------------------:
-![Node Exploration Behaviour of Theta Star](./assets/theta_star_explor.png)  |  ![theta_vs_astar.png](./assets/theta_vs_astar.png)
+![Node Exploration Behaviour of Theta Star](/assets/images/planning/theta_star_explor.png)  |  ![theta_vs_astar.png](/assets/images/planning/theta_vs_astar.png)
 
 
 
@@ -90,11 +90,11 @@ Here are the key steps involved in the Safe Interval Path Planning algorithm:
 
 SIPP Schematic           
 ---
-![sipp_timeline.png](./assets/sipp_timeline.png) 
+![sipp_timeline.png](/assets/images/planning/sipp_timeline.png) 
 
 SIPP Behaviour     
 ---
-![sipp_behaviour.png](./assets/sipp_behaviour.png)
+![sipp_behaviour.png](/assets/images/planning/sipp_behaviour.png)
 
 
 
