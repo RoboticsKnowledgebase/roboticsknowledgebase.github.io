@@ -2,9 +2,6 @@
 date: 2024-12-05
 title: Planning
 ---
-<!-- **This page is a stub.** You can help us improve it by [editing it](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
-{: .notice--warning} -->
-
 The **Planning** section offers resources and tutorials on motion planning techniques, ranging from classical algorithms like A* to modern approaches such as Frenet-frame trajectory planning and multi-robot navigation strategies. This section is tailored to help researchers and developers understand, implement, and optimize planning algorithms for diverse robotics applications.
 
 We are actively seeking contributions to expand the resources available in this section.
@@ -16,6 +13,9 @@ We are actively seeking contributions to expand the resources available in this 
 
 - **[A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)**
   A step-by-step tutorial on implementing the A* algorithm for robot motion planning. Covers key concepts such as heuristic design, map representation, and non-holonomic motion primitives for Ackermann vehicles.
+
+- **[Extensions To A* for Dynamic Planning](/wiki/planning/non-a-star-planning/)**
+  Explores popular extensions like Theta\* and Safe Interval Path Planning (SIPP) to address pitfalls of standard A\* on physical robots in dynamic environments.
 
 - **[Behavior Trees](/wiki/planning/behavior-tree/)**
   Comprehensive guide to Behavior Trees for robot decision-making. Covers BT architecture vs FSM/HFSM, node types (Action, Condition, Sequence, Fallback), AirStack implementation, and ROS2 integration with hands-on tutorials.
@@ -56,4 +56,3 @@ This section seeks contributions in the following areas:
 - Hybrid approaches combining search- and sampling-based methods
 - Tutorials on implementing planners using modern libraries (e.g., OMPL, ROS Navigation2)
 - Case studies on integrating planners with robot systems
-
