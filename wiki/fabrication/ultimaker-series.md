@@ -19,7 +19,7 @@ Using your favorite CAD Sofware (i.e. Solidworks), prepare an STL file of your m
 
 Using the options on the left side of the screen (Circle 2), move your piece(s) around. Using these controls, you can change the orientaiton of the part, as well as its location on the build plate. Make sure that part is oriented to minimize overhangs, and if you have multiple pieces, that the pieces are not too close to each other.
 
-<figcaption align = "center"><b>Figure 1: Ultimaker Cura PREPARE screen when preparing a print. </b></figcaption>
+*Figure 1: Ultimaker Cura PREPARE screen when preparing a print.*
 
 ![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig1.png)
 
@@ -32,17 +32,17 @@ Finally, you can click the 'Slice' button indiciated by Circle 5 when ready. As 
 ## Previewing your part before printing
 The preview screen is a last look at your part and what the print will look like both on the outside and on the inside.
 
-<figcaption align = "center"><b>Figure 2: Ultimaker Cura PREVIEW screen. </b></figcaption>
+*Figure 2: Ultimaker Cura PREVIEW screen.*
 
 ![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig2.png)
 
 Following the circles in Figure 2, this is what to look out for on your print:
 
-**6** - Use the sliding bar on the right side of the screen to look at a crossection of your part at different heights. This can give you a look inside to the infill of your part, and how the infill looks around internal features like holes (as shown in figure 2). Use this to catch potential failures before printing.
+**Circle 6** - Use the sliding bar on the right side of the screen to look at a crossection of your part at different heights. This can give you a look inside to the infill of your part, and how the infill looks around internal features like holes (as shown in figure 2). Use this to catch potential failures before printing.
 
-**7** - Take a look at how long and how much material this print will take  *at the current print settings*. If either of these numbers are unsuitable to you, hope back over to the top bar menu and change your print settings till these numbers are to your liking!
+**Circle 7** - Take a look at how long and how much material this print will take  *at the current print settings*. If either of these numbers are unsuitable to you, hope back over to the top bar menu and change your print settings till these numbers are to your liking!
 
-**8** - Once you've checked it all, you're ready to press the blue button and save your spliced print file. This blue button will change depending on if you have an external USB drive connected where you may want to directly save the file. Feel free to use whatever file format Cura selects - the printer can read a variety of different ones.
+**Circle 8** - Once you've checked it all, you're ready to press the blue button and save your spliced print file. This blue button will change depending on if you have an external USB drive connected where you may want to directly save the file. Feel free to use whatever file format Cura selects - the printer can read a variety of different ones.
 
 ## Sending your print file to the printers
 The easiest way to do this is to load your file directly onto a USB. The Ultimaker printers have easy-access USB ports, and the software is setup to read your USB stick's folder structure to help you locate your file. Simply find your specific print file, and select it.
@@ -63,7 +63,7 @@ If you are encountering some issues with executing your print, here are some com
 ### Not enough material
 Starting with an easy one, your print might stop if your spool runs out of material. Fortunately, the interface does well to walk you through the process of changing the material on the back. For more information, you can learn more by watching this video on [changing the filament spool](https://youtu.be/c2XznbVFOBs) (Note: this video shows the Ultimaker 3, which does not have the touch screen, but the process and prompts are identical on the S3).
 
-## Wrong print settings
+### Wrong print settings
 Your print doesn't start because you configured your Cura screen wrong! Go back to your PREPARE page and check the settings at Circle 3 in Figure 1.
 
 ### The wrong core to the wrong material
@@ -83,7 +83,7 @@ This one is a difficult one. Even with extensive research, it has been hard to f
 ### Sometimes, things just go wrong.
 Sometimes, things just go wrong. Figure 3 has an example of a very long print that went wrong. This one was due to the support filament not extruding correctly, leading to a failure to print the overhang. This one was actually due to a failure to use the correct print core for the support material (PVA, in this case). So when the print core got jammed with incorrectly melted PVA, the print failed. This just goes to show how important it is to pay attention to some of the simple rules outlined on this page, and you can avoid most failure likes this one.
 
-<figcaption align = "center"><b>Figure 3: Prints can fail. It happens! </b></figcaption>
+*Figure 3: Prints can fail. It happens!*
 
 ![Ultimaker Cura Screen](/assets/images/fabrication/ultimaker_fig3.JPG)
 
