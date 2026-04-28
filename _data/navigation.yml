@@ -71,6 +71,16 @@ wiki:
         url: /wiki/common-platforms/rccars-the-complete-guide/
       - title: Khepera 4
         url: /wiki/common-platforms/khepera4/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
+      - title: Hello Robot Stretch RE1
+        url: /wiki/common-platforms/hello-robot
+      - title: Unitree G1 Humanoid Robot
+        url: /wiki/common-platforms/unitree-g1/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -80,14 +90,20 @@ wiki:
         url: /wiki/sensing/adafruit-gps/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
       - title: Stag
         url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
       - title: Computer Vision Consideration
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
+      - title: DWM1001 UltraWideband Positioning System
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
       - title: Point Cloud Library, 3D Sensors and Applications
         url: /wiki/sensing/pcl/
       - title: Photometric Calibration
@@ -104,10 +120,14 @@ wiki:
         url: /wiki/sensing/gps/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
-      - title: Thermal Cameras
-        url: /wiki/sensing/thermal-cameras/
+      - title: Robotic Total Station (Leica TS16)
+        url: /wiki/sensing/robotic-total-stations/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/thermal-visual-sensor-noise-reduction/
       - title: Robot-Centric Elevation Mapping
         url: /wiki/sensing/elevation-mapping/
+      - title: Thermal Cameras
+        url: /wiki/sensing/thermal-cameras/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -305,9 +325,9 @@ wiki:
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:

@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "github-pages", "~> 214", group: :jekyll_plugins
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
@@ -13,6 +13,7 @@ end
 
 gem "nokogiri", ">= 1.10.8"
 gem "kramdown", ">= 2.3.0"
+gem 'webrick', "~> 1.7"
 gem "minimal-mistakes-jekyll"
 
 
