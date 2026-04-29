@@ -184,17 +184,6 @@ For complex scenarios, users can enhance simulations by adding custom force mode
 
 ## Determining the Right Simulator for Your Project
 
-Before selecting a simulator, consider the following questions:
-
-- **Integration with ROS/ROS2**: Does your project utilize the Robot Operating System (ROS)? If so, compatibility is essential.    
-- **Physics Simulation**: Is accurate physics modeling necessary, especially for machine learning or reinforcement learning applications? Of course, accurate physics engine usually helps. But in some cases, it may suffice to just have a visualizer such as RViz or a low-fidelity physics engine.  
-- **Customizability**: Do you require the ability to create custom models or environments? If you built the robot yourself, then you would most likely want a way to simulate your custom robot. Luckily, most simulators provide a way to do this. 
-- **Budget Constraints**: Are there financial limitations that necessitate the use of free or open-source tools?  
-- **Operating System Compatibility**: What platforms does the simulator support (e.g., Windows, macOS, Linux)?
-- **Visualization Requirements**: Do you need photorealistic rendering for tasks like computer vision? Even when you use computer vision, the chances are that you wouldn't need photorealistic rendering. As long as the simulator can render the environment to a certain standard for object detection, it should suffice.
-
-## Determining the Right Simulator for Your Project
-
 Before selecting a simulator, consider the following criteria:
 
 ### 1. Ecosystem and Compatibility
@@ -207,7 +196,7 @@ Before selecting a simulator, consider the following criteria:
 * **Visualization and Rendering:** If your project involves computer vision, evaluate the rendering engine. While object detection often only requires standard 3D rendering, tasks involving light-sensitive sensors or photorealistic sim-to-real transfer may require ray-tracing capabilities provided by platforms like NVIDIA Isaac Sim or Unity.
 * **Customizability:** Evaluate the ease of importing custom robot models (via URDF, MJCF, or USD) and procedurally generating environments. If you are developing unique hardware, the ability to accurately model its mass properties and joint limits is a non-negotiable requirement.
 
-**Pro-Tip: **You can often circumvent these version mismatches by using Docker containers to run legacy ROS environments on a modern host OS, or by manually installing mainline kernels to support new hardware on older Ubuntu builds. However, the downside is added complexity: both of these may introduce networking issues, GUI X11 forwarding, overhead in GPU passthrough, real-time kernel issues, etc.
+**Pro-Tip**: You can often circumvent these version mismatches by using Docker containers to run legacy ROS environments on a modern host OS, or by manually installing mainline kernels to support new hardware on older Ubuntu builds. However, the downside is added complexity: both of these may introduce networking issues, GUI X11 forwarding, overhead in GPU passthrough, real-time kernel issues, etc.
 
 ### 3. Sustainability and Maintenance
 * **Software Health and EOL:** For production environments, integrating simulators that lack updates for modern operating systems or hardware architectures may lead to technical dead-ends. Prioritize software that has reached a stable version and has not been flagged for **End-of-Life (EOL)**.
@@ -221,9 +210,9 @@ We first go over some popular simulators tailored for robotics applications.
 | **Simulator** | **Physics-Based** | **ROS Integration** | **Cost** | **Computation Speed** | **Supported OS** | **Customizability** |
 |---------------|-------------------|---------------------|----------|-----------------------|------------------|---------------------|
 | Gazebo        | Yes               | Best                | Free     | Moderate              | Linux, macOS     | Very High           |
-| AirSim        | Yes               | Limited             | Free     | Resource-Intensive    | Windows, Linux   | High (for drones)   |
+| Colosseum     | Yes               | Limited             | Free     | Resource-Intensive    | Windows, Linux   | High (for drones)   |
 | CoppeliaSim   | Yes               | Yes                 | Free*/Paid | Moderate            | Windows, macOS, Linux | Very High      |
-| Unity         | Adjustable        | With Plugins        | Free*/Paid | Variable            | Windows, macOS, Linux | Very High        |
+| Unity         | Adjustable        | With Plugins        | Free*/Paid | Variable            | Windows, macOS, Linux | Very High      |
 
 *Free for personal or educational use; commercial licenses may apply.
 
@@ -231,6 +220,8 @@ We first go over some popular simulators tailored for robotics applications.
 ![gazebo_sim](/assets/images/robotics-project-guide/gazebo_sim.png)
 
 Gazebo is a widely-used open-source robotics simulator that offers robust physics simulation and sensor modeling capabilities. It provides a 3D environment where users can test and develop robots in realistic scenarios. Gazebo's integration with the Robot Operating System (ROS) makes it a standard choice for many robotics projects, facilitating seamless communication between simulation and real-world applications. 
+
+**Note**: It is important to distinguish between Gazebo Classic (versions 1-11) and the modern Gazebo (formerly Ignition). Gazebo Classic reached its official End-of-Life (EOL) in January 2025. You can read more about the switch [here](https://gazebosim.org/about).
 
 **Pros**:  
 - **ROS Integration**: Seamless compatibility with ROS, making it a standard choice for many robotics projects.  
@@ -243,9 +234,9 @@ Gazebo is a widely-used open-source robotics simulator that offers robust physic
 - **Computation Speed**: Can be resource-intensive, potentially leading to slower simulations on less powerful hardware.  
 - **Learning Curve**: May require time to master its extensive features and functionalities.
 
-### [AirSim (on Unity)](https://microsoft.github.io/AirSim/Unity/?utm_source=chatgpt.com)
+### [Colosseum (successor to AirSim)](https://codexlabsllc.github.io/Colosseum/)
 ![airsim_sim](/assets/images/robotics-project-guide/airsim_sim.png)
-Developed by Microsoft, AirSim is an open-source simulator designed primarily for drones and autonomous vehicles. Built on the Unreal Engine, it provides high-fidelity visuals and accurate physics modeling, making it suitable for machine learning and computer vision research. AirSim supports both software-in-the-loop and hardware-in-the-loop simulations, allowing for seamless transitions from virtual to real-world testing. 
+Originally developed by Microsoft and now maintained by the community under the Colosseum project, it is an open-source simulator designed for drones and autonomous vehicles. It is primarily built on Unreal Engine 5 (also supports Unity), providing photorealistic visuals and high-fidelity physics modeling essential for machine learning and computer vision research. Colosseum supports both software-in-the-loop (SITL) and hardware-in-the-loop (HITL) simulations with popular flight controllers like PX4 and ArduPilot, enabling reliable sim-to-real transitions.  
 
 **Pros**:  
 - **Photorealistic Visualization**: Built on Unreal Engine, providing high-fidelity visuals suitable for computer vision tasks.  
@@ -298,18 +289,18 @@ As the field of robotics increasingly incorporates reinforcement learning (RL) t
 
 | **Simulator** | **Speed** | **Cost** | **Language Support** | **Learning Curve*** | **Parallelizability** | **GPU Support** | **CPU Support** | **Physics Accuracy** | **Visualization Quality** |
 |---------------|-----------|----------|----------------------|--------------------|-----------------------|------------------|------------------|----------------------|---------------------------|
-| **MuJoCo**    | High      | Paid     | Python, C            | Moderate           | Limited               | Yes              | Yes              | High                 | Moderate                  |
+| **MuJoCo**    | High      | Free     | Python, C            | Moderate           | Limited(High with MJX)               | Yes              | Yes              | High                 | Moderate                  |
 | **PyBullet**  | Moderate  | Free     | Python, C++          | Low                | Moderate              | Limited          | Yes              | Moderate             | Basic                     |
 | **Isaac Lab** | High      | Free     | Python               | High               | High                  | Yes              | Yes              | High                 | High                      |
 
-**Learning Curve* may be subjective, but the overall consensus ay be that Isaac Lab is the most difficult to learn.
+**Learning Curve* may be subjective, but the general consensus is that Isaac Lab is the most difficult to learn.
 
-### OpenAI Gym
+### Gymnasium (successor to OpenAI Gym)
 
 ![openaigym_sim](/assets/images/robotics-project-guide/openaigym_sim.png)
 
-OpenAI Gym is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gym framework, making it a foundational tool in the RL community.
-OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gym.
+Gymnasium is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gymnasium framework, making it a foundational tool in the RL community.
+Gymnasium itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gymnasium.
 
 **Pros**:
 - **Standardized Interface**: Offers a consistent API across diverse environments, simplifying algorithm development.
@@ -323,10 +314,9 @@ OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a
 - **Visualization**: Basic rendering capabilities; not suitable for photorealistic needs.
 
 **Resources**:
-- **Documentation**: [OpenAI Gym Documentation](https://www.gymlibrary.dev/content/tutorials/)
-- **Tutorial**: [Getting Started With OpenAI Gym](https://blog.paperspace.com/getting-started-with-openai-gym/)
-- **Community**: [OpenAI Gym GitHub Discussions](https://github.com/openai/gym/discussions)
-- **GitHub**: [OpenAI Gym Repository](https://github.com/openai/gym)
+- **Documentation**: [Gymnasium Documentation](https://gymnasium.farama.org/)
+- **Community**: [Gymnasium GitHub Discussions](https://github.com/Farama-Foundation/Gymnasium/discussions)
+- **GitHub**: [Gymnasium Repository](https://github.com/farama-foundation/gymnasium)
 
 ### MuJoCo
 
@@ -341,13 +331,12 @@ MuJoCo (Multi-Joint dynamics with Contact) is a physics engine designed for fast
 - **Supported OS**: Compatible with Windows, macOS, and Linux.
 
 **Cons**:
-- **Cost**: Requires a paid license, which may be a consideration for budget-conscious projects. Education license is free, however.
 - **Learning Curve**: May require time to master its extensive features and functionalities.
 
 **Resources**:
 - **Documentation**: [MuJoCo Documentation](https://mujoco.readthedocs.io/)
-- **Tutorial**: [MuJoCo Basics Tutorial](https://www.roboti.us/training.html)
-- **Community**: [MuJoCo Forum](https://mujoco.org/forum)
+- **Tutorial**: [MuJoCo Programming Tutorial](https://mujoco.readthedocs.io/en/latest/programming/)
+- **Community**: [MuJoCo Github Discussions](https://github.com/google-deepmind/mujoco/discussions)
 - **GitHub**: [MuJoCo Repository](https://github.com/deepmind/mujoco)
 
 ### PyBullet
@@ -368,7 +357,7 @@ PyBullet is an open-source physics engine that offers real-time simulation of ri
 
 **Resources**:
 - **Documentation**: [PyBullet Quickstart Guide](https://pybullet.org/wordpress/quickstart-guide/)
-- **Tutorial**: [PyBullet Robotics Simulation](https://www.etedal.net/2020/04/pybullet-panda.html)
+- **Tutorial**: [Hello PyBullet (Official Colab)](https://colab.research.google.com/github/bulletphysics/bullet3/blob/master/examples/pybullet/notebooks/HelloPyBullet.ipynb)
 - **Community**: [PyBullet Google Group](https://groups.google.com/g/bulletphysics)
 - **GitHub**: [PyBullet Repository](https://github.com/bulletphysics/bullet3)
 
@@ -407,7 +396,7 @@ For a deeper understanding of physics simulation in robotics, consider exploring
 
 - [Gazebo Physics Documentation](https://github.com/gazebosim/gz-physics)
 
-- [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470)
+- [Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/pdf/2511.04831)
 
 - [Implementing a Fourth Order Runge-Kutta Method for Orbit Simulation](https://spiff.rit.edu/richmond/nbody/OrbitRungeKutta4.pdf)
 
