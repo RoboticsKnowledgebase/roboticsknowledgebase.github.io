@@ -27,6 +27,9 @@ This section focuses on **networking techniques, tools, and protocols** commonly
 - **[Real-Time Video Processing on Jetson with GStreamer](/wiki/networking/gstreamer-jetson-realtime-video/)**
   A comprehensive guide to using GStreamer on Jetson Orin for hardware-accelerated video streaming over networks. Covers zero-copy video processing with NVMM, UDP/RTP streaming pipelines, H.264 encoding, and integration with Python/C++ for teleoperation and remote monitoring applications.
 
+- **[Radio Frequency Systems Integration for Autonomous Robotics](/wiki/networking/radio-frequency-systems-integration/)**
+  An introduction to the RF physical layer underlying every wireless robot link. Covers FCC ISM band regulations, frequency selection trade-offs (915 MHz vs 2.4 GHz vs 5 GHz), bandwidth and range fundamentals via Shannon-Hartley and free-space path loss, antenna sizing and polarization, and PCB-level RF design considerations including impedance matching, the no-right-angle rule, critical trace lengths, and inductor placement.
+
 ## Resources
 
 ### General Networking
