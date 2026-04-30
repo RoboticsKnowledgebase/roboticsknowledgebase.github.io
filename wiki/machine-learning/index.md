@@ -47,6 +47,9 @@ This section demonstrates how machine learning enhances robotic systems by enabl
 - **[Imitation Learning With a Focus on Humanoids](/wiki/machine-learning/imitation-learning/)**
   Covers the foundations of imitation learning and provides a practical guide for data collection and policy deployment on humanoid robots.
 
+- **[Foundation Models (LLMs/VLMs) for Robot Task Planning](/wiki/machine-learning/foundation-models-robot-task-planning/)**
+  Surveys key approaches for integrating large language models and vision-language models into robotic systems, including SayCan, Code as Policies, RT-2, and VoxPoser, with practical ROS 2 implementation examples.
+
 ## Resources
 
 - [GIMP Installation Guide](https://www.gimp.org/)
