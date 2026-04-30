@@ -170,6 +170,8 @@ wiki:
         url: /wiki/sensing/hololens-101/
       - title: Perception via Thermal Imaging
         url: /wiki/sensing/thermal-perception/
+      - title: Motion Capture Systems -- Setup Guide
+        url: /wiki/sensing/motion-capture-system/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:

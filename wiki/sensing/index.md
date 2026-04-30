@@ -83,6 +83,9 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[DWM1001 UltraWideband Positioning System](/wiki/sensing/ultrawideband-beacon-positioning/):**
   Covers the setup and calibration of the DWM1001 UWB system for accurate indoor positioning.
 
+- **[Motion Capture Systems -- Setup Guide](/wiki/sensing/motion-capture-system/):**
+  Covers the setup and use of motion capture systems.
+
 ### Resources
 
 - [Adafruit GPS](https://www.adafruit.com/product/746)  
