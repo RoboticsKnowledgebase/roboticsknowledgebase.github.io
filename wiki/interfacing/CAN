@@ -1,0 +1,97 @@
+---
+date: 2026-04-30
+title: Controller Area Network (CAN)
+---
+
+Controller Area Network (CAN) is a communication protocol used for reliable, real-time data exchange between multiple devices in embedded and robotic systems. It enables microcontrollers, sensors, and actuators to communicate over a shared bus without requiring a central controller. CAN is widely used in robotics for motor control, sensor integration, and distributed system architectures due to its robustness, fault tolerance, and resistance to electrical noise. This article provides an overview of CAN, along with practical setup, usage, and debugging considerations in robotic systems.
+
+## Overview and Key Concepts
+
+CAN is a multi-master, message-based communication protocol where all nodes share a common communication bus. Each node can transmit and receive messages, and communication is prioritized using message identifiers.
+
+Key characteristics:
+- Message-based communication (no device addressing)  
+- Arbitration-based priority system (lower ID = higher priority)  
+- Built-in error detection and retransmission  
+- Differential signaling using CAN_H and CAN_L  
+
+Each CAN message typically contains:
+- Identifier (used for priority and filtering)  
+- Data payload (up to 8 bytes in classic CAN)  
+- Error checking fields  
+
+When multiple nodes transmit simultaneously, arbitration ensures that the highest priority message is sent without data corruption.
+
+## Hardware and Software Setup
+
+### Hardware Requirements
+- CAN controller (often integrated in microcontrollers)  
+- CAN transceiver (e.g., MCP2551, SN65HVD230)  
+- Twisted pair wiring (CAN_H and CAN_L)  
+- Two 120Ω termination resistors at both ends of the bus  
+
+Topology guidelines:
+- Use a linear bus configuration  
+- Avoid star topology  
+- Keep cable lengths appropriate for bitrate  
+
+### Software Setup (Linux / SocketCAN)
+
+Bring up CAN interface:
+sudo ip link set can0 up type can bitrate 500000
+
+Send a CAN message:
+cansend can0 123#DEADBEEF
+
+Receive CAN messages:
+candump can0
+
+Useful tools:
+- candump for monitoring traffic  
+- cansniffer for identifying changing signals  
+
+## Usage in Robotics Systems
+
+CAN is widely used in robotics systems that require reliable communication between distributed components.
+
+Common applications:
+- Motor controllers (e.g., ODrive, Roboteq)  
+- Sensors such as IMUs and encoders  
+- Battery management systems  
+- Mobile robot subsystems  
+
+CAN allows multiple devices to communicate over a single bus, reducing wiring complexity and improving system robustness.
+
+## Common Issues and Debugging
+
+> Missing termination resistors or incorrect bitrate settings are common causes of CAN communication failure.
+
+Common issues:
+- Missing or incorrect termination resistors  
+- Bitrate mismatch between nodes  
+- Wiring errors (CAN_H / CAN_L swapped)  
+- Electrical noise or poor grounding  
+
+Debugging steps:
+- Verify termination at both ends of the bus  
+- Ensure all nodes use the same bitrate  
+- Use candump to confirm message transmission  
+- Inspect signals using an oscilloscope if needed  
+
+## Summary
+
+CAN is a reliable and widely used communication protocol for robotics systems that require real-time, fault-tolerant communication between distributed components. Its message-based design, robustness to noise, and deterministic arbitration make it suitable for motor control and sensor integration. Proper hardware setup, consistent configuration, and effective debugging practices are essential for successful deployment in robotic systems.
+
+## See Also:
+- [ROS2 QoS](/wiki/networking/ros2-qos/)
+- [Actuation](/wiki/actuation/)
+- [Embedded Systems](/wiki/computing/)
+
+## Further Reading
+- SocketCAN documentation – useful for understanding Linux-based CAN interfaces  
+- CANopen overview – higher-level protocol built on CAN  
+- ISO 11898 – CAN communication standard  
+
+## References
+- Bosch CAN Specification  
+- ISO 11898 Standard  
