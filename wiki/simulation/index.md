@@ -30,6 +30,9 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/)**
   A hands-on tutorial for spawning and controlling vehicles in the CARLA simulator. Covers connecting to the CARLA server, visualizing waypoints, spawning vehicles, and using PID controllers for motion control. Demonstrates waypoint tracking with visual aids and includes example scripts for quick implementation.
 
+- **[Sim-to-Real Transfer: Domain Randomization and Adaptation](/wiki/simulation/sim-to-real-transfer/)**
+  Covers the reality gap between simulation and physical hardware, and the two dominant families of techniques for bridging it — domain randomization and domain adaptation. Includes practical code examples with NVIDIA Isaac Gym and case studies from OpenAI, ANYmal, and manipulation research.
+
 ## Resources
 
 ### General Simulation Tools
