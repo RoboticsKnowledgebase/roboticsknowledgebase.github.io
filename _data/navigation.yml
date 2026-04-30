@@ -170,6 +170,8 @@ wiki:
         url: /wiki/sensing/hololens-101/
       - title: Perception via Thermal Imaging
         url: /wiki/sensing/thermal-perception/
+      - title: Ouster LiDAR Integration Guide
+        url: /wiki/sensing/ouster-lidar-guide/
   - title: Controls & Actuation
     url: /wiki/actuation/
     children:
