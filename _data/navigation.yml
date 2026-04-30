@@ -255,6 +255,8 @@ wiki:
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
       - title: Using g2o for Pose Graph Optimization in C++
         url: /wiki/state-estimation/g2o-pose-graphs/
+      - title: LIO-SAM with Velocity Undistortion & Dynamic Obstacle Filtering
+        url: /wiki/state-estimation/lio-sam-velocity-undistortion-and-dynamic-filtering/
   - title: Programming
     url:  /wiki/programming/
     children:
