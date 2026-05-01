@@ -325,7 +325,7 @@ CoppeliaSim is a versatile robotics simulator known for its extensive feature se
 
 ### [Unity](https://docs.unity3d.com/) / [Unreal Engine](https://docs.unrealengine.com/)
 
-![unity_unreal_sim](/assets/images/robotics-project-guide/unity_unreal_sim.jpg)
+![unity_unreal_sim](/assets/images/robotics-project-guide/unity_unreal_sim.jpeg)
 
 Unity and Unreal Engine are best treated as general real-time engines that can be adapted into robotics simulators. Unity emphasizes simulation for design, testing and training, while Unreal’s simulation pages highlight robotics, training and high-end real-time rendering use cases. Both of themare very attractive for synthetic data generation, visual realism and custom simulation experiences, but they usually need extra robotics-specific glue compared with Gazebo or Isaac Sim.
 
@@ -440,7 +440,7 @@ Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built
 
 ### [Genesis](https://genesis-embodied-ai.github.io/)
 
-![genesis_sim](/assets/images/robotics-project-guide/genesis_sim.png)
+![genesis_sim](/assets/images/robotics-project-guide/genesis_sim.webp)
 
 Genesis is an emerging simulator worth mentioning because it tries to combine a physics engine, robotics simulator, photorealistic rendering and generative data tooling in one platform. It is a comprehensive physics simulation platform for robotics, embodied AI and physical AI. This makes it an interesting option for future-facing projects, especially if you want a single system for physics plus data generation.
 
