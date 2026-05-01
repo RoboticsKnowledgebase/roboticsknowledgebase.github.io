@@ -225,7 +225,7 @@ Gazebo is a widely-used open-source robotics simulator that offers robust physic
 
 **Note**: It is important to distinguish between Gazebo Classic (versions 1-11) and the modern Gazebo (formerly Ignition). Gazebo Classic reached its official End-of-Life (EOL) in January 2025. You can read more about the switch [here](https://gazebosim.org/about).
 
-![gazebo_timeline](/assets/images/robotics-project-guide/gazebo_timeline.svg)
+![gazebo_timeline](/assets/images/robotics-project-guide/gazebo-timeline.svg)
 
 **Pros**:  
 - **ROS Integration**: Seamless compatibility with ROS, making it a standard choice for many robotics projects.  
@@ -439,6 +439,8 @@ Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built
 ---
 
 ### [Genesis](https://genesis-embodied-ai.github.io/)
+
+![genesis_sim](/assets/images/robotics-project-guide/genesis_sim.png)
 
 Genesis is an emerging simulator worth mentioning because it tries to combine a physics engine, robotics simulator, photorealistic rendering and generative data tooling in one platform. It is a comprehensive physics simulation platform for robotics, embodied AI and physical AI. This makes it an interesting option for future-facing projects, especially if you want a single system for physics plus data generation.
 
