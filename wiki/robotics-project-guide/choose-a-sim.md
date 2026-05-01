@@ -203,18 +203,20 @@ Before selecting a simulator, consider the following criteria:
 * **Community and Support:** Check the commit history and issue resolution rate on open-source repositories. A simulator with an active community and transparent roadmap is typically easier to use/debug.
 * **Budget and Licensing:** For paid software, account for the total cost of ownership. While many tools are open-source, some require proprietary licenses for commercial use or high-performance cloud compute credits to run at scale.
 
-## Simulators for Robotics
+# Simulators for Robotics
 
-We first go over some popular simulators tailored for robotics applications.
+We first go over the simulators that are most often used as the backbone of a robotics workflow.
 
 | **Simulator** | **Physics-Based** | **ROS Integration** | **Cost** | **Computation Speed** | **Supported OS** | **Customizability** |
-|---------------|-------------------|---------------------|----------|-----------------------|------------------|---------------------|
-| Gazebo        | Yes               | Best                | Free     | Moderate              | Linux, macOS     | Very High           |
-| Colosseum     | Yes               | Limited             | Free     | Resource-Intensive    | Windows, Linux   | High (for drones)   |
-| CoppeliaSim   | Yes               | Yes                 | Free*/Paid | Moderate            | Windows, macOS, Linux | Very High      |
-| Unity         | Adjustable        | With Plugins        | Free*/Paid | Variable            | Windows, macOS, Linux | Very High      |
+|---------------|------------------|---------------------|----------|------------------------|------------------|----------------------|
+| Gazebo        | Yes (High)       | Best                | Free     | Moderate               | Linux, macOS     | Very High            |
+| Isaac Sim     | Yes (Very High)  | Good                | Free     | Resource-Intensive     | Linux, Windows   | High                 |
+| CoppeliaSim   | Yes (Multi-engine)| Yes               | Free*/Paid | Moderate             | Windows, macOS, Linux | Very High      |
+| Unity         | Adjustable       | With Plugins        | Free*/Paid | Variable             | Windows, macOS, Linux | Very High      |
+| Unreal Engine | Adjustable       | With Plugins        | Free      | Resource-Intensive     | Windows, Linux   | Very High            |
+| MATLAB/Simulink| Yes (Analytical)| Limited             | Paid     | Moderate               | Windows, macOS, Linux | High           |
 
-*Free for personal or educational use; commercial licenses may apply.
+---
 
 ### [Gazebo](https://gazebosim.org/home)
 ![gazebo_sim](/assets/images/robotics-project-guide/gazebo_sim.png)
@@ -222,6 +224,8 @@ We first go over some popular simulators tailored for robotics applications.
 Gazebo is a widely-used open-source robotics simulator that offers robust physics simulation and sensor modeling capabilities. It provides a 3D environment where users can test and develop robots in realistic scenarios. Gazebo's integration with the Robot Operating System (ROS) makes it a standard choice for many robotics projects, facilitating seamless communication between simulation and real-world applications. 
 
 **Note**: It is important to distinguish between Gazebo Classic (versions 1-11) and the modern Gazebo (formerly Ignition). Gazebo Classic reached its official End-of-Life (EOL) in January 2025. You can read more about the switch [here](https://gazebosim.org/about).
+
+![gazebo_timeline](/assets/images/robotics-project-guide/gazebo_timeline.svg)
 
 **Pros**:  
 - **ROS Integration**: Seamless compatibility with ROS, making it a standard choice for many robotics projects.  
@@ -233,27 +237,72 @@ Gazebo is a widely-used open-source robotics simulator that offers robust physic
 **Cons**:  
 - **Computation Speed**: Can be resource-intensive, potentially leading to slower simulations on less powerful hardware.  
 - **Learning Curve**: May require time to master its extensive features and functionalities.
+- **Version Split**: Legacy tutorials may use Gazebo Classic, while current projects should use modern Gazebo.
 
-### [Colosseum (successor to AirSim)](https://codexlabsllc.github.io/Colosseum/)
-![airsim_sim](/assets/images/robotics-project-guide/airsim_sim.png)
-Originally developed by Microsoft and now maintained by the community under the Colosseum project, it is an open-source simulator designed for drones and autonomous vehicles. It is primarily built on Unreal Engine 5 (also supports Unity), providing photorealistic visuals and high-fidelity physics modeling essential for machine learning and computer vision research. Colosseum supports both software-in-the-loop (SITL) and hardware-in-the-loop (HITL) simulations with popular flight controllers like PX4 and ArduPilot, enabling reliable sim-to-real transitions.  
+**Resources**:
+- **Documentation**: [Gazebo Documentation](https://gazebosim.org/docs)
+- **Tutorial**: [Gazebo Tutorials](https://gazebosim.org/docs/latest/tutorials)
+- **Community**: [Gazebo Community](https://community.gazebosim.org/)
+- **GitHub**: [Gazebo Repository](https://github.com/gazebosim)
 
-**Pros**:  
-- **Photorealistic Visualization**: Built on Unreal Engine, providing high-fidelity visuals suitable for computer vision tasks.  
-- **Physics-Based**: Accurate physics modeling for drones and autonomous vehicles.  
-- **Customizability**: Allows for the creation of custom environments.  
-- **Cost**: Open-source and free to use.  
-- **Supported OS**: Compatible with Windows and Linux.
+---
 
-**Cons**:  
-- **ROS Integration**: Limited out-of-the-box support; may require additional setup for ROS compatibility.  
-- **Computation Speed**: High-quality graphics can demand significant computational resources.
+### [NVIDIA Isaac Sim](https://docs.isaacsim.omniverse.nvidia.com/)
+
+![isaacsim_sim](/assets/images/robotics-project-guide/isaacsim_sim.png)
+
+NVIDIA Isaac Sim is best when you want high-fidelity physics and strong sensor realism, especially for camera- and LiDAR-heavy workflows. The simulator requires GPU access, RTX-capable hardware and provides support for Windows and Linux, which makes the compute profile very different from lighter simulators. Isaac Lab sits on top of Isaac Sim and is the recommended path for highly parallelizable robot learning.
+
+**Note**: Isaac Gym / IsaacGymEnvs are deprecated and should not be the default choice for new work.
+
+**Pros**:
+- **Sensor Realism**: Strong for cameras, LiDAR and other perception-heavy workloads.
+- **GPU Acceleration**: Designed around GPU-centric simulation and rendering.
+- **Sim-to-Real**: Useful when visual fidelity matters for deployment.
+- **Isaac Lab Path**: Extendable learning framework for RL and policy training.
+
+**Cons**:
+- **Hardware**: Demands a strong NVIDIA GPU and plenty of memory.
+- **Difficulty**: The stack is deeper and more opaque than simpler simulators.
+- **Scope**: Better for high-end robot learning pipelines than for quick, lightweight experiments.
+
+**Resources**:
+- **Documentation**: [Isaac Sim Documentation](https://docs.isaacsim.omniverse.nvidia.com/)
+- **Tutorial**: [Isaac Sim Tutorials](https://docs.isaacsim.omniverse.nvidia.com/latest/learning.html)
+- **Community**: [NVIDIA Isaac Sim Forum](https://forums.developer.nvidia.com/c/isaac/isaac-sim/71)
+- **GitHub**: [Isaac Sim (Omniverse)](https://github.com/NVIDIA-Omniverse)
+
+---
+
+### [MATLAB / Simulink (Robotics System Toolbox)](https://www.mathworks.com/products/robotics.html)
+
+![matlab_sim](/assets/images/robotics-project-guide/matlab_sim.jpg)
+
+MATLAB and Simulink are most useful when the simulator is only one part of a broader model-based design workflow. Robotics System Toolbox is explicitly aimed at designing, simulating, testing and deploying manipulator and mobile robot applications. It has co-simulation workflows with Gazebo, Unreal Engine and Simulink 3D Animation. That makes it a common choice for control-heavy validation and simpler workflows.
+
+**Pros**:
+- **Control Workflow**: Excellent for trajectory generation, kinematics, dynamics and verification.
+- **System-Level Design**: Very strong when the full stack includes perception, control and deployment.
+- **Co-Simulation**: Plays well with external simulators rather than replacing them.
+
+**Cons**:
+- **Commercial Stack**: Not open-source.
+- **3D Realism**: Not the best choice if your primary goal is photorealistic simulation.
+- **Ecosystem Lock-In**: Best value appears when you are already using MathWorks tools.
+
+**Resources**:
+- **Documentation**: [Robotics System Toolbox Documentation](https://www.mathworks.com/help/robotics/)
+- **Tutorial**: [Robotics System Toolbox Examples](https://www.mathworks.com/help/robotics/examples.html)
+- **Community**: [MATLAB Answers](https://www.mathworks.com/matlabcentral/answers/)
+- **GitHub**: [MATLAB Robotics Examples](https://github.com/mathworks-robotics)
+
+---
 
 ### [CoppeliaSim (formerly V-REP)](https://www.coppeliarobotics.com/)
 
 ![coppeliasim_sim](/assets/images/robotics-project-guide/CoppeliaSim_sim.jpg)
 
-CoppeliaSim is a versatile robotics simulator known for its extensive feature set and modularity. It supports a wide range of robot models and includes several physics engines for accurate simulation. CoppeliaSim's integrated development environment allows for rapid prototyping and testing of robotic algorithms. It also offers support for multiple programming languages, enhancing its flexibility for various applications.
+CoppeliaSim is a versatile robotics simulator known for its extensive feature set and modularity. It supports a wide range of robot models and includes several physics engines for accurate simulation. CoppeliaSim’s integrated development environment allows for rapid prototyping and testing of robotic algorithms. It also offers support for multiple programming languages, enhancing its flexibility for various applications.
 
 **Pros**:  
 - **ROS Integration**: Supports ROS, facilitating communication with other ROS nodes.  
@@ -266,59 +315,58 @@ CoppeliaSim is a versatile robotics simulator known for its extensive feature se
 - **Learning Curve**: The abundance of features can be overwhelming for beginners.  
 - **Computation Speed**: Complex simulations may require substantial computational power.
 
-### [Unity](https://unity.com/blog/engine-platform/robotics-simulation-is-easy-as-1-2-3)
+**Resources**:
+- **Documentation**: [CoppeliaSim User Manual](https://manual.coppeliarobotics.com/)
+- **Tutorial**: [CoppeliaSim Tutorials](https://www.coppeliarobotics.com/helpFiles/index.html)
+- **Community**: [CoppeliaSim Forum](https://forum.coppeliarobotics.com/)
+- **GitHub**: [CoppeliaSim Repository](https://github.com/CoppeliaRobotics)
 
-![unity_sim](/assets/images/robotics-project-guide/unity_sim.png)
+---
 
-Unity is a powerful game development platform that has gained popularity in robotics for its high-quality rendering and flexible environment creation. While not specifically designed for robotics, Unity's extensive asset store and scripting capabilities allow users to build complex simulations. With the addition of plugins and bridges, Unity can integrate with ROS, enabling the development of sophisticated robotic applications with realistic visuals. 
+### [Unity](https://docs.unity3d.com/) / [Unreal Engine](https://docs.unrealengine.com/)
 
-**Pros**:  
-- **Photorealistic Visualization**: Exceptional graphics rendering capabilities.  
-- **Customizability**: Highly flexible environment creation and scripting.  
-- **Cost**: Free for personal use; paid licenses for professional use.  
-- **Supported OS**: Supports Windows, macOS, and Linux.
+![unity_unreal_sim](/assets/images/robotics-project-guide/unity_unreal_sim.jpg)
 
-**Cons**:  
-- **ROS Integration**: Requires additional plugins or bridges for ROS compatibility.  
-- **Physics-Based**: Primarily a game engine; may need adjustments for accurate physics simulation in robotics.  
-- **Learning Curve**: Steeper learning curve for those unfamiliar with game development platforms.
+Unity and Unreal Engine are best treated as general real-time engines that can be adapted into robotics simulators. Unity emphasizes simulation for design, testing and training, while Unreal’s simulation pages highlight robotics, training and high-end real-time rendering use cases. Both of themare very attractive for synthetic data generation, visual realism and custom simulation experiences, but they usually need extra robotics-specific glue compared with Gazebo or Isaac Sim.
 
+**Pros**:
+- **Rendering**: Excellent visual quality.
+- **Flexibility**: Very strong when you need fully custom environments.
+- **Synthetic Data**: Good choice when perception and appearance matter.
 
-## Simulators for Reinforcement Learning
-As the field of robotics increasingly incorporates reinforcement learning (RL) techniques, selecting an appropriate simulator becomes crucial. These simulators, while not always designed specifically for robotics, provide environments to train deep neural networks that can later be deployed on robotic systems. Understanding their infrastructure and capabilities is essential for effective integration into your projects.
+**Cons**:
+- **Robotics Plugins**: Usually requires plugins, bridges or custom code.
+- **Physics**: Not as turnkey as robotics-first simulators.
+- **Difficulty**: More of a game-engine workflow than a robotics-native one.
+
+**Unity Resources**:
+- **Documentation**: [Unity Documentation](https://docs.unity3d.com/)
+- **Tutorial**: [Unity Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
+- **Community**: [Unity Forum](https://forum.unity.com/)
+- **GitHub**: [Unity Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
+
+**Unreal Engine Resources**:
+- **Documentation**: [Unreal Engine Documentation](https://docs.unrealengine.com/)
+- **Tutorial**: [Unreal Engine Learning](https://dev.epicgames.com/community/learning)
+- **Community**: [Unreal Engine Forum](https://forums.unrealengine.com/)
+- **GitHub**: [Unreal Engine Repository](https://github.com/EpicGames/UnrealEngine)
+
+---
+
+## Physics Engines and Simulators for Reinforcement Learning
+
+As robotics increasingly overlaps with reinforcement learning, it helps to separate **physics engines and learning simulators** from full robotics simulators.
 
 | **Simulator** | **Speed** | **Cost** | **Language Support** | **Learning Curve*** | **Parallelizability** | **GPU Support** | **CPU Support** | **Physics Accuracy** | **Visualization Quality** |
 |---------------|-----------|----------|----------------------|--------------------|-----------------------|------------------|------------------|----------------------|---------------------------|
-| **MuJoCo**    | High      | Free     | Python, C            | Moderate           | Limited(High with MJX)               | Yes              | Yes              | High                 | Moderate                  |
-| **PyBullet**  | Moderate  | Free     | Python, C++          | Low                | Moderate              | Limited          | Yes              | Moderate             | Basic                     |
-| **Isaac Lab** | High      | Free     | Python               | High               | High                  | Yes              | Yes              | High                 | High                      |
+| MuJoCo        | High      | Free     | Python, C            | Moderate           | Medium (High w/ MJX)  | Yes              | Yes              | High                 | Moderate                  |
+| PyBullet      | Moderate  | Free     | Python, C++          | Low                | Moderate              | Limited          | Yes              | Moderate             | Basic                     |
+| Isaac Lab     | Very High | Free     | Python               | High               | Very High             | Required         | Yes              | High                 | High                      |
+| Genesis       | High      | Free     | Python               | High               | High (emerging)       | Likely           | Yes              | High            | High                      |
 
-**Learning Curve* may be subjective, but the general consensus is that Isaac Lab is the most difficult to learn.
+---
 
-### Gymnasium (successor to OpenAI Gym)
-
-![openaigym_sim](/assets/images/robotics-project-guide/openaigym_sim.png)
-
-Gymnasium is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gymnasium framework, making it a foundational tool in the RL community.
-Gymnasium itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gymnasium.
-
-**Pros**:
-- **Standardized Interface**: Offers a consistent API across diverse environments, simplifying algorithm development.
-- **Extensibility**: Allows for the creation of custom environments tailored to specific research needs.
-- **Community Support**: Backed by a large community, providing numerous resources and shared environments.
-- **Cost**: Open-source and free to use.
-- **Supported OS**: Cross-platform compatibility.
-
-**Cons**:
-- **Limited Physics Simulation**: Relies on external physics engines for complex simulations, which may require additional setup.
-- **Visualization**: Basic rendering capabilities; not suitable for photorealistic needs.
-
-**Resources**:
-- **Documentation**: [Gymnasium Documentation](https://gymnasium.farama.org/)
-- **Community**: [Gymnasium GitHub Discussions](https://github.com/Farama-Foundation/Gymnasium/discussions)
-- **GitHub**: [Gymnasium Repository](https://github.com/farama-foundation/gymnasium)
-
-### MuJoCo
+### [MuJoCo](https://mujoco.readthedocs.io/)
 
 ![mujoco_sim](/assets/images/robotics-project-guide/mujoco_sim.jpg)
 
@@ -339,7 +387,9 @@ MuJoCo (Multi-Joint dynamics with Contact) is a physics engine designed for fast
 - **Community**: [MuJoCo Github Discussions](https://github.com/google-deepmind/mujoco/discussions)
 - **GitHub**: [MuJoCo Repository](https://github.com/deepmind/mujoco)
 
-### PyBullet
+---
+
+### [PyBullet](https://github.com/bulletphysics/bullet3)
 
 ![pybullet_sim](/assets/images/robotics-project-guide/pybullet_sim.png)
 
@@ -361,7 +411,9 @@ PyBullet is an open-source physics engine that offers real-time simulation of ri
 - **Community**: [PyBullet Google Group](https://groups.google.com/g/bulletphysics)
 - **GitHub**: [PyBullet Repository](https://github.com/bulletphysics/bullet3)
 
-### Isaac Lab
+---
+
+### [Isaac Lab](https://isaac-sim.github.io/IsaacLab/)
 
 ![isaaclab_sim](/assets/images/robotics-project-guide/isaaclab_sim.jpg)
 
@@ -384,6 +436,75 @@ Isaac Lab is an open-source, GPU-accelerated framework for robot learning, built
 - **Community**: [Isaac Sim Forum](https://forums.developer.nvidia.com/c/isaac/isaac-sim/71)
 - **GitHub**: [Isaac Lab Repository](https://github.com/isaac-sim/IsaacLab)
 
+---
+
+### [Genesis](https://genesis-embodied-ai.github.io/)
+
+Genesis is an emerging simulator worth mentioning because it tries to combine a physics engine, robotics simulator, photorealistic rendering and generative data tooling in one platform. It is a comprehensive physics simulation platform for robotics, embodied AI and physical AI. This makes it an interesting option for future-facing projects, especially if you want a single system for physics plus data generation.
+
+**Pros**:
+- **Future Potential**: Interesting for robotics researchers who want to explore newer simulation stacks.
+- **Breadth**: Tries to cover physics, rendering and data generation together.
+- **Speed**: Lightweight and fast.
+
+**Cons**:
+- **Maturity**: Newer than the established tools above.
+- **Workflow Stability**: Best treated as a fast-moving option.
+- **Learning Curve**: New APIs and assumptions may take time to understand.
+
+**Resources**:
+- **Documentation**: [Genesis Documentation](https://genesis-embodied-ai.github.io/)
+- **Tutorial**: [Genesis Examples](https://genesis-embodied-ai.github.io/)
+- **Community**: [Genesis GitHub Discussions](https://github.com/Genesis-Embodied-AI/Genesis/discussions)
+- **GitHub**: [Genesis Repository](https://github.com/Genesis-Embodied-AI/Genesis)
+
+---
+
+## Specialized Domain Simulators
+
+These tools are best presented by domain, because their value depends more on the application than on general simulator features.
+
+### Autonomous Driving
+
+- **[CARLA](https://carla.org/)** is open-source and built specifically for autonomous driving research and validation. Its strengths are rich urban assets, sensor control and a strong driving benchmark ecosystem. The main downside is compute cost: it is much heavier than lightweight RL driving environments.
+- **[MetaDrive](https://metadriverse.github.io/metadrive/)** is also open-source, but it is deliberately lightweight, modular and flexible. It is a good choice when you want fast experimentation and generalization across road layouts, but it is less photorealistic than CARLA.
+
+### Aerial Robotics
+
+- **[Colosseum (formerly AirSim)](https://codexlabsllc.github.io/Colosseum/)** is open-source, Unreal-based, and supports drones and cars, with SITL/HITL support through PX4 and ArduPilot. Its main advantage is realism and sensor-rich experimentation; its main cost is the heavier Unreal-based setup.
+- **[Gazebo](https://gazebosim.org/) + [PX4](https://px4.io/) / [MAVROS](https://docs.px4.io/main/en/ros/mavros_installation.html)** is the more ROS-native route for aerial robotics.
+
+### Indoor Navigation
+
+- **[Habitat-Sim](https://aihabitat.org/)** is an open-source embodied-AI simulator built for photorealistic and efficient navigation-style tasks. It is a strong fit for indoor navigation and mobile manipulation research, but it is more specialized toward embodied AI than toward general rigid-body robotics.
+
+### Maritime Robotics
+
+- **[Stonefish](https://stonefish.readthedocs.io/)** is a strong open-source choice for marine robotics, with a physics engine, lightweight rendering pipeline, hydrodynamics and a ROS interface. The main drawback is that it is domain-specific and therefore less general-purpose than Gazebo or Isaac Sim.
+- **[HoloOcean](https://holoocean.readthedocs.io/)** is useful when you want underwater robotics with a modern simulator stack and ROS2 bridge support. It is especially attractive for sonar and underwater-agent workflows, but it sits in a more specialized marine niche than the general robotics tools above.
+- **[DAVE](https://github.com/Field-Robotics-Lab/dave)** is a Gazebo-based marine plugin rather than a standalone general simulator. The repository shows active migration work toward new Gazebo versions and ROS 2.
+
+### Space Robotics
+
+- **[NASA Astrobee’s Gazebo simulator](https://github.com/nasa/astrobee)** is a set of Gazebo plug-ins that mimic the real hardware and expose the same ROS interfaces.
+
+### Controls and Optimization
+
+- **[Drake](https://drake.mit.edu/)** is the useful when the simulator is directly part of a control and optimization pipeline. It emphasizes model-based design, multibody dynamics and optimization-based analysis, making it especially strong for controls, planning and verification rather than visual realism (uses MeshCat for rendering).
+
+### Legged Robotics
+
+- **[Isaac Lab](https://isaac-sim.github.io/IsaacLab/)** is the strongest high-throughput option here when the goal is policy learning on GPU. It is the clean replacement path for Isaac Gym-style workflows.
+- **[RaiSim](https://raisim.com/)** is a legged-robot-focused simulator with well-documented examples. It is more niche than the broad robotics platforms above.
+
+### Soft Robotics
+
+- **[SOFA](https://www.sofa-framework.org/)** is one of the most relevant open-source options for soft robotics because it is explicitly aimed at interactive mechanical simulation with emphasis on biomechanics and robotics. Its open-core LGPL structure and cross-platform support make it a strong research tool, especially where deformable bodies matter.
+- **[Genesis](https://genesis-embodied-ai.github.io/)** is worth mentioning here as well because it is designed to handle a wide range of materials and physical phenomena, which makes it interesting for soft-robotics work even though it is newer than SOFA.
+
+### Education
+
+- **[Webots](https://cyberbotics.com/)** is open source, cross-platform, well documented and widely used in education and research, which makes it a strong recommendation for teaching and fast prototyping.
 
 
 ## Further Reading and Resources
@@ -399,4 +520,3 @@ For a deeper understanding of physics simulation in robotics, consider exploring
 - [Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/pdf/2511.04831)
 
 - [Implementing a Fourth Order Runge-Kutta Method for Orbit Simulation](https://spiff.rit.edu/richmond/nbody/OrbitRungeKutta4.pdf)
-
