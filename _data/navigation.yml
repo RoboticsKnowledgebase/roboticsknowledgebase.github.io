@@ -255,6 +255,8 @@ wiki:
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
       - title: Using g2o for Pose Graph Optimization in C++
         url: /wiki/state-estimation/g2o-pose-graphs/
+      - title: Running SLAM in Production - A Practitioner's Guide
+        url: /wiki/state-estimation/running-slam-in-production/
   - title: Programming
     url:  /wiki/programming/
     children:
