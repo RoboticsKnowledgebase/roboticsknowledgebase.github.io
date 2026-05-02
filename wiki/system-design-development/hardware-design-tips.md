@@ -10,6 +10,13 @@ title: Hardware Design Tips for Robotics
 # and used in other parts of the site.
 ---
 
+This article covers practical hardware design tips for robotics engineers across 
+mechanical and electronics/mechatronics design. These are drawn from hands-on 
+experience building robotics systems and are meant to complement formal coursework. 
+Topics include CAD workflows, FEA simulation tool selection, PCB design for 
+debuggability, power circuit simulation, and wiring best practices including 
+emergency stop wiring, colour coding, and cable management.
+
 ## Mechanical Design
 
 ### 1. To learn CAD, Do the ModelMania Problems.
@@ -92,3 +99,16 @@ Use **LTspice** (Analog Devices) as it has models for most common components. Us
     - PWM : ORANGE
 - **Twist your differential pair wires** - For CAN and RS-485, physically twist the wire pairs together. They cancel out common-mode noise through EMI rejection. If your CAN bus is dropping frames or throwing errors, untwisted wires are a likely culprit before you go hunting for software bugs. BUT, NEVER TWIST I2C CABLES TOGETHER. They are not differetnial signals and cause interference/result in the bus not working at all.
 - **Emegency Stop Wiring** -  Do not wire the emergency stop directly on the power wire as this may cause spraking between switch contacts due to the high back EMF from a decelrating motor. Use a relay/DC contactor with a flyback diode across the terminals of the input (control circuit) and an RC snubber circuit across the contacts of the relay will prevent voltage spikes when the load is disconnected.  
+
+## Summary
+These are just starting tips, design only comes from experience!
+
+## See Also
+- [Printed Circuit Board Design](/wiki/system-design-development/pcb-design/)
+- [Mechanical Design](/wiki/system-design-development/mechanical-design/)
+- [Cable Management](/wiki/system-design-development/cable-management/)
+
+## Further Reading
+- [KiCad Getting Started — DigiKey YouTube Playlist](https://www.youtube.com/watch?v=0Q6gU7-QqUg)
+- [SOLIDWORKS ModelMania Archive](https://blogs.solidworks.com/products/solidworks/26-years-of-model-mania/)
+- [LTspice Simulator — Analog Devices](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
