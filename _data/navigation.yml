@@ -53,6 +53,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
         url: /wiki/system-design-development/In-Loop-Testing/
+      - title: Hardware Design Tips
+        url: /wiki/system-design-development/hardware-design-tips/
   - title: Project Management
     url: /wiki/project-management/
     children:
