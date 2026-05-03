@@ -18,14 +18,14 @@ As of the time of writing, we have found at CMU:
 - 4 Intel Neural Compute Stick (NCS) 2
 - 6 Gyrfalcon Tech Plai Plug 2803
 
-![NCS2 (top) and Plai Plug 2803 (bottom)](assets/sticks.png)
+![NCS2 (top) and Plai Plug 2803 (bottom)](/assets/images/tools/sticks.png)
 
-In terms of usefulness, these sticks don’t add that much power to most modern computers. Your typical notebook GPU (and even CPU) will generally be able to handle more visual processing than the sticks, especially considering real-time applications. **These sticks are useful, however, when you have to do visual inference on low-power hardware, such as running object detection using a Raspberry Pi, for example. Or when the CPU/GPU of your system will already be in full demand, such as in autonomous drone flight. In these cases, the sticks can increase the speed of your program.**
+In terms of usefulness, these sticks don’t add that much power to most modern computers. Your typical notebook GPU (and even CPU) will generally be able to handle more visual processing than the sticks, especially considering real-time applications. *These sticks are useful, however, when you have to do visual inference on low-power hardware, such as running object detection using a Raspberry Pi, for example. Or when the CPU/GPU of your system will already be in full demand, such as in autonomous drone flight. In these cases, the sticks can increase the speed of your program.*
 
-![Stick with Raspberry Pi](assets/stick-raspi.png)
+![Stick with Raspberry Pi](/assets/images/tools/stick-raspi.png)
 
 ### Pros and cons of each stick
-**Intel NCS2**:
+*Intel NCS2*:
 
 +Documentation provided by intel
 
@@ -39,7 +39,7 @@ In terms of usefulness, these sticks don’t add that much power to most modern 
 
 -Getting the stick to work is not trivial 
 
-**Gyrfalcon Tech Plai Plug 2803**:
+*Gyrfalcon Tech Plai Plug 2803*:
 
 +Honestly, I didn’t find any… but please feel free to use this stick and prove me wrong
 
@@ -70,7 +70,7 @@ For full instructions, please consult <https://docs.openvino.ai/2022.3/get_start
 
 > Support for the NCS2 only goes as far as OpenVINO 2022.3.1 LTS, so be sure to use the correct version when installing or consulting documentation.
 
-![NCS2/OpenVINO workflow](assets/ncs2workflow.png)
+![NCS2/OpenVINO workflow](/assets/images/tools/ncs2workflow.png)
 
 
 ### Installing OpenVINO development tools in your computer
@@ -145,8 +145,8 @@ $ omz_converter --name human-pose-estimation-3d-0001 --precisions FP16 -d . -o .
 If you do run the conversion command, make sure you have installed the framework (torch,
 tensorflow, etc.) used by the original model.
 
-Now that the model has been downloaded and converted, **copy the .bin and .xml files into the
-computer where you will run the application**.
+Now that the model has been downloaded and converted, *copy the .bin and .xml files into the
+computer where you will run the application*.
 
 ### Installing OpenVINO runtime in your computer
 
@@ -252,7 +252,7 @@ Finally, to run your demo, run:
 $ python3 human_pose_estimation_3d_demo.py -m <path-to-model>/human-pose-estimation-3d-0001.xml -i 0 -d MYRIAD
 ```
 
-![Pose estimation using a monocular camera. Running on a NCS2 stick](assets/pose_estimation.png)
+![Pose estimation using a monocular camera. Running on a NCS2 stick](/assets/images/tools/pose_estimation.png)
 
 
 ## Gyrfalcon Tech Plai Plug 2803
@@ -269,7 +269,7 @@ Typical use of the Plai Plug involves developing neural network models then usin
 get the models to run on the chips.
 
 
-![Plai Plug work diagram](assets/gti_diagram.png)
+![Plai Plug work diagram](/assets/images/tools/gti_diagram.png)
 
 > You need premium membership for accessing model development kits (MDKs).
 
@@ -314,7 +314,7 @@ $ sudo gedit /etc/apt/sources.list
 
 And add the following lines to the end of the file:
 
-```
+```text
 # Xenial repos for old packages
 deb http://dk.archive.ubuntu.com/ubuntu/ xenial main
 deb http://dk.archive.ubuntu.com/ubuntu/ xenial universe
@@ -369,4 +369,4 @@ $ demo image ../Models/2803/gti_gnet1_fc1000_2803.model ../Data/Image_bmp_c1000/
 For more information on running demos, consult the manual in the Documents folder of the GTI
 package you downloaded.
 
-![Result of a demo on the Plai Plug](assets/plai_demo.png)
+![Result of a demo on the Plai Plug](/assets/images/tools/plai_demo.png)

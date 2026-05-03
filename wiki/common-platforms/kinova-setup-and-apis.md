@@ -32,7 +32,7 @@ Tech summary of AIMS arms:
 |ROS version tested|Noetic with Ubuntu 20|
 
 
-![Kinova Gen3 6DoF Specs](assets/kinova_summary.png)
+![Kinova Gen3 6DoF Specs](/assets/images/common-platforms/kinova_summary.png)
 
 
 ### Starting, using and stopping the arms
@@ -41,20 +41,20 @@ Tech summary of AIMS arms:
 
 The arm should be resting as in the position below:
 
-![Kinova starting position](assets/kinova_start.png)
+![Kinova starting position](/assets/images/common-platforms/kinova_start.png)
 
 
-It is essential that the **gripper is not blocked**, as the arm will open and close the gripper upon startup. If the arm is in a position where the gripper is blocked, move the arm gently until it reaches a **stable** position where the gripper is free to open and close.
+It is essential that the *gripper is not blocked*, as the arm will open and close the gripper upon startup. If the arm is in a position where the gripper is blocked, move the arm gently until it reaches a *stable* position where the gripper is free to open and close.
 
-Once the arm is in a safe position, check that the power supply is connected and turned on. **Localize the red e-stop button and keep it within reach at all times**. Unlock the robot by twisting the e-stop button in the same sense as the arrow on it. The button should pop out.
+Once the arm is in a safe position, check that the power supply is connected and turned on. *Localize the red e-stop button and keep it within reach at all times*. Unlock the robot by twisting the e-stop button in the same sense as the arrow on it. The button should pop out.
 
-Then press the silver button on the back of the arm until a blue LED lights up and release it. **DO NOT** press the button for more than 10 seconds, as that will factory reset the arm. The lights will then show blue and yellow during startup. **Once the gripper closes and opens and the light turns to solid green, the arm will be ready for use.**
+Then press the silver button on the back of the arm until a blue LED lights up and release it. *DO NOT* press the button for more than 10 seconds, as that will factory reset the arm. The lights will then show blue and yellow during startup. *Once the gripper closes and opens and the light turns to solid green, the arm will be ready for use.*
 
 #### Using
 
 To check if the arm is working, grab the xbox controller attached to it. Its main layouts are shown below. These are the default layouts the robot can work with. I recommend taking some time to control the robot with the xbox controller in all layouts to see how they behave. Remember to press RB when the robot is not in use to lock it, so as to avoid accidental movements. Unblock it with LB before using it again.
 
-![Kinova controls](assets/kinova_controls.png)
+![Kinova controls](/assets/images/common-platforms/kinova_controls.png)
 
 Once you have verified the controls are working, it is time to connect to the web interface. This serves two purposes:
 
@@ -82,7 +82,7 @@ Where XX is a number greater than 10 (usually people set this to 11). Where to c
 
 Connect to the web interface by going to a web browser and typing http://<robot-ip>. You should be greeted with the login page:
 
-![Kinova login](assets/kinova_login.png)
+![Kinova login](/assets/images/common-platforms/kinova_login.png)
 
 You will use the admin account only once in order to create your own account. Its credentials are:
 
@@ -92,7 +92,7 @@ You will use the admin account only once in order to create your own account. It
 
 Once you are logged in, it is time to create your account. Click on the three bars next to the Kinova logo on the top left corner. That will open the arm’s menu. Then click on “users”. In the users page, click on the plus sign in the bottom right corner. That will bring the new user interface:
 
-![Kinova new user interface](assets/kinova_new_user.png)
+![Kinova new user interface](/assets/images/common-platforms/kinova_new_user.png)
 
 Fill it as follows:
 
@@ -163,11 +163,11 @@ The robot consists of several devices:
 
 The devices in the robot each implement a particular set of services, some of which are available across multiple devices. The methods available as part of a service on a device are accessed via remote procedure calls (RPC).
 
-![Packages/modules of Kinova API](assets/kinova_packages.png)
+![Packages/modules of Kinova API](/assets/images/common-platforms/kinova_packages.png)
 
 The API implements robot control in high-level mode by interacting with the base, which then relays commands to the actuators internally using its own control libraries.
 
-![Architecture of Kinova API](assets/kinova_control.png)
+![Architecture of Kinova API](/assets/images/common-platforms/kinova_control.png)
 
 
 In order to be able to communicate with the robot, you need to follow a couple of steps:
@@ -222,7 +222,7 @@ arm_mover.py: can send the robot and the gripper to positions. Can’t be used o
 detect_and_catch.py: combines all the programs together. After the opencv window opens, press ‘a’ (for ‘action’) once you are satisfied with the point the camera pinpoints as the center of the ball.
 
 
-![Kinova arm setup for demo](assets/kinova_example_setup.png)
+![Kinova arm setup for demo](/assets/images/common-platforms/kinova_example_setup.png)
 
 
 ## Kinova Arms - ROS API
@@ -300,7 +300,7 @@ $ roslaunch kortex_driver kortex_driver.launch ip_address:=<Robot IP> dof:=6 gri
 ```
 RViz should have popped open. You can add a MoveIt node by clicking Add->Motion Planner. Use the arrows to move the arm’s goal, then “plan and execute” to see the movement both in RViz and in real life.
 
-![Kinova arm in Rviz](assets/kinova_rviz.png)
+![Kinova arm in Rviz](/assets/images/common-platforms/kinova_rviz.png)
 
 The procedure to test the vision node is similar:
 
@@ -308,7 +308,7 @@ The procedure to test the vision node is similar:
 $ roslaunch kinova_vision kinova_vision.launch device:=<Robot IP>
 ```
 
-![Kinova vision in rqt](assets/kinova_vision.png)
+![Kinova vision in rqt](/assets/images/common-platforms/kinova_vision.png)
 
 ### Running the example code
 
@@ -345,4 +345,4 @@ Watch the streamed image topic on rqt image viewer (rqt should have opened with 
 
 > You might need to click the refresh button on rqt to find the service
 
-![Kinova rqt example](assets/kinova_rqt_example.png)
+![Kinova rqt example](/assets/images/common-platforms/kinova_rqt_example.png)
