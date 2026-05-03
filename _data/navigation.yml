@@ -1,4 +1,4 @@
-# Wiki links. These show up in the sidebar in the order they appear here.
+## Wiki links. These show up in the sidebar in the order they appear here.
 wiki:
   - title: Overview
     children:
@@ -84,50 +84,56 @@ wiki:
   - title: Sensing
     url: /wiki/sensing/
     children:
-      - title: Tracking vehicles using a static traffic camera
-        url: /wiki/sensing/trajectory_extraction/
       - title: Adafruit GPS
         url: /wiki/sensing/adafruit-gps/
+      - title: Apple Vision Pro
+        url: /wiki/sensing/apple-vision-pro/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
       - title: Azure Block Detection
         url: /wiki/sensing/azure-block-detection/
-      - title: Stag
-        url: /wiki/sensing/stag/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
-      - title: Hand-Eye Calibration
-        url: /wiki/sensing/handeye-calibration/
-      - title: Computer Vision Consideration
+      - title: Camera-IMU Calibration using Kalibr
+        url: /wiki/sensing/camera-imu-calibration/
+      - title: Computer Vision Considerations
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning/
-      - title: Point Cloud Library, 3D Sensors and Applications
-        url: /wiki/sensing/pcl/
-      - title: Photometric Calibration
-        url: /wiki/sensing/photometric-calibration/
-      - title: Speech Recognition
-        url: /wiki/sensing/speech-recognition/
-      - title: Stereo Vision in OpenCV
-        url: /wiki/sensing/opencv-stereo/
-      - title: Camera-IMU Calibration using kalibr
-        url: /wiki/sensing/camera-imu-calibration/
       - title: Fiducial Markers
         url: /wiki/sensing/fiducial-markers/
-      - title: RTK GPS
-        url: /wiki/sensing/gps/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
-      - title: Robotic Total Station (Leica TS16)
-        url: /wiki/sensing/robotic-total-stations/
+      - title: OpenCV Stereo Vision Processing
+        url: /wiki/sensing/opencv-stereo/
+      - title: Perception via Thermal Imaging
+        url: /wiki/sensing/thermal-perception/
+      - title: Photometric Calibration
+        url: /wiki/sensing/photometric-calibration/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
       - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
-        url: /wiki/sensing/thermal-visual-sensor-noise-reduction/
+        url: /wiki/sensing/sensor-noise/
       - title: Robot-Centric Elevation Mapping
         url: /wiki/sensing/elevation-mapping/
+      - title: Robotic Total Station (Leica TS16)
+        url: /wiki/sensing/robotic-total-stations/
+      - title: Robotics with the Microsoft Hololens2
+        url: /wiki/sensing/hololens-101/
+      - title: Speech Recognition
+        url: /wiki/sensing/speech-recognition/
+      - title: STag
+        url: /wiki/sensing/stag/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
+      - title: Tracking vehicles using a static traffic camera
+        url: /wiki/sensing/trajectory_extraction_static_camera/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -345,7 +351,7 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
-# Main links appear in the header.
+## Main links appear in the header.
 main:
   - title: Wiki
     url: /wiki/
@@ -354,7 +360,7 @@ main:
   - title: Contribute
     url: /docs/
 
-# Navigation for supporting documentation.
+## Navigation for supporting documentation.
 docs:
   - title: Overview
     children:

@@ -2,7 +2,6 @@
 date: 2023-12-04 # YYYY-MM-DD
 title: Robot-Centric Elevation Mapping
 ---
-
 In the realm of robotics, navigating complex terrains poses significant challenges. This article delves into robot-centric elevation mapping, a way for map representation offering a dynamic and detailed understanding of the environment from the robot's perspective. Leveraging the Grid Map library, this approach facilitates the generation of 2.5D grid maps, enhancing robotic navigation capabilities in environments where traditional mapping techniques are inadequate.
 
 ## Introduction to Robot-Centric Elevation Mapping
@@ -11,28 +10,28 @@ Robot-centric elevation mapping represents a significant advancement in robotic 
 ### Understanding the Grid Map Library
 The Grid Map library, a comprehensive C++ tool with ROS integration, is at the forefront of elevation mapping. It excels in managing two-dimensional grid maps with multiple data layers, making it ideal for storing diverse data types such as elevation, variance, and color. Key features of this library include:
 
-- **Multi-Layered Support**: Ability to handle various layers of data, providing a rich, multi-faceted view of the terrain.
-- **Efficient Map Re-positioning**: Implements a two-dimensional circular buffer for non-destructive map shifting, crucial for dynamic environments.
-- **Eigen Integration**: Utilizes Eigen data types for storing grid map data, allowing for efficient and versatile data manipulation.
-- **ROS and OpenCV Interfaces**: Ensures seamless integration with ROS message types and OpenCV image types, enhancing its applicability in robotic systems.
-- **Customizable Filters**: A notable feature of the Grid Map library is its customizable filters. These filters can be adapted to meet the specific requirements of a robot, enabling the processing and interpretation of map data in ways that are most relevant to the robot's tasks. For example, filters can be used to assess the traversability of a region by analyzing terrain features like slopes, roughness, or obstacles. This functionality is essential for robots operating in varied and unpredictable environments, as it empowers them to make informed navigation and path planning decisions.
+- *Multi-Layered Support*: Ability to handle various layers of data, providing a rich, multi-faceted view of the terrain.
+- *Efficient Map Re-positioning*: Implements a two-dimensional circular buffer for non-destructive map shifting, crucial for dynamic environments.
+- *Eigen Integration*: Utilizes Eigen data types for storing grid map data, allowing for efficient and versatile data manipulation.
+- *ROS and OpenCV Interfaces*: Ensures seamless integration with ROS message types and OpenCV image types, enhancing its applicability in robotic systems.
+- *Customizable Filters*: A notable feature of the Grid Map library is its customizable filters. These filters can be adapted to meet the specific requirements of a robot, enabling the processing and interpretation of map data in ways that are most relevant to the robot's tasks. For example, filters can be used to assess the traversability of a region by analyzing terrain features like slopes, roughness, or obstacles. This functionality is essential for robots operating in varied and unpredictable environments, as it empowers them to make informed navigation and path planning decisions.
 
 ## Robot-Centric Elevation Mapping in Practice
 Robot-centric elevation mapping, utilizing the Grid Map library, focuses on generating maps that center around the robot's position. This approach is particularly effective in accounting for pose uncertainty and drift in robot pose estimation, which are common challenges in rough terrain navigation. Key aspects and services include:
 
-- **Pose Uncertainty Handling**: By focusing on the robot's position, the mapping accounts for and adjusts to the uncertainties in the robot's orientation and location.
-- **Dynamic Map Updating**: As the robot moves, the elevation map updates in real-time, providing continuous situational awareness.
-- **Fusion of Sensor Data**: The framework fuses data from various sensors, such as LiDAR, stereo cameras, or structured light sensors, to create a comprehensive elevation map.
+- *Pose Uncertainty Handling*: By focusing on the robot's position, the mapping accounts for and adjusts to the uncertainties in the robot's orientation and location.
+- *Dynamic Map Updating*: As the robot moves, the elevation map updates in real-time, providing continuous situational awareness.
+- *Fusion of Sensor Data*: The framework fuses data from various sensors, such as LiDAR, stereo cameras, or structured light sensors, to create a comprehensive elevation map.
 
 ### Key Services in Elevation Mapping
 The Elevation Mapping framework offers several services to enhance its functionality:
 
-1. **Trigger Fusion**: This service triggers the fusion process of the elevation map, integrating the latest sensor data into the map. It's essential for updating the map with the most recent measurements.
-2. **Get Submap**: It allows retrieval of a specific sub-section of the elevation map. This is particularly useful for focusing on areas of interest or for detailed analysis of a particular terrain section.
-3. **Clear Map**: This service is used to reset or clear the elevation map. It's useful in scenarios where the robot starts a new mapping session or when the existing map data is no longer relevant.
-4. **Save and Load Map**: These services enable saving the current state of the elevation map to a file and loading it back when needed. This is crucial for persistent mapping and for scenarios where pre-mapped data is beneficial.
-5. **Masked Replace**: This advanced feature allows selective editing of the elevation map. It's used to update specific areas of the map while leaving the rest unchanged, based on a provided mask.
-6. **Parameter Adjustment**: Real-time adjustment of various parameters of the elevation mapping process, allowing for dynamic adaptation to different environments and sensor setups.
+1. *Trigger Fusion*: This service triggers the fusion process of the elevation map, integrating the latest sensor data into the map. It's essential for updating the map with the most recent measurements.
+2. *Get Submap*: It allows retrieval of a specific sub-section of the elevation map. This is particularly useful for focusing on areas of interest or for detailed analysis of a particular terrain section.
+3. *Clear Map*: This service is used to reset or clear the elevation map. It's useful in scenarios where the robot starts a new mapping session or when the existing map data is no longer relevant.
+4. *Save and Load Map*: These services enable saving the current state of the elevation map to a file and loading it back when needed. This is crucial for persistent mapping and for scenarios where pre-mapped data is beneficial.
+5. *Masked Replace*: This advanced feature allows selective editing of the elevation map. It's used to update specific areas of the map while leaving the rest unchanged, based on a provided mask.
+6. *Parameter Adjustment*: Real-time adjustment of various parameters of the elevation mapping process, allowing for dynamic adaptation to different environments and sensor setups.
 
 These services make the Elevation Mapping framework a versatile tool for robotic navigation, enabling detailed terrain analysis and real-time adaptability to changing environments.
 
