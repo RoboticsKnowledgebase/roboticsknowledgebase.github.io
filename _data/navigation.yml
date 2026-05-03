@@ -179,6 +179,8 @@ wiki:
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+      - title: External Position Estimation using OptiTrack Motion Capture System
+        url: /wiki/state-estimation/optitrack-motion-capture/
   - title: Programming
     url:  /wiki/programming/
     children:

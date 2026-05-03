@@ -1,6 +1,6 @@
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
+# overwritten except in special circumstances.
 # You should set the date the article was last updated like this:
 date: 2024-05-01 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
@@ -10,17 +10,17 @@ title: External Position Estimation using OptiTrack Motion Capture System
 # and used in other parts of the site.
 ---
 ## Overview
-This guide will give a overview of the steps required to set-up a external Pose estimation pipeline for your robot using [OptiTrack]() Motion Capture system.
+This guide will give a overview of the steps required to set-up a external Pose estimation pipeline for your robot using the [OptiTrack](https://www.optitrack.com/) motion capture system.
 
-![OptiTrack System at Drone Arena, Scaife Hall](assets/drone_arena.jpg)
+![OptiTrack System at Drone Arena, Scaife Hall](/assets/images/state-estimation/drone_arena.jpg)
 
 This tutorial assumes that you already have a well calibrated motion capture setup/rig. If not please refer to the information available [here](https://docs.optitrack.com/quick-start-guides/quick-start-guide-getting-started#hardware-setup). Please refer the sections [*Hardware Setup*](https://docs.optitrack.com/quick-start-guides/quick-start-guide-getting-started#hardware-setup) to [*System Calibration*](https://docs.optitrack.com/quick-start-guides/quick-start-guide-getting-started#system-calibration).
 
 Please continue with the further sections of this guide once this one-time setup is complete.
 
-## Working Principle 
+## Working Principle
 
-![OptiTrack System at Drone Arena, Scaife Hall](assets/triangulation_optitrack.png)
+![OptiTrack System at Drone Arena, Scaife Hall](/assets/images/state-estimation/triangulation_optitrack.png)
 The OptiTrack Motion Capture system utilizes optical tracking technology where multiple cameras around a designated area capture the movement of reflective markers attached to a subject. These markers reflect infrared light emitted by the cameras back towards them, allowing the cameras to detect and record their precise locations. 
 
 Through camera calibration, the exact positions and orientations of each camera are known, enabling software to triangulate and reconstruct the 3D positions of the markers by comparing their 2D positions as captured from different angles. 
@@ -42,7 +42,7 @@ This is done by first adding IR-reflective OptiTrack markers to your robot body.
 
 Please see the image below for reference of a example marker placement for a MAV platform:
 
-![Phoenix, Team B 2024](assets/marker_placement.jpg)
+![Phoenix, Team B 2024](/assets/images/state-estimation/marker_placement.jpg)
 
 ### Registering Rigid Body with Motive
 Once we have the markers secured to the robot, we will configure the Motive software to actually record our robot as a unique standalone rigid body in space.
@@ -98,7 +98,7 @@ Important thing here is to keep track of the corrdinate system defined during th
 roslaunch natnet_ros_cpp natnet_ros.launch 
 ```
 
-If your body is active in Motive (and within the operating area), now you should be able to see a topic with the estimated pose as a `geomerty_msgs/PoseStamped` topic named `/natnet_ros/<body-name-provided-in-motive>/pose`.
+If your body is active in Motive (and within the operating area), now you should be able to see a topic with the estimated pose as a `geomerty_msgs/PoseStamped` topic named `/natnet_ros/BODY_NAME/pose`.
 
 **NOTE: Please note that pose being streamed here is defined with respect to the OptiTrack coordinate axes defined during the calibration process. Please be mindful of the position of this origin before sending any motion commands to the robot to prevent damage to equipment/life.**
 
@@ -106,8 +106,7 @@ If your body is active in Motive (and within the operating area), now you should
 This guide walks you through the complete setup and use of the OptiTrack Motion Capture system for external pose estimation of a robot. Starting with a calibrated motion capture setup, the guide details the process of affixing IR reflective markers on the robot, ensuring their optimal placement for accurate tracking. It further describes how to configure the Motive software to recognize the robot as a unique entity within the system. Essential processes covered include the streaming of the robot's pose over the network using the NaturalNetwork pipeline, and how to integrate this data into ROS-centric applications using the `natnet_ros_cpp` package. By following these instructions, you can effectively utilize the OptiTrack system for precise motion tracking and pose estimation to enhance robotics applications in environments where GPS is not viable.
 
 ## See Also:
-- Other means of GPS-denied external pose estimation methods available [here](https://roboticsknowledgebase.com/wiki/state-estimation/gps-lacking-state-estimation-sensors.md).
+- Other means of GPS-denied external pose estimation methods are available [here](/wiki/state-estimation/gps-lacking-state-estimation-sensors/).
 
 ## Further Reading
 - Please refer to the official OptiTrack [documentation](https://docs.optitrack.com/) for additional information.
-
