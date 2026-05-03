@@ -10,3 +10,9 @@ vendor/
 
 # Ignore others
 .DS_Store
+
+# Ignore review workflow files
+.gemini/
+.codex/
+.reviews/
+
