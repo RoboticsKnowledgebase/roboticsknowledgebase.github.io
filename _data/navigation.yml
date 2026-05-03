@@ -271,26 +271,28 @@ wiki:
   - title: Fabrication
     url: /wiki/fabrication/
     children:
+      - title: 3D Printers
+        url: /wiki/fabrication/3d-printers/
+      - title: CubePro
+        url: /wiki/fabrication/cube-pro/
       - title: Fabrication Considerations for 3D printing
         url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
       - title: Machining & Prototyping
         url: /wiki/fabrication/machining-prototyping/
-      - title: Rapid Prototyping
-        url: /wiki/fabrication/rapid-prototyping/
-      - title: Turning Process
-        url: /wiki/fabrication/turning-process/
-      - title: Milling Process
-        url: /wiki/fabrication/milling-process/
-      - title: Soldering
-        url: /wiki/fabrication/soldering/
-      - title: 3D Printers
-        url: /wiki/fabrication/3d-printers/
       - title: MakerBot Replicator 2x
         url: /wiki/fabrication/makerbot-replicator-2x/
-      - title: CubePro
-        url: /wiki/fabrication/cube-pro/
+      - title: Milling Process
+        url: /wiki/fabrication/milling-process/
+      - title: Rapid Prototyping
+        url: /wiki/fabrication/rapid-prototyping/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Sheet Metal Fabrication
+        url: /wiki/fabrication/sheet-metal-guidelines/
+      - title: Soldering
+        url: /wiki/fabrication/soldering/
+      - title: Turning Process
+        url: /wiki/fabrication/turning-process/
   - title: Math
     url: /wiki/math/
     children:
