@@ -27,7 +27,7 @@ With this background in mind, let's delve into the specific guidelines that are 
 ## Bending Sheet Metal
 ### Clearance and Bend Order
 
-![Image](./assets/sheet-metal-designing-001.jpg)
+![Image](/assets/images/fabrication/sheet-metal-designing-001.jpg)
 - **Die Clearance**: To make a bend without interference, a clearance of about 2 inches width at the bisecting angle of the die is necessary.
 - **Bend Sequence**: The order of bending matters significantly. Some series of bends may be impossible to fabricate due to tool interference.
 
@@ -40,7 +40,7 @@ With this background in mind, let's delve into the specific guidelines that are 
 ### Post-Bending Considerations
 - **Buckling**: Material buckles outward after bending, which can be mitigated by cutting a small slot for pieces that need to fit flush.
 
-![image](./assets/sheet-metal-designing-002.jpg)
+![image](/assets/images/fabrication/sheet-metal-designing-002.jpg)
 
 - **Bend Tolerance**: There is a tolerance of ±1/16 inch where the bend is made.
 
