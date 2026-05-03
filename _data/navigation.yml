@@ -224,6 +224,8 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/NDT-Matching-with-Autoware/
+      - title: Simulating UGVs in Unity
+        url: /wiki/simulation/simulating-ugvs-in-unity/
   - title: Interfacing
     url: /wiki/interfacing/
     children:

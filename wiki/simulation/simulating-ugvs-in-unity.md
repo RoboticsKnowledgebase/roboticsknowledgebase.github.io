@@ -1,6 +1,6 @@
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
+# overwritten except in special circumstances.
 # You should set the date the article was last updated like this:
 date: 2023-05-01 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
@@ -23,9 +23,7 @@ The **3D (Built-In Render Pipeline)** template is the most common template for a
 
 The **Universal 3D** template uses Unity's **Universal Rendering Pipline** (URP). URP is a scriptable rendering pipeline (SRP), which means that you may write scripts to alter nearly every aspect of the game engine's rendering process. SRPs are useful to developers who wish to add custom effects to their world, from dust storms to blades of grass bending in the wind to lens flares.
 
-The **High Definition 3D** template uses Unity's **High Definition Rendering Pipeline** (HDRP). The HDRP is another SRP. While the URP is designed to be performant enough to run on most computers and even phones, the HDRP's focus is on realism at the cost of performance. That means that projects using HDRP need to be run on devices with modern GPUs. The visual benefits are profound, as demonstrated in the video below.
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8VRVWSlVuDQ?si=DjhlyC8fYs5UNmCl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+The **High Definition 3D** template uses Unity's **High Definition Rendering Pipeline** (HDRP). The HDRP is another SRP. While the URP is designed to be performant enough to run on most computers and even phones, the HDRP's focus is on realism at the cost of performance. That means that projects using HDRP need to be run on devices with modern GPUs. The visual benefits are profound, as demonstrated in this [HDRP example video](https://www.youtube.com/watch?v=8VRVWSlVuDQ).
 
 Once you've selected your template, choose a name and open the project in the Unity Editor. We recommend using the latest LTS version of the Editor. Now is a good time to run `git init`.
 
@@ -70,4 +68,3 @@ if (ros2Unity.Ok()) {
 ```
 
 You may then publish or subscribe to topics as outlined in the [Ros2 for Unity README](https://github.com/RobotecAI/ros2-for-unity/tree/humble).
-
