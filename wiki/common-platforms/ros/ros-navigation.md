@@ -31,11 +31,11 @@ This will generate a file 'frames.pdf' in the current directory which will conta
 
 ### Debugging example
 An example tf tree with a robot setup with a laser scanner that uses hector mapping for scan matching and visual odometry is shown in the figure below.
-![Example TF Tree with Laser Scanner](assets/ROSNavigation-d06e2.png)
+![Example TF Tree with Laser Scanner](/assets/images/ROSNavigation-d06e2.png)
 
 If someone is expecting their robot to navigate with the above tf configuration, they will have a hard time seeing anything move. As you can guess from the above coordinate transform tree, the tf tree is not complete. The path planner will be happy with the above configuration because it can get the laser scan matching at /laser with respect to the world coordinate frame but the robot base will not be able to command the wheel actuators. The error can be fixed by adding the transform between the world coordinate frame and the wheel odometry frame of the robot and the resulting tf tree is shown below:
 
-![Correct TF Tree with Laser Scanner](assets/ROSNavigation-7d9d1.png)
+![Correct TF Tree with Laser Scanner](/assets/images/ROSNavigation-7d9d1.png)
 
 Other useful tf tools for debugging are `tf_echo` and `tf_monitor`
 
@@ -71,7 +71,7 @@ If you have tried at least once to look at the navigation stack in ROS, you must
 4. Robot_Localization:
   - When to use this?
     - Use this when `robot_pose_ekf` is not enough for your robot! This package offers all the goodness of robot_pose_ekf and more. It provides non-linear state estimation using the Extended Kalman Filter (EKF) and the Unscented Kalman Filter (UKF) to fuse information from arbitrary number of sensors. It also provides `navsat_transform_node` which helps in integrating GPS data (fixes) for the robot's localization. The following picture from the Wiki is informative:
-![Robot_Localization Diagram](assets/ROSNavigation-72039.png)
+![Robot_Localization Diagram](/assets/images/ROSNavigation-72039.png)
   - What does it require?
     - It requires `/odometry/filtered` topic of type `nav_msgs/Odometry`, `/imu/data` topic of type `sensor_msgs/Imu` and the `/gps/fix` topic of type `sensor_msgs/NavSatFix`
 
