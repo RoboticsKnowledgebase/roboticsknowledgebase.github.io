@@ -25,6 +25,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
         url: /wiki/system-design-development/In-Loop-Testing/
+      - title: How to design a robotic state machine
+        url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
   - title: Project Management
     url: /wiki/project-management/
     children:
