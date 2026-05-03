@@ -2,15 +2,14 @@
 date: 2024-05-01
 title: Camera Calibration
 ---
-
 It is quite common for projects to involve vision systems, but despite this many teams working with cameras ignore the basic advantages of calibrating a camera properly. Not only does a good calibration lead to better quality of data in form of images captured but also reduces overall errors in the vision the system, a properly calibrated camera helps avoid unnecessary delays due to radiometric and geometric errors.
 
 ## What is Camera Calibration?
 Camera Calibration is the process of estimating internal or external parameters of a camera by taking multiple measurements of a known object. Often both are necessary to get a system working well.
 
 #### Types of Camera Calibration
-- **Intrinsic** - Estimates the internal parameters of the camera including the focal length, the optical center, and distortion coefficients. This can be useful when trying to transform points between pixel space and 3D space.
-- **Extrinsic** - Estimates the external parameters of the camera i.e. the translation and rotation of the camera relative to a reference point. This can be useful when incorporating information from multiple sensors or when trying to act upon information captured by a camera.
+- *Intrinsic* - Estimates the internal parameters of the camera including the focal length, the optical center, and distortion coefficients. This can be useful when trying to transform points between pixel space and 3D space.
+- *Extrinsic* - Estimates the external parameters of the camera i.e. the translation and rotation of the camera relative to a reference point. This can be useful when incorporating information from multiple sensors or when trying to act upon information captured by a camera.
 
 ## Tools for Camera Calibration
 There are multiple methods of camera calibration depending on what you are trying to achieve. Some specific tutorials on camera calibration are listed below:

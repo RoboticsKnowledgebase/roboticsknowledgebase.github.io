@@ -108,6 +108,8 @@ wiki:
         url: /wiki/sensing/camera-imu-calibration/
       - title: Fiducial Markers
         url: /wiki/sensing/fiducial-markers/
+      - title: Hand-Eye Calibration with easy_handeye
+        url: /wiki/sensing/easy-handeye/
       - title: RTK GPS
         url: /wiki/sensing/gps/
       - title: Intel Realsense

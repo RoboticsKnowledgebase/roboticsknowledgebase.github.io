@@ -2,24 +2,23 @@
 date: 2024-05-01
 title: Hand-Eye Calibration with easy_handeye
 ---
-
 *[Easy Handeye](https://github.com/IFL-CAMP/easy_handeye)* from the TUM Computer Aided Medical Procedures Lab is an extremely useful tool for calibrating a camera with an arm. There are two types of hand-eye calibration:
 
-- **eye-in-hand** - The camera is mounted on the arm end-effector and it is necessary to determine the static transform between the camera frame and the end-effector.
-- **eye-on-base** - The camera is mounted in the workspace of the arm and it is necessary to determine the static transform between the camera frame and the base of the arm.
+- *eye-in-hand* - The camera is mounted on the arm end-effector and it is necessary to determine the static transform between the camera frame and the end-effector.
+- *eye-on-base* - The camera is mounted in the workspace of the arm and it is necessary to determine the static transform between the camera frame and the base of the arm.
 
 ## Procedure
 Print a marker from [ArUco Marker Generator](https://chev.me/arucogen/), be sure to select 'Original ArUco' for the dictionary. Measure the edge length of the marker in meters and record for later. For eye-in-hand calibration, the ArUco marker should be affixed to a static object. For eye-on-base calibration, the ArUco marker should be affixed to the end-effector.
 
 Install aruco ros
 
-```
+```bash
 sudo apt-get install ros-noetic-aruco-ros
 ```
 
 Clone the easy_handeye repository into a new or existing ROS workspace and make the workspace.
 
-```
+```bash
 cd catkin_ws/src
 git clone git@github.com:IFL-CAMP/easy_handeye.git
 cd ../ && catkin_make
@@ -42,7 +41,7 @@ Within the launch file set the following parameters:
 
 Once all parameters are changed, run the launch file.
 
-```
+```bash
 roslaunch easy_handeye <YOUR_LAUNCH_FILE>
 ```
 
