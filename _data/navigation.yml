@@ -41,48 +41,52 @@ wiki:
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
+      - title: Asctec Pelican UAV Setup Guide
+        url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
-      - title: Pixhawk
-        url: /wiki/common-platforms/pixhawk/
-      - title: Asctec Pelican UAV Setup Guide
-        url: /wiki/common-platforms/asctec-uav-setup-guide/
-      - title: Husky Interfacing Procedure
-        url: /wiki/common-platforms/husky_interfacing_and_communication/
-      - title: Universal Robots UR5e Collaborative Robotic Arm
-        url: /wiki/common-platforms/ur5e/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
-      - title: ROS Arduino Interface
-        url: /wiki/common-platforms/ros/ros-arduino-interface/
-      - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros/ros-motion-server-framework/
-      - title: ROS Cost Maps
-        url: /wiki/common-platforms/ros/ros-cost-maps/
-      - title: ROS Mapping and Localization
-        url: /wiki/common-platforms/ros/ros-mapping-localization/
-      - title: ROS Navigation
-        url: /wiki/common-platforms/ros/ros-navigation/
-      - title: ROS Global Planner
-        url: /wiki/common-platforms/ros/ros-global-planner/
-      - title: Running ROS On An Unsupported OS
-        url: /wiki/common-platforms/ros/ros-unsupported-os
-      - title: Making RC Vehicles Autonomous
-        url: /wiki/common-platforms/rccars-the-complete-guide/
-      - title: Khepera 4
-        url: /wiki/common-platforms/khepera4/
-      - title: ROS 2 Navigation for Clearpath Husky
-        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Husky Interfacing Procedure
+        url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
+      - title: Kinova Arms
+        url: /wiki/common-platforms/kinova-setup-and-apis/
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Pixhawk
+        url: /wiki/common-platforms/pixhawk/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
+      - title: ROS Cost Maps
+        url: /wiki/common-platforms/ros/ros-cost-maps/
+      - title: ROS Global Planner
+        url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Mapping and Localization
+        url: /wiki/common-platforms/ros/ros-mapping-localization/
+      - title: ROS Motion Server Framework
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
+      - title: ROS Navigation
+        url: /wiki/common-platforms/ros/ros-navigation/
+      - title: ROS Node Lifecycle
+        url: /wiki/common-platforms/ros/ros-lifecycle/
+      - title: Running ROS On An Unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
       - title: Unitree G1 Humanoid Robot
         url: /wiki/common-platforms/unitree-g1/
       - title: Unitree Go1
         url: /wiki/common-platforms/unitree-go1/
-      - title: Interfacing with the Nvidia Orin
-        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
+      - title: Universal Robots UR5e Collaborative Robotic Arm
+        url: /wiki/common-platforms/ur5e/
   - title: Sensing
     url: /wiki/sensing/
     children:
@@ -268,6 +272,8 @@ wiki:
         url: /wiki/computing/networking/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Quantum Computing and Qiskit
+        url: /wiki/computing/quantum/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -333,6 +339,8 @@ wiki:
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: Tutorial on Using USB Compute Sticks
+        url: /wiki/tools/usb-compute-sticks/
   - title: Datasets
     url: /wiki/datasets/
     children:
