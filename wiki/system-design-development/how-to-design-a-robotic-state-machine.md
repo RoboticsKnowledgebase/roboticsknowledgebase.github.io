@@ -9,8 +9,7 @@ title: How to design a robotic state machine
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-
-# Motivation
+## Motivation
 
 One key aspect of designing complex robotic systems is the effective
 implementation of state machines. This article will explore the best
@@ -25,7 +24,7 @@ about state machines, read these articles:
 
 -   [State Machine Basics](https://www.freecodecamp.org/news/state-machines-basics-of-computer-science-d42855debc66/)
 
-# Example 
+## Example 
 
 Let us consider a green pepper harvesting robot which consists of a
 manipulator arm and a custom end-effector. The major subsystems are
@@ -53,7 +52,7 @@ node may utilize any data that it needs.
 
 -   Planner: listens to the current state to execute actions that need to be performed
 
-# Linear vs Asynchronous
+## Linear vs Asynchronous
 
 The easiest way to structure a state machine is to linearly move forward
 from one state to another upon completion of tasks in the current state.
@@ -87,31 +86,31 @@ always publishing data and some perform actuation based on the state,
 the state machine can utilize current data to quickly update the next
 action, instead of waiting for a state to be completed.
 
-# Choosing Communication Paradigm for State Machines in ROS
+## Choosing Communication Paradigm for State Machines in ROS
 
 When implementing a state machine in ROS, a crucial decision is whether
 to use ROS publishers and subscribers or ROS services for state
 communication. Let\'s explore the pros and cons of each approach.
 
-## Publisher & Subscriber
-### Pro
+### Publisher & Subscriber
+#### Pro
 1. Decentralized Communication: Enables asynchronous communication, allowing multiple nodes to be informed of the state independently.
 2. Real-time Suitability: Non-blocking communication ensures timely updates for decisions requiring real-time computation.
 3. Scalability: Easily scalable by adding more nodes as subscribers due to the decentralized system.
 
-### Con
+#### Con
 1. No Guarantee of Delivery: Lack of confirmation on message receipt necessitates manual checks for communication.
 2. Synchronization Issues: Asynchronous nature may require additional synchronization mechanisms for timely information retrieval.
 3. Limited to Point-to-Point Communication: Restriction to one-to-one communication impedes multi-node awareness of the state.
 4. Enforces a Linear State Machine: The point-to-point limitation results in a linear state model.
 5. Communication Overhead: Frequent state changes with request-response interactions introduce performance overhead.
 
-## Ros service
-### Pro
+### Ros service
+#### Pro
 
 1. Blocks Communication: Code blocking ensures coordination between nodes during communication.
 
-### Con
+#### Con
 1. Limited to Point-to-Point Communication: Similar to publishers and subscribers, ROS services only allow communication between two nodes.
 2. Enforces a Linear State Machine: Restricts the state machine to a linear model.
 3. Overhead in Communication: Frequent state changes with request-response interactions introduce performance overhead.
@@ -126,20 +125,20 @@ computational speed, although publishers and subscribers do not
 guarantee delivery, we generally do not have to worry about whether or
 not the message gets delivered to the nodes.
 
-# Frequent errors that occur in state machines
+## Frequent errors that occur in state machines
 
 As mentioned, there are two ways of implementing the state machine. The
 errors that occur vary depending on the implementation.
 
-## Publishing & Subscribing method:
+### Publishing & Subscribing method:
 
 -   The publisher and subscriber frequency may differ. If the publishing node and subscribing node are running at different frequencies, and the publisher is publishing at 500 Hz and the subscriber is listening at 1hz, there might be some messages (states) that are lost on the listener end.
 
-## Ros service method:
+### Ros service method:
 
 -   The system performance is slow: As Ros services block the code from moving on to the next block until it ensures a successful communication, you can easily face your code slowing down to ensure this successful communication. If this communication occurs across multiple nodes, the problem becomes worse. If you go down this route, ensuring no unnecessary blockers is crucial to system performance.
 
-## How to separate scripts
+### How to separate scripts
 
 Assuming you have decided to move forward with the publisher and
 subscriber, the question of how you will design the script arises. We
@@ -147,7 +146,7 @@ suggest having a state_machine.py that just listens to all the other
 node's current status and moves from state to state. In this case, all
 the subsystem nodes should also publish their status through publishers.
 
-## Handling Errors in State Machine Design:
+### Handling Errors in State Machine Design:
 
 Consider whether a singular error state requiring human intervention is
 acceptable. Alternatively, separate error-handling states can automate
