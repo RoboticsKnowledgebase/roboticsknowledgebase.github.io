@@ -12,14 +12,15 @@ This document acts as a tutorial on how to set up a [Asctec Pelican UAV](http://
 
 
 # Table of Contents
-1. [Useful Sites](#Useful-Sites)
-2. [System Overview](#System-Overview)
-3. [Setup Network and SSH](#Setup-Network-and-SSH)
-4. [Install ROS Packages](#Install-ROS-Packages)
-5. [Flash Programs in the HLP](#Flash-Programs-in-the-HLP)
-6. [Run the ROS package on Atomboard](#Run-the-ROS-package-on-Atomboard)
-7. [Summary](#Summary)
-8. [References](#References)
+- [Table of Contents](#table-of-contents)
+  - [Useful Sites](#useful-sites)
+  - [System Overview](#system-overview)
+  - [Setup Network and SSH](#setup-network-and-ssh)
+  - [Install ROS Packages](#install-ros-packages)
+  - [Flash Programs in the HLP](#flash-programs-in-the-hlp)
+  - [Run the ROS package on Atomboard](#run-the-ros-package-on-atomboard)
+  - [Summary](#summary)
+  - [References](#references)
 
 ## Useful Sites
 Before we start, here are some useful sites for Asctec Pelican Information:

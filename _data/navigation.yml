@@ -25,6 +25,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
         url: /wiki/system-design-development/In-Loop-Testing/
+      - title: How to design a robotic state machine
+        url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
   - title: Project Management
     url: /wiki/project-management/
     children:
@@ -36,86 +38,110 @@ wiki:
         url: /wiki/project-management/risk-management/
       - title: Jira
         url: /wiki/project-management/jira/
-      - title: Using Notion for Project Management
-        url: /wiki/project-management/using-notion-for-project-management/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
+      - title: Asctec Pelican UAV Setup Guide
+        url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
-      - title: Pixhawk
-        url: /wiki/common-platforms/pixhawk/
-      - title: Asctec Pelican UAV Setup Guide
-        url: /wiki/common-platforms/asctec-uav-setup-guide/
-      - title: Husky Interfacing Procedure
-        url: /wiki/common-platforms/husky_interfacing_and_communication/
-      - title: Universal Robots UR5e Collaborative Robotic Arm
-        url: /wiki/common-platforms/ur5e/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
-      - title: ROS Arduino Interface
-        url: /wiki/common-platforms/ros/ros-arduino-interface/
-      - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros/ros-motion-server-framework/
-      - title: ROS Cost Maps
-        url: /wiki/common-platforms/ros/ros-cost-maps/
-      - title: ROS Mapping and Localization
-        url: /wiki/common-platforms/ros/ros-mapping-localization/
-      - title: ROS Navigation
-        url: /wiki/common-platforms/ros/ros-navigation/
-      - title: ROS Global Planner
-        url: /wiki/common-platforms/ros/ros-global-planner/
-      - title: Running ROS On An Unsupported OS
-        url: /wiki/common-platforms/ros/ros-unsupported-os
-      - title: Making RC Vehicles Autonomous
-        url: /wiki/common-platforms/rccars-the-complete-guide/
-      - title: Khepera 4
-        url: /wiki/common-platforms/khepera4/
-      - title: ROS 2 Navigation for Clearpath Husky
-        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Husky Interfacing Procedure
+        url: /wiki/common-platforms/husky_interfacing_and_communication/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
+      - title: Kinova Arms
+        url: /wiki/common-platforms/kinova-setup-and-apis/
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Pixhawk
+        url: /wiki/common-platforms/pixhawk/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
+      - title: ROS Cost Maps
+        url: /wiki/common-platforms/ros/ros-cost-maps/
+      - title: ROS Global Planner
+        url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Mapping and Localization
+        url: /wiki/common-platforms/ros/ros-mapping-localization/
+      - title: ROS Motion Server Framework
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
+      - title: ROS Navigation
+        url: /wiki/common-platforms/ros/ros-navigation/
+      - title: ROS Node Lifecycle
+        url: /wiki/common-platforms/ros/ros-lifecycle/
+      - title: Running ROS On An Unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
+      - title: Unitree G1 Humanoid Robot
+        url: /wiki/common-platforms/unitree-g1/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/
+      - title: Universal Robots UR5e Collaborative Robotic Arm
+        url: /wiki/common-platforms/ur5e/
   - title: Sensing
     url: /wiki/sensing/
     children:
-      - title: Tracking vehicles using a static traffic camera
-        url: /wiki/sensing/trajectory_extraction/
       - title: Adafruit GPS
         url: /wiki/sensing/adafruit-gps/
+      - title: Apple Vision Pro
+        url: /wiki/sensing/apple-vision-pro/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
-      - title: Stag
-        url: /wiki/sensing/stag/
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
-      - title: Computer Vision Consideration
+      - title: Camera-IMU Calibration using Kalibr
+        url: /wiki/sensing/camera-imu-calibration/
+      - title: Computer Vision Considerations
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
-      - title: Point Cloud Library, 3D Sensors and Applications
-        url: /wiki/sensing/pcl/
-      - title: Photometric Calibration
-        url: /wiki/sensing/photometric-calibration/
-      - title: Speech Recognition
-        url: /wiki/sensing/speech-recognition/
-      - title: Stereo Vision in OpenCV
-        url: /wiki/sensing/opencv-stereo/
-      - title: Camera-IMU Calibration using kalibr
-        url: /wiki/sensing/camera-imu-calibration/
+      - title: DWM1001 UltraWideband Positioning System
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
       - title: Fiducial Markers
         url: /wiki/sensing/fiducial-markers/
-      - title: RTK GPS
-        url: /wiki/sensing/gps/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
+      - title: Hand-Eye Calibration with easy_handeye
+        url: /wiki/sensing/easy-handeye/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: OpenCV Stereo Vision Processing
+        url: /wiki/sensing/opencv-stereo/
+      - title: Perception via Thermal Imaging
+        url: /wiki/sensing/thermal-perception/
+      - title: Photometric Calibration
+        url: /wiki/sensing/photometric-calibration/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise/
+      - title: Robot-Centric Elevation Mapping
+        url: /wiki/sensing/elevation-mapping/
       - title: Robotic Total Station (Leica TS16)
-        url: /wiki/sensing/robotic-total-stations.md
+        url: /wiki/sensing/robotic-total-stations/
+      - title: Robotics with the Microsoft Hololens2
+        url: /wiki/sensing/hololens-101/
+      - title: Speech Recognition
+        url: /wiki/sensing/speech-recognition/
+      - title: STag
+        url: /wiki/sensing/stag/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
-      - title: DWM1001 UltraWideband Positioning System
-        url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: Tracking vehicles using a static traffic camera
+        url: /wiki/sensing/trajectory_extraction_static_camera/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -173,8 +199,8 @@ wiki:
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/Cartographer-ROS-Integration/
-      - title: Externally Referenced State Estimation for GPS Lacking Environments
-        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+      - title: External Position Estimation using OptiTrack Motion Capture System
+        url: /wiki/state-estimation/optitrack-motion-capture/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -222,6 +248,8 @@ wiki:
         url: /wiki/simulation/NDT-Matching-with-Autoware/
       - title: An Introduction to Isaac Sim
         url: /wiki/simulation/an-introduction-to-isaac-sim/
+      - title: Simulating UGVs in Unity
+        url: /wiki/simulation/simulating-ugvs-in-unity/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -248,31 +276,37 @@ wiki:
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
+      - title: Setup your Network Infrastructure for Robotics Projects
+        url: /wiki/computing/networking/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Quantum Computing and Qiskit
+        url: /wiki/computing/quantum/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
+      - title: 3D Printers
+        url: /wiki/fabrication/3d-printers/
+      - title: CubePro
+        url: /wiki/fabrication/cube-pro/
       - title: Fabrication Considerations for 3D printing
         url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
       - title: Machining & Prototyping
         url: /wiki/fabrication/machining-prototyping/
-      - title: Rapid Prototyping
-        url: /wiki/fabrication/rapid-prototyping/
-      - title: Turning Process
-        url: /wiki/fabrication/turning-process/
-      - title: Milling Process
-        url: /wiki/fabrication/milling-process/
-      - title: Soldering
-        url: /wiki/fabrication/soldering/
-      - title: 3D Printers
-        url: /wiki/fabrication/3d-printers/
       - title: MakerBot Replicator 2x
         url: /wiki/fabrication/makerbot-replicator-2x/
-      - title: CubePro
-        url: /wiki/fabrication/cube-pro/
+      - title: Milling Process
+        url: /wiki/fabrication/milling-process/
+      - title: Rapid Prototyping
+        url: /wiki/fabrication/rapid-prototyping/
       - title: Series A Pro Printer
         url: /wiki/fabrication/series-A-pro/
+      - title: Sheet Metal Fabrication
+        url: /wiki/fabrication/sheet-metal-guidelines/
+      - title: Soldering
+        url: /wiki/fabrication/soldering/
+      - title: Turning Process
+        url: /wiki/fabrication/turning-process/
   - title: Math
     url: /wiki/math/
     children:
@@ -285,8 +319,6 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
-      - title: Docker for PyTorch
-        url: /wiki/tools/docker-for-pytorch/
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
@@ -309,21 +341,21 @@ wiki:
         url: /wiki/tools/stream-rviz/
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
-      - title: MapViz for Map Based Visualization in ROS2
-        url: /wiki/planning/mapviz/
       - title: Gazebo Simulation
         url: /wiki/tools/gazebo-simulation/
       - title: Code Editors - Introduction to VS Code and Vim
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/Qtcreator-ros/
+      - title: Tutorial on Using USB Compute Sticks
+        url: /wiki/tools/usb-compute-sticks/
   - title: Datasets
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
@@ -341,7 +373,7 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
-# Main links appear in the header.
+## Main links appear in the header.
 main:
   - title: Wiki
     url: /wiki/
@@ -350,7 +382,7 @@ main:
   - title: Contribute
     url: /docs/
 
-# Navigation for supporting documentation.
+## Navigation for supporting documentation.
 docs:
   - title: Overview
     children:
