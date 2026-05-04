@@ -1,5 +1,5 @@
 ---
-date: {}
+date: 2024-05-02
 title: An Introduction to Isaac Sim
 ---
 Nvidia's Isaac Sim is quickly becoming a must-know in the world of robotics training through simulation, leveraging powerful GPUs to train numerous agents simultaneously. While our project didn't involve reinforcement learning or parallel simulations, diving into Isaac Sim proved a rewarding detour.
@@ -26,36 +26,40 @@ NVIDIA supports the process of importing URDF files into Isaac Sim with an [open
 
 1. To access this Extension, go to the top menu bar and click Isaac Utils > Workflows > URDF Importer. 
 
-![Step 1 - Access URDF Importer](assets/images/isaac_img_init.png)
+![Step 1 - Access URDF Importer](/assets/images/simulation/isaac_img_init.png)
 
 2. Adjust the import settings to suit your robot's specifications:
-	- **Fix base link:** Deselect for mobile robots; select for manipulators.
-	- **Stage Units per meter:** Setting this to 1 equates one unit in Isaac Sim to 1 meter.
-	- **Joint Drive Type:** Choose between position or velocity, depending on project needs.
-	- **Joint Drive Strength and Joint Position Drive Damping:** Recommended values are **10000000.0** and **100000.0** respectively to ensure accurate joint movement. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
-	- **Self-Collision:** Typically left unselected as the importer manages collision properties adequately, though enabling it does not impede the process.
+	- *Fix base link:* Deselect for mobile robots; select for manipulators.
+	- *Stage Units per meter:* Setting this to 1 equates one unit in Isaac Sim to 1 meter.
+	- *Joint Drive Type:* Choose between position or velocity, depending on project needs.
+	- *Joint Drive Strength and Joint Position Drive Damping:* Recommended values are *10000000.0* and *100000.0* respectively to ensure accurate joint movement. These values are in Isaac units, and emperically we found that, the robot joint doesn't move as they should, if the values are not specified. 
+	- *Self-Collision:* Typically left unselected as the importer manages collision properties adequately, though enabling it does not impede the process.
 
- ![Step - 2 Define Import Properties](assets/images/isaac_img_import_settings.png)
+ ![Step - 2 Define Import Properties](/assets/images/simulation/isaac_img_import_settings.png)
 
-3. Click the **Import** button to add your robot to the stage, visualizing it within the simulation.
+3. Click the *Import* button to add your robot to the stage, visualizing it within the simulation.
 
-![Step - 3: Import the URDF](assets/images/isaac_img_import.png)
+![Step - 3: Import the URDF](/assets/images/simulation/isaac_img_import.png)
 
-4. Since Isaac Sim does not automatically create a ground plane, thus we need to create a ground plane.
+4. If your imported robot appears too dark to inspect comfortably, open the *Stage Lights* menu and switch the preset to *Default*.
 
-![Step - 4: Create Ground Plane](assets/images/isaac_img_ground_plane.png)
+![Step - 4: Adjust Stage Lighting](/assets/images/simulation/isaac_img_lighting.png)
 
-5. Confirm that the collision properties of your imported robot function correctly.
+5. Since Isaac Sim does not automatically create a ground plane, thus we need to create a ground plane.
 
-![Step - 5: Verify the Collision Properties](assets/images/isaac_img_colliders.png)
+![Step - 5: Create Ground Plane](/assets/images/simulation/isaac_img_ground_plane.png)
 
-![Step - 5: Verify the Collision Properties](assets/images/isaac_img_collision_vis.png)
+6. Confirm that the collision properties of your imported robot function correctly.
 
-6. Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in **.usd** format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in **.usda** format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
+![Step - 6: Verify the Collision Properties](/assets/images/simulation/isaac_img_colliders.png)
 
-![Step - 6: Saving as USDA](assets/images/isaac_img_save_as.png)
+![Step - 6: Verify the Collision Properties](/assets/images/simulation/isaac_img_collision_vis.png)
 
-![Step - 6: Saving as USDA](assets/images/isaac_img_save_as_usda.png)
+7. Voila, we have successfully imported our URDF to Isaac Sim! Though, the import plugin saves the USD file (check Output Directory option while importing), but that is in *.usd* format which is a file binary format, which obiously can't be read by humans. Thus we will go ahead and save it in *.usda* format. USDA is essentially an ASCII format of USD file that is encoded as UTF-8. 
+
+![Step - 7: Saving as USDA](/assets/images/simulation/isaac_img_save_as.png)
+
+![Step - 7: Saving as USDA](/assets/images/simulation/isaac_img_save_as_usda.png)
 
 ## Let's Integrate with ROS
 
@@ -71,47 +75,47 @@ We will explore the workflow for publishing Transforms (TFs), essential for any 
 
 1. Go to top menu bar and click Window -> Visual Scripting -> Action Graph
 
-![Image of Creating Action Graph](assets/images/isaac_img_create_action_graph.png)
+![Image of Creating Action Graph](/assets/images/simulation/isaac_img_create_action_graph.png)
 
-2. Click **New Action Graph** to open an empty graph
+2. Click *New Action Graph* to open an empty graph
 
-![Image of Creating Action Graph](assets/images/isaac_img_create_action_graph_2.png)
+![Image of Creating Action Graph](/assets/images/simulation/isaac_img_create_action_graph_2.png)
 
-3. To start building our action graph, we start adding nodes. The first node we need to add is **'On Playback Tick'**. The On Play Tick node acts as a trigger that executes at every simulation tick, which is a single update cycle of the simulation. 
+3. To start building our action graph, we start adding nodes. The first node we need to add is *'On Playback Tick'*. The On Play Tick node acts as a trigger that executes at every simulation tick, which is a single update cycle of the simulation. 
 
-![Image of Adding On PLayback Tick](assets/images/isaac_img_on_playback_tick.png)
+![Image of Adding On PLayback Tick](/assets/images/simulation/isaac_img_on_playback_tick.png)
 
-4. The next node is **'ROS 2 Context'**. This node acts as a bridge between Isaac Sim and ROS 2, enabling the simulation to communicate and interact with ROS 2-based systems. It sets up the necessary configurations to ensure that the simulation can send and receive messages, services, and actions to and from ROS 2.
+4. The next node is *'ROS 2 Context'*. This node acts as a bridge between Isaac Sim and ROS 2, enabling the simulation to communicate and interact with ROS 2-based systems. It sets up the necessary configurations to ensure that the simulation can send and receive messages, services, and actions to and from ROS 2.
 
-![Image of Adding ROS 2 Content](assets/images/isaac_img_ros2_context.png)
+![Image of Adding ROS 2 Content](/assets/images/simulation/isaac_img_ros2_context.png)
 
-5. One of the most important node we add is **'Isaac Read Simulation Time'** that is designed to capture and provide access to the current simulation time within the simulation environment. This node is crucial for operations and tasks that depend on the simulation's temporal state. 
+5. One of the most important node we add is *'Isaac Read Simulation Time'* that is designed to capture and provide access to the current simulation time within the simulation environment. This node is crucial for operations and tasks that depend on the simulation's temporal state. 
 
-![Image of Adding Isaac Read Simulation Time](assets/images/isaac_img_read_sim_time.png)
+![Image of Adding Isaac Read Simulation Time](/assets/images/simulation/isaac_img_read_sim_time.png)
 
-6. Now that all the house-keeping node are added, lets add node to which compute the odometry. Isaac Sim does include a computational node to calculate odometry named **'Isaac Compute Odometry Node'**. We also need to defining an articulation root, that is essential for setting up the primary node or root component of an articulated system, which allows for the management and simulation of complex joint hierarchies and movements within the robot's structure. This setup is crucial for enabling realistic physical behaviors and interactions in the simulation environment. 
+6. Now that all the house-keeping node are added, lets add node to which compute the odometry. Isaac Sim does include a computational node to calculate odometry named *'Isaac Compute Odometry Node'*. We also need to defining an articulation root, that is essential for setting up the primary node or root component of an articulated system, which allows for the management and simulation of complex joint hierarchies and movements within the robot's structure. This setup is crucial for enabling realistic physical behaviors and interactions in the simulation environment. 
 
-![Image of Defining Articulation Root](assets/images/isaac_img_add_articulation_root.png)
+![Image of Defining Articulation Root](/assets/images/simulation/isaac_img_add_articulation_root.png)
 
-![Image of Adding Isaac Compute Odometry Node](assets/images/isaac_img_isaac_compute_odom.png)
+![Image of Adding Isaac Compute Odometry Node](/assets/images/simulation/isaac_img_isaac_compute_odom.png)
 
-7. Once we have the node computing odometry, we now will publish the odometry data. The ROS2 plugin has node for publishing the odometry data called the **'ROS2 Publish Odometry Node'**. 
+7. Once we have the node computing odometry, we now will publish the odometry data. The ROS2 plugin has node for publishing the odometry data called the *'ROS2 Publish Odometry Node'*. 
 
-![Image of Adding ROS2 Publish Odometry Node](assets/images/isaac_img_publish_odom.png)
+![Image of Adding ROS2 Publish Odometry Node](/assets/images/simulation/isaac_img_publish_odom.png)
 
-8. Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the **'ROS2 Publish Transform Tree'**. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. We also need to define all the child links for which we need to publish the transforms for. To publish transforms for the static node, we will additonally add **'ROS2 Publish Raw Transform Tree'** node, which, as the name suggest, publishes transform of static prim. 
+8. Similar to node which publishes odometry, the ROS2 plugin has nodes for publishing Transforms called the *'ROS2 Publish Transform Tree'*. Note that, this node will only publish transforms which are dynamics, essentially any prim which is not static. We also need to define all the child links for which we need to publish the transforms for. To publish transforms for the static node, we will additonally add *'ROS2 Publish Raw Transform Tree'* node, which, as the name suggest, publishes transform of static prim. 
 
-![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf_1.png)
+![Image of Adding ROS2 Publish TF](/assets/images/simulation/isaac_img_publish_tf_1.png)
 
-![Image of Adding ROS2 Publish TF](assets/images/isaac_img_publish_tf_2.png)
+![Image of Adding ROS2 Publish TF](/assets/images/simulation/isaac_img_publish_tf_2.png)
 
-![Image of Adding ROS2 Publish Static TF](assets/images/isaac_img_publish_static_tf.png)
+![Image of Adding ROS2 Publish Static TF](/assets/images/simulation/isaac_img_publish_static_tf.png)
 
 9. Awesome, now that we have our entire action graph, lets save it (in .usda format). 
 
-![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph_1.png)
+![Image of Saving Action Graph](/assets/images/simulation/isaac_img_save_action_graph_1.png)
 
-![Image of Saving Action Graph](assets/images/isaac_img_save_action_graph_2.png)
+![Image of Saving Action Graph](/assets/images/simulation/isaac_img_save_action_graph_2.png)
 
 
 With this, we've successfully established a workflow to integrate ROS 2 with Isaac Sim. Go ahead and hit the play button—listen to your GPU fans spring to life! In a future article, we'll explore how to create a launch file to automate the startup process and delve into defining an action graph programmatically.
@@ -121,4 +125,3 @@ In this article, we explored how to import a standard URDF file into Isaac Sim a
 
 ## Reference
 - [https://docs.omniverse.nvidia.com/isaacsim/latest/index.html](https://docs.omniverse.nvidia.com/isaacsim/latest/index.html)
-
