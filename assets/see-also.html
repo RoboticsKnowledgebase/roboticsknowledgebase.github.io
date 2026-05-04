@@ -1,0 +1,207 @@
+---
+permalink: /assets/see-also.json
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Per-article "See also" recommendations, derived purely from token overlap.
+  No human curation, no preprocessor — pure Liquid at GH-Pages build time.
+
+  Output: { "/wiki/cat/article/": [{"url": ..., "title": ...}, ...] }
+  Up to MAX_K entries; fewer (or zero) if no targets clear the score threshold.
+
+  Algorithm: bidirectional title matching + IDF-bucketed body overlap.
+    Phase 1   — tokenize title and body lead per article.
+    Phase 1.5 — bucket body tokens by document frequency (rare/medium/common),
+                dropping ones too rare or too generic to discriminate.
+    Phase 2   — pairwise score: title_hits × TITLE_WEIGHT + body_score, where
+                title_hits counts BOTH directions (source-title-in-target AND
+                target-title-in-source). Same-category match gets a 1.2× bonus.
+    Phase 3   — adaptive K: keep recs with score ≥ max(MIN_SCORE, top/2),
+                cap at MAX_K. Strong articles get 3–4 recs; weak get 0–2.
+
+  Hyperparameters tuned via Python ablation harness against 26 hand-curated
+  source articles (3–7 expected good recs + 2–3 hard-negatives each):
+  best config scored 92/130 on TP-2*FP, with zero hard false positives.
+{%- endcomment -%}
+
+{%- assign STOP = "the,and,for,with,this,that,from,have,has,had,can,will,would,could,should,may,might,must,does,did,doing,done,been,being,about,above,after,again,against,all,also,any,are,because,before,below,between,both,but,each,few,more,most,much,other,over,same,some,such,than,then,there,these,those,through,under,until,very,was,were,what,when,where,which,while,who,whom,whose,why,how,you,your,our,his,her,its,their,they,them,not,now,off,one,two,too,nor,yes,upon,unto,onto,into,https,http,html,com,net,org,old,new,use,used,see,seen,via,let,etc,non" | split: "," -%}
+{%- assign TITLE_WEIGHT = 7 -%}
+{%- assign MIN_SCORE = 5 -%}
+{%- assign MAX_K = 4 -%}
+{%- assign REL_THRESHOLD_NUM = 1 -%}
+{%- assign REL_THRESHOLD_DEN = 2 -%}
+{%- assign SAME_CAT_NUM = 12 -%}
+{%- assign SAME_CAT_DEN = 10 -%}
+{%- assign MIN_BODY_DF = 2 -%}
+{%- assign RARE_DF_MAX = 7 -%}
+{%- assign MEDIUM_DF_MAX = 10 -%}
+{%- assign MAX_BODY_DF = 30 -%}
+{%- assign BODY_LEAD_CHARS = 400 -%}
+
+{%- comment -%} ============================================================
+  Phase 1: tokenize title + body separately for every article in the wiki.
+  Per-article record: url@@@title@@@cat@@@|title_toks|@@@|body_toks|
+  Article separator: ###
+  Per-article tokenization is factored into _includes/see-also-tokenize.html
+  so the same logic runs for both regular `cat.children` entries and the rare
+  parent-as-page cat (e.g. "Robotics Project Guide" → master-guide.md).
+============================================================ {%- endcomment -%}
+{%- assign blob = "" -%}
+{%- for cat in site.data.navigation.wiki -%}
+  {%- if cat.title == "Overview" -%}{%- continue -%}{%- endif -%}
+
+  {%- comment -%} Parent-as-page nav entry (e.g. Robotics Project Guide → master-guide):
+    include the cat as an article only when its URL has a slug after the category
+    (/wiki/foo/bar/), not a bare category landing (/wiki/foo/) — those resolve to
+    auto-generated index pages with generic titles that pollute the recommender. {%- endcomment -%}
+  {%- if cat.url -%}
+    {%- assign cat_norm_url = cat.url | append: "/" | replace: "//", "/" -%}
+    {%- assign cat_suffix = cat_norm_url | remove_first: "/wiki/" | replace: "/", " " | strip -%}
+    {%- if cat_suffix contains " " -%}
+      {%- assign cat_page = site.pages | where: "url", cat_norm_url | first -%}
+      {%- if cat_page and cat_page.content -%}
+        {%- include see-also-tokenize.html article=cat cat_title=cat.title -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if cat.children -%}
+    {%- for child in cat.children -%}
+      {%- include see-also-tokenize.html article=child cat_title=cat.title -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign all_entries = blob | split: "###" -%}
+
+{%- comment -%}
+  Phase 1.5: bucket each unique body token by document frequency. Bucketing
+  is a Liquid-friendly stand-in for IDF weighting (no log() in Liquid). The
+  Lucene MoreLikeThis paper and the BM25 reproducibility study both find
+  binned IDF nearly indistinguishable from continuous IDF in practice.
+  Title tokens are not iterated here — they get a uniform TITLE_WEIGHT in
+  scoring. Note tok_freq counts |tok| occurrences across the whole blob
+  (title + body segments), so a body token whose word also appears in many
+  titles inherits those into its DF bucket. Hyperparameters were tuned
+  against this exact count, not against a body-only DF.
+{%- endcomment -%}
+{%- assign rare_set = "|" -%}
+{%- assign medium_set = "|" -%}
+{%- assign common_set = "|" -%}
+{%- assign global_seen = "|" -%}
+{%- for entry in all_entries -%}
+  {%- if entry.size == 0 -%}{%- continue -%}{%- endif -%}
+  {%- assign p = entry | split: "@@@" -%}
+  {%- assign body_tokens_arr = p[4] | split: "|" -%}
+  {%- for tok in body_tokens_arr -%}
+    {%- if tok.size == 0 -%}{%- continue -%}{%- endif -%}
+    {%- assign tneedle = "|" | append: tok | append: "|" -%}
+    {%- if global_seen contains tneedle -%}{%- continue -%}{%- endif -%}
+    {%- assign global_seen = global_seen | append: tok | append: "|" -%}
+    {%- assign tok_freq = blob | split: tneedle | size | minus: 1 -%}
+    {%- if tok_freq < MIN_BODY_DF or tok_freq > MAX_BODY_DF -%}{%- continue -%}{%- endif -%}
+    {%- if tok_freq <= RARE_DF_MAX -%}
+      {%- assign rare_set = rare_set | append: tok | append: "|" -%}
+    {%- elsif tok_freq <= MEDIUM_DF_MAX -%}
+      {%- assign medium_set = medium_set | append: tok | append: "|" -%}
+    {%- else -%}
+      {%- assign common_set = common_set | append: tok | append: "|" -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- comment -%}
+  Phase 2 + 3: pairwise scoring (bidirectional title + IDF-bucketed body) and
+  adaptive top-K emit per source.
+{%- endcomment -%}
+{
+{%- assign first_emit = true -%}
+{%- for source in all_entries -%}
+  {%- if source.size == 0 -%}{%- continue -%}{%- endif -%}
+  {%- assign sp = source | split: "@@@" -%}
+  {%- assign s_url = sp[0] -%}
+  {%- assign s_category = sp[2] -%}
+  {%- assign s_title_tokens = sp[3] | split: "|" -%}
+  {%- assign s_body_tokens = sp[4] | split: "|" -%}
+  {%- assign s_combined = sp[3] | append: sp[4] -%}
+
+  {%- assign scores = "" -%}
+  {%- for target in all_entries -%}
+    {%- if target.size == 0 -%}{%- continue -%}{%- endif -%}
+    {%- assign tp = target | split: "@@@" -%}
+    {%- if tp[0] == s_url -%}{%- continue -%}{%- endif -%}
+    {%- assign t_combined = tp[3] | append: tp[4] -%}
+
+    {%- comment -%} Bidirectional title matching: count source-title tokens
+      found in target AND target-title tokens found in source. Handles
+      narrow-title articles like "Pixhawk" — single largest quality lift in
+      ablation (score 78 -> 90 vs source-only). {%- endcomment -%}
+    {%- assign title_hits = 0 -%}
+    {%- for tok in s_title_tokens -%}
+      {%- if tok.size == 0 -%}{%- continue -%}{%- endif -%}
+      {%- assign needle = "|" | append: tok | append: "|" -%}
+      {%- if t_combined contains needle -%}{%- assign title_hits = title_hits | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+    {%- assign t_title_tokens = tp[3] | split: "|" -%}
+    {%- for tok in t_title_tokens -%}
+      {%- if tok.size == 0 -%}{%- continue -%}{%- endif -%}
+      {%- assign needle = "|" | append: tok | append: "|" -%}
+      {%- if s_combined contains needle -%}{%- assign title_hits = title_hits | plus: 1 -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- assign body_score = 0 -%}
+    {%- for tok in s_body_tokens -%}
+      {%- if tok.size == 0 -%}{%- continue -%}{%- endif -%}
+      {%- assign needle = "|" | append: tok | append: "|" -%}
+      {%- unless t_combined contains needle -%}{%- continue -%}{%- endunless -%}
+      {%- if rare_set contains needle -%}
+        {%- assign body_score = body_score | plus: 5 -%}
+      {%- elsif medium_set contains needle -%}
+        {%- assign body_score = body_score | plus: 2 -%}
+      {%- elsif common_set contains needle -%}
+        {%- assign body_score = body_score | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- assign score = title_hits | times: TITLE_WEIGHT | plus: body_score -%}
+    {%- if tp[2] == s_category -%}
+      {%- assign score = score | times: SAME_CAT_NUM | divided_by: SAME_CAT_DEN -%}
+    {%- endif -%}
+    {%- if score < MIN_SCORE -%}{%- continue -%}{%- endif -%}
+
+    {%- comment -%} Pad score to 4 digits so lexicographic sort orders numerically. {%- endcomment -%}
+    {%- assign padded = "0000" | append: score -%}
+    {%- assign padded = padded | slice: -4, 4 -%}
+    {%- assign scores = scores | append: padded | append: "@@@" | append: tp[0] | append: "@@@" | append: tp[1] | append: "&&&" -%}
+  {%- endfor -%}
+
+  {%- assign score_lines = scores | split: "&&&" | sort | reverse -%}
+  {%- assign rel_threshold = MIN_SCORE -%}
+  {%- assign top_str = "" -%}
+  {%- for line in score_lines -%}
+    {%- if line.size > 0 -%}{%- assign top_str = line -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if top_str.size > 0 -%}
+    {%- assign top_score = top_str | split: "@@@" | first | plus: 0 -%}
+    {%- assign half_top = top_score | times: REL_THRESHOLD_NUM | divided_by: REL_THRESHOLD_DEN -%}
+    {%- if half_top > rel_threshold -%}{%- assign rel_threshold = half_top -%}{%- endif -%}
+  {%- endif -%}
+
+  {%- unless first_emit -%},{%- endunless -%}
+  {{ s_url | jsonify }}:[
+  {%- assign emitted = 0 -%}
+  {%- for line in score_lines -%}
+    {%- if line.size == 0 -%}{%- continue -%}{%- endif -%}
+    {%- if emitted >= MAX_K -%}{%- break -%}{%- endif -%}
+    {%- assign rp = line | split: "@@@" -%}
+    {%- assign rscore = rp[0] | plus: 0 -%}
+    {%- if rscore < rel_threshold -%}{%- break -%}{%- endif -%}
+    {%- unless emitted == 0 -%},{%- endunless -%}
+    {"url":{{ rp[1] | jsonify }},"title":{{ rp[2] | jsonify }}}
+    {%- assign emitted = emitted | plus: 1 -%}
+  {%- endfor -%}
+  ]
+  {%- assign first_emit = false -%}
+{%- endfor -%}
+}
