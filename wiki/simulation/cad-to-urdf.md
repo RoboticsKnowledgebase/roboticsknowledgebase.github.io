@@ -12,6 +12,12 @@ concepts apply to other CAD tools as well. By the end, you will have a URDF
 file ready to load into a simulator like Isaac Sim or Gazebo, or into a ROS 2 
 pipeline for real robot control.
 
+## Why OnShape for URDF Export?
+
+OnShape is not the only way to generate a URDF from a CAD model. SolidWorks has the [sw2urdf](http://wiki.ros.org/sw_urdf_exporter) plugin, Fusion 360 has [fusion2urdf](https://github.com/syuntoku14/fusion2urdf), and FreeCAD has built-in support through its robot workbench. If you are already in one of those tools with a clean assembly, the native export is probably faster.
+
+OnShape is worth considering when your CAD tool lacks a maintained exporter, or when your team uses a mix of tools and you want one consistent export pipeline. Being cloud-based, anyone on the team can open the assembly in a browser without installing SolidWorks or Fusion 360, which matters when a software engineer needs to check the joint structure but does not have a CAD license. The model lives in one place, so there is no confusion over which version of the file is current. Changes are visible to everyone immediately, and the export can be triggered from any machine without moving files around first. It is also free for public documents, so there is no license to manage, and the [onshape-to-robot](https://onshape-to-robot.readthedocs.io) exporter is actively maintained and handles inertia and mesh export reliably. For teams using a mix of tools, both SolidWorks and Fusion 360 users can export to STEP and follow the same OnShape workflow from that point forward, rather than maintaining two separate export setups.
+
 ## What is a URDF?
 
 A URDF is an XML file that describes a robot's physical structure. Simulators 
