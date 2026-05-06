@@ -30,6 +30,9 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/)**
   A hands-on tutorial for spawning and controlling vehicles in the CARLA simulator. Covers connecting to the CARLA server, visualizing waypoints, spawning vehicles, and using PID controllers for motion control. Demonstrates waypoint tracking with visual aids and includes example scripts for quick implementation.
 
+- **[Creating a URDF from a CAD Model using OnShape](/wiki/simulation/cad-to-urdf/)**
+ Step-by-step instructions for generating URDFs from OnShape. Includes best practices for assembly cleanup in SolidWorks, defining revolute and prismatic joints, and fixing common mesh and coordinate transform errors.
+
 ## Resources
 
 ### General Simulation Tools
