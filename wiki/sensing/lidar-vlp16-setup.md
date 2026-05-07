@@ -227,7 +227,7 @@ Download the desktop application from [foxglove.dev/download](https://foxglove.d
 Install the Foxglove bridge for ROS 2:
 
 ```bash
-sudo apt install ros-$ROS_DISTRO$-foxglove-bridge
+sudo apt install ros-$ROS_DISTRO-foxglove-bridge
 ```
 
 ### 7.2 Launch the Bridge
