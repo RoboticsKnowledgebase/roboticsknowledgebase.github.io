@@ -35,7 +35,7 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[Interfacing with the Nvidia Orin](/wiki/common-platforms/interfacing-with-nvidia-orin/)**
   A comprehensive guide to using the Nvidia Jetson AGX Orin for robotics. Covers power delivery, GPIO pinouts, high-speed interfaces like USB and Ethernet, and debugging tools for reliable sensor integration.
 
-- **[Husky Interfacing and Communication](/wiki/common-platforms/husky_interfacing_and_communication/)**
+- **[Husky Interfacing and Communication](/wiki/common-platforms/husky-interfacing-and-communication/)**
   Discusses how to set up communication with the Clearpath Husky robot, including hardware setup and localization using GPS, IMU, and odometry.
 
 - **[Khepera 4 Robot Guide](/wiki/common-platforms/khepera4/)**

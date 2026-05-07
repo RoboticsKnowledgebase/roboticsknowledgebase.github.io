@@ -12,13 +12,13 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[Gazebo Classic Simulation of Graspable and Breakable Objects](/wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects/)**
   Details the setup of a Gazebo Classic simulator for bimanual manipulation, featuring breakable joints and robust grasping plugins.
 
-- **[Building a Light-Weight Custom Simulator](/wiki/simulation/Building-a-Light-Weight-Custom-Simulator/)**
+- **[Building a Light-Weight Custom Simulator](/wiki/simulation/building-a-light-weight-custom-simulator/)**
   Discusses the design and implementation of a minimal simulator for testing reinforcement learning algorithms. Focuses on simplicity, customizability, and minimal noise. Highlights considerations like minimizing external disturbances, reducing development effort, and maintaining a reliable architecture.
 
-- **[Design Considerations for ROS Architectures](/wiki/simulation/Design-considerations-for-ROS-architectures/)**
+- **[Design Considerations for ROS Architectures](/wiki/simulation/design-considerations-for-ros-architectures/)**
   Provides a comprehensive guide to designing efficient ROS architectures for simulation and robotics. Covers critical aspects like message dropout tolerance, latency, synchronous vs asynchronous communication, and task separation. Includes practical tips for optimizing communication and node performance in ROS-based systems.
 
-- **[NDT Matching with Autoware](/wiki/simulation/NDT-Matching-with-Autoware/)**
+- **[NDT Matching with Autoware](/wiki/simulation/ndt-matching-with-autoware/)**
   Explains the Normal Distribution Transform (NDT) for mapping and localization in autonomous driving. Includes step-by-step instructions for setting up LiDAR sensors, generating NDT maps, and performing localization. Covers hardware and software requirements, troubleshooting, and visualization techniques using Autoware and RViz.
 
 - **[Simulating Vehicles Using Autoware](/wiki/simulation/simulating-vehicle-using-autoware/)**
@@ -27,7 +27,7 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[NVIDIA Isaac Sim Setup and ROS2 Workflow](/wiki/simulation/simulation-isaacsim-setup/)**
   Provides a complete guide for installing Isaac Sim, configuring sensor modules, and integrating it with ROS 2 frameworks like Nav2 and MoveIt. Covers both local and remote (headless) installations, and demonstrates scene management and robot model imports for MRSD projects.
 
-- **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/)**
+- **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/spawning-and-controlling-vehicles-in-carla/)**
   A hands-on tutorial for spawning and controlling vehicles in the CARLA simulator. Covers connecting to the CARLA server, visualizing waypoints, spawning vehicles, and using PID controllers for motion control. Demonstrates waypoint tracking with visual aids and includes example scripts for quick implementation.
 
 ## Resources

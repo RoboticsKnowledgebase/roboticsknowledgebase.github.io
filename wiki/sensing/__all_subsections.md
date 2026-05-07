@@ -1425,7 +1425,7 @@ There are two types of NUC calibration:
 - www.flir.com/discover/professional-tools/what-is-a-non-uniformity-correction-nuc
 
 
-/wiki/sensing/trajectory_extraction_static_camera.md
+/wiki/sensing/trajectory-extraction-static-camera.md
 ---
 date: 2020-12-07
 title: Tracking vehicles using a static traffic camera

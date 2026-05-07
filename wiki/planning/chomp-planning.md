@@ -79,8 +79,8 @@ CHOMP is a highly effective local trajectory optimizer that enhances motion plan
 
 ## See Also:
 - [xarm_ros Guide](/wiki/tools/xarm-ros-guide/)
-- [MoveIt and HEBI Integration](/wiki/actuation/moveit-and-HEBI-integration/)
-- [Pure Pursuit Controller for Skid Steering](/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/)
+- [MoveIt and HEBI Integration](/wiki/actuation/moveit-and-hebi-integration/)
+- [Pure Pursuit Controller for Skid Steering](/wiki/actuation/pure-pursuit-controller-for-skid-steering-robot/)
 
 ## Further Reading
 - [CHOMP: Gradient Optimization Techniques for Efficient Motion Planning](https://homes.cs.washington.edu/~joschu/docs/chomp.pdf)

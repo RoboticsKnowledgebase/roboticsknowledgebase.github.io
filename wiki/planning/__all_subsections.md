@@ -1,4 +1,4 @@
-/wiki/planning/astar_planning_implementation_guide/
+/wiki/planning/astar-planning-implementation-guide/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances.
@@ -25,7 +25,7 @@ A* is a popular search algorithm that is guaranteed to return an optimal path, a
 - h(s) value - estimate of the cost-to-go from the current state (s) to the goal state (sgoal)
 - f(s) value - total estimated cost from the start state (sstart) to the goal state (sgoal)
 - Admissibility - h(s) is an underestimate of the true cost to goal
-- Monotonicity/Consistent - h(s) <= c(s,s’) + h(s’) for all successors s’ of s
+- Monotonicity/Consistent - $h(s) \le c(s,s') + h(s')$ for all successors $s'$ of $s$
 - Optimality - no path exists from the start to the goal with a lower cost within the constraints of the problem
 
 A* works by computing optimal g-values for all states along the search at any point in time.
@@ -244,48 +244,48 @@ There are many ways to plan a trajectory for a robot. A trajectory can be seen a
 
 The Frenet frame (also called the moving trihedron or Frenet trihedron) along a curve is a moving (right-handed) coordinate system determined by the tangent line and curvature. The frame, which locally describes one point on a curve, changes orientation along the length of the curve.
 
-More formally, the Frenet frame of a curve at a point is a triplet of three mutually [orthogonal](https://www.statisticshowto.com/orthogonal-functions/#definition) unit vectors {T, N, B}. In three-dimensions, the Frenet frame consists of [1]:
-The unit tangent vector T, which is the [unit vector](https://www.statisticshowto.com/tangent-vector-velocity/) in the direction of what is being modeled (like velocity),
-The [unit normal] (https://www.statisticshowto.com/unit-normal-vector/) N: the direction where the curve is turning. We can get the normal by taking the [derivative](https://www.statisticshowto.com/differentiate-definition/) of the tangent then dividing by its length. You can think of the normal as being the place the curve sits in [2].
-The unit binormal B = T x N, which is the cross product of the unit tangent and unit normal.
+More formally, the Frenet frame of a curve at a point is a triplet of three mutually [orthogonal](https://www.statisticshowto.com/orthogonal-functions/#definition) unit vectors $\{T, N, B\}$. In three dimensions, the Frenet frame consists of [1]:
+- The unit tangent vector $T$, which is the [unit vector](https://www.statisticshowto.com/tangent-vector-velocity/) in the direction of what is being modeled (like velocity).
+- The [unit normal](https://www.statisticshowto.com/unit-normal-vector/) vector $N$: the direction where the curve is turning. We can get the normal by taking the [derivative](https://www.statisticshowto.com/differentiate-definition/) of the tangent, then dividing by its length [2].
+- The unit binormal vector $B = T \times N$, which is the cross product of the unit tangent and unit normal.
 
-The tangent and normal unit vectors span a plane called the osculating plane at F(s). In four-dimensions, the Frenet frame contains an additional vector, the trinormal unit vector [3]. While vectors have no [origin](https://www.statisticshowto.com/calculus-definitions/cartesian-plane-quadrants-ordinate-abscissa/#origin) in space, it’s traditional with Frenet frames to think of the vectors as radiating from the point of interest.
+The tangent and normal unit vectors span a plane called the osculating plane at $F(s)$. In four dimensions, the Frenet frame contains an additional vector, the trinormal unit vector [3]. While vectors have no [origin](https://www.statisticshowto.com/calculus-definitions/cartesian-plane-quadrants-ordinate-abscissa/#origin) in space, it is traditional with Frenet frames to think of the vectors as radiating from the point of interest.
 
 More details:[here](https://fjp.at/posts/optimal-frenet/#trajectory-planning-in-the-frenet-space)
 
 ## Algorithm
 
-1. Determine the trajectory start state [x1,x2,θ,κ,v,a]
+1. Determine the trajectory start state $[x_1, x_2, \theta, \kappa, v, a]$
 The trajectory start state is obtained by evaluating the previously calculated trajectory at the prospective start state (low-level-stabilization). At system initialization and after reinitialization, the current vehicle position is used instead (high-level-stabilization).
-2. Selection of the lateral mode 
-Depending on the velocity v the time based (d(t)) or running length / arc length based (d(s)) lateral planning mode is activated. By projecting the start state onto the reference curve the the longitudinal start position s(0) is determined. The frenet state vector [s,s˙,s¨,d,d′,d′′](0) can be determined using the frenet transformation. For the time based lateral planning mode, [d˙,d¨](0)
+2. Selection of the lateral mode
+Depending on the velocity $v$, the time-based ($d(t)$) or running-length/arc-length-based ($d(s)$) lateral planning mode is activated. By projecting the start state onto the reference curve, the longitudinal start position $s(0)$ is determined. The Frenet state vector $[s,\dot{s},\ddot{s},d,d',d''](0)$ can be determined using the Frenet transformation. For the time-based lateral planning mode, $[\dot{d},\ddot{d}](0)$
 need to be calculated.
 3. Generating the lateral and longitudinal trajectories 
 Trajectories including their costs are generated for the lateral (mode dependent) as well as the longitudinal motion (velocity keeping, vehicle following / distance keeping) in the frenet space. In this stage, trajectories with high lateral accelerations with respect to the reference path can be neglected to improve the computational performance.
-4. Combining lateral and longitudinal trajectories 
-Summing the partial costs of lateral and longitudinal costs using J(d(t),s(t))=Jd(d(t))+ks⋅Js(s(t))
+4. Combining lateral and longitudinal trajectories
+Summing the partial costs of lateral and longitudinal costs using $J(d(t), s(t)) = J_d(d(t)) + k_s \cdot J_s(s(t))$
 , for all active longitudinal mode every longitudinal trajectory is combined with every lateral trajectory and transformed back to world coordinates using the reference path. The trajectories are verified if they obey physical driving limits by subsequent point wise evaluation of curvature and acceleration. This leads to a set of potentially drivable maneuvers of a specific mode in world coordinates.
 5. Static and dynamic collision check 
 Every trajectory set is evaluated with increasing total costs if static and dynamic collisions are avoided. The trajectory with the lowest cost is then selected.
 6. Longitudinal mode alternation 
-Using the sign based (in the beginning) jerk a(0),  the trajectory with the strongest decceleration or the trajectory which accelerates the least respectivel
+Using the sign based (in the beginning) jerk `a(0)`,  the trajectory with the strongest decceleration or the trajectory which accelerates the least respectivel
 
-“Frenet Coordinates”, are a way of representing position on a road in a more intuitive way than traditional (x,y) Cartesian Coordinates.
-With Frenet coordinates, we use the variables s and d to describe a vehicle’s position on the road or a reference path. The s coordinate represents distance along the road (also known as longitudinal displacement) and the d coordinate represents side-to-side position on the road (relative to the reference path), and is also known as lateral displacement.
+“Frenet Coordinates”, are a way of representing position on a road in a more intuitive way than traditional `(x,y)` Cartesian Coordinates.
+With Frenet coordinates, we use the variables `s` and `d` to describe a vehicle’s position on the road or a reference path. The `s` coordinate represents distance along the road (also known as longitudinal displacement) and the `d` coordinate represents side-to-side position on the road (relative to the reference path), and is also known as lateral displacement.
 In the following sections the advantages and disadvantages of Frenet coordinates are compared to the Cartesian coordinates.
 
 
 
-##Frenet Features
+## Frenet Features
 
-The image below[frenet path] depicts a curvy road with a Cartesian coordinate system laid on top of it, as well as a curved (continuously curved) reference path (for example the middle of the road).
+The image below ([frenet path]) depicts a curvy road with a Cartesian coordinate system laid on top of it, as well as a curved (continuously curved) reference path (for example, the middle of the road).
 
 The next image shows the same reference path together with its Frenet coordinates.
 
-The s coordinate represents the run length and starts with s = 0 at the beginning of the reference path. Lateral positions relative to the reference path are are represented with the d coordinate. Positions on the reference path are represented with d = 0. d is positive to the left of the reference path and negative on the right of it, although this depends on the convention used for the local reference frame.
-The image above[frenet path] shows that curved reference paths (such as curvy roads) are represented as straight lines on the s axis in Frenet coordinates. However, motions that do not follow the reference path exactly result in non straight motions in Frenet coordinates. Instead such motions result in an offset from the reference path and therefore the s axis, which is described with the d coordinate. The following image shows the two different representations (Cartesian vs Frenet)
+The `s` coordinate represents the run length and starts with `s = 0` at the beginning of the reference path. Lateral positions relative to the reference path are are represented with the d coordinate. Positions on the reference path are represented with `d = 0`. `d` is positive to the left of the reference path and negative on the right of it, although this depends on the convention used for the local reference frame.
+The image above ([frenet path]) shows that curved reference paths (such as curvy roads) are represented as straight lines on the $s$ axis in Frenet coordinates. However, motions that do not follow the reference path exactly result in non-straight motions in Frenet coordinates. Instead, such motions result in an offset from the reference path and therefore the $s$ axis, which is described with the $d$ coordinate. The following image shows the two different representations (Cartesian vs. Frenet).
 To use Frenet coordinates it is required to have a continouosly smooth reference path.
-The s coordinate represents the run length and starts with s = 0 at the beginning of the reference path. Lateral positions relative to the reference path are are represented with the d coordinate. Positions on the reference path are represented with d = 0. d is positive to the left of the reference path and negative on the right of it, although this depends on the convention used for the local reference frame.
+The `s` coordinate represents the run length and starts with `s = 0` at the beginning of the reference path. Lateral positions relative to the reference path are are represented with the d coordinate. Positions on the reference path are represented with `d = 0`. `d` is positive to the left of the reference path and negative on the right of it, although this depends on the convention used for the local reference frame.
 The image above shows that curved reference paths (such as curvy roads) are represented as straight lines on the s axis in Frenet coordinates. However, motions that do not follow the reference path exactly result in non straight motions in Frenet coordinates. Instead such motions result in an offset from the reference path and therefore the s axis, which is described with the d coordinate. The following image shows the two different representations (Cartesian vs Frenet)
 
 ## Reference Path 
@@ -299,21 +299,23 @@ A reference path can be represented in two different forms although for all repr
 3. Clothoid (special polynome)
 4. Polyline (single points with run length information)
 
-Clothoid
-					x(l)=c0+c1∗l
+Clothoid:
+
+$$x(l) = c_0 + c_1 l$$
 
 
 Polyline
 
 ## Transformation
 The transformation from local vehicle coordinates to Frenet coordinates is based on the relations.
-Given a point PC in the vehicle frame search for the closest point RC on the reference path. The run length of RC, which is known from the reference path points, determins the s coordinate of the transformed point PF. If the reference path is sufficiently smooth (continuously differentiable) then the vector PR→ is orthogonal to the reference path at the point RC. The signed length of PR→ determines the d coordinate of PF. The sign is positive, if PC
+Given a point $P_C$ in the vehicle frame, search for the closest point $R_C$ on the reference path. The run length of $R_C$, which is known from the reference path points, determines the $s$ coordinate of the transformed point $P_F$. If the reference path is sufficiently smooth (continuously differentiable), then the vector $\overrightarrow{PR}$ is orthogonal to the reference path at point $R_C$. The signed length of $\overrightarrow{PR}$ determines the $d$ coordinate of $P_F$. The sign is positive if $P_C$
 
-lies on the left along the run lenght of the reference path.
+lies on the left along the run length of the reference path.
 
-The procedure to transform a point PF
-from Frenet coordinates to the local vehicle frame in Cartesian coordinates is analogous. First, the point RC, which lies on the reference path at run length s. Next, a normal unit vector d⃗  is determined, which, in this point, is orthogonal to the reference path. The direction of this vector points towards positive d values and therefore points to the left with increasing run length s. Therefore, the vector d⃗  depends on the run length, which leads to:
-				PC(s,d)=RC(s)+d⋅d⃗ (s)(2)
+The procedure to transform a point $P_F$
+from Frenet coordinates to the local vehicle frame in Cartesian coordinates is analogous. First, find point $R_C$, which lies on the reference path at run length $s$. Next, a normal unit vector $\vec{d}$ is determined, which, at this point, is orthogonal to the reference path. The direction of this vector points toward positive $d$ values and therefore points to the left with increasing run length $s$. Therefore, the vector $\vec{d}$ depends on run length, which leads to:
+
+$$P_C(s,d) = R_C(s) + d \cdot \vec{d}(s)$$
 
 
 
@@ -330,18 +332,18 @@ The given article describes in detail what is Frenet Frame and how robot motion 
 
 ## Further Reading
 
-[https://fjp.at/posts/optimal-frenet/#frenet-coordinates](Frenet Cordinates)
-[https://www.mathworks.com/help/nav/ug/highway-trajectory-planning-using-frenet.html](Highway Trajectory Planning Using Frenet Reference Path)
-[https://www.researchgate.net/publication/224156269_Optimal_Trajectory_Generation_for_Dynamic_Street_Scenarios_in_a_Frenet_Frame](Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame)
+[Frenet Cordinates](https://fjp.at/posts/optimal-frenet/#frenet-coordinates)
+[Highway Trajectory Planning Using Frenet Reference Path](https://www.mathworks.com/help/nav/ug/highway-trajectory-planning-using-frenet.html)
+[Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame](https://www.researchgate.net/publication/224156269_Optimal_Trajectory_Generation_for_Dynamic_Street_Scenarios_in_a_Frenet_Frame)
 
 
 ## References
 
-[https://fjp.at/posts/optimal-frenet/#frenet-coordinates](Frenet Frame)
+[Frenet Frame](https://fjp.at/posts/optimal-frenet/#frenet-coordinates)
 
 
 
-/wiki/planning/move_base_flex/
+/wiki/planning/move-base-flex/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
@@ -718,7 +720,7 @@ This section is focused on search-based planning algorithms, and more specifical
 The A* algorithm is similar to Djikstra’s algorithm except that A* is incentivized to search towards the goal, thereby focusing the search. Specifically, the difference is an added heuristic that takes into account the cost of the node of interest to the goal node in addition to the cost to get to that node from the start node. Since A* prioritizes searching those nodes that are closer to the end goal, this typically results in faster computation time in comparison to Djikstra’s.
 
 Graph search algorithms like Djikstra’s and A* utilize a priority queue to determine which node in the graph to expand from. Graph search models use a function to assign a value to each node, and this value is used to determine which node to next expand from. The function is of the form:
-f(s) = g(s) + h(s)
+$$f(s) = g(s) + h(s)$$
 
 With g(s) being the cost of the path to the current node, and h(s) some heuristic which changes depending on which algorithm is being implemented. A typically used heuristic is euclidean distance from the current node to the goal node.
 
@@ -735,7 +737,7 @@ D* Lite’s main perk is that the algorithm is much more simple than A* or D*, a
 
 With these two estimates, we have consistency defined, where a node is **consistent** if g = rhs, and a node is inconsistent otherwise. Inconsistent nodes are then processed with higher priority, to be made consistent, based on a queue, which allows the algorithm to focus the search and order the cost updates more efficiently. The priority of a node on this list is based on:
 
-minimum(g(s), rhs(s)) + heuristic
+$$\min(g(s), rhs(s)) + \text{heuristic}$$
 
 Other Terminology:
 - A **successor node** is defined as one that has a directed edge from another node to the node
@@ -760,15 +762,15 @@ Nonholonomic systems are characterized by constraint equations involving the tim
 **Two-driving wheel robots**: The general dynamic model is given as:
 ![](/assets/images/planning/2dwr1.png)
 
-The reference point of the robot is the midpoint of the two wheels; its coordinates, with respect to a fixed frame, are denoted by (x,y) and θ is the direction of the driving wheels and ℓ is the distance between the driving wheels. By setting v=½\*(v1+v2) and ω= 1/ℓ * (v1−v2) we get the kinematic model which is expressed as the following 3-dimensional system:
+The reference point of the robot is the midpoint of the two wheels; its coordinates, with respect to a fixed frame, are denoted by $(x, y)$ and $\theta$ is the direction of the driving wheels while $\ell$ is the distance between the driving wheels. By setting $v=\frac{1}{2}(v_1+v_2)$ and $\omega=\frac{1}{\ell}(v_1-v_2)$, we get the kinematic model expressed as the following 3-dimensional system:
 
 ![](/assets/images/planning/clr2.png)
 
-**Car-like robots**: The reference point with coordinates (x,y) is the midpoint of the rear wheels. We assume that the distance between both rear and front axles is unit length. We denote w as the speed of the front wheels of the car and ζ as the angle between the front wheels and the main direction θ of the car. Moreover a mechanical constraint imposes |ζ| ≤ ζmax and consequently a minimum turning radius. The general dynamic model is given as:
+**Car-like robots**: The reference point with coordinates $(x,y)$ is the midpoint of the rear wheels. We assume that the distance between both rear and front axles is unit length. We denote $w$ as the speed of the front wheels of the car and $\zeta$ as the angle between the front wheels and the main direction $\theta$ of the car. Moreover, a mechanical constraint imposes $|\zeta| \le \zeta_{\max}$ and consequently a minimum turning radius. The general dynamic model is given as:
 
 ![](/assets/images/planning/clr1.png)
 
-A  first  simplification  consists  in  controlling w;  it  gives  a  4-dimensional system. Let us assume that we do not care about the direction of the front wheels. We may still simplify the model. By setting v=wcosζ and ω=wsinζ we get a 3-dimensional system.
+A first simplification consists in controlling $w$; it gives a 4-dimensional system. Let us assume that we do not care about the direction of the front wheels. We may still simplify the model. By setting $v=w\cos\zeta$ and $\omega=w\sin\zeta$, we get a 3-dimensional system.
 
 ![](/assets/images/planning/clr2.png)
 

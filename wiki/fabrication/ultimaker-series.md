@@ -25,7 +25,7 @@ Using the options on the left side of the screen (Circle 2), move your piece(s) 
 
 Next, check that the material in the menu indicated by Circle 3 **matches what is actually loaded into your printer**. If you don't do this, you your spliced file may not load correctly when you attempt to start the print.
 
-In the menu indicated by Circle 4, there are a variety of print options for you to explore. You can learn more about different print options and how to choose them for your specific piece by heading over to our page on [Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication_considerations_for_3D_printing/).
+In the menu indicated by Circle 4, there are a variety of print options for you to explore. You can learn more about different print options and how to choose them for your specific piece by heading over to our page on [Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication-considerations-for-3d-printing/).
 
 Finally, you can click the 'Slice' button indiciated by Circle 5 when ready. As long as your material was loaded correctly, you should not have to worry about re-setting things like print temperatures or changing the core. You *should* check those when changing the loaded material spools, however.
 
@@ -93,7 +93,7 @@ All in all, the Ultimaker Series 3 is relatively capable 3D printer that is easy
 
 ## See Also
 - [3D Printers](/wiki/fabrication/3d-printers/)
-- [Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication_considerations_for_3D_printing/)
+- [Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication-considerations-for-3d-printing/)
 
 ## Further Reading
 

@@ -108,7 +108,7 @@ Over the course of this article, we explored the key implementation details of e
 Future work can include plugins for the same that are readily integrated into popular ROS-based packages like MoveIt!, allowing users to simply tune the parameters based on their usecase and use it on a variety of diverse systems
 
 ## See Also
-- [A\* Planning Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)
+- [A\* Planning Implementation Guide](/wiki/planning/astar-planning-implementation-guide/)
 - [Planning Overview](/wiki/planning/planning-overview/)
 
 ## Further Reading

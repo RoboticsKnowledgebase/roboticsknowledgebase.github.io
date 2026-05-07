@@ -1322,7 +1322,7 @@ You can create a custom launch file to load Mapviz with a custom configuration a
     ```
 
 
-/wiki/tools/Qtcreator-ros/
+/wiki/tools/qt-creator-ros/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 

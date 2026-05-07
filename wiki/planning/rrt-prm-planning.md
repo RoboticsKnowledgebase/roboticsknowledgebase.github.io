@@ -180,7 +180,7 @@ We implemented and tested several RRT and PRM variants, extended them with plann
 
 ## See Also:
 - [Planning Overview](/wiki/planning/planning-overview/)
-- [A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)
+- [A* Implementation Guide](/wiki/planning/astar-planning-implementation-guide/)
 - [Multi Robot Navigation Stack Design](/wiki/planning/multi-robot-planning/)
 
 ## Further Reading

@@ -111,7 +111,7 @@ If you have a lot of cables in your system, and even if you did a good job at gr
 3. http://inlowsound.weebly.com/uploads/1/9/8/5/1985965/5192126_orig.jpgE
 
 
-/wiki/system-design-development/In-Loop-Testing/
+/wiki/system-design-development/in-loop-testing/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
@@ -223,18 +223,18 @@ The given article describes in detail what is in-loop testing with specific focu
 
 ## See Also:
 
-[https://github.com/shahrathin/roboticsknowledgebase.github.io/blob/master/wiki/system-design-development/subsystem-interface-modeling.md](Subsystem Interface Modeling)
+[Subsystem Interface Modeling](https://github.com/shahrathin/roboticsknowledgebase.github.io/blob/master/wiki/system-design-development/subsystem-interface-modeling.md)
 
 
 ## Further Reading
 
-[https://www.guru99.com/loop-testing.html](Loop Testing)
+[Loop Testing](https://www.guru99.com/loop-testing.html)
 
 
 
 ## References
 
-[https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation](Hardware-in-the-loop simulation)
+[Hardware-in-the-loop simulation](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)
 
 
 /wiki/system-design-development/mechanical-design/

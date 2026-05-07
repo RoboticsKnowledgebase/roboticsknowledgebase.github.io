@@ -591,7 +591,7 @@ You will soon realize that working with Lua is extremely useless as it does not 
 - [ROS](https://github.com/roboTJ101/ros_myo)
 
 
-/wiki/interfacing/ros1_ros2_bridge/
+/wiki/interfacing/ros1-ros2-bridge/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 

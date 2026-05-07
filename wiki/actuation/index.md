@@ -21,13 +21,13 @@ The "Controls & Actuation" section provides a detailed guide to implementing and
 - **[Motor Controller with Feedback](/wiki/actuation/motor-controller-feedback/)**
   Introduces motor controllers with encoder feedback, highlighting the Pololu Jrk 21v3 USB Motor Controller as an example.
 
-- **[MoveIt Motion Planning and HEBI Actuator Setup and Integration](/wiki/actuation/moveit-and-HEBI-integration/)**
+- **[MoveIt Motion Planning and HEBI Actuator Setup and Integration](/wiki/actuation/moveit-and-hebi-integration/)**
   Outlines using MoveIt in ROS for robotic motion planning and integrating it with HEBI actuators for hardware execution.
 
 - **[PID Control on Arduino](/wiki/actuation/pid-control-arduino/)**
   Explains implementing PID control on Arduino platforms, including tips for tuning and integrating Kalman filters for noisy sensors.
 
-- **[Pure-Pursuit Based Controller for Skid Steering Robots](/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/)**
+- **[Pure-Pursuit Based Controller for Skid Steering Robots](/wiki/actuation/pure-pursuit-controller-for-skid-steering-robot/)**
   Covers the Pure-Pursuit algorithm for trajectory tracking in skid-steering robots, including implementation steps and constraints.
 
 - **[Task Prioritization Control for Advanced Manipulator Control](/wiki/actuation/task-prioritization-control/)**

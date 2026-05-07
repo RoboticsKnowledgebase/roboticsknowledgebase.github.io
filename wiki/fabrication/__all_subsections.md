@@ -142,7 +142,7 @@ After the build plate comes to rest, apply glue on it covering the area that is 
 After the print has completed, wait for some time so that the heated plate can cool down. After the cool down, remove the build plate carefully from the Cube Pro and run the part and the plate under water (preferably hot). Water dissolves the glue and allows easier removal of part. You might need to use a chisel to remove you part (depends on the material, print pattern and the amount of glue you have used). After removing the part, clean the part and the plate using paper towels. Also remove and stray chips that might have been left during the part removal on the plate so that you and others have a smooth surface for the next print.
 
 
-/wiki/fabrication/fabrication_considerations_for_3D_printing/
+/wiki/fabrication/fabrication-considerations-for-3d-printing/
 ---
 date: 2019-05-16
 title: Fabrication Considerations for 3D printing
@@ -400,7 +400,7 @@ It is important to keep in mind what the purpose of the prototype is. A good rul
 The important thing to keep in mind that rapid prototyping does is that it helps you to test and fail early in your design process. Quickly developing systems and testing them allows you to understand the failure modes and work towards eliminating those. Faster you develop and test, more time you have to build a robust and fail proof system. Ra
 
 
-/wiki/fabrication/series-A-pro/
+/wiki/fabrication/series-a-pro/
 ---
 date: 2017-12-16
 title: Series A Pro

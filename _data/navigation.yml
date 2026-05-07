@@ -24,7 +24,7 @@ wiki:
       - title: Subsystem Interface Modeling
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
-        url: /wiki/system-design-development/In-Loop-Testing/
+        url: /wiki/system-design-development/in-loop-testing/
       - title: How to design a robotic state machine
         url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
   - title: Project Management
@@ -50,7 +50,7 @@ wiki:
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
       - title: Husky Interfacing Procedure
-        url: /wiki/common-platforms/husky_interfacing_and_communication/
+        url: /wiki/common-platforms/husky-interfacing-and-communication/
       - title: Interfacing with the Nvidia Orin
         url: /wiki/common-platforms/interfacing-with-nvidia-orin/
       - title: Khepera 4
@@ -141,7 +141,7 @@ wiki:
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
       - title: Tracking vehicles using a static traffic camera
-        url: /wiki/sensing/trajectory_extraction_static_camera/
+        url: /wiki/sensing/trajectory-extraction-static-camera/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -156,9 +156,9 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+        url: /wiki/actuation/pure-pursuit-controller-for-skid-steering-robot.md
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-HEBI-integration.md
+        url: /wiki/actuation/moveit-and-hebi-integration.md
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
@@ -198,7 +198,7 @@ wiki:
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
-        url: /wiki/state-estimation/Cartographer-ROS-Integration/
+        url: /wiki/state-estimation/cartographer-ros-integration/
       - title: External Position Estimation using OptiTrack Motion Capture System
         url: /wiki/state-estimation/optitrack-motion-capture/
   - title: Programming
@@ -239,13 +239,13 @@ wiki:
     url: /wiki/simulation/
     children:
       - title: Building a Light Weight Custom Simulator
-        url: /wiki/simulation/Building-a-Light-Weight-Custom-Simulator/
+        url: /wiki/simulation/building-a-light-weight-custom-simulator/
       - title: Design considerations for ROS architectures
         url: /wiki/simulation/Design-considerations-for-ROS-architectures
       - title: Spawning and Controlling Vehicles in CARLA
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
-        url: /wiki/simulation/NDT-Matching-with-Autoware/
+        url: /wiki/simulation/ndt-matching-with-autoware/
       - title: An Introduction to Isaac Sim
         url: /wiki/simulation/an-introduction-to-isaac-sim/
       - title: Simulating UGVs in Unity
@@ -260,7 +260,7 @@ wiki:
       - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
-        url: /wiki/interfacing/ros1_ros2_bridge/
+        url: /wiki/interfacing/ros1-ros2-bridge/
   - title: Computing
     url: /wiki/computing/
     children:
@@ -290,7 +290,7 @@ wiki:
       - title: CubePro
         url: /wiki/fabrication/cube-pro/
       - title: Fabrication Considerations for 3D printing
-        url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
+        url: /wiki/fabrication/fabrication-considerations-for-3d-printing/
       - title: Machining & Prototyping
         url: /wiki/fabrication/machining-prototyping/
       - title: MakerBot Replicator 2x
@@ -300,7 +300,7 @@ wiki:
       - title: Rapid Prototyping
         url: /wiki/fabrication/rapid-prototyping/
       - title: Series A Pro Printer
-        url: /wiki/fabrication/series-A-pro/
+        url: /wiki/fabrication/series-a-pro/
       - title: Sheet Metal Fabrication
         url: /wiki/fabrication/sheet-metal-guidelines/
       - title: Soldering
@@ -346,7 +346,7 @@ wiki:
       - title: Code Editors - Introduction to VS Code and Vim
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
-        url: /wiki/tools/Qtcreator-ros/
+        url: /wiki/tools/qt-creator-ros/
       - title: Tutorial on Using USB Compute Sticks
         url: /wiki/tools/usb-compute-sticks/
   - title: Datasets
@@ -362,7 +362,7 @@ wiki:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
-        url: /wiki/planning/astar_planning_implementation_guide/
+        url: /wiki/planning/astar-planning-implementation-guide/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates

@@ -93,7 +93,7 @@ Here is a sample launch file. Generally you can leave many parameters at their d
 Best way to tune these parameters is to record a ROS bag file, with odometry and laser scan data, and play it back while tuning AMCL and visualizing it on RViz. This helps in tracking the performance based on the changes being made on a fixed data-set.
 
 
-/wiki/state-estimation/Cartographer-ROS-Integration/
+/wiki/state-estimation/cartographer-ros-integration/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
@@ -299,7 +299,7 @@ As an important note, ultrasonic pulses are harmful to human hearing over an ext
 
 ### Robotic Total Stations
 
-Total stations have an extended heritage in civil engineering, where they have been used to precisely survey worksites since the 1970s. The total station sends beams of light directly to a glass reflective prism, and uses the time-of-flight properties of the beam to measure distances. The robotic total station tracks it's calibration orientaiton to high precision, such that the measured distance can be converted into a high-precision 3D position mesaurement. Total stations, depending on the prism type and other factors, can accurate track with in millimeter range at up to 3.5km [Leica-Geosystems](file:///home/john/Downloads/Leica_Viva_TS16_DS-2.pdf).
+Total stations have an extended heritage in civil engineering, where they have been used to precisely survey worksites since the 1970s. The total station sends beams of light directly to a glass reflective prism, and uses the time-of-flight properties of the beam to measure distances. The robotic total station tracks it's calibration orientaiton to high precision, such that the measured distance can be converted into a high-precision 3D position mesaurement. Total stations, depending on the prism type and other factors, can accurate track with in millimeter range at up to 3.5km.
 
 ![Example usage of a Total Station in the Field](/assets/images/state-estimation/leica_field_image.jpg)
 [Source](https://leica-geosystems.com/)
@@ -314,7 +314,7 @@ When considering external referencing positioning systems, it's important to con
 - What are the accuracy and precision requirements?
 
 
-/wiki/state-estimation/OculusPrimeNavigation/
+/wiki/state-estimation/oculus-prime-navigation/
 ---
 date: 2017-08-15
 title: Oculus Prime Navigation

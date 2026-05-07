@@ -1,4 +1,4 @@
-/wiki/simulation/Building-a-Light-Weight-Custom-Simulator/
+/wiki/simulation/building-a-light-weight-custom-simulator/
 ---
 date: 2020-05-11
 title: Building a Light Weight Custom Simulator
@@ -38,7 +38,7 @@ Since this simulator is meant to test early stage implementation, its developmen
 The purpose of this simulator is to test other algorithms, and thus it should not take longer to debug than the system to be tested. Most of the time, simpler code structures are more reliable than complex ones, and especially multi-processing structures are the hardest to debug.
 
 
-/wiki/simulation/Design-considerations-for-ROS-architectures/
+/wiki/simulation/design-considerations-for-ros-architectures/
 ---
 date: 2020-05-11
 title: Design considerations for ROS Architectures
@@ -90,7 +90,7 @@ Asynchronous communication is more practical and useful in real-time systems. Sy
 In general, separation of code into modular components is recommended for clarity and the cleanliness of our development process. This rule of thumb is not the best idea when applied to ROS nodes. If nodes, which can be merged are split, for the sake of keeping code modular and clean, we simultaneously pay a price in communication delays. It is better to merge the nodes and keep them modular by maintaining classes and importing them into one node. Separate the tasks only if you feel those tasks can be performed faster and concurrently if it was given another core of the CPU.
 
 
-/wiki/simulation/NDT-Matching-with-Autoware/
+/wiki/simulation/ndt-matching-with-autoware/
 ---
 date: 2020-05-11
 title: NDT Matching with Autoware
@@ -260,7 +260,7 @@ Now you can spawn a custom vehicle with a customed sensor stack in simulation. Y
 Read the Autoware documentation from [Autoware Documentation](https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/)
 
 
-/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/
+/wiki/simulation/spawning-and-controlling-vehicles-in-carla/
 ---
 date: 2020-04-10
 title: Spawning and Controlling Vehicles in CARLA

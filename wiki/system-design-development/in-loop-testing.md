@@ -1,15 +1,7 @@
 ---
-# Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
-# You should set the date the article was last updated like this:
-date: 2022-04-29 # YYYY-MM-DD
-# This will be displayed at the bottom of the article
-# You should set the article's title:
+date: 2022-04-29
 title: Hardware-in-Loop and Software-in-Loop Testing
-# The 'title' is automatically displayed at the top of the page
-# and used in other parts of the site.
 ---
-
 
 Hardware-in-the-loop (HIL) testing is a test methodology that can be used throughout the development of real-time embedded controllers to reduce development time and improve the effectiveness of testing. As the complexity of electronic control units (ECUs) increases, the number of combinations of tests required to ensure correct functionality and response increases exponentially.
 
@@ -23,8 +15,7 @@ The term "software-in-the-loop testing", or SIL testing, is used to describe a t
 
 Primitive techniques for collision and lane change avoidance are being replaced with advanced drive assistance systems (ADAS). These new systems introduce new design and test challenges. Modern ADAS architectures combine complex sensing, processing, and algorithmic technologies into the what will ultimately become the guts of autonomous vehicles. As ADASs evolve from simple collision-avoidance systems to fully autonomous vehicles, they demand sensing and computing technologies that are complex. For example, consider the sensing technology on the Tesla Model S, which combines information from eight cameras and 12 ultrasonic sensors as part of its autopilot technology. Many experts are claiming that the 2018 Audi A8 is the first car to hit Level 3 autonomous operation. At speeds up to 37 mph, the A8 will start, accelerate, steer and brake on roads with a central barrier without help from the driver. The car contains 12 ultrasonic sensors on the front, sides, and rear, four 360� cameras on the front, rear and side mirrors, a long-range radar and laser scanner at the front, a front camera at the top of the windscreen and a mid-range radar at each corner. 
 As a result, autonomous vehicles employ significantly more complex processing technologies and generate more data than ever before. As an example, the Tesla Model S contains 62 microprocessors � more the three times the number of moving parts in the vehicle. In addition, Intel recently estimated that tomorrow�s autonomous vehicles will produce four terabytes of data every second. Making sense of all this data is a significant challenge � and engineers have experimented with everything from simple PID loops to deep neural networks to improve autonomous navigation. 
-This is the reason why we need Hardware-in-Loop and Software-in-Loop Testing and the importance of this has increased its importance more
-
+This is the reason why we need Hardware-in-Loop and Software-in-Loop Testing and the importance of this has increased its importance more.
 
 Increasingly complex ADAS technology makes a lot of demands on test regimes. In particular, hardware-in-the-loop test methods, long used in developing engine and vehicle dynamics controllers, are being adapted to ADAS setups. 
 Hardware-in-the-loop testing offers a few important advantages over live road testing. Most notably, a HIL setup can help you understand how hardware will perform in the real world, without having to take it outdoors.
@@ -34,7 +25,6 @@ Hardware-in-the-loop testing offers a few important advantages over live road te
 - Assess different hardware and sensor configurations earlier in the development process
 - Build a repeatable test process
 - Test weather or time-dependent edge cases at any time
-
 
 ## Hardware-in-Loop
 
@@ -93,10 +83,7 @@ In the case of running the simulation on an FPGA instead of an embedded processo
 
 https://www.mathworks.com/help/hdlverifier/ug/fpga-in-the-loop-fil-simulation.html
 
-
-
 ## In-Loop Testing and V-Loop Model
-
 
 The V model is frequently used in the automotive industry to depict the relationships of vehicle-in-the-loop, hardware-in-the-loop, software-in-the-loop, and model-in-the-loop methods. Stages depicted on the left have a corresponding testing counterpart on the right. MiL settings test a model of the functions to be developed. MiL is applied in early stages to verify basic decisions about architecture and design. SiL setups test the functions of the program code complied for the target ECU but without including real hardware. HiL methods verify and validate the software in the physical target ECUs. ViL tests replace the vehicle simulation and most of the virtual ECUs with a real vehicle. The simulated parts of the environment are injected into the vehicle sensors or ECUs.
 
@@ -106,20 +93,14 @@ Advanced systems like autonomous vehicles are quickly rewriting the rules for ho
 
 The given article describes in detail what is in-loop testing with specific focus on ADAS as usecase. The importance and relevance of in-loop testing with V-model in systems engineering is also highlighted in the given model. 
 
-
 ## See Also:
 
-[https://github.com/shahrathin/roboticsknowledgebase.github.io/blob/master/wiki/system-design-development/subsystem-interface-modeling.md](Subsystem Interface Modeling)
-
+[Subsystem Interface Modeling](https://github.com/shahrathin/roboticsknowledgebase.github.io/blob/master/wiki/system-design-development/subsystem-interface-modeling.md)
 
 ## Further Reading
 
-[https://www.guru99.com/loop-testing.html](Loop Testing)
-
-
+[Loop Testing](https://www.guru99.com/loop-testing.html)
 
 ## References
 
-[https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation](Hardware-in-the-loop simulation)
-
-
+[Hardware-in-the-loop simulation](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)

@@ -225,7 +225,7 @@ These resources provide step-by-step instructions and examples to help users eff
 - **[TurtleBot in ROS2](https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Turtlebot.html):** A beginner-friendly guide to getting started with TurtleBot and ROS2.
 - **[ROSbot 2.0 Documentation](https://husarion.com/manuals/rosbot/):** Detailed manuals and tutorials for operating and programming ROSbot.
 - **[F1Tenth Build Documentation](https://f1tenth.readthedocs.io/):** Step-by-step instructions for building and programming the F1Tenth autonomous racing car.
-- **[F1Tenth GitHub Repository]((https://github.com/f1tenth)):** Access to the open-source codebase and community contributions for the F1Tenth platform.
+- **[F1Tenth GitHub Repository](https://github.com/f1tenth):** Access to the open-source codebase and community contributions for the F1Tenth platform.
 
 
 <!-- ==================================================================================== -->

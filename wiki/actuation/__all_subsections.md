@@ -439,7 +439,7 @@ In most of the applications for a DC geared motor speed control or position cont
 In order to use feedback control, we need information about the state of the motor. This is achieved through the use of encoders mounted on the motor shaft. Typically, data from this encoder is fed into a microcontroller, such as an Arduino. The microcontroller would need to have a code for PID control. Another easier option would be to use a motor controller which has the ability to read data from the encoder. One such controller is Pololu Jrk 21v3 USB Motor Controller with Feedback. More details about this component can be found [here](https://www.pololu.com/product/1392.).
 
 
-/wiki/actuation/moveit-and-HEBI-integration/
+/wiki/actuation/moveit-and-hebi-integration/
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
 # overwritten except in special circumstances. 
@@ -709,7 +709,7 @@ If your sensor readings are very noise you might want to consider adding a Kalma
 Finally, you can write your own PID software using [this guide](http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/). You might want to do this if you want to add custom features or just want to learn more about controls. Only recommended for advanced users.
 
 
-/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/
+/wiki/actuation/pure-pursuit-controller-for-skid-steering-robot/
 ---
 date: 2020-04-10
 Title: Pure-Pursuit based Controller for Skid Steering Robot
