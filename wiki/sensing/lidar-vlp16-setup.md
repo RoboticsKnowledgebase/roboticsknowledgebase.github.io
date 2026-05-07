@@ -149,7 +149,7 @@ Install the Velodyne driver packages from the ROS 2 apt repository:
 
 ```bash
 sudo apt update
-sudo apt install ros-$ROS_DISTRO$-velodyne*
+sudo apt install ros-$ROS_DISTRO-velodyne*
 ```
 
 This installs three packages:
