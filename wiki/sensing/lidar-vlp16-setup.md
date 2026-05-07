@@ -234,7 +234,7 @@ sudo apt install ros-$ROS_DISTRO-foxglove-bridge
 
 With your Velodyne driver already running in one terminal, open a second terminal and start the bridge:
 
-```bash
+source /opt/ros/$ROS_DISTRO/setup.bash
 source /opt/ros/$ROS_DISTRO$/setup.bash
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 ```
