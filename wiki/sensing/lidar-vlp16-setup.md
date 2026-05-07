@@ -160,7 +160,7 @@ This installs three packages:
 Source your ROS 2 environment (add to `~/.bashrc` if you haven't already):
 
 ```bash
-source /opt/ros/$ROS_DISTRO$/setup.bash
+source /opt/ros/$ROS_DISTRO/setup.bash
 ```
 
 ---
