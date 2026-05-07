@@ -83,6 +83,9 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[DWM1001 UltraWideband Positioning System](/wiki/sensing/ultrawideband-beacon-positioning/):**
   Covers the setup and calibration of the DWM1001 UWB system for accurate indoor positioning.
 
+- **[Velodyne VLP-16 LiDAR Setup Guide](/wiki/sensing/lidar-vlp16-setup/):**
+  Covers VLP-16 setup, including static IP configuration, driver installation, point cloud visualization in RViz2 and Foxglove Studio, and bag recording for data replay.
+
 ### Resources
 
 - [Adafruit GPS](https://www.adafruit.com/product/746)  
