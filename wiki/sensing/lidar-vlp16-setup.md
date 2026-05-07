@@ -309,16 +309,16 @@ This prints the recording duration, number of messages per topic, and storage fo
 ## Summary
 
 This tutorial covered VLP-16 setup: hardware connection, static IP configuration, ROS 2 driver setup, and point cloud visualization. 
-
-## See Also
-- [Point Cloud Library (PCL), 3D Sensors and Applications](https://roboticsknowledgebase.com/wiki/sensing/pcl/)
+- [Point Cloud Library (PCL), 3D Sensors and Applications](/wiki/sensing/pcl/)
   — Next step after getting the sensor running: processing and filtering the point cloud data in your pipeline.
-- [Cartographer SLAM ROS Integration](https://roboticsknowledgebase.com/wiki/state-estimation/Cartographer-ROS-Integration/)
+- [Cartographer SLAM ROS Integration](/wiki/state-estimation/Cartographer-ROS-Integration/)
   — A LiDAR-based SLAM algorithm that consumes `/velodyne_points` directly for map building and localization.
-- [ROS Mapping and Localization](https://roboticsknowledgebase.com/wiki/common-platforms/ros/ros-mapping-localization/)
+- [ROS Mapping and Localization](/wiki/common-platforms/ros/ros-mapping-localization/)
   — Overview of ROS mapping packages (gmapping, Hector Mapping) compatible with LiDAR data.
-- [ROS 2 Humble Intra-Process Communication Bag Recorder](https://roboticsknowledgebase.com/wiki/tools/ros2-humble-ipc-recorder/)
+- [ROS 2 Humble Intra-Process Communication Bag Recorder](/wiki/tools/ros2-humble-ipc-recorder/)
   — Optimized bag recording for high-bandwidth sensors like LiDAR, reducing CPU overhead vs. standard `ros2 bag record`.
+- [Stream Rviz Visualizations as Images](/wiki/tools/stream-rviz/)
+  — How to stream your RViz2 point cloud view as an image topic, useful for remote monitoring or logging.
 - [Stream Rviz Visualizations as Images](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/)
   — How to stream your RViz2 point cloud view as an image topic, useful for remote monitoring or logging.
 
