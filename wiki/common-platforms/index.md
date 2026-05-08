@@ -26,6 +26,9 @@ We encourage contributions to further enhance the knowledge base in this section
 - **[DJI Drone Breakdown for Technical Projects](/wiki/common-platforms/dji-drone-breakdown-for-technical-projects/)**
   Explores the advantages and limitations of DJI drones in research projects. Includes information on flight modes, GPS dependencies, and practical tips for successful drone operations.
 
+- **[Franka Emika Panda](/wiki/common-platforms/franka-emika-panda/)**
+  A guide to the Franka Emika Panda arm. Covers the layered software architecture, critical safety protocols and system-specific procedures.
+  
 - **[Outdoor UAV Navigation with DJI SDK](/wiki/common-platforms/dji-sdk/)**
   An introduction to using DJI's SDK for UAV navigation. Includes insights into coordinate systems, compass usage, and waypoint navigation.
 
@@ -103,6 +106,10 @@ Here is a compiled list of external resources referenced in the subsections:
    - [SwiftROS2 Framework](https://github.com/strapsai/swift-ros2)
    - [Fast RTPS Documentation](https://fast-dds.docs.eprosima.com/en/latest/)
    - [Apple SwiftUI Documentation](https://developer.apple.com/documentation/swiftui)
+
+11. **Franka Emika Panda**
+   - [Franka World and Desktop Documentation](https://frankarobotics.github.io/)
+   - [FrankaPy Documentation](https://iamlab-cmu.github.io/frankapy/index.html)
 
 ## Development Needs
 We seek contributions in the following areas:
