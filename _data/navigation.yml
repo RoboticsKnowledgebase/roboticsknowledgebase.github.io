@@ -119,6 +119,8 @@ wiki:
         url: /wiki/common-platforms/configure-vscode-for-ros2/
       - title: Building ROS2 Custom Packages
         url: /wiki/common-platforms/ros/ros2-custom-package/
+      - title: Franka Emika Panda
+        url: /wiki/common-platforms/franka-emika-panda/
   - title: Sensing
     url: /wiki/sensing/
     children:
