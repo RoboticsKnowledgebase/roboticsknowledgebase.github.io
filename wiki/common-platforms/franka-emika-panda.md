@@ -2,92 +2,58 @@
 date: 2026-05-08 # YYYY-MM-DD
 title: Franka Emika Panda
 ---
-This template acts as a tutorial on writing articles for the Robotics Knowledgebase. In it we will cover article structure, basic syntax, and other useful hints. Every tutorial and article should start with a proper introduction.
+The Franka Emika Panda has quickly become one of the most influential research robot arms in modern robotics. Over the last few years, it has appeared everywhere from imitation learning papers and reinforcement learning benchmarks to manipulation research labs and startup prototypes. Its combination of high-quality torque control, integrated force sensing, safety-oriented design and comparatively low cost made it one of the default manipulators for academic robotics research.
 
-This goes above the first subheading. The first 100 words are used as an excerpt on the Wiki's Index. No images, HTML, or special formating should be used in this section as it won't be displayed properly.
+With the platform now effectively end-of-life (EOL) and Franka Robotics shifting focus toward newer products and enterprise solutions, the once-active ecosystem around the Panda has become fragmented. A large amount of useful documentation exists only across scattered GitHub repositories, outdated tutorials, archived forum posts, etc. Even simple tasks can become frustrating without sufficient background context.
 
-If you're writing a tutorial, use this section to specify what the reader will be able to accomplish and the tools you will be using. If you're writing an article, this section should be used to encapsulate the topic covered. Use Wikipedia for inspiration on how to write a proper introduction to a topic.
+This article aims to consolidate the essential concepts needed to understand and operate the Franka Panda today. Rather than focusing purely on theory, the goal is to bridge the gap between the robot’s low-level architecture and practical modern control frameworks such as FrankaPy:-
 
-In both cases, tell them what you're going to say, use the sections below to say it, then summarize at the end (with suggestions for further study).
+## Franka Emika Panda software stack
 
-## First subheading
-Use this section to cover important terms and information useful to completing the tutorial or understanding the topic addressed. Don't be afraid to include to other wiki entries that would be useful for what you intend to cover. Notice that there are two \#'s used for subheadings; that's the minimum. Each additional sublevel will have an added \#. It's strongly recommended that you create and work from an outline.
+1. **User Code & High-Level Wrappers (e.g. FrankaPy)** - This is where the user typically writes application logic. Instead of managing real-time loops and complex C++ pointers, the user can specify commands using high-level APIs. Libraries like FrankaPy act as the client-side interface, abstracting away the math.
 
-This section covers the basic syntax and some rules of thumb for writing.
+2. **Middleware & State Management (ROS / franka_ros / franka-interface)** - This middle layer translates discrete high-level commands into continuous trajectories and manages state machines. `franka_ros` provides the actual controllers that handle gravity compensation, joint limits and collision behavior, exposing them as ROS topics and services.
 
-### Basic syntax
-A line in between create a separate paragraph. *This is italicized.* **This is bold.** Here is [a link](/). If you want to display the URL, you can do it like this <http://ri.cmu.edu/>.
+3. **The Low-Level Driver (libfranka)** - This is the official C++ library provided by the manufacturer. It sits at the core of the workstation and calculates the raw joint torques, positions or velocities. Crucially, running `libfranka` reliably requires a computer configured with a Real-Time Linux Kernel (PREEMPT_RT) to guarantee a strict 1 kHz (1ms) control loop without interruption.
 
-> This is a note. Use it to reinforce important points, especially potential show stoppers for your readers. It is also appropriate to use for long quotes from other texts.
+4. **The Network Bridge (Franka Control Interface - FCI)** - `libfranka` communicates with the robot's external Control Box over a dedicated Ethernet cable using UDP. The FCI is the feature that enables this rapid, bi-directional communication at 1000 packets per second.
+
+5. **Hardware (Robot Controller & Arm)** - The Control Box receives the digital signals, translates them into electrical currents for the motors in the Panda's joints and continuously reads back high-resolution joint states, returning them up the stack. 
 
 
-#### Bullet points and numbered lists
-Here are some hints on writing (in no particular order):
-- Focus on application knowledge.
-  - Write tutorials to achieve a specific outcome.
-  - Relay theory in an intuitive way (especially if you initially struggled).
-    - It is likely that others are confused in the same way you were. They will benefit from your perspective.
-  - You do not need to be an expert to produce useful content.
-  - Document procedures as you learn them. You or others may refine them later.
-- Use a professional tone.
-  - Be non-partisan.
-    - Characterize technology and practices in a way that assists the reader to make intelligent decisions.
-    - When in doubt, use the SVOR (Strengths, Vulnerabilities, Opportunities, and Risks) framework.
-  - Personal opinions have no place in the Wiki. Do not use "I." Only use "we" when referring to the contributors and editors of the Robotics Knowledgebase. You may "you" when giving instructions in tutorials.
-- Use American English (for now).
-  - We made add support for other languages in the future.
-- The Robotics Knowledgebase is still evolving. We are using Jekyll and GitHub Pages in and a novel way and are always looking for contributors' input.
+### Hardware Configuration and Safety Protocols
 
-Entries in the Wiki should follow this format:
-1. Excerpt introducing the entry's contents.
-  - Be sure to specify if it is a tutorial or an article.
-  - Remember that the first 100 words get used else where. A well written excerpt ensures that your entry gets read.
-2. The content of your entry.
-3. Summary.
-4. See Also Links (relevant articles in the Wiki).
-5. Further Reading (relevant articles on other sites).
-6. References.
+When operating the physical hardware, operators must remain clear of the table workspace and maintain constant access to the emergency stop at all times.
 
-#### Code snippets
-There's also a lot of support for displaying code. You can do it inline like `this`. You should also use the inline code syntax for `filenames` and `ROS_node_names`.
+#### State Management via Indicator Lights
+The robot's current operational state is communicated through the LED indicator on the base:-
 
-Larger chunks of code should use this format:
-```
-def recover_msg(msg):
+* **Yellow (Locked):** The robot's joints are physically locked, and it cannot be moved. Unlocking requires accessing the Franka web interface.
+* **White (Manual Mode):** Programmatic control is disabled. The robot can be safely guided by hand by pressing the grey buttons near the robot hand. This mode is achieved by pressing down on the e-stop.
+* **Blue (Program Mode):** The robot is active and listening for programmatic commands. Manual movement is disabled. This state is achieved by twisting and releasing the e-stop.
+* **Pink (Minor Error):** Indicates an attempt to manually force the robot while it was active in Blue mode. Resolve this by pressing down on the e-stop to return the robot to Manual mode.
+* **Red (Critical Error):** Triggered by a significant collision. Requires a full restart to recover and move the robot again.
 
-        // Good coders comment their code for others.
+#### Manual Manipulation (Guide Mode)
+Very useful for bringing the robot back to safe configurations:-
+1. Hit the emergency stop button to transition the robot to Manual (white) mode.
+2. Gently squeeze the opposing grey buttons on the wrist flange. Note: These are deadman switches; if you press too firmly, it will stop.
+3. Reposition the arm. The required force should be minimal, similar to holding a cup of water.
+4. Release the wrist buttons and twist the e-stop button to re-engage Blue mode.
 
-        pw = ProtocolWrapper()
+#### System Initialization and Shutdown Sequence
+**Startup Protocol:**
+1. Flip the ON switch on the Franka Control Interface. Turn on both the Control PC and the User PC.
+2. SSH onto the Control PC from the User PC (`ssh -X student@iam-<name>`).
+3. Launch Google Chrome in the terminal and navigate to `172.16.0.2` to access the web interface.
+4. Press "Click to unlock" to release the joints. The robot is ready to receive commands once the indicator lights turn blue.
 
-        // Explanation.
-
-        if rec_crc != calc_crc:
-            return None
-```
-This would be a good spot further explain you code snippet. Break it down for the user so they understand what is going on.
-
-#### LaTex Math Support
-Here is an example MathJax inline rendering $ \phi(x\|y) $ (note the additional escape for using \|), and here is a block rendering:
-$$ \frac{1}{n^{2}} $$
-
-#### Images and Video
-Images and embedded video are supported.
-
-![Put a relevant caption here](/assets/images/images_Hk47portrait-298x300.jpg)
-
-{% include video id="8P9geWwi9e0" provider="youtube" %}
-
-{% include video id="148982525" provider="vimeo" %}
-
-The video id can be found at the end of the URL. In this case, the URLs were
-`https://www.youtube.com/watch?v=8P9geWwi9e0`
-& `https://vimeo.com/148982525`.
-
-## Summary
-Use this space to reinforce key points and to suggest next steps for your readers.
-
-## See Also:
-- Links to relevant material within the Robotics Knowledgebase go here.
+**Shutdown Protocol:**
+Hardware must be reliably returned to a known state. 
+1. Reset the robot to its home position.
+2. Close the terminals related to the Control PC to shut off the remote server.
+3. Execute a shutdown via the web interface menu on the Control PC.
+4. Wait a full minute for the robot to shutdown before flipping the physical switch on the FCI.
 
 ## Further Reading
 - Links to articles of interest outside the Wiki (that are not references) go here.
