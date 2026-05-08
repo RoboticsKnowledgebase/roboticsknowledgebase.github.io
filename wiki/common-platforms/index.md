@@ -108,7 +108,6 @@ Here is a compiled list of external resources referenced in the subsections:
    - [Apple SwiftUI Documentation](https://developer.apple.com/documentation/swiftui)
 
 11. **Franka Emika Panda**
-   - [Franka World and Desktop Documentation](https://frankarobotics.github.io/)
    - [FrankaPy Documentation](https://iamlab-cmu.github.io/frankapy/index.html)
 
 ## Development Needs
