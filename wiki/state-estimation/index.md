@@ -18,7 +18,7 @@ The "State Estimation" section provides a comprehensive understanding of how to 
   - Application to localization with a predefined map.
   - Configuring and tuning the ROS AMCL package.
   
-- **[Cartographer ROS Integration](/wiki/state-estimation/Cartographer-ROS-Integration/)**
+- **[Cartographer ROS Integration](/wiki/state-estimation/cartographer-ros-integration/)**
   Details the integration of Google Cartographer's SLAM algorithm with ROS for 2D mapping. Discusses the configuration of LiDAR, IMU, and odometry inputs, as well as custom inflation layers for navigation.
   - Sensor compatibility: LiDAR, IMU, odometry.
   - Transform preparation and costmap integration for navigation.
@@ -29,7 +29,7 @@ The "State Estimation" section provides a comprehensive understanding of how to 
   - Comparison of different external systems with pros and cons.
   - Applications in uniform and dynamic environments.
 
-- **[Oculus Prime Navigation](/wiki/state-estimation/OculusPrimeNavigation/)**
+- **[Oculus Prime Navigation](/wiki/state-estimation/oculus-prime-navigation/)**
   Covers waypoint navigation techniques for the Oculus Prime platform, from ROS command-line methods to graphical waypoint selection using Rviz. Provides examples for remote navigation setup.
 
 - **[ORB SLAM2 Setup Guidance](/wiki/state-estimation/orb-slam2-setup/)**
@@ -66,6 +66,12 @@ The "State Estimation" section provides a comprehensive understanding of how to 
   - Overview of g2o and its graph-based representation.
   - Implementation details for vertices, edges, and solvers.
   - Common applications in robotic perception and mapping.
+
+- **[Running SLAM in Production - A Practitioner's Guide](/wiki/state-estimation/running-slam-in-production/)**
+  A practitioner-oriented guide to deploying monocular feature-based SLAM, with ORB-SLAM3 as the running example. Covers how to choose between SLAM families, the failure modes a deployed monocular system actually hits in the field, and how to engineer for them.
+  - When to pick monocular ORB-SLAM3 vs stereo, visual-inertial, direct, or learned methods.
+  - Indoor-vs-outdoor failure gap and the ORB front-end mechanism (FAST corners, BRIEF descriptors, anisotropic blur).
+  - Runtime monitoring with tracking success and trajectory completion alongside ATE, plus baseline validation against published numbers.
 
 ## Resources
 

@@ -14,20 +14,30 @@ By the end of this section, you will understand:
 - How to determine the type of simulator you require based on your project's specifications.  
 - The pros and cons of various simulators tailored for robotics, machine learning/reinforcement learning, and visualization.  
 
-## Why Are Simulators Important in Robotics Projects?
-
-Simulators play a crucial role in robotics for several reasons:
-
-- **Cost Efficiency**: Developing and testing in a virtual environment reduces the need for expensive hardware prototypes.  
-- **Safety**: Allows for the testing of potentially dangerous scenarios without risk to humans or equipment.  
-- **Accelerated Development**: Facilitates rapid prototyping and debugging, enabling quicker iterations.  
-- **Accessibility**: Provides a platform for learning and experimentation without the necessity of physical robots.  
-- **Reproducibility**: Ensures consistent testing conditions, which is essential for algorithm validation.
+## Should You Simulate? Why Are Simulators Important in Robotics Projects?
 
 Say that you want to deploy our quadruped robot `Tod` in a shopping mall. You already developed the software that will be running on `Tod` and integrated the peripheral hardware such as a camera for vision. But you're not sure whether everything will work nicely together when you actually put it into use. Will the perception work as intended and recognize obstacles? Will the planner output an optimal path based on the perceived obstacles and goal points? Will the controller move the robot as intended along the path given by the planner?
 
 It's hard to tell, and you most certainly do not want to test this out for the first time in a crowded shopping mall! Here, a simulator can help. 
 When developing a software component for your robot, you can use readily available open-source simulators to test out how your software might work in the real world. You can simulate the robot's behavior, such as the sensor measurements and controller gains, and also the environment, such as friction, gravity, wind, etc. Once you simulate the robot in this "fake world", you may detect some problems with your current software stack and choose to improve them. You can keep iterating this until you get the desirable performance. 
+
+Simulators play a crucial role in robotics for several reasons:
+
+### 1. Logistics
+- **Cost Efficiency**: Developing and testing in a virtual environment reduces the need for expensive hardware prototypes.  
+- **Safety**: Allows for the testing of potentially dangerous scenarios without risk to humans or equipment.  
+- **Accessibility**: Facilitates rapid prototyping and debugging, enabling quicker iterations. Allows team members to develop and test code in parallel. 
+
+### 2. Algorithmic Validation and Data Generation
+- **Reproducibility & Ground Truth**: Ensures deterministic testing conditions. Simulators provide perfect state estimation, which is invaluable for isolating whether an issue is a sensor error or a controller error.
+- **Domain Randomization for Robustness**: Can procedurally vary physical constraints (friction, mass), visual parameters (lighting, textures) and locations of items in an environment to force the model to learn a more robust policy.
+- **Exploration**: Simulators allow you to safely test specific situations like sensor failures, extreme weather conditions or complex human-robot/multi-robot interactions.
+- **Synthetic Data Generation**: For computer vision tasks, simulators can generate thousands of perfectly labeled images (segmentation masks, depth maps, bounding boxes) in seconds, eliminating the massive bottleneck of manual data labeling.
+
+### 3. Performance Scaling and System Design
+- **Massive Parallelization & Time Scaling**: Simultaneously run thousands of simulation instances to compress years of robot learning into hours. Additionally, physics can be "overclocked" to run at multiple times real-time speed or slowed down to sub-millisecond intervals to debug high-speed contact dynamics.
+- **Environment Design & Planning**: Helps determine the optimal layout of a environment before anything is built, identifying traffic bottlenecks or "blind spots" for static sensors.
+- **Hardware-in-the-Loop (HIL) Testing**: Modern simulators allow you to connect actual embedded microcontrollers or flight controllers to the virtual environment. This enables testing of real embedded C++ code and communication latency while the physics remain virtual.
 
 
 ```mermaid
@@ -68,6 +78,27 @@ graph TD
 
 ```
 (Graph based on [Robotics simulation in Unity is as easy as 1, 2, 3](https://unity.com/blog/engine-platform/robotics-simulation-is-easy-as-1-2-3))
+
+## When to Avoid Simulation & Common Pitfalls
+
+While simulators are powerful tools, they are not a silver bullet. Over-committing to simulation can sometimes drain resources and introduce entirely new categories of bugs. 
+
+### 1. The Sim-to-Real Gap & Modeling Limits
+- **Inaccurate Contact Dynamics:** Physics engines use rigid bodies and numerical solvers, often struggling with soft-body deformations, complex contact or high-frequency loops.
+- **Unrealistic Sensor Noise:** Real-world sensors suffer from environmental interference, specular reflections and dropout. Perception pipelines tested only on synthetic data often fail entirely when fed noisy, real-world inputs.
+- **Unstructured Terrains and Fluids:** While modeling flat indoor floors is easier, accurately simulating unstructured environments such as loose gravel, mud, tall grass or fluid dynamics for underwater robotics is computationally prohibitive and often highly inaccurate.
+- **Hardware Wear and Degradation:** Simulators default to factory-perfect conditions. They rarely account for gradual mechanical realities over an operational shift, such as gear backlash, thermal throttling of motors under heavy load or nonlinear battery voltage drops.
+- **Human Unpredictability:** Simulating authentic human behavior (unpredictable crowd dynamics, sudden interventions, emergencies) is notoriously difficult, often leading to falsely optimistic safety validations.
+
+### 2. Resource Drains & Project Management
+- **The Cost of Simulation Accuracy:** For computer vision tasks, building a high-fidelity environment is a massive undertaking. For contact-rich tasks, it requires significant CPU/GPU resources to achieve highly accurate simulation. If a project's goals are heavily hardware-centric, over-investing in virtual modeling may become a distraction from actual deliverables.
+- **Runaway Compute Costs:** Spinning up thousands of virtual environments on commercial cloud infrastructure can quietly accumulate costs that exceed the price of simply building and testing a physical prototype.
+- **Skillset Requirements:** Constructing high-fidelity virtual worlds requires expertise akin to video game development. This can force a robotics team to divert critical headcount and focus away from core robotics engineering.
+
+### 3. Software Health & Algorithmic Pitfalls
+- **Volatility:** The robotics simulation landscape is highly unstable. Platforms frequently follow a cycle of corporate acquisition, industry-wide migrations or architectural resets that force developers to pivot workflows. Repositories often stagnate and reach EOL, quickly losing compatibility with modern operating systems.
+- **Network and Latency Abstraction:** High-level simulators frequently abstract away internal robot communication. They often assume instant data transfer between nodes, masking real-world embedded issues like communication congestion, dropped network packets or variable processing lag.
+- **Black Box Effects:** Many commercial physics engines utilize proprietary, closed-source algorithms with undocumented shortcuts designed to maintain real-time rendering speeds.
 
 ## How do Physics Simulators Work?
 
@@ -153,14 +184,24 @@ For complex scenarios, users can enhance simulations by adding custom force mode
 
 ## Determining the Right Simulator for Your Project
 
-Before selecting a simulator, consider the following questions:
+Before selecting a simulator, consider the following criteria:
 
-- **Integration with ROS/ROS2**: Does your project utilize the Robot Operating System (ROS)? If so, compatibility is essential.    
-- **Physics Simulation**: Is accurate physics modeling necessary, especially for machine learning or reinforcement learning applications? Of course, accurate physics engine usually helps. But in some cases, it may suffice to just have a visualizer such as RViz or a low-fidelity physics engine.  
-- **Customizability**: Do you require the ability to create custom models or environments? If you built the robot yourself, then you would most likely want a way to simulate your custom robot. Luckily, most simulators provide a way to do this. 
-- **Budget Constraints**: Are there financial limitations that necessitate the use of free or open-source tools?  
-- **Operating System Compatibility**: What platforms does the simulator support (e.g., Windows, macOS, Linux)?
-- **Visualization Requirements**: Do you need photorealistic rendering for tasks like computer vision? Even when you use computer vision, the chances are that you wouldn't need photorealistic rendering. As long as the simulator can render the environment to a certain standard for object detection, it should suffice.
+### 1. Ecosystem and Compatibility
+* **Integration with Middleware:** Does your project utilize the Robot Operating System (ROS)? Some simulators provide native integration (like Gazebo), which reduces latency and setup complexity. Ensure the simulator supports the specific distribution (e.g. Noetic, Humble, etc.) you are using.
+* **Operating System Support:** Platform compatibility is essential. Most high-fidelity simulators are optimized strictly for Linux, while others (like Unity or Unreal Engine) may offer better support for Windows or macOS.
+* **Language and Library Support:** Ensure the simulator’s API matches your team's expertise and is compatible with your machine learning libraries and CUDA versions. For example, most modern GPUs require newer drivers only available on higher versions of Ubuntu. However, upgrading the OS often locks out older ROS versions, which in turn can render any hardware dependent on those legacy versions unusable.
+
+### 2. Physical and Visual Fidelity
+* **Physics Requirements:** Determine the level of contact friction and articulated dynamics required. For reinforcement learning or complex manipulation, high-fidelity engines like MuJoCo or PhysX are preferred. For simple navigation, a low-fidelity engine or a pure visualizer like RViz may suffice, saving significant compute resources.
+* **Visualization and Rendering:** If your project involves computer vision, evaluate the rendering engine. While object detection often only requires standard 3D rendering, tasks involving light-sensitive sensors or photorealistic sim-to-real transfer may require ray-tracing capabilities provided by platforms like NVIDIA Isaac Sim or Unity.
+* **Customizability:** Evaluate the ease of importing custom robot models (via URDF, MJCF, or USD) and procedurally generating environments. If you are developing unique hardware, the ability to accurately model its mass properties and joint limits is a non-negotiable requirement.
+
+**Pro-Tip**: You can often circumvent these version mismatches by using Docker containers to run legacy ROS environments on a modern host OS, or by manually installing mainline kernels to support new hardware on older Ubuntu builds. However, the downside is added complexity: both of these may introduce networking issues, GUI X11 forwarding, overhead in GPU passthrough, real-time kernel issues, etc.
+
+### 3. Sustainability and Maintenance
+* **Software Health and EOL:** For production environments, integrating simulators that lack updates for modern operating systems or hardware architectures may lead to technical dead-ends. Prioritize software that has reached a stable version and has not been flagged for **End-of-Life (EOL)**.
+* **Community and Support:** Check the commit history and issue resolution rate on open-source repositories. A simulator with an active community and transparent roadmap is typically easier to use/debug.
+* **Budget and Licensing:** For paid software, account for the total cost of ownership. While many tools are open-source, some require proprietary licenses for commercial use or high-performance cloud compute credits to run at scale.
 
 ## Simulators for Robotics
 
@@ -169,9 +210,9 @@ We first go over some popular simulators tailored for robotics applications.
 | **Simulator** | **Physics-Based** | **ROS Integration** | **Cost** | **Computation Speed** | **Supported OS** | **Customizability** |
 |---------------|-------------------|---------------------|----------|-----------------------|------------------|---------------------|
 | Gazebo        | Yes               | Best                | Free     | Moderate              | Linux, macOS     | Very High           |
-| AirSim        | Yes               | Limited             | Free     | Resource-Intensive    | Windows, Linux   | High (for drones)   |
+| Colosseum     | Yes               | Limited             | Free     | Resource-Intensive    | Windows, Linux   | High (for drones)   |
 | CoppeliaSim   | Yes               | Yes                 | Free*/Paid | Moderate            | Windows, macOS, Linux | Very High      |
-| Unity         | Adjustable        | With Plugins        | Free*/Paid | Variable            | Windows, macOS, Linux | Very High        |
+| Unity         | Adjustable        | With Plugins        | Free*/Paid | Variable            | Windows, macOS, Linux | Very High      |
 
 *Free for personal or educational use; commercial licenses may apply.
 
@@ -179,6 +220,8 @@ We first go over some popular simulators tailored for robotics applications.
 ![gazebo_sim](/assets/images/robotics-project-guide/gazebo_sim.png)
 
 Gazebo is a widely-used open-source robotics simulator that offers robust physics simulation and sensor modeling capabilities. It provides a 3D environment where users can test and develop robots in realistic scenarios. Gazebo's integration with the Robot Operating System (ROS) makes it a standard choice for many robotics projects, facilitating seamless communication between simulation and real-world applications. 
+
+**Note**: It is important to distinguish between Gazebo Classic (versions 1-11) and the modern Gazebo (formerly Ignition). Gazebo Classic reached its official End-of-Life (EOL) in January 2025. You can read more about the switch [here](https://gazebosim.org/about).
 
 **Pros**:  
 - **ROS Integration**: Seamless compatibility with ROS, making it a standard choice for many robotics projects.  
@@ -191,9 +234,9 @@ Gazebo is a widely-used open-source robotics simulator that offers robust physic
 - **Computation Speed**: Can be resource-intensive, potentially leading to slower simulations on less powerful hardware.  
 - **Learning Curve**: May require time to master its extensive features and functionalities.
 
-### [AirSim (on Unity)](https://microsoft.github.io/AirSim/Unity/?utm_source=chatgpt.com)
+### [Colosseum (successor to AirSim)](https://codexlabsllc.github.io/Colosseum/)
 ![airsim_sim](/assets/images/robotics-project-guide/airsim_sim.png)
-Developed by Microsoft, AirSim is an open-source simulator designed primarily for drones and autonomous vehicles. Built on the Unreal Engine, it provides high-fidelity visuals and accurate physics modeling, making it suitable for machine learning and computer vision research. AirSim supports both software-in-the-loop and hardware-in-the-loop simulations, allowing for seamless transitions from virtual to real-world testing. 
+Originally developed by Microsoft and now maintained by the community under the Colosseum project, it is an open-source simulator designed for drones and autonomous vehicles. It is primarily built on Unreal Engine 5 (also supports Unity), providing photorealistic visuals and high-fidelity physics modeling essential for machine learning and computer vision research. Colosseum supports both software-in-the-loop (SITL) and hardware-in-the-loop (HITL) simulations with popular flight controllers like PX4 and ArduPilot, enabling reliable sim-to-real transitions.  
 
 **Pros**:  
 - **Photorealistic Visualization**: Built on Unreal Engine, providing high-fidelity visuals suitable for computer vision tasks.  
@@ -246,18 +289,18 @@ As the field of robotics increasingly incorporates reinforcement learning (RL) t
 
 | **Simulator** | **Speed** | **Cost** | **Language Support** | **Learning Curve*** | **Parallelizability** | **GPU Support** | **CPU Support** | **Physics Accuracy** | **Visualization Quality** |
 |---------------|-----------|----------|----------------------|--------------------|-----------------------|------------------|------------------|----------------------|---------------------------|
-| **MuJoCo**    | High      | Paid     | Python, C            | Moderate           | Limited               | Yes              | Yes              | High                 | Moderate                  |
+| **MuJoCo**    | High      | Free     | Python, C            | Moderate           | Limited(High with MJX)               | Yes              | Yes              | High                 | Moderate                  |
 | **PyBullet**  | Moderate  | Free     | Python, C++          | Low                | Moderate              | Limited          | Yes              | Moderate             | Basic                     |
 | **Isaac Lab** | High      | Free     | Python               | High               | High                  | Yes              | Yes              | High                 | High                      |
 
-**Learning Curve* may be subjective, but the overall consensus ay be that Isaac Lab is the most difficult to learn.
+**Learning Curve* may be subjective, but the general consensus is that Isaac Lab is the most difficult to learn.
 
-### OpenAI Gym
+### Gymnasium (successor to OpenAI Gym)
 
 ![openaigym_sim](/assets/images/robotics-project-guide/openaigym_sim.png)
 
-OpenAI Gym is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gym framework, making it a foundational tool in the RL community.
-OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gym.
+Gymnasium is a widely-used toolkit for developing and comparing reinforcement learning algorithms. It provides a standardized API to interact with a variety of environments, ranging from simple tasks to complex simulations. Many RL training simulators are built upon the Gymnasium framework, making it a foundational tool in the RL community.
+Gymnasium itself is not a single physics engine or simulator. Instead, it’s a framework that provides a standardized API for a large collection of reinforcement learning environments. Many other RL simulators follow the conventions used in Gymnasium.
 
 **Pros**:
 - **Standardized Interface**: Offers a consistent API across diverse environments, simplifying algorithm development.
@@ -271,10 +314,9 @@ OpenAI Gym itself is not a single physics engine or simulator. Instead, it’s a
 - **Visualization**: Basic rendering capabilities; not suitable for photorealistic needs.
 
 **Resources**:
-- **Documentation**: [OpenAI Gym Documentation](https://www.gymlibrary.dev/content/tutorials/)
-- **Tutorial**: [Getting Started With OpenAI Gym](https://blog.paperspace.com/getting-started-with-openai-gym/)
-- **Community**: [OpenAI Gym GitHub Discussions](https://github.com/openai/gym/discussions)
-- **GitHub**: [OpenAI Gym Repository](https://github.com/openai/gym)
+- **Documentation**: [Gymnasium Documentation](https://gymnasium.farama.org/)
+- **Community**: [Gymnasium GitHub Discussions](https://github.com/Farama-Foundation/Gymnasium/discussions)
+- **GitHub**: [Gymnasium Repository](https://github.com/farama-foundation/gymnasium)
 
 ### MuJoCo
 
@@ -289,13 +331,12 @@ MuJoCo (Multi-Joint dynamics with Contact) is a physics engine designed for fast
 - **Supported OS**: Compatible with Windows, macOS, and Linux.
 
 **Cons**:
-- **Cost**: Requires a paid license, which may be a consideration for budget-conscious projects. Education license is free, however.
 - **Learning Curve**: May require time to master its extensive features and functionalities.
 
 **Resources**:
 - **Documentation**: [MuJoCo Documentation](https://mujoco.readthedocs.io/)
-- **Tutorial**: [MuJoCo Basics Tutorial](https://www.roboti.us/training.html)
-- **Community**: [MuJoCo Forum](https://mujoco.org/forum)
+- **Tutorial**: [MuJoCo Programming Tutorial](https://mujoco.readthedocs.io/en/latest/programming/)
+- **Community**: [MuJoCo Github Discussions](https://github.com/google-deepmind/mujoco/discussions)
 - **GitHub**: [MuJoCo Repository](https://github.com/deepmind/mujoco)
 
 ### PyBullet
@@ -316,7 +357,7 @@ PyBullet is an open-source physics engine that offers real-time simulation of ri
 
 **Resources**:
 - **Documentation**: [PyBullet Quickstart Guide](https://pybullet.org/wordpress/quickstart-guide/)
-- **Tutorial**: [PyBullet Robotics Simulation](https://www.etedal.net/2020/04/pybullet-panda.html)
+- **Tutorial**: [Hello PyBullet (Official Colab)](https://colab.research.google.com/github/bulletphysics/bullet3/blob/master/examples/pybullet/notebooks/HelloPyBullet.ipynb)
 - **Community**: [PyBullet Google Group](https://groups.google.com/g/bulletphysics)
 - **GitHub**: [PyBullet Repository](https://github.com/bulletphysics/bullet3)
 
@@ -355,7 +396,7 @@ For a deeper understanding of physics simulation in robotics, consider exploring
 
 - [Gazebo Physics Documentation](https://github.com/gazebosim/gz-physics)
 
-- [Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning](https://arxiv.org/abs/2108.10470)
+- [Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning](https://arxiv.org/pdf/2511.04831)
 
 - [Implementing a Fourth Order Runge-Kutta Method for Orbit Simulation](https://spiff.rit.edu/richmond/nbody/OrbitRungeKutta4.pdf)
 

@@ -324,7 +324,7 @@ Diffusion models represent a powerful paradigm for generative modeling that has 
 
 - [Introduction to Reinforcement Learning](/wiki/machine-learning/intro-to-rl/) - Alternative approaches to learning robot policies
 - [GRPO for Diffusion Policies in Robotics](/wiki/machine-learning/grpo-diffusion-policies/) - Using reinforcement learning to optimize diffusion policies with reward-based learning
-- [NLP for Robotics](/wiki/machine-learning/nlp_for_robotics/) - Other applications of modern ML in robotics
+- [NLP for Robotics](/wiki/machine-learning/nlp-for-robotics/) - Other applications of modern ML in robotics
 
 ## Further Reading
 

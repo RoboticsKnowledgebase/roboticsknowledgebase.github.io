@@ -31,7 +31,7 @@ There are different transport protocols used in Bluetooth, the most important of
 ## Bluez stack and PyBluez
 Now coming to the actual application part of the post. PyBluez is a C (known as Bluez) and Python library for Bluetooth socket programming. PyBluez is a Python extension module written in C that provides access to system Bluetooth resources in an object oriented, modular manner. Although it provides the same functionality in both languages, only Python based implementation is discussed here. PyBluez is available for Microsoft Windows (XP onwards) and GNU/Linux. Basic knowledge of Python is assumed in this tutorial and familiarity with Linux operating system as well.
 
-Instructions for installing all the required libraries can be found on [here](htp://www.bluez.org), but installation on Linux is fairly simple through an apt repository. On the terminal one can simply type:
+Instructions for installing all the required libraries can be found on [here](http://www.bluez.org), but installation on Linux is fairly simple through an apt repository. On the terminal one can simply type:
 
 ``apt-get install libbluetooth1-dev bluez-utils``
 

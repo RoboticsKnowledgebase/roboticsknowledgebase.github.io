@@ -11,7 +11,7 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Advanced MoveIt usage for Manipulator Motion Planning](/wiki/planning/advanced-moveit-manipulator-planning/)**
   Discusses motion planning for dual XArm 7 manipulators using RRTStar and Cartesian planners. Includes details on custom cost objectives and testing in simulation.
 
-- **[A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)**
+- **[A* Implementation Guide](/wiki/planning/astar-planning-implementation-guide/)**
   A step-by-step tutorial on implementing the A* algorithm for robot motion planning. Covers key concepts such as heuristic design, map representation, and non-holonomic motion primitives for Ackermann vehicles.
 
 - **[Extensions To A* for Dynamic Planning](/wiki/planning/non-a-star-planning/)**

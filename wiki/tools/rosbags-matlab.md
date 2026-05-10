@@ -13,7 +13,7 @@ The following steps provide the parsing setup:
 
 Basic rosbag parsing is as follows:
 1. Run `rosbag(filepath)` on the [rosbag](https://www.mathworks.com/help/robotics/ref/rosbag.html) file of interest
-2. [Select](](https://www.mathworks.com/help/robotics/ref/select.html)) only the topic of interest with `select(bag,'Topic','<topic name>')`
+2. [Select](https://www.mathworks.com/help/robotics/ref/select.html) only the topic of interest with `select(bag,'Topic','<topic name>')`
 3. For straightforward values in a message, run `timeseries(bag_select,'<message element>')`
 4. For more complicated messages, run `readMessages`
 
