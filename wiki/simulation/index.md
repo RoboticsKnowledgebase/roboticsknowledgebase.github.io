@@ -28,7 +28,7 @@ This section focuses on **simulation tools, techniques, and environments** for r
   Provides a complete guide for installing Isaac Sim, configuring sensor modules, and integrating it with ROS 2 frameworks like Nav2 and MoveIt. Covers both local and remote (headless) installations, and demonstrates scene management and robot model imports for MRSD projects.
 
 - **[NVIDIA Isaac Sim Advanced Concepts and Workflows](https://roboticsknowledgebase.com/wiki/simulation/isaac-sim-fundamentals/)**
-  Covers Isaac Sim project structure, Python scripting, URDF to USD conversion, ArticulationController, Isaac Lab task and environment config classes, OmniGraph, custom extensions, Replicator synthetic data generation, MoveIt 2 integration, and parallel RL environments with the Cloner API.
+  Covers Isaac Sim project structure, Python scripting, URDF to USD conversion, ArticulationController, Isaac Lab task and environment config classes, OmniGraph, custom extensions, Replicator synthetic data generation, MoveIt 2 integration, and parallel RL environments.
 
 - **[Spawning and Controlling Vehicles in CARLA](/wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA/)**
   A hands-on tutorial for spawning and controlling vehicles in the CARLA simulator. Covers connecting to the CARLA server, visualizing waypoints, spawning vehicles, and using PID controllers for motion control. Demonstrates waypoint tracking with visual aids and includes example scripts for quick implementation.
