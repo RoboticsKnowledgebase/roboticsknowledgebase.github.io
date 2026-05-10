@@ -1,8 +1,7 @@
 ---
 date: 2026-04-30
-title: NVIDIA Isaac Sim - File Structure, Tasks, and Core Concepts
+title: NVIDIA Isaac Sim Advanced Concepts and Workflows
 ---
-
 <style>
 .sidebar__right.sticky {
   max-height: calc(100vh - 2em);
@@ -11,6 +10,12 @@ title: NVIDIA Isaac Sim - File Structure, Tasks, and Core Concepts
 </style>
 
 This article builds on the [NVIDIA Isaac Sim Setup and ROS2 Workflow](/wiki/simulation/simulation-isaacsim-setup/) guide. It covers project structure, Python scripting, URDF-to-USD conversion, joint control, custom Isaac Lab RL tasks, OmniGraph, custom extensions, synthetic data generation with Replicator, MoveIt 2 integration, and parallel environments for RL training.
+
+## When to Use This Guide
+
+This guide is a continuation of the [NVIDIA Isaac Sim Setup and ROS2 Workflow](/wiki/simulation/simulation-isaacsim-setup/) page. That page covers installation, scene creation, robot importing, sensor setup, and basic ROS 2 connection. Start there if you have not set up Isaac Sim yet.
+
+This guide picks up where that one leaves off. It is for readers who have Isaac Sim running and want to go deeper — writing Python scripts, building RL tasks, converting URDF files, controlling joints, generating synthetic data, and running parallel training environments.
 
 ## How an Isaac Sim project is organized
 
