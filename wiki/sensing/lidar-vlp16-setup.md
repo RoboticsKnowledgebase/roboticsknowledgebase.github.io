@@ -47,7 +47,9 @@ With the Ethernet cable **not yet connected** to the LiDAR, run:
 ip a
 ```
 
-Look for an interface name such as `enp0s31f6`, `eth0`, `eno1`, or (for USB adapters) something like `enx144fd7c114ac`. Note this name — we'll call it `<iface>` below.
+Look for an interface name such as `enp0s31f6`, `eth0`, `eno1`, or, for USB adapters, something like `enx144fd7c114ac`. 
+
+Note this name, and we will call it `<iface>` below. We will use `<iface>` as a placeholder for the actual network interface name in the below commands.
 
 ### 2.2 Assign a Temporary Static IP (Command Line)
 
@@ -233,9 +235,8 @@ sudo apt install ros-$ROS_DISTRO-foxglove-bridge
 ### 7.2 Launch the Bridge
 
 With your Velodyne driver already running in one terminal, open a second terminal and start the bridge:
-
+```bash
 source /opt/ros/$ROS_DISTRO/setup.bash
-source /opt/ros/$ROS_DISTRO$/setup.bash
 ros2 launch foxglove_bridge foxglove_bridge_launch.xml
 ```
 
@@ -301,7 +302,7 @@ ros2 bag play rosbag2_YYYY_MM_DD-HH_MM_SS --loop
 ros2 bag info rosbag2_YYYY_MM_DD-HH_MM_SS
 ```
 
-This prints the recording duration, number of messages per topic, and storage format — useful for verifying a recording before sharing it.
+This prints the recording duration, number of messages per topic, and storage format, which is a useful way to verify if a ROS bag is corrupted.
 
 ---
 
@@ -311,7 +312,7 @@ This prints the recording duration, number of messages per topic, and storage fo
 This tutorial covered VLP-16 setup: hardware connection, static IP configuration, ROS 2 driver setup, and point cloud visualization. 
 - [Point Cloud Library (PCL), 3D Sensors and Applications](/wiki/sensing/pcl/)
   — Next step after getting the sensor running: processing and filtering the point cloud data in your pipeline.
-- [Cartographer SLAM ROS Integration](/wiki/state-estimation/Cartographer-ROS-Integration/)
+- [Cartographer SLAM ROS Integration](/wiki/state-estimation/cartographer-ros-integration/)
   — A LiDAR-based SLAM algorithm that consumes `/velodyne_points` directly for map building and localization.
 - [ROS Mapping and Localization](/wiki/common-platforms/ros/ros-mapping-localization/)
   — Overview of ROS mapping packages (gmapping, Hector Mapping) compatible with LiDAR data.
@@ -319,16 +320,8 @@ This tutorial covered VLP-16 setup: hardware connection, static IP configuration
   — Optimized bag recording for high-bandwidth sensors like LiDAR, reducing CPU overhead vs. standard `ros2 bag record`.
 - [Stream Rviz Visualizations as Images](/wiki/tools/stream-rviz/)
   — How to stream your RViz2 point cloud view as an image topic, useful for remote monitoring or logging.
-- [Stream Rviz Visualizations as Images](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/)
-  — How to stream your RViz2 point cloud view as an image topic, useful for remote monitoring or logging.
 
 ## Further Reading
 - [Velodyne VLP-16 User Manual](https://ouster.com/downloads/velodyne-downloads)
 - [ROS 2 Velodyne Driver Documentation](https://docs.ros.org/en/jazzy/p/velodyne_driver/)
 - [Foxglove Studio Documentation](https://docs.foxglove.dev/)
-
-## References
-- Foxglove Technologies, "Foxglove Studio Documentation," foxglove.dev. [Online]. Available: https://docs.foxglove.dev/
-- Open Robotics, "ROS 2 Jazzy Jalisco Installation," docs.ros.org. [Online]. Available: https://docs.ros.org/en/jazzy/Installation.html
-- Open Robotics, "velodyne_driver — ROS 2 Jazzy," docs.ros.org. [Online]. Available: https://docs.ros.org/en/jazzy/p/velodyne_driver/
-- Velodyne Lidar, "VLP-16 User Manual," Ouster Inc. [Online]. Available: https://ouster.com/downloads/velodyne-downloads
