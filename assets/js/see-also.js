@@ -7,6 +7,20 @@
   var target = document.querySelector('.page__content');
   if (!target) return;
 
+  // Skip auto-injection if the page already has a manually written
+  // "See also" heading (preserves authorial curation). Matches H2-H4,
+  // case-insensitive, with an optional trailing ":" or ".". Excludes
+  // the heading we ourselves inject (`.sa-heading`) so the check stays
+  // idempotent under any future re-render.
+  var existingHeadings = target.querySelectorAll(
+    'h2:not(.sa-heading), h3:not(.sa-heading), h4:not(.sa-heading)'
+  );
+  for (var i = 0; i < existingHeadings.length; i++) {
+    if (/^\s*see\s+also\s*[:.]?\s*$/i.test(existingHeadings[i].textContent)) {
+      return;
+    }
+  }
+
   fetch('/assets/see-also.json', { credentials: 'same-origin' })
     .then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
