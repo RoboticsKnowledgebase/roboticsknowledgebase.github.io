@@ -312,6 +312,8 @@ wiki:
         url: /wiki/interfacing/ros1_ros2_bridge/
       - title: Low Level Buffer issue debugging
         url: /wiki/interfacing/buffer-issues/
+      - title: "CAN Protocol"
+        url: /wiki/interfacing/controller-area-network-can/
   - title: Computing
     url: /wiki/computing/
     children:
