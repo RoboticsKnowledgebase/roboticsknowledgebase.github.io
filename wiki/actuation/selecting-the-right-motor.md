@@ -5,7 +5,7 @@
 date: 2024-12-02 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
 # You should set the article's title:
-title: Selecting the right Motor for your application.
+title: Selecting the Right Motor for Your Application
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
