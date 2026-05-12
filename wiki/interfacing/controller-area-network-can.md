@@ -2,6 +2,9 @@
 date: 2026-04-30
 title: Controller Area Network (CAN)
 ---
+## When to Use This Guide
+
+Use this guide if you are designing a communication bus for a robotic system that requires high reliability, real-time performance, and resistance to electrical noise. This is particularly relevant for connecting motor controllers, battery management systems, and distributed sensors.
 
 Controller Area Network (CAN) is a communication protocol used for reliable, real-time data exchange between multiple devices in embedded and robotic systems. It allows microcontrollers, sensors, actuators, motor drivers, and power electronics to communicate over a shared two-wire bus without requiring a central controller.
 
@@ -271,32 +274,6 @@ ip -details -statistics link show can0
 
 These tools are very useful when debugging communication between a Linux computer, motor controller, and embedded microcontroller.
 
-## Example Use in a Robotics System
-
-Consider a differential-drive mobile robot with two wheel motor controllers, an IMU, and a battery management system.
-
-A possible CAN message layout could be:
-
-```text
-0x100 - Emergency stop command
-0x110 - Left motor velocity command
-0x111 - Right motor velocity command
-0x200 - Left motor encoder feedback
-0x201 - Right motor encoder feedback
-0x300 - IMU orientation data
-0x400 - Battery voltage and current
-0x500 - Motor fault status
-```
-
-In this setup:
-
-- The robot computer sends velocity commands to the motor controllers.
-- The motor controllers send encoder feedback.
-- The IMU sends orientation data.
-- The battery management system reports voltage, current, and fault state.
-- Emergency stop messages are assigned a high-priority low ID.
-
-This allows the robot to maintain reliable communication between distributed components while keeping wiring simple.
 
 ## Usage in Robotics Systems
 
