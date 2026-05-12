@@ -37,7 +37,7 @@ For reference, the author tested this tutorial on a machine with the following s
 cuRobo is an optimization-based trajectory planner designed to generate collision-free motion for manipulators efficiently. At its core, it functions similarly to the CHOMP motion planner, focusing on optimizing trajectories through cost functions. However, cuRobo’s true strength lies in its ability to batch process computations using parallelized optimization techniques, leveraging GPU acceleration to achieve significant speedups. This parallelism enables CuRobo to solve motion generation problems up to 60× faster than state-of-the-art CPU-based methods, as highlighted in NVIDIA’s research.
 
 The figure below demonstrates the key stages of CuRobo’s motion generation framework. The official paper is available in this [link](https://curobo.org/reports/curobo_report.pdf).
- ![cuRobo Framework](assets/curobo_framework.png)
+ ![cuRobo Framework](/assets/images/planning/curobo_framework.png)
 
 cuRobo represents the robot's collision links using collision spheres rather than relying on the collision geometries defined in the URDF. Each link of the robot is approximated by a set of spheres. This approach ensures fast computations while maintaining accuracy in detecting potential collisions.
 

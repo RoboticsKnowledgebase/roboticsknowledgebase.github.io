@@ -10,7 +10,7 @@ For instance, in the [Husky](https://github.com/husky/husky/tree/humble-devel) r
 This tutorial aims to guide you through the process of setting up the ROS 1 navigation stack on the Clearpath Husky and seamlessly connecting it to ROS 2. It assumes a foundational understanding of both ROS 1 and ROS 2.
 
 ## ROS 1 - ROS 2 Bridge
-To configure the Clearpath Husky hardware, we will be using the [husky_robot](https://github.com/husky/husky_robot) repository. This repository contains the ROS 1 packages for the Husky, including the navigation stack. To connect the ROS 1 packages to ROS 2, we will be using the [ros1_bridge](https://github.com/ros2/ros1_bridge) package. Detailed instruction on how to setup this is provided in [this tutorial](https://roboticsknowledgebase.com/wiki/interfacing/ros1_ros2_bridge/) on the Robotics Knowledgebase. Once the bridge is established, we can proceed to configure the Husky using the following steps.
+To configure the Clearpath Husky hardware, we will be using the [husky_robot](https://github.com/husky/husky_robot) repository. This repository contains the ROS 1 packages for the Husky, including the navigation stack. To connect the ROS 1 packages to ROS 2, we will be using the [ros1_bridge](https://github.com/ros2/ros1_bridge) package. Detailed instruction on how to setup this is provided in [this tutorial](https://roboticsknowledgebase.com/wiki/interfacing/ros1-ros2-bridge/) on the Robotics Knowledgebase. Once the bridge is established, we can proceed to configure the Husky using the following steps.
 ```
 # Install Husky Packages
 apt-get update && apt install ros-noetic-husky* -y
@@ -393,7 +393,7 @@ This tutorial provides a step-by-step guide to configure the Clearpath Husky for
 It is recommended to read the [Nav2 documentation](https://navigation.ros.org/index.html) to understand the Nav2 stack in detail. The [Nav2 tutorials](https://navigation.ros.org/getting_started/index.html) are also a good place to start.
 
 ## See Also:
-- [ROS1 - ROS2 Bridge](https://roboticsknowledgebase.com/wiki/interfacing/ros1_ros2_bridge/)
+- [ROS1 - ROS2 Bridge](https://roboticsknowledgebase.com/wiki/interfacing/ros1-ros2-bridge/)
 
 ## Further Readings:
 - [Nav2 First Time Setup](https://navigation.ros.org/setup_guides/index.html)
