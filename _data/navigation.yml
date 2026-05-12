@@ -24,7 +24,9 @@ wiki:
       - title: Subsystem Interface Modeling
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
-        url: /wiki/system-design-development/In-Loop-Testing/
+        url: /wiki/system-design-development/in-loop-testing/
+      - title: How to design a robotic state machine
+        url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
   - title: Project Management
     url: /wiki/project-management/
     children:
@@ -36,66 +38,78 @@ wiki:
         url: /wiki/project-management/risk-management/
       - title: Jira
         url: /wiki/project-management/jira/
-      - title: Using Notion for Project Management
-        url: /wiki/project-management/using-notion-for-project-management/
   - title: Common Platforms
     url: /wiki/common-platforms/
     children:
+      - title: Asctec Pelican UAV Setup Guide
+        url: /wiki/common-platforms/asctec-uav-setup-guide/
       - title: DJI Breakdown for Technical Projects
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
-      - title: Unitree Go1
-        url: /wiki/common-platforms/unitree-go1/     
-      - title: Pixhawk
-        url: /wiki/common-platforms/pixhawk/
-      - title: Asctec Pelican UAV Setup Guide
-        url: /wiki/common-platforms/asctec-uav-setup-guide/
-      - title: Husky Interfacing Procedure
-        url: /wiki/common-platforms/husky_interfacing_and_communication/
-      - title: Universal Robots UR5e Collaborative Robotic Arm
-        url: /wiki/common-platforms/ur5e/
-      - title: ROS Introduction
-        url: /wiki/common-platforms/ros/ros-intro/
-      - title: ROS Arduino Interface
-        url: /wiki/common-platforms/ros/ros-arduino-interface/
-      - title: ROS Motion Server Framework
-        url: /wiki/common-platforms/ros/ros-motion-server-framework/
-      - title: ROS Cost Maps
-        url: /wiki/common-platforms/ros/ros-cost-maps/
-      - title: ROS Mapping and Localization
-        url: /wiki/common-platforms/ros/ros-mapping-localization/
-      - title: ROS Navigation
-        url: /wiki/common-platforms/ros/ros-navigation/
-      - title: ROS Global Planner
-        url: /wiki/common-platforms/ros/ros-global-planner/
-      - title: Running ROS On An Unsupported OS
-        url: /wiki/common-platforms/ros/ros-unsupported-os
-      - title: Making RC Vehicles Autonomous
-        url: /wiki/common-platforms/rccars-the-complete-guide/
-      - title: Khepera 4
-        url: /wiki/common-platforms/khepera4/
-      - title: ROS 2 Navigation for Clearpath Husky
-        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
+      - title: Husky Interfacing Procedure
+        url: /wiki/common-platforms/husky-interfacing-and-communication/
+      - title: Interfacing with the Nvidia Orin
+        url: /wiki/common-platforms/interfacing-with-nvidia-orin/
+      - title: Working with KUKA LBR Med
+        url: /wiki/common-platforms/kuka/
+      - title: Khepera 4
+        url: /wiki/common-platforms/khepera4/
+      - title: Kinova Arms
+        url: /wiki/common-platforms/kinova-setup-and-apis/
+      - title: Making RC Vehicles Autonomous
+        url: /wiki/common-platforms/rccars-the-complete-guide/
+      - title: Pixhawk
+        url: /wiki/common-platforms/pixhawk/
+      - title: ROS 2 Navigation for Clearpath Husky
+        url: /wiki/common-platforms/ros2-navigation-for-clearpath-husky/
+      - title: ROS Arduino Interface
+        url: /wiki/common-platforms/ros/ros-arduino-interface/
+      - title: ROS Cost Maps
+        url: /wiki/common-platforms/ros/ros-cost-maps/
+      - title: ROS Global Planner
+        url: /wiki/common-platforms/ros/ros-global-planner/
+      - title: ROS Introduction
+        url: /wiki/common-platforms/ros/ros-intro/
+      - title: ROS Mapping and Localization
+        url: /wiki/common-platforms/ros/ros-mapping-localization/
+      - title: ROS Motion Server Framework
+        url: /wiki/common-platforms/ros/ros-motion-server-framework/
+      - title: ROS Navigation
+        url: /wiki/common-platforms/ros/ros-navigation/
+      - title: ROS Node Lifecycle
+        url: /wiki/common-platforms/ros/ros-lifecycle/
+      - title: Running ROS On An Unsupported OS
+        url: /wiki/common-platforms/ros/ros-unsupported-os
+      - title: Unitree G1 Humanoid Robot
+        url: /wiki/common-platforms/unitree-g1/
+      - title: Unitree Go1
+        url: /wiki/common-platforms/unitree-go1/
+      - title: Universal Robots UR5e Collaborative Robotic Arm
+        url: /wiki/common-platforms/ur5e/
   - title: Sensing
     url: /wiki/sensing/
     children:
-      - title: Tracking vehicles using a static traffic camera
-        url: /wiki/sensing/trajectory_extraction/
       - title: Adafruit GPS
         url: /wiki/sensing/adafruit-gps/
+      - title: Apple Vision Pro
+        url: /wiki/sensing/apple-vision-pro/
       - title: AprilTags
         url: /wiki/sensing/apriltags/
-      - title: Stag
-        url: /wiki/sensing/stag/
+      - title: Azure Block Detection
+        url: /wiki/sensing/azure-block-detection/
       - title: Camera Calibration
         url: /wiki/sensing/camera-calibration/
-      - title: Computer Vision Consideration
+      - title: Camera-IMU Calibration using Kalibr
+        url: /wiki/sensing/camera-imu-calibration/
+      - title: Computer Vision Considerations
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
+      - title: Velodyne VLP-16 LiDAR Setup Guide
+        url: /wiki/sensing/lidar-vlp16-setup/
       - title: Point Cloud Library, 3D Sensors and Applications
         url: /wiki/sensing/pcl/
       - title: Photometric Calibration
@@ -106,20 +120,48 @@ wiki:
         url: /wiki/sensing/opencv-stereo/
       - title: Camera-IMU Calibration using kalibr
         url: /wiki/sensing/camera-imu-calibration/
+      - title: DWM1001 UltraWideband Positioning System
+        url: /wiki/sensing/ultrawideband-beacon-positioning/
       - title: Fiducial Markers
         url: /wiki/sensing/fiducial-markers/
-      - title: RTK GPS
-        url: /wiki/sensing/gps/
+      - title: Hand-Eye Calibration
+        url: /wiki/sensing/handeye-calibration/
+      - title: Hand-Eye Calibration with easy_handeye
+        url: /wiki/sensing/easy-handeye/
       - title: Intel Realsense
         url: /wiki/sensing/realsense/
+      - title: OpenCV Stereo Vision Processing
+        url: /wiki/sensing/opencv-stereo/
+      - title: Perception via Thermal Imaging
+        url: /wiki/sensing/thermal-perception/
+      - title: Photometric Calibration
+        url: /wiki/sensing/photometric-calibration/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
+      - title: RTK GPS
+        url: /wiki/sensing/gps/
+      - title: Reducing Sensor Noise in Thermal or Visual Imaging sensors
+        url: /wiki/sensing/sensor-noise/
+      - title: Robot-Centric Elevation Mapping
+        url: /wiki/sensing/elevation-mapping/
       - title: Robotic Total Station (Leica TS16)
-        url: /wiki/sensing/robotic-total-stations.md
+        url: /wiki/sensing/robotic-total-stations/
+      - title: Robotics with the Microsoft Hololens2
+        url: /wiki/sensing/hololens-101/
+      - title: Speech Recognition
+        url: /wiki/sensing/speech-recognition/
+      - title: STag
+        url: /wiki/sensing/stag/
       - title: Thermal Cameras
         url: /wiki/sensing/thermal-cameras/
-      - title: Azure Block Detection
-        url: /wiki/sensing/azure-block-detection/
-      - title: DWM1001 UltraWideband Positioning System
-        url: /wiki/sensing/ultrawideband-beacon-positioning.md
+      - title: Tracking vehicles using a static traffic camera
+        url: /wiki/sensing/trajectory-extraction-static-camera/
+      - title: Setting Up the ZED Camera with ROS and troubleshooting steps
+        url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
+      - title: Neural Depth Sensing in ZED Stereo Cameras
+        url: /wiki/sensing/neural-depth-sensing-in-zed.md
+      - title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
+        url: /wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl.md
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -134,9 +176,11 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot.md
+        url: /wiki/actuation/pure-pursuit-controller-for-skid-steering-robot.md
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-HEBI-integration.md
+        url: /wiki/actuation/moveit-and-hebi-integration.md
+      - title: MoveIt Hybrid Planning Architecture for Motion Compensation
+        url: /wiki/actuation/moveit-hybrid-planning-architecture/
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
@@ -156,6 +200,10 @@ wiki:
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
+      - title: Generative modeling
+        url: /wiki/machine-learning/generative-modeling
+      - title: Offline reinforcement learning
+        url: /wiki/machine-learning/offline-rl
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
@@ -164,6 +212,30 @@ wiki:
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
       - title: NLP for robotics
         url: /wiki/machine-learning/nlp_for_robotics.md/
+      - title: 6D Pose Estimation with YOLO and ZED
+        url: /wiki/machine-learning/6d-pose-tracking-yolo-zed.md
+      - title: Practical Guide to Model Quantization and TensorRT Optimization
+        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
+      - title: Installing YOLO on ARM Architecture Devices
+        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
+      - title: Comprehensive guide to albumentations
+        url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
+      - title: Kornia technical guide
+        url: /wiki/machine-learning/kornia-technical-guide.md
+      - title: Integrating OLLAMA LLMs with Franka Arm
+        url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
+      - title: Multi-task learning A starter guide
+        url: /wiki/machine-learning/multitask-learning-starter.md
+      - title: Understanding Kalman Filters and Visual Tracking
+        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
+      - title: Knowledge Distillation practical implementation guide
+        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
+      - title: Neural Network optimization using model pruning
+        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
+      - title: Deep learning techniques for 3D datasets
+        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
+      - title: Optical Flow - Classical to Deep Learning Implementation
+        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -178,9 +250,17 @@ wiki:
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
-        url: /wiki/state-estimation/Cartographer-ROS-Integration/
-      - title: Externally Referenced State Estimation for GPS Lacking Environments
-        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+        url: /wiki/state-estimation/cartographer-ros-integration/
+      - title: External Position Estimation using OptiTrack Motion Capture System
+        url: /wiki/state-estimation/optitrack-motion-capture/
+      - title: LIO-SAM with Velocity Undistortion & Dynamic Obstacle Filtering
+        url: /wiki/state-estimation/lio-sam-velocity-undistortion-and-dynamic-filtering/
+      - title: Running SLAM in Production - A Practitioner's Guide
+        url: /wiki/state-estimation/running-slam-in-production/
+      - title: Complete Guide to Installing ORB SLAM3
+        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide.md
+      - title: Setting Up OptiTrack Mocap System
+        url: /wiki/state-estimation/optitrack-mocap/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -202,6 +282,8 @@ wiki:
         url: /wiki/programming/tutorials-resources/
       - title: Python Construct
         url: /wiki/programming/python-construct/
+      - title: SMACH Library
+        url: /wiki/programming/smach-library/
   - title: Networking
     url: /wiki/networking/
     children:
@@ -219,13 +301,21 @@ wiki:
     url: /wiki/simulation/
     children:
       - title: Building a Light Weight Custom Simulator
-        url: /wiki/simulation/Building-a-Light-Weight-Custom-Simulator/
+        url: /wiki/simulation/building-a-light-weight-custom-simulator/
       - title: Design considerations for ROS architectures
         url: /wiki/simulation/Design-considerations-for-ROS-architectures
       - title: Spawning and Controlling Vehicles in CARLA
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
-        url: /wiki/simulation/NDT-Matching-with-Autoware/
+        url: /wiki/simulation/ndt-matching-with-autoware/
+      - title: An Introduction to Isaac Sim
+        url: /wiki/simulation/an-introduction-to-isaac-sim/
+      - title: Simulating UGVs in Unity
+        url: /wiki/simulation/simulating-ugvs-in-unity/
+      - title: Creating Custom Robot Models for MuJoCo
+        url: /wiki/simulation/mujoco-robot-modeling/
+      - title: Creating a URDF from a CAD Model using OnShape
+        url: /wiki/simulation/cad-to-urdf/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -236,7 +326,9 @@ wiki:
       - title: micro-ROS for ROS2 on Microcontrollers
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
-        url: /wiki/interfacing/ros1_ros2_bridge/
+        url: /wiki/interfacing/ros1-ros2-bridge/
+      - title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for visualization
+        url: /wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization/
   - title: Computing
     url: /wiki/computing/
     children:
@@ -252,31 +344,37 @@ wiki:
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
         url: /wiki/computing/setup-gpus-for-computer-vision/
+      - title: Setup your Network Infrastructure for Robotics Projects
+        url: /wiki/computing/networking/
       - title: Ubuntu Dual Boot and Troubleshooting Guide
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
+      - title: Quantum Computing and Qiskit
+        url: /wiki/computing/quantum/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
-      - title: Fabrication Considerations for 3D printing
-        url: /wiki/fabrication/fabrication_considerations_for_3D_printing/
-      - title: Machining & Prototyping
-        url: /wiki/fabrication/machining-prototyping/
-      - title: Rapid Prototyping
-        url: /wiki/fabrication/rapid-prototyping/
-      - title: Turning Process
-        url: /wiki/fabrication/turning-process/
-      - title: Milling Process
-        url: /wiki/fabrication/milling-process/
-      - title: Soldering
-        url: /wiki/fabrication/soldering/
       - title: 3D Printers
         url: /wiki/fabrication/3d-printers/
-      - title: MakerBot Replicator 2x
-        url: /wiki/fabrication/makerbot-replicator-2x/
       - title: CubePro
         url: /wiki/fabrication/cube-pro/
+      - title: Fabrication Considerations for 3D printing
+        url: /wiki/fabrication/fabrication-considerations-for-3d-printing/
+      - title: Machining & Prototyping
+        url: /wiki/fabrication/machining-prototyping/
+      - title: MakerBot Replicator 2x
+        url: /wiki/fabrication/makerbot-replicator-2x/
+      - title: Milling Process
+        url: /wiki/fabrication/milling-process/
+      - title: Rapid Prototyping
+        url: /wiki/fabrication/rapid-prototyping/
       - title: Series A Pro Printer
-        url: /wiki/fabrication/series-A-pro/
+        url: /wiki/fabrication/series-a-pro/
+      - title: Sheet Metal Fabrication
+        url: /wiki/fabrication/sheet-metal-guidelines/
+      - title: Soldering
+        url: /wiki/fabrication/soldering/
+      - title: Turning Process
+        url: /wiki/fabrication/turning-process/
   - title: Math
     url: /wiki/math/
     children:
@@ -289,10 +387,6 @@ wiki:
     children:
       - title: Docker
         url: /wiki/tools/docker/
-      - title: Docker Security
-        url: /wiki/tools/docker-security
-      - title: Docker for PyTorch
-        url: /wiki/tools/docker-for-pytorch/
       - title: Vim
         url: /wiki/tools/vim/
       - title: Altium Circuitmaker
@@ -315,28 +409,28 @@ wiki:
         url: /wiki/tools/stream-rviz/
       - title: Web-Based Visualization using ROS JavaScript Library
         url: /wiki/tools/roslibjs/
-      - title: MapViz for Map Based Visualization in ROS2
-        url: /wiki/planning/mapviz/
       - title: Gazebo Simulation
         url: /wiki/tools/gazebo-simulation/
       - title: Code Editors - Introduction to VS Code and Vim
         url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
-        url: /wiki/tools/Qtcreator-ros/
+        url: /wiki/tools/qt-creator-ros/
+      - title: Tutorial on Using USB Compute Sticks
+        url: /wiki/tools/usb-compute-sticks/
   - title: Datasets
     url: /wiki/datasets/
     children:
       - title: Traffic Modelling Datasets
-      - url: /wiki/datasets/traffic-modelling-datasets/
+        url: /wiki/datasets/traffic-modelling-datasets/
       - title: Open-Source Datasets
-      - url: /wiki/datasets/open-source-datasets/
+        url: /wiki/datasets/open-source-datasets/
   - title: Planning
     url: /wiki/planning/
     children:
       - title: Planning Overview
         url: /wiki/planning/planning-overview/
       - title: A* Planner Implementation Guide
-        url: /wiki/planning/astar_planning_implementation_guide/
+        url: /wiki/planning/astar-planning-implementation-guide/
       - title: Coverage Planner Implementation Guide
         url: /wiki/planning/coverage-planning-implementation-guide/
       - title: Resolved Rates
@@ -347,7 +441,7 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
-# Main links appear in the header.
+## Main links appear in the header.
 main:
   - title: Wiki
     url: /wiki/
@@ -356,7 +450,7 @@ main:
   - title: Contribute
     url: /docs/
 
-# Navigation for supporting documentation.
+## Navigation for supporting documentation.
 docs:
   - title: Overview
     children:
