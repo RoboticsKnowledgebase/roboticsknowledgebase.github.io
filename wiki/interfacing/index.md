@@ -24,8 +24,11 @@ This section delves into **interfacing techniques and tools** for robotics appli
 - **[Getting Started with the Myo](/wiki/interfacing/myo/)**
   A beginner-friendly tutorial for the Myo Gesture Control Armband, covering Lua scripting basics, API access, and available language bindings (e.g., Python, Java, ROS). Guides users through creating simple gesture-based applications and integrating Myo with larger robotic systems.
 
-- **[ROS 1 - ROS 2 Bridge](/wiki/interfacing/ros1_ros2_bridge/)**
+- **[ROS 1 - ROS 2 Bridge](/wiki/interfacing/ros1-ros2-bridge/)**
   A detailed walkthrough of setting up the ROS 1 bridge to enable communication between ROS 1 and ROS 2 environments. Discusses dynamic and static bridges, installation tips, and best practices for sourcing. Also includes guidance for Docker-based deployment and examples of bridging specific topics and services.
+
+- **[Interfacing Streamlit, ROS2, and HTML/CSS/JS for Visualizations](/wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization/)**
+  A practical architecture and implementation guide for combining Streamlit, ROS2, and web components to build real-time robotics visualization dashboards.
 
 ## Resources
 

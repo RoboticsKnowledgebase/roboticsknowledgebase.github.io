@@ -17,7 +17,7 @@ By using multiple stationary devices, a single or multiple mobile beacons can be
 
 ### Best Use Cases & Expected Quality
 
-At the time of writing, one of the most common modules for UWB is the DWM1001. Information of how to get started with that can be seen [here](LINK TO WIKI PAGE ON DWM1001). Since these modules are mass manufactured, they can be purchased very inexpensively and should be considered one of the most affordable options for positioning systems.
+At the time of writing, one of the most common modules for UWB is the DWM1001. Information of how to get started with that can be seen [here](https://wiki.ros.org/localizer_dwm1001). Since these modules are mass manufactured, they can be purchased very inexpensively and should be considered one of the most affordable options for positioning systems.
 
 ### Limitations
 

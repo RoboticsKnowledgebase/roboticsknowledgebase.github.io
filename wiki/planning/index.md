@@ -2,9 +2,6 @@
 date: 2024-12-05
 title: Planning
 ---
-<!-- **This page is a stub.** You can help us improve it by [editing it](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io).
-{: .notice--warning} -->
-
 The **Planning** section offers resources and tutorials on motion planning techniques, ranging from classical algorithms like A* to modern approaches such as Frenet-frame trajectory planning and multi-robot navigation strategies. This section is tailored to help researchers and developers understand, implement, and optimize planning algorithms for diverse robotics applications.
 
 We are actively seeking contributions to expand the resources available in this section.
@@ -14,11 +11,20 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Advanced MoveIt usage for Manipulator Motion Planning](/wiki/planning/advanced-moveit-manipulator-planning/)**
   Discusses motion planning for dual XArm 7 manipulators using RRTStar and Cartesian planners. Includes details on custom cost objectives and testing in simulation.
 
-- **[A* Implementation Guide](/wiki/planning/astar_planning_implementation_guide/)**
+- **[A* Implementation Guide](/wiki/planning/astar-planning-implementation-guide/)**
   A step-by-step tutorial on implementing the A* algorithm for robot motion planning. Covers key concepts such as heuristic design, map representation, and non-holonomic motion primitives for Ackermann vehicles.
+
+- **[Extensions To A* for Dynamic Planning](/wiki/planning/non-a-star-planning/)**
+  Explores popular extensions like Theta\* and Safe Interval Path Planning (SIPP) to address pitfalls of standard A\* on physical robots in dynamic environments.
 
 - **[Behavior Trees](/wiki/planning/behavior-tree/)**
   Comprehensive guide to Behavior Trees for robot decision-making. Covers BT architecture vs FSM/HFSM, node types (Action, Condition, Sequence, Fallback), AirStack implementation, and ROS2 integration with hands-on tutorials.
+
+- **[CHOMP Path Planning](/wiki/planning/chomp-planning/)**
+  An optimization-based trajectory planner that produces smooth, collision-free paths for manipulators like the xArm.
+
+- **[Manipulator Trajectory Planning using CuRoBo](/wiki/planning/curobo-trajectory-planning/)**
+  Introduces CuRoBo-based manipulator trajectory planning in Isaac Sim, including setup, `motion_gen` workflow, and advanced batch planning capabilities.
 
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
@@ -44,10 +50,12 @@ We are actively seeking contributions to expand the resources available in this 
 - **[Resolved-Rate Motion Control](/wiki/planning/resolved-rates/)**
   A Jacobian-based control scheme for precise Cartesian movements of robot manipulators, ideal for real-time applications like surgical robotics and motion compensation.
 
+- **[Sampling-Based Motion Planning with RRT and PRM Variants](/wiki/planning/rrt-prm-planning/)**
+  Explores implementations of RRT and PRM variants, focusing on practical enhancements such as goal biasing, path smoothing, and multi-agent coordination.
+
 ## Development Needs
 This section seeks contributions in the following areas:
 - Advanced sampling-based algorithms (e.g., RRT*, PRM*)
 - Hybrid approaches combining search- and sampling-based methods
 - Tutorials on implementing planners using modern libraries (e.g., OMPL, ROS Navigation2)
 - Case studies on integrating planners with robot systems
-

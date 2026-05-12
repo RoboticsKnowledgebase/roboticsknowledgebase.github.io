@@ -100,7 +100,7 @@ Key takeaways:
 - [RC Cars for Autonomous Vehicle Research](/wiki/common-platforms/rccars-the-complete-guide/)
 - [ROS-Arduino Interface using rosserial](/wiki/common-platforms/ros/ros-arduino-interface/)
 - [Vedder Open-Source Electronic Speed Controller](/wiki/actuation/vedder-electronic-speed-controller/)
-- [Pure Pursuit Controller for Skid-Steering Robot](/wiki/actuation/Pure-Pursuit-Controller-for-Skid-Steering-Robot/)
+- [Pure Pursuit Controller for Skid-Steering Robot](/wiki/actuation/pure-pursuit-controller-for-skid-steering-robot/)
 
 ## Further Reading
 - https://vesc-project.com/

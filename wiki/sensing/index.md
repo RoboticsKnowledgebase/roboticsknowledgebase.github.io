@@ -26,38 +26,50 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Camera Calibration](/wiki/sensing/camera-calibration/):**
   Emphasizes the importance of calibrating cameras for minimizing errors and improving vision system accuracy. Includes references to key calibration resources.
 
-- **[IMU-Camera Calibration using Kalibr](/wiki/sensing/camera-imu-calibration/):**
+- **[Camera-IMU Calibration using Kalibr](/wiki/sensing/camera-imu-calibration/):**
   Details the Kalibr library for simultaneous IMU and camera calibration, including example setups and tips for accurate calibration.
 
-- **[Computer Vision for Robotics – Practical Considerations](/wiki/sensing/computer-vision-considerations/):**
+- **[Computer Vision Considerations](/wiki/sensing/computer-vision-considerations/):**
   Highlights key considerations when deploying computer vision in robotics, including lighting, frame rates, calibration, and error mitigation.
 
 - **[Delphi ESR Radar](/wiki/sensing/delphi-esr-radar/):**
   Provides an overview of Delphi’s ESR radar for detecting objects and estimating their range, speed, and position.
 
-- **[Comparison of Fiducial Markers](/wiki/sensing/fiducial-markers/):**
+- **[DWM1001 UltraWideband Positioning System](/wiki/sensing/ultrawideband-beacon-positioning/):**
+  Covers the setup and calibration of the DWM1001 UWB system for accurate indoor positioning.
+
+- **[Fiducial Markers](/wiki/sensing/fiducial-markers/):**
   Compares various fiducial marker systems like ArUco, AprilTags, and STag, listing their pros, cons, and ideal use cases.
 
-- **[Using an RTK GPS](/wiki/sensing/gps/):**
-  Explains how to achieve centimeter-level accuracy using RTK GPS systems, along with practical lessons and setup guidance.
+- **[Hand-Eye Calibration](/wiki/sensing/handeye-calibration/):**
+  Provides a tutorial for estimating the frame transformation between an image frame and an operating frame using ROS2 and Aruco markers.
+
+- **[Intel Realsense](/wiki/sensing/realsense/):**
+  Introduces Intel RealSense cameras and details SDK installation, ROS integration, calibration, and tuning methods.
 
 - **[OpenCV Stereo Vision Processing](/wiki/sensing/opencv-stereo/):**
   Introduces OpenCV libraries for stereo vision, including camera calibration and 3D triangulation.
 
-- **[Point Cloud Library (PCL), 3D Sensors and Applications](/wiki/sensing/pcl/):**
-  Discusses PCL’s features for processing 3D point clouds and its applications in object detection, segmentation, and mapping.
+- **[Perception via Thermal Imaging](/wiki/sensing/thermal-perception/):**
+  Discusses strategies to implement key steps in a robotic perception pipeline using thermal cameras, including depth estimation and metric recovery.
 
 - **[Photometric Calibration](/wiki/sensing/photometric-calibration/):**
   Explains the need for calibrating camera sensors to accurately map light intensity to pixel values, and methods to achieve this.
 
-- **[Realsense RGB-D Camera](/wiki/sensing/realsense/):**
-  Introduces Intel RealSense cameras and details SDK installation, ROS integration, calibration, and tuning methods.
+- **[Point Cloud Library, 3D Sensors and Applications](/wiki/sensing/pcl/):**
+  Discusses PCL’s features for processing 3D point clouds and its applications in object detection, segmentation, and mapping.
 
-- **[Robotic Total Station (Leica TS16)](/wiki/sensing/robotic-total-stations/):**
-  Discusses the use of robotic total stations for high-precision 3D positioning and their applications in surveying and robotics.
+- **[RTK GPS](/wiki/sensing/gps/):**
+  Explains how to achieve centimeter-level accuracy using RTK GPS systems, along with practical lessons and setup guidance.
 
 - **[Reducing Sensor Noise in Thermal or Visual Imaging sensors](/wiki/sensing/sensor-noise/):**
   Explains various techniques for reducing noise in thermal and visual imaging sensors, including filtering and post-processing methods.
+
+- **[Robot-Centric Elevation Mapping](/wiki/sensing/elevation-mapping/):**
+  Explains robot-centric elevation mapping using the Grid Map library to create 2.5D maps centered around the robot, accounting for pose uncertainty.
+
+- **[Robotic Total Station (Leica TS16)](/wiki/sensing/robotic-total-stations/):**
+  Discusses the use of robotic total stations for high-precision 3D positioning and their applications in surveying and robotics.
 
 - **[Robotics with the Microsoft Hololens2](/wiki/sensing/hololens-101/):**
   Introduces the Microsoft HoloLens 2 as an AR headset for robotics applications, focusing on accessing its onboard sensors (RGB, Greyscale, Depth, and IMU) using a Unity-Python API.
@@ -71,11 +83,23 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Thermal Cameras](/wiki/sensing/thermal-cameras/):**
   Examines the use of thermal cameras in robotics, including types of thermal cameras, calibration techniques, and debug tips.
 
-- **[Tracking Vehicles Using a Static Traffic Camera](/wiki/sensing/trajectory_extraction_static_camera/):**
+- **[Tracking vehicles using a static traffic camera](/wiki/sensing/trajectory-extraction-static-camera/):**
   Describes a system for extracting vehicle trajectories using static traffic cameras, incorporating detection, tracking, and homography estimation.
 
 - **[DWM1001 UltraWideband Positioning System](/wiki/sensing/ultrawideband-beacon-positioning/):**
   Covers the setup and calibration of the DWM1001 UWB system for accurate indoor positioning.
+
+- **[Velodyne VLP-16 LiDAR Setup Guide](/wiki/sensing/lidar-vlp16-setup/):**
+  Covers VLP-16 setup, including static IP configuration, driver installation, point cloud visualization in RViz2 and Foxglove Studio, and bag recording for data replay.
+
+- **[Setting Up the ZED Camera with ROS](/wiki/sensing/setting-up-the-zed-camera-with-ros/):**
+  End-to-end setup and troubleshooting guide for integrating ZED cameras with ROS, including wrapper installation, topic usage, and performance tuning.
+
+- **[Neural Depth Sensing in ZED Stereo Cameras](/wiki/sensing/neural-depth-sensing-in-zed/):**
+  Technical analysis of neural depth modes for stereo cameras, including architecture concepts, performance tradeoffs, and runtime optimization notes.
+
+- **[Accelerating Point Cloud Processing with CUDA PCL (cuPCL)](/wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl/):**
+  Practical guide for GPU-accelerated point-cloud workflows using CUDA-enabled PCL components.
 
 ### Resources
 

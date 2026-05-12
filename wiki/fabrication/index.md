@@ -15,7 +15,7 @@ This section provides in-depth resources and tutorials for various fabrication t
 - **[Building Prototypes in CubePro](/wiki/fabrication/cube-pro/)**
   A step-by-step guide for using the CubePro 3D printer, from setting up materials to leveling the plate and applying glue for optimal prints. Covers part removal and maintenance tips.
 
-- **[Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication_considerations_for_3D_printing/)**
+- **[Fabrication Considerations for 3D Printing](/wiki/fabrication/fabrication-considerations-for-3d-printing/)**
   Key factors to consider in 3D printing, such as wall thickness, part orientation, overhangs, warping, shrinkage, and material selection (e.g., PLA, ABS). Includes strategies to improve print quality and optimize design.
 
 - **[Machining and Prototyping](/wiki/fabrication/machining-prototyping/)**
@@ -33,7 +33,7 @@ This section provides in-depth resources and tutorials for various fabrication t
 - **[Rapid Prototyping](/wiki/fabrication/rapid-prototyping/)**
   Discusses the iterative nature of rapid prototyping, highlighting techniques like CAD design, 3D printing, and laser cutting. Emphasizes the importance of validating designs early and cost-effectively.
 
-- **[Series A Pro](/wiki/fabrication/series-A-pro/)**
+- **[Series A Pro](/wiki/fabrication/series-a-pro/)**
   Explores the features of the Series A Pro 3D printer, including its web interface, print profiles, material options, and advanced control capabilities for high-quality and flexible printing.
 
 - **[Soldering](/wiki/fabrication/soldering/)**
@@ -41,6 +41,9 @@ This section provides in-depth resources and tutorials for various fabrication t
 
 - **[Turning Process](/wiki/fabrication/turning-process/)**
   A detailed guide to the turning process on lathe machines, including video tutorials for creating components with rotational symmetry, such as shafts and pulleys.
+
+- **[Ultimaker Series (3/S3)](/wiki/fabrication/ultimaker-series/)**
+  A comprehensive guide to using the Ultimaker 3 and S3 printers, covering software setup in Cura, material matching, previewing parts, and troubleshooting common failures like nozzle offset errors.
 
 ## Resources
 

@@ -39,6 +39,9 @@ This section focuses on **programming techniques, tools, and libraries** commonl
 - **[ROS 2 Yasmin State Machine](/wiki/programming/yasmin-ros2-state-machine/)**
   A tutorial on using the Yasmin framework for state machine-based task logic in ROS 2. Covers core fundamentals, installation, and practical usage examples.
 
+- **[SMACH Library](/wiki/programming/smach-library/)**
+  Overview of task-level state machine design with SMACH, including key concepts, use cases, and a simple ROS-oriented example workflow.
+
 ## Resources
 
 ### General Programming Resources
