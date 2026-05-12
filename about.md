@@ -14,6 +14,7 @@ To accelerate the development of both projects and individual skills, we need an
 *This* is that knowledge base. Here, you will find guidance on the full spectrum of our field.
 
 ### Where should I start?
+This wiki is meant for people in various stages of their career, including absolute beginners. If you are just starting out in robotics, we recommend you to start from [Robotics Project Guide](wiki/robotics-project-guide/master-guid). This tutorial talks about what to consider and plan for in each step of a robotics project and provides ample resources.
 
 ### How can I contribute?
 

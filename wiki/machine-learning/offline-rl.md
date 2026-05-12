@@ -16,7 +16,7 @@ Offline RL refers to a learning paradigm where an agent learns from a fixed data
 
 #### Reinforcement learning
 Classically refers to a machine learning paradigm where an agent learns to make sequential decisions by interacting with an environment. The agent receives feedback in the form of rewards based on its actions, allowing it to learn an optimal policy that maximizes long-term rewards.
-![alt text](assets/offline-rl-image-2.png)
+![alt text](/assets/images/machine-learning/offline-rl-image-2.png)
 Figure: Shows the interaction between the agent and the environment and how the agent only learns for the latest data in traditional online RL setup.
 
 #### Why offline setting is important?
@@ -25,14 +25,14 @@ Online RL algorithms heavily rely on interacting with the environment and cannot
 <!-- Talk about on-policy vs off-policy algorithms -->
 __On-policy__ algorithms like PPO, TRPO, and REINFORCE generally require real-time interaction with the environment to update the policy. Techniques like importance sampling [1] can be used to learn from a fixed dataset, but they are often unstable and inefficient in practice.
 __Off-policy__ algorithms like DQN, DDPG, and SAC are designed to utilize a data buffer (known as replay buffer) of interactions. However, there are still limitations when it comes to only learning from a fixed dataset. One of the problem being, there is no possibility of improving exploration: exploration is outside the scope of the algorithm, so if the dataset does not contain transitions that illustrate high-reward regions of the state space, it may be impossible to discover those high-reward regions. Another problem is distributional shift: while a function approximator (policy, value function, or model) might be trained under one distribution, it will be evaluated on a different distribution, due both to the change in visited states for the new policy and, more subtly, by the act of maximizing the expected return. Once the policy enters one of out-of-distribution states, it will keep making mistakes and may remain out-of-distribution for the remainder of the trial.
-![alt text](assets/offline-rl-image-1.png)
+![alt text](/assets/images/machine-learning/offline-rl-image-1.png)
 Figure: Shows the interaction between the agent and the environment and how the agent learns for a buffer of saved data in off-policy RL.
 
 
 ## Offline reinforcement learning
 Offline RL involves training an agent using a __fixed dataset__ of historical experiences. The agent learns from this dataset without interacting with the environment in real-time, making it more sample-efficient and suitable for scenarios where data collection is expensive or impractical.
 
-![alt text](assets/offline-rl-image.png)
+![alt text](/assets/images/machine-learning/offline-rl-image.png)
 Figure: Shows the interaction between the agent and the environment and the learning process being isolated. The agent learns from a fixed dataset of historical experiences in offline RL.
 
 ### Popular methods
