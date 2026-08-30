@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="960"
+   height="540"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3782"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Sstart"
+       style="overflow:visible">
+      <path
+         id="path3779"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3767"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="800.90333"
+     inkscape:cy="191.65264"
+     inkscape:document-units="px"
+     inkscape:current-layer="boxes"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-global="true"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="boxes"
+     inkscape:groupmode="layer"
+     id="boxes">
+    <path
+       style="fill:none;stroke:#5fbcd3;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 140,291.99999 0,-42.25"
+       id="path5129"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#d7eef4;fill-opacity:1;stroke:#5fbcd3;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2985"
+       width="958"
+       height="201"
+       x="2"
+       y="-48"
+       rx="50" />
+    <rect
+       style="fill:#d7eef4;fill-opacity:1;stroke:#5fbcd3;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2987"
+       width="276"
+       height="196"
+       x="1.9999999"
+       y="292"
+       rx="51.301113"
+       ry="51.041664" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2987"
+       id="use2989"
+       transform="translate(340,0)"
+       width="960"
+       height="540" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use2989"
+       id="use2991"
+       transform="translate(340,0)"
+       width="960"
+       height="540" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5131"
+       d="M 140,220.50001 140,153"
+       style="fill:none;stroke:#5fbcd3;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#d7eef4;fill-opacity:1;stroke:#5fbcd3;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path5133"
+       sodipodi:cx="135.25"
+       sodipodi:cy="277.25"
+       sodipodi:rx="18.25"
+       sodipodi:ry="18.25"
+       d="m 153.5,277.25 a 18.25,18.25 0 1 1 -36.5,0 18.25,18.25 0 1 1 36.5,0 z"
+       transform="translate(4.7499999,-54.75)" />
+    <path
+       style="fill:none;stroke:#5fbcd3;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 114.75,224.5 c 0,13.94519 11.30481,25.25 25.25,25.25 13.94519,0 25.25,-11.30481 25.25,-25.25"
+       id="path5135"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="29.169922"
+       y="383.94727"
+       id="text5146"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5148"
+         x="29.169922"
+         y="383.94727">Module that reads</tspan><tspan
+         sodipodi:role="line"
+         x="29.169922"
+         y="413.94727"
+         id="tspan5150">from the hard disk</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5152"
+       y="338.94727"
+       x="355.1582"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         y="338.94727"
+         x="355.1582"
+         sodipodi:role="line"
+         id="tspan5164">Module that trans-</tspan><tspan
+         y="368.94727"
+         x="355.1582"
+         sodipodi:role="line"
+         id="tspan5166">forms the .ogg files</tspan><tspan
+         y="398.94727"
+         x="355.1582"
+         sodipodi:role="line"
+         id="tspan5186">into raw data form,</tspan><tspan
+         id="tspan5156"
+         y="428.94727"
+         x="355.1582"
+         sodipodi:role="line">which a sound driver</tspan><tspan
+         y="458.94727"
+         x="355.1582"
+         sodipodi:role="line"
+         id="tspan5202">can understand.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="700.21094"
+       y="368.94727"
+       id="text5158"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5160"
+         x="700.21094"
+         y="368.94727">Module that talks to</tspan><tspan
+         sodipodi:role="line"
+         x="700.21094"
+         y="398.94727"
+         id="tspan5172">the sound card and</tspan><tspan
+         sodipodi:role="line"
+         x="700.21094"
+         y="428.94727"
+         id="tspan5162">feeds it with data</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="382.95312"
+       y="90.148438"
+       id="text5204"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5206"
+         x="382.95312"
+         y="90.148438">GStreamer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace Bold"
+       x="47.53125"
+       y="525.42383"
+       id="text5208"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5210"
+         x="47.53125"
+         y="525.42383">Source plug-in</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5212"
+       y="525.42383"
+       x="367.88916"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace Bold"
+       xml:space="preserve"><tspan
+         y="525.42383"
+         x="367.88916"
+         id="tspan5214"
+         sodipodi:role="line">Transform plug-in</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace Bold"
+       x="740.76562"
+       y="525.42383"
+       id="text5216"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5218"
+         x="740.76562"
+         y="525.42383">Sink plug-in</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path5129"
+       id="use5238"
+       transform="translate(340,10e-6)"
+       width="960"
+       height="540" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path5131"
+       id="use5240"
+       transform="translate(340,10e-6)"
+       width="960"
+       height="540" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path5133"
+       id="use5242"
+       transform="translate(340,10e-6)"
+       width="960"
+       height="540" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path5135"
+       id="use5244"
+       transform="translate(340,10e-6)"
+       width="960"
+       height="540" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(680,10e-6)"
+       id="use5246"
+       xlink:href="#path5129"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(680,10e-6)"
+       id="use5248"
+       xlink:href="#path5131"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(680,10e-6)"
+       id="use5250"
+       xlink:href="#path5133"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(680,10e-6)"
+       id="use5252"
+       xlink:href="#path5135"
+       y="0"
+       x="0" />
+  </g>
+</svg>
