@@ -329,8 +329,13 @@ wiki:
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
         url: /wiki/interfacing/ros1-ros2-bridge/
+      - title: Low Level Buffer issue debugging
+        url: /wiki/interfacing/buffer-issues/
+      - title: "CAN Protocol"
+        url: /wiki/interfacing/controller-area-network-can/
       - title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for visualization
         url: /wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization/
+
   - title: Computing
     url: /wiki/computing/
     children:
