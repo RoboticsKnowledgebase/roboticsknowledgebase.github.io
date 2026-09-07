@@ -472,7 +472,7 @@ For successful deployment, teams should pay close attention to physical wiring, 
 
 ## See Also
 
-- [ROS2 QoS](/wiki/networking/ros2-qos/)
+- [ROS 2 QoS](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
 - [Actuation](/wiki/actuation/)
 - [Embedded Systems](/wiki/computing/)
 
