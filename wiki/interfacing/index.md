@@ -15,6 +15,9 @@ This section delves into **interfacing techniques and tools** for robotics appli
 - **[Blink(1) LED](/wiki/interfacing/blink-1-led/)**
   A practical guide to using the Blink(1) USB RGB LED for visual feedback and troubleshooting. Includes step-by-step instructions for setting up the LED on Linux, basic command-line usage, and integration with ROS nodes for monitoring states and providing visual indicators.
 
+- **[Controller Area Network (CAN)](/wiki/interfacing/controller-area-network-can/)**
+  A practical introduction to CAN communication in robotics, covering bus wiring, SocketCAN setup, common debugging steps, and applications such as motor control and sensor feedback.
+
 - **[Low Level Buffer issue debugging](/wiki/interfacing/buffer-issues/)**
   Discusses a persistent but subtle issue with VESC communication in real-time ROS environments, particularly on F1/10th vehicles. Outlines the diagnostics process to identify buffer-locked states and provides best practices for software and hardware-level resolution.
 
@@ -26,6 +29,9 @@ This section delves into **interfacing techniques and tools** for robotics appli
 
 - **[ROS 1 - ROS 2 Bridge](/wiki/interfacing/ros1-ros2-bridge/)**
   A detailed walkthrough of setting up the ROS 1 bridge to enable communication between ROS 1 and ROS 2 environments. Discusses dynamic and static bridges, installation tips, and best practices for sourcing. Also includes guidance for Docker-based deployment and examples of bridging specific topics and services.
+
+- **[Interfacing Streamlit, ROS2, and HTML/CSS/JS for Visualizations](/wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization/)**
+  A practical architecture and implementation guide for combining Streamlit, ROS2, and web components to build real-time robotics visualization dashboards.
 
 ## Resources
 

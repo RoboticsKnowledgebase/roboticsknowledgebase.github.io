@@ -23,6 +23,9 @@ We are actively seeking contributions to expand the resources available in this 
 - **[CHOMP Path Planning](/wiki/planning/chomp-planning/)**
   An optimization-based trajectory planner that produces smooth, collision-free paths for manipulators like the xArm.
 
+- **[Manipulator Trajectory Planning using CuRoBo](/wiki/planning/curobo-trajectory-planning/)**
+  Introduces CuRoBo-based manipulator trajectory planning in Isaac Sim, including setup, `motion_gen` workflow, and advanced batch planning capabilities.
+
 - **[Coverage Planning Implementation Guide](/wiki/planning/coverage-planning-implementation-guide/)**
   Details cellular decomposition-based coverage planning methods for ensuring full area coverage. Applications include drone monitoring and robotic vacuum cleaning.
 

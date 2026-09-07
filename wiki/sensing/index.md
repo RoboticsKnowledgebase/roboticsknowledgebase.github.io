@@ -86,6 +86,21 @@ This section dives into various sensing modalities such as GPS modules, fiducial
 - **[Tracking vehicles using a static traffic camera](/wiki/sensing/trajectory-extraction-static-camera/):**
   Describes a system for extracting vehicle trajectories using static traffic cameras, incorporating detection, tracking, and homography estimation.
 
+- **[DWM1001 UltraWideband Positioning System](/wiki/sensing/ultrawideband-beacon-positioning/):**
+  Covers the setup and calibration of the DWM1001 UWB system for accurate indoor positioning.
+
+- **[Velodyne VLP-16 LiDAR Setup Guide](/wiki/sensing/lidar-vlp16-setup/):**
+  Covers VLP-16 setup, including static IP configuration, driver installation, point cloud visualization in RViz2 and Foxglove Studio, and bag recording for data replay.
+
+- **[Setting Up the ZED Camera with ROS](/wiki/sensing/setting-up-the-zed-camera-with-ros/):**
+  End-to-end setup and troubleshooting guide for integrating ZED cameras with ROS, including wrapper installation, topic usage, and performance tuning.
+
+- **[Neural Depth Sensing in ZED Stereo Cameras](/wiki/sensing/neural-depth-sensing-in-zed/):**
+  Technical analysis of neural depth modes for stereo cameras, including architecture concepts, performance tradeoffs, and runtime optimization notes.
+
+- **[Accelerating Point Cloud Processing with CUDA PCL (cuPCL)](/wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl/):**
+  Practical guide for GPU-accelerated point-cloud workflows using CUDA-enabled PCL components.
+
 ### Resources
 
 - [Adafruit GPS](https://www.adafruit.com/product/746)  

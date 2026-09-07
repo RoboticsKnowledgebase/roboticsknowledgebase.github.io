@@ -27,6 +27,8 @@ wiki:
         url: /wiki/system-design-development/subsystem-interface-modeling/
       - title: In Loop Testing
         url: /wiki/system-design-development/in-loop-testing/
+      - title: Hardware Design Tips
+        url: /wiki/system-design-development/hardware-design-tips/
       - title: How to design a robotic state machine
         url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
   - title: Project Management
@@ -55,6 +57,8 @@ wiki:
         url: /wiki/common-platforms/husky-interfacing-and-communication/
       - title: Interfacing with the Nvidia Orin
         url: /wiki/common-platforms/interfacing-with-nvidia-orin/
+      - title: Working with KUKA LBR Med
+        url: /wiki/common-platforms/kuka/
       - title: Khepera 4
         url: /wiki/common-platforms/khepera4/
       - title: Kinova Arms
@@ -108,6 +112,18 @@ wiki:
         url: /wiki/sensing/computer-vision-considerations/
       - title: Delphi ESR Radar
         url: /wiki/sensing/delphi-esr-radar/
+      - title: Velodyne VLP-16 LiDAR Setup Guide
+        url: /wiki/sensing/lidar-vlp16-setup/
+      - title: Point Cloud Library, 3D Sensors and Applications
+        url: /wiki/sensing/pcl/
+      - title: Photometric Calibration
+        url: /wiki/sensing/photometric-calibration/
+      - title: Speech Recognition
+        url: /wiki/sensing/speech-recognition/
+      - title: Stereo Vision in OpenCV
+        url: /wiki/sensing/opencv-stereo/
+      - title: Camera-IMU Calibration using kalibr
+        url: /wiki/sensing/camera-imu-calibration/
       - title: DWM1001 UltraWideband Positioning System
         url: /wiki/sensing/ultrawideband-beacon-positioning/
       - title: Fiducial Markers
@@ -144,6 +160,12 @@ wiki:
         url: /wiki/sensing/thermal-cameras/
       - title: Tracking vehicles using a static traffic camera
         url: /wiki/sensing/trajectory-extraction-static-camera/
+      - title: Setting Up the ZED Camera with ROS and troubleshooting steps
+        url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
+      - title: Neural Depth Sensing in ZED Stereo Cameras
+        url: /wiki/sensing/neural-depth-sensing-in-zed.md
+      - title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
+        url: /wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl.md
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -161,12 +183,18 @@ wiki:
         url: /wiki/actuation/pure-pursuit-controller-for-skid-steering-robot.md
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
         url: /wiki/actuation/moveit-and-hebi-integration.md
+      - title: MoveIt Hybrid Planning Architecture for Motion Compensation
+        url: /wiki/actuation/moveit-hybrid-planning-architecture/
       - title: Model Predictive Control Introduction and Setup
         url: /wiki/actuation/model-predictive-control/
       - title: Task Prioritization Control for Advanced Manipulator Control
         url: /wiki/actuation/task-prioritization-control/
       - title: Drive-by-wire Conversion for Autonomous Vehicle
         url: /wiki/actuation/drive-by-wire/
+      - title: LED Lighting for Robotics
+        url: /wiki/actuation/led-lights/
+      - title: Selecting the Right Motor for Your Application
+        url: /wiki/actuation/selecting-the-right-motor/
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
@@ -178,6 +206,10 @@ wiki:
         url: /wiki/machine-learning/python-libraries-for-reinforcement-learning/
       - title: Reinforcement Learning
         url: /wiki/machine-learning/intro-to-rl
+      - title: Generative modeling
+        url: /wiki/machine-learning/generative-modeling
+      - title: Offline reinforcement learning
+        url: /wiki/machine-learning/offline-rl
       - title: YOLO Integration with ROS and Running with CUDA GPU
         url: /wiki/sensing/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
@@ -192,6 +224,30 @@ wiki:
         url: /wiki/machine-learning/imitation-learning/
       - title: Foundation Models (LLMs/VLMs) for Robot Task Planning
         url: /wiki/machine-learning/foundation-models-robot-task-planning/
+      - title: 6D Pose Estimation with YOLO and ZED
+        url: /wiki/machine-learning/6d-pose-tracking-yolo-zed.md
+      - title: Practical Guide to Model Quantization and TensorRT Optimization
+        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
+      - title: Installing YOLO on ARM Architecture Devices
+        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
+      - title: Comprehensive guide to albumentations
+        url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
+      - title: Kornia technical guide
+        url: /wiki/machine-learning/kornia-technical-guide.md
+      - title: Integrating OLLAMA LLMs with Franka Arm
+        url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
+      - title: Multi-task learning A starter guide
+        url: /wiki/machine-learning/multitask-learning-starter.md
+      - title: Understanding Kalman Filters and Visual Tracking
+        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
+      - title: Knowledge Distillation practical implementation guide
+        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
+      - title: Neural Network optimization using model pruning
+        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
+      - title: Deep learning techniques for 3D datasets
+        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
+      - title: Optical Flow - Classical to Deep Learning Implementation
+        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
   - title: Reinforcement Learning
     url: /wiki/reinforcement-learning/
     children:
@@ -220,6 +276,14 @@ wiki:
         url: /wiki/state-estimation/cartographer-ros-integration/
       - title: External Position Estimation using OptiTrack Motion Capture System
         url: /wiki/state-estimation/optitrack-motion-capture/
+      - title: LIO-SAM with Velocity Undistortion & Dynamic Obstacle Filtering
+        url: /wiki/state-estimation/lio-sam-velocity-undistortion-and-dynamic-filtering/
+      - title: Running SLAM in Production - A Practitioner's Guide
+        url: /wiki/state-estimation/running-slam-in-production/
+      - title: Complete Guide to Installing ORB SLAM3
+        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide.md
+      - title: Setting Up OptiTrack Mocap System
+        url: /wiki/state-estimation/optitrack-mocap/
   - title: Programming
     url:  /wiki/programming/
     children:
@@ -241,6 +305,8 @@ wiki:
         url: /wiki/programming/tutorials-resources/
       - title: Python Construct
         url: /wiki/programming/python-construct/
+      - title: SMACH Library
+        url: /wiki/programming/smach-library/
   - title: Networking
     url: /wiki/networking/
     children:
@@ -275,6 +341,10 @@ wiki:
         url: /wiki/simulation/simulating-ugvs-in-unity/
       - title: "Sim-to-Real Transfer: Domain Randomization and Adaptation"
         url: /wiki/simulation/sim-to-real-transfer/
+      - title: Creating Custom Robot Models for MuJoCo
+        url: /wiki/simulation/mujoco-robot-modeling/
+      - title: Creating a URDF from a CAD Model using OnShape
+        url: /wiki/simulation/cad-to-urdf/
   - title: Interfacing
     url: /wiki/interfacing/
     children:
@@ -286,6 +356,13 @@ wiki:
         url: /wiki/interfacing/microros-for-ros2-on-microcontrollers/
       - title: ROS 1 - ROS 2 Bridge
         url: /wiki/interfacing/ros1-ros2-bridge/
+      - title: Low Level Buffer issue debugging
+        url: /wiki/interfacing/buffer-issues/
+      - title: "CAN Protocol"
+        url: /wiki/interfacing/controller-area-network-can/
+      - title: Interfacing Streamlit, ROS2, and HTML/CSS/JS for visualization
+        url: /wiki/interfacing/interfacing-streamlit-ros2-and-html-css-js-for-visualization/
+
   - title: Computing
     url: /wiki/computing/
     children:
@@ -400,6 +477,8 @@ wiki:
         url: /wiki/planning/frenet-frame-planning.md/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
+      - title: Manipulator Trajectory Planning using CuRoBo
+        url: /wiki/planning/curobo-trajectory-planning/
 ## Main links appear in the header.
 main:
   - title: Wiki

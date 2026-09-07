@@ -16,6 +16,9 @@ The **System Design and Development** section provides comprehensive resources a
 - **[Finite State Machine Implementation Guide for Robotics](/wiki/system-design-development/finite-state-machine/)**
   Provides a structured approach to managing complex robot behaviors through states, transitions, and actions. Covers theoretical foundations and implementation in ROS and embedded systems.
 
+- **[Hardware Design Tips](/wiki/system-design-development/hardware-design-tips/)**
+  Offers practical guidance on CAD, FEA, PCB layout, circuit simulation, wiring, and cable management for robotics projects.
+
 - **[Hardware-in-Loop and Software-in-Loop Testing](/wiki/system-design-development/in-loop-testing/)**
   Discusses HIL and SIL methodologies for testing real-time embedded controllers, with specific use cases like ADAS and autonomous vehicles.
 
