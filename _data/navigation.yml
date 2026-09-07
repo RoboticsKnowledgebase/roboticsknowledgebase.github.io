@@ -8,6 +8,8 @@ wiki:
         url: /about/
       - title: Wiki Index
         url: /wiki/
+      - title: Knowledge Graph
+        url: /wiki/knowledge-graph/
       - title: Contribute
         url: /docs/
   - title: System Design & Development
@@ -215,7 +217,13 @@ wiki:
       - title: Mediapipe - Live ML anywhere
         url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
       - title: NLP for robotics
-        url: /wiki/machine-learning/nlp_for_robotics.md/
+        url: /wiki/machine-learning/nlp-for-robotics/
+      - title: Distributed Training With PyTorch Tutorial
+        url: /wiki/machine-learning/distributed-training-with-pytorch/
+      - title: Imitation Learning With a Focus on Humanoids
+        url: /wiki/machine-learning/imitation-learning/
+      - title: Foundation Models (LLMs/VLMs) for Robot Task Planning
+        url: /wiki/machine-learning/foundation-models-robot-task-planning/
       - title: 6D Pose Estimation with YOLO and ZED
         url: /wiki/machine-learning/6d-pose-tracking-yolo-zed.md
       - title: Practical Guide to Model Quantization and TensorRT Optimization
@@ -240,6 +248,17 @@ wiki:
         url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
       - title: Optical Flow - Classical to Deep Learning Implementation
         url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
+  - title: Reinforcement Learning
+    url: /wiki/reinforcement-learning/
+    children:
+      - title: Key Concepts in Reinforcement Learning (RL)
+        url: /wiki/reinforcement-learning/key-concepts-in-rl/
+      - title: Reinforcement Learning Algorithms
+        url: /wiki/reinforcement-learning/reinforcement-learning-algorithms/
+      - title: Policy Gradient Methods
+        url: /wiki/reinforcement-learning/intro-to-policy-gradient-methods/
+      - title: Foundation of Value-Based Reinforcement Learning
+        url: /wiki/reinforcement-learning/value-based-reinforcement-learning/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -312,10 +331,16 @@ wiki:
         url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
       - title: NDT Matching with Autoware
         url: /wiki/simulation/ndt-matching-with-autoware/
+      - title: Gazebo Classic Simulation of Graspable and Breakable Objects
+        url: /wiki/simulation/gazebo-classic-simulation-of-graspable-and-breakable-objects
+      - title: NVIDIA Isaac Sim Setup and ROS2 Workflow
+        url: /wiki/simulation/simulation-isaacsim-setup/
       - title: An Introduction to Isaac Sim
         url: /wiki/simulation/an-introduction-to-isaac-sim/
       - title: Simulating UGVs in Unity
         url: /wiki/simulation/simulating-ugvs-in-unity/
+      - title: "Sim-to-Real Transfer: Domain Randomization and Adaptation"
+        url: /wiki/simulation/sim-to-real-transfer/
       - title: Creating Custom Robot Models for MuJoCo
         url: /wiki/simulation/mujoco-robot-modeling/
       - title: Creating a URDF from a CAD Model using OnShape
@@ -359,6 +384,8 @@ wiki:
         url: /wiki/computing/troubleshooting-ubuntu-dual-boot/
       - title: Quantum Computing and Qiskit
         url: /wiki/computing/quantum/
+      - title: Deploying Neural Networks on Edge Devices
+        url: /wiki/computing/deploying-neural-networks-edge-devices/
   - title: Fabrication
     url: /wiki/fabrication/
     children:
@@ -456,6 +483,8 @@ wiki:
 main:
   - title: Wiki
     url: /wiki/
+  - title: Knowledge Graph
+    url: /wiki/knowledge-graph/
   - title: About
     url: /about/
   - title: Contribute
