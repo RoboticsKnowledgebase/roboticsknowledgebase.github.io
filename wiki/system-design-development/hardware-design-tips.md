@@ -15,28 +15,30 @@ mechanical and electronics/mechatronics design. These are drawn from hands-on
 experience building robotics systems and are meant to complement formal coursework. 
 Topics include CAD workflows, FEA simulation tool selection, PCB design for 
 debuggability, power circuit simulation, and wiring best practices including 
-emergency stop wiring, colour coding, and cable management.
+emergency-stop wiring, color coding, and cable management.
 
 ## Mechanical Design
 
-### 1. To learn CAD, Do the ModelMania Problems.
+### 1. Learn CAD with the ModelMania Problems
 
-After you have crossed the tutorials stage, try . **SOLIDWORKS ModelMania** has 26 years worth of problems, free, at different difficulty levels: [SOLIDWORKS ModelMania Archive](https://blogs.solidworks.com/products/solidworks/26-years-of-model-mania/)
+After completing introductory tutorials, work through **SOLIDWORKS ModelMania** problems. The archive has 26 years of free problems at different difficulty levels: [SOLIDWORKS ModelMania Archive](https://blogs.solidworks.com/products/solidworks/26-years-of-model-mania/)
 
 A few personal tips:
-- Try following the rule of not exiting the sketch till it is fully constrined. Even better, use parametric variables so that your model's most important dimensions remain editable and independent. 
-- Try rebuilding the same part a different way after you finish it, it broadens design perspective. 
-- Open source software will always be the best choice if you know how to use them. Learning  [FreeCAD](https://www.freecad.org/) would be a great bulletproofing for the future (not dependant on licenses for CAD software). It also has a free API/CAD kernel if you are interested in exploring generative CAD design using MCP servers and LLMs. 
+- Try not to exit a sketch until it is fully constrained. Better yet, use parametric variables so the model's most important dimensions remain editable and independent.
+- Try rebuilding the same part in a different way after you finish it; this broadens your design perspective.
+- Open-source tools such as [FreeCAD](https://www.freecad.org/) can be a good option when avoiding CAD software license dependencies. It also has a free API and CAD kernel for exploring generative CAD design using MCP servers and LLMs.
 
 ---
 
 ### 2. FEA Simulation 
 
+Finite element analysis (FEA) simulates how a design responds to forces, heat, and other physical effects before it is built. It helps newcomers identify potential structural, thermal, or fluid-related issues early in the design process.
+
 Get the free ANSYS student license through CMU: [CMU Software Access](https://www.cmu.edu/computing/software/access.html)
 
-ANSYS is what most companies use. It covers structural, thermal, and fluid sim. It shows up on job descriptions constantly.
+ANSYS is widely used in industry. It covers structural, thermal, and fluid simulations.
 
-COMSOL is better for research work where you're coupling multiple physics together (e.g., heat + structure + electrical all at once). More flexible, more common in academic papers.
+COMSOL is useful for research work that couples multiple physics, such as heat, structure, and electrical effects. It is more flexible and common in academic papers.
 
 Examples of usage:
 - Checking if a robot link will break under load: ANSYS
@@ -67,8 +69,8 @@ For prototyping boards: JLCPCB and PCBWay both work great with KiCad exports, ch
 
 A board that works in simulation or on paper but has zero test points or indicators is a nightmare to debug in real life. Here are some general PCB design tips:
 
-- **Biforcate the placement of power and signal processing electronics on the board** — This ensures that none of the high EMI/EMC devices like inductors and switching regulators can cause noise on the low-power signal/GPIO traces.
-- **Copper thickness** - DO NOT forget to mention the thicknes off copper traces (in oz usually) while placing your PCB order, as this can mean that your circuit can't even take 25% of its designed current load as the traces would be much thinner. 
+- **Separate power and signal-processing electronics on the board** — This helps prevent high-EMI/EMC devices, such as inductors and switching regulators, from introducing noise into low-power signal and GPIO traces.
+- **Copper thickness** — Specify copper trace thickness (usually in oz) when placing a PCB order. If the traces are too thin, the circuit may not carry its designed current load.
 - **Test points** on every power rail and important signal. Just a pad. Saves hours.
 - **Status LEDs** on your power rails (3.3V, 5V, 12V etc.) with a current limiting resistor. You want to immediately know if a rail isn't coming up.
 - **Current sense resistors** on high-current paths — small value (0.01–0.1Ω), measure voltage across it with your ADC or multimeter.
@@ -89,16 +91,19 @@ Use **LTspice** (Analog Devices) as it has models for most common components. Us
 
 ### 4. Wiring and wire management
 
-- **Use PG Cable Glands and conduits** - Use [PG glands](https://www.mcmaster.com/products/pg-glands/cord-grips-2~/) and [cable conduits/hose cariers](https://www.mcmaster.com/products/cable-conduit/) to provide strain relief on cables that go in/out of enclosures, and also provide water and dirt resistance to the electronics inside the enclosure.
+- **Use PG cable glands and conduits** — Use [PG glands](https://www.mcmaster.com/products/pg-glands/cord-grips-2~/) and [cable conduits/hose carriers](https://www.mcmaster.com/products/cable-conduit/) to provide strain relief for cables entering and leaving enclosures, while improving water and dirt resistance for the electronics inside.
 - **Use [DIN rails and DIN-Rail Mount Terminal Blocks](https://www.mcmaster.com/products/din-rails/)** - They are the industrial alternative to breadboards and WAGO connectors. They provide a standardized wire connection interface.
-**Use colour coded signal wires** - This is one of the most trivial-seeming tips but the one that gets overlooked the most, resulting in burnt ICs and shorted Jetson Nano's. General colour schemes are given below:
-    - VCC|GND : RED|BLACK
-    - SDA|SCL : YELLOW|WHITE
-    - CAN-H|CAN-L : WHITE|BLUE/BLACK
-    - UART TX|RX : GREEN|WHITE
-    - PWM : ORANGE
-- **Twist your differential pair wires** - For CAN and RS-485, physically twist the wire pairs together. They cancel out common-mode noise through EMI rejection. If your CAN bus is dropping frames or throwing errors, untwisted wires are a likely culprit before you go hunting for software bugs. BUT, NEVER TWIST I2C CABLES TOGETHER. They are not differetnial signals and cause interference/result in the bus not working at all.
-- **Emegency Stop Wiring** -  Do not wire the emergency stop directly on the power wire as this may cause spraking between switch contacts due to the high back EMF from a decelrating motor. Use a relay/DC contactor with a flyback diode across the terminals of the input (control circuit) and an RC snubber circuit across the contacts of the relay will prevent voltage spikes when the load is disconnected.  
+- **Use color-coded signal wires** — This simple practice is often overlooked, but it can prevent burnt ICs and shorted Jetson Nanos. General color schemes are given below:
+  - VCC|GND: RED|BLACK
+  - SDA|SCL: YELLOW|WHITE
+  - CAN-H|CAN-L: WHITE|BLUE/BLACK
+  - UART TX|RX: GREEN|WHITE
+  - PWM: ORANGE
+- **Twist differential-pair wires** — For CAN and RS-485, physically twist wire pairs together to reject common-mode noise. If a CAN bus drops frames or reports errors, untwisted wires are a likely culprit before software issues.
+
+  Never twist I2C wires together. I2C is not a differential signal, and twisting can introduce interference that prevents the bus from working.
+
+- **Emergency-stop wiring** — Do not wire an emergency stop directly into a high-current power wire, because a decelerating motor's back EMF can cause sparking at the switch contacts. Use a relay or DC contactor, a flyback diode across the control-circuit terminals, and an RC snubber across the relay contacts to limit voltage spikes when disconnecting the load.
 
 ## Summary
 These are just starting tips, design only comes from experience!
