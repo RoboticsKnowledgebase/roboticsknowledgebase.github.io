@@ -1,6 +1,6 @@
 ---
 # Jekyll 'Front Matter' goes here. Most are set by default, and should NOT be
-# overwritten except in special circumstances. 
+# overwritten except in special circumstances.
 # You should set the date the article was last updated like this:
 date: 2026-05-01 # YYYY-MM-DD
 # This will be displayed at the bottom of the article
@@ -10,11 +10,11 @@ title: Hardware Design Tips
 # and used in other parts of the site.
 ---
 
-This article covers practical hardware design tips for robotics engineers across 
-mechanical and electronics/mechatronics design. These are drawn from hands-on 
-experience building robotics systems and are meant to complement formal coursework. 
-Topics include CAD workflows, FEA simulation tool selection, PCB design for 
-debuggability, power circuit simulation, and wiring best practices including 
+This article covers practical hardware design tips for robotics engineers across
+mechanical and electronics/mechatronics design. These are drawn from hands-on
+experience building robotics systems and are meant to complement formal coursework.
+Topics include CAD workflows, FEA simulation tool selection, PCB design for
+debuggability, power circuit simulation, and wiring best practices including
 emergency-stop wiring, color coding, and cable management.
 
 ## Mechanical Design
@@ -30,7 +30,7 @@ A few personal tips:
 
 ---
 
-### 2. FEA Simulation 
+### 2. FEA Simulation
 
 Finite element analysis (FEA) simulates how a design responds to forces, heat, and other physical effects before it is built. It helps newcomers identify potential structural, thermal, or fluid-related issues early in the design process.
 
