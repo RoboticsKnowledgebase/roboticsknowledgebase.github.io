@@ -45,6 +45,8 @@ wiki:
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: DJI Enterprise Payload SDK
+        url: /wiki/common-platforms/dji-enterprise-payload-sdk.md
       - title: Unitree Go1
         url: /wiki/common-platforms/unitree-go1/     
       - title: Pixhawk
@@ -176,11 +178,11 @@ wiki:
       - title: Visual Servoing
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
-        url: /wiki/state-estimation/Cartographer-ROS-Integration/
+        url: /wiki/state-estimation/cartographer-ros-integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
         url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
       - title: Setting Up OptiTrack Motion Capture System with ROS
-        url: /wiki/state-estimation/optitrack-mocap.md
+        url: /wiki/state-estimation/optitrack-mocap/
   - title: Programming
     url:  /wiki/programming/
     children:

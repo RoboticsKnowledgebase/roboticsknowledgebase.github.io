@@ -63,7 +63,7 @@ Now that you have setup these ID's you will need to choose the type of communica
 Based on whether you want the data stream or not you could choose the bulk or ethernet options but you **have** to have the UART communication. 
 These settings are set in the file named `samples/sample_c/platform/linux/manifold2/application/dji_sdk_config.h`
 
-![architecture](assets/drone_architecture.png)
+![architecture](/assets/images/common-platforms/drone_architecture.png)
 ## Running the Payload Application
 Compile the code using CMake and then run the executable. Now you should be able to run the sample application. First connect the DJI Enterprise Drone to the Eport Lite Kit using their niche USB OTG Cable. (This funny cable looks like a regular USB C OTG but it does not work when flipped around). Make sure the sides A and B are connected correctly (Left side on drone is A and top side of EPort is also A). 
 
