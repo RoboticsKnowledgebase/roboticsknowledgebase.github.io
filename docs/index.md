@@ -80,7 +80,9 @@ The Robotics Knowledgebase makes use of the following:
 
 ### Directories
 The wiki itself is contained in the `/wiki` folder. The `/docs` folder exists to contain future documentation on contributing and supporting the wiki. The wiki contains the following categories:
-- **Actuation**
+- **Robotics Project Guide**
+  - Overall guide on start-to-end for robotics projects.
+- **Controls & Actuation**
   - Topics related to the moving components including motors and controls.
 - **Common Platforms**
   - Covers common hardware and software frameworks used in robotics. ROS is included here.

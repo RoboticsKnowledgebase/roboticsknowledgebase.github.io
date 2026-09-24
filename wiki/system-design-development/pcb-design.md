@@ -45,17 +45,17 @@ title: PCB Design Notes
 (electrolytic and non­electrolytic) for noise­reduction.
 - It is important to have proper LED indication  on the PCB (as shown in **Figure 1** and **Figure 2**) for testing and accountability. Use LED  indicators to ensure proper functioning of the board.
 
-![LED indication in schematic with noise reduction cap](assets/PCBDesignNotes-8fedc.png)
+![LED indication in schematic with noise reduction cap](/assets/images/system-design-development/PCBDesignNotes-8fedc.png)
 
 **Figure 1: LED indication in schematic with noise reduction cap**
 
-![Labeled Fuse and Zener­diode for Protection](assets/PCBDesignNotes-09baf.png)
+![Labeled Fuse and Zener­diode for Protection](/assets/images/system-design-development/PCBDesignNotes-09baf.png)
 
 **Figure 2: Labeled Fuse and Zener­diode for Protection**
 
 - You can add additional comments on schematic as shown in **Figure 3**, this helps to put information related to board  which is otherwise not explicit from the schematic.
 
-![Schematic with comments](assets/PCBDesignNotes-d5ba2.png)
+![Schematic with comments](/assets/images/system-design-development/PCBDesignNotes-d5ba2.png)
 
 **Figure 3: Schematic with comments**
 
@@ -69,7 +69,7 @@ As you get your board design ready, please keep in mind that you want to have so
 manufacturing process, some metal is going to be deposited inside each hole. This reduces the diameter of the hole, making it smaller than it was when it was drilled. As a rule of thumb, add 8­12mils to the nominal round lead diameter, and round up if you need to match the diameter to a particular drill size list. Keep in mind that a bit bigger is better than too small; you don't want to find yourself filing a lead that is too big (you
 cannot make the hole bigger, because it would remove the through­hole metal). Double­check and make sure that none of the holes is smaller than 0.015” diameter, and that neither tracks nor clearances between tracks/pads/planes are smaller than 0.006”.
 
-![Variable Track Width](assets/PCBDesignNotes-05e85.png)
+![Variable Track Width](/assets/images/system-design-development/PCBDesignNotes-05e85.png)
 
 **Figure 4: Variable Track Width**
 

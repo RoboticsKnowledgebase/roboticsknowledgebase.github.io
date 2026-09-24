@@ -52,7 +52,7 @@ sudo /etc/init.d/chrony start
 1. If clients communicating to the same ROS master are publishing/subscribing to the same
 topics, there may be a namespace clash and the computers will not be able to distinguish one topic from the other. Link: http://nootrix.com/2013/08/ros­namespaces/
 Hence, make the topics specific to that particular machine. For example, `/cmd_vel` topic for robot 1 should now become `/robot1/cmd_vel` and for robot 2, it should be `/robot2/cmd_vel`. Also, namespaces should be added to the frames also. For three robots, transformation tree should look like this:
-![Transofromation Tree for Three Robots](assets/ROSDistributed-1b70c.png)
+![Transofromation Tree for Three Robots](/assets/images/networking/ROSDistributed-1b70c.png)
   - Similarly, there may also be clashing transforms that may cause problems and they need to be fixed in the same way.
 2. Try not to run any graphics such as Rviz or RQt on the clients while communicating as they consume a lot of bandwidth and may cause the system to slow down.
 All the computers can be controlled from the server laptop for any commands that need to run on them by performing ‘ssh’ into the client laptop from the server laptop.

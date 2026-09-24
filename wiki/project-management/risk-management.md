@@ -44,4 +44,4 @@ Tracking the date increases accountability. When a project knows how long a risk
 **Impact Type/Location** is what kind of risk it is (schedule, cost, physical, cybersecurity, etc), and what phase, subsystem, or operational requirement it affects. These can be tracked as separate categories if there's a lot to say, and can even be linked to the WBS/SSS or Gantt chart to show where risks are showing up. The tools to do so are a bit more involved and I haven't implemented them myself yet.
 
 Below is a risk matrix and tracker made with some of the risks identified early in a Carnegie Mellon MRSD Project. It will take risks and display their overall values automatically in the second sheet, and output an aggregate risk matrix to the first sheet. After-mitigation risk level is not implemented, but can be kept in the comments section, and the original risk updated once mitigation has been implemented with a note as to how the mitigation affected the risk.
-- [MRSD Risk Matrix & Tracker](assets/MRSD_Risk.xlsx)
+- [MRSD Risk Matrix & Tracker](/wiki/project-management/assets/MRSD_Risk.xlsx)

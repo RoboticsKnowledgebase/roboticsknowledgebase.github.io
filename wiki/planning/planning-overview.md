@@ -8,7 +8,7 @@ a desired goal pose
 a geometric description of the robot
 a geometric description of the world
 
-![Figure 1. Role of motion planning in a robotic system [1]](/assets/planning_intro.png)
+![Figure 1. Role of motion planning in a robotic system [1]](/assets/images/planning/planning_intro.png)
 
 
 This Wiki details the different types of motion planning algorithms that are available and the key differences between them. Knowing this will make choosing between them easier, depending on the types of projects these algorithms are implemented in.
@@ -49,7 +49,7 @@ References that may be useful (including those that include pseudo-code) for exp
 ### Sampling-Based Planners
 Sampling-Based algorithms sample possible states in continuous space and try to connect them to find a path from the start to the goal state. These algorithms are suitable in solving high-dimensional problems because the size of the graph they construct is not explicitly exponential in the number of dimensions. Although more rapid and less expensive than Search-Based algorithms, there is difficulty in finding optimal paths and results lack repeatability. Sampling based methods can be divided into two categories – multi-query, where multiple start and goal configurations can be connected without reconstructing the graph structure, and single-query, where the tree is built from scratch for every set of start and goal configurations. A summary of the two categories is shown in Table 1.
 
-![Table 1. Multi-query vs. Single-query [3]](/assets/multi_vs_single_query.png)
+![Table 1. Multi-query vs. Single-query [3]](/assets/images/planning/multi_vs_single_query.png)
 
 Probabilistic Road Map (PRM) is the most popular multi-query algorithm. In the learning phase, free configurations are randomly sampled to become the nodes of a graph. Connections are made between the nodes to form the edges, representing feasible paths of the roadmap. Additional nodes are then created to expand the roadmap and improve its connectivity. In the query phase, the planner tries to find a path that connects start and goal configurations using the graph created in the learning phase.
 
@@ -61,19 +61,19 @@ For single-query methods, Rapidly-exploring Random Trees (RRT) is the most preva
 Nonholonomic systems are characterized by constraint equations involving the time derivatives of the system configuration variables. These equations are non-integrable; they typically arise when the  system has less controls than configuration variables. For instance a car-like robot has two controls (linear and angular velocities) while it moves in a 3-dimensional configuration space. As a  consequence, any path in the configuration space does not necessarily correspond to a feasible path for the system. Let us consider two systems: a two-driving wheel mobile robot and a car-like robot.
 
 **Two-driving wheel robots**: The general dynamic model is given as:
-![](/assets/2dwr1.png)
+![](/assets/images/planning/2dwr1.png)
 
 The reference point of the robot is the midpoint of the two wheels; its coordinates, with respect to a fixed frame, are denoted by (x,y) and θ is the direction of the driving wheels and ℓ is the distance between the driving wheels. By setting v=½\*(v1+v2) and ω= 1/ℓ * (v1−v2) we get the kinematic model which is expressed as the following 3-dimensional system:
 
-![](/assets/clr2.png)
+![](/assets/images/planning/clr2.png)
 
 **Car-like robots**: The reference point with coordinates (x,y) is the midpoint of the rear wheels. We assume that the distance between both rear and front axles is unit length. We denote w as the speed of the front wheels of the car and ζ as the angle between the front wheels and the main direction θ of the car. Moreover a mechanical constraint imposes |ζ| ≤ ζmax and consequently a minimum turning radius. The general dynamic model is given as:
 
-![](/assets/clr1.png)
+![](/assets/images/planning/clr1.png)
 
 A  first  simplification  consists  in  controlling w;  it  gives  a  4-dimensional system. Let us assume that we do not care about the direction of the front wheels. We may still simplify the model. By setting v=wcosζ and ω=wsinζ we get a 3-dimensional system.
 
-![](/assets/clr2.png)
+![](/assets/images/planning/clr2.png)
 
 ### Sampling- vs Search-based Methods:
 With constraints come some restrictions on the kinds of planners that will be effective. Grid-based graphs, for example, do not allow fluid motions to be planned but may work fine if a motion consisting of turn-in-place and drive straight maneuvers are acceptable. There are planners that incorporate simple fluid motions such as lattice planners, and Dubins and Reeds-Shepp state-space planners. The former of these can offer cheap planning for non-holonomic systems, so long as the number of extensions is kept low. The latter two present the space of options as arc and straight motions. These are typically for vehicles that use Ackerman steering. One alternative to all those above is a shooting RRT based on motion primitives. Where all of the others tend to work better at slower speeds, shooting RRTs can also work well at high speeds so long as the shooting is done using the vehicle dynamics. It may be possible to combine search-based with sampling-based planners in order to get optimality and feasibility benefits from both, respectively.

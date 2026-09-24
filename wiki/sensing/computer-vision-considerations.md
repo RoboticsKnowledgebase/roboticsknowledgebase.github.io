@@ -1,5 +1,5 @@
 ---
-date: 2017-08-15
+date: 2024-05-24
 title: Computer Vision for Robotics- Practical Considerations
 ---
 Things to take care of when working with vision in robotics:
@@ -19,7 +19,7 @@ Its easy to get enchanted by the promises of the camera. However, computer visio
 - If you are doing pose estimation using CV, your calibration error will affect your pose accuracy/precision.
 - When calibrating, make sure your target (chessboard) is as planar as it can get. Also make sure its edges and corners are sharp.
   - The above point is even more relevant if you are using the OpenCV software for calibration because it auto-detects corners
-  - Apart from OpenCV, another good calibration toolbox is [Caltech Calib Toolbox](http://www.vision.caltech.edu/bouguetj/calib_doc/).
+- Refer to the [Camera Calibration Entry](/wiki/sensing/camera-calibration.md) for more information
 
 ## Scale
 - Any knowledge you recover about the world using Computer Vision is only accurate up to a scale. Estimating this scale is difficult. Possible solutions include:

@@ -11,7 +11,7 @@ XBee-PRO 900 DigiMesh is useful for setting up your own low bandwidth mesh netwo
 Firstly, download and install X-CTU. [The official guide from DIGI](https://docs.digi.com/display/XCTU/Download+and+install+XCTU) will walk you through this process.
 
 Once you are done with this, plug in your XBee adapter and launch X-CTU. The device should get detected automatically and you'll be presented with a screen similar to the one seen below.
-![X-CTU Screen](assets/XbeeProDigiMesh900-1fc56.png)
+![X-CTU Screen](/assets/images/networking/XbeeProDigiMesh900-1fc56.png)
 
 Now it is important to note that this is not an ordinary XBee adapter which is why you'll see many more options than usual. Firstly, all your devices should be have same Modem VID (ID) and Hopping Channel (HP) for them to communicate. Now, further settings will depend on your individual requirements but just to explain some important parameters:
 - **Multi-Transmit (MT):** To set/read number of additional broadcast re-transmissions. All broadcast packets are transmitted MT+1 times to ensure it is received.
