@@ -10,7 +10,7 @@ title: ROS 2 Node Lifecycle
 # and used in other parts of the site.
 ---
 ## Introduction
-Many robotics platforms implement state machines as part of their functionality. ROS 2 offers a convenient way of working with state machines in the form of ```managed nodes```, also called ```lifecycle nodes```. These nodes can be turned on/off, configured/unconfigured, etc. In a nutshell, lifecycle nodes can be activated or deactivated based on the current state of a robot's state machine. 
+Many robotics platforms implement state machines as part of their functionality. ROS 2 offers a convenient way of working with state machines in the form of `managed nodes`, also called `lifecycle nodes`. These nodes can be turned on/off, configured/unconfigured, etc. In a nutshell, lifecycle nodes can be activated or deactivated based on the current state of a robot's state machine. 
 
 Before ROS 2, state machine implementations basically relied on ignoring nodes when they were not useful to the current state. While this is still possible in ROS 2, lifecycle nodes offer significant advantages from an efficiency standpoint:
 
@@ -32,32 +32,32 @@ There are two types of states a node can be in:
 
 Primary states: these are the steady states, represented in blue in the picture. A node can be in a primary state indeterminately. These states are:
 
-+ ```unconfigured```: this is the state the node will be in as soon as it is instantiated. If a non-fatal error is raised during operation, the node can come back to this state. 
-+ ```inactive```: the node has been been configured, but it is not running any process. Beware: the node can still queue data (e.g. from subscribed topics) while in this state. It will just not perform anything.
-+ ```active```: this is where the node behaves as a "traditional" node, performing it's operations regularly.
-+ ```finalized```: this is where nodes go when they fail or are terminated. The node will still exist for debugging purposes, but cannot be re-run. For the node to vanish, a ```destroy()``` function has to be called.
++ `unconfigured`: this is the state the node will be in as soon as it is instantiated. If a non-fatal error is raised during operation, the node can come back to this state. 
++ `inactive`: the node has been been configured, but it is not running any process. Beware: the node can still queue data (e.g. from subscribed topics) while in this state. It will just not perform anything.
++ `active`: this is where the node behaves as a "traditional" node, performing it's operations regularly.
++ `finalized`: this is where nodes go when they fail or are terminated. The node will still exist for debugging purposes, but cannot be re-run. For the node to vanish, a `destroy()` function has to be called.
 
 Please note that ROS offers a lot of freedom when implementing these states (even their demo strays a bit from the convention above). Try to keep your use reasonable for other developers.
 
-Secondary states: also known as "transition states", these states serve as buffers between primary states, where the node will be doing some internal operation relating to a corresponding ```transition``` function. These states are:
+Secondary states: also known as "transition states", these states serve as buffers between primary states, where the node will be doing some internal operation relating to a corresponding `transition` function. These states are:
 
 
-+ ```Configuring```
-+ ```CleaningUp```
-+ ```ShuttingDown```
-+ ```Activating```
-+ ```Deactivating```
-+ ```ErrorProcessing```
++ `Configuring`
++ `CleaningUp`
++ `ShuttingDown`
++ `Activating`
++ `Deactivating`
++ `ErrorProcessing`
 
-While almost all these states' functionalities and their corresponding transition functions can be easily inferred from the lifecycle diagram, ```ErrorProcessing``` deserves some extra explanation. As you can see from the diagram, sometimes transition states can fail, returning to the previous primary state. This is **not** the purpose of ```ErrorProcessing```. The transition state will return to the original primary state when it's function fails "logically", e.g. the program has to be running for 10 minutes before the node activates, checked for inside an if-loop. The ```ErrorProcessing```, on the other hand, is reached when an error is **raised**, e.g. you tried dividing something by zero. 
+While almost all these states' functionalities and their corresponding transition functions can be easily inferred from the lifecycle diagram, `ErrorProcessing` deserves some extra explanation. As you can see from the diagram, sometimes transition states can fail, returning to the previous primary state. This is **not** the purpose of `ErrorProcessing`. The transition state will return to the original primary state when it's function fails "logically", e.g. the program has to be running for 10 minutes before the node activates, checked for inside an if-loop. The `ErrorProcessing`, on the other hand, is reached when an error is **raised**, e.g. you tried dividing something by zero. 
 
 ## Triggering Transitions
 
-As the diagram shows, there are transitions between the states. It is possible to see that they usually come in pairs. For example, there is transition function ```configure()``` and there is also a ```onConfigure()``` function inside the node secondary state ```Configuring```. The nomenclature can be a bit confusing, so here is a brief explanation:
+As the diagram shows, there are transitions between the states. It is possible to see that they usually come in pairs. For example, there is transition function `configure()` and there is also a `onConfigure()` function inside the node secondary state `Configuring`. The nomenclature can be a bit confusing, so here is a brief explanation:
 
-+ ```function()```: This is the name used by the lifecycle framework to trigger transitions. When you want to tell a node to move into another state (more in a sec), this is the name you use. These names come with ROS and don't need additional programming.
-+ ```onFunction()```: This is a callback function, defined inside the node, that will be actually responsible for performing the state transition. In other words, this is the function that is actually aware of what the node is. When the lifecycle manager calls ```node1 configure```, it is the function ```onConfigure()```, inside ```node1``` that will be executed.
-+ ```Functioning```: This is the (transient) state the node is at while executing callback function ```onFunction()```.
++ `function()`: This is the name used by the lifecycle framework to trigger transitions. When you want to tell a node to move into another state (more in a sec), this is the name you use. These names come with ROS and don't need additional programming.
++ `onFunction()`: This is a callback function, defined inside the node, that will be actually responsible for performing the state transition. In other words, this is the function that is actually aware of what the node is. When the lifecycle manager calls `node1 configure`, it is the function `onConfigure()`, inside `node1` that will be executed.
++ `Functioning`: This is the (transient) state the node is at while executing callback function `onFunction()`.
 
 With all this in mind, changing a node state can happen in two ways: either through CLI tools or through a service call.
 
@@ -106,15 +106,15 @@ You should get as output:
 	Goal: shuttingdown
 ```
 
-These are the possible transitions from primary state ```Unconfigured```, as shown in the lifecycle diagram. Note the ids here, as they will be useful when discussing services.
+These are the possible transitions from primary state `Unconfigured`, as shown in the lifecycle diagram. Note the ids here, as they will be useful when discussing services.
 
-To change states, you should call the command ```set``` with the transition function name e.g.:
+To change states, you should call the command `set` with the transition function name e.g.:
 
 ```bash
 ros2 lifecycle set /lc_talker configure
 ```
 
-Returning to the ```lc_talker``` terminal should reveal the messages:
+Returning to the `lc_talker` terminal should reveal the messages:
 
 ```bash
 [INFO] [1732664038.655707440] [lc_talker]: on_configure() is called.
@@ -149,13 +149,13 @@ response:
 lifecycle_msgs.srv.GetAvailableTransitions_Response(available_transitions=[lifecycle_msgs.msg.TransitionDescription(transition=lifecycle_msgs.msg.Transition(id=2, label='cleanup'), start_state=lifecycle_msgs.msg.State(id=2, label='inactive'), goal_state=lifecycle_msgs.msg.State(id=11, label='cleaningup')), lifecycle_msgs.msg.TransitionDescription(transition=lifecycle_msgs.msg.Transition(id=3, label='activate'), start_state=lifecycle_msgs.msg.State(id=2, label='inactive'), goal_state=lifecycle_msgs.msg.State(id=13, label='activating')), lifecycle_msgs.msg.TransitionDescription(transition=lifecycle_msgs.msg.Transition(id=6, label='shutdown'), start_state=lifecycle_msgs.msg.State(id=2, label='inactive'), goal_state=lifecycle_msgs.msg.State(id=12, label='shuttingdown'))])
 ```
 
-The output is a bit confusing (and better seen in RQt), but we can notice that the id for ```activate``` is 3. If we want to move to that state, a service call is also possible:
+The output is a bit confusing (and better seen in RQt), but we can notice that the id for `activate` is 3. If we want to move to that state, a service call is also possible:
 
 ```bash
 ros2 service call /lc_talker/change_state lifecycle_msgs/ChangeState "{transition: {id: 3}}"
 ```
 
-This service also has a ```label``` field, which is not required (but highly recommended). Back in the talker terminal:
+This service also has a `label` field, which is not required (but highly recommended). Back in the talker terminal:
 
 ```bash
 [INFO] [1732664498.641014385] [lc_talker]: Lifecycle publisher is active. Publishing: [Lifecycle HelloWorld #459]
@@ -173,7 +173,7 @@ Right at the definition of the talker node, we see:
 class LifecycleTalker : public rclcpp_lifecycle::LifecycleNode
 ```
 
-Note that the node doesn't inherit from the typical ```rclcpp:Node``` class. Not all node capabilities are available for a lifecycle node (and vice-versa, obviously). 
+Note that the node doesn't inherit from the typical `rclcpp:Node` class. Not all node capabilities are available for a lifecycle node (and vice-versa, obviously). 
 
 As for the callback functions, you can see that they have special signatures and return values:
 
@@ -205,9 +205,9 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
   }
 ```
 
-From the code, you can also see that ```on_configure()``` (and the other callbacks) are never explicitly defined as service callbacks. The lifecycle framework takes care of that.
+From the code, you can also see that `on_configure()` (and the other callbacks) are never explicitly defined as service callbacks. The lifecycle framework takes care of that.
 
-The last point that should be highlighted is in ```main```. Notice the node is not run as a regular node:
+The last point that should be highlighted is in `main`. Notice the node is not run as a regular node:
 
 ```cpp
 rclcpp::init(argc, argv);
