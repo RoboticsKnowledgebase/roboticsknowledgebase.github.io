@@ -20,12 +20,12 @@ As of the time of writing, we have found at CMU:
 
 ![NCS2 (top) and Plai Plug 2803 (bottom)](/assets/images/tools/sticks.png)
 
-In terms of usefulness, these sticks don’t add that much power to most modern computers. Your typical notebook GPU (and even CPU) will generally be able to handle more visual processing than the sticks, especially considering real-time applications. *These sticks are useful, however, when you have to do visual inference on low-power hardware, such as running object detection using a Raspberry Pi, for example. Or when the CPU/GPU of your system will already be in full demand, such as in autonomous drone flight. In these cases, the sticks can increase the speed of your program.*
+In terms of usefulness, these sticks don’t add that much power to most modern computers. Your typical notebook GPU (and even CPU) will generally be able to handle more visual processing than the sticks, especially considering real-time applications. **These sticks are useful, however, when you have to do visual inference on low-power hardware, such as running object detection using a Raspberry Pi, for example. Or when the CPU/GPU of your system will already be in full demand, such as in autonomous drone flight. In these cases, the sticks can increase the speed of your program.**
 
 ![Stick with Raspberry Pi](/assets/images/tools/stick-raspi.png)
 
 ### Pros and cons of each stick
-*Intel NCS2*:
+**Intel NCS2**:
 
 +Documentation provided by intel
 
@@ -39,7 +39,7 @@ In terms of usefulness, these sticks don’t add that much power to most modern 
 
 -Getting the stick to work is not trivial 
 
-*Gyrfalcon Tech Plai Plug 2803*:
+**Gyrfalcon Tech Plai Plug 2803**:
 
 +Honestly, I didn’t find any… but please feel free to use this stick and prove me wrong
 
@@ -145,8 +145,8 @@ $ omz_converter --name human-pose-estimation-3d-0001 --precisions FP16 -d . -o .
 If you do run the conversion command, make sure you have installed the framework (torch,
 tensorflow, etc.) used by the original model.
 
-Now that the model has been downloaded and converted, *copy the .bin and .xml files into the
-computer where you will run the application*.
+Now that the model has been downloaded and converted, **copy the .bin and .xml files into the
+computer where you will run the application**.
 
 ### Installing OpenVINO runtime in your computer
 

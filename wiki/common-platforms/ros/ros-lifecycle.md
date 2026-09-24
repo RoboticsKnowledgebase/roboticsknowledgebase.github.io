@@ -10,7 +10,7 @@ title: ROS 2 Node Lifecycle
 # and used in other parts of the site.
 ---
 ## Introduction
-Many robotics platforms implement state machines as part of their functionality. ROS 2 offers a convenient way of working with state machines in the form of `managed nodes`, also called `lifecycle nodes`. These nodes can be turned on/off, configured/unconfigured, etc. In a nutshell, lifecycle nodes can be activated or deactivated based on the current state of a robot's state machine.
+Many robotics platforms implement state machines as part of their functionality. ROS 2 offers a convenient way of working with state machines in the form of `managed nodes`, also called `lifecycle nodes`. These nodes can be turned on/off, configured/unconfigured, etc. In a nutshell, lifecycle nodes can be activated or deactivated based on the current state of a robot's state machine. 
 
 Before ROS 2, state machine implementations basically relied on ignoring nodes when they were not useful to the current state. While this is still possible in ROS 2, lifecycle nodes offer significant advantages from an efficiency standpoint:
 
@@ -41,6 +41,7 @@ Please note that ROS offers a lot of freedom when implementing these states (eve
 
 Secondary states: also known as "transition states", these states serve as buffers between primary states, where the node will be doing some internal operation relating to a corresponding `transition` function. These states are:
 
+
 + `Configuring`
 + `CleaningUp`
 + `ShuttingDown`
@@ -48,7 +49,7 @@ Secondary states: also known as "transition states", these states serve as buffe
 + `Deactivating`
 + `ErrorProcessing`
 
-While almost all these states' functionalities and their corresponding transition functions can be easily inferred from the lifecycle diagram, `ErrorProcessing` deserves some extra explanation. As you can see from the diagram, sometimes transition states can fail, returning to the previous primary state. This is *not* the purpose of `ErrorProcessing`. The transition state will return to the original primary state when it's function fails "logically", e.g. the program has to be running for 10 minutes before the node activates, checked for inside an if-loop. The `ErrorProcessing`, on the other hand, is reached when an error is *raised*, e.g. you tried dividing something by zero. 
+While almost all these states' functionalities and their corresponding transition functions can be easily inferred from the lifecycle diagram, `ErrorProcessing` deserves some extra explanation. As you can see from the diagram, sometimes transition states can fail, returning to the previous primary state. This is **not** the purpose of `ErrorProcessing`. The transition state will return to the original primary state when it's function fails "logically", e.g. the program has to be running for 10 minutes before the node activates, checked for inside an if-loop. The `ErrorProcessing`, on the other hand, is reached when an error is **raised**, e.g. you tried dividing something by zero. 
 
 ## Triggering Transitions
 
@@ -63,21 +64,25 @@ With all this in mind, changing a node state can happen in two ways: either thro
 ### CLI Lifecycle
 
 For CLI commands, you can run:
+
 ```bash
 ros2 lifecycle <command> 
 ```
 
 Start the lifecycle talker node provided with ROS:
+
 ```bash
 ros2 run lifecycle lifecycle_talker
 ```
 
 To get the state the node is in, run
+
 ```bash
 ros2 lifecycle get /lc_talker
 ```
 
 Which should return
+
 ```bash
 unconfigured [1]
 ```
@@ -85,11 +90,13 @@ unconfigured [1]
 As expected. The number in brackets is the id of the node state. This is not super relevant for node states, as these ids are not really used for commands. 
 
 Much more interesting are the ids for transitions. If you run:
+
 ```bash
 ros2 lifecycle list /lc_talker
 ```
 
 You should get as output:
+
 ```bash
 - configure [1]
 	Start: unconfigured
@@ -102,11 +109,13 @@ You should get as output:
 These are the possible transitions from primary state `Unconfigured`, as shown in the lifecycle diagram. Note the ids here, as they will be useful when discussing services.
 
 To change states, you should call the command `set` with the transition function name e.g.:
+
 ```bash
 ros2 lifecycle set /lc_talker configure
 ```
 
 Returning to the `lc_talker` terminal should reveal the messages:
+
 ```bash
 [INFO] [1732664038.655707440] [lc_talker]: on_configure() is called.
 [INFO] [1732664039.655992380] [lc_talker]: Lifecycle publisher is currently inactive. Messages are not published.
@@ -119,6 +128,7 @@ Returning to the `lc_talker` terminal should reveal the messages:
 All these lifecycle commands are basically services. 
 
 For example, we can make a standard service call to get the current state of the node:
+
 ```bash
 ros2 service call /lc_talker/get_state lifecycle_msgs/GetState
 ```
@@ -129,6 +139,7 @@ lifecycle_msgs.srv.GetState_Response(current_state=lifecycle_msgs.msg.State(id=2
 ```
 
 See the id field? This is where they become important. For service calls requesting state transitions, you need to know the id of the transition (not to be confused with the id of the state itself). To get those, you could run, for example:
+
 ```bash
 ros2 service call /lc_talker/get_available_transitions lifecycle_msgs/srv/GetAvailableTransitions
 ```
@@ -139,11 +150,13 @@ lifecycle_msgs.srv.GetAvailableTransitions_Response(available_transitions=[lifec
 ```
 
 The output is a bit confusing (and better seen in RQt), but we can notice that the id for `activate` is 3. If we want to move to that state, a service call is also possible:
+
 ```bash
 ros2 service call /lc_talker/change_state lifecycle_msgs/ChangeState "{transition: {id: 3}}"
 ```
 
 This service also has a `label` field, which is not required (but highly recommended). Back in the talker terminal:
+
 ```bash
 [INFO] [1732664498.641014385] [lc_talker]: Lifecycle publisher is active. Publishing: [Lifecycle HelloWorld #459]
 ```
@@ -152,9 +165,10 @@ When inside the code, all lifecycle changes are done through service calls. More
 
 ## In Code
 
-You can find the lifecycle examples at the ROS demo [github](https://github.com/ros2/demos/tree/rolling/lifecycle/src). This guide will comment just a few key points on that code.
+You can find the lifecycle examples at the ROS demo [github](https://github.com/ros2/demos/tree/rolling/lifecycle/src).This guide will comment just a few key points on that code.
 
 Right at the definition of the talker node, we see:
+
 ```cpp
 class LifecycleTalker : public rclcpp_lifecycle::LifecycleNode
 ```
@@ -162,6 +176,7 @@ class LifecycleTalker : public rclcpp_lifecycle::LifecycleNode
 Note that the node doesn't inherit from the typical `rclcpp:Node` class. Not all node capabilities are available for a lifecycle node (and vice-versa, obviously). 
 
 As for the callback functions, you can see that they have special signatures and return values:
+
 ```cpp
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
   on_configure(const rclcpp_lifecycle::State &)
@@ -192,7 +207,8 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn
 
 From the code, you can also see that `on_configure()` (and the other callbacks) are never explicitly defined as service callbacks. The lifecycle framework takes care of that.
 
-The last point that should be highlighted is in `main`. Notice the node is note run as a regular node:
+The last point that should be highlighted is in `main`. Notice the node is not run as a regular node:
+
 ```cpp
 rclcpp::init(argc, argv);
 
@@ -211,6 +227,7 @@ rclcpp::shutdown();
 Executors are beyond the scope of this document, but you can read more about them [here](https://docs.ros.org/en/foxy/Concepts/About-Executors.html). 
 
 Finally, as kind of a side note, you can also launch and trigger lifecycle nodes from launch files, as explained in [1]:
+
 ```python
 from launch import LaunchDescription
 from launch_ros.actions import LifecycleNode
