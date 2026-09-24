@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Graph - Test</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0e17; overflow: hidden; }
+
+  :root {
+    --kg-bg: #0a0e17;
+    --kg-surface: rgba(22,27,34,0.92);
+    --kg-border: #1e2733;
+    --kg-text: #c9d1d9;
+    --kg-text-muted: #8b949e;
+    --kg-accent: #58a6ff;
+  }
+
+  #kg-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--kg-bg);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  #kg-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.15), transparent),
+      radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.1), transparent),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.12), transparent),
+      radial-gradient(1px 1px at 70% 50%, rgba(255,255,255,0.08), transparent),
+      radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.14), transparent),
+      radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.1), transparent),
+      radial-gradient(1px 1px at 85% 30%, rgba(255,255,255,0.11), transparent),
+      radial-gradient(600px 600px at 50% 50%, rgba(30,50,80,0.15), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #kg-toolbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: linear-gradient(180deg, rgba(10,14,23,0.95) 0%, rgba(10,14,23,0.7) 100%);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--kg-border);
+    flex-wrap: wrap;
+  }
+
+  #kg-toolbar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-right: 8px;
+    white-space: nowrap;
+  }
+  #kg-toolbar-title span { color: var(--kg-accent); }
+
+  .kg-search-wrap { position: relative; flex: 0 0 240px; }
+  #kg-search {
+    width: 100%;
+    padding: 7px 32px 7px 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--kg-border);
+    border-radius: 8px;
+    color: var(--kg-text);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  #kg-search:focus { border-color: var(--kg-accent); background: rgba(255,255,255,0.09); }
+  #kg-search::placeholder { color: var(--kg-text-muted); }
+  #kg-search-clear {
+    display: none; position: absolute; right: 8px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none; color: var(--kg-text-muted);
+    cursor: pointer; font-size: 16px; line-height: 1; padding: 2px;
+  }
+  #kg-search-clear:hover { color: var(--kg-text); }
+
+  #kg-search-no-results {
+    display: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    color: var(--kg-text-muted);
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  #kg-filter-row {
+    display: flex; align-items: center; gap: 6px; flex: 1;
+    overflow-x: auto; scrollbar-width: none;
+    mask-image: linear-gradient(to right, black 0, black calc(100% - 20px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 0, black calc(100% - 20px), transparent 100%);
+  }
+  #kg-filter-row::-webkit-scrollbar { display: none; }
+  #kg-filters { display: flex; gap: 4px; flex-wrap: nowrap; padding-right: 12px; }
+  .kg-filter-pill {
+    padding: 3px 10px; border-radius: 12px; font-size: 10px; font-weight: 600;
+    cursor: pointer; border: 1.5px solid var(--pill-color);
+    background: transparent; color: var(--pill-color);
+    white-space: nowrap; transition: all 0.2s;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .kg-filter-pill.active { background: var(--pill-color); color: #0a0e17; }
+  .kg-filter-pill:hover { opacity: 0.85; }
+  .kg-filter-pill:focus-visible { outline: 2px solid var(--kg-accent); outline-offset: 2px; }
+
+  #kg-reset-filters {
+    padding: 3px 10px; border-radius: 8px; font-size: 10px; font-weight: 600;
+    cursor: pointer; border: 1px solid var(--kg-border);
+    background: rgba(255,255,255,0.05); color: var(--kg-text-muted);
+    white-space: nowrap; transition: all 0.2s; flex-shrink: 0;
+  }
+  #kg-reset-filters:hover { background: rgba(255,255,255,0.1); color: var(--kg-text); }
+
+  #kg-container { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
+  #kg-svg { display: block; touch-action: none; }
+  .kg-node:focus { outline: none; }
+  .kg-node:focus-visible { outline: 2px solid var(--kg-accent); outline-offset: 2px; }
+
+  #kg-tooltip {
+    display: none; position: fixed; z-index: 20;
+    background: rgba(22,27,34,0.96); border: 1px solid var(--kg-border);
+    border-radius: 10px; padding: 12px 16px; pointer-events: none;
+    backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    min-width: 160px; max-width: 320px;
+  }
+  .kg-tooltip-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .kg-tooltip-cat { font-size: 11px; font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .kg-tooltip-conn { font-size: 11px; color: var(--kg-text-muted); }
+  .kg-tooltip-relations { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--kg-border); }
+  .kg-tooltip-rel { font-size: 10px; color: var(--kg-text); padding: 2px 0; line-height: 1.4; }
+  .kg-tooltip-rel-arrow { color: var(--kg-accent); margin-right: 2px; }
+  .kg-tooltip-rel-label { color: var(--kg-text-muted); font-style: italic; }
+  .kg-tooltip-rel-more { color: var(--kg-text-muted); font-style: italic; }
+
+  #kg-legend {
+    position: absolute; bottom: 48px; right: 16px; z-index: 10;
+    background: var(--kg-surface); border: 1px solid var(--kg-border);
+    border-radius: 12px; padding: 12px 16px; backdrop-filter: blur(12px);
+    max-height: 340px; overflow-y: auto; transition: all 0.3s ease;
+    scrollbar-width: thin; scrollbar-color: var(--kg-border) transparent;
+  }
+  #kg-legend::-webkit-scrollbar { width: 6px; }
+  #kg-legend::-webkit-scrollbar-track { background: transparent; }
+  #kg-legend::-webkit-scrollbar-thumb { background: var(--kg-border); border-radius: 3px; }
+  #kg-legend.collapsed { max-height: 0; padding: 0 16px; border-color: transparent; overflow: hidden; }
+  #kg-legend-toggle {
+    position: absolute; bottom: 48px; right: 148px; z-index: 11;
+    padding: 5px 14px; border-radius: 8px; font-size: 11px; font-weight: 600;
+    cursor: pointer; border: 1px solid var(--kg-border);
+    background: var(--kg-surface); color: var(--kg-text-muted);
+    backdrop-filter: blur(8px); transition: all 0.2s;
+  }
+  #kg-legend-toggle:hover { color: var(--kg-text); }
+  .kg-legend-item { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+  .kg-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .kg-legend-label { font-size: 11px; color: var(--kg-text); white-space: nowrap; }
+
+  #kg-stats-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+    padding: 10px 20px;
+    background: linear-gradient(0deg, rgba(10,14,23,0.95) 0%, rgba(10,14,23,0.6) 100%);
+    backdrop-filter: blur(8px); border-top: 1px solid var(--kg-border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #kg-stats { font-size: 12px; color: var(--kg-text-muted); display: flex; align-items: center; gap: 6px; }
+  .kg-stat-sep { opacity: 0.3; font-size: 8px; }
+  .kg-stat-hint { color: var(--kg-text-muted); opacity: 0.6; }
+
+  #kg-loading {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); z-index: 15;
+    text-align: center; color: var(--kg-text-muted); transition: opacity 0.6s;
+  }
+  #kg-loading.hidden { opacity: 0; pointer-events: none; }
+  .kg-loading-spinner {
+    width: 40px; height: 40px; border: 3px solid var(--kg-border);
+    border-top-color: var(--kg-accent); border-radius: 50%;
+    margin: 0 auto 16px; animation: kg-spin 0.8s linear infinite;
+  }
+  @keyframes kg-spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kg-loading-spinner { animation: none; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+
+  @media (max-width: 768px) {
+    #kg-toolbar { padding: 8px 12px; gap: 8px; }
+    .kg-search-wrap { flex: 0 0 160px; }
+    #kg-toolbar-title { font-size: 14px; }
+    #kg-legend { bottom: 44px; right: 8px; }
+    #kg-legend-toggle { bottom: 44px; right: 130px; }
+    .kg-filter-pill { font-size: 9px; padding: 2px 7px; }
+  }
+</style>
+</head>
+<body>
+<div id="kg-wrapper">
+  <div id="kg-loading" aria-live="polite">
+    <div class="kg-loading-spinner"></div>
+    <div>Initializing Knowledge Graph...</div>
+  </div>
+
+  <div id="kg-toolbar" role="toolbar" aria-label="Graph controls">
+    <div id="kg-toolbar-title">Robotics <span>Knowledge Graph</span></div>
+    <div class="kg-search-wrap">
+      <input id="kg-search" type="text" role="searchbox" aria-label="Search articles" placeholder="Search articles..." autocomplete="off" spellcheck="false" />
+      <button id="kg-search-clear" aria-label="Clear search">&times;</button>
+    </div>
+    <div id="kg-filter-row">
+      <div id="kg-filters" role="group" aria-label="Category filters"></div>
+      <button id="kg-reset-filters">Reset</button>
+    </div>
+  </div>
+
+  <div id="kg-container">
+    <svg id="kg-svg"></svg>
+  </div>
+
+  <div id="kg-search-no-results" aria-live="polite">No matching articles found</div>
+  <div id="kg-tooltip" role="tooltip" aria-live="polite"></div>
+
+  <div id="kg-legend" role="region" aria-label="Category legend">
+    <div id="kg-legend-content"></div>
+  </div>
+  <button id="kg-legend-toggle" aria-expanded="true" aria-controls="kg-legend">Hide</button>
+
+  <div id="kg-stats-bar">
+    <div id="kg-stats" role="status"></div>
+  </div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="assets/js/knowledge-graph-data.js"></script>
+<script src="assets/js/knowledge-graph.js"></script>
+</body>
+</html>

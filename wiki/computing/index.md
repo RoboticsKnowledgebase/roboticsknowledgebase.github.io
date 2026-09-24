@@ -37,6 +37,9 @@ This section is curated for developers and researchers working on robotics appli
 - **[Upgrading the Ubuntu Kernel](/wiki/computing/upgrading-ubuntu-kernel/)**
   Instructions for upgrading the Ubuntu kernel to a specific version, ensuring compatibility and system stability.
 
+- **[Deploying Neural Networks on Edge Devices for Robotics](/wiki/computing/deploying-neural-networks-edge-devices/)**
+  A comprehensive guide to the edge deployment pipeline: exporting models to ONNX, optimizing with TensorRT, applying FP16/INT8 quantization, and integrating inference engines into ROS 2 nodes on platforms like NVIDIA Jetson and Google Coral.
+
 ## Resources
 
 ### Development and Setup

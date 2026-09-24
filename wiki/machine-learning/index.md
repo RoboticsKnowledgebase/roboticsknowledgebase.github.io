@@ -53,6 +53,9 @@ This section demonstrates how machine learning enhances robotic systems by enabl
 - **[Imitation Learning With a Focus on Humanoids](/wiki/machine-learning/imitation-learning/)**
   Covers the foundations of imitation learning and provides a practical guide for data collection and policy deployment on humanoid robots.
 
+- **[Foundation Models (LLMs/VLMs) for Robot Task Planning](/wiki/machine-learning/foundation-models-robot-task-planning/)**
+  Surveys key approaches for integrating large language models and vision-language models into robotic systems, including SayCan, Code as Policies, RT-2, and VoxPoser, with practical ROS 2 implementation examples.
+
 - **[6D Pose Estimation with YOLO and ZED](/wiki/machine-learning/6d-pose-tracking-yolo-zed/)**
   Practical implementation notes for fusing YOLO detections with ZED depth data for 6D pose and velocity tracking workflows.
 
