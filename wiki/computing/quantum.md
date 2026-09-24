@@ -9,7 +9,7 @@ title: Quantum Computing and the Qiskit Package
 # The 'title' is automatically displayed at the top of the page
 # and used in other parts of the site.
 ---
-With the undeniable rise of quantum computers, future generations of roboticists must be versed in the functioning and applications of this technology. However, very few concise guides exist that explain quantum computing in introductory terms for a techincal audience. This article shows some basic principles of quantum computing together with the Python package Qiskit, developed by IBM.
+With the undeniable rise of quantum computers, future generations of roboticists must be versed in the functioning and applications of this technology. However, very few concise guides exist that explain quantum computing in introductory terms for a technical audience. This article shows some basic principles of quantum computing together with the Python package Qiskit, developed by IBM.
 
 ## Fundamentals of Quantum Computing - Single Qubit Systems 
 
@@ -23,12 +23,12 @@ $$
 $$
 
 
-![Classical bit vs quantum bit](assets/superposition.png)
+![Classical bit vs quantum bit](/assets/images/computing/superposition.png)
 
 
 We can use the electron’s spin (or some other physical entity bound by quantum mechanics) as a means of transmitting information, therefore stepping into the world of quantum computing (QC).
 
-Any quantum signal whose state can be written as a superposition of two binary states is a "quibt". In our example, the spin of a single electron is a qubit. The pair $\{|0\rangle, |1\rangle\}$ represents an orthonormal basis, called the computational basis, which can be used to perform measurements. These measurements allow us to access the information stored in a qubit and transform it into a classical signal, or "cbit" (classical bit). This is generally done by assigning $|0\rangle \rightarrow 0$ and $|1\rangle \rightarrow 1$. 
+Any quantum signal whose state can be written as a superposition of two binary states is a "qubit". In our example, the spin of a single electron is a qubit. The pair $\{|0\rangle, |1\rangle\}$ represents an orthonormal basis, called the computational basis, which can be used to perform measurements. These measurements allow us to access the information stored in a qubit and transform it into a classical signal, or "cbit" (classical bit). This is generally done by assigning $|0\rangle \rightarrow 0$ and $|1\rangle \rightarrow 1$. 
 
 Some differences in relation to classical computing already start to appear. Consider, for example, the qubit whose state is given by $|\psi\rangle = \frac{1}{\sqrt{2}}|0\rangle + \frac{1}{\sqrt{2}}|1\rangle$. If we measure this signal with respect to the computational basis, we get $Pr[|0\rangle] = Pr[|1\rangle] = \frac{1}{2}$, meaning that the same signal, when converted to a classical bit (using the equivalence previously established) will yield bit 0 50% of the time and bit 1 50% of the time. Therefore, the same signal can result in different values when measured. This property is what makes QC different than classical computing. While a classical bit can be either 0 or 1, a quantum bit exists as a whole range of superpositions, and its measured value is probabilistic.
 
@@ -54,9 +54,9 @@ Back to the technical bit. We previously mentioned the computational basis $\{|0
 
 There are several ways to represent a single qubit. One of them is the vector representation, which is particularly useful when we wish to represent operators/gates as matrices. In this representation, a state such is written as $|\psi\rangle = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$. Henceforth, whenever a vector notation is used, we'll assume it is with respect to the computational basis.
 
-Another representation of a single qubit system relates to the concepts of global phase and relative phase. Two qubit states $|\psi\rangle$ and $|\psi'\rangle$ are considered equivalent ($|\psi\rangle \sim |\psi'\rangle$) if there exists a value $\alpha \in [0, 2\pi)$ such that $|\psi\rangle = e^{i \alpha} |\psi'\rangle$. The angle $\alpha$ is called the global phase of the state. By manipulating the global phase of the state, it is possible to see that any qubit state can be written as $|\psi\rangle = \begin{bmatrix} \cos{\frac{\theta}{2}} \\ e^{i\varphi} \sin{\frac{\theta}{2}}\end{bmatrix}$, with $\theta \in [0, \pi]$ and $\varphi \in [0, 2\pi)$. The angle $\varphi$ is called the relative phase. The angle pair $(\theta, \varphi)$ can be used to represent the qubit using the so-called "Bloch sphere", which is shown below. In the Bloch sphere, we represent the state $|\psi\rangle$ as a unit vector from the origin, with $\theta$ being its polar angle and $\varphi$ its azimuth angle. Another feature of the Bloch sphere is that it maps the special states previosuly described to key points on the sphere's surface.
+Another representation of a single qubit system relates to the concepts of global phase and relative phase. Two qubit states $|\psi\rangle$ and $|\psi'\rangle$ are considered equivalent ($|\psi\rangle \sim |\psi'\rangle$) if there exists a value $\alpha \in [0, 2\pi)$ such that $|\psi\rangle = e^{i \alpha} |\psi'\rangle$. The angle $\alpha$ is called the global phase of the state. By manipulating the global phase of the state, it is possible to see that any qubit state can be written as $|\psi\rangle = \begin{bmatrix} \cos{\frac{\theta}{2}} \\ e^{i\varphi} \sin{\frac{\theta}{2}}\end{bmatrix}$, with $\theta \in [0, \pi]$ and $\varphi \in [0, 2\pi)$. The angle $\varphi$ is called the relative phase. The angle pair $(\theta, \varphi)$ can be used to represent the qubit using the so-called "Bloch sphere", which is shown below. In the Bloch sphere, we represent the state $|\psi\rangle$ as a unit vector from the origin, with $\theta$ being its polar angle and $\varphi$ its azimuth angle. Another feature of the Bloch sphere is that it maps the special states previously described to key points on the sphere's surface.
 
-![Representing a state on the Bloch sphere](assets/bloch.png)
+![Representing a state on the Bloch sphere](/assets/images/computing/bloch.png)
 
 ## Single Qubit Systems in Qiskit
 
@@ -91,7 +91,7 @@ plot_bloch_vector([r, theta, phi], coord_type='spherical', title="Bloch Sphere Q
 plt.show()
 ```
 
-![Representing a state on the Bloch sphere - Qiskit](assets/bloch_qiskit.png)
+![Representing a state on the Bloch sphere - Qiskit](/assets/images/computing/bloch_qiskit.png)
 
 
 ## Multiple Qubit Systems
@@ -153,7 +153,7 @@ As a general formula for the Bell states, we can write $|\Psi^{ij}\rangle = \fra
 
 ## Operators and Quantum Ports
 
-Operators will be defined as transformations from the state space of a quantum system to itself \cite{rieffel2011quantum}. Not all operators imaginable are permissible, for they must satisfy the rules of quantum mechanics. Namely, the operators, once defined in their vector spaces, need to satisfy the requirements of linearity, for the principle of superposition to hold, and the preservation of the inner product, so that no contradictions arise in terms of measurement. In these equations, $U$ is an operator and $U^\dag$ means the complex conjugate transpose of $U$. Operators can be represented as both matrices or bra-ket entities.
+Operators will be defined as transformations from the state space of a quantum system to itself [1]. Not all operators imaginable are permissible, for they must satisfy the rules of quantum mechanics. Namely, the operators, once defined in their vector spaces, need to satisfy the requirements of linearity, for the principle of superposition to hold, and the preservation of the inner product, so that no contradictions arise in terms of measurement. In these equations, $U$ is an operator and $U^\dag$ means the complex conjugate transpose of $U$. Operators can be represented as both matrices or bra-ket entities.
 
 Linearity:
 
@@ -234,21 +234,21 @@ Gates can be combined into circuits. The circuits shown in this work, such as th
 1. Information flows from left to right;
 2. Qubit registers, which are represented by single lines, are numbered, and the higher the value, the more signification the qubit;
 3. Double lines represent classical bits, It is possible to have either many double lines, each one representing a bit, or a single double line representing a bit string;
-4. Measurements, which are always done against the computational basis, take a 1-qubit state to a classical bit in accordance to the encoding in section \ref{sec:single_qubit}. If measuring into a bit string, significance is preserved;
+4. Measurements, which are always done against the computational basis, take a 1-qubit state to a classical bit in accordance to the encoding in the section on Single Qubit Systems. If measuring into a bit string, significance is preserved;
 5. Gates are represented by squares, with the operator involved represented by letters.
 
 
-![Example quantum circuit](assets/teleportation_labelled.png)
+![Example quantum circuit](/assets/images/computing/teleportation_labelled.png)
 
 To further solidify the understanding of quantum systems, some examples are shown here.
 
 Consider the simple, 1-qubit circuit below. In it we have $|\psi_1\rangle = |0\rangle$. After passing the Hadamard gate, we get $|\psi_2\rangle = H|\psi_1\rangle = H|0\rangle = |+\rangle$. Measuring $|\psi_2\rangle = |+\rangle$ against the computational should entail $Pr[|0\rangle] = Pr[|1\rangle] = \frac{1}{2}$, meaning we should get bit 0 and bit 1 with equal probability. Qiskit allows us to run this circuit either on a classical computer (simulating the quantum computer by using randomness packages. Evidently, this is less efficient than using a real quantum computer) or on one of IBM's quantum computers. The results of running this circuit 1024 times are shown below, with these being in agreement with our predictions. 
 
 
-![Simple quantum circuit](assets/circuit_annotated.png)
+![Simple quantum circuit](/assets/images/computing/circuit_annotated.png)
 
 
-![Counts of the circuit above](assets/counts.png)
+![Counts of the circuit above](/assets/images/computing/counts.png)
 
 
 
@@ -261,7 +261,7 @@ $$
 \end{split}
 $$
 
-![Circuit for generating Bell states](assets/bell_annotated.png)
+![Circuit for generating Bell states](/assets/images/computing/bell_annotated.png)
 
 
 The $CNOT$ gate only acts if the controlling qubit is in state $|1\rangle$, meaning the equation above is identical to the one below, which matches our previous equation for Bell states, thus proving that the system is successful in its objective. 
@@ -273,7 +273,7 @@ $$
 
 Also, we can build a circuit to solve the inverse problem of finding $i, j$ given a Bell state $|\Psi^{ij}\rangle$. This problem is called "Bell measurement". Since both the $CNOT$ and $H$ operators used in the figure above are real and symmetric, they are their own inverses. Therefore, all we need to do is run the circuit in the "other direction", as in the figure below. 
 
-![Circuit for Bell measurements](assets/bell_measure_annotated.png)
+![Circuit for Bell measurements](/assets/images/computing/bell_measure_annotated.png)
 
 
 
