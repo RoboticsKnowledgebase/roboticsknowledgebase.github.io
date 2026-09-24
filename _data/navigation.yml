@@ -49,6 +49,8 @@ wiki:
         url: /wiki/common-platforms/dji-drone-breakdown-for-technical-projects/
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
+      - title: DJI Enterprise Payload SDK
+        url: /wiki/common-platforms/dji-enterprise-payload-sdk.md
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
       - title: Husky Interfacing Procedure
@@ -255,6 +257,8 @@ wiki:
         url: /wiki/state-estimation/visual-servoing/
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/cartographer-ros-integration/
+      - title: Externally Referenced State Estimation for GPS Lacking Environments
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
       - title: External Position Estimation using OptiTrack Motion Capture System
         url: /wiki/state-estimation/optitrack-motion-capture/
       - title: LIO-SAM with Velocity Undistortion & Dynamic Obstacle Filtering
