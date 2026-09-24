@@ -44,11 +44,11 @@ The arm should be resting as in the position below:
 ![Kinova starting position](/assets/images/common-platforms/kinova_start.png)
 
 
-It is essential that the *gripper is not blocked*, as the arm will open and close the gripper upon startup. If the arm is in a position where the gripper is blocked, move the arm gently until it reaches a *stable* position where the gripper is free to open and close.
+It is essential that the **gripper is not blocked**, as the arm will open and close the gripper upon startup. If the arm is in a position where the gripper is blocked, move the arm gently until it reaches a **stable** position where the gripper is free to open and close.
 
-Once the arm is in a safe position, check that the power supply is connected and turned on. *Localize the red e-stop button and keep it within reach at all times*. Unlock the robot by twisting the e-stop button in the same sense as the arrow on it. The button should pop out.
+Once the arm is in a safe position, check that the power supply is connected and turned on. **Localize the red e-stop button and keep it within reach at all times**. Unlock the robot by twisting the e-stop button in the same sense as the arrow on it. The button should pop out.
 
-Then press the silver button on the back of the arm until a blue LED lights up and release it. *DO NOT* press the button for more than 10 seconds, as that will factory reset the arm. The lights will then show blue and yellow during startup. *Once the gripper closes and opens and the light turns to solid green, the arm will be ready for use.*
+Then press the silver button on the back of the arm until a blue LED lights up and release it. **DO NOT** press the button for more than 10 seconds, as that will factory reset the arm. The lights will then show blue and yellow during startup. **Once the gripper closes and opens and the light turns to solid green, the arm will be ready for use.**
 
 #### Using
 
