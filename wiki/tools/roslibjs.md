@@ -148,7 +148,7 @@ To visualize and update an image stream live within your web app, first you need
 <img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="/assets/images/placeholder.png">
 ```
 
-Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
+Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](/wiki/tools/stream-rviz/#compressing-image-streams) for more details on setting up image compression for your topics.
 
 ```
 var image_topic = new ROSLIB.Topic({

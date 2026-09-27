@@ -58,7 +58,7 @@ There are a few ways Ubuntu installation can go wrong or be delayed but this pag
 
 ## See Also:
 - [Ubuntu 14.04 on Chromebook](/wiki/computing/ubuntu-chromebook)
-- [Upgrading Ubuntu Kernels](/wiki/computing/upgrading-ubuntu-kenel)
+- [Upgrading Ubuntu Kernels](/wiki/computing/upgrading-ubuntu-kernel/)
 
 ## Further Reading
 - [Git repositories for drivers for different types of RealTek cards](https://www.github.com/lwfinger)
