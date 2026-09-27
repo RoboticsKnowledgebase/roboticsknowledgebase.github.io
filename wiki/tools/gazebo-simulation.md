@@ -130,7 +130,7 @@ To update the parameters such as topic to publish, rate, and depth limits, you c
 We have covered several aspects in Gazebo, including importing and customizing a model into a Gazebo world, and to implement plugins for the sensors as well as define the URDF files so that messages would be published accordingly. These two components are crucial when we want to start a ROS simulation using Gazebo.
 
 ## See Also:
-* [Visualization and Simulation](https://roboticsknowledgebase.com/wiki/tools/visualization-simulation/)
+* [Visualization and Simulation](/wiki/tools/visualization-simulation/)
 
 ## Further Reading
 * Gazebo ROS tutorial: <http://wiki.ros.org/simulator_gazebo/Tutorials>

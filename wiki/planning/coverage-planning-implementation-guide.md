@@ -97,7 +97,7 @@ This wiki details how to implement a basic coverage planner, which can be used f
  Overall, coverage planning is useful for tasks that require scanning of an area by a robot. We have seen how we can generate such paths over complicated areas by first splitting the region into simpler trapezoidal cells, planning a traversal across those cells, and then using a simple back-and-forth lawnmower pattern to cover each trapezoid. With such an algorithm, we can have our robots plan paths to cover arbitrarily complex polygonal regions.
 
 ## See Also:
-- [Planning Overview](https://roboticsknowledgebase.com/wiki/planning/planning-overview/)
+- [Planning Overview](/wiki/planning/planning-overview/)
 
 ## Further Reading
 - [A Survey on Coverage Path Planning for Robotics](https://core.ac.uk/download/pdf/132555826.pdf)

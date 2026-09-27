@@ -140,7 +140,7 @@ You can view the message data on your web console. You can access all your ROS m
 
 ## Some More ROS JavaScript Interface for Developing GUIs
 
-You can do more advanced stuff such as subscribing to images, Rviz visualizations (see [this tutorial for more information](https://roboticsknowledgebase.com/wiki/tools/stream-rviz)), and monitor diagnostics from your nodes.
+You can do more advanced stuff such as subscribing to images, Rviz visualizations (see [this tutorial for more information](/wiki/tools/stream-rviz)), and monitor diagnostics from your nodes.
 
 To visualize and update an image stream live within your web app, first you need a placeholder in HTML for your image. Define it as follows within the `body` tag with an unique ID to update it later via JavaScript.
 
@@ -148,7 +148,7 @@ To visualize and update an image stream live within your web app, first you need
 <img id="my_image" style='height: 100%; width: 100%; object-fit: contain' src="/assets/images/placeholder.png">
 ```
 
-Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](https://roboticsknowledgebase.com/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
+Now, you can create a topic handler and subscribe to your image from ROS. Note that, if you want to integrate image streams with `roslibjs`, the ROS socket bridge expects images in compressed format. See this section [here](/wiki/tools/stream-rviz/compressing-image-streams) for more details on setting up image compression for your topics.
 
 ```
 var image_topic = new ROSLIB.Topic({
@@ -171,7 +171,7 @@ Here is an example of a dashboard (DeltaViz) for Delta Autonomy developed by [me
 ![](/assets/images/tools/deltaviz.jpg)
 
 ## See Also
-- A [tutorial](https://roboticsknowledgebase.com/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.
+- A [tutorial](/wiki/tools/stream-rviz) on setting up virtual cameras and lighting in Rviz and stream these images which can be used in your GUI or for other applications within ROS.
 
 ## Further Reading
 - There is a lot more you can do with `roslibjs`. Check out the official wiki [here](http://wiki.ros.org/roslibjs/Tutorials/BasicRosFunctionality) for more advanced tutorials.

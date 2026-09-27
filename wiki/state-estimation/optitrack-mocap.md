@@ -80,7 +80,7 @@ Adhering to best practices, such as proper marker placement and frame alignment,
 
 ## See Also
 - [Setting up ROS Workspaces](https://wiki.ros.org/ROS/Tutorials)
-- [Motion Capture for Robotics](https://roboticsknowledgebase.com/mocap)
+- [Motion Capture for Robotics](/mocap)
 
 ## Further Reading
 - [OptiTrack Official Documentation](https://optitrack.com/documentation/)

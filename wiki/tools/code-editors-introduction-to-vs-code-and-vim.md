@@ -176,7 +176,7 @@ Just to name a few. The list is still super long. Vim plugins are powerful. Howe
 There of course is not a single best code editor that one should use. People have different preferences and situations. In fact, the debate about which code editor is the best has been around for decades. People still strive to speak for their favorite editors while once a person is stuck with an editor, it is often really hard for them to make up their mind to change. However, VS Code and Vim are certainly two of the most used code editors nowadays. I hope the above context could help you decide the one you would like to try it out. Good luck coding!
 
 ## See Also:
-- Vim Text Editor: <https://roboticsknowledgebase.com/wiki/tools/vim/>
+- Vim Text Editor: </wiki/tools/vim/>
 
 ## Further Reading
 - [Transitioning from VS Code to Vim](https://medium.com/@kalebzeray/transitioning-from-vscode-to-vim-dc3b23e35c58)

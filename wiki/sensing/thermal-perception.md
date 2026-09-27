@@ -251,5 +251,5 @@ facing depth recovery in non-traditional modalities, foundation models are a com
 
 ## See Also
 
-- The [Thermal Cameras wiki page](https://roboticsknowledgebase.com/wiki/sensing/thermal-cameras/) goes into more depth
+- The [Thermal Cameras wiki page](/wiki/sensing/thermal-cameras/) goes into more depth
   about how thermal cameras function.

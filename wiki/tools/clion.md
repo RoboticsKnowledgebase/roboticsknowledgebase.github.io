@@ -103,7 +103,7 @@ One of the important part of transitioning to professional life is using tools t
 ## See Also:
 
 - [Pycharm IDE for Python](https://www.jetbrains.com/pycharm/)
-- [VIM](https://roboticsknowledgebase.com/wiki/tools/vim/)
+- [VIM](/wiki/tools/vim/)
 - [Sublime-Text](https://www.sublimetext.com/)
 - [Sublime-Merge](https://www.sublimemerge.com/)
 
