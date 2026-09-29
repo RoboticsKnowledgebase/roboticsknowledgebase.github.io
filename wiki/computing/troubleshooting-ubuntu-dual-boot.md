@@ -57,8 +57,8 @@ In either case, however, usage will require essential packages like build-essent
 There are a few ways Ubuntu installation can go wrong or be delayed but this page hopefully will help a few people avoid major mistakes that held the writers of this page back a few weeks. After this guide the computer should be ready for installing browsers (such as Firefox), IDEs (such as VSCode or PyCharm), and libraries (such as mujoco or realsense-ros) as desired.
 
 ## See Also:
-- [Ubuntu 14.04 on Chromebook](https://roboticsknowledgebase.com/wiki/computing/ubuntu-chromebook)
-- [Upgrading Ubuntu Kernels](https://roboticsknowledgebase.com/wiki/computing/upgrading-ubuntu-kenel)
+- [Ubuntu 14.04 on Chromebook](/wiki/computing/ubuntu-chromebook)
+- [Upgrading Ubuntu Kernels](/wiki/computing/upgrading-ubuntu-kernel/)
 
 ## Further Reading
 - [Git repositories for drivers for different types of RealTek cards](https://www.github.com/lwfinger)

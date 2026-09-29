@@ -106,8 +106,8 @@ BLDC and servo motors often require active or passive cooling in high-performanc
 To summarize; selecting the right motor for a project involves balancing priorities and understanding the trade-offs between precision, control complexity, maintenance, torque, and cost. For applications requiring high precision, stepper or servo motors are ideal, whereas geared motors or high-torque BLDCs are suited for power-intensive tasks. Simple projects can use brushed motors for their ease of use, while advanced designs may justify the cost and control demands of brushless or servo motors. Brushless and AC motors are better for long-term use due to low maintenance, making them worthwhile investments. To amplify torque, gearboxes are effective, though they can reduce speed and introduce backlash. Finally, while cost-effective motors like brushed or stepper options work for non-critical components, critical applications demand higher-performing, costlier solutions.
 
 ## See Also:
-- [Motor Controller with Feedback](https://roboticsknowledgebase.com/wiki/actuation/motor-controller-feedback/)
-- [Linear Actuator Resources and Quick Reference](https://roboticsknowledgebase.com/wiki/actuation/linear-actuator-resources/)
+- [Motor Controller with Feedback](/wiki/actuation/motor-controller-feedback/)
+- [Linear Actuator Resources and Quick Reference](/wiki/actuation/linear-actuator-resources/)
 
 ## Further Reading
 - [Back-EMF in BLDC Motors : A Complete Guide](https://mechtex.com/blog/back-emf-in-bldc-motors-a-complete-guide#:~:text=Effects%20of%20Back%2DEMF%20on%20BLDC%20Motor%20Performance,and%20back%2DEMF%20which%20results%20in%20speed%20regulation)

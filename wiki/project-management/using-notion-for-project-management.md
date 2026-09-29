@@ -188,8 +188,8 @@ In summary, Notion is a powerful tool for project management. Its intuitive feat
 
 
 ## See Also:
-- [Risk Management](https://roboticsknowledgebase.com/wiki/project-management/risk-management/)
-- [Using Jira for Project Management](https://roboticsknowledgebase.com/wiki/project-management/jira/)
+- [Risk Management](/wiki/project-management/risk-management/)
+- [Using Jira for Project Management](/wiki/project-management/jira/)
 
 
 ## Further Reading

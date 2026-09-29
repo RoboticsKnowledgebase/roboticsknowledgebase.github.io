@@ -6,19 +6,19 @@ title: Setup your GPU Enabled System for Computer Vision and Deep Learning
 This tutorial will help you setup your Ubuntu (16/17/18) system with a NVIDIA GPU including installing the Drivers, CUDA, cuDNN, and TensorRT libraries. Tutorial also covers on how to build OpenCV from source and installing Deep Learning Frameworks such as TensorFlow (Source Build), PyTorch, Darknet for YOLO, Theano, and Keras. The setup has been tested on Ubuntu x86 platform and should also hold good for other Debian based (x86/ARM64) platforms.
 
 ## Contents
-1. [Install Prerequisites](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#1-install-prerequisites)
-2. [Setup NVIDIA Driver for your GPU](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#2-install-nvidia-driver-for-your-gpu)
-3. [Install CUDA](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#3-install-cuda)
-4. [Install cuDNN](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#4-install-cudnn)
-5. [Install TensorRT](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#5-install-tensorrt)
-6. [Python and Other Dependencies](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#6-python-and-other-dependencies)
-7. [OpenCV and Contrib Modules](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#7-install-opencv-and-contrib-modules)
-8. [Deep Learning Frameworks](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#8-install-deep-learning-frameworks)
-    - [PyTorch](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#pytorch)
-    - [TensorFlow](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#tensorflow)
-    - [Keras](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#keras)
-    - [Theano](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#theano)
-    - [Darknet for YOLO](https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/#darknet-for-yolo)
+1. [Install Prerequisites](/wiki/computing/setup-gpus-for-computer-vision/#1-install-prerequisites)
+2. [Setup NVIDIA Driver for your GPU](/wiki/computing/setup-gpus-for-computer-vision/#2-install-nvidia-driver-for-your-gpu)
+3. [Install CUDA](/wiki/computing/setup-gpus-for-computer-vision/#3-install-cuda)
+4. [Install cuDNN](/wiki/computing/setup-gpus-for-computer-vision/#4-install-cudnn)
+5. [Install TensorRT](/wiki/computing/setup-gpus-for-computer-vision/#5-install-tensorrt)
+6. [Python and Other Dependencies](/wiki/computing/setup-gpus-for-computer-vision/#6-python-and-other-dependencies)
+7. [OpenCV and Contrib Modules](/wiki/computing/setup-gpus-for-computer-vision/#7-install-opencv-and-contrib-modules)
+8. [Deep Learning Frameworks](/wiki/computing/setup-gpus-for-computer-vision/#8-install-deep-learning-frameworks)
+    - [PyTorch](/wiki/computing/setup-gpus-for-computer-vision/#pytorch)
+    - [TensorFlow](/wiki/computing/setup-gpus-for-computer-vision/#tensorflow)
+    - [Keras](/wiki/computing/setup-gpus-for-computer-vision/#keras)
+    - [Theano](/wiki/computing/setup-gpus-for-computer-vision/#theano)
+    - [Darknet for YOLO](/wiki/computing/setup-gpus-for-computer-vision/#darknet-for-yolo)
 
 ## 1. Install Prerequisites
 Before installing anything, let us first update the information about the packages stored on the computer and upgrade the already installed packages to their latest versions.

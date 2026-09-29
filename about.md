@@ -20,7 +20,7 @@ This wiki is meant for people in various stages of their career, including absol
 
 For simple edits, you can use the [editor on GitHub](https://github.com/RoboticsKnowledgebase/roboticsknowledgebase.github.io/blob/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Please see the [Contribute page](https://roboticsknowledgebase.com/docs) for more details.
+Please see the [Contribute page](/docs) for more details.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 

@@ -476,6 +476,6 @@ void loop()
 
 
 ## See Also:
-- [Docker](https://roboticsknowledgebase.com/wiki/tools/docker/)
-- [ROS Arduino Interface](https://roboticsknowledgebase.com/wiki/common-platforms/ros/ros-arduino-interface/) (If using ROS1 as opposed to ROS2)
-- [udev Rules](https://roboticsknowledgebase.com/wiki/tools/udev-rules/)
+- [Docker](/wiki/tools/docker/)
+- [ROS Arduino Interface](/wiki/common-platforms/ros/ros-arduino-interface/) (If using ROS1 as opposed to ROS2)
+- [udev Rules](/wiki/tools/udev-rules/)
