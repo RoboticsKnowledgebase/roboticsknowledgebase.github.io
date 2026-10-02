@@ -41,7 +41,7 @@ For our application for using the quadcopter to servo over a block, the interact
 ## Visual Servoing Application
 We used the formulation described above in order to build an application where the drone uses 4 corners of a block as feature points in the image in order to align over the block. The desired coordinates of the feature points were used as input and the servoing system computed the required velocities in order to move towards the desired configuration. We made sure to clip the output velocities to a value of 0.4m/s for safety and we were able to successfully servo over the block. We also needed to make sure that we are servoing at an appropriate height in order to ensure the block stays in the field of view.
 
-| ![Visual Servoing in action](assets/servoing-action.png) |
+| ![Visual Servoing in action](/assets/images/state-estimation/servoing-action.png) |
 |:--:|
 | *Visual Servoing in action from the onboard camera* |
 

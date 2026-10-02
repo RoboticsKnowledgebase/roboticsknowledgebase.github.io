@@ -16,7 +16,7 @@ This article serves as a step-by-step tutorial of how to integrate YOLO in ROS a
 
 ---
 ## Integrating YOLO with ROS
-![YOLO Demo](assets/yolo_demo.png)
+![YOLO Demo](/assets/images/machine-learning/yolo_demo.png)
 
 To install YOLO in ROS, we will use a YOLO ROS wrapper GitHub repository [darknet_ros](https://github.com/leggedrobotics/darknet_ros). You can simply follow their instructions in the README or follow the instructions below. 
 
@@ -196,8 +196,8 @@ In this tutorial, we went through the procedures for integrating YOLO with ROS b
 We also demonstrated how to setup CUDA and cuDNN to run YOLO in real-time. By following our step-by-step instructions, YOLO can run with realtime performance.
 
 ## See Also
-- [realsense_camera](https://roboticsknowledgebase.com/wiki/sensing/realsense/)
-- [ROS](https://roboticsknowledgebase.com/wiki/common-platforms/ros/ros-intro/)
+- [realsense_camera](/wiki/sensing/realsense/)
+- [ROS](/wiki/common-platforms/ros/ros-intro/)
 
 ## Further Reading
 - [CUDA_tutorial](https://medium.com/@exesse/cuda-10-1-installation-on-ubuntu-18-04-lts-d04f89287130)

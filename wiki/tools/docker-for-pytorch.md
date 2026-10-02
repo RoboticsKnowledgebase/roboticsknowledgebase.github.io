@@ -130,9 +130,9 @@ Breakdown of the command:
 With this we come to the end of our article. If you were able to successfully follow the above commands and were able to run the container, you now have a docker environment for training your PyTorch model. Hope this makes your life easier.
 
 ## See Also
-- Docker https://roboticsknowledgebase.com/wiki/tools/docker/
-- Setup GPU https://roboticsknowledgebase.com/wiki/computing/setup-gpus-for-computer-vision/
-- Python construct https://roboticsknowledgebase.com/wiki/programming/python-construct/
+- Docker /wiki/tools/docker/
+- Setup GPU /wiki/computing/setup-gpus-for-computer-vision/
+- Python construct /wiki/programming/python-construct/
 
 ## Further Reading
 - PyTorch https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch

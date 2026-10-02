@@ -32,7 +32,7 @@ Each ROS distribution supports only a select number of platforms, and for all su
 ### 1. Running ROS2 Humble via a docker container on Ubuntu 20.04
 
 #### Installing Docker
-Follow instructions given here to install docker - https://roboticsknowledgebase.com/wiki/tools/docker/
+Follow instructions given here to install docker - /wiki/tools/docker/
 #### Running ROS2 Humble docker container
 Running the command below will pull the latest ROS2 Humble Docker Image, start a container and attach a shell to it
 ```sh
@@ -179,7 +179,7 @@ ros2 run demo_nodes_py listener
 In this article, we discussed how to run a ROS distribution on an unsupported OS. Specifically we looked at the process of running ROS2 Humble on Ubuntu 20.04. However, the methods presented in the article can be easily adapted to accommodate other scenarios.
 
 ## Further Reading
-- [Introduction to Docker](https://roboticsknowledgebase.com/wiki/tools/docker/)
+- [Introduction to Docker](/wiki/tools/docker/)
 - [Docker Reference (docker run)](https://docs.docker.com/engine/reference/run/)
 
 ## References

@@ -1,0 +1,51 @@
+name: PR Change Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      validate_all:
+        description: "Run validators against full repository"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  validate-incoming-changes:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Run change validators (PR scope)
+        if: github.event_name == 'pull_request'
+        run: |
+          python .github/scripts/validate_changed_files_ci.py \
+            --base "origin/${{ github.base_ref }}" \
+            --head "${{ github.sha }}"
+
+      - name: Run change validators (manual)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ inputs.validate_all }}" = "true" ]; then
+            python .github/scripts/validate_changed_files_ci.py --all
+          else
+            python .github/scripts/validate_changed_files_ci.py --base origin/master --head HEAD
+          fi

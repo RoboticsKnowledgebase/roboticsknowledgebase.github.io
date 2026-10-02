@@ -5,7 +5,7 @@ title:  Adaptive Monte Carlo Localization
 ## What is a particle filter?
 Particle filter are initialized by a very high number of particles spanning the entire state space. As you get additional measurements, you predict and update your measurements which makes your robot have a multi-modal posterior distribution. This is a big difference from a Kalman Filter which approximates your posterior distribution to be a Gaussian. Over multiple iterations, the particles converge to a unique value in state space.
 
-![Particle Filter in Action over Progressive Time Steps](assets/AdaptiveMonteCarloLocalization-65e37.png)
+![Particle Filter in Action over Progressive Time Steps](/assets/images/state-estimation/AdaptiveMonteCarloLocalization-65e37.png)
 
 **Figure 1:** Particle Filter in Action over Progressive Time Steps
 
@@ -30,7 +30,7 @@ The key idea is to bound the error introduced by the sample-based representation
 ## Use of Adaptive Particle Filter for Localization
 To use adaptive particle filter for localization, we start with a map of our environment and we can either set robot to some position, in which case we are manually localizing it or we could very well make the robot start from no initial estimate of its position. Now as the robot moves forward, we generate new samples that predict the robot's position after the motion command. Sensor readings are incorporated by re-weighting these samples and normalizing the weights. Generally it is good to add few random uniformly distributed samples as it helps the robot recover itself in cases where it has lost track of its position. In those cases, without these random samples, the robot will keep on re-sampling from an incorrect distribution and will never recover. The reason why it takes the filter multiple sensor readings to converge is that within a map, we might have dis-ambiguities due to symmetry in the map, which is what gives us a multi-modal posterior belief.
 
-![Localization Process using Particle Filters](assets/AdaptiveMonteCarloLocalization-0d322.png)
+![Localization Process using Particle Filters](/assets/images/state-estimation/AdaptiveMonteCarloLocalization-0d322.png)
 
 [Dieter Fox's paper on Monte Carlo Localization for Mobile Robots](https://www.ri.cmu.edu/pub_files/pub1/fox_dieter_1999_1/fox_dieter_1999_1.pdf) gives further details on this topic and also compares this technique to many others such as Kalman Filter based Localization, Grid Based and Topological Markov Localization.
 

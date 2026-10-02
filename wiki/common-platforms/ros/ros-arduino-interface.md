@@ -204,4 +204,4 @@ sudo chmod a+rw /dev/ttyUSB0
 if the above command doesn’t work.
 
 ## See Also:
-- [ROS Introduction](https://roboticsknowledgebase.com/wiki/common-platforms/ros/ros-intro/)
+- [ROS Introduction](/wiki/common-platforms/ros/ros-intro/)

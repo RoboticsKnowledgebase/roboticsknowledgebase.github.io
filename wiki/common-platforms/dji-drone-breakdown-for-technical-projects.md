@@ -13,7 +13,7 @@ DJI drones have one of the best commercially available PID controllers along wit
 
 To be more specific, below we will look at the components involved in controlling a DJI drone.
 
-![DJI Control Scheme](../../assets/images/DJI.png)
+![DJI Control Scheme](/assets/images/common-platforms/DJI.png)
 
 The keypoint is:
 > DJI drones *need to read from its own GPS* to satisfy its EKF needs in order to produce proper state estimations for Position and Velocity Controls.
@@ -86,4 +86,4 @@ Here are some quadcopter safety precautions to keep in mind:
 If you are thinking of using DJI drones for your project, either be sure to stick with their GPS, implement your own EKF and Controller, or augment their drone with a PX4 controller to take advantage of the DJI hardware. Be sure to know the three flight control modes well, and follow general and safety tips for a successful project.
 
 ## See Also:
-- [DJI SDK Introduction](https://roboticsknowledgebase.com/wiki/common-platforms/dji-sdk/)
+- [DJI SDK Introduction](/wiki/common-platforms/dji-sdk/)

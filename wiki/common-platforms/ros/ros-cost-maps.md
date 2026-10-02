@@ -74,10 +74,10 @@ The following tutorial uses a Quadrotor with RGB-D Sensor as the base platform. 
 Here is the setup:
 
 Quadrotor (`base_link`): [3DR Iris+](https://store.3dr.com/products/IRIS)
-![3DR Iris+](assets/ROSCostMaps-90ce8.png)
+![3DR Iris+](/assets/images/ROSCostMaps-90ce8.png)
 
 Depth Sensor (`camera_link`): [Xtion Pro Live](https://www.asus.com/us/3D-Sensor/Xtion_PRO_LIVE/)
-![Xtion Pro Live](assets/ROSCostMaps-fad65.png)
+![Xtion Pro Live](/assets/images/ROSCostMaps-fad65.png)
 
 ### Setup of the camera
 
@@ -162,7 +162,7 @@ The source code for MAVROS, which will be similar to the folder you will find by
 
 You will want to find the file named `px4_config.yaml` or `apm_config.yaml` depending on which of the flight controller firmware you are running. If you are running the PX4 firmware, you are going to want to open `px4_config.yaml` and find this section:
 
-![Code Snippet](assets/ROSCostMaps-2dba7.png)
+![Code Snippet](/assets/images/ROSCostMaps-2dba7.png)
 
 Once you find it, you will want to change:
 
@@ -253,7 +253,7 @@ Our setup can be run by issuing the following commands in separate terminals or 
 ### Output
 
 The output of the costmap is shown here.
-![CostMap Output](assets/ROSCostMaps-8c746.png)
+![CostMap Output](/assets/images/ROSCostMaps-8c746.png)
 
 ## Communications with PIXHAWK
 
