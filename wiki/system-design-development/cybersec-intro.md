@@ -215,9 +215,6 @@ For instance, CMU's 2024 project focused on securing medical devices, offering i
 ## Summary
 This article aimed to explain a few key concepts of cybersecurity and illustrate how they intersect with the world of robotics, especially when considering the role of embedded devices, which serve as a critical backbone for a robot's functionality and operation. By exploring these connections, the article highlights the importance of addressing security vulnerabilities that could compromise the integrity and reliability of robotic systems. The goal of compiling this information is not only to shed light on potential threats and mitigation strategies but also to inspire and encourage future students to adopt a security-first mindset when designing and developing robotic systems. By integrating these principles early on, students can contribute to creating safer, more resilient robotic technologies that are better equipped to withstand the challenges of a rapidly evolving digital landscape.
 
-## See Also:
-- [How quantum computing relates to cryptography](/wiki/computing/quantum/)
-
 ## References
 [1] D. Merli, *Engineering Secure Devices*. No Starch Press, 2024. 
 
