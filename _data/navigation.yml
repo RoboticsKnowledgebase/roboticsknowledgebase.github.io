@@ -29,6 +29,8 @@ wiki:
         url: /wiki/system-design-development/hardware-design-tips/
       - title: How to design a robotic state machine
         url: /wiki/system-design-development/how-to-design-a-robotic-state-machine/
+      - title: Introduction to Cybersecurity in Embedded Devices and Robotics
+        url: /wiki/system-design-development/cybersec-intro/
   - title: Project Management
     url: /wiki/project-management/
     children:
