@@ -2,12 +2,12 @@
 date: 2024-11-30
 title: Guide to Implement YOLOv8 with Roboflow and ROS2
 ---
-## Intro 
+## Intro
 Visual segmentation and classification are essential components of many robotic applications, enabling precise perception and decision-making. YOLOv8, one of the most widely adopted object detection frameworks, offers cutting-edge performance and versatility. This guide provides a step-by-step approach to implementing YOLOv8 with Roboflow for dataset preparation and ROS2 for seamless integration into robotic systems, streamlining your development process for efficient and accurate visual tasks.
 
 ### What is YOLOv8?
 
-YOLOv8 (You Only Look Once v8) is a state-of-the-art machine learning-based image model that can be trained and implemented using the Ultralytics library. 
+YOLOv8 (You Only Look Once v8) is a state-of-the-art machine learning-based image model that can be trained and implemented using the Ultralytics library.
 
 There are various applications for YOLOv8 depending on your system's requirements.
 
@@ -204,7 +204,7 @@ results = model.train(data='PATH_TO_DATASET', epochs=EPOCHS, imgsz=640)
 
 Replace `INSERT_MODEL_NAME` with your chosen model name and specify the path to your dataset (`PATH_TO_DATASET`). Experiment with the number of epochs for optimal configuration.
 
-> [!NOTE] 
+> [!NOTE]
 > The trained model will be saved in the `runs` directory under the respective task folder.
 ### Troubleshooting
 If you encounter a "dataset not found" error, consult the Ultralytics troubleshooting guide.
@@ -216,7 +216,7 @@ If you encounter a "dataset not found" error, consult the Ultralytics troublesho
 from ultralytics import YOLO
 
 # Load the trained model
-model = YOLO('PATH_TO_MODEL') 
+model = YOLO('PATH_TO_MODEL')
 
 # Perform tracking
 results = model.track('INSERT_YOUTUBE_LINK', show=True)
