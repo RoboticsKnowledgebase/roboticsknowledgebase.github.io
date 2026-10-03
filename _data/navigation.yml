@@ -200,6 +200,8 @@ wiki:
   - title: Machine Learning
     url: /wiki/machine-learning/
     children:
+      - title: Guide to Implement YOLOv8 with Roboflow and ROS2
+        url: /wiki/machine-learning/guide-to-implement-yolov8-with-roboflow-and-ros2/
       - title: Training darknet on a custom dataset
         url: /wiki/machine-learning/train-darknet-on-custom-dataset/
       - title: Custom data-set for segmentation
