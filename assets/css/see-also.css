@@ -1,0 +1,15 @@
+.sa-panel {
+  margin: 2.2rem 0 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e5e8ec;
+}
+.sa-heading {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+.sa-list { list-style: disc; padding-left: 1.4rem; margin: 0; }
+.sa-list li { margin: 0.15rem 0; font-size: 0.95rem; }
+.sa-list a { text-decoration: none; color: #2563aa; }
+.sa-list a:hover { text-decoration: underline; }
