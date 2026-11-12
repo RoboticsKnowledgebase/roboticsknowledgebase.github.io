@@ -52,7 +52,7 @@ wiki:
       - title: DJI SDK
         url: /wiki/common-platforms/dji-sdk/
       - title: DJI Enterprise Payload SDK
-        url: /wiki/common-platforms/dji-enterprise-payload-sdk.md
+        url: /wiki/common-platforms/dji-enterprise-payload-sdk/
       - title: Hello Robot Stretch RE1
         url: /wiki/common-platforms/hello-robot
       - title: Husky Interfacing Procedure
@@ -163,11 +163,11 @@ wiki:
       - title: Tracking vehicles using a static traffic camera
         url: /wiki/sensing/trajectory-extraction-static-camera/
       - title: Setting Up the ZED Camera with ROS and troubleshooting steps
-        url: /wiki/sensing/setting-up-the-zed-camera-with-ros.md
+        url: /wiki/sensing/setting-up-the-zed-camera-with-ros/
       - title: Neural Depth Sensing in ZED Stereo Cameras
-        url: /wiki/sensing/neural-depth-sensing-in-zed.md
+        url: /wiki/sensing/neural-depth-sensing-in-zed/
       - title: Accelerating Point Cloud Processing with CUDA PCL (cuPCL)
-        url: /wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl.md
+        url: /wiki/sensing/accelerating-point-cloud-processing-with-cuda-pcl/
   - title: Actuation
     url: /wiki/actuation/
     children:
@@ -182,9 +182,9 @@ wiki:
       - title: Vedder Electronic Speed Controller
         url: /wiki/actuation/vedder-electronic-speed-controller/
       - title: Pure Pursuit Controller for Skid Steering
-        url: /wiki/actuation/pure-pursuit-controller-for-skid-steering-robot.md
+        url: /wiki/actuation/pure-pursuit-controller-for-skid-steering-robot/
       - title: MoveIt Motion Planning and HEBI Actuator Setup and Integration
-        url: /wiki/actuation/moveit-and-hebi-integration.md
+        url: /wiki/actuation/moveit-and-hebi-integration/
       - title: MoveIt Hybrid Planning Architecture for Motion Compensation
         url: /wiki/actuation/moveit-hybrid-planning-architecture/
       - title: Model Predictive Control Introduction and Setup
@@ -215,37 +215,37 @@ wiki:
       - title: Offline reinforcement learning
         url: /wiki/machine-learning/offline-rl
       - title: YOLO Integration with ROS and Running with CUDA GPU
-        url: /wiki/sensing/ros-yolo-gpu/
+        url: /wiki/machine-learning/ros-yolo-gpu/
       - title: YOLOv5 Training and Deployment on NVIDIA Jetson Platforms
         url: /wiki/machine-learning/yolov5-tensorrt/
       - title: Mediapipe - Live ML anywhere
-        url: /wiki/machine-learning/mediapipe-live-ml-anywhere.md/
+        url: /wiki/machine-learning/mediapipe-live-ml-anywhere/
       - title: NLP for robotics
-        url: /wiki/machine-learning/nlp_for_robotics.md/
+        url: /wiki/machine-learning/nlp-for-robotics/
       - title: 6D Pose Estimation with YOLO and ZED
-        url: /wiki/machine-learning/6d-pose-tracking-yolo-zed.md
+        url: /wiki/machine-learning/6d-pose-tracking-yolo-zed/
       - title: Practical Guide to Model Quantization and TensorRT Optimization
-        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization.md
+        url: /wiki/machine-learning/practical-guide-to-model-quantization-and-tensorrt-optimization/
       - title: Installing YOLO on ARM Architecture Devices
-        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices.md
+        url: /wiki/machine-learning/installing-yolo-on-arm-architecture-devices/
       - title: Comprehensive guide to albumentations
-        url: /wiki/machine-learning/comprehensive-guide-to-albumentations.md
+        url: /wiki/machine-learning/comprehensive-guide-to-albumentations/
       - title: Kornia technical guide
-        url: /wiki/machine-learning/kornia-technical-guide.md
+        url: /wiki/machine-learning/kornia-technical-guide/
       - title: Integrating OLLAMA LLMs with Franka Arm
-        url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm.md
+        url: /wiki/machine-learning/integrating-ollama-llms-with-franka-arm/
       - title: Multi-task learning A starter guide
-        url: /wiki/machine-learning/multitask-learning-starter.md
+        url: /wiki/machine-learning/multitask-learning-starter/
       - title: Understanding Kalman Filters and Visual Tracking
-        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking.md
+        url: /wiki/machine-learning/understanding-kalman-filters-and-visual-tracking/
       - title: Knowledge Distillation practical implementation guide
-        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide.md
+        url: /wiki/machine-learning/knowledge-distillation-practical-implementation-guide/
       - title: Neural Network optimization using model pruning
-        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning.md
+        url: /wiki/machine-learning/neural-network-optimization-using-model-pruning/
       - title: Deep learning techniques for 3D datasets
-        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets.md
+        url: /wiki/machine-learning/deep-learning-techniques-for-3d-datasets/
       - title: Optical Flow - Classical to Deep Learning Implementation
-        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation.md
+        url: /wiki/machine-learning/optical-flow-classical-to-deep-learning-implementation/
   - title: State Estimation
     url: /wiki/state-estimation/
     children:
@@ -262,7 +262,7 @@ wiki:
       - title: Cartographer SLAM ROS Integration
         url: /wiki/state-estimation/cartographer-ros-integration/
       - title: Externally Referenced State Estimation for GPS Lacking Environments
-        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors.md
+        url: /wiki/state-estimation/gps-lacking-state-estimation-sensors/
       - title: External Position Estimation using OptiTrack Motion Capture System
         url: /wiki/state-estimation/optitrack-motion-capture/
       - title: LIO-SAM with Velocity Undistortion & Dynamic Obstacle Filtering
@@ -270,7 +270,7 @@ wiki:
       - title: Running SLAM in Production - A Practitioner's Guide
         url: /wiki/state-estimation/running-slam-in-production/
       - title: Complete Guide to Installing ORB SLAM3
-        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide.md
+        url: /wiki/state-estimation/orb-slam3-setup-and-troubleshoot-guide/
       - title: Setting Up OptiTrack Mocap System
         url: /wiki/state-estimation/optitrack-mocap/
   - title: Programming
@@ -287,7 +287,7 @@ wiki:
       - title: Git
         url: /wiki/programming/git/
       - title: Programming Interviews
-        url: /wiki/programming/google-programming-interviews/
+        url: /wiki/programming/programming-interviews/
       - title: Multithreaded Programming
         url: /wiki/programming/multithreaded-programming/
       - title: Programming Tutorials and Resources
@@ -315,9 +315,9 @@ wiki:
       - title: Building a Light Weight Custom Simulator
         url: /wiki/simulation/building-a-light-weight-custom-simulator/
       - title: Design considerations for ROS architectures
-        url: /wiki/simulation/Design-considerations-for-ROS-architectures
+        url: /wiki/simulation/design-considerations-for-ros-architectures/
       - title: Spawning and Controlling Vehicles in CARLA
-        url: /wiki/simulation/Spawning-and-Controlling-Vehicles-in-CARLA
+        url: /wiki/simulation/spawning-and-controlling-vehicles-in-carla/
       - title: NDT Matching with Autoware
         url: /wiki/simulation/ndt-matching-with-autoware/
       - title: An Introduction to Isaac Sim
@@ -350,13 +350,13 @@ wiki:
     url: /wiki/computing/
     children:
       - title: Amazon Web Services Quickstart
-        url: wiki/computing/aws-quickstart.md
+        url: /wiki/computing/aws-quickstart/
       - title: Adruino
         url: /wiki/computing/arduino/
       - title: Single Board Computers
         url: /wiki/computing/single-board-computers/
       - title: Upgrading Ubuntu Kernels
-        url: /wiki/computing/upgrading-ubuntu-kenel/
+        url: /wiki/computing/upgrading-ubuntu-kernel/
       - title: Ubuntu 14.04 on Chromebook
         url: /wiki/computing/ubuntu-chromebook/
       - title: Setup your GPU System for Computer Vision
@@ -429,7 +429,7 @@ wiki:
       - title: Gazebo Simulation
         url: /wiki/tools/gazebo-simulation/
       - title: Code Editors - Introduction to VS Code and Vim
-        url: /wiki/tools/code-editors-Introduction-to-vs-code-and-vim/
+        url: /wiki/tools/code-editors-introduction-to-vs-code-and-vim/
       - title: Qtcreator UI development with ROS
         url: /wiki/tools/qt-creator-ros/
       - title: Tutorial on Using USB Compute Sticks
@@ -455,7 +455,7 @@ wiki:
       - title: Multi Robot Planning Design
         url: /wiki/planning/multi-robot-planning/
       - title: Motion Planning in frenet frame
-        url: /wiki/planning/frenet-frame-planning.md/
+        url: /wiki/planning/frenet-frame-planning/
       - title: Move Base Flex
         url: /wiki/planning/move-base-flex/
       - title: Manipulator Trajectory Planning using CuRoBo
