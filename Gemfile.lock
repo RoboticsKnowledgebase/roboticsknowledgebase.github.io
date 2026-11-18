@@ -253,7 +253,7 @@ GEM
       sawyer (~> 0.9)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    prism (2.1.0)
+    prism (1.9.0)
     public_suffix (5.1.1)
     racc (1.8.1)
     rb-fsevent (0.11.2)
