@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1080"
+   height="1440"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="GStreamer.Overview.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send"
+       style="overflow:visible">
+      <path
+         id="path3782"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Sstart"
+       style="overflow:visible">
+      <path
+         id="path3779"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3767"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.62862086"
+     inkscape:cx="607.55273"
+     inkscape:cy="714.70169"
+     inkscape:document-units="px"
+     inkscape:current-layer="boxes"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-global="true"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="boxes"
+     inkscape:groupmode="layer"
+     id="boxes"
+     transform="translate(0,900)">
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g4207"
+       id="use4213"
+       transform="translate(224.75,-8.5085203e-6)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(449.5,-8.5085203e-6)"
+       id="use4215"
+       xlink:href="#g4207"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g4207"
+       id="use4217"
+       transform="translate(674.25,-8.5085203e-6)"
+       width="1080"
+       height="1440" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3343"
+       id="use4175"
+       transform="translate(224.75,4.9147967e-7)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(449.5,4.9147967e-7)"
+       id="use4177"
+       xlink:href="#use3343"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3343"
+       id="use4179"
+       transform="translate(674.25,4.9147967e-7)"
+       width="1080"
+       height="1440" />
+    <rect
+       style="fill:#729fcf;fill-opacity:1;stroke:#204a87;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2985"
+       width="1076"
+       height="136"
+       x="2"
+       y="-628.65039"
+       rx="30"
+       ry="20.298508" />
+    <rect
+       style="fill:#729fcf;fill-opacity:1;stroke:#204a87;stroke-width:3.99999976;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2987"
+       width="146"
+       height="196"
+       x="1.9999999"
+       y="-399.70639"
+       rx="22.346939"
+       ry="30" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect2987"
+       id="use2989"
+       transform="translate(310.66666,-4.9147967e-7)"
+       width="960"
+       height="540" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use2989"
+       id="use2991"
+       transform="translate(465.99997,-4.9147967e-7)"
+       width="960"
+       height="540" />
+    <g
+       id="g3327"
+       transform="translate(-65,-24.770229)">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path5129"
+         d="m 140,-374.93618 0,-24.35368"
+         style="fill:none;stroke:#204a87;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:none;stroke:#204a87;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 140,-425.75598 0,-41.64978"
+         id="path5131"
+         inkscape:connector-curvature="0" />
+      <path
+         transform="translate(4.7499999,-703.78987)"
+         d="m 153.5,277.25 c 0,10.0792 -8.1708,18.25 -18.25,18.25 -10.0792,0 -18.25,-8.1708 -18.25,-18.25 0,-10.0792 8.1708,-18.25 18.25,-18.25 10.0792,0 18.25,8.1708 18.25,18.25 z"
+         sodipodi:ry="18.25"
+         sodipodi:rx="18.25"
+         sodipodi:cy="277.25"
+         sodipodi:cx="135.25"
+         id="path5133"
+         style="fill:#729fcf;fill-opacity:1;stroke:#204a87;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         sodipodi:nodetypes="csc"
+         inkscape:connector-curvature="0"
+         id="path5135"
+         d="m 114.75,-424.53986 c 0,13.94519 11.30481,25.25 25.25,25.25 13.94519,0 25.25,-11.30481 25.25,-25.25"
+         style="fill:none;stroke:#204a87;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <rect
+       ry="30"
+       rx="30"
+       y="17"
+       x="2"
+       height="226"
+       width="1076"
+       id="rect3197"
+       style="fill:#c1504f;fill-opacity:1;stroke:#a40000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <rect
+       style="fill:#888a85;fill-opacity:1;stroke:#2e3436;stroke-width:4.00000047999999975;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3217"
+       width="1076"
+       height="76"
+       x="2.0000002"
+       y="257" />
+    <rect
+       y="342"
+       x="2"
+       height="196"
+       width="1076"
+       id="rect3223"
+       style="fill:#babdb6;fill-opacity:1;stroke:#2e3436;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(931.99994,-4.9147967e-7)"
+       id="use3317"
+       xlink:href="#rect2987"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(621.33331,-4.9147967e-7)"
+       id="use3319"
+       xlink:href="#rect2987"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(466,-4.9147967e-7)"
+       id="use3323"
+       xlink:href="#rect2987"
+       y="0"
+       x="0" />
+    <use
+       height="540"
+       width="960"
+       transform="translate(155.33333,-4.9147967e-7)"
+       id="use3325"
+       xlink:href="#rect2987"
+       y="0"
+       x="0" />
+    <rect
+       ry="20.816326"
+       rx="26.938776"
+       y="-857.11993"
+       x="3"
+       height="136"
+       width="176"
+       id="rect3335"
+       style="fill:#729fcf;fill-opacity:1;stroke:#204a87;stroke-width:3.99999952;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <rect
+       style="fill:#fed79f;fill-opacity:1;stroke:#fabd81;stroke-width:3.99999952;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="use3343"
+       width="176"
+       height="136"
+       x="228.75"
+       y="-857.11993"
+       rx="26.938776"
+       ry="20.816326" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3327"
+       id="use3347"
+       transform="translate(155.33333,1.050852e-5)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(310.66666,1.050852e-5)"
+       id="use3349"
+       xlink:href="#g3327"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3327"
+       id="use3351"
+       transform="translate(466,1.050852e-5)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(621.33331,1.050852e-5)"
+       id="use3353"
+       xlink:href="#g3327"
+       y="0"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3327"
+       id="use3355"
+       transform="translate(776.66663,1.050852e-5)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(931.99994,1.050852e-5)"
+       id="use3357"
+       xlink:href="#g3327"
+       y="0"
+       x="0" />
+    <use
+       height="1440"
+       width="1080"
+       transform="matrix(1,0,0,-1,16,-1120.8263)"
+       id="use3359"
+       xlink:href="#g3327"
+       y="0"
+       x="0" />
+    <g
+       id="g4207"
+       transform="translate(0,-21.244638)">
+      <path
+         style="fill:none;stroke:#fabd81;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 316.75,-699.87532 0,24.35368"
+         id="path4183"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4185"
+         d="m 316.75,-649.05552 0,41.64978"
+         style="fill:none;stroke:#204a87;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:nodetypes="cc" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#729fcf;fill-opacity:1;stroke:#204a87;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="path4187"
+         sodipodi:cx="135.25"
+         sodipodi:cy="277.25"
+         sodipodi:rx="18.25"
+         sodipodi:ry="18.25"
+         d="m 153.5,277.25 c 0,10.0792 -8.1708,18.25 -18.25,18.25 -10.0792,0 -18.25,-8.1708 -18.25,-18.25 0,-10.0792 8.1708,-18.25 18.25,-18.25 10.0792,0 18.25,8.1708 18.25,18.25 z"
+         transform="matrix(1,0,0,-1,181.5,-371.02163)" />
+      <path
+         style="fill:none;stroke:#fabd81;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 291.5,-650.27164 c 0,-13.94519 11.30481,-25.25 25.25,-25.25 13.94519,0 25.25,11.30481 25.25,25.25"
+         id="path4189"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csc" />
+    </g>
+    <rect
+       ry="10"
+       rx="17.231184"
+       y="-71.870018"
+       x="842"
+       height="74.870018"
+       width="116"
+       id="rect4255"
+       style="fill:#8ae234;fill-opacity:1;stroke:#4e9a06;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4255"
+       id="use4265"
+       transform="translate(120,0)"
+       width="1080"
+       height="1440" />
+    <rect
+       style="fill:#ecd7f4;fill-opacity:1;stroke:#b05fd3;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4267"
+       width="116"
+       height="74.870018"
+       x="482"
+       y="-71.870018"
+       rx="17.231184"
+       ry="10" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect4267"
+       id="use4273"
+       transform="translate(240,0)"
+       width="1080"
+       height="1440" />
+    <use
+       height="1440"
+       width="1080"
+       transform="translate(120,0)"
+       id="use4293"
+       xlink:href="#rect4267"
+       y="0"
+       x="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="text"
+     style="display:inline"
+     transform="translate(0,720)">
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="482.62305"
+       y="-172.58922"
+       id="text5146"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="482.62305"
+         y="-172.58922"
+         id="tspan5150">decoders:</tspan><tspan
+         sodipodi:role="line"
+         x="482.62305"
+         y="-142.58922"
+         id="tspan3089">- mp3</tspan><tspan
+         sodipodi:role="line"
+         x="482.62305"
+         y="-112.58921"
+         id="tspan3091">- mpeg4</tspan><tspan
+         sodipodi:role="line"
+         x="482.62305"
+         y="-82.589211"
+         id="tspan3093">- vorbis</tspan><tspan
+         sodipodi:role="line"
+         x="482.62305"
+         y="-52.589211"
+         id="tspan3095">- ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="232.08008"
+       y="-365.73828"
+       id="text5204"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5206"
+         x="232.08008"
+         y="-365.73828">GStreamer core framework</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3045"
+       y="-600.17267"
+       x="990.6543"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         y="-600.17267"
+         x="990.6543"
+         id="tspan3047"
+         sodipodi:role="line">video editor</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="766.68945"
+       y="-615.17267"
+       id="text3041"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3043"
+         x="766.68945"
+         y="-615.17267">streaming</tspan><tspan
+         sodipodi:role="line"
+         x="766.68945"
+         y="-585.17267"
+         id="tspan3085">server</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3037"
+       y="-617.49884"
+       x="541.92773"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         y="-617.49884"
+         x="541.92773"
+         id="tspan3039"
+         sodipodi:role="line">VoIP &amp; video</tspan><tspan
+         y="-587.49884"
+         x="541.92773"
+         sodipodi:role="line"
+         id="tspan3083">conferencing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="315.67188"
+       y="-602.49884"
+       id="text3033"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3035"
+         x="315.67188"
+         y="-602.49884">media player</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace Bold"
+       x="90.916992"
+       y="-651.52228"
+       id="text3025"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3027"
+         x="90.916992"
+         y="-651.52228">gst-launch</tspan><tspan
+         sodipodi:role="line"
+         x="90.916992"
+         y="-626.52228"
+         id="tspan3029">gst-inspect</tspan><tspan
+         sodipodi:role="line"
+         x="90.916992"
+         y="-601.52228"
+         id="tspan3031">gst-editor</tspan><tspan
+         sodipodi:role="line"
+         x="90.916992"
+         y="-576.52228"
+         id="tspan3193">gst-rtsp-server</tspan><tspan
+         sodipodi:role="line"
+         x="90.916992"
+         y="-551.52228"
+         id="tspan3195">...</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3097"
+       y="-174.98572"
+       x="21.070312"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3099"
+         y="-174.98572"
+         x="21.070312"
+         sodipodi:role="line">sources:</tspan><tspan
+         id="tspan3101"
+         y="-144.98572"
+         x="21.070312"
+         sodipodi:role="line">- alsa</tspan><tspan
+         id="tspan3103"
+         y="-114.98571"
+         x="21.070312"
+         sodipodi:role="line">- v4l2</tspan><tspan
+         id="tspan3105"
+         y="-84.98571"
+         x="21.070312"
+         sodipodi:role="line">- tcp/udp</tspan><tspan
+         id="tspan3107"
+         y="-54.98571"
+         x="21.070312"
+         sodipodi:role="line">- ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="176.40364"
+       y="-172.58922"
+       id="text3109"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="176.40364"
+         y="-172.58922"
+         id="tspan3111">sinks:</tspan><tspan
+         sodipodi:role="line"
+         x="176.40364"
+         y="-142.58922"
+         id="tspan3113">- alsa</tspan><tspan
+         sodipodi:role="line"
+         x="176.40364"
+         y="-112.58921"
+         id="tspan3115">- xvideo</tspan><tspan
+         sodipodi:role="line"
+         x="176.40364"
+         y="-82.589211"
+         id="tspan3117">- tcp/udp</tspan><tspan
+         sodipodi:role="line"
+         x="176.40364"
+         y="-52.589211"
+         id="tspan3119">- ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="776.11584"
+       y="-172.58922"
+       id="text3133"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="776.11584"
+         y="-172.58922"
+         id="tspan3135">filters:</tspan><tspan
+         sodipodi:role="line"
+         x="776.11584"
+         y="-142.58922"
+         id="tspan3137">- converters</tspan><tspan
+         sodipodi:role="line"
+         x="776.11584"
+         y="-112.58921"
+         id="tspan3139">- mixers</tspan><tspan
+         sodipodi:role="line"
+         x="776.11584"
+         y="-82.589211"
+         id="tspan3141">- effects</tspan><tspan
+         sodipodi:role="line"
+         x="776.11584"
+         y="-52.589211"
+         id="tspan3143">- ...</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3145"
+       y="-172.58922"
+       x="948.55267"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3147"
+         y="-172.58922"
+         x="948.55267"
+         sodipodi:role="line">protocols:</tspan><tspan
+         id="tspan3149"
+         y="-142.58922"
+         x="948.55267"
+         sodipodi:role="line">- file</tspan><tspan
+         id="tspan3151"
+         y="-112.58921"
+         x="948.55267"
+         sodipodi:role="line">- http</tspan><tspan
+         id="tspan3153"
+         y="-82.589211"
+         x="948.55267"
+         sodipodi:role="line">- rtsp</tspan><tspan
+         id="tspan3155"
+         y="-52.589211"
+         x="948.55267"
+         sodipodi:role="line">- ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="319.27408"
+       y="-172.58922"
+       id="text3157"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="319.27408"
+         y="-172.58922"
+         id="tspan3159">containers:</tspan><tspan
+         sodipodi:role="line"
+         x="319.27408"
+         y="-142.58922"
+         id="tspan3161">- mkv</tspan><tspan
+         sodipodi:role="line"
+         x="319.27408"
+         y="-112.58921"
+         id="tspan3163">- m4v</tspan><tspan
+         sodipodi:role="line"
+         x="319.27408"
+         y="-82.589211"
+         id="tspan3165">- ogg</tspan><tspan
+         sodipodi:role="line"
+         x="319.27408"
+         y="-52.589211"
+         id="tspan3167">- ...</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3169"
+       y="-172.58922"
+       x="637.95636"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       xml:space="preserve"><tspan
+         id="tspan3171"
+         y="-172.58922"
+         x="637.95636"
+         sodipodi:role="line">encoders:</tspan><tspan
+         id="tspan3173"
+         y="-142.58922"
+         x="637.95636"
+         sodipodi:role="line">- daala</tspan><tspan
+         id="tspan3175"
+         y="-112.58921"
+         x="637.95636"
+         sodipodi:role="line">- h.264x</tspan><tspan
+         id="tspan3177"
+         y="-82.589211"
+         x="637.95636"
+         sodipodi:role="line">- vorbis</tspan><tspan
+         id="tspan3179"
+         y="-52.589211"
+         x="637.95636"
+         sodipodi:role="line">- ...</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3181"
+       y="-695.6875"
+       x="-1.59375"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#204a87;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="-695.6875"
+         x="-1.59375"
+         id="tspan3183"
+         sodipodi:role="line">GStreamer tools</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fabd81;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="466.15625"
+       y="-695.6875"
+       id="text3185"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3187"
+         x="466.15625"
+         y="-695.6875">3rd party multimedia applications</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3199"
+       y="324.91211"
+       x="400.99609"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="324.91211"
+         x="400.99609"
+         id="tspan3201"
+         sodipodi:role="line">Linux kernel</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="0"
+       y="17.800833"
+       id="text3203"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3205"
+         x="0"
+         y="17.800833">GStreamer plugins</tspan><tspan
+         sodipodi:role="line"
+         x="0"
+         y="45.839844"
+         id="tspan3215"
+         style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">GStreamer includes over 150 plugins</tspan><tspan
+         sodipodi:role="line"
+         x="0"
+         y="70.839844"
+         style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans"
+         id="tspan4219">software plugins are executed on the host CPU</tspan><tspan
+         sodipodi:role="line"
+         x="0"
+         y="95.839844"
+         style="font-size:20px;font-weight:normal;fill:#b05fd3;-inkscape-font-specification:Sans"
+         id="tspan4221">hw accelerated plugins shunt execution to acceleration DSPs and the result back</tspan><tspan
+         sodipodi:role="line"
+         x="0"
+         y="120.83985"
+         id="tspan3213" /></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3207"
+       y="15.983367"
+       x="770.15625"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="15.983367"
+         x="770.15625"
+         id="tspan3209"
+         sodipodi:role="line">3rd party plugins</tspan><tspan
+         y="44.022377"
+         x="770.15625"
+         sodipodi:role="line"
+         style="font-size:20px;font-weight:normal;fill:#b05fd3;-inkscape-font-specification:Sans"
+         id="tspan4223">Texas Instuments, Motorola,</tspan><tspan
+         y="69.022377"
+         x="770.15625"
+         sodipodi:role="line"
+         style="font-size:20px;font-weight:normal;fill:#b05fd3;-inkscape-font-specification:Sans"
+         id="tspan4279">et al.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="283.35938"
+       y="485.52734"
+       id="text3219"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3221"
+         x="283.35938"
+         y="485.52734">CPU + system memory</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3225"
+       y="560.6347"
+       x="561.33002"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="560.6347"
+         x="561.33002"
+         sodipodi:role="line"
+         id="tspan3229">acceleration hw  (DSPs, etc.)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="646.43402"
+       y="595"
+       id="text3233"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3235"
+         sodipodi:role="line"
+         x="646.43402"
+         y="595"
+         style="font-size:20px;fill:#b05fd3">Texas Instruments DaVinci™, Ducati™</tspan><tspan
+         sodipodi:role="line"
+         x="646.43402"
+         y="620"
+         style="font-size:20px;fill:#b05fd3"
+         id="tspan3259">Motorola i.MX 51 bla</tspan><tspan
+         sodipodi:role="line"
+         x="646.43402"
+         y="645"
+         id="tspan3239"
+         style="font-size:20px;fill:#b05fd3">AMD UVD, VCE, TrueAudio™</tspan><tspan
+         sodipodi:role="line"
+         x="646.43402"
+         y="670"
+         style="font-size:20px;fill:#b05fd3"
+         id="tspan3257">Nvidia PureVideo, </tspan><tspan
+         sodipodi:role="line"
+         x="646.43402"
+         y="695"
+         style="font-size:20px;fill:#b05fd3"
+         id="tspan3247">Intel Quick Video Sync</tspan><tspan
+         sodipodi:role="line"
+         x="646.43402"
+         y="720"
+         style="font-size:20px;fill:#b05fd3"
+         id="tspan3265">...</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3267"
+       y="394.44189"
+       x="472.71179"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3279"
+         style="font-size:20px;fill:#b05fd3"
+         y="394.44189"
+         x="472.71179"
+         sodipodi:role="line">Linux hardware device drivers</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="196.44299"
+       y="225.38771"
+       id="text3371"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="196.44299"
+         y="225.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan3373">⇧</tspan><tspan
+         sodipodi:role="line"
+         x="196.44299"
+         y="250.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4227">V4L2</tspan><tspan
+         sodipodi:role="line"
+         x="196.44299"
+         y="275.3877"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4241">⇓</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3375"
+       y="225.38771"
+       x="84.074593"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3377"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="225.38771"
+         x="84.074593"
+         sodipodi:role="line">⇧</tspan><tspan
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="250.38771"
+         x="84.074593"
+         sodipodi:role="line"
+         id="tspan4229">ALSA</tspan><tspan
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="275.3877"
+         x="84.074593"
+         sodipodi:role="line"
+         id="tspan4243">⇓</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="330.92078"
+       y="225.38771"
+       id="text3379"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="330.92078"
+         y="225.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan3381">⇧</tspan><tspan
+         sodipodi:role="line"
+         x="330.92078"
+         y="250.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4231">DRM/KMS</tspan><tspan
+         sodipodi:role="line"
+         x="330.92078"
+         y="275.3877"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4245">⇓</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3383"
+       y="225.38771"
+       x="452.09778"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         id="tspan3385"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="225.38771"
+         x="452.09778"
+         sodipodi:role="line">⇧</tspan><tspan
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="250.38771"
+         x="452.09778"
+         sodipodi:role="line"
+         id="tspan4233">FB</tspan><tspan
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         y="275.3877"
+         x="452.09778"
+         sodipodi:role="line"
+         id="tspan4247">⇓</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="582.41541"
+       y="225.38771"
+       id="text4235"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="582.41541"
+         y="225.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4237">⇧</tspan><tspan
+         id="tspan4239"
+         sodipodi:role="line"
+         x="582.41541"
+         y="250.38771"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000">IP/TCP/UDP</tspan><tspan
+         sodipodi:role="line"
+         x="582.41541"
+         y="275.3877"
+         style="font-size:20px;text-align:center;text-anchor:middle;fill:#000000"
+         id="tspan4249">⇓</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="13.810968"
+       y="554.40802"
+       id="text4251"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4253"
+         sodipodi:role="line"
+         x="13.810968"
+         y="554.40802">peripheral hw</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4257"
+       y="154.14313"
+       x="899.41406"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#4e9a06;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="154.14313"
+         x="899.41406"
+         id="tspan4259"
+         sodipodi:role="line">D-Bus</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#4e9a06;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="1019.5254"
+       y="154.30133"
+       id="text4261"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4263"
+         x="1019.5254"
+         y="154.30133">Mesa 3D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="540.01758"
+       y="154.31303"
+       id="text4269"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4271"
+         x="540.01758"
+         y="154.31303">DMAI</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4275"
+       y="154.51225"
+       x="659.54297"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       xml:space="preserve"><tspan
+         y="154.51225"
+         x="659.54297"
+         id="tspan4277"
+         sodipodi:role="line">imx-lib</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="-1.1953125"
+       y="156.98737"
+       id="text4281"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4287"
+         style="font-size:24px;font-weight:bold;fill:#000000;-inkscape-font-specification:Sans Bold"
+         sodipodi:role="line"
+         x="-1.1953125"
+         y="156.98737">Optional additional libraries:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b05fd3;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="780.01172"
+       y="154.8521"
+       id="text4295"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4297"
+         x="780.01172"
+         y="154.8521">...</tspan></text>
+  </g>
+</svg>
