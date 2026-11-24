@@ -328,6 +328,8 @@ wiki:
         url: /wiki/simulation/mujoco-robot-modeling/
       - title: Creating a URDF from a CAD Model using OnShape
         url: /wiki/simulation/cad-to-urdf/
+      - title: Evaluating Multi-Robot Path Planning with SMART
+        url: /wiki/simulation/evaluating-multi-robot-path-planning-with-smart/
   - title: Interfacing
     url: /wiki/interfacing/
     children:

@@ -36,6 +36,9 @@ This section focuses on **simulation tools, techniques, and environments** for r
 - **[Creating a URDF from a CAD Model using OnShape](/wiki/simulation/cad-to-urdf/)**
  Step-by-step instructions for generating URDFs from OnShape. Includes best practices for assembly cleanup in SolidWorks, defining revolute and prismatic joints, and fixing common mesh and coordinate transform errors.
 
+- **[Evaluating Multi-Robot Path Planning with SMART](/wiki/simulation/evaluating-multi-robot-path-planning-with-smart/)**
+  Explains how to build and use the Scalable Multi-Agent Realistic Testbed (SMART) to evaluate MAPF plans under robot motion constraints and execution uncertainty. Covers input formats, planner integration, ADG-based execution, metrics, experiment design, and common failure modes.
+
 ## Resources
 
 ### General Simulation Tools
