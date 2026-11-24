@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">SMART experiment architecture</title>
+  <desc id="desc">A MAPF planner writes map, scenario, and path files. The SMART launcher configures the ADG server and ARGoS simulation. Robot executors communicate with the server, and SMART produces statistics.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34495e"/>
+    </marker>
+    <style>
+      .box { fill: #f7fafc; stroke: #2c3e50; stroke-width: 3; rx: 16; }
+      .accent { fill: #e8f4fd; stroke: #1769aa; }
+      .output { fill: #edf8ef; stroke: #287d3c; }
+      .title { font: 700 25px sans-serif; fill: #1f2933; text-anchor: middle; }
+      .text { font: 18px sans-serif; fill: #334e68; text-anchor: middle; }
+      .arrow { stroke: #34495e; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .label { font: 16px sans-serif; fill: #486581; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#ffffff"/>
+
+  <rect class="box" x="45" y="65" width="245" height="130"/>
+  <text class="title" x="168" y="108">MAPF planner</text>
+  <text class="text" x="168" y="145">Generates timed,</text>
+  <text class="text" x="168" y="172">collision-free paths</text>
+
+  <rect class="box" x="45" y="325" width="245" height="130"/>
+  <text class="title" x="168" y="368">Experiment inputs</text>
+  <text class="text" x="168" y="405">.map + .scen</text>
+  <text class="text" x="168" y="432">path text file</text>
+
+  <rect class="box accent" x="390" y="195" width="235" height="130"/>
+  <text class="title" x="508" y="238">run_sim.py</text>
+  <text class="text" x="508" y="275">Builds configuration</text>
+  <text class="text" x="508" y="302">and launches processes</text>
+
+  <rect class="box accent" x="725" y="65" width="240" height="130"/>
+  <text class="title" x="845" y="108">ADG server</text>
+  <text class="text" x="845" y="145">Tracks dependencies</text>
+  <text class="text" x="845" y="172">and releases actions</text>
+
+  <rect class="box accent" x="725" y="325" width="240" height="130"/>
+  <text class="title" x="845" y="368">ARGoS 3</text>
+  <text class="text" x="845" y="405">Physics simulation</text>
+  <text class="text" x="845" y="432">and robot executors</text>
+
+  <rect class="box output" x="1030" y="195" width="140" height="130"/>
+  <text class="title" x="1100" y="238">Results</text>
+  <text class="text" x="1100" y="275">CSV</text>
+  <text class="text" x="1100" y="302">JSON</text>
+
+  <path class="arrow" d="M168 195 L168 315"/>
+  <text class="label" x="230" y="260">planner output</text>
+  <path class="arrow" d="M290 390 C350 390 330 260 380 260"/>
+  <path class="arrow" d="M625 235 C675 215 670 130 715 130"/>
+  <path class="arrow" d="M625 285 C675 305 670 390 715 390"/>
+  <path class="arrow" d="M845 195 L845 315"/>
+  <path class="arrow" d="M965 390 C1010 390 995 280 1020 270"/>
+  <path class="arrow" d="M965 130 C1010 130 995 240 1020 250"/>
+  <text class="label" x="900" y="260">RPC status and actions</text>
+</svg>
